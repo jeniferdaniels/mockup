@@ -1,9 +1,18 @@
 <!doctype html>
+<?PHP 
+	$css = "oduColors.css";
+	$css = $_GET['css'];
+?>
+
 <html>
 	<head>
 		<title>Test</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
 
+		<link rel="stylesheet" type="text/css" href="<?PHP echo $css ?>">
+		<!--fonts from Adobe Typekit -->
+		<script src="https://use.typekit.net/scm3ciw.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		
 	</head>
 	
 	<body>
