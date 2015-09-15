@@ -1,21 +1,42 @@
 <!doctype html>
 <?PHP 
-	$css = "oduColors.css";
-	$css = $_GET['css'];
-?>
 
+	if (isset($_GET['css']))
+		$css = $_GET['css'];
+	else
+		$css = "oduColors.css";		
+?>
+<?PHP include 'iconVariables.php' ?>
 <html>
 	<head>
 		<title>Test</title>
 
+		<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<?PHP echo $css ?>">
+
+		<style>
+			.iconColumn{
+				width: 300px;
+				vertical-align: top;
+				display: inline-block;
+				/* border: 1px solid red; */
+			}
+		
+		</style>
+		
 		<!--fonts from Adobe Typekit -->
 		<script src="https://use.typekit.net/scm3ciw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 		
+		
+
 	</head>
 	
 	<body>
+		<a href="fakeNewPLE.php?css=<?php echo $css ?>">Fake New PLE Content Page</a>
+	    <br>
+		<a href="fakeNewPLE_moduleList.php?css=<?php echo $css ?>">Fake New PLE Module Listing</a>
+		
 		<!--headings-->
 		<h1 id="headings">Headings</h1>
 		<h1>Heading 1</h1>
@@ -148,7 +169,7 @@
 		<p>Lorem <abbr title="Avenue">AVE</abbr> ipsim dolor.
 		
 		<h3>Pre</h3>
-		<pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. </pre>
+		<pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. </pre>
 
 		<h3>Code</h3>
 		<code>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. </code>
@@ -201,7 +222,7 @@
 		
 		<div class="LogoOdu">ODU Logo</div>
 		
-		<div class="courseTitle">Course Title</div>
+		<h1 class="courseTitle">Course Title</h1>
 		
 		<div class="search">Search box</div>
 		
@@ -215,56 +236,146 @@
 		
 		<div class="startButton">Start Button</div>
 		
-		<div class="titleTwistyExpanded">Title Twisty Expanded </div>
+		<div class="iconColumn">
+			<h3>Title Twisty Expanded </h3>
+			<?php echo $iconTwistyExpandedLarge ?>
+		</div>
+	
+		<div class="iconColumn">
+			<h3>Title Twisty Collapsed </h3>
+			<?php echo $iconTwistyCollapsedLarge ?>
+		</div>
 		
-		<div class="titleTwistyCollapsed">Title Twisty Collapsed </div>
+		<div class="iconColumn">
+			<h3>Drop Down Menu Icon </h3>
+			<?php echo $iconDropDownMenu ?>
+		</div>
 		
-		<div class="spriteAssignmentSmall">Small Assignment Sprite</div>
+		<div class="iconColumn">
+			<h3>Assignment Icon</h3>
+			<?php echo $iconAssignmentSmall ?>			
+			<?php echo $iconAssignmentMedium ?>
+			<?php echo $iconAssignmentLarge ?>
+			<?php echo $iconAssignmentExtraLarge ?>
+		</div>
 		
-		<div class="spriteAssignmentLarge">Large Assignment Sprite</div>
+		<div class="iconColumn">
+			<h3>Urgent Assignment Icon</h3>
+			<?php echo $iconAssignmentUrgentSmall ?>
+			<?php echo $iconAssignmentUrgentMedium ?>
+			<?php echo $iconAssignmentUrgentLarge ?>
+			<?php echo $iconAssignmentUrgentExtraLarge ?>
+		</div>	
+			
 		
-		<div class="spriteAssignmentUrgentSmall">Small Urgent Assignment Sprite</div>
-		
-		<div class="spriteAssignmentUrgentLarge">Large Urgent Assignment Sprite</div>
-		
-		<div class="spriteNotification">Notification Sprite</div>
-		
-		<div class="spriteUser">User Sprite</div>
-		
-		<div class="spriteHamburgerMenu">Hamburger Menu Sprite</div>
-		
-		<div class="spriteCompletedSmall">Small Completed Sprite</div>
-		
-		<div class="spriteCompletedLarge">Large Completed Sprite</div>
-		
-		<div class="spriteInProgressSmall">Small In Progress Sprite</div>
-		
-		<div class="spriteInProgressLarge">Large In Progress Sprite</div>
-		
-		<div class="spriteFileTypePdf">Acrobat PDF File Type Sprite</div>
+		<div class="iconColumn">
+			<h3>Notification Icon</h3>
+			<?php echo $iconNotification ?>
+		</div>
 
-		<div class="spriteFileTypeAudio">Audio File Type Sprite</div>
-
-		<div class="spriteFileTypeVideo">Video File Type Sprite</div>
-
-		<div class="spriteFileTypeWord">Word File Type Sprite</div>
-
-		<div class="spriteFileTypePowerpoint">Powerpoint File Type Sprite</div>
-
-		<div class="spriteFileTypeExcel">Excel File Type Sprite</div>
+		<div class="iconColumn">
+			<h3>User Icon</h3>
+			<?php echo $iconUser ?>
+		</div>
 		
-		<div class="spriteNavPreviousSmall">Small Previous Navigation Arrow Sprite</div>
+		<div class="iconColumn">
+			<h3>Hamburger Menu Icon</h3>
+			<?php echo $iconHamburgerMenu ?>
+		</div>
 		
-		<div class="spriteNavPreviousLarge">Large Previous Navigation Arrow Sprite</div>
-
-		<div class="spriteNavNextSmall">Small Next Navigation Arrow Sprite</div>
+		<div class="iconColumn">
+			<h3>Completed Icon</h3>
+			<?php echo $iconCompletedSmall ?>
+			<?php echo $iconCompletedMedium ?>
+			<?php echo $iconCompletedLarge ?>
+			<?php echo $iconCompletedExtraLarge ?>
+		</div>
 		
-		<div class="spriteNavNextLarge">Large Next Navigation Arrow Sprite</div>
+		<div class="iconColumn">
+			<h3>Completed Icon - Disabled</h3>
+			<?php echo $iconCompletedDisabledSmall ?>
+			<?php echo $iconCompletedDisabledMedium ?>
+			<?php echo $iconCompletedDisabledLarge ?>
+			<?php echo $iconCompletedDisabledExtraLarge ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>In Progress Icon</h3>
+			
+		</div>
+		
+		
+		<div class="iconColumn">
+			<h3>Acrobat PDF File Type Icon</h3>
+			<?php echo $iconFileTypePdfSmall ?>
+			<?php echo $iconFileTypePdfMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Audio File Type Icon</h3>
+			<?php echo $iconFileTypeAudioSmall ?>
+			<?php echo $iconFileTypeAudioMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Video File Type Icon</h3>
+			<?php echo $iconFileTypeVideoSmall ?>
+			<?php echo $iconFileTypeVideoMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Word File Type Icon</h3>
+			<?php echo $iconFileTypeWordSmall ?>
+			<?php echo $iconFileTypeWordMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Powerpoint File Type Icon</h3>
+			<?php echo $iconFileTypePowerpointSmall ?>
+			<?php echo $iconFileTypePowerpointMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Excel File Type Icon</h3>
+			<?php echo $iconFileTypeExcelSmall ?>
+			<?php echo $iconFileTypeExcelMedium ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Previous Navigation Arrow Icon</h3>
+			<?php echo $iconNavPrevious ?>
+		</div>
+		
+		<div class="iconColumn">
+			<h3>Next Navigation Arrow Icon</h3>
+			<?php echo $iconNavNext ?>
+		</div>
 
-		<div class="listTopic">Topic List</div>
+		<h3>Topic List</h3>
+		<ul class="listTopic">
+			<li>Some text <a href="something1.php">Item 1</a> some more text</li>
+			<li><a href="something2.php">Item 2</a></li>
+			<li><a href="something3.php">Item 3 is a very long item</a></li>
+			<li><a href="something4.php">Item 4</a></li>
+		</ul>	
 
-		<div class="listSubtopic">Subtopic List</div>
-
+		<h3>Subtopic List</h3>
+		<ul class="listSubTopic">
+			<li>Some text <a href="something1.php">Item 1</a> some more text</li>
+			<li><a href="something2.php">Item 2</a></li>
+			<li><a href="something3.php">Item 3 is a very long item</a></li>
+			<li><a href="something4.php">Item 4</a></li>
+		</ul>
+		
+		<h3>Bread Crumbs </h3>
+		<ul class="breadCrumbs">
+			<li><a href="#">Course Name Here</a></li>
+			<li><a href="#">Topic Name Here</a></li>
+			<li><a href="#">Subtopic Name Here</a></li>
+			<li>Something Else Name Here</li>
+		</ul>
+		
+		
 		<div class="help">Help</div>
 		
 		<div class="dropDownMenuModule">Module Drop Down Menu</div>
@@ -277,7 +388,7 @@
 		
 		<div class="pastDue">Past Due</div>
 		
-		<div class="breadCrumb">Bread Crumbs</div>
+		
 		
 		<div class="phoneNumber">Phone Number</div>
 

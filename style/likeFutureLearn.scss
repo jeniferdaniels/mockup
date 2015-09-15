@@ -1,0 +1,146 @@
+//COLORS
+$liteGray: rgba(200, 200, 200, 1);
+$mediumGray: rgba(125, 125, 125, 1);
+$darkGray: rgba(20, 20, 20, 1);
+
+
+$hotPink: rgba(206, 50, 146, 1);
+$red: rgba(231, 76, 60, 1);
+//$orange: rgba( , , , );
+//$yellow: rgba( , , , );
+$limeGreen: rgba(174,203,54, 1);
+//$green: #99CC33;
+$green: #2ECC71;
+$liteBlue: #84cee4;
+$mediumBlue: #10a0c9;
+$darkBlue: #062c8c;
+//$litePurple:
+//$mediumPurple: 
+$darkPurple: #292e74;
+//$brown:
+
+
+//MESSAGES
+$urgent: $red;
+//$information: ;
+$success: $green;
+$disabled: $liteGray;
+
+
+$font-stack: "Open-Sans", sans-serif;
+$font-color: $darkGray; 
+$link-color: $hotPink;
+$link-color-hover: $mediumBlue;
+$link-color-visited: $link-color;
+
+$link-color-topic: $mediumBlue;
+$link-color-topic-hover: $darkBlue;
+$link-color-topic-visited: $hotPink;
+
+//mixins
+
+
+
+
+html{
+	font-size: 82%;
+}
+
+body{
+	font-family: $font-stack;
+	color:	$font-color;
+	font-size: 1rem;
+	border: 1px solid red;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	color: $link-color;
+	text-decoration: none;
+
+	&:hover, &:visited:hover{
+		color: $link-color-hover;
+		text-decoration: underline;
+	}
+	
+	&:visited{
+		color: $link-color-visited;
+	}
+}//end a
+
+pre{
+	word-wrap: break-word;
+}
+
+.listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
+{
+	a{ 
+		color: $link-color-topic;
+	}
+	 
+	a:hover, a:visited:hover{
+		color: $link-color-topic-hover;
+	}		
+	
+	a:visited{
+		color: $link-color-topic-visited;
+	}
+
+}
+.urgent{
+	color: $urgent;
+}
+
+.success{
+	color: $success;
+}
+
+.disabled{
+	color: $disabled;
+}
+
+.liteGray{
+	color: $liteGray;
+}
+
+.breadCrumbs{
+	list-style: none;
+	
+	&a
+	{
+		text-decoration:underline;
+	}
+
+	&> li + li::before
+	{
+		content:"> ";
+	}
+
+	&> li
+	{
+		display: inline-block;
+	}
+}
+
+.oduIcon{
+	display: inline-block;
+}
+
+.courseTitle{
+	display: inline-block;
+}
+
+.moduleProgress{
+	padding: 0 20px 0 0;
+	border: 1px solid green;
+	float: right;
+}
+
+.contentWrapper{
+	width:1000px;
+	border: 1px solid blue;
+	margin-left: auto;
+	margin-right: auto;
+}
+
