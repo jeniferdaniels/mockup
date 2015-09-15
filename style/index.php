@@ -1,4 +1,12 @@
 <!doctype html>
+<?PHP 
+
+	if (isset($_GET['css']))
+		$css = $_GET['css'];
+	else
+		$css = "oduColors.css";		
+?>
+
 <html>
 	<head>
 		<title>Style Sheet Test</title>
@@ -19,7 +27,8 @@
 		
 		<script>
 			function changeCSS(cssFile){
-				document.getElementById('iframeForTestCSS').src="test.php?css=" + cssFile;
+				document.getElementById('iframeForTestCSS').src="test.php?css=" + cssFile;				
+				document.location.href= "index.php?css=" + cssFile;
 			}
 		</script>
 		
@@ -29,13 +38,13 @@
 	
 	<body>
 		<ul>
-			<li><a onClick="changeCSS('likeFutureLearn.css')" href=#>Modeled After FutureLearn</a></li>
-			<li><a onClick="changeCSS('oduColors.css')" href=#>Style 1</a></li>
+			<li><a onClick="changeCSS('likeFutureLearn.css')" href=#>Style 1 - Catalog of Tags</a></li>
+			<li><a onClick="changeCSS('oduColors.css')" href=#>Style 2 - Catalog of Tags</a></li>
 			
 		</ul>
 		
 		
-		<iframe src="test.php?css=oduColors.css" id="iframeForTestCSS" width="1200px" height="800px"></iframe>
+		<iframe src="test.php?css=<?PHP echo $css ?>" id="iframeForTestCSS" width="95%" height="660px"></iframe>
 		
 	</body>
 </html>
