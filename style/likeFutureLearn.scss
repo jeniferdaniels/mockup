@@ -1,4 +1,5 @@
 //COLORS
+$xLiteGray: rgba(250, 250, 250, 1);
 $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
@@ -27,6 +28,9 @@ $disabled: $liteGray;
 //SIZES
 $contentWidth: 1000px;
 $navWrapperWidth: 1100px;
+$moduleProgressBarWidth: 100px;
+$moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
+
 
 $font-stack: "Open-Sans", sans-serif;
 $font-color: $darkGray; 
@@ -107,19 +111,17 @@ pre{
 
 .breadCrumbs{
 	list-style: none;
+	padding-left: 10px;
 	
-	&a
-	{
+	&a{
 		text-decoration:underline;
 	}
 
-	&> li + li::before
-	{
-		content:"> ";
+	&> li + li::before{
+		content:" > ";
 	}
 
-	&> li
-	{
+	&> li{
 		display: inline-block;
 	}
 }
@@ -163,20 +165,30 @@ h1, h2, h3, h4, h5, h6, p{
 	margin-top: 20px;
 }
 
+.courseTitle{
+	padding-left: 10px;
+	color: $darkBlue;
+}
+
 .navPrevious, .navNext{
     position:fixed;
 	vertical-align: middle;
 	top: 50%;
+	a{
+		color: $darkGray;
+	}
+	
+	a:hover{
+		color: $hotPink;
+	}
 }
 
 .navPrevious{
     left: 5px;
-	//border: 1px solid orange;
 }
 
 .navNext{
     right: 5px;
-	//border: 1px solid green;
 }
 
 .navWrapper{
@@ -184,10 +196,122 @@ h1, h2, h3, h4, h5, h6, p{
 	height:100%;
 }
 
-.moduleProgress{
+.moduleProgressBar{
 	border: none;
-	width: 100px;
-	height: 20px;
+	width: $moduleProgressBarWidth;
+	height: 20px; 
 	background-color: $liteGray;
+	border: 1px solid orange;
+	display: block;
+}
+
+.moduleProgressWrapper{
+	border: 1px solid green;
+	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
+	float: right;
+}
+
+.moduleProgressTitle{
+	font-size: .8rem;
+	border: 1px solid red;
+	text-align: center;
+	width: $moduleProgressBarWrapperWidth;
+}
+.oduIcon{
+	background-image: url("../images/oduOnlineLogo.png");
+	background-repeat: no-repeat;
+	background-size: 165px  62px;
+	height: 62px;
+	width: 165px;
+	vertical-align: bottom;
+}
+
+.courseInfoIcon{
+	padding: 0 20px 0 20px;
+}
+
+.searchWrapper{
+	display: inline-block;
+	padding: 0 20px 0 20px;
+}
+#search{
+	background-image: url("../images/search.svg");
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 25px;
+	width: 200px;
+	margin: 0 10px 0 10px;
+	padding: 0 25px 0 5px;
+	border: 1px solid $darkGray;
+}
+
+//TODO: fix the height
+.topRightWrapper{
+	display: inline-block;
+	float: right;
+	position: relative;
+	top: 30px;
+	right: 10px;
+	text-align: right;
+}
+
+.iconNotification, .iconUser{
+	padding: 0 10px 0 10px;
+}
+
+
+.listCourseInfoMenu{
+	list-style: none;
+	padding: 0 0 0 5px;
+}
+
+.courseInfoMenu{
+	background-image: url("../images/information.svg");
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	width: 100px;
+	margin: 10px;
+	background-color: $xLiteGray;
+
+	&Expanded{
+		border: 1px solid red;
+		width: 100px;
+	}
+	
+}
+
+
+
+
+.unitBox{
+	width: $contentWidth - 100px;
+	border: 1px solid $liteGray;
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+	
+	&.collapsed{
+		height:30px;
+	}
+	&.expanded{
+		height:100px;
+	}
+	&.complete {
+		background-color: $xLiteGray;
+	}
+	&.incomplete{
+		background-color: white;
+		margin-left: 30px;
+	}	
+}
+
+.boxWrapper{
+	padding-top: 20px;
+}
+
+.inline{
+	display: inline;
 }

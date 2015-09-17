@@ -40,11 +40,12 @@ pre {
   color: #c8c8c8; }
 
 .breadCrumbs {
-  list-style: none; }
+  list-style: none;
+  padding-left: 10px; }
   .breadCrumbsa {
     text-decoration: underline; }
   .breadCrumbs > li + li::before {
-    content: "> "; }
+    content: " > "; }
   .breadCrumbs > li {
     display: inline-block; }
 
@@ -79,10 +80,18 @@ h1, h2, h3, h4, h5, h6, p {
 .contentTitle, .paragraphTitle {
   margin-top: 20px; }
 
+.courseTitle {
+  padding-left: 10px;
+  color: #062c8c; }
+
 .navPrevious, .navNext {
   position: fixed;
   vertical-align: middle;
   top: 50%; }
+  .navPrevious a, .navNext a {
+    color: #141414; }
+  .navPrevious a:hover, .navNext a:hover {
+    color: #ce3292; }
 
 .navPrevious {
   left: 5px; }
@@ -94,11 +103,99 @@ h1, h2, h3, h4, h5, h6, p {
   width: 99%;
   height: 100%; }
 
-.moduleProgress {
+.moduleProgressBar {
   border: none;
   width: 100px;
   height: 20px;
   background-color: #c8c8c8;
-  margin-right: 20px; }
+  border: 1px solid orange;
+  display: block; }
+
+.moduleProgressWrapper {
+  border: 1px solid green;
+  width: 110px;
+  margin-right: 20px;
+  float: right; }
+
+.moduleProgressTitle {
+  font-size: .8rem;
+  border: 1px solid red;
+  text-align: center;
+  width: 110px; }
+
+.oduIcon {
+  background-image: url("../images/oduOnlineLogo.png");
+  background-repeat: no-repeat;
+  background-size: 165px  62px;
+  height: 62px;
+  width: 165px;
+  vertical-align: bottom; }
+
+.courseInfoIcon {
+  padding: 0 20px 0 20px; }
+
+.searchWrapper {
+  display: inline-block;
+  padding: 0 20px 0 20px; }
+
+#search {
+  background-image: url("../images/search.svg");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 25px;
+  width: 200px;
+  margin: 0 10px 0 10px;
+  padding: 0 25px 0 5px;
+  border: 1px solid #141414; }
+
+.topRightWrapper {
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 30px;
+  right: 10px;
+  text-align: right; }
+
+.iconNotification, .iconUser {
+  padding: 0 10px 0 10px; }
+
+.listCourseInfoMenu {
+  list-style: none;
+  padding: 0 0 0 5px; }
+
+.courseInfoMenu {
+  background-image: url("../images/information.svg");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  width: 100px;
+  margin: 10px;
+  background-color: #fafafa; }
+  .courseInfoMenuExpanded {
+    border: 1px solid red;
+    width: 100px; }
+
+.unitBox {
+  width: 900px;
+  border: 1px solid #c8c8c8;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block; }
+  .unitBox.collapsed {
+    height: 30px; }
+  .unitBox.expanded {
+    height: 100px; }
+  .unitBox.complete {
+    background-color: #fafafa; }
+  .unitBox.incomplete {
+    background-color: white;
+    margin-left: 30px; }
+
+.boxWrapper {
+  padding-top: 20px; }
+
+.inline {
+  display: inline; }
 
 /*# sourceMappingURL=likeFutureLearn.css.map */
