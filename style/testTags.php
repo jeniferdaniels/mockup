@@ -3,7 +3,8 @@
 	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 ?>
-<?PHP include 'iconVariables.php' ?>
+<?PHP include_once 'iconVariables.php' ?>
+<?php include_once 'mockupFunctions.php' ?>
 <html>
 	<head>
 		<title>Test</title>
@@ -221,7 +222,8 @@
 		
 		<h1 class="courseTitle">Course Title</h1>
 		
-		<div class="search">Search box</div>
+		<h3>Search box</h3>
+		<?php writeSearchBox() ?>
 		
 		<div class="announcement">Announcement</div>
 		
@@ -402,6 +404,11 @@
 		<div class="navNextDescription">Next Navigation Arrow On Hover Description</div>
 		
 		<div class="announcementPopUp">Pop Up Announcement</div>
+		
+		<h3>Module Box</h3>
+		<div class="moduleBox">
+			Module box stuff here
+		</div>
 		
 	</body>
 </html>
