@@ -13,11 +13,11 @@ $iconAssignmentUrgentLarge  = "<i class='fa fa-calendar fa-2x urgent'></i>";
 $iconAssignmentUrgentExtraLarge  = "<i class='fa fa-calendar fa-3x urgent'></i>";
 
 
-$iconNotification = "<i class='fa fa-bell fa-lg'></i>";
-$iconUser = "<i class='fa fa-user fa-lg'></i>";
+$iconNotification = "<i class='fa fa-bell fa-lg iconNotification'></i>";
+$iconUser = "<i class='fa fa-user fa-lg iconUser'></i>";
 
 
-$iconHamburgerMenu = "<i class='fa fa-bars fa-lg'></i>";
+$iconHamburgerMenu = "<i class='fa fa-bars fa-lg courseInfoIcon'></i>";
 
 $iconCompletedSmall = "<i class='fa fa-check-circle success'></i>";
 $iconCompletedMedium = "<i class='fa fa-check-circle fa-lg success'></i>";
@@ -29,6 +29,7 @@ $iconCompletedDisabledMedium = "<i class='fa fa-check-circle fa-lg disabled'></i
 $iconCompletedDisabledLarge = "<i class='fa fa-check-circle fa-2x disabled'></i>";
 $iconCompletedDisabledExtraLarge = "<i class='fa fa-check-circle fa-3x disabled'></i>";
 
+$iconIncomplete = "<div class='incomplete'></div>";
 
 //??
 $inProgressSmall = "<i class='fa '></i>";
