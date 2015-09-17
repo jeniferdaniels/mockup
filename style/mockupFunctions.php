@@ -1,0 +1,125 @@
+<?php
+//include_once $_SERVER['DOCUMENT_ROOT'] . "/lib/htmlLawed/htmLawed.php";	//use document root incase the directory of this page moves
+//TODO: rewrite the html formatting
+
+function writeHead($pageTitle, $css){
+	echo '<title>' . $pageTitle . '</title>';
+	echo '<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $css . '">';
+	echo '<!--fonts from Adobe Typekit -->';
+	echo '<script src="https://use.typekit.net/scm3ciw.js"></script>';
+	echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
+	echo "\r\n";
+}
+				
+function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
+	echo '<!--navigation arrows -->';
+	echo '<div class="navWrapper">';
+	
+	if (!empty($nav)){
+		if ($nav["prevUrl"] != "")
+			echo '<div class="navPrevious"><a href="' . $nav["prevUrl"] . '"> ' .  $icons["prev"] . ' </a></div>';
+
+		if ($nav["nextUrl"] != "")
+			echo '<div class="navNext"><a href="' . $nav["nextUrl"] . '"> ' . $icons["next"] . ' </a></div>';
+
+		echo '</div><!--end nav wrapper-->';
+		echo '<!--end navigation arrows-->';
+	}
+
+	echo '<!--header-->';
+	echo '<header>';
+	//echo $icons["menu"];
+	echo '<div class="oduIcon"></div>';
+	echo '<h1 class="courseTitle">' . $courseTitle . '</h1>';
+	
+	echo '<div class="topRightWrapper">';
+	writeSearchBox();
+	
+	echo $icons["notification"];
+	echo $icons["user"];
+	echo '</div><!--end topRightWrapper-->';
+	echo '</header><!--end header-->';
+		
+		
+	if (!empty($breadCrumbs))
+	{
+		echo '<nav>';
+		echo '<ul class="breadCrumbs">';
+		
+			//stop short of last item because it will be text instead of a link
+			for ($i = 0; $i < count($breadCrumbs); $i++)
+			{
+				echo '<li><a href="' . $breadCrumbs[$i]["url"] . '">' . $breadCrumbs[$i]["title"] . '</a>&nbsp;</li>';
+			}
+			
+			//not link
+			echo '<li>' . array_pop($breadCrumbs)["title"] . '</a></li>';
+			
+			
+		echo '</ul>';
+		echo '</nav><!--end navigation-->';
+	}
+}
+
+
+function writeSearchBox(){
+	echo '<div class="searchWrapper">';
+	echo '<form>';
+	echo '<input name="search" id="search" placeholder="search...">';
+	echo '</form>';
+	echo '</div><!--end wrapper-->';
+}
+
+
+function writeCourseInfoMenuItems(){
+	echo '<ul class="listCourseInfoMenu">';
+	echo '<li>Faculty</li>';
+	echo '<li>Syllabus</li>';
+	echo '<li>Schedule</li>';
+	echo '<li>Assignments</li>';
+	echo '<li>Help</li>';
+	echo '</ul>';
+	
+}
+
+function writeCourseInfoMenu(){
+	echo '<div class="courseInfoMenu">';
+		writeCourseInfoMenuItems();
+	echo '</div>';
+}
+
+
+function writeBox($boxTitle, $isCollapsed, $isComplete){
+	echo '<div class="boxWrapper">';
+	$boxDivTag = '<div class="unitBox ';
+	$twistyDivTag = '<div class="twisty ';
+	
+	if ($isCollapsed){
+		$boxDivTag .= 'collapsed ';
+		$twistyDivTag .= ' collapsed ';
+	}
+	else{
+		$boxDivTag .= 'expanded ';
+		$twistyDivTag .= ' expanded ';
+	}
+	
+	if ($isComplete){
+		$boxDivTag .= 'complete ';
+		$icon = "<div class='inline fa fa-check-circle fa-2x success'></div>";
+	}
+	else{
+		$boxDivTag .= 'incomplete ';
+		$icon = "";
+	}
+	
+	$boxDivTag .= ' ">';
+	
+	echo $icon;
+	echo $boxDivTag;
+	echo $boxTitle;
+	echo '</div></div>';
+}
+
+
+?>
