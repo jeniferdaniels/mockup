@@ -1,49 +1,44 @@
-<!doctype html>
+<?PHP include_once 'iconVariables.php' ?>
+<?PHP include_once 'mockupFunctions.php' ?>
 <?PHP 
 	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
+
+	$icons = array (
+		"prev" 			=> $iconNavPrevious,
+		"next" 			=> $iconNavNext,
+		"menu" 			=> $iconHamburgerMenu,
+		"notification" 	=> $iconNotification,
+		"user" 			=> $iconUser			
+	);
+
+	$nav = array(
+		"prevUrl" 	=> 'testVideoContent.php?css=' . $css ,
+		"nextUrl" 	=> 'testModuleList.php?css='. $css
+	);
+
+	$breadCrumbs = array (
+		array ("url" => "#", "title" => 'Home'),
+		array ("url" => "something", "title" => "2. Fundamental Principles"),
+		array ("url" => "somethingElse", "title" => "2.1. Design of Machine Elements")
+	);
+	
 ?>
-<?PHP include 'iconVariables.php' ?>
+
+<!doctype html>
 <html>
 	<head>
-		<title>Test</title>
-
-		<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="<?PHP echo $css ?>">
-		
-		<!--fonts from Adobe Typekit -->
-		<script src="https://use.typekit.net/scm3ciw.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<?php writeHead('Test Text Content', $css); ?>
 	</head>
 	
 	<body>
-
-		<div class="navWrapper">
-			<div class="navPrevious"><?php echo $iconNavPrevious ?></div>
-			<div class="navNext"><?php echo $iconNavNext ?></div>
-		</div>
-
-		
-		<header>
-			<?php echo $iconHamburgerMenu ?>
-			<div class="oduIcon">ODU ICON</div>
-			<h1 class="courseTitle">MET 320 - Design of Machine Elements</h1>
-			search
-			<?php echo $iconNotification ?>
-			<?php echo $iconUser ?>
-		</header>
-		
-		<nav>
-			<ul class="breadCrumbs">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">2. Fundamental Principles</a></li>
-				<li><a href="#">2.2 Course Introduction and Statistical Equilibrium</a></li>
-				<li>2.2.1 Introduction to Design of Machine Elements</li>
-			</ul>
-		</nav>
-
+		<?php writeTop($icons, $nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
+		<?php //writeCourseInfoMenu() ?>
 			
-		<div class="moduleProgressWrapper"><progress class="moduleProgress" value="30" max="100"></progress></div>
+		<div class="moduleProgressWrapper">
+			<progress class="moduleProgressBar" value="30" max="100"></progress>
+			<div class="moduleProgressTitle">Module Progress</div>
+		</div>
 	
 		<div class="contentWrapper">
 			<h2 class="contentTitle">2.2.1 Introduction to Design of Machine Elements</h2>
@@ -72,4 +67,3 @@
 		
 	</body>
 </html>
-
