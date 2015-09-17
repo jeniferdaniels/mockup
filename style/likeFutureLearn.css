@@ -5,7 +5,6 @@ body {
   font-family: "Open-Sans", sans-serif;
   color: #141414;
   font-size: 1rem;
-  border: 1px solid red;
   margin: 0;
   padding: 0; }
 
@@ -62,8 +61,44 @@ pre {
 
 .contentWrapper {
   width: 1000px;
-  border: 1px solid blue;
   margin-left: auto;
   margin-right: auto; }
+
+.column50Percent {
+  width: 49.5%;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  display: inline-block; }
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+  margin: 0; }
+
+.contentTitle, .paragraphTitle {
+  margin-top: 20px; }
+
+.navPrevious, .navNext {
+  position: fixed;
+  vertical-align: middle;
+  top: 50%; }
+
+.navPrevious {
+  left: 5px; }
+
+.navNext {
+  right: 5px; }
+
+.navWrapper {
+  width: 99%;
+  height: 100%; }
+
+.moduleProgress {
+  border: none;
+  width: 100px;
+  height: 20px;
+  background-color: #c8c8c8;
+  margin-right: 20px; }
 
 /*# sourceMappingURL=likeFutureLearn.css.map */

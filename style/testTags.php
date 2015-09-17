@@ -1,10 +1,7 @@
 <!doctype html>
 <?PHP 
-
-	if (isset($_GET['css']))
-		$css = $_GET['css'];
-	else
-		$css = "oduColors.css";		
+	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
+	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 ?>
 <?PHP include 'iconVariables.php' ?>
 <html>

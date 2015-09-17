@@ -3,7 +3,6 @@ $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
 
-
 $hotPink: rgba(206, 50, 146, 1);
 $red: rgba(231, 76, 60, 1);
 //$orange: rgba( , , , );
@@ -19,13 +18,15 @@ $darkBlue: #062c8c;
 $darkPurple: #292e74;
 //$brown:
 
-
-//MESSAGES
+//MESSAGE COLORS
 $urgent: $red;
 //$information: ;
 $success: $green;
 $disabled: $liteGray;
 
+//SIZES
+$contentWidth: 1000px;
+$navWrapperWidth: 1100px;
 
 $font-stack: "Open-Sans", sans-serif;
 $font-color: $darkGray; 
@@ -50,7 +51,7 @@ body{
 	font-family: $font-stack;
 	color:	$font-color;
 	font-size: 1rem;
-	border: 1px solid red;
+	//border: 1px solid red;
 	margin: 0;
 	padding: 0;
 }
@@ -138,9 +139,55 @@ pre{
 }
 
 .contentWrapper{
-	width:1000px;
-	border: 1px solid blue;
+	width: $contentWidth;
+	//border: 1px solid blue;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.column50Percent{
+	width: 49.5%;
+	padding:0;
+	margin: 0;
+	vertical-align: top;
+	display: inline-block;
+ }	 
+
+h1, h2, h3, h4, h5, h6, p{
+	padding: 0;
+	margin: 0;
+	margin: 0;
+}
+
+.contentTitle, .paragraphTitle{
+	margin-top: 20px;
+}
+
+.navPrevious, .navNext{
+    position:fixed;
+	vertical-align: middle;
+	top: 50%;
+}
+
+.navPrevious{
+    left: 5px;
+	//border: 1px solid orange;
+}
+
+.navNext{
+    right: 5px;
+	//border: 1px solid green;
+}
+
+.navWrapper{
+	width:99%;
+	height:100%;
+}
+
+.moduleProgress{
+	border: none;
+	width: 100px;
+	height: 20px;
+	background-color: $liteGray;
+	margin-right: 20px;
+}

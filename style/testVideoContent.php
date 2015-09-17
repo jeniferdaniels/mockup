@@ -1,10 +1,7 @@
 <!doctype html>
 <?PHP 
-
-	if (isset($_GET['css']))
-		$css = $_GET['css'];
-	else
-		$css = "oduColors.css";		
+	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
+	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 ?>
 <?PHP include 'iconVariables.php' ?>
 <html>
@@ -13,6 +10,11 @@
 
 		<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<?PHP echo $css ?>">
+	
+		<!--fonts from Adobe Typekit -->
+		<script src="https://use.typekit.net/scm3ciw.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 	</head>
 	
 	<body>
@@ -35,17 +37,7 @@
 	
 		<div class="moduleProgress"><progress value="30" max="100"></progress></div>
 	
-		<div class="contentWrapper">
-			<h2>Introduction to Design of Machine Elements</h2>
-		
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est.</p>
-		
-		</div>
+video
 		
 	</body>
 </html>

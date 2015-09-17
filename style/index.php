@@ -1,10 +1,7 @@
 <!doctype html>
 <?PHP 
-
-	if (isset($_GET['css']))
-		$css = $_GET['css'];
-	else
-		$css = "oduColors.css";		
+	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
+	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 ?>
 
 <html>
@@ -26,9 +23,9 @@
 		</style>
 		
 		<script>
-			function changeCSS(cssFile){
-				document.getElementById('iframeForTestCSS').src="test.php?css=" + cssFile;				
-				document.location.href= "index.php?css=" + cssFile;
+			function changeCSS(iFramePage, cssFile){
+				document.getElementById('iframeForTestCSS').src=iFramePage + "?css=" + cssFile;
+				document.location.href= "index.php?iFramePage=" + iFramePage + "&css=" + cssFile;
 			}
 		</script>
 		
@@ -38,13 +35,22 @@
 	
 	<body>
 		<ul>
-			<li><a onClick="changeCSS('likeFutureLearn.css')" href=#>Style 1 - Catalog of Tags</a></li>
-			<li><a onClick="changeCSS('oduColors.css')" href=#>Style 2 - Catalog of Tags</a></li>
+			<li><a onClick="changeCSS('testTags.php', 'likeFutureLearn.css')" href=#>Style 1 - Catalog of Tags</a></li>
+			<li><a onClick="changeCSS('testModuleList.php', 'likeFutureLearn.css')" href=#>Style 1 - Module Listing</a></li>
+			<li><a onClick="changeCSS('testTextContent.php', 'likeFutureLearn.css')" href=#>Style 1 - Text Content Page</a></li>
+			<li><a onClick="changeCSS('testVideoContent.php', 'likeFutureLearn.css')" href=#>Style 1 - Video Content Page</a></li>
+		</ul>
+		
+		<ul>
+			<li><a onClick="changeCSS('testTags.php', 'oduColors.css')" href=#>Style 2 - Catalog of Tags</a></li>
+			<li><a onClick="changeCSS('testModuleList.php', 'oduColors.css')" href=#>Style 2 - Module Listing</a></li>
+			<li><a onClick="changeCSS('testTextContent.php', 'oduColors.css')" href=#>Style 2 - Text Content Page</a></li>
+			<li><a onClick="changeCSS('testVideoContent.php', 'oduColors.css')" href=#>Style 2 - Video Content Page</a></li>
 			
 		</ul>
 		
 		
-		<iframe src="test.php?css=<?PHP echo $css ?>" id="iframeForTestCSS" width="95%" height="660px"></iframe>
+		<iframe src="<?PHP echo $page ?>?css=<?PHP echo $css ?>" id="iframeForTestCSS" width="95%" height="660px"></iframe>
 		
 	</body>
 </html>
