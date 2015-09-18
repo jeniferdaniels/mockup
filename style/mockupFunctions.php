@@ -6,6 +6,10 @@ function writeHead($pageTitle, $css){
 	echo '<title>' . $pageTitle . '</title>';
 	echo '<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $css . '">';
+	echo '<!--to capture keypres shortcuts-->';
+	echo '<script src="../scripts/js/kbShortcuts.js"></script>';
+
+
 	echo '<!--fonts from Adobe Typekit -->';
 	echo '<script src="https://use.typekit.net/scm3ciw.js"></script>';
 	echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
@@ -60,6 +64,7 @@ function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
 		echo '</ul>';
 		echo '</nav><!--end navigation-->';
 	}
+	writeCourseInfoMenu();
 }
 
 
@@ -72,21 +77,28 @@ function writeSearchBox(){
 }
 
 
-function writeCourseInfoMenuItems(){
-	echo '<ul class="listCourseInfoMenu">';
-	echo '<li>Faculty</li>';
-	echo '<li>Syllabus</li>';
-	echo '<li>Schedule</li>';
-	echo '<li>Assignments</li>';
-	echo '<li>Help</li>';
-	echo '</ul>';
-	
-}
-
 function writeCourseInfoMenu(){
-	echo '<div class="courseInfoMenu">';
-		writeCourseInfoMenuItems();
+	echo '<div class="lhsMenuWrapper">';
+	echo '<div id="cssmenu">';
+	echo '<ul>';
+	echo '<li><a href="#"><div class="iconCourseInfo"></div></a>';
+    echo '<ul>';
+	echo '<li><a href="#"><span>Faculty</span></a></li>';
+	echo '<li><a href="#"><span>Syllabus</span></a></li>';
+	echo '<li><a href="#"><span>Schedule</span></a></li>';
+	echo '<li><a href="#"><span>Assignments</span></a></li>';
+	echo '</ul></li><!--end sub list-->';
+	//echo '<li><a href="#"><div class="iconHelp"></div></a></li>';
+	echo '<li><a href="#"><div class="iconUpcoming"></div></a>';
+	echo '<ul>';
+	echo '<li><a href="#"><span>1/18/2015<br>2.C Homework #1</span></a></li>';
+	echo '<li><a href="#"><span>1/19/2015<br>2.D Module Feedback</a></li>';
+	echo '<li><a href="#"><span>1/19/2015<br>3. Bending of Beams</span></a></li>';
+	echo '</ul></li><!--end sub list-->';
+	echo '</ul><!--end big list-->';
 	echo '</div>';
+	echo '</div>';
+
 }
 
 

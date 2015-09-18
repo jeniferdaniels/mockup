@@ -131,9 +131,6 @@ h1, h2, h3, h4, h5, h6, p {
   width: 165px;
   vertical-align: bottom; }
 
-.courseInfoIcon {
-  padding: 0 20px 0 20px; }
-
 .searchWrapper {
   display: inline-block;
   padding: 0 20px 0 20px; }
@@ -165,16 +162,122 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0 0 0 5px; }
 
 .courseInfoMenu {
-  background-image: url("../images/information.svg");
-  background-size: 20px 20px;
+  /*&Icon{
+  	background-image: url("../images/information.svg");
+  	background-size: 25px 25px;
+  	background-repeat: no-repeat;
+  	background-position: right top;
+  	height: 25px;
+  	width: 25px;
+  	margin-left: auto;
+  	display:block;
+  }
+  
+  /*&Wrapper{
+  	background-color: $liteGray;
+  	width: 30px;
+  	margin: 10px 10px 10px 0;
+  	padding: 3px;
+  	//border: 1px solid green;
+  	border: 1px solid $mediumGray;
+  	border-left: 0;
+  	
+  	&:hover{
+  		background-color: $xLiteGray;
+  	}		
+  }
+  */ }
+
+.iconCourseInfo, .iconHelp, .iconUpcoming {
+  display: block;
+  background-size: 25px 25px;
   background-repeat: no-repeat;
-  background-position: right top;
-  width: 100px;
-  margin: 10px;
-  background-color: #fafafa; }
-  .courseInfoMenuExpanded {
-    border: 1px solid red;
-    width: 100px; }
+  height: 25px;
+  width: 25px;
+  padding: 0; }
+
+.iconCourseInfo {
+  background-image: url("../images/information.svg"); }
+
+.iconHelp {
+  background-image: url("../images/help.svg"); }
+
+.iconUpcoming {
+  background-image: url("../images/alarmClock.svg"); }
+
+/* Base CSS */
+#cssmenu {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+  #cssmenu ul, #cssmenu ul li, #cssmenu ul ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0; }
+  #cssmenu ul {
+    position: relative;
+    z-index: 397;
+    width: 35px;
+    background: white; }
+    #cssmenu ul a {
+      color: black; }
+      #cssmenu ul a:visited {
+        color: #000;
+        text-decoration: none; }
+      #cssmenu ul a:hover {
+        color: #000; }
+      #cssmenu ul a:active {
+        color: #ffa500; }
+    #cssmenu ul li {
+      min-height: 1px;
+      line-height: 1em;
+      vertical-align: middle;
+      padding: 7px 10px;
+      color: #000; }
+      #cssmenu ul li:hover {
+        position: relative;
+        z-index: 399;
+        cursor: default;
+        background: #fafafa;
+        color: black; }
+        #cssmenu ul li:hover > ul {
+          visibility: visible; }
+    #cssmenu ul ul {
+      visibility: hidden;
+      position: absolute;
+      top: 0px;
+      left: 99%;
+      z-index: 398;
+      width: 200px;
+      border: 1px solid #c8c8c8; }
+
+/*
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {list-style: none; margin: 0; padding: 0; border: 0;}
+#cssmenu ul {position: relative; z-index: 397;}
+#cssmenu ul li {min-height: 1px; line-height: 1em; vertical-align: middle;}
+#cssmenu ul li:hover {position: relative; z-index: 399; cursor: default;}
+#cssmenu ul ul {visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 398; width: 100%;}
+#cssmenu ul li:hover > ul { visibility: visible;}
+#cssmenu ul ul {top: 0px; left: 99%;}
+
+/* Custom CSS Styles */
+/*
+#cssmenu ul {width: 35px; background: white;}
+#cssmenu ul ul {width: 200px; border: 1px solid $liteGray;}
+#cssmenu ul li {padding: 7px 10px; color: #000;}
+#cssmenu ul li.hover,
+#cssmenu ul li:hover {background: $xLiteGray; color: black;}
+#cssmenu ul a:link,
+#cssmenu ul a:visited {color: #000; text-decoration: none;}
+#cssmenu ul a:hover {color: #000;}
+#cssmenu ul a:active {color: #ffa500;}
+*/
+.lhsMenuWrapper {
+  display: inline;
+  position: absolute; }
 
 .unitBox {
   width: 900px;
@@ -197,5 +300,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .inline {
   display: inline; }
+
+@media print {
+  nav, #cssMenu, .lhsMenuWrapper, .moduleProgressWrapper,
+  .topRightWrapper, .navWrapper {
+    display: none; }
+
+  iframe .breadcrumb, iframe #video-container, iframe .container-fluid {
+    display: none; } }
 
 /*# sourceMappingURL=likeFutureLearn.css.map */

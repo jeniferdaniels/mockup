@@ -13,8 +13,8 @@
 	);
 
 	$nav = array(
-		"prevUrl" 	=> 'testVideoContent.php?css=' . $css ,
-		"nextUrl" 	=> 'testModuleList.php?css='. $css
+		"prevUrl" 	=> 'testModuleList.php?css='. $css,		
+		"nextUrl" 	=> 'testVideoContent.php?css=' . $css
 	);
 
 	$breadCrumbs = array (
@@ -33,7 +33,7 @@
 	
 	<body>
 		<?php writeTop($icons, $nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
-		<?php //writeCourseInfoMenu() ?>
+		
 			
 		<div class="moduleProgressWrapper">
 			<progress class="moduleProgressBar" value="30" max="100"></progress>
@@ -41,6 +41,7 @@
 		</div>
 	
 		<div class="contentWrapper">
+			
 			<h2 class="contentTitle">2.2.1 Introduction to Design of Machine Elements</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>

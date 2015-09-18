@@ -64,8 +64,10 @@
 	<body>
 		<?php writeTop($icons, $nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
 		<?php writeCourseInfoMenu() ?>
-
+		
+		
 		<div class="contentWrapper">
+		<a href="testTextContent.php?css=<?php echo $css ?>">DummyLink To text</a>
 			<?php 
 				for ($i=0; $i<count($boxes); $i++)
 					writeBox($boxes[$i]["title"], $boxes[$i]["isCollapsed"], $boxes[$i]["isComplete"]);
