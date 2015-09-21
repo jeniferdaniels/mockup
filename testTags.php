@@ -10,7 +10,7 @@
 		<title>Test</title>
 
 		<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="<?PHP echo $css ?>">
+		<link rel="stylesheet" type="text/css" href="css/<?PHP echo $css ?>">
 
 		<style>
 			.iconColumn{
@@ -31,9 +31,7 @@
 	</head>
 	
 	<body>
-		<a href="fakeNewPLE.php?css=<?php echo $css ?>">Fake New PLE Content Page</a>
-	    <br>
-		<a href="fakeNewPLE_moduleList.php?css=<?php echo $css ?>">Fake New PLE Module Listing</a>
+		<a href="testModuleList.php?css=<?php echo $css ?>">Fake Module Listing</a>
 		
 		<!--headings-->
 		<h1 id="headings">Headings</h1>

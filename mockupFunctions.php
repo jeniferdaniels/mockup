@@ -4,10 +4,11 @@
 
 function writeHead($pageTitle, $css){
 	echo '<title>' . $pageTitle . '</title>';
-	echo '<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $css . '">';
+	echo '<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+	echo '<link rel="stylesheet" type="text/css" href="css/' . $css . '">';
 	echo '<!--to capture keypres shortcuts-->';
-	echo '<script src="../scripts/js/kbShortcuts.js"></script>';
+	echo '<script src="scripts/js/kbShortcuts.js"></script>';
+	echo '<script src="scripts/js/jquery-2.1.3.min.js"></script>';
 
 
 	echo '<!--fonts from Adobe Typekit -->';
@@ -102,9 +103,9 @@ function writeCourseInfoMenu(){
 }
 
 
-function writeBox($boxTitle, $isCollapsed, $isComplete){
+function writeToggleBox($boxTitle, $isCollapsed, $isComplete){
 	echo '<div class="boxWrapper">';
-	$boxDivTag = '<div class="unitBox ';
+	$boxDivTag = '<div class="toggleBox ';
 	$twistyDivTag = '<div class="twisty ';
 	
 	if ($isCollapsed){
@@ -129,7 +130,7 @@ function writeBox($boxTitle, $isCollapsed, $isComplete){
 	
 	echo $icon;
 	echo $boxDivTag;
-	echo $boxTitle;
+	echo '<a href="#">' . $boxTitle . '</a>';
 	echo '</div></div>';
 }
 

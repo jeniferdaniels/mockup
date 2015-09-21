@@ -18,7 +18,7 @@
 	);
 
 	$breadCrumbs = array (
-		array ("url" => "#", "title" => 'Home'),
+		array ("url" => "testModuleList.php?css=". $css, "title" => 'Home'),
 		array ("url" => "something", "title" => "2. Fundamental Principles"),
 		array ("url" => "somethingElse", "title" => "2.1. Design of Machine Elements")
 	);
@@ -46,16 +46,46 @@
 			<div class="moduleProgressTitle">Module Progress</div>
 		</div>
 	
-		<div class="contentWrapper" style="width:1100px">
+		<div class="contentWrapper" id="contentWrapper" style="width:1200px">
 			
 			<h2 class="contentTitle">2.2.2 Defining Engineering and the Design Process</h2>
 
-			video here
-			<iframe src="http://elearn.odu.edu/preview/" id="iframeForTestVideo" width="100%" height="660px"></iframe>
+			
+			<div id="videoAndTranscriptWrapper" class="videoAndTranscriptWrapper">
+				 <video width="800" height="450" controls id="video" class="video">
+					<source src="http://www.kaltura.com/p/1509371/sp/0/playManifest/entryId/0_ktfmf1w6/format/url/flavorParamId/487081/video.mp4" type="video/mp4">
+				</video> 
+
+				<div id="transcript" class="transcript" style="display:none">
+					<?php include_once "transcript.html" ?>	
+				</div>
+	
+
+			</div>
+			
+			
+			
+			<a href="javascript:makeRoomForTranscript()" id="toggleTranscript">View Transcript</a>
 			
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>
 		</div>
+		
+		
+		<script>
+			function makeRoomForTranscript(){
+
+				document.getElementById("contentWrapper").style.width = "1200px";
+				document.getElementById("transcript").style = 'transcript';
+				document.getElementById("toggleTranscript").innerHTML = "Hide Transcript";
+				
+
+				}
+		
+		
+		</script>
+		
+		
 		
 	</body>
 </html>

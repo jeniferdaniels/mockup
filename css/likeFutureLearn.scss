@@ -4,9 +4,11 @@ $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
 
-$hotPink: rgba(206, 50, 146, 1);
+$hotPink: rgba(255, 0, 128, 1);
 $red: rgba(231, 76, 60, 1);
 //$orange: rgba( , , , );
+$xLiteYellow: rgba(254,239,179, 0.05);
+$liteYellow: rgba(254,239,179, 1);
 //$yellow: rgba( , , , );
 $limeGreen: rgba(174,203,54, 1);
 //$green: #99CC33;
@@ -24,6 +26,7 @@ $urgent: $red;
 //$information: ;
 $success: $green;
 $disabled: $liteGray;
+$warning: $liteYellow;
 
 //SIZES
 $contentWidth: 1000px;
@@ -42,8 +45,11 @@ $link-color-topic: $mediumBlue;
 $link-color-topic-hover: $darkBlue;
 $link-color-topic-visited: $hotPink;
 
-//mixins
-
+////////////////////////////////////////////
+@mixin roundedBorderWithBoxShadow{
+    border-radius: 2px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05)
+}
 
 
 
@@ -66,7 +72,7 @@ a{
 
 	&:hover, &:visited:hover{
 		color: $link-color-hover;
-		text-decoration: underline;
+		text-decoration: underline dotted;
 	}
 	
 	&:visited{
@@ -130,10 +136,6 @@ pre{
 	display: inline-block;
 }
 
-.courseTitle{
-	display: inline-block;
-}
-
 .moduleProgress{
 	padding: 0 20px 0 0;
 	border: 1px solid green;
@@ -168,6 +170,7 @@ h1, h2, h3, h4, h5, h6, p{
 .courseTitle{
 	padding-left: 10px;
 	color: $darkBlue;
+	display: inline-block;
 }
 
 .navPrevious, .navNext{
@@ -367,43 +370,22 @@ h1, h2, h3, h4, h5, h6, p{
 	}
 }
 
-/*
-#cssmenu ul,
-#cssmenu ul li,
-#cssmenu ul ul {list-style: none; margin: 0; padding: 0; border: 0;}
-#cssmenu ul {position: relative; z-index: 397;}
-#cssmenu ul li {min-height: 1px; line-height: 1em; vertical-align: middle;}
-#cssmenu ul li:hover {position: relative; z-index: 399; cursor: default;}
-#cssmenu ul ul {visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 398; width: 100%;}
-#cssmenu ul li:hover > ul { visibility: visible;}
-#cssmenu ul ul {top: 0px; left: 99%;}
-
-/* Custom CSS Styles */
-/*
-#cssmenu ul {width: 35px; background: white;}
-#cssmenu ul ul {width: 200px; border: 1px solid $liteGray;}
-#cssmenu ul li {padding: 7px 10px; color: #000;}
-#cssmenu ul li.hover,
-#cssmenu ul li:hover {background: $xLiteGray; color: black;}
-#cssmenu ul a:link,
-#cssmenu ul a:visited {color: #000; text-decoration: none;}
-#cssmenu ul a:hover {color: #000;}
-#cssmenu ul a:active {color: #ffa500;}
-*/
-
 .lhsMenuWrapper{
 	display: inline;
 	position: absolute;
 }
 
 
-.unitBox{
+.toggleBox{
 	width: $contentWidth - 100px;
 	border: 1px solid $liteGray;
 	margin: 10px;
 	padding: 10px;
 	display: inline-block;
 	
+	&:hover{
+		@include roundedBorderWithBoxShadow;
+	}
 	&.collapsed{
 		height:30px;
 	}
@@ -412,11 +394,27 @@ h1, h2, h3, h4, h5, h6, p{
 	}
 	&.complete {
 		background-color: $xLiteGray;
+		
+		&:hover{
+			background-color: $xLiteYellow;
+		}
 	}
 	&.incomplete{
-		background-color: white;
+		background-color: $xLiteGray 0.5;
 		margin-left: 30px;
-	}	
+	
+		&:hover{
+			background-color: $xLiteYellow;
+		}
+	}
+	& a {
+		font-size: 1.3rem;
+		color: $darkGray;
+		
+		&:hover{
+
+		}
+	}
 }
 
 .boxWrapper{
@@ -427,6 +425,47 @@ h1, h2, h3, h4, h5, h6, p{
 	display: inline;
 }
 
+.videoAndTranscriptWrapper{
+	margin: auto;
+	text-align: center;
+	
+}
+
+.transcript{
+	height: 450px;
+	overflow-y: scroll;
+	width: 394px;
+	text-align: left;
+	display: inline-block;
+	border: 1px solid $mediumGray;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px){
+	.contentWrapper{
+		width:800px;
+	}
+
+}
+
+
+@media screen and (max-width: 800px){
+	.contentWrapper{
+		width:600px;
+	}
+
+}
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @media print{
 
