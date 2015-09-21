@@ -2,13 +2,24 @@
 //include_once $_SERVER['DOCUMENT_ROOT'] . "/lib/htmlLawed/htmLawed.php";	//use document root incase the directory of this page moves
 //TODO: rewrite the html formatting
 
+function writeCssChanger($page)
+{
+	echo '<div class="cssChanger">';
+	echo '<ul>';
+	echo '<li><a href="'. $page . '?css=likeFutureLearn.css">Style 1</a></li>';
+	echo '<li><a href="'. $page . '?css=oduColors.css">Style 2</a></li>';
+	echo '<li><a href="'. $page . '?css=style3.css">Style 3</a></li>';
+	echo '</ul></div>';
+	
+}
+
 function writeHead($pageTitle, $css){
 	echo '<title>' . $pageTitle . '</title>';
 	echo '<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo '<link rel="stylesheet" type="text/css" href="css/' . $css . '">';
-	echo '<!--to capture keypres shortcuts-->';
-	echo '<script src="scripts/js/kbShortcuts.js"></script>';
-	echo '<script src="scripts/js/jquery-2.1.3.min.js"></script>';
+	//echo '<!--to capture keypres shortcuts-->';
+	//echo '<script src="scripts/js/kbShortcuts.js"></script>';
+	//echo '<script src="scripts/js/jquery-2.1.3.min.js"></script>';
 
 
 	echo '<!--fonts from Adobe Typekit -->';
@@ -23,10 +34,10 @@ function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
 	
 	if (!empty($nav)){
 		if ($nav["prevUrl"] != "")
-			echo '<div class="navPrevious"><a href="' . $nav["prevUrl"] . '"> ' .  $icons["prev"] . ' </a></div>';
+			echo '<div class="navPrevious"><a href="' . $nav["prevUrl"] . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
 
 		if ($nav["nextUrl"] != "")
-			echo '<div class="navNext"><a href="' . $nav["nextUrl"] . '"> ' . $icons["next"] . ' </a></div>';
+			echo '<div class="navNext"><a href="' . $nav["nextUrl"] . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
 
 		echo '</div><!--end nav wrapper-->';
 		echo '<!--end navigation arrows-->';
@@ -41,8 +52,8 @@ function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
 	echo '<div class="topRightWrapper">';
 	writeSearchBox();
 	
-	echo $icons["notification"];
-	echo $icons["user"];
+	echo '<div class="iconNotification"></div>';
+	echo '<div class="iconUser"></div>';
 	echo '</div><!--end topRightWrapper-->';
 	echo '</header><!--end header-->';
 		
@@ -96,6 +107,7 @@ function writeCourseInfoMenu(){
 	echo '<li><a href="#"><span>1/19/2015<br>2.D Module Feedback</a></li>';
 	echo '<li><a href="#"><span>1/19/2015<br>3. Bending of Beams</span></a></li>';
 	echo '</ul></li><!--end sub list-->';
+	echo '<li><a href="#"><div class="iconHelp"></div></a></li>';
 	echo '</ul><!--end big list-->';
 	echo '</div>';
 	echo '</div>';

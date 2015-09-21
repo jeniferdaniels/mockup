@@ -54,8 +54,8 @@ $iconFileTypeExcelSmall = "<i class='fa fa-file-excel-o'></i>";
 $iconFileTypeExcelMedium = "<i class='fa fa-file-excel-o fa-lg'></i>";
 
 
-$iconNavPrevious = "<i class='fa fa-angle-left fa-5x'></i>";
-$iconNavNext = "<i class='fa fa-angle-right fa-5x'></i>";
+//$iconNavPrevious = "<i class='fa fa-angle-left fa-5x'></i>";
+//$iconNavNext = "<i class='fa fa-angle-right fa-5x'></i>";
 
 
 $iconTwistyExpandedLarge = "<i class='fa fa-angle-double-down liteGray fa-2x'></i>";

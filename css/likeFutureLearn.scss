@@ -176,18 +176,22 @@ h1, h2, h3, h4, h5, h6, p{
 .navPrevious, .navNext{
     position:fixed;
 	vertical-align: middle;
+	//background-repeat: no-repeat;
+	//width: 40px;
+	//background-image: url("../images/style1/chevron3.svg");
 	top: 50%;
-	a{
+	& a{
 		color: $darkGray;
 	}
 	
-	a:hover{
+	& a:hover{
 		color: $hotPink;
 	}
 }
 
 .navPrevious{
     left: 5px;
+	//transform: scaleX(-1);
 }
 
 .navNext{
@@ -202,10 +206,37 @@ h1, h2, h3, h4, h5, h6, p{
 .moduleProgressBar{
 	border: none;
 	width: $moduleProgressBarWidth;
-	height: 20px; 
+	height: 15px; 
+	margin: 50px auto;
 	background-color: $liteGray;
 	border: 1px solid orange;
 	display: block;
+	-webkit-appearance: none;
+
+	&::webkit-progress-bar {
+		background: black;
+		border-radius: 50px;
+		padding: 2px;
+		box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	
+		&-value{
+			border-radius: 50px;
+			box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+			background:
+				-webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
+				-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+				-webkit-linear-gradient(left, #ba7448, #c4672d);
+			
+			/* Looks great, now animating it */
+			background-size: 25px 14px, 100% 100%, 100% 100%;
+			-webkit-animation: move 5s linear 0 infinite;
+		}
+	}
+}
+
+@-webkit-keyframes move {
+	0% {background-position: 0px 0px, 0 0, 0 0}
+	100% {background-position: -100px 0px, 0 0, 0 0}
 }
 
 .moduleProgressWrapper{
@@ -214,6 +245,7 @@ h1, h2, h3, h4, h5, h6, p{
 	margin-right: 20px;
 	float: right;
 }
+
 
 .moduleProgressTitle{
 	font-size: .8rem;
@@ -235,10 +267,11 @@ h1, h2, h3, h4, h5, h6, p{
 	padding: 0 20px 0 20px;
 }
 #search{
-	background-image: url("../images/search.svg");
-	background-size: 15px 15px;
+	background-image: url("../images/style1/search.svg");
+	background-size: 20px 20px;
 	background-repeat: no-repeat;
-	background-position: right;
+	background-position: calc(100% - 5px);
+	fill: $liteGray;
 	height: 25px;
 	width: 200px;
 	margin: 0 10px 0 10px;
@@ -254,66 +287,50 @@ h1, h2, h3, h4, h5, h6, p{
 	top: 30px;
 	right: 10px;
 	text-align: right;
+	vertical-align: bottom;
 }
 
 .iconNotification, .iconUser{
-	padding: 0 10px 0 10px;
+	padding: 0 5px 0 5px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	display:inline-block;
+	height: 20px;
+	width: 20px;
+	vertical-align: bottom;
 }
 
-
-.listCourseInfoMenu{
-	list-style: none;
-	padding: 0 0 0 5px;
+.iconNotification{
+	background-image: url("../images/style1/notification.svg");
 }
 
-.courseInfoMenu{
-	/*&Icon{
-		background-image: url("../images/information.svg");
-		background-size: 25px 25px;
-		background-repeat: no-repeat;
-		background-position: right top;
-		height: 25px;
-		width: 25px;
-		margin-left: auto;
-		display:block;
-	}
-	
-	/*&Wrapper{
-		background-color: $liteGray;
-		width: 30px;
-		margin: 10px 10px 10px 0;
-		padding: 3px;
-		//border: 1px solid green;
-		border: 1px solid $mediumGray;
-		border-left: 0;
-		
-		&:hover{
-			background-color: $xLiteGray;
-		}		
-	}
-	*/
+.iconUser{
+	background-image: url("../images/style1/user.svg");
 }
 
-.iconCourseInfo, .iconHelp, .iconUpcoming{
+.iconCourseInfo, .iconUpcoming, .iconHelp{
 	display: block;
 	background-size: 25px 25px;
 	background-repeat: no-repeat;
 	height: 25px;
 	width: 25px;
-	padding: 0;
+	margin-right: 3px;
 }
 
 .iconCourseInfo{
-	background-image: url("../images/information.svg");
-}
-
-.iconHelp{
-	background-image: url("../images/help.svg");	
+	background-image: url("../images/style1/info.svg");
+	//background-size: 30px 30px;
 }
 
 .iconUpcoming{
-	background-image: url("../images/alarmClock.svg");	
+	background-image: url("../images/style1/alarm.svg");	
 }
+
+.iconHelp{
+	background-image: url("../images/style1/help.svg");	
+}
+
+
 
 /* Base CSS */
 #cssmenu {
@@ -441,9 +458,23 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 
+.cssChanger{
+	position:fixed;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	@include roundedBorderWithBoxShadow;
+	border: 1px solid $darkGray;
+	padding-left: 10px;
+	& ul{
+		list-style: none; 
+		padding:0;
+		}
+
+}
 
 
-
+//////////////////////////////////////////////////
 
 
 @media screen and (max-width: 1200px){

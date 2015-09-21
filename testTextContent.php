@@ -1,12 +1,12 @@
 <?PHP include_once 'iconVariables.php' ?>
 <?PHP include_once 'mockupFunctions.php' ?>
-<?PHP 
+
+<?PHP
 	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
-
+	
+	
 	$icons = array (
-		"prev" 			=> $iconNavPrevious,
-		"next" 			=> $iconNavNext,
 		"menu" 			=> $iconHamburgerMenu,
 		"notification" 	=> $iconNotification,
 		"user" 			=> $iconUser			
@@ -33,10 +33,11 @@
 	
 	<body>
 		<?php writeTop($icons, $nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
-		
+		<?php writeCssChanger('testTextContent.php'); ?>
+
 			
 		<div class="moduleProgressWrapper">
-			<progress class="moduleProgressBar" value="30" max="100"></progress>
+			<progress class="moduleProgressBar" value="30" max="100" title="30%"></progress>
 			<div class="moduleProgressTitle">Module Progress</div>
 		</div>
 	

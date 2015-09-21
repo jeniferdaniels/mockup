@@ -5,8 +5,6 @@
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 
 	$icons = array (
-		"prev" 			=> $iconNavPrevious,
-		"next" 			=> $iconNavNext,
 		"menu" 			=> $iconHamburgerMenu,
 		"notification" 	=> $iconNotification,
 		"user" 			=> $iconUser			
