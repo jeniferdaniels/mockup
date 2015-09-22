@@ -2,9 +2,11 @@
 //include_once $_SERVER['DOCUMENT_ROOT'] . "/lib/htmlLawed/htmLawed.php";	//use document root incase the directory of this page moves
 //TODO: rewrite the html formatting
 
-function writeCssChanger($page)
+function writeCssChanger($page, $css)
 {
+	
 	echo '<div class="cssChanger">';
+	echo '<small>Current css = ' . $css. '</small>';
 	echo '<ul>';
 	echo '<li><a href="'. $page . '?css=style1.css">Style 1</a></li>';
 	echo '<li><a href="'. $page . '?css=oduColors.css">Style 2</a></li>';
@@ -34,10 +36,10 @@ function writeTop($nav, $courseTitle, $breadCrumbs){
 	
 	if (!empty($nav)){
 		if ($nav["prevUrl"] != "")
-			echo '<div class="navPrevious"><a href="' . $nav["prevUrl"] . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
+			echo '<div class="navPrevious"><a href="' . $nav["prevUrl"] . '"><div class="fa fa-angle-left fa-5x"></div><div class="fa fa-caret-left fa-5x"></div></a></div>';
 
 		if ($nav["nextUrl"] != "")
-			echo '<div class="navNext"><a href="' . $nav["nextUrl"] . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
+			echo '<div class="navNext"><a href="' . $nav["nextUrl"] . '"><div class="fa fa-angle-right fa-5x"></div><div class="fa fa-caret-right fa-5x"></div></a></div>';
 
 		echo '</div><!--end nav wrapper-->';
 		echo '<!--end navigation arrows-->';
