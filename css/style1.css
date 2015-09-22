@@ -7,7 +7,8 @@ body {
   font-size: 1rem;
   margin: 0;
   padding: 0;
-  border-top: 10px solid #003767; }
+  border-top: 10px solid #003767;
+  background-color: white; }
 
 a {
   color: #ff0080;
@@ -24,7 +25,8 @@ pre {
 
 header {
   border-bottom: 1px solid #7d7d7d;
-  height: 50px; }
+  height: 50px;
+  background-color: white; }
 
 .listTopic a, .listSubTopic a, .breadCrumbs a {
   color: #1778a9; }
@@ -66,7 +68,9 @@ header {
 .contentWrapper {
   width: 1000px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  background-color: white;
+  padding: 10px; }
 
 .column50Percent {
   width: 49.5%;
@@ -102,6 +106,9 @@ h1, h2, h3, h4, h5, h6, p {
 
 .navNext {
   right: 5px; }
+
+.fa-caret-left, .fa-caret-right {
+  display: none; }
 
 .navWrapper {
   width: 99%;
@@ -227,7 +234,7 @@ h1, h2, h3, h4, h5, h6, p {
         position: relative;
         z-index: 399;
         cursor: default;
-        background: #fafafa;
+        background: rgba(23, 120, 169, 0.2);
         color: black; }
         #courseMenu ul li:hover > ul {
           visibility: visible; }

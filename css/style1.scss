@@ -1,4 +1,5 @@
 //COLORS
+$xxLiteGray: rgba(250, 250, 250, 0.1);
 $xLiteGray: rgba(250, 250, 250, 1);
 $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
@@ -13,6 +14,7 @@ $liteYellow: rgba(254,239,179, 1);
 $limeGreen: rgba(174,203,54, 1);
 //$green: #99CC33;
 $green: #2ECC71;
+$xLiteBlue: rgba(23,120,169,0.2);
 $liteBlue: #1778a9;
 $mediumBlue:#083657;
 $darkBlue: #062c8c;
@@ -68,6 +70,7 @@ body{
 	margin: 0;
 	padding: 0;
 	border-top: 10px solid $monarchBlue;
+	background-color: white;
 }
 
 a{
@@ -93,6 +96,7 @@ pre{
 header{
 	border-bottom: 1px solid $mediumGray;
 	height: 50px;
+	background-color: white;
 }
 
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
@@ -158,6 +162,8 @@ header{
 	//border: 1px solid blue;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: white;
+	padding: 10px;
 }
 
 .column50Percent{
@@ -208,6 +214,11 @@ h1, h2, h3, h4, h5, h6, p{
 .navNext{
     right: 5px;
 }
+
+.fa-caret-left, .fa-caret-right{
+	display: none;
+}
+
 
 .navWrapper{
 	width:99%;
@@ -358,7 +369,7 @@ h1, h2, h3, h4, h5, h6, p{
 				position: relative; 
 				z-index: 399; 
 				cursor: default;
-				background: $xLiteGray; 
+				background: $xLiteBlue; 
 				color: black;
 				& > ul { 
 					visibility: visible;
