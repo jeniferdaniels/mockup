@@ -35,7 +35,7 @@
 	
 	<body>
 		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
-		<?php writeCssChanger('testVideoContent.php'); ?>
+		<?php writeCssChanger('testVideoContent.php', $css); ?>
 			
 		<div class="moduleProgressWrapper">
 			<progress class="moduleProgressBar" value="30" max="100"></progress>
