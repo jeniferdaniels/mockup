@@ -6,7 +6,7 @@ function writeCssChanger($page)
 {
 	echo '<div class="cssChanger">';
 	echo '<ul>';
-	echo '<li><a href="'. $page . '?css=likeFutureLearn.css">Style 1</a></li>';
+	echo '<li><a href="'. $page . '?css=style1.css">Style 1</a></li>';
 	echo '<li><a href="'. $page . '?css=oduColors.css">Style 2</a></li>';
 	echo '<li><a href="'. $page . '?css=style3.css">Style 3</a></li>';
 	echo '</ul></div>';
@@ -28,7 +28,7 @@ function writeHead($pageTitle, $css){
 	echo "\r\n";
 }
 				
-function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
+function writeTop($nav, $courseTitle, $breadCrumbs){
 	echo '<!--navigation arrows -->';
 	echo '<div class="navWrapper">';
 	
@@ -46,14 +46,16 @@ function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
 	echo '<!--header-->';
 	echo '<header>';
 	//echo $icons["menu"];
-	echo '<div class="oduIcon"></div>';
+	//echo '<div class="oduIcon"></div>';
+	echo '<div class="topLeftWrapper">';
 	echo '<h1 class="courseTitle">' . $courseTitle . '</h1>';
+	echo '</div><!--end left wrapper-->';
 	
 	echo '<div class="topRightWrapper">';
 	writeSearchBox();
 	
-	echo '<div class="iconNotification"></div>';
-	echo '<div class="iconUser"></div>';
+	echo '<i class="fa fa-bell fa-2x headIcon"></i>';
+	echo '<i class="fa fa-user fa-2x headIcon"></i>';
 	echo '</div><!--end topRightWrapper-->';
 	echo '</header><!--end header-->';
 		
@@ -64,7 +66,7 @@ function writeTop($icons, $nav, $courseTitle, $breadCrumbs){
 		echo '<ul class="breadCrumbs">';
 		
 			//stop short of last item because it will be text instead of a link
-			for ($i = 0; $i < count($breadCrumbs); $i++)
+			for ($i = 0; $i < count($breadCrumbs)-1; $i++)
 			{
 				echo '<li><a href="' . $breadCrumbs[$i]["url"] . '">' . $breadCrumbs[$i]["title"] . '</a>&nbsp;</li>';
 			}
@@ -91,42 +93,33 @@ function writeSearchBox(){
 
 function writeCourseInfoMenu(){
 	echo '<div class="lhsMenuWrapper">';
-	echo '<div id="cssmenu">';
+	echo '<div id="courseMenu">';
 	echo '<ul>';
-	echo '<li><a href="#"><div class="iconCourseInfo"></div></a>';
+	echo '<li class="clearHover"><a href="#" class="courseMenuIcon clearHover"></a>';
     echo '<ul>';
 	echo '<li><a href="#"><span>Faculty</span></a></li>';
 	echo '<li><a href="#"><span>Syllabus</span></a></li>';
 	echo '<li><a href="#"><span>Schedule</span></a></li>';
 	echo '<li><a href="#"><span>Assignments</span></a></li>';
-	echo '</ul></li><!--end sub list-->';
-	//echo '<li><a href="#"><div class="iconHelp"></div></a></li>';
-	echo '<li><a href="#"><div class="iconUpcoming"></div></a>';
-	echo '<ul>';
-	echo '<li><a href="#"><span>1/18/2015<br>2.C Homework #1</span></a></li>';
-	echo '<li><a href="#"><span>1/19/2015<br>2.D Module Feedback</a></li>';
-	echo '<li><a href="#"><span>1/19/2015<br>3. Bending of Beams</span></a></li>';
-	echo '</ul></li><!--end sub list-->';
-	echo '<li><a href="#"><div class="iconHelp"></div></a></li>';
+	echo '<li><a href="#"><span>Help</help></a></li>';
 	echo '</ul><!--end big list-->';
-	echo '</div>';
+	echo '</ul></div>';
 	echo '</div>';
 
 }
 
 
-function writeToggleBox($boxTitle, $isCollapsed, $isComplete){
+function writeToggleBox($boxTitle, $content, $isCollapsed, $isComplete, $css){
 	echo '<div class="boxWrapper">';
 	$boxDivTag = '<div class="toggleBox ';
-	$twistyDivTag = '<div class="twisty ';
-	
+
 	if ($isCollapsed){
 		$boxDivTag .= 'collapsed ';
-		$twistyDivTag .= ' collapsed ';
+		$twisty = "<i class='fa fa-angle-double-right fa-lx'> </i>";
 	}
 	else{
 		$boxDivTag .= 'expanded ';
-		$twistyDivTag .= ' expanded ';
+		$twisty = "<i class='fa fa-angle-double-down fa-lx'> </i>";
 	}
 	
 	if ($isComplete){
@@ -142,8 +135,16 @@ function writeToggleBox($boxTitle, $isCollapsed, $isComplete){
 	
 	echo $icon;
 	echo $boxDivTag;
-	echo '<a href="#">' . $boxTitle . '</a>';
-	echo '</div></div>';
+	echo '<a href="#" class="boxTitle">' . $twisty . ' ' . $boxTitle . '</a>';
+	
+	if  ($content != ""){
+		echo '<div>';
+		include $content;
+		echo '</div>';
+	}
+	
+	echo '</div><!--end toggleBox-->';
+	echo  '</div><!--end wrapper-->';
 }
 
 
