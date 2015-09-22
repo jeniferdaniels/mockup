@@ -6,13 +6,15 @@ body {
   color: #141414;
   font-size: 1rem;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  border-top: 10px solid #003767; }
 
 a {
   color: #ff0080;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all 0.5s ease; }
   a:hover, a:visited:hover {
-    color: #10a0c9;
+    color: #083657;
     text-decoration: underline dotted; }
   a:visited {
     color: #ff0080; }
@@ -20,12 +22,16 @@ a {
 pre {
   word-wrap: break-word; }
 
+header {
+  border-bottom: 1px solid #7d7d7d;
+  height: 50px; }
+
 .listTopic a, .listSubTopic a, .breadCrumbs a {
-  color: #10a0c9; }
+  color: #1778a9; }
 .listTopic a:hover, .listTopic a:visited:hover, .listSubTopic a:hover, .listSubTopic a:visited:hover, .breadCrumbs a:hover, .breadCrumbs a:visited:hover {
   color: #062c8c; }
 .listTopic a:visited, .listSubTopic a:visited, .breadCrumbs a:visited {
-  color: #ff0080; }
+  color: #8349ff; }
 
 .urgent {
   color: #e74c3c; }
@@ -79,7 +85,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .courseTitle {
   padding-left: 10px;
-  color: #062c8c;
+  color: #141414;
   display: inline-block; }
 
 .navPrevious, .navNext {
@@ -140,14 +146,15 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
   width: 110px; }
 
-.oduIcon {
-  background-image: url("../images/oduOnlineLogo.png");
-  background-repeat: no-repeat;
-  background-size: 165px  62px;
-  height: 62px;
-  width: 165px;
-  vertical-align: bottom; }
-
+/*.oduIcon{
+	background-image: url("../images/oduOnlineLogo.png");
+	background-repeat: no-repeat;
+	background-size: 165px  62px;
+	height: 62px;
+	width: 165px;
+	vertical-align: bottom;
+}
+*/
 .searchWrapper {
   display: inline-block;
   padding: 0 20px 0 20px; }
@@ -160,97 +167,92 @@ h1, h2, h3, h4, h5, h6, p {
   fill: #c8c8c8;
   height: 25px;
   width: 200px;
-  margin: 0 10px 0 10px;
+  margin: 5px 10px 0 10px;
   padding: 0 25px 0 5px;
   border: 1px solid #141414; }
+
+.topLeftWrapper {
+  display: inline-block;
+  margin-left: 10px; }
 
 .topRightWrapper {
   display: inline-block;
   float: right;
   position: relative;
-  top: 30px;
+  top: 3px;
   right: 10px;
   text-align: right;
-  vertical-align: bottom; }
+  vertical-align: top;
+  margin-right: 10px; }
 
-.iconNotification, .iconUser {
-  padding: 0 5px 0 5px;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
+.headIcon {
+  padding: 0 7px 0 7px;
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  vertical-align: bottom; }
+  font-size: 1.5rem;
+  vertical-align: bottom;
+  color: #c8c8c8; }
+  .headIcon:hover {
+    color: #083657; }
 
-.iconNotification {
-  background-image: url("../images/style1/notification.svg"); }
-
-.iconUser {
-  background-image: url("../images/style1/user.svg"); }
-
-.iconCourseInfo, .iconUpcoming, .iconHelp {
-  display: block;
-  background-size: 25px 25px;
-  background-repeat: no-repeat;
-  height: 25px;
-  width: 25px;
-  margin-right: 3px; }
-
-.iconCourseInfo {
-  background-image: url("../images/style1/info.svg"); }
-
-.iconUpcoming {
-  background-image: url("../images/style1/alarm.svg"); }
-
-.iconHelp {
-  background-image: url("../images/style1/help.svg"); }
-
-/* Base CSS */
-#cssmenu {
+#courseMenu {
   padding: 0;
   margin: 0;
   border: 0; }
-  #cssmenu ul, #cssmenu ul li, #cssmenu ul ul {
+  #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
     list-style: none;
     margin: 0;
     padding: 0;
     border: 0; }
-  #cssmenu ul {
+  #courseMenu ul {
     position: relative;
     z-index: 397;
     width: 35px;
     background: white; }
-    #cssmenu ul a {
+    #courseMenu ul a {
       color: black; }
-      #cssmenu ul a:visited {
-        color: #000;
+      #courseMenu ul a:visited {
+        color: black;
         text-decoration: none; }
-      #cssmenu ul a:hover {
-        color: #000; }
-      #cssmenu ul a:active {
-        color: #ffa500; }
-    #cssmenu ul li {
+      #courseMenu ul a:hover {
+        color: #083657; }
+      #courseMenu ul a:active {
+        color: black; }
+    #courseMenu ul li {
       min-height: 1px;
       line-height: 1em;
       vertical-align: middle;
       padding: 7px 10px;
       color: #000; }
-      #cssmenu ul li:hover {
+      #courseMenu ul li:hover {
         position: relative;
         z-index: 399;
         cursor: default;
         background: #fafafa;
         color: black; }
-        #cssmenu ul li:hover > ul {
+        #courseMenu ul li:hover > ul {
           visibility: visible; }
-    #cssmenu ul ul {
+    #courseMenu ul ul {
       visibility: hidden;
       position: absolute;
-      top: 0px;
+      top: 10px;
       left: 99%;
       z-index: 398;
-      width: 200px;
-      border: 1px solid #c8c8c8; }
+      width: 100px;
+      border: 1px solid #c8c8c8;
+      margin-left: 25px; }
+
+.clearHover:hover {
+  background-color: white !important; }
+
+.courseMenuIcon {
+  padding: 0;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  vertical-align: bottom;
+  background-image: url("../images/style1/courseMenu.svg"); }
 
 .lhsMenuWrapper {
   display: inline;
@@ -262,13 +264,8 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 10px;
   padding: 10px;
   display: inline-block; }
-  .toggleBox:hover {
-    border-radius: 2px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05); }
   .toggleBox.collapsed {
-    height: 30px; }
-  .toggleBox.expanded {
-    height: 100px; }
+    min-height: 30px; }
   .toggleBox.complete {
     background-color: #fafafa; }
     .toggleBox.complete:hover {
@@ -279,8 +276,9 @@ h1, h2, h3, h4, h5, h6, p {
     .toggleBox.incomplete:hover {
       background-color: rgba(254, 239, 179, 0.05); }
   .toggleBox a {
-    font-size: 1.3rem;
     color: #141414; }
+    .toggleBox a.boxTitle {
+      font-size: 1.4rem; }
 
 .boxWrapper {
   padding-top: 20px; }
@@ -313,6 +311,24 @@ h1, h2, h3, h4, h5, h6, p {
     list-style: none;
     padding: 0; }
 
+.moduleContentList {
+  margin-top: 10px;
+  list-style: none;
+  font-size: 1.1rem; }
+  .moduleContentList li {
+    padding-top: 3px; }
+    .moduleContentList li ul {
+      list-style: none; }
+
+time {
+  font-size: 1rem; }
+
+.fa-calendar, .fa-check-circle {
+  padding-right: 3px; }
+
+.hidden {
+  visibility: hidden; }
+
 @media screen and (max-width: 1200px) {
   .contentWrapper {
     width: 800px; } }
@@ -327,4 +343,4 @@ h1, h2, h3, h4, h5, h6, p {
   iframe .breadcrumb, iframe #video-container, iframe .container-fluid {
     display: none; } }
 
-/*# sourceMappingURL=likeFutureLearn.css.map */
+/*# sourceMappingURL=style1.css.map */
