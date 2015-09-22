@@ -3,22 +3,19 @@
 <?PHP 
 	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
-
-	$icons = array (
-		"menu" 			=> $iconHamburgerMenu,
-		"notification" 	=> $iconNotification,
-		"user" 			=> $iconUser			
-	);
-
+	$pageTitle = "1.2.2 Defining Engineering and the Design Process";
+	
 	$nav = array(
 		"prevUrl" 	=> 'testTextContent.php?css=' . $css ,
 		"nextUrl" 	=> ''
 	);
 
 	$breadCrumbs = array (
-		array ("url" => "testModuleList.php?css=". $css, "title" => 'Home'),
-		array ("url" => "something", "title" => "2. Fundamental Principles"),
-		array ("url" => "somethingElse", "title" => "2.1. Design of Machine Elements")
+		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
+		array ("url" => "something", "title" => "1. Fundamental Principles"),
+		array ("url" => "somethingElse", "title" => "1.2 Course Introduction and Statistical Equilibrium"),
+		array ("url" => "somethingElse", "title" => $pageTitle)
+		
 	);
 	
 ?>
@@ -27,6 +24,7 @@
 <html>
 	<head>
 		<?php writeHead('Test Video Content', $css); ?>
+		
 		<script>
 			//shortcut.add("Ctrl+P",function() {
 			//alert("Hi there!");
@@ -36,17 +34,17 @@
 	</head>
 	
 	<body>
-		<?php writeTop($icons, $nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
-		
+		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
+		<?php writeCssChanger('testVideoContent.php'); ?>
 			
 		<div class="moduleProgressWrapper">
 			<progress class="moduleProgressBar" value="30" max="100"></progress>
 			<div class="moduleProgressTitle">Module Progress</div>
 		</div>
 	
-		<div class="contentWrapper" id="contentWrapper" style="width:1200px">
+		<div class="contentWrapper" id="contentWrapper">
 			
-			<h2 class="contentTitle">2.2.2 Defining Engineering and the Design Process</h2>
+			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
 
 			
 			<div id="videoAndTranscriptWrapper" class="videoAndTranscriptWrapper">
@@ -55,7 +53,7 @@
 				</video> 
 
 				<div id="transcript" class="transcript" style="display:none">
-					<?php include_once "transcript.html" ?>	
+					<?php include_once "transcript.php" ?>	
 				</div>
 	
 
@@ -74,10 +72,8 @@
 			function makeRoomForTranscript(){
 
 				document.getElementById("contentWrapper").style.width = "1200px";
-				document.getElementById("transcript").style = 'transcript';
 				document.getElementById("toggleTranscript").innerHTML = "Hide Transcript";
-				
-
+				document.getElementById("transcript").removeAttribute("style");  //weird work around to remove display:none above in chrome
 				}
 		
 		
