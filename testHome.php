@@ -60,7 +60,7 @@
 	<body>
 		<?php writeTop("", 'MET 320 - Design of Machine Elements', ""); ?>
 		<?php writeCourseInfoMenu() ?>
-		<?php writeCssChanger('testHome.php'); ?>
+		<?php writeCssChanger('testHome.php', $css); ?>
 		
 		
 		<div class="contentWrapper">

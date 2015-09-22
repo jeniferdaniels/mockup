@@ -29,7 +29,7 @@
 	
 	<body>
 		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
-		<?php writeCssChanger('testTextContent.php'); ?>
+		<?php writeCssChanger('testTextContent.php', $css); ?>
 
 			
 		<div class="moduleProgressWrapper">
