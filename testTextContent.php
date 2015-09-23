@@ -33,7 +33,7 @@
 
 			
 		<div class="moduleProgressWrapper">
-			<progress class="moduleProgressBar" value="30" max="100" title="30%"></progress>
+			<progress class="moduleProgressBar" value="30" max="100" title="30%" id="moduleProgressBar"></progress>
 			<div class="moduleProgressTitle">Module Progress</div>
 		</div>
 	

@@ -114,42 +114,50 @@ h1, h2, h3, h4, h5, h6, p {
   width: 99%;
   height: 100%; }
 
-.moduleProgressBar {
-  border: none;
-  width: 100px;
-  height: 15px;
-  margin: 50px auto;
-  background-color: #c8c8c8;
-  border: 1px solid orange;
-  display: block;
-  -webkit-appearance: none; }
-  .moduleProgressBar::webkit-progress-bar {
-    background: black;
-    border-radius: 50px;
-    padding: 2px;
-    box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2); }
-    .moduleProgressBar::webkit-progress-bar-value {
-      border-radius: 50px;
-      box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-      background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #ba7448, #c4672d);
-      /* Looks great, now animating it */
-      background-size: 25px 14px, 100% 100%, 100% 100%;
-      -webkit-animation: move 5s linear 0 infinite; }
+/*
+.moduleProgressBar{
+	border: none;
+	width: $moduleProgressBarWidth;
+	height: 15px; 
+	margin: 50px auto;
+	background-color: $liteGray;
+	border: 1px solid orange;
+	display: block;
+	-webkit-appearance: none;
+
+	&::webkit-progress-bar {
+		background: black;
+		border-radius: 50px;
+		padding: 2px;
+		box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	
+		&-value{
+			border-radius: 50px;
+			box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+			background:
+				-webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
+				-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+				-webkit-linear-gradient(left, #ba7448, #c4672d);
+			
+			/* Looks great, now animating it 
+			background-size: 25px 14px, 100% 100%, 100% 100%;
+			-webkit-animation: move 5s linear 0 infinite;
+		}
+	}
+}
 
 @-webkit-keyframes move {
-  0% {
-    background-position: 0px 0px, 0 0, 0 0; }
-  100% {
-    background-position: -100px 0px, 0 0, 0 0; } }
+	0% {background-position: 0px 0px, 0 0, 0 0}
+	100% {background-position: -100px 0px, 0 0, 0 0}
+}
+*/
 .moduleProgressWrapper {
-  border: 1px solid green;
   width: 110px;
   margin-right: 20px;
   float: right; }
 
 .moduleProgressTitle {
   font-size: .8rem;
-  border: 1px solid red;
   text-align: center;
   width: 110px; }
 
@@ -306,6 +314,7 @@ h1, h2, h3, h4, h5, h6, p {
   border: 1px solid #7d7d7d; }
 
 .cssChanger {
+  background-color: white;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -338,10 +347,28 @@ time {
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {
-    width: 800px; } }
-@media screen and (max-width: 800px) {
-  .contentWrapper {
-    width: 600px; } }
+    width: 900px; } }
+@media screen and (max-width: 1024px) {
+  .contentWrapper, .toggleBox {
+    width: 700px; } }
+@media screen and (max-width: 768px) {
+  .contentWrapper, .toggleBox {
+    width: 500px; }
+
+  .courseTitle {
+    font-size: 1.5rem;
+    margin-left: 50px; }
+
+  .topRightWrapper {
+    display: none; }
+
+  #courseMenu {
+    position: fixed;
+    top: 3px;
+    left: 5px; }
+
+  .breadCrumbs {
+    display: none; } }
 @media print {
   nav, #cssMenu, .lhsMenuWrapper, .moduleProgressWrapper,
   .topRightWrapper, .navWrapper {
@@ -349,5 +376,14 @@ time {
 
   iframe .breadcrumb, iframe #video-container, iframe .container-fluid {
     display: none; } }
+#moduleProgressBar {
+  background: #c8c8c8 none repeat scroll 0 0;
+  border-radius: 5px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: 0;
+  width: 100px; }
 
 /*# sourceMappingURL=style1.css.map */

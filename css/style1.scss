@@ -56,7 +56,11 @@ $link-color-topic-visited: $darkPurple;
 @mixin boxShadow{
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
-
+@mixin rounded{
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+}
 
 html{
 	font-size: 82%;
@@ -225,6 +229,7 @@ h1, h2, h3, h4, h5, h6, p{
 	height:100%;
 }
 
+/*
 .moduleProgressBar{
 	border: none;
 	width: $moduleProgressBarWidth;
@@ -249,7 +254,7 @@ h1, h2, h3, h4, h5, h6, p{
 				-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
 				-webkit-linear-gradient(left, #ba7448, #c4672d);
 			
-			/* Looks great, now animating it */
+			/* Looks great, now animating it 
 			background-size: 25px 14px, 100% 100%, 100% 100%;
 			-webkit-animation: move 5s linear 0 infinite;
 		}
@@ -260,9 +265,10 @@ h1, h2, h3, h4, h5, h6, p{
 	0% {background-position: 0px 0px, 0 0, 0 0}
 	100% {background-position: -100px 0px, 0 0, 0 0}
 }
+*/
 
 .moduleProgressWrapper{
-	border: 1px solid green;
+	//border: 1px solid green;
 	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
 	float: right;
@@ -271,7 +277,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 .moduleProgressTitle{
 	font-size: .8rem;
-	border: 1px solid red;
+	//border: 1px solid red;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
 }
@@ -481,6 +487,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 
 .cssChanger{
+	background-color: white;
 	position:fixed;
 	bottom: 0;
 	right: 0;
@@ -527,19 +534,42 @@ time{
 
 @media screen and (max-width: 1200px){
 	.contentWrapper{
-		width:800px;
+		width:900px;
 	}
 
 }
 
 
-@media screen and (max-width: 800px){
-	.contentWrapper{
-		width:600px;
+@media screen and (max-width: 1024px){
+	.contentWrapper, .toggleBox{
+		width:700px;
 	}
-
+	
 }
 
+@media screen and (max-width: 768px){
+	.contentWrapper, .toggleBox{
+		width:500px;
+	}
+	.courseTitle{
+		font-size: 1.5rem;
+		margin-left: 50px;
+	}
+
+	.topRightWrapper{
+		display: none;
+	}
+	
+	#courseMenu {
+		position: fixed;
+		top: 3px;
+		left: 5px;
+	}
+	
+	.breadCrumbs{
+		display:none;
+	}
+}
 
 
 
@@ -559,3 +589,17 @@ time{
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#moduleProgressBar {
+    background: $liteGray none repeat scroll 0 0;
+    border-radius: 5px;
+    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+	border: 0;
+	width:100px;
+}
