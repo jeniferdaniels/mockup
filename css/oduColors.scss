@@ -37,7 +37,7 @@ $moduleProgressBarWidth: 100px;
 $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
 
-$font-stack: "Questrial", sans-serif;
+$font-stack: "Open-Sans", sans-serif;
 $font-color: $darkGray; 
 $link-color: $liteBlue;
 $link-color-hover: $liteBlue;
@@ -149,7 +149,7 @@ header{
 
 .moduleProgress{
 	padding: 0 20px 0 0;
-	border: 1px solid green;
+	//border: 1px solid green;
 	float: right;
 }
 
@@ -220,44 +220,8 @@ h1, h2, h3, h4, h5, h6, p{
 	height:100%;
 }
 
-.moduleProgressBar{
-	border: none;
-	width: $moduleProgressBarWidth;
-	height: 15px; 
-	margin: 50px auto;
-	background-color: $liteGray;
-	border: 1px solid orange;
-	display: block;
-	-webkit-appearance: none;
-
-	&::webkit-progress-bar {
-		background: black;
-		border-radius: 50px;
-		padding: 2px;
-		box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
-	
-		&-value{
-			border-radius: 50px;
-			box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-			background:
-				-webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
-				-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
-				-webkit-linear-gradient(left, #ba7448, #c4672d);
-			
-			/* Looks great, now animating it */
-			background-size: 25px 14px, 100% 100%, 100% 100%;
-			-webkit-animation: move 5s linear 0 infinite;
-		}
-	}
-}
-
-@-webkit-keyframes move {
-	0% {background-position: 0px 0px, 0 0, 0 0}
-	100% {background-position: -100px 0px, 0 0, 0 0}
-}
-
 .moduleProgressWrapper{
-	border: 1px solid green;
+	//border: 1px solid green;
 	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
 	float: right;
@@ -266,7 +230,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 .moduleProgressTitle{
 	font-size: .8rem;
-	border: 1px solid red;
+	//border: 1px solid red;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
 }
@@ -546,8 +510,17 @@ time{
 }
 
 
+nav{
+	display: inline-block;
+}
 
+.top{
 
+}
+
+.oduLogo{
+	display:none;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -564,3 +537,14 @@ time{
 	}
 }
 
+#moduleProgressBar {
+    background: $liteGray none repeat scroll 0 0;
+    border-radius: 5px;
+    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+	border: 0;
+	width:100px;
+}

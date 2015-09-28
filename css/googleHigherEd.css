@@ -23,9 +23,8 @@ pre {
   word-wrap: break-word; }
 
 header {
-  border-bottom: 1px solid #7d7d7d;
   height: 50px;
-  background-color: white; }
+  background-color: #fafafa; }
 
 .listTopic a, .listSubTopic a, .breadCrumbs a {
   color: #1778a9; }
@@ -56,8 +55,16 @@ header {
   .breadCrumbs > li {
     display: inline-block; }
 
-.oduIcon {
-  display: inline-block; }
+.oduLogo {
+  background-image: url("../images/oduOnlineLogo.png");
+  background-repeat: no-repeat;
+  background-size: 165px  62px;
+  height: 62px;
+  width: 165px;
+  vertical-align: bottom;
+  display: inline-block;
+  background-color: #fafafa;
+  fill: #fafafa; }
 
 .moduleProgress {
   padding: 0 20px 0 0;
@@ -94,8 +101,6 @@ h1, h2, h3, h4, h5, h6, p {
 .top {
   position: fixed;
   width: 100%;
-  background-color: white;
-  border-top: 10px solid #003767;
   top: 0;
   left: 0; }
 
@@ -337,9 +342,6 @@ time {
 
   .breadCrumbs {
     display: none; } }
-.oduLogo {
-  display: none; }
-
 @media print {
   nav, #cssMenu, .lhsMenuWrapper, .moduleProgressWrapper,
   .topRightWrapper, .navWrapper {
@@ -357,4 +359,4 @@ time {
   border: 0;
   width: 100px; }
 
-/*# sourceMappingURL=style1.css.map */
+/*# sourceMappingURL=googleHigherEd.css.map */

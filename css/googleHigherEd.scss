@@ -97,9 +97,9 @@ pre{
 
 
 header{
-	border-bottom: 1px solid $mediumGray;
+	//border-bottom: 1px solid $mediumGray;
 	height: 50px;
-	background-color: white;
+	background-color: $xLiteGray;
 }
 
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
@@ -150,9 +150,18 @@ header{
 	}
 }
 
-.oduIcon{
-	display: inline-block;
+.oduLogo{
+	background-image: url("../images/oduOnlineLogo.png");
+	background-repeat: no-repeat;
+	background-size: 165px  62px;
+	height: 62px;
+	width: 165px;
+	vertical-align: bottom;
+	display:inline-block;
+	background-color: $xLiteGray;
+	fill: $xLiteGray;
 }
+
 
 .moduleProgress{
 	padding: 0 20px 0 0;
@@ -197,8 +206,8 @@ h1, h2, h3, h4, h5, h6, p{
 .top{
 	position:fixed;
 	width:100%;
-	background-color: white;
-	border-top: 10px solid $monarchBlue;
+	//background-color: white;
+	//border-top: 10px solid $monarchBlue;
 	top: 0;
 	left: 0;
 }
@@ -545,9 +554,6 @@ time{
 	}
 }
 
-.oduLogo{
-	display:none;
-}
 
 
 
