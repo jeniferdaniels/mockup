@@ -48,7 +48,8 @@
 			"urlInProgress" => "",
 			"content" => "")
 		);
-			
+	
+		$showModuleProgress	= false;
 ?>
 
 <!doctype html>
@@ -58,8 +59,8 @@
 	</head>
 	
 	<body>
-		<?php writeTop("", 'MET 320 - Design of Machine Elements', ""); ?>
-		<?php writeCourseInfoMenu() ?>
+		<?php writeTop("", 'MET 320 - Design of Machine Elements', "", $showModuleProgress); ?>
+		
 		<?php writeCssChanger('testHome.php', $css); ?>
 		
 		

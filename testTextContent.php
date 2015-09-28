@@ -19,6 +19,8 @@
 		
 	);
 	
+	
+	$showModuleProgress = 1;
 ?>
 
 <!doctype html>
@@ -28,14 +30,11 @@
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
+		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress); ?>
 		<?php writeCssChanger('testTextContent.php', $css); ?>
 
 			
-		<div class="moduleProgressWrapper">
-			<progress class="moduleProgressBar" value="30" max="100" title="30%" id="moduleProgressBar"></progress>
-			<div class="moduleProgressTitle">Module Progress</div>
-		</div>
+
 	
 		<div class="contentWrapper">
 			

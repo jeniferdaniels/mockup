@@ -10,7 +10,7 @@ function writeCssChanger($page, $css)
 	echo '<ul>';
 	echo '<li><a href="'. $page . '?css=style1.css">Style 1</a></li>';
 	echo '<li><a href="'. $page . '?css=oduColors.css">Style 2</a></li>';
-	echo '<li><a href="'. $page . '?css=style3.css">Style 3</a></li>';
+	echo '<li><a href="'. $page . '?css=googleHigherEd.css">Style 3</a></li>';
 	echo '</ul></div>';
 	
 }
@@ -23,14 +23,13 @@ function writeHead($pageTitle, $css){
 	//echo '<script src="scripts/js/kbShortcuts.js"></script>';
 	//echo '<script src="scripts/js/jquery-2.1.3.min.js"></script>';
 
-
 	echo '<!--fonts from Adobe Typekit -->';
-	echo '<script src="https://use.typekit.net/scm3ciw.js"></script>';
+	echo '<script src="https://use.typekit.net/shs2gdc.js"></script>';
 	echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
 	echo "\r\n";
 }
 				
-function writeTop($nav, $courseTitle, $breadCrumbs){
+function writeTop($nav, $courseTitle, $breadCrumbs, $showModuleProgress){
 	echo '<!--navigation arrows -->';
 	echo '<div class="navWrapper">';
 	
@@ -45,11 +44,14 @@ function writeTop($nav, $courseTitle, $breadCrumbs){
 		echo '<!--end navigation arrows-->';
 	}
 
+	echo '<!--top-->';
+	echo '<div class="top">';
 	echo '<!--header-->';
 	echo '<header>';
 	//echo $icons["menu"];
 	//echo '<div class="oduIcon"></div>';
 	echo '<div class="topLeftWrapper">';
+	echo '<div class="oduLogo"></div>';
 	echo '<h1 class="courseTitle">' . $courseTitle . '</h1>';
 	echo '</div><!--end left wrapper-->';
 	
@@ -62,6 +64,7 @@ function writeTop($nav, $courseTitle, $breadCrumbs){
 	echo '</header><!--end header-->';
 		
 		
+	echo '<div class="topBottomWrapper">';
 	if (!empty($breadCrumbs))
 	{
 		echo '<nav>';
@@ -80,7 +83,16 @@ function writeTop($nav, $courseTitle, $breadCrumbs){
 		echo '</ul>';
 		echo '</nav><!--end navigation-->';
 	}
+	
+	if ($showModuleProgress){
+		echo '<div class="moduleProgressWrapper">';
+		echo '<progress class="moduleProgressBar" value="30" max="100" title="30%" id="moduleProgressBar"></progress>';
+		echo '<div class="moduleProgressTitle">Module Progress</div>';
+		echo '</div>';
+	}
+	echo "</div>";
 	writeCourseInfoMenu();
+	echo '</div>';
 }
 
 

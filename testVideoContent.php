@@ -18,6 +18,7 @@
 		
 	);
 	
+	$showModuleProgress	= true;
 ?>
 
 <!doctype html>
@@ -34,13 +35,8 @@
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs); ?>
+		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress); ?>
 		<?php writeCssChanger('testVideoContent.php', $css); ?>
-			
-		<div class="moduleProgressWrapper">
-			<progress class="moduleProgressBar" value="30" max="100"></progress>
-			<div class="moduleProgressTitle">Module Progress</div>
-		</div>
 	
 		<div class="contentWrapper" id="contentWrapper">
 			
