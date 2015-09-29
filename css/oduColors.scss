@@ -296,6 +296,10 @@ h1, h2, h3, h4, h5, h6, p{
 #courseMenu {
 	padding: 0; margin: 0; border: 0;
 	font-size: 0.9rem;
+		top: 100px;
+	left: 5px;
+	position: fixed;
+	
 	
 	& ul, & ul li, & ul ul {
 		list-style: none; 
@@ -478,9 +482,10 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 time{
-	font-size: 1rem;
+	font-size: .8rem;
+	font-style: italic;
+	color: $liteBlue;
 }
-
 .fa-calendar, .fa-check-circle{
 	padding-right: 3px;
 }

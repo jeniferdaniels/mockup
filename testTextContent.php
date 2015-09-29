@@ -7,15 +7,15 @@
 	$pageTitle = "1.2.1 Introduction to Design of Machine Elements";
 
 	$nav = array(
-		"prevUrl" 	=> 'testHome.php?css='. $css,		
+		"prevUrl" 	=> 'testTopicStartPage.php?css='. $css,		
 		"nextUrl" 	=> 'testVideoContent.php?css=' . $css
 	);
 
 	$breadCrumbs = array (
 		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "something", "title" => "1. Fundamental Principles"),
-		array ("url" => "somethingElse", "title" => "1.2 Course Introduction and Statistical Equilibrium"),
-		array ("url" => "somethingElse", "title" => $pageTitle)
+		array ("url" => "testHome.php?css=". $css, "title" => "1. Fundamental Principles"),
+		array ("url" => "testTopicStartPage.php?css=" .$css , "title" => "1.2 Course Introduction and Statistical Equilibrium"),
+		array ("url" => "", "title" => $pageTitle)
 		
 	);
 	
@@ -30,7 +30,7 @@
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress); ?>
+		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress,$css); ?>
 		<?php writeCssChanger('testTextContent.php', $css); ?>
 
 			

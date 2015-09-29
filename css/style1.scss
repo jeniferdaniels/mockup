@@ -16,7 +16,7 @@ $limeGreen: rgba(174,203,54, 1);
 $green: #2ECC71;
 $xLiteBlue: rgba(23,120,169,0.2);
 $liteBlue: #1778a9;
-$mediumBlue:#083657;
+$mediumBlue:rgba(68,136,246,1);
 $darkBlue: #062c8c;
 $monarchBlue: rgba(0, 55, 103, 1);
 //$litePurple: ;
@@ -63,7 +63,7 @@ $link-color-topic-visited: $darkPurple;
 }
 
 html{
-	font-size: 82%;
+	font-size: 85%;
 }
 
 body{
@@ -312,7 +312,9 @@ nav{
 	padding: 0; 
 	margin: 0; 
 	border: 0;
-	
+	top: 120px;
+	left: 5px;
+	position: fixed;
 	
 	& ul, & ul li, & ul ul {
 		list-style: none; 
@@ -412,7 +414,7 @@ nav{
 		background-color: $xLiteGray;
 		
 		&:hover{
-			background-color: $xLiteYellow;
+			background-color: white;
 		}
 	}
 	&.incomplete{
@@ -474,7 +476,7 @@ nav{
 }
 
 
-.moduleContentList{
+.moduleContentList, .someOtherList{
 	margin-top: 10px;
 	list-style: none;
 	font-size: 1.1rem;
@@ -486,8 +488,21 @@ nav{
 	}
 }
 
+.someOtherList
+{
+	& a {color:black;}
+
+}
+
+.note{
+	color: fuschia;
+
+}
+
 time{
-	font-size: 1rem;
+	font-size: .8rem;
+	font-style: italic;
+	color: $liteBlue;
 }
 
 .fa-calendar, .fa-check-circle{
@@ -497,6 +512,7 @@ time{
 .hidden{
 	visibility: hidden;
 }
+
 
 
 
@@ -536,7 +552,7 @@ time{
 	
 	#courseMenu {
 		position: fixed;
-		top: 3px;
+		top: 10px;
 		left: 5px;
 	}
 	

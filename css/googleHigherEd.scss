@@ -16,7 +16,7 @@ $limeGreen: rgba(174,203,54, 1);
 $green: #2ECC71;
 $xLiteBlue: rgba(23,120,169,0.2);
 $liteBlue: #1778a9;
-$mediumBlue:#083657;
+$mediumBlue:rgba(68,136,246,1);
 $darkBlue: #062c8c;
 $monarchBlue: rgba(0, 55, 103, 1);
 //$litePurple: ;
@@ -76,14 +76,32 @@ body{
 	background-color: white;
 }
 
+h1, h2, h3, h4, h5{
+	font-weight: normal;
+
+
+
+}
+div#courseMenu ul
+{
+	margin: 0;
+	padding: 0;
+}
+div#courseMenu ul li
+{
+	padding-left: 0px;
+}
+
+
+
 a{
 	color: $link-color;
 	text-decoration: none;
-	transition: all 0.25s ease;
+	//transition: all 0.25s ease;
 
 	&:hover, &:visited:hover{
 		color: $link-color-hover;
-		text-decoration: underline dotted;
+		text-decoration: underline;
 	}
 	
 	&:visited{
@@ -98,7 +116,7 @@ pre{
 
 header{
 	//border-bottom: 1px solid $mediumGray;
-	height: 50px;
+	height: 60px;
 	background-color: $xLiteGray;
 }
 
@@ -137,9 +155,7 @@ header{
 	list-style: none;
 	padding-left: 10px;
 	
-	&a{
-		text-decoration:underline;
-	}
+
 
 	&> li + li::before{
 		content:" > ";
@@ -147,6 +163,15 @@ header{
 
 	&> li{
 		display: inline-block;
+		color: white;
+		
+		& a{
+		text-decoration:underline;
+		color: white;
+			&:hover, &:visited, &:visited:hover{
+			color: white;
+			}
+		}
 	}
 }
 
@@ -158,8 +183,6 @@ header{
 	width: 165px;
 	vertical-align: bottom;
 	display:inline-block;
-	background-color: $xLiteGray;
-	fill: $xLiteGray;
 }
 
 
@@ -176,7 +199,7 @@ header{
 	margin-right: auto;
 	background-color: white;
 	padding: 10px;
-	margin-top: 80px;
+	margin-top: 120px;
 }
 
 .column50Percent{
@@ -197,6 +220,15 @@ h1, h2, h3, h4, h5, h6, p{
 	margin-top: 20px;
 }
 
+.paragraphTitle{
+	font-weight: bold;
+}
+
+.contentTitle{
+	font-size: 1.4rem;
+
+}
+
 .courseTitle{
 	padding-left: 10px;
 	color: $darkGray;
@@ -214,6 +246,10 @@ h1, h2, h3, h4, h5, h6, p{
 
 nav{
 	display: inline-block;
+	width: 100%;
+	background-color: $mediumBlue;
+	margin-top: 45px;
+	height: 40px;
 }
 
 .navPrevious, .navNext{
@@ -317,83 +353,58 @@ nav{
 	}
 }
 
+
+.courseMenuIcon{
+	display:none;
+}
+
+
 #courseMenu {
-	padding: 0; 
-	margin: 0; 
-	border: 0;
+	padding-left: 10px; 
+	margin-bottom: 3px; 
+	display: inline-block;
+	//height:50px;
+	background-color: white;
+	position: fixed;
+	top: 60px;
+	width:100%;
+	font-size: 1.1rem;
+	border-bottom: 1px solid $liteGray;
 	
+	& ul {
+		padding: 0; 
+		margin: 0; 
+	
+	}
 	
 	& ul, & ul li, & ul ul {
-		list-style: none; 
-		margin: 0; 
-		padding: 0; 
-		border: 0;
-	}
-	
-	& ul{
-		position: relative; 
-		z-index: 397;
-		width: 35px; 
-		background: white;
-
-		& a{
-			color: black;
-			&:visited{color: black; text-decoration: none;}
-			&:hover {color: $mediumBlue;}
-			&:active {color: black;}
-			transition: none;
+		display: inline-block;
+		padding-right: 3px;
+		padding-left: 3px;
+		margin-right: 20px;
+		padding-top: 5px;
+		
+		& a {
+			color: $darkGray;
 		}
 		
-		& li {
-			min-height: 1px; 
-			line-height: 1em; 
-			vertical-align: middle;
-			padding: 7px 10px; 
-			color: #000;
-			
-			&:hover {
-				position: relative; 
-				z-index: 399; 
-				cursor: default;
-				background: $xLiteBlue; 
-				color: black;
-				& > ul { 
-					visibility: visible;
-				}
-			}
-		}
-
-		& ul {
-			visibility: hidden; 
-			position: absolute; 
-			top: 10px; 
-			left: 99%; 
-			z-index: 398; 
-			width: 100px; 
-			border: 1px solid $liteGray;
-			margin-left:25px;
+		& a:hover{
+			border-bottom: 3px solid $mediumBlue;
+			text-decoration: none;
 			
 		}
 	}
+	
+
 }
+
+
 
 .clearHover{
 	&:hover{
 		background-color:white !important;
 	}
 }
-
-.courseMenuIcon{
-	padding: 0;
-	background-size: 50px 50px;
-	background-repeat: no-repeat;
-	display:inline-block;
-	height: 50px;
-	width: 50px;
-	vertical-align: bottom;
-	background-image: url("../images/style1/courseMenu.svg");
-}
-
 
 .lhsMenuWrapper{
 	display: inline;
@@ -496,7 +507,9 @@ nav{
 }
 
 time{
-	font-size: 1rem;
+	font-size: .8rem;
+	font-style: italic;
+	color: $liteBlue;
 }
 
 .fa-calendar, .fa-check-circle{
@@ -507,6 +520,10 @@ time{
 	visibility: hidden;
 }
 
+.fa-angle-left, .fa-angle-right
+{
+	color: $liteGray;
+}
 
 
 //////////////////////////////////////////////////

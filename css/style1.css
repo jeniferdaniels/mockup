@@ -1,5 +1,5 @@
 html {
-  font-size: 82%; }
+  font-size: 85%; }
 
 body {
   font-family: "Open-Sans", sans-serif;
@@ -171,12 +171,15 @@ nav {
   vertical-align: bottom;
   color: #c8c8c8; }
   .headIcon:hover {
-    color: #083657; }
+    color: #4488f6; }
 
 #courseMenu {
   padding: 0;
   margin: 0;
-  border: 0; }
+  border: 0;
+  top: 120px;
+  left: 5px;
+  position: fixed; }
   #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
     list-style: none;
     margin: 0;
@@ -194,7 +197,7 @@ nav {
         color: black;
         text-decoration: none; }
       #courseMenu ul a:hover {
-        color: #083657; }
+        color: #4488f6; }
       #courseMenu ul a:active {
         color: black; }
     #courseMenu ul li {
@@ -249,7 +252,7 @@ nav {
   .toggleBox.complete {
     background-color: #fafafa; }
     .toggleBox.complete:hover {
-      background-color: rgba(254, 239, 179, 0.05); }
+      background-color: white; }
   .toggleBox.incomplete {
     background-color: #fafafa 0.5;
     margin-left: 30px; }
@@ -292,17 +295,25 @@ nav {
     list-style: none;
     padding: 0; }
 
-.moduleContentList {
+.moduleContentList, .someOtherList {
   margin-top: 10px;
   list-style: none;
   font-size: 1.1rem; }
-  .moduleContentList li {
+  .moduleContentList li, .someOtherList li {
     padding-top: 3px; }
-    .moduleContentList li ul {
+    .moduleContentList li ul, .someOtherList li ul {
       list-style: none; }
 
+.someOtherList a {
+  color: black; }
+
+.note {
+  color: fuschia; }
+
 time {
-  font-size: 1rem; }
+  font-size: .8rem;
+  font-style: italic;
+  color: #1778a9; }
 
 .fa-calendar, .fa-check-circle {
   padding-right: 3px; }
@@ -332,7 +343,7 @@ time {
 
   #courseMenu {
     position: fixed;
-    top: 3px;
+    top: 10px;
     left: 5px; }
 
   .breadCrumbs {

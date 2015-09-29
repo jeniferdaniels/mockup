@@ -12,9 +12,9 @@
 
 	$breadCrumbs = array (
 		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "something", "title" => "1. Fundamental Principles"),
-		array ("url" => "somethingElse", "title" => "1.2 Course Introduction and Statistical Equilibrium"),
-		array ("url" => "somethingElse", "title" => $pageTitle)
+		array ("url" => "testHome.php?css=". $css, "title" => "1. Fundamental Principles"),
+		array ("url" => "testTopicStartPage.php?css=" .$css , "title" => "1.2 Course Introduction and Statistical Equilibrium"),
+		array ("url" => "", "title" => $pageTitle)
 		
 	);
 	
@@ -35,7 +35,7 @@
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress); ?>
+		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress, $css); ?>
 		<?php writeCssChanger('testVideoContent.php', $css); ?>
 	
 		<div class="contentWrapper" id="contentWrapper">

@@ -3,46 +3,53 @@
 <?PHP 
 	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
 	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
-
+	$pageTitle = "Syllabus";
+	
 	$boxes = array (
 		array(
-			"title" => "0. Overview",
+			"title" => "Course Readings",
 			"isCollapsed" => 1,
-			"isComplete" => 1,
+			"isComplete" => 0,
 			"urlInProgress" => "", 
 			"content" => ""),
 		array(
-			"title" => "1. Fundamental Principles",
+			"title" => "Course Description",
+			"isCollapsed" => 1,
+			"isComplete" => 0,
+			"urlInProgress" => "",
+			"content" => ""),
+		array(
+			"title" => "Course Goals and objectives",
 			"isCollapsed" => 0,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => "module1List.php"),
+			"content" => "goals.php"),
 		array(
-			"title" => "2. Bending of Beams",
-			"isCollapsed" => 1,
-			"isComplete" => 0,
-			"urlInProgress" => "something.php",
-			"content" => ""),
-		array(
-			"title" => "3. Shearing Stress",
-			"isCollapsed" => 1,
-			"isComplete" => 1,
-			"urlInProgress" => "",
-			"content" => ""),
-		array(
-			"title" => "4. Stress in Any Given Direction",
+			"title" => "How the Course Works",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
 			"content" => ""),
 		array(
-			"title" => "5. Design for Cyclic Loading",
+			"title" => "Student Responsibilities",
 			"isCollapsed" => 1,
-			"isComplete" => 1,
+			"isComplete" => 0,
 			"urlInProgress" => "",
 			"content" => ""),
 		array(
-			"title" => "6. Design of Shafts",
+			"title" => "Grading Criteria",
+			"isCollapsed" => 0,
+			"isComplete" => 0,
+			"urlInProgress" => "gradingCriteria.php",
+			"content" => "grading.php"),
+		array(
+			"title" => "Course Policies",
+			"isCollapsed" => 1,
+			"isComplete" => 0,
+			"urlInProgress" => "",
+			"content" => ""),
+		array(
+			"title" => "University Policies",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
@@ -50,6 +57,13 @@
 		);
 	
 		$showModuleProgress	= false;
+		
+	$breadCrumbs = array (	
+		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
+		array ("url" => "somethingElse", "title" => $pageTitle)
+	);
+	
+		
 ?>
 
 <!doctype html>
@@ -59,7 +73,7 @@
 	</head>
 	
 	<body>
-		<?php writeTop("", 'MET 320 - Design of Machine Elements', "", $showModuleProgress, $css); ?>
+		<?php writeTop("", 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress, $css); ?>
 		
 		<?php writeCssChanger('testHome.php', $css); ?>
 		

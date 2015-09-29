@@ -167,7 +167,10 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   margin: 0;
   border: 0;
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+  top: 100px;
+  left: 5px;
+  position: fixed; }
   #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
     list-style: none;
     margin: 0;
@@ -293,7 +296,9 @@ h1, h2, h3, h4, h5, h6, p {
       text-decoration: underline; }
 
 time {
-  font-size: 1rem; }
+  font-size: .8rem;
+  font-style: italic;
+  color: #1778a9; }
 
 .fa-calendar, .fa-check-circle {
   padding-right: 3px; }

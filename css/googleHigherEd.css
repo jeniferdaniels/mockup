@@ -9,13 +9,22 @@ body {
   padding: 0;
   background-color: white; }
 
+h1, h2, h3, h4, h5 {
+  font-weight: normal; }
+
+div#courseMenu ul {
+  margin: 0;
+  padding: 0; }
+
+div#courseMenu ul li {
+  padding-left: 0px; }
+
 a {
   color: #ff0080;
-  text-decoration: none;
-  transition: all 0.25s ease; }
+  text-decoration: none; }
   a:hover, a:visited:hover {
     color: #2ECC71;
-    text-decoration: underline dotted; }
+    text-decoration: underline; }
   a:visited {
     color: #ff0080; }
 
@@ -23,7 +32,7 @@ pre {
   word-wrap: break-word; }
 
 header {
-  height: 50px;
+  height: 60px;
   background-color: #fafafa; }
 
 .listTopic a, .listSubTopic a, .breadCrumbs a {
@@ -48,12 +57,16 @@ header {
 .breadCrumbs {
   list-style: none;
   padding-left: 10px; }
-  .breadCrumbsa {
-    text-decoration: underline; }
   .breadCrumbs > li + li::before {
     content: " > "; }
   .breadCrumbs > li {
-    display: inline-block; }
+    display: inline-block;
+    color: white; }
+    .breadCrumbs > li a {
+      text-decoration: underline;
+      color: white; }
+      .breadCrumbs > li a:hover, .breadCrumbs > li a:visited, .breadCrumbs > li a:visited:hover {
+        color: white; }
 
 .oduLogo {
   background-image: url("../images/oduOnlineLogo.png");
@@ -62,9 +75,7 @@ header {
   height: 62px;
   width: 165px;
   vertical-align: bottom;
-  display: inline-block;
-  background-color: #fafafa;
-  fill: #fafafa; }
+  display: inline-block; }
 
 .moduleProgress {
   padding: 0 20px 0 0;
@@ -76,7 +87,7 @@ header {
   margin-right: auto;
   background-color: white;
   padding: 10px;
-  margin-top: 80px; }
+  margin-top: 120px; }
 
 .column50Percent {
   width: 49.5%;
@@ -93,6 +104,12 @@ h1, h2, h3, h4, h5, h6, p {
 .contentTitle, .paragraphTitle {
   margin-top: 20px; }
 
+.paragraphTitle {
+  font-weight: bold; }
+
+.contentTitle {
+  font-size: 1.4rem; }
+
 .courseTitle {
   padding-left: 10px;
   color: #141414;
@@ -105,7 +122,11 @@ h1, h2, h3, h4, h5, h6, p {
   left: 0; }
 
 nav {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%;
+  background-color: #4488f6;
+  margin-top: 45px;
+  height: 40px; }
 
 .navPrevious, .navNext {
   position: fixed;
@@ -176,68 +197,38 @@ nav {
   vertical-align: bottom;
   color: #c8c8c8; }
   .headIcon:hover {
-    color: #083657; }
+    color: #4488f6; }
+
+.courseMenuIcon {
+  display: none; }
 
 #courseMenu {
-  padding: 0;
-  margin: 0;
-  border: 0; }
-  #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 0; }
+  padding-left: 10px;
+  margin-bottom: 3px;
+  display: inline-block;
+  background-color: white;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #c8c8c8; }
   #courseMenu ul {
-    position: relative;
-    z-index: 397;
-    width: 35px;
-    background: white; }
-    #courseMenu ul a {
-      color: black;
-      transition: none; }
-      #courseMenu ul a:visited {
-        color: black;
-        text-decoration: none; }
-      #courseMenu ul a:hover {
-        color: #083657; }
-      #courseMenu ul a:active {
-        color: black; }
-    #courseMenu ul li {
-      min-height: 1px;
-      line-height: 1em;
-      vertical-align: middle;
-      padding: 7px 10px;
-      color: #000; }
-      #courseMenu ul li:hover {
-        position: relative;
-        z-index: 399;
-        cursor: default;
-        background: rgba(23, 120, 169, 0.2);
-        color: black; }
-        #courseMenu ul li:hover > ul {
-          visibility: visible; }
-    #courseMenu ul ul {
-      visibility: hidden;
-      position: absolute;
-      top: 10px;
-      left: 99%;
-      z-index: 398;
-      width: 100px;
-      border: 1px solid #c8c8c8;
-      margin-left: 25px; }
+    padding: 0;
+    margin: 0; }
+  #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
+    display: inline-block;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-right: 20px;
+    padding-top: 5px; }
+    #courseMenu ul a, #courseMenu ul li a, #courseMenu ul ul a {
+      color: #141414; }
+    #courseMenu ul a:hover, #courseMenu ul li a:hover, #courseMenu ul ul a:hover {
+      border-bottom: 3px solid #4488f6;
+      text-decoration: none; }
 
 .clearHover:hover {
   background-color: white !important; }
-
-.courseMenuIcon {
-  padding: 0;
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  vertical-align: bottom;
-  background-image: url("../images/style1/courseMenu.svg"); }
 
 .lhsMenuWrapper {
   display: inline;
@@ -307,13 +298,18 @@ nav {
       list-style: none; }
 
 time {
-  font-size: 1rem; }
+  font-size: .8rem;
+  font-style: italic;
+  color: #1778a9; }
 
 .fa-calendar, .fa-check-circle {
   padding-right: 3px; }
 
 .hidden {
   visibility: hidden; }
+
+.fa-angle-left, .fa-angle-right {
+  color: #c8c8c8; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {

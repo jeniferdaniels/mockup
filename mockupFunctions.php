@@ -29,7 +29,7 @@ function writeHead($pageTitle, $css){
 	echo "\r\n";
 }
 				
-function writeTop($nav, $courseTitle, $breadCrumbs, $showModuleProgress){
+function writeTop($nav, $courseTitle, $breadCrumbs, $showModuleProgress, $css){
 	echo '<!--navigation arrows -->';
 	echo '<div class="navWrapper">';
 	
@@ -63,7 +63,7 @@ function writeTop($nav, $courseTitle, $breadCrumbs, $showModuleProgress){
 	echo '</div><!--end topRightWrapper-->';
 	echo '</header><!--end header-->';
 		
-		
+	writeCourseInfoMenu($css);	
 	echo '<div class="topBottomWrapper">';
 	if (!empty($breadCrumbs))
 	{
@@ -91,7 +91,7 @@ function writeTop($nav, $courseTitle, $breadCrumbs, $showModuleProgress){
 		echo '</div>';
 	}
 	echo "</div>";
-	writeCourseInfoMenu();
+	
 	echo '</div>';
 }
 
@@ -105,16 +105,16 @@ function writeSearchBox(){
 }
 
 
-function writeCourseInfoMenu(){
+function writeCourseInfoMenu($css){
 	echo '<div class="lhsMenuWrapper">';
 	echo '<div id="courseMenu">';
 	echo '<ul>';
 	echo '<li class="clearHover"><a href="#" class="courseMenuIcon clearHover"></a>';
     echo '<ul>';
-	echo '<li><a href="#"><span>Faculty</span></a></li>';
-	echo '<li><a href="#"><span>Syllabus</span></a></li>';
+	echo '<li><a href="testFaculty.php?css=' .$css . '"><span>Faculty</span></a></li>';
+	echo '<li><a href="testSyllabus.php?css=' .$css . '"><span>Syllabus</span></a></li>';
 	echo '<li><a href="#"><span>Schedule</span></a></li>';
-	echo '<li><a href="#"><span>Assignments</span></a></li>';
+	echo '<li><a href="testAssignments.php?css=' .$css . '"><span>Assignments</span></a></li>';
 	echo '<li><a href="#"><span>Help</help></a></li>';
 	echo '</ul><!--end big list-->';
 	echo '</ul></div>';
