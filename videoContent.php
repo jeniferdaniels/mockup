@@ -1,9 +1,7 @@
 <?PHP include_once 'mockupFunctions.php' ?>
 
 <?PHP
-	$courseName = "MET 320 - Design of Machine Elements";
-	$hId = (isset($_GET['hId'])? $_GET['hId']: "1.2");
-
+	$hId = (isset($_GET['hId'])? $_GET['hId']: "i");
 	$pageTitle = $hId . " " . getPageTitle($hId);
 	
 	$showModuleProgress = 1;
@@ -17,8 +15,7 @@
 	</head>
 	
 	<body>
-		<?php writeTop($courseName, $hId, $showModuleProgress, $showPrevNext); ?>
-	
+		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
 	
 		<div class="contentWrapper" id="contentWrapper">
 			

@@ -63,14 +63,14 @@ $link-color-topic-visited: $darkPurple;
 }
 
 html{
-	font-size: 85%;
+	font-size: 82%;
 }
 
 body{
 	font-family: $font-stack;
 	color:	$font-color;
-	font-size: 1rem;
 	//border: 1px solid red;
+	line-height: 180%;
 	margin: 0;
 	padding: 0;
 	background-color: white;
@@ -167,7 +167,7 @@ header{
 	margin-right: auto;
 	background-color: white;
 	padding: 10px;
-	margin-top: 80px;
+	margin-top: 90px;
 }
 
 .column50Percent{
@@ -210,41 +210,36 @@ nav{
 .navPrevious, .navNext{
     position:fixed;
 	vertical-align: middle;
-	//background-repeat: no-repeat;
-	//width: 40px;
-	//background-image: url("../images/style1/chevron3.svg");
+
 	top: 50%;
 	& a{
 		color: $darkGray;
-	}
-	
-	& a:hover{
-		color: $hotPink;
+		
+		&:hover {
+			color: $hotPink;
+		}
 	}
 }
 
 .navPrevious{
     left: 5px;
-	//transform: scaleX(-1);
 }
 
 .navNext{
     right: 5px;
 }
 
+//change to inline-block and turn off chevrons to see different views
 .fa-caret-left, .fa-caret-right{
 	display: none;
 }
-
 
 .navWrapper{
 	width:99%;
 	height:100%;
 }
 
-
 .moduleProgressWrapper{
-	//border: 1px solid green;
 	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
 	float: right;
@@ -253,7 +248,6 @@ nav{
 
 .moduleProgressTitle{
 	font-size: .8rem;
-	//border: 1px solid red;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
 }
@@ -261,8 +255,8 @@ nav{
 .searchWrapper{
 	display: inline-block;
 	padding: 0 20px 0 20px;
-	//margin-top: 5px;
 }
+
 #search{
 	background-image: url("../images/style1/search.svg");
 	background-size: 20px 20px;
@@ -291,21 +285,6 @@ nav{
 	text-align: right;
 	vertical-align: top;
 	margin-right:10px;
-}
-
-.headIcon{
-	padding: 0 7px 0 7px;
-	//background-size: 20px 20px;
-	//background-repeat: no-repeat;
-	display:inline-block;
-	//height: 20px;
-	//width: 20px;
-	font-size: 1.5rem;
-	vertical-align: bottom;
-	color: $liteGray;
-	&:hover{
-		color: $mediumBlue;
-	}
 }
 
 #courseMenu {
@@ -375,7 +354,9 @@ nav{
 		background-color:white !important;
 	}
 }
-
+#courseMenu, .top{
+	display:none;
+}
 .courseMenuIcon{
 	padding: 0;
 	background-size: 50px 50px;
@@ -441,8 +422,20 @@ nav{
 	align:top;
 }
 
-.inline{
+.inline, .displayInline{
 	display: inline;
+}
+
+.displayInlineBlock{
+	display: inline-block;
+}
+
+.displayBlock{
+	display: block;
+}
+
+.displayNone{
+	display: none;
 }
 
 .blockCheckMark{
@@ -466,28 +459,11 @@ nav{
 	border: 1px solid $mediumGray;
 }
 
-
-.cssChanger{
-	background-color: white;
-	position:fixed;
-	bottom: 0;
-	right: 0;
-	width: 100px;
-	@include roundedBorderWithBoxShadow;
-	border: 1px solid $darkGray;
-	padding-left: 10px;
-	& ul{
-		list-style: none; 
-		padding:0;
-		}
-
-}
-
-
 .moduleContentList, .someOtherList{
 	margin-top: 10px;
 	list-style: none;
-	font-size: 1.1rem;
+	//font-size: 1.1rem;
+	
 	& li{
 		padding-top: 3px;
 		& ul {
@@ -502,15 +478,10 @@ nav{
 
 }
 
-.note{
-	color: fuschia;
-
-}
-
 time{
-	font-size: .8rem;
-	font-style: italic;
-	color: $liteBlue;
+	//font-style: italic;
+	color: $darkGray;
+	display: inline-block;
 }
 
 .fa-calendar, .fa-check-circle{
@@ -521,12 +492,33 @@ time{
 	visibility: hidden;
 }
 
-.displayNone{
-	display: none;
+.floatRight{
+	float: right;
 }
 
+.floatLeft{
+	float:left;
+}
 
+.due, .deliverable
+{
+	font-weight: bold;
+}
+.assignmentDescription{
+	margin-top: 20px;
 
+}
+
+.assignmentListDueDateTime{
+	float:right;
+	display: inline;
+	margin-right: 50px;
+}
+
+.indexContent{
+	margin-top: 40px;
+
+}
 
 //////////////////////////////////////////////////
 

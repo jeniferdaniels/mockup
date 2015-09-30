@@ -1,37 +1,21 @@
-<?PHP include_once 'iconVariables.php' ?>
 <?PHP include_once 'mockupFunctions.php' ?>
 
 <?PHP
-	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
-	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
+	$hId = (isset($_GET['hId'])? $_GET['hId']: "");
 	$pageTitle = "Faculty";
-
-	$nav = array(
-		"prevUrl" 	=> '',		
-		"nextUrl" 	=> ''
-	);
-
-	$breadCrumbs = array (	
-		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "somethingElse", "title" => $pageTitle)
-	);
-	
 	
 	$showModuleProgress = 0;
+	$showPrevNext = 0;
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead('Test Faculty Content', $css); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress, $css); ?>
-		<?php writeCssChanger('testTextContent.php', $css); ?>
-
-			
-
+		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
 	
 		<div class="contentWrapper">
 			

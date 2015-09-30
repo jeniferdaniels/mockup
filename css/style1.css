@@ -1,10 +1,10 @@
 html {
-  font-size: 85%; }
+  font-size: 82%; }
 
 body {
   font-family: "Open-Sans", sans-serif;
   color: #141414;
-  font-size: 1rem;
+  line-height: 180%;
   margin: 0;
   padding: 0;
   background-color: white; }
@@ -69,7 +69,7 @@ header {
   margin-right: auto;
   background-color: white;
   padding: 10px;
-  margin-top: 80px; }
+  margin-top: 90px; }
 
 .column50Percent {
   width: 49.5%;
@@ -108,8 +108,8 @@ nav {
   top: 50%; }
   .navPrevious a, .navNext a {
     color: #141414; }
-  .navPrevious a:hover, .navNext a:hover {
-    color: #ff0080; }
+    .navPrevious a:hover, .navNext a:hover {
+      color: #ff0080; }
 
 .navPrevious {
   left: 5px; }
@@ -163,15 +163,6 @@ nav {
   text-align: right;
   vertical-align: top;
   margin-right: 10px; }
-
-.headIcon {
-  padding: 0 7px 0 7px;
-  display: inline-block;
-  font-size: 1.5rem;
-  vertical-align: bottom;
-  color: #c8c8c8; }
-  .headIcon:hover {
-    color: #4488f6; }
 
 #courseMenu {
   padding: 0;
@@ -227,6 +218,9 @@ nav {
 .clearHover:hover {
   background-color: white !important; }
 
+#courseMenu, .top {
+  display: none; }
+
 .courseMenuIcon {
   padding: 0;
   background-size: 50px 50px;
@@ -268,8 +262,17 @@ nav {
   vertical-align: top;
   align: top; }
 
-.inline {
+.inline, .displayInline {
   display: inline; }
+
+.displayInlineBlock {
+  display: inline-block; }
+
+.displayBlock {
+  display: block; }
+
+.displayNone {
+  display: none; }
 
 .blockCheckMark {
   display: inline-block;
@@ -288,24 +291,9 @@ nav {
   display: inline-block;
   border: 1px solid #7d7d7d; }
 
-.cssChanger {
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100px;
-  border-radius: 2px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-  border: 1px solid #141414;
-  padding-left: 10px; }
-  .cssChanger ul {
-    list-style: none;
-    padding: 0; }
-
 .moduleContentList, .someOtherList {
   margin-top: 10px;
-  list-style: none;
-  font-size: 1.1rem; }
+  list-style: none; }
   .moduleContentList li, .someOtherList li {
     padding-top: 3px; }
     .moduleContentList li ul, .someOtherList li ul {
@@ -314,13 +302,9 @@ nav {
 .someOtherList a {
   color: black; }
 
-.note {
-  color: fuschia; }
-
 time {
-  font-size: .8rem;
-  font-style: italic;
-  color: #1778a9; }
+  color: #141414;
+  display: inline-block; }
 
 .fa-calendar, .fa-check-circle {
   padding-right: 3px; }
@@ -328,8 +312,25 @@ time {
 .hidden {
   visibility: hidden; }
 
-.displayNone {
-  display: none; }
+.floatRight {
+  float: right; }
+
+.floatLeft {
+  float: left; }
+
+.due, .deliverable {
+  font-weight: bold; }
+
+.assignmentDescription {
+  margin-top: 20px; }
+
+.assignmentListDueDateTime {
+  float: right;
+  display: inline;
+  margin-right: 50px; }
+
+.indexContent {
+  margin-top: 40px; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {

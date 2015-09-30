@@ -14,7 +14,7 @@
 			"isCollapsed" => 0,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => "1_moduleList.php"),
+			"content" => "module1List.php"),
 		array(
 			"title" => "2. Bending of Beams",
 			"boxId" => "bending",
@@ -52,22 +52,21 @@
 			"content" => "contentHere.php")
 		);
 	
+		$hId = "i";
 		$showModuleProgress	= false;
+		$showPrevNext = false;
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead('Test Home'); ?>
+		<?php writeHead(getCourseName()); ?>
 	</head>
 	
 	<body>
-		<?php writeTop("", 'MET 320 - Design of Machine Elements', "", $showModuleProgress); ?>
-
+		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
 		
-		
-		
-		<div class="contentWrapper">
+		<div class="contentWrapper indexContent">
 			<?php 
 				for ($i=0; $i<count($boxes); $i++)
 					writeToggleBox($boxes[$i]);

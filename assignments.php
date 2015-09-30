@@ -1,83 +1,80 @@
-<?PHP include_once 'iconVariables.php' ?>
 <?PHP include_once 'mockupFunctions.php' ?>
 <?PHP 
-	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
-	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
 	$pageTitle = "Assignments";
+	$hId = "a";
 	
 	$boxes = array (
 		array(
 			"title" => "0. Overview",
+			"boxId" => "overview",
 			"isCollapsed" => 1,
 			"isComplete" => 1,
 			"urlInProgress" => "", 
-			"content" => ""),
+			"content" => "module0AssignmentList.php"),
 		array(
 			"title" => "1. Fundamental Principles",
+			"boxId" => "fund",
 			"isCollapsed" => 0,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => "module1Assignments.php"),
+			"content" => "module1AssignmentList.php"),
 		array(
 			"title" => "2. Bending of Beams",
+			"boxId" => "bend",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "something.php",
-			"content" => ""),
+			"content" => "moduleXAssignmentList.php"),
 		array(
 			"title" => "3. Shearing Stress",
+			"boxId" => "shear",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => ""),
+			"content" => "moduleXAssignmentList.php"),
 		array(
 			"title" => "4. Stress in Any Given Direction",
+			"boxId" => "stress",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => ""),
+			"content" => "moduleXAssignmentList.php"),
 		array(
 			"title" => "5. Design for Cyclic Loading",
+			"boxId" => "cyclic",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => ""),
+			"content" => "moduleXAssignmentList.php"),
 		array(
 			"title" => "6. Design of Shafts",
+			"boxId" => "shafts",
 			"isCollapsed" => 1,
 			"isComplete" => 0,
 			"urlInProgress" => "",
-			"content" => "")
+			"content" => "moduleXAssignmentList.php")
 		);
 	
-		$showModuleProgress	= false;
-		
-		$breadCrumbs = array (	
-		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "somethingElse", "title" => $pageTitle)
-	);
-	
-	
-?>
+	$showModuleProgress = 0;
+	$showPrevNext = 0;
 
+?>
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead('Test Home', $css); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
-		<?php writeTop("", 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress, $css); ?>
-		
-		<?php writeCssChanger('testHome.php', $css); ?>
-		
-		
+		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
+	
 		<div class="contentWrapper">
-		<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
-		
+			
+			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
+
 			<?php 
 				for ($i=0; $i<count($boxes); $i++)
-					writeToggleBox($boxes[$i]["title"], $boxes[$i]["content"], $boxes[$i]["isCollapsed"], $boxes[$i]["isComplete"], $css);
+					writeToggleBox($boxes[$i]);
 			?>
 		</div>
 	</body>
