@@ -264,10 +264,17 @@ nav {
       font-size: 1.4rem; }
 
 .boxWrapper {
-  padding-top: 10px; }
+  padding-top: 10px;
+  vertical-align: top;
+  align: top; }
 
 .inline {
   display: inline; }
+
+.blockCheckMark {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px; }
 
 .videoAndTranscriptWrapper {
   margin: auto;
@@ -320,6 +327,9 @@ time {
 
 .hidden {
   visibility: hidden; }
+
+.displayNone {
+  display: none; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {

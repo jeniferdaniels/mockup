@@ -1,57 +1,77 @@
-<!doctype html>
+<?PHP include_once 'mockupFunctions.php' ?>
 <?PHP 
-	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
-	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
+	$boxes = array (
+		array(
+			"title" => "0. Overview",
+			"boxId" => "overview",
+			"isCollapsed" => 1,
+			"isComplete" => 1,
+			"urlInProgress" => "", 
+			"content" => "contentHere.php"),
+		array(
+			"title" => "1. Fundamental Principles",
+			"boxId" => "fundamental",
+			"isCollapsed" => 0,
+			"isComplete" => 0,
+			"urlInProgress" => "",
+			"content" => "1_moduleList.php"),
+		array(
+			"title" => "2. Bending of Beams",
+			"boxId" => "bending",
+			"isCollapsed" => 1,
+			"isComplete" => 0,
+			"urlInProgress" => "something.php",
+			"content" => "contentHere.php"),
+		array(
+			"title" => "3. Shearing Stress",
+			"boxId" => "stress",
+			"isCollapsed" => 1,
+			"isComplete" => 1,
+			"urlInProgress" => "",
+			"content" => "contentHere.php"),
+		array(
+			"title" => "4. Stress in Any Given Direction",
+			"boxId" => "direction",
+			"isCollapsed" => 1,
+			"isComplete" => 0,
+			"urlInProgress" => "",
+			"content" => "contentHere.php"),
+		array(
+			"title" => "5. Design for Cyclic Loading",
+			"boxId" => "cyclic",
+			"isCollapsed" => 1,
+			"isComplete" => 1,
+			"urlInProgress" => "",
+			"content" => "contentHere.php"),
+		array(
+			"title" => "6. Design of Shafts",
+			"boxId" => "shafts",
+			"isCollapsed" => 1,
+			"isComplete" => 0,
+			"urlInProgress" => "",
+			"content" => "contentHere.php")
+		);
+	
+		$showModuleProgress	= false;
 ?>
 
+<!doctype html>
 <html>
 	<head>
-		<title>Style Sheet Test</title>
-		<style>
-			body  {
-				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
-				color: rgba(25, 25, 25, 1);
-				font-size: 10pt;
-			}
-			ul{
-				list-style-type: none;
-			}
-			li{
-				display: inline;
-				padding: 0 10px 0 10px;
-			}
-		</style>
-		
-		<script>
-			function changeCSS(iFramePage, cssFile){
-				document.getElementById('iframeForTestCSS').src=iFramePage + "?css=" + cssFile;
-				document.location.href= "index.php?iFramePage=" + iFramePage + "&css=" + cssFile;
-			}
-		</script>
-		
-
-
+		<?php writeHead('Test Home'); ?>
 	</head>
 	
 	<body>
-		<ul>
-			<li><a onClick="changeCSS('testTags.php', 'likeFutureLearn.css')" href=#>Style 1 - Catalog of Tags</a></li>
-			<li><a onClick="changeCSS('testModuleList.php', 'likeFutureLearn.css')" href=#>Style 1 - Module Listing</a></li>
-			<li><a onClick="changeCSS('testTextContent.php', 'likeFutureLearn.css')" href=#>Style 1 - Text Content Page</a></li>
-			<li><a onClick="changeCSS('testVideoContent.php', 'likeFutureLearn.css')" href=#>Style 1 - Video Content Page</a></li>
-		</ul>
-		
-		<ul>
-			<li><a onClick="changeCSS('testTags.php', 'oduColors.css')" href=#>Style 2 - Catalog of Tags</a></li>
-			<li><a onClick="changeCSS('testModuleList.php', 'oduColors.css')" href=#>Style 2 - Module Listing</a></li>
-			<li><a onClick="changeCSS('testTextContent.php', 'oduColors.css')" href=#>Style 2 - Text Content Page</a></li>
-			<li><a onClick="changeCSS('testVideoContent.php', 'oduColors.css')" href=#>Style 2 - Video Content Page</a></li>
-			
-		</ul>
+		<?php writeTop("", 'MET 320 - Design of Machine Elements', "", $showModuleProgress); ?>
+
 		
 		
-		<iframe src="<?PHP echo $page ?>?css=<?PHP echo $css ?>" id="iframeForTestCSS" width="95%" height="660px"></iframe>
 		
+		<div class="contentWrapper">
+			<?php 
+				for ($i=0; $i<count($boxes); $i++)
+					writeToggleBox($boxes[$i]);
+			?>
+		</div>
 	</body>
 </html>
-

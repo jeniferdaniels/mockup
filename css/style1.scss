@@ -437,10 +437,18 @@ nav{
 
 .boxWrapper{
 	padding-top: 10px;
+	vertical-align: top;
+	align:top;
 }
 
 .inline{
 	display: inline;
+}
+
+.blockCheckMark{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
 }
 
 .videoAndTranscriptWrapper{
@@ -511,6 +519,10 @@ time{
 
 .hidden{
 	visibility: hidden;
+}
+
+.displayNone{
+	display: none;
 }
 
 

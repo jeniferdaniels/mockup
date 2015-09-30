@@ -1,42 +1,24 @@
-<?PHP include_once 'iconVariables.php' ?>
 <?PHP include_once 'mockupFunctions.php' ?>
-<?PHP 
-	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
-	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
-	$pageTitle = "1.2.2 Defining Engineering and the Design Process";
-	
-	$nav = array(
-		"prevUrl" 	=> 'testTextContent.php?css=' . $css ,
-		"nextUrl" 	=> ''
-	);
 
-	$breadCrumbs = array (
-		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "testHome.php?css=". $css, "title" => "1. Fundamental Principles"),
-		array ("url" => "testTopicStartPage.php?css=" .$css , "title" => "1.2 Course Introduction and Statistical Equilibrium"),
-		array ("url" => "", "title" => $pageTitle)
-		
-	);
+<?PHP
+	$courseName = "MET 320 - Design of Machine Elements";
+	$hId = (isset($_GET['hId'])? $_GET['hId']: "1.2");
+
+	$pageTitle = $hId . " " . getPageTitle($hId);
 	
-	$showModuleProgress	= true;
+	$showModuleProgress = 1;
+	$showPrevNext = 1;
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead('Test Video Content', $css); ?>
-		
-		<script>
-			//shortcut.add("Ctrl+P",function() {
-			//alert("Hi there!");
-			//return false;
-		//});
-		</script>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress, $css); ?>
-		<?php writeCssChanger('testVideoContent.php', $css); ?>
+		<?php writeTop($courseName, $hId, $showModuleProgress, $showPrevNext); ?>
+	
 	
 		<div class="contentWrapper" id="contentWrapper">
 			

@@ -3,14 +3,14 @@
 <ul class="moduleContentList">
 	<li><i class="fa fa-check-circle success"></i><a href="#">1.1 Overview</a></li>
 	<li><i class="fa fa-check-circle success"></i><a href="#"><i class='fa fa-calendar'></i> 1.A Complete Reading </a><time class="disabled">due 1/14/2015 at 11:59 PM</time></li>
-	<li><i class="fa fa-check-circle success"></i><a href="testTopicStartPage.php?css=<?php echo $css ?>">1.2 Course Introduction and Statistical Equilbrium</a><mark>Working</mark>
+	<li><i class="fa fa-check-circle success"></i><a href="#">1.2 Course Introduction and Statistical Equilbrium</a><mark>Working</mark>
 		<ul>
-			<li><i class="fa fa-check-circle success"></i><a href="testTextContent.php?css=<?php echo $css ?>">1.2.1 Introduction to Design of Machine Elements </a><mark>Working</mark></li>
-			<li><i class="fa fa-check-circle success"></i><a href="testVideoContent.php?css=<?php echo $css ?>">1.2.2 Defining Engineering and the Design Process </a><mark>Working</mark></li>
+			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.1 Introduction to Design of Machine Elements </a><mark>Working</mark></li>
+			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.2 Defining Engineering and the Design Process </a><mark>Working</mark></li>
 			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.3 Stages of Design</a></li>
 			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.4 Utilizing Machine Design Information and Standards</a></li>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.5 Computational Tools</a></li>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.6 Defining Statistical Equilbrium</a></li>
+			<li><i class="fa fa-check-circle success hidden"></i><a href="textContent.php?title=1.2.5%20Computational%20Tools">1.2.5 Computational Tools</a></li>
+			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.2.6 Defining Statistical Equilbrium</a></li>
 	</ul>
 	<li><a href="#"><i class='fa fa-calendar urgent'></i> 1.B Homework #1  </a><time class="urgent">due 1/18/2015 at 11:59 PM</time></li>
 	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.3 Engineering Materials</a>

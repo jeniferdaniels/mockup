@@ -1,40 +1,23 @@
-<?PHP include_once 'iconVariables.php' ?>
 <?PHP include_once 'mockupFunctions.php' ?>
 
 <?PHP
-	$css = (isset($_GET['css'])? $_GET['css']: "oduColors.css");	
-	$page = (isset($_GET['iFramePage'])? $_GET['iFramePage']: "testTags.php");	
-	$pageTitle = "1.2.1 Introduction to Design of Machine Elements";
+	$courseName = "MET 320 - Design of Machine Elements";
+	$hId = (isset($_GET['hId'])? $_GET['hId']: "1.2");
 
-	$nav = array(
-		"prevUrl" 	=> 'testTopicStartPage.php?css='. $css,		
-		"nextUrl" 	=> 'testVideoContent.php?css=' . $css
-	);
-
-	$breadCrumbs = array (
-		array ("url" => "testHome.php?css=". $css, "title" => 'Home'),
-		array ("url" => "testHome.php?css=". $css, "title" => "1. Fundamental Principles"),
-		array ("url" => "testTopicStartPage.php?css=" .$css , "title" => "1.2 Course Introduction and Statistical Equilibrium"),
-		array ("url" => "", "title" => $pageTitle)
-		
-	);
-	
+	$pageTitle = $hId . " " . getPageTitle($hId);
 	
 	$showModuleProgress = 1;
+	$showPrevNext = 1;
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead('Test Text Content', $css); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
-		<?php writeTop($nav, 'MET 320 - Design of Machine Elements', $breadCrumbs, $showModuleProgress,$css); ?>
-		<?php writeCssChanger('testTextContent.php', $css); ?>
-
-			
-
+		<?php writeTop($courseName, $hId, $showModuleProgress, $showPrevNext); ?>
 	
 		<div class="contentWrapper">
 			
