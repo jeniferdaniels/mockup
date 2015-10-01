@@ -1,60 +1,55 @@
-<?PHP include_once 'mockupFunctions.php' ?>
-<?PHP 
+<?php include_once 'mockupFunctions.php' ?>
+<?php include_once 'iconVariables.php' ?>
+<?php 
+	$isExpandedList = (isset($_GET['isExpanded'])? $_GET['isExpanded']: "0,1,0,0");
+	$isDoneList = (isset($_GET['isDone'])? $_GET['isDone']: "1,0,0,0");
+	$msg = (isset($_GET['msg'])? $_GET['msg']: "none");
+	
+	//if the querystring is corrupt, set them all closed
+	if ($isExpandedList != "")
+		$isExpandedListArray = explode(",", $isExpandedList);
+	else
+		$isExpandedListArray = array(0,0,0,0);
+		
+	if ($isDoneList != "")
+		$isDoneList = explode(",", $isDoneList);
+	else
+		$isDoneList = array(0,0,0,0);
+		
+		
+	$navPrevious = "";
+	$navNext = "";
+	$showModuleProgress = 0;
 	$boxes = array (
 		array(
 			"title" => "0. Overview",
 			"boxId" => "overview",
-			"isCollapsed" => 1,
-			"isComplete" => 1,
+			"isCollapsed" => $isExpandedListArray[0],
+			"isComplete" => $isDoneList[0],
 			"urlInProgress" => "", 
-			"content" => "contentHere.php"),
+			"content" => "module0List.php"),
 		array(
-			"title" => "1. Fundamental Principles",
-			"boxId" => "fundamental",
-			"isCollapsed" => 0,
-			"isComplete" => 0,
+			"title" => "1. Choosing a Kitten",
+			"boxId" => "factor",
+			"isCollapsed" => $isExpandedListArray[1],
+			"isComplete" => $isDoneList[1],
 			"urlInProgress" => "",
 			"content" => "module1List.php"),
 		array(
-			"title" => "2. Bending of Beams",
-			"boxId" => "bending",
-			"isCollapsed" => 1,
-			"isComplete" => 0,
+			"title" => "2. Caring for Your Kitten",
+			"boxId" => "care",
+			"isCollapsed" => $isExpandedListArray[2],
+			"isComplete" => $isDoneList[2],
 			"urlInProgress" => "something.php",
-			"content" => "contentHere.php"),
+			"content" => "module2List.php"),
 		array(
-			"title" => "3. Shearing Stress",
-			"boxId" => "stress",
-			"isCollapsed" => 1,
-			"isComplete" => 1,
+			"title" => "3. Legal Requirements",
+			"boxId" => "legal",
+			"isCollapsed" => $isExpandedListArray[3],
+			"isComplete" => $isDoneList[3],
 			"urlInProgress" => "",
-			"content" => "contentHere.php"),
-		array(
-			"title" => "4. Stress in Any Given Direction",
-			"boxId" => "direction",
-			"isCollapsed" => 1,
-			"isComplete" => 0,
-			"urlInProgress" => "",
-			"content" => "contentHere.php"),
-		array(
-			"title" => "5. Design for Cyclic Loading",
-			"boxId" => "cyclic",
-			"isCollapsed" => 1,
-			"isComplete" => 1,
-			"urlInProgress" => "",
-			"content" => "contentHere.php"),
-		array(
-			"title" => "6. Design of Shafts",
-			"boxId" => "shafts",
-			"isCollapsed" => 1,
-			"isComplete" => 0,
-			"urlInProgress" => "",
-			"content" => "contentHere.php")
+			"content" => "module3List.php")
 		);
-	
-		$hId = "i";
-		$showModuleProgress	= false;
-		$showPrevNext = false;
 ?>
 
 <!doctype html>
@@ -64,12 +59,24 @@
 	</head>
 	
 	<body>
-		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
+		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
+		
+		<div id="test">test</div>
 		
 		<div class="contentWrapper indexContent">
-			<?php 
-				for ($i=0; $i<count($boxes); $i++)
-					writeToggleBox($boxes[$i]);
+		<?php 
+			for ($i=0; $i<count($boxes); $i++)
+				writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
+		
+			if ($msg=="done1")
+				echo "<script>document.getElementById('successBox1').style.display='inline-block';</script>";
+		?>
+		
+		
+		
+		<?php 
+			for ($i=0; $i<count($boxes); $i++)
+				writeToggleBox($boxes[$i]);
 			?>
 		</div>
 	</body>
