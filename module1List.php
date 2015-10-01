@@ -1,61 +1,31 @@
-
-
-<ul class="moduleContentList">
-	<li><i class="fa fa-check-circle success"></i><a href="#">1.1 Overview</a></li>
-	<li><i class="fa fa-check-circle success"></i><a href="#"><i class='fa fa-calendar'></i> 1.A Complete Reading </a><time class="disabled">due 1/14/2015 at 11:59 PM</time></li>
-	<li><i class="fa fa-check-circle success"></i><a href="#">1.2 Course Introduction and Statistical Equilbrium</a><mark>Working</mark>
+<ul class="moduleList">
+	<li><?php echo $GLOBALS['listCheckMark'] ?><a href="factors.php">1.1 Factors to Consider When Choosing a Kitten</a>
 		<ul>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.1 Introduction to Design of Machine Elements </a><mark>Working</mark></li>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.2 Defining Engineering and the Design Process </a><mark>Working</mark></li>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.3 Stages of Design</a></li>
-			<li><i class="fa fa-check-circle success"></i><a href="#">1.2.4 Utilizing Machine Design Information and Standards</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="textContent.php?title=1.2.5%20Computational%20Tools">1.2.5 Computational Tools</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.2.6 Defining Statistical Equilbrium</a></li>
-	</ul>
-	<li><a href="#"><i class='fa fa-calendar urgent'></i> 1.B Homework #1  </a><time class="urgent">due 1/18/2015 at 11:59 PM</time></li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.3 Engineering Materials</a>
-		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.3.1 Assumptions</a></li>
+			<li><a href="considerOverview.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.1 Overview</a></li>
+			<li><a href="responsibility.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.2 Responsibility</a></li>
+			<li><a href="cost.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.3 Cost</a></li>
+			<li><a href="considerSummary.php"><?php echo $GLOBALS['listCurrentSpot'] ?>1.1.4 Summary</a></li>
 		</ul>
 	</li>
-
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.4 Comprehensive Stress and Strain</a>
+	<li><a href="whyGetAKitten.php"><?php echo $GLOBALS['listAssignmentUrgent'] ?>1.A Homework #1</a></li>
+	<li><a href="rescue.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.2 Kitten Rescue</a>
 		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.4.1 Tension and Compression Strain</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.4.2 Strain</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.4.3 Stress and Strain Diagram</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.4.4 Hooke's Law</a></li>	
+			<li><a href="rescueOverview.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.2.1 Overview</a></li>
+			<li><a href="reasons.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.2.2 Reasons to Rescue</a></li>
+			<li><a href="orgs.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.2.3 Hampton Roads Rescue Organizations</a></li>
+			<li><a href="rescueSummary.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.2.4 Summary</a></li>
 		</ul>
 	</li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.5 Tension and SI Units</a>
+	<li><a href="whyAdopt.php"><?php echo $GLOBALS['listAssignment'] ?>1.B Discussion Forum #1</a></li>
+	<li><a href="purchase.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3 Purchasing a Kitten</a>
 		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.5.1 Conversion Factors</li>
+			<li><a href="purchaseOverview.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.1 Overview</a></li>
+			<li><a href="buy.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.2 Reasons to Purchase A Kitten</a></li>
+			<li><a href="whereBuy.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.3 Where to Buy</a></li>
+			<li><a href="purchaseSummary.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.4 Summary</a></li>
 		</ul>
 	</li>
-	
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#"><i class='fa fa-calendar urgent'></i> 1.C Greeting Message  </a><time class="urgent">due 1/18/2015 at 11:59 PM</time></li>
-	
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.6 Force and Mass</a>
-		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.6.1 Force and Mass</a></li>	
-		</ul>
-	</li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.7 Statistically Indeterminate Problems</a>
-		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.7.1 Statistically Indeterminate Problems</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.7.2 Example Problem 1</a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.7.3 Example Problem 2</a></li>
-		</ul>
-	</li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.8 Center of Gravity</a>
-		<ul>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.8.1 Center of Gravity </a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.8.2 Composite Areas </a></li>
-			<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.8.3 Example Problem 3</a></li>
-		</ul>
-	</li>
-
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.9 Summary</a></li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#">1.10 Resources</a></li>
-	<li><i class="fa fa-check-circle success hidden"></i><a href="#"><i class='fa fa-calendar urgent'></i> 1.D Module Feedback </a><time class="urgent">due 1/19/2015 at 11:59 PM</time></li>
+	<li><a href="q1.php"><?php echo $GLOBALS['listAssignment'] ?>1.C Quiz</a></li>
+	<li><a href="m1Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.4 Resources</a></li>
+	<li><a href="m1fb.php"><?php echo $GLOBALS['listAssignment'] ?>1.D Module Feedback</a></li>
 </ul>
