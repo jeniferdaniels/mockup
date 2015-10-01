@@ -12,11 +12,11 @@ $xLiteYellow: rgba(254,239,179, 0.05);
 $liteYellow: rgba(254,239,179, 1);
 //$yellow: rgba( , , , );
 $limeGreen: rgba(174,203,54, 1);
-//$green: #99CC33;
-$green: #2ECC71;
+$liteGreen: rgba(18,168,88, 0.1);
+$green: rgba(0,168,88,1);
 $xLiteBlue: rgba(23,120,169,0.2);
 $liteBlue: #1778a9;
-$mediumBlue:rgba(68,136,246,1);
+$googleBlue:rgba(68,136,246,1);
 $darkBlue: #062c8c;
 $monarchBlue: rgba(0, 55, 103, 1);
 //$litePurple: ;
@@ -63,7 +63,7 @@ $link-color-topic-visited: $darkPurple;
 }
 
 html{
-	font-size: 82%;
+	font-size: 87%;
 }
 
 body{
@@ -74,6 +74,20 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+	padding: 0;
+	margin: 0;
+}
+
+h2{
+	font-size: 1.8rem;
+}
+
+//overwrite
+p{
+	margin-bottom: 10px;
 }
 
 a{
@@ -93,6 +107,12 @@ a{
 
 pre{
 	word-wrap: break-word;
+}
+
+.scheduleWrapper{
+	 width:100%;
+	 height: 800px;
+	border: none;
 }
 
 
@@ -167,9 +187,14 @@ header{
 	margin-right: auto;
 	background-color: white;
 	padding: 10px;
-	margin-top: 90px;
+	margin-top: 140px;
 }
-
+.expandCollapseAllWrapper{
+	text-align: right;
+	display:block;
+	width: 100%;
+	font-size: .8rem;
+}
 .column50Percent{
 	width: 49.5%;
 	padding:0;
@@ -177,12 +202,6 @@ header{
 	vertical-align: top;
 	display: inline-block;
  }	 
-
-h1, h2, h3, h4, h5, h6, p{
-	padding: 0;
-	margin: 0;
-	margin: 0;
-}
 
 .contentTitle, .paragraphTitle{
 	margin-top: 20px;
@@ -287,6 +306,12 @@ nav{
 	margin-right:10px;
 }
 
+.breadCrumbWrapper{
+	display: inline-block;
+	width: 100%;
+}
+
+
 #courseMenu {
 	padding: 0; 
 	margin: 0; 
@@ -311,7 +336,7 @@ nav{
 		& a{
 			color: black;
 			&:visited{color: black; text-decoration: none;}
-			&:hover {color: $mediumBlue;}
+			&:hover {color: $googleBlue;}
 			&:active {color: black;}
 			transition: none;
 		}
@@ -354,9 +379,7 @@ nav{
 		background-color:white !important;
 	}
 }
-#courseMenu, .top{
-	display:none;
-}
+
 .courseMenuIcon{
 	padding: 0;
 	background-size: 50px 50px;
@@ -438,6 +461,11 @@ nav{
 	display: none;
 }
 
+.current
+{
+	color: $googleBlue;
+}
+
 .blockCheckMark{
 	display: inline-block;
 	vertical-align: top;
@@ -459,10 +487,11 @@ nav{
 	border: 1px solid $mediumGray;
 }
 
-.moduleContentList, .someOtherList{
+.moduleList, .someOtherList{
 	margin-top: 10px;
 	list-style: none;
 	//font-size: 1.1rem;
+	& a {color:black};
 	
 	& li{
 		padding-top: 3px;
@@ -500,25 +529,31 @@ time{
 	float:left;
 }
 
-.due, .deliverable
+.assignmentDetailsWrapper{
+	border-bottom: 1px solid $darkGray;
+	margin-bottom: 20px;
+}
+
+.assignmentDetailsCheckmarkWrapper
 {
-	font-weight: bold;
-}
-.assignmentDescription{
-	margin-top: 20px;
+	float: right;
 
 }
-
-.assignmentListDueDateTime{
-	float:right;
-	display: inline;
-	margin-right: 50px;
-}
-
 .indexContent{
 	margin-top: 40px;
-
 }
+
+
+.messageBoxSuccess
+{
+	border: 1px solid $green;
+	background-color: $liteGreen;
+	color: $green;
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 20px;
+}
+
 
 //////////////////////////////////////////////////
 

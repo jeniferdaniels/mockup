@@ -1,5 +1,5 @@
 html {
-  font-size: 82%; }
+  font-size: 87%; }
 
 body {
   font-family: "Open-Sans", sans-serif;
@@ -9,18 +9,33 @@ body {
   padding: 0;
   background-color: white; }
 
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0; }
+
+h2 {
+  font-size: 1.8rem; }
+
+p {
+  margin-bottom: 10px; }
+
 a {
   color: #ff0080;
   text-decoration: none;
   transition: all 0.25s ease; }
   a:hover, a:visited:hover {
-    color: #2ECC71;
+    color: #00a858;
     text-decoration: underline dotted; }
   a:visited {
     color: #ff0080; }
 
 pre {
   word-wrap: break-word; }
+
+.scheduleWrapper {
+  width: 100%;
+  height: 800px;
+  border: none; }
 
 header {
   border-bottom: 1px solid #7d7d7d;
@@ -38,7 +53,7 @@ header {
   color: #e74c3c; }
 
 .success {
-  color: #2ECC71; }
+  color: #00a858; }
 
 .disabled {
   color: #c8c8c8; }
@@ -69,7 +84,13 @@ header {
   margin-right: auto;
   background-color: white;
   padding: 10px;
-  margin-top: 90px; }
+  margin-top: 140px; }
+
+.expandCollapseAllWrapper {
+  text-align: right;
+  display: block;
+  width: 100%;
+  font-size: .8rem; }
 
 .column50Percent {
   width: 49.5%;
@@ -77,11 +98,6 @@ header {
   margin: 0;
   vertical-align: top;
   display: inline-block; }
-
-h1, h2, h3, h4, h5, h6, p {
-  padding: 0;
-  margin: 0;
-  margin: 0; }
 
 .contentTitle, .paragraphTitle {
   margin-top: 20px; }
@@ -164,6 +180,10 @@ nav {
   vertical-align: top;
   margin-right: 10px; }
 
+.breadCrumbWrapper {
+  display: inline-block;
+  width: 100%; }
+
 #courseMenu {
   padding: 0;
   margin: 0;
@@ -218,9 +238,6 @@ nav {
 .clearHover:hover {
   background-color: white !important; }
 
-#courseMenu, .top {
-  display: none; }
-
 .courseMenuIcon {
   padding: 0;
   background-size: 50px 50px;
@@ -274,6 +291,9 @@ nav {
 .displayNone {
   display: none; }
 
+.current {
+  color: #4488f6; }
+
 .blockCheckMark {
   display: inline-block;
   vertical-align: top;
@@ -291,12 +311,14 @@ nav {
   display: inline-block;
   border: 1px solid #7d7d7d; }
 
-.moduleContentList, .someOtherList {
+.moduleList, .someOtherList {
   margin-top: 10px;
   list-style: none; }
-  .moduleContentList li, .someOtherList li {
+  .moduleList a, .someOtherList a {
+    color: black; }
+  .moduleList li, .someOtherList li {
     padding-top: 3px; }
-    .moduleContentList li ul, .someOtherList li ul {
+    .moduleList li ul, .someOtherList li ul {
       list-style: none; }
 
 .someOtherList a {
@@ -318,19 +340,23 @@ time {
 .floatLeft {
   float: left; }
 
-.due, .deliverable {
-  font-weight: bold; }
+.assignmentDetailsWrapper {
+  border-bottom: 1px solid #141414;
+  margin-bottom: 20px; }
 
-.assignmentDescription {
-  margin-top: 20px; }
-
-.assignmentListDueDateTime {
-  float: right;
-  display: inline;
-  margin-right: 50px; }
+.assignmentDetailsCheckmarkWrapper {
+  float: right; }
 
 .indexContent {
   margin-top: 40px; }
+
+.messageBoxSuccess {
+  border: 1px solid #00a858;
+  background-color: rgba(18, 168, 88, 0.1);
+  color: #00a858;
+  width: 100%;
+  padding-left: 10px;
+  margin-top: 20px; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {
