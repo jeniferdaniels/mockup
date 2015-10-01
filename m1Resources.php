@@ -1,0 +1,84 @@
+<?php include_once 'mockupFunctions.php' ?>
+<?php include_once 'iconVariables.php' ?>
+<?php 
+	$navPrevious = "q1.php";
+	$navNext = "m1fb.php";	
+	$showModuleProgress = 1;
+	$pageTitle = "1.4 Resources";
+	
+	$breadCrumbs = array(
+		array("url"=>"index.php", "displayTitle"=>"Home"),
+		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"", "displayTitle"=>$pageTitle));
+?>
+
+<!doctype html>
+<html>
+	<head>
+		<?php writeHead(getCourseName()); ?>
+		<link rel="stylesheet" type="text/css" href="css/resourceTableStyle.css">
+		<script type="text/javascript" src="scripts/js/jquery-latest.js"></script> 
+		<script type="text/javascript" src="scripts/js/jquery.tablesorter.js"></script> 
+		<script>
+		$(document).ready(function() 
+				{ 
+					$("#myTable").tablesorter();			
+				} 
+			); 
+		</script>
+	</head>
+	
+	<body>
+		<?php writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs); ?>
+	
+		<div class="contentWrapper" id="contentWrapper">
+			
+			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
+		
+			<div class="resourceTableWrapper">
+			
+			<table id="myTable" class="tablesorter"> 
+				<thead> 
+				<tr> 
+					<th>Resource</th> 
+					<th>Type</th> 
+					<th>Size</th> 
+				</tr> 
+				</thead> 
+				<tbody> 
+				<tr> 
+					<td><a href="resources/cat_edu.pdf"><?php echo $GLOBALS["iconFileTypePdfSmall"] ?> ASPCA Cat Care Flyer</a></td> 
+					<td>PDF</td> 
+					<td>126K</td> 
+				</tr> 
+				<tr> 
+					<td><a href="https://www.youtube.com/watch?v=0Bmhjf0rKe8"><?php echo $GLOBALS["iconLinkSmall"] ?> Tickle Cat</a></td> 
+					<td>Video</td> 
+					<td>External Link</td> 
+				</tr> 
+
+				<tr> 
+					<td><a href="www.chesapeakehumane.org"><?php echo $GLOBALS["iconLinkSmall"] ?> Chesapeake Humane Society</a></td> 
+					<td>Website</td> 
+					<td>External Link</td> 
+				</tr> 
+
+				<tr> 
+					<td><a href="resources/jensCats.xls"><?php echo $GLOBALS["iconFileTypeExcelSmall"] ?> My Cats</a></td> 
+					<td>Excel Spreadsheet</td> 
+					<td>9K</td> 
+				</tr> 
+				
+				
+			</tbody> 
+			</table> 
+			
+			
+			
+			
+			
+			</div>
+		
+		
+	</body>
+</html>
