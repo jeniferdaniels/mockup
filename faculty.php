@@ -1,23 +1,25 @@
-<?PHP include_once 'mockupFunctions.php' ?>
-
-<?PHP
-	$hId = (isset($_GET['hId'])? $_GET['hId']: "");
+<?php include_once 'mockupFunctions.php' ?>
+<?php include_once 'iconVariables.php' ?>
+<?php 
+	$navPrevious = "";
+	$navNext = "";	
+	$showModuleProgress = 0;
 	$pageTitle = "Faculty";
 	
-	$showModuleProgress = 0;
-	$showPrevNext = 0;
+	$breadCrumbs = array(
+		array("url"=>"index.php", "displayTitle"=>"Home"),
+		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
-
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead($pageTitle); ?>
+		<?php writeHead(getCourseName()); ?>
 	</head>
 	
 	<body>
-		<?php writeTop($hId, $showModuleProgress, $showPrevNext); ?>
+		<?php writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs); ?>
 	
-		<div class="contentWrapper">
+		<div class="contentWrapper" id="contentWrapper">
 			
 			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
 			
