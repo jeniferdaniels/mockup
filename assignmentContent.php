@@ -27,6 +27,10 @@
 			<p class="assignmentDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nu
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nu</p>
 				
+				
+			<div class="assignmentDetailsCheckmarkWrapper">
+				<?php echo $GLOBALS["assignmentCheckMarkUnchecked"] ?>
+			</div>
 		</div>
 		
 	</body>
