@@ -1,4 +1,4 @@
-<?php include_once 'iconVariables.php' ?>
+<?php include_once 'globalVariables.php' ?>
 <?php
 
 
@@ -9,14 +9,14 @@ function getCourseName(){
 
 function writeHead($pageTitle){
 	echo '<title>' . $pageTitle . '</title>';
-	echo '<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo '<link rel="stylesheet" type="text/css" href="css/pleStyle.css">';
+	echo '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
 	//echo '<!--fonts from Adobe Typekit -->';
 	//echo '<script src="https://use.typekit.net/shs2gdc.js"></script>';
 	//echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
 	echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet" type="text/css">';
-	echo '<script src="scripts/js/toggleDisplay.js"></script>';
+	echo '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
 	
 }
 
