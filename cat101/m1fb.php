@@ -1,5 +1,5 @@
-<?php include_once 'mockupFunctions.php' ?>
-<?php include_once 'iconVariables.php' ?>
+<?php include_once '../scripts/mockupFunctions.php' ?>
+<?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "m1Resources.php";
 	$navNext = "index.php?isExpanded=0,0,0,0&msg=done1&isDone=1,1,0,0";	

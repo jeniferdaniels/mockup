@@ -1,5 +1,5 @@
-<?php include_once 'mockupFunctions.php' ?>
-<?php include_once 'iconVariables.php' ?>
+<?php include_once '../scripts/mockupFunctions.php' ?>
+<?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$isExpandedList = (isset($_GET['isExpanded'])? $_GET['isExpanded']: "0,1,0,0");
 	$isDoneList = (isset($_GET['isDone'])? $_GET['isDone']: "1,0,0,0");

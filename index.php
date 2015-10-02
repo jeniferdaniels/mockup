@@ -1,10 +1,5 @@
-<?php include_once '../mockupFunctions.php' ?>
-<?php include_once '../iconVariables.php' ?>
-<?php 	
-	$navPrevious = "";
-	$navNext = "";
-	$showModuleProgress = 0;
-?>
+<?php include_once 'scripts/mockupFunctions.php' ?>
+<?php include_once 'scripts/globalVariables.php' ?>
 
 <!doctype html>
 <html>
@@ -16,7 +11,7 @@
 		
 		<div class="contentWrapper">
 			<div class="dashLeftCol">stuff</div>
-			<div class="dashCenterCol">stuff</div>
+			<div class="dashCenterCol"><a href="cat101/index.php">CAT 101</a></div>
 			<div class="dashRightCol">stuff</div>
 		
 		</div>

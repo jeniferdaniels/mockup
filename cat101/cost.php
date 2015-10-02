@@ -1,5 +1,5 @@
-<?php include_once 'mockupFunctions.php' ?>
-<?php include_once 'iconVariables.php' ?>
+<?php include_once '../scripts/mockupFunctions.php' ?>
+<?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "responsibility.php";
 	$navNext = "considerSummary.php";	

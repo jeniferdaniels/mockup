@@ -1,4 +1,4 @@
-<?PHP include_once 'mockupFunctions.php' ?>
+<?php include_once '../scripts/mockupFunctions.php' ?>
 
 <?PHP
 	$hId = (isset($_GET['hId'])? $_GET['hId']: "i");
