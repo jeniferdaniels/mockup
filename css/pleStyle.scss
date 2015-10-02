@@ -12,11 +12,11 @@ $xLiteYellow: rgba(254,239,179, 0.05);
 $liteYellow: rgba(254,239,179, 1);
 //$yellow: rgba( , , , );
 $limeGreen: rgba(174,203,54, 1);
-//$green: #99CC33;
-$green: #2ECC71;
+$liteGreen: rgba(18,168,88, 0.1);
+$green: rgba(0,168,88,1);
 $xLiteBlue: rgba(23,120,169,0.2);
 $liteBlue: #1778a9;
-$mediumBlue:rgba(68,136,246,1);
+$googleBlue:rgba(68,136,246,1);
 $darkBlue: #062c8c;
 $monarchBlue: rgba(0, 55, 103, 1);
 //$litePurple: ;
@@ -32,13 +32,14 @@ $disabled: $liteGray;
 $warning: $liteYellow;
 
 //SIZES
-$contentWidth: 1000px;
+$contentWidth: 1200px;
 $navWrapperWidth: 1100px;
 $moduleProgressBarWidth: 100px;
 $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
 
 $font-stack: "Open-Sans", sans-serif;
+//"Roboto", 
 $font-color: $darkGray; 
 $link-color: $hotPink;
 $link-color-hover: $green;
@@ -63,45 +64,44 @@ $link-color-topic-visited: $darkPurple;
 }
 
 html{
-	font-size: 82%;
+	font-size: 87%;
 }
 
 body{
 	font-family: $font-stack;
 	color:	$font-color;
-	font-size: 1rem;
 	//border: 1px solid red;
+	line-height: 150%;
 	margin: 0;
 	padding: 0;
 	background-color: white;
 }
 
-h1, h2, h3, h4, h5{
-	font-weight: normal;
-
-
-
-}
-div#courseMenu ul
-{
-	margin: 0;
+h1, h2, h3, h4, h5, h6, p{
 	padding: 0;
-}
-div#courseMenu ul li
-{
-	padding-left: 0px;
+	margin: 0;
 }
 
+h2{
+	font-size: 2rem;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
 
+//overwrite
+p{
+	margin-bottom: 10px;
+	font-family: Georgia;
+}
 
 a{
 	color: $link-color;
 	text-decoration: none;
-	//transition: all 0.25s ease;
+	transition: all 0.25s ease;
 
 	&:hover, &:visited:hover{
 		color: $link-color-hover;
-		text-decoration: underline;
+		text-decoration: underline dotted;
 	}
 	
 	&:visited{
@@ -113,11 +113,17 @@ pre{
 	word-wrap: break-word;
 }
 
+.scheduleWrapper{
+	 width:100%;
+	 height: 800px;
+	border: none;
+}
+
 
 header{
-	//border-bottom: 1px solid $mediumGray;
-	height: 60px;
-	background-color: $xLiteGray;
+	border-bottom: 1px solid $mediumGray;
+	height: 50px;
+	background-color: white;
 }
 
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
@@ -155,7 +161,9 @@ header{
 	list-style: none;
 	padding-left: 10px;
 	
-
+	&a{
+		text-decoration:underline;
+	}
 
 	&> li + li::before{
 		content:" > ";
@@ -163,28 +171,12 @@ header{
 
 	&> li{
 		display: inline-block;
-		color: white;
-		
-		& a{
-		text-decoration:underline;
-		color: white;
-			&:hover, &:visited, &:visited:hover{
-			color: white;
-			}
-		}
 	}
 }
 
-.oduLogo{
-	background-image: url("../images/oduOnlineLogo.png");
-	background-repeat: no-repeat;
-	background-size: 165px  62px;
-	height: 62px;
-	width: 165px;
-	vertical-align: bottom;
-	display:inline-block;
+.oduIcon{
+	display: inline-block;
 }
-
 
 .moduleProgress{
 	padding: 0 20px 0 0;
@@ -199,9 +191,14 @@ header{
 	margin-right: auto;
 	background-color: white;
 	padding: 10px;
-	margin-top: 120px;
+	margin-top: 140px;
 }
-
+.expandCollapseAllWrapper{
+	text-align: right;
+	display:block;
+	width: 100%;
+	font-size: .8rem;
+}
 .column50Percent{
 	width: 49.5%;
 	padding:0;
@@ -210,23 +207,8 @@ header{
 	display: inline-block;
  }	 
 
-h1, h2, h3, h4, h5, h6, p{
-	padding: 0;
-	margin: 0;
-	margin: 0;
-}
-
 .contentTitle, .paragraphTitle{
 	margin-top: 20px;
-}
-
-.paragraphTitle{
-	font-weight: bold;
-}
-
-.contentTitle{
-	font-size: 1.4rem;
-
 }
 
 .courseTitle{
@@ -238,58 +220,49 @@ h1, h2, h3, h4, h5, h6, p{
 .top{
 	position:fixed;
 	width:100%;
-	//background-color: white;
-	//border-top: 10px solid $monarchBlue;
+	background-color: white;
+	border-top: 10px solid $monarchBlue;
 	top: 0;
 	left: 0;
 }
 
 nav{
 	display: inline-block;
-	width: 100%;
-	background-color: $mediumBlue;
-	margin-top: 45px;
-	height: 40px;
 }
 
 .navPrevious, .navNext{
     position:fixed;
 	vertical-align: middle;
-	//background-repeat: no-repeat;
-	//width: 40px;
-	//background-image: url("../images/style1/chevron3.svg");
+
 	top: 50%;
 	& a{
 		color: $darkGray;
-	}
-	
-	& a:hover{
-		color: $hotPink;
+		
+		&:hover {
+			color: $hotPink;
+		}
 	}
 }
 
 .navPrevious{
     left: 5px;
-	//transform: scaleX(-1);
 }
 
 .navNext{
     right: 5px;
 }
 
+//change to inline-block and turn off chevrons to see different views
 .fa-caret-left, .fa-caret-right{
 	display: none;
 }
-
 
 .navWrapper{
 	width:99%;
 	height:100%;
 }
 
-
 .moduleProgressWrapper{
-	//border: 1px solid green;
 	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
 	float: right;
@@ -298,7 +271,6 @@ nav{
 
 .moduleProgressTitle{
 	font-size: .8rem;
-	//border: 1px solid red;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
 }
@@ -306,8 +278,8 @@ nav{
 .searchWrapper{
 	display: inline-block;
 	padding: 0 20px 0 20px;
-	//margin-top: 5px;
 }
+
 #search{
 	background-image: url("../images/style1/search.svg");
 	background-size: 20px 20px;
@@ -338,73 +310,91 @@ nav{
 	margin-right:10px;
 }
 
-.headIcon{
-	padding: 0 7px 0 7px;
-	//background-size: 20px 20px;
-	//background-repeat: no-repeat;
-	display:inline-block;
-	//height: 20px;
-	//width: 20px;
-	font-size: 1.5rem;
-	vertical-align: bottom;
-	color: $liteGray;
-	&:hover{
-		color: $mediumBlue;
-	}
-}
-
-
-.courseMenuIcon{
-	display:none;
+.breadCrumbWrapper{
+	display: inline-block;
+	width: 100%;
 }
 
 
 #courseMenu {
-	padding-left: 10px; 
-	margin-bottom: 3px; 
-	display: inline-block;
-	//height:50px;
-	background-color: white;
+	padding: 0; 
+	margin: 0; 
+	border: 0;
+	top: 120px;
+	left: 5px;
 	position: fixed;
-	top: 60px;
-	width:100%;
-	font-size: 1.1rem;
-	border-bottom: 1px solid $liteGray;
-	
-	& ul {
-		padding: 0; 
-		margin: 0; 
-	
-	}
 	
 	& ul, & ul li, & ul ul {
-		display: inline-block;
-		padding-right: 3px;
-		padding-left: 3px;
-		margin-right: 20px;
-		padding-top: 5px;
-		
-		& a {
-			color: $darkGray;
+		list-style: none; 
+		margin: 0; 
+		padding: 0; 
+		border: 0;
+	}
+	
+	& ul{
+		position: relative; 
+		z-index: 397;
+		width: 35px; 
+		background: white;
+
+		& a{
+			color: black;
+			&:visited{color: black; text-decoration: none;}
+			&:hover {color: $googleBlue;}
+			&:active {color: black;}
+			transition: none;
 		}
 		
-		& a:hover{
-			border-bottom: 3px solid $mediumBlue;
-			text-decoration: none;
+		& li {
+			min-height: 1px; 
+			line-height: 1em; 
+			vertical-align: middle;
+			padding: 7px 10px; 
+			color: #000;
+			
+			&:hover {
+				position: relative; 
+				z-index: 399; 
+				cursor: default;
+				background: $xLiteBlue; 
+				color: black;
+				& > ul { 
+					visibility: visible;
+				}
+			}
+		}
+
+		& ul {
+			visibility: hidden; 
+			position: absolute; 
+			top: 10px; 
+			left: 99%; 
+			z-index: 398; 
+			width: 100px; 
+			border: 1px solid $liteGray;
+			margin-left:25px;
 			
 		}
 	}
-	
-
 }
-
-
 
 .clearHover{
 	&:hover{
 		background-color:white !important;
 	}
 }
+
+.courseMenuIcon{
+	padding: 0;
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	display:inline-block;
+	height: 50px;
+	width: 50px;
+	vertical-align: bottom;
+	background-image: url("../images/style1/courseMenu.svg");
+}
+
 
 .lhsMenuWrapper{
 	display: inline;
@@ -432,7 +422,7 @@ nav{
 		background-color: $xLiteGray;
 		
 		&:hover{
-			background-color: $xLiteYellow;
+			background-color: white;
 		}
 	}
 	&.incomplete{
@@ -455,10 +445,35 @@ nav{
 
 .boxWrapper{
 	padding-top: 10px;
+	vertical-align: top;
+	align:top;
 }
 
-.inline{
+.inline, .displayInline{
 	display: inline;
+}
+
+.displayInlineBlock{
+	display: inline-block;
+}
+
+.displayBlock{
+	display: block;
+}
+
+.displayNone{
+	display: none;
+}
+
+.current
+{
+	color: $googleBlue;
+}
+
+.blockCheckMark{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
 }
 
 .videoAndTranscriptWrapper{
@@ -476,28 +491,12 @@ nav{
 	border: 1px solid $mediumGray;
 }
 
-
-.cssChanger{
-	background-color: white;
-	position:fixed;
-	bottom: 0;
-	right: 0;
-	width: 100px;
-	@include roundedBorderWithBoxShadow;
-	border: 1px solid $darkGray;
-	padding-left: 10px;
-	& ul{
-		list-style: none; 
-		padding:0;
-		}
-
-}
-
-
-.moduleContentList{
+.moduleList, .someOtherList{
 	margin-top: 10px;
 	list-style: none;
-	font-size: 1.1rem;
+	//font-size: 1.1rem;
+	& a {color:black};
+	
 	& li{
 		padding-top: 3px;
 		& ul {
@@ -506,10 +505,16 @@ nav{
 	}
 }
 
+.someOtherList
+{
+	& a {color:black;}
+
+}
+
 time{
-	font-size: .8rem;
-	font-style: italic;
-	color: $liteBlue;
+	//font-style: italic;
+	color: $darkGray;
+	display: inline-block;
 }
 
 .fa-calendar, .fa-check-circle{
@@ -520,11 +525,50 @@ time{
 	visibility: hidden;
 }
 
-.fa-angle-left, .fa-angle-right
-{
-	color: $liteGray;
+.floatRight{
+	float: right;
 }
 
+.floatLeft{
+	float:left;
+}
+
+.assignmentDetailsWrapper{
+	border-bottom: 1px solid $darkGray;
+	margin-bottom: 20px;
+}
+
+.assignmentDetailsCheckmarkWrapper
+{
+	float: right;
+
+}
+.indexContent{
+	margin-top: 40px;
+}
+
+
+.messageBoxSuccess
+{
+	border: 1px solid $green;
+	background-color: $liteGreen;
+	color: $green;
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 20px;
+}
+
+.dash{
+	&LeftCol, &CenterCol, &RightCol{
+		padding:0 10px 0 10px;
+		border: 1px solid blue;
+	}
+
+	&LeftCol, &RightCol{
+		width: 20%;	
+	}
+
+}
 
 //////////////////////////////////////////////////
 
@@ -562,7 +606,7 @@ time{
 	
 	#courseMenu {
 		position: fixed;
-		top: 3px;
+		top: 10px;
 		left: 5px;
 	}
 	
@@ -571,6 +615,9 @@ time{
 	}
 }
 
+.oduLogo{
+	display:none;
+}
 
 
 
