@@ -83,6 +83,7 @@ header {
 
 .contentWrapper {
   width: 1200px;
+  border: 1px solid red;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -363,9 +364,14 @@ time {
 
 .dashLeftCol, .dashCenterCol, .dashRightCol {
   padding: 0 10px 0 10px;
-  border: 1px solid blue; }
+  border: 1px solid blue;
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0; }
 .dashLeftCol, .dashRightCol {
-  width: 20%; }
+  width: 19%; }
+.dashCenterCol {
+  width: 55%; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {

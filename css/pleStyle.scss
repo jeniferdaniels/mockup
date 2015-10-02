@@ -186,7 +186,7 @@ header{
 
 .contentWrapper{
 	width: $contentWidth;
-	//border: 1px solid blue;
+	border: 1px solid red;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
@@ -562,14 +562,30 @@ time{
 	&LeftCol, &CenterCol, &RightCol{
 		padding:0 10px 0 10px;
 		border: 1px solid blue;
+		display:inline-block;
+		margin-left:0;
+		margin-right:0;
 	}
 
 	&LeftCol, &RightCol{
-		width: 20%;	
+		width: 19%;	
 	}
 
+	&CenterCol{
+		width:55%;
+	}
 }
 
+
+
+
+
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
 
