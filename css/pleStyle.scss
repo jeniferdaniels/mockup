@@ -91,7 +91,7 @@ h2{
 //overwrite
 p{
 	margin-bottom: 10px;
-	font-family: Georgia;
+	//font-family: Georgia;
 }
 
 a{
@@ -184,15 +184,7 @@ header{
 	float: right;
 }
 
-.contentWrapper{
-	width: $contentWidth;
-	border: 1px solid red;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: white;
-	padding: 10px;
-	margin-top: 140px;
-}
+
 .expandCollapseAllWrapper{
 	text-align: right;
 	display:block;
@@ -230,37 +222,16 @@ nav{
 	display: inline-block;
 }
 
-.navPrevious, .navNext{
-    position:fixed;
-	vertical-align: middle;
 
-	top: 50%;
-	& a{
-		color: $darkGray;
-		
-		&:hover {
-			color: $hotPink;
-		}
-	}
-}
 
-.navPrevious{
-    left: 5px;
-}
 
-.navNext{
-    right: 5px;
-}
 
 //change to inline-block and turn off chevrons to see different views
 .fa-caret-left, .fa-caret-right{
 	display: none;
 }
 
-.navWrapper{
-	width:99%;
-	height:100%;
-}
+
 
 .moduleProgressWrapper{
 	width: $moduleProgressBarWrapperWidth;
@@ -558,6 +529,21 @@ time{
 	margin-top: 20px;
 }
 
+
+
+
+
+.contentWrapper{
+	width: $contentWidth;
+	border: 1px solid red;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	//padding: 10px;
+	margin-top: 140px;
+	vertical-align: top;
+}
+
 .dash{
 	&LeftCol, &CenterCol, &RightCol{
 		padding:0 10px 0 10px;
@@ -576,6 +562,120 @@ time{
 	}
 }
 
+
+.contentLeftCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted orange;
+		display:inline-block;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		width: 15%;
+
+}
+.contentRightCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted green;
+		display:inline-block;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		width: 15%;
+
+}
+.contentLeftNavCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted purple;
+		display:inline-block;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		width: 3%;
+
+}
+.contentRightNavCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted blue;
+		display:inline-block;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		width: 3%;
+
+}
+.contentCenterCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted blue;
+		display:inline-block;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		width: 60%;
+
+}
+
+/*.content{
+	&LeftCol, &CenterCol, &RightCol, &LeftNavCol, &RightNavCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted orange;
+		display:table-cell;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		}
+		
+		
+	&LeftCol, &RightCol{
+		width: 10%;
+		}
+	
+	&CenterCol{
+		width:50%;
+		align:left;
+		border: 1px solid green;
+	}
+	
+	&LeftNavCol, &RightNavCol{
+		width:30px;
+		position: fixed;
+		top: 50%;
+		height:100%;
+		//display:block;
+	}		
+}
+*/	
+.navWrapper{
+	width:99%;
+	height:100%;
+}	
+	
+.navPrevious, .navNext{
+    position:fixed;
+	vertical-align: middle;
+	top: 50%;
+	height: 100%;
+	& a{
+		color: $darkGray;
+		
+		&:hover {
+			color: $hotPink;
+		}
+	}
+}
+
+.navPrevious{
+    left: 5px;
+}
+
+.navNext{
+    right: 5px;
+}
 
 
 

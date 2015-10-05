@@ -1,14 +1,14 @@
 <?php include_once 'globalVariables.php' ?>
 <?php
 
-
+//TODO change to class global
 function getCourseName(){
 	return "CAT 101 - Fundamentals of Kittens";
 }
 
-
 function writeHead($pageTitle){
 	echo '<title>' . $pageTitle . '</title>';
+	//echo '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
 	echo '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
 	//echo '<!--fonts from Adobe Typekit -->';
@@ -18,19 +18,30 @@ function writeHead($pageTitle){
 	echo '<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet" type="text/css">';
 	echo '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
 	
+	
 }
 
 function writeNavArrows($navNext, $navPrevious)
 {
-		echo '<div class="navWrapper">';
-		if (!empty($navPrevious)){
-			echo '<div class="navPrevious"><a href="' . $navPrevious . '"><div class="fa fa-angle-left fa-5x"></div></div></a>';
-		}
-			
-		if (!empty($navNext)){
-			echo '<div class="navNext"><a href="' . $navNext . '"><div class="fa fa-angle-right fa-5x"></div></div></a>';
-		}
-		echo '</div><!--end nav wrapper-->';
+	echo '<div class="navWrapper">';
+		writePreviousNavArrow($navNext);
+		writeNextNavArrow($navPrevious);
+	echo '</div><!--end nav wrapper-->';
+}
+
+function writePreviousNavArrow($url)
+{
+	if (!empty($url)){
+		echo '<div class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></div></a>';
+	}
+}
+
+function  writeNextNavArrow($url)
+{
+	if (!empty($url)){
+		echo '<div class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></div></a>';
+	}
+
 }
 
 
@@ -40,26 +51,25 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 	writeNavArrows($navNext, $navPrevious);
 
 	echo '<div class="top">';
-	echo '<header>';
-	writeTopLeft();
-	writeTopRight();
-	echo '</header>';
-		
-	writeCourseInfoMenu();	
-	writeBreadCrumbs($breadCrumbs);
+		echo '<header>';
+			writeTopLeft();
+			writeTopRight();
+		echo '</header>';
+			
+		writeCourseInfoMenu();	
+		writeBreadCrumbs($breadCrumbs);
 
-	if ($showModuleProgress)
-		writeModuleProgressBar();
+		if ($showModuleProgress)
+			writeModuleProgressBar();
 		
-	echo '</div>';
-	
+	echo '</div><!--end top-->';
 }
 
 function writeTopRight(){
 	echo '<div class="topRightWrapper">';
-	writeSearchBox();
-	echo '<i class="fa fa-bell fa-2x headIcon"></i>';
-	echo '<i class="fa fa-user fa-2x headIcon"></i>';
+		writeSearchBox();
+		echo '<i class="fa fa-bell fa-2x headIcon"></i>';
+		echo '<i class="fa fa-user fa-2x headIcon"></i>';
 	echo '</div><!--end topRightWrapper-->';
 }
 

@@ -19,8 +19,7 @@ h2 {
   margin-bottom: 10px; }
 
 p {
-  margin-bottom: 10px;
-  font-family: Georgia; }
+  margin-bottom: 10px; }
 
 a {
   color: #ff0080;
@@ -81,15 +80,6 @@ header {
   padding: 0 20px 0 0;
   float: right; }
 
-.contentWrapper {
-  width: 1200px;
-  border: 1px solid red;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  padding: 10px;
-  margin-top: 140px; }
-
 .expandCollapseAllWrapper {
   text-align: right;
   display: block;
@@ -122,27 +112,8 @@ header {
 nav {
   display: inline-block; }
 
-.navPrevious, .navNext {
-  position: fixed;
-  vertical-align: middle;
-  top: 50%; }
-  .navPrevious a, .navNext a {
-    color: #141414; }
-    .navPrevious a:hover, .navNext a:hover {
-      color: #ff0080; }
-
-.navPrevious {
-  left: 5px; }
-
-.navNext {
-  right: 5px; }
-
 .fa-caret-left, .fa-caret-right {
   display: none; }
-
-.navWrapper {
-  width: 99%;
-  height: 100%; }
 
 .moduleProgressWrapper {
   width: 110px;
@@ -362,6 +333,15 @@ time {
   padding-left: 10px;
   margin-top: 20px; }
 
+.contentWrapper {
+  width: 1200px;
+  border: 1px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  margin-top: 140px;
+  vertical-align: top; }
+
 .dashLeftCol, .dashCenterCol, .dashRightCol {
   padding: 0 10px 0 10px;
   border: 1px solid blue;
@@ -372,6 +352,107 @@ time {
   width: 19%; }
 .dashCenterCol {
   width: 55%; }
+
+.contentLeftCol {
+  padding: 0;
+  margin: 0;
+  border: 1px dotted orange;
+  display: inline-block;
+  height: inherit;
+  vertical-align: top;
+  height: inherit;
+  width: 15%; }
+
+.contentRightCol {
+  padding: 0;
+  margin: 0;
+  border: 1px dotted green;
+  display: inline-block;
+  height: inherit;
+  vertical-align: top;
+  height: inherit;
+  width: 15%; }
+
+.contentLeftNavCol {
+  padding: 0;
+  margin: 0;
+  border: 1px dotted purple;
+  display: inline-block;
+  height: inherit;
+  vertical-align: top;
+  height: inherit;
+  width: 3%; }
+
+.contentRightNavCol {
+  padding: 0;
+  margin: 0;
+  border: 1px dotted blue;
+  display: inline-block;
+  height: inherit;
+  vertical-align: top;
+  height: inherit;
+  width: 3%; }
+
+.contentCenterCol {
+  padding: 0;
+  margin: 0;
+  border: 1px dotted blue;
+  display: inline-block;
+  height: inherit;
+  vertical-align: top;
+  height: inherit;
+  width: 60%; }
+
+/*.content{
+	&LeftCol, &CenterCol, &RightCol, &LeftNavCol, &RightNavCol{
+		padding: 0;
+		margin: 0;
+		border: 1px dotted orange;
+		display:table-cell;
+		height: inherit;
+		vertical-align:top;
+		height: inherit;
+		}
+		
+		
+	&LeftCol, &RightCol{
+		width: 10%;
+		}
+	
+	&CenterCol{
+		width:50%;
+		align:left;
+		border: 1px solid green;
+	}
+	
+	&LeftNavCol, &RightNavCol{
+		width:30px;
+		position: fixed;
+		top: 50%;
+		height:100%;
+		//display:block;
+	}		
+}
+*/
+.navWrapper {
+  width: 99%;
+  height: 100%; }
+
+.navPrevious, .navNext {
+  position: fixed;
+  vertical-align: middle;
+  top: 50%;
+  height: 100%; }
+  .navPrevious a, .navNext a {
+    color: #141414; }
+    .navPrevious a:hover, .navNext a:hover {
+      color: #ff0080; }
+
+.navPrevious {
+  left: 5px; }
+
+.navNext {
+  right: 5px; }
 
 @media screen and (max-width: 1200px) {
   .contentWrapper {
