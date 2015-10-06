@@ -25,7 +25,7 @@
 			
 			<div class="fa fa-calendar fa-2x displayInlineBlock urgent"></div><h2 class="contentTitle displayInlineBlock">Assignment - <?php echo $pageTitle ?></h2>
 			<div class="assignmentDetailsWrapper">
-				<strong>Due - </strong><time class="displayInlineBlock dueTime">October 15, 2015 at 11:59 PM</time>
+				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 22, 2015 at 11:59 PM</time>
 				<br>
 				<strong>Deliverables - </strong> Submitted Quiz on Blackboard
 			</div>
