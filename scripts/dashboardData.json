@@ -1,0 +1,136 @@
+{	
+	"widgets":
+	[
+		{
+		"name": "Who's Online",
+		"users":
+			[
+				{	
+					"name":"Rick Grimes",
+					"course": "CAT 101"	
+				},
+				{
+					"name":"Carl Grimes",
+					"course": "DOG 320"
+				},
+				{
+					"name":"Beth Green",
+					"course": "ZOM 150"
+				},
+				{
+					"name":"Glen Rhee",
+					"course": "DOG 320"
+				},
+				{
+					"name":"Maggie Green",
+					"course": "CAT 101"
+				},
+				{	
+					"name":"Daryl Dixon",
+					"course": "ZOM 150"
+				},
+				{
+					"name":"Meryl Dixon",
+					"course": "DOG 320"
+				},
+				{	
+					"name":"Carol Peletier",
+					"course": "CAT 101"
+				}
+			]
+		},
+		{
+		"name": "Courses",
+		"courseList": 
+			[
+				{	
+					"subject": "CAT",
+					"number": "101",
+					"title": "Introduction to Kittens",
+					"url": "cat101/",
+					"resumeTitle": "1.1.4 Summary",
+					"resumeUrl": "cat101/considerSummary.php"
+				},
+				{	
+					"subject": "DOG",
+					"number": "320",
+					"title": "Advanced Dog Training",
+					"url": "#",
+					"resumeTitle": "10.3.4 Fetch",
+					"resumeUrl": "#"
+				},
+				{	
+					"subject": "ZOM",
+					"number": "150",
+					"title": "Introduction to the Zombie Apcolypse",
+					"url": "#",
+					"resumeTitle": "3.5 Weapons",
+					"resumeUrl": "#"
+					
+				}
+			]
+		},
+		{
+		"name": "Upcoming Assignments",
+		"assignmentList": 
+			[
+				{	
+					"subject": "CAT",
+					"number": "101",
+					"title": "1.A Homework #1",
+					"url": "cat101/whyGetAKitten.php",
+					"dueDate": "1/18/2015",
+					"dueTime": "11:59 PM"
+				},
+				{	
+					"subject": "DOG",
+					"number": "320",
+					"title": "3.A Research Paper Regarding Other Tricks to Teach Your Dog",
+					"url": "#",
+					"dueDate": "1/19/2015",
+					"dueTime": "11:59 PM"
+				},
+				{	
+					"subject": "CAT",
+					"number": "101",
+					"title": "1.B Discussion Forum #1",
+					"url": "cat101/whyBuy.php",
+					"dueDate": "1/20/2015",
+					"dueTime": "11:59 PM"					
+				},
+				{	
+					"subject": "CAT",
+					"number": "101",
+					"title": "1.C Quiz #1",
+					"url": "q1.php",
+					"dueDate": "1/22/2015",
+					"dueTime": "11:59 PM"					
+				},
+				{	
+					"subject": "CAT",
+					"number": "101",
+					"title": "1.D Module Feedback",
+					"url": "q1.php",
+					"dueDate": "1/23/2015",
+					"dueTime": "11:59 PM"					
+				},
+				{	
+					"subject": "DOG",
+					"number": "320",
+					"title": "3.B Discussion Forum Regarding Pavlov",
+					"url": "#",
+					"dueDate": "1/20/2015",
+					"dueTime": "11:59 PM"					
+				},
+				{	
+					"subject": "ZOM",
+					"number": "150",
+					"title": "3.A Essay About Homemade Weapons",
+					"url": "#",
+					"dueDate": "1/19/2015",
+					"dueTime": "11:59 PM"					
+				}
+			]
+		}
+	]
+}
