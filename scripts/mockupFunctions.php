@@ -8,7 +8,7 @@ function getCourseName(){
 
 function writeHead($pageTitle){
 	echo '<title>' . $pageTitle . '</title>';
-	//echo '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
+	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
 	echo '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
 	//echo '<!--fonts from Adobe Typekit -->';
@@ -17,8 +17,7 @@ function writeHead($pageTitle){
 	echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet" type="text/css">';
 	echo '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
-	
-	
+
 }
 
 function writeNavArrows($navNext, $navPrevious)
@@ -86,21 +85,6 @@ function writeModuleProgressBar(){
 	echo '<div class="moduleProgressTitle">Module Progress</div>';
 	echo '</div>';
 }
-
-
-function getParentHId($hId)
-{	
-	$parentHId = "";
-	if (strlen($hId) > 1){
-		$explodedHId = explode(".", $hId);
-		if (count($explodedHId)>1){
-			array_pop($explodedHId);
-			$parentHId = join(".", $explodedHId);
-		}
-	}
-	return $parentHId;
-}
-
 
 function writeBreadCrumbs($breadCrumbs)
 {
@@ -187,6 +171,12 @@ function writeSuccessMessage($id, $string)
 		echo '<div class="messageBoxSuccess" id="successBox' . $id . '" style="display:none">';
 		echo $string;
 		echo '</div>';
+}
+
+
+function writeDashTitle($title)
+{
+		echo '<h2 class="dashTitle">' . $title . '</h2>';	
 }
 
 ?>
