@@ -38,11 +38,11 @@ $moduleProgressBarWidth: 100px;
 $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
 
-$font-stack: "Open-Sans", sans-serif;
+$font-stack: "Open Sans", Georgia;
 //"Roboto", 
 $font-color: $darkGray; 
 $link-color: $hotPink;
-$link-color-hover: $green;
+$link-color-hover: $googleBlue;
 $link-color-visited: $link-color;
 
 $link-color-topic: $liteBlue;
@@ -77,9 +77,9 @@ body{
 	background-color: white;
 }
 
-h1, h2, h3, h4, h5, h6, p{
-	padding: 0;
-	margin: 0;
+h1{
+	font-size: 2.5rem;
+	font-weight: 500;
 }
 
 h2{
@@ -88,10 +88,8 @@ h2{
 	margin-bottom: 10px;
 }
 
-//overwrite
 p{
 	margin-bottom: 10px;
-	//font-family: Georgia;
 }
 
 a{
@@ -107,18 +105,19 @@ a{
 	&:visited{
 		color: $link-color-visited;
 	}
-}//end a
+}
 
 pre{
 	word-wrap: break-word;
 }
 
-.scheduleWrapper{
-	 width:100%;
-	 height: 800px;
+/*
+.schduleWrapper{
+	width:100%;
+	height: 800px;
 	border: none;
 }
-
+*/
 
 header{
 	border-bottom: 1px solid $mediumGray;
@@ -208,6 +207,8 @@ header{
 	color: $darkGray;
 	display: inline-block;
 }
+
+
 
 .top{
 	position:fixed;
@@ -462,31 +463,28 @@ nav{
 	border: 1px solid $mediumGray;
 }
 
-.moduleList, .someOtherList{
-	margin-top: 10px;
+.moduleList, .courseList, .assignmentsList, .whosOnlineList{
 	list-style: none;
-	//font-size: 1.1rem;
 	& a {color:black};
-	
 	& li{
 		padding-top: 3px;
+		padding-left: 20px;
 		& ul {
-			list-style: none;	
+			list-style: none;
+			padding-left: 20px;
 		}
 	}
 }
 
-.someOtherList
-{
-	& a {color:black;}
-
+.dashboardList{
+	& li { padding-left: 0px; }
 }
+
 
 time{
-	//font-style: italic;
-	color: $darkGray;
 	display: inline-block;
 }
+
 
 .fa-calendar, .fa-check-circle{
 	padding-right: 3px;
@@ -529,93 +527,55 @@ time{
 	margin-top: 20px;
 }
 
-
-
-
-
 .contentWrapper{
-	width: $contentWidth;
+	width: 1200px;
 	border: 1px solid red;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
-	//padding: 10px;
+	padding: 0;
 	margin-top: 140px;
 	vertical-align: top;
 }
 
 .dash{
+	&Title{
+	font-size: 1.4rem;
+	width: 100%;
+	border-bottom: 1px solid black;
+	}
+	
+	&Wrapper{
+		width: 1200px;
+		//border: 1px solid red;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: white;
+		padding: 0;
+		margin-top: 140px;
+		vertical-align: top;
+	}
+
+
 	&LeftCol, &CenterCol, &RightCol{
-		padding:0 10px 0 10px;
-		border: 1px solid blue;
+		padding: 10px;
+		position: relative;
+		//border: 1px solid blue;
 		display:inline-block;
-		margin-left:0;
-		margin-right:0;
+		margin: 0;
+		vertical-align: top;
 	}
 
-	&LeftCol, &RightCol{
-		width: 19%;	
+	&RightCol{
+		width: 15%;	
 	}
 
-	&CenterCol{
-		width:55%;
+	&LeftCol{
+		width: 25%
 	}
-}
-
-
-.contentLeftCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted orange;
-		display:inline-block;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		width: 15%;
-
-}
-.contentRightCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted green;
-		display:inline-block;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		width: 15%;
-
-}
-.contentLeftNavCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted purple;
-		display:inline-block;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		width: 3%;
-
-}
-.contentRightNavCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted blue;
-		display:inline-block;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		width: 3%;
-
-}
-.contentCenterCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted blue;
-		display:inline-block;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		width: 60%;
+	&CenterCol {
+		width: 50%;
+	}
 
 }
 

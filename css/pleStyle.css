@@ -2,16 +2,16 @@ html {
   font-size: 87%; }
 
 body {
-  font-family: "Open-Sans", sans-serif;
+  font-family: "Open Sans", Georgia;
   color: #141414;
   line-height: 150%;
   margin: 0;
   padding: 0;
   background-color: white; }
 
-h1, h2, h3, h4, h5, h6, p {
-  padding: 0;
-  margin: 0; }
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500; }
 
 h2 {
   font-size: 2rem;
@@ -26,7 +26,7 @@ a {
   text-decoration: none;
   transition: all 0.25s ease; }
   a:hover, a:visited:hover {
-    color: #00a858;
+    color: #4488f6;
     text-decoration: underline dotted; }
   a:visited {
     color: #ff0080; }
@@ -34,11 +34,13 @@ a {
 pre {
   word-wrap: break-word; }
 
-.scheduleWrapper {
-  width: 100%;
-  height: 800px;
-  border: none; }
-
+/*
+.schduleWrapper{
+	width:100%;
+	height: 800px;
+	border: none;
+}
+*/
 header {
   border-bottom: 1px solid #7d7d7d;
   height: 50px;
@@ -286,21 +288,21 @@ nav {
   display: inline-block;
   border: 1px solid #7d7d7d; }
 
-.moduleList, .someOtherList {
-  margin-top: 10px;
+.moduleList, .courseList, .assignmentsList, .whosOnlineList {
   list-style: none; }
-  .moduleList a, .someOtherList a {
+  .moduleList a, .courseList a, .assignmentsList a, .whosOnlineList a {
     color: black; }
-  .moduleList li, .someOtherList li {
-    padding-top: 3px; }
-    .moduleList li ul, .someOtherList li ul {
-      list-style: none; }
+  .moduleList li, .courseList li, .assignmentsList li, .whosOnlineList li {
+    padding-top: 3px;
+    padding-left: 20px; }
+    .moduleList li ul, .courseList li ul, .assignmentsList li ul, .whosOnlineList li ul {
+      list-style: none;
+      padding-left: 20px; }
 
-.someOtherList a {
-  color: black; }
+.dashboardList li {
+  padding-left: 0px; }
 
 time {
-  color: #141414;
   display: inline-block; }
 
 .fa-calendar, .fa-check-circle {
@@ -339,69 +341,34 @@ time {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  padding: 0;
   margin-top: 140px;
   vertical-align: top; }
 
+.dashTitle {
+  font-size: 1.4rem;
+  width: 100%;
+  border-bottom: 1px solid black; }
+.dashWrapper {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 0;
+  margin-top: 140px;
+  vertical-align: top; }
 .dashLeftCol, .dashCenterCol, .dashRightCol {
-  padding: 0 10px 0 10px;
-  border: 1px solid blue;
+  padding: 10px;
+  position: relative;
   display: inline-block;
-  margin-left: 0;
-  margin-right: 0; }
-.dashLeftCol, .dashRightCol {
-  width: 19%; }
+  margin: 0;
+  vertical-align: top; }
+.dashRightCol {
+  width: 15%; }
+.dashLeftCol {
+  width: 25%; }
 .dashCenterCol {
-  width: 55%; }
-
-.contentLeftCol {
-  padding: 0;
-  margin: 0;
-  border: 1px dotted orange;
-  display: inline-block;
-  height: inherit;
-  vertical-align: top;
-  height: inherit;
-  width: 15%; }
-
-.contentRightCol {
-  padding: 0;
-  margin: 0;
-  border: 1px dotted green;
-  display: inline-block;
-  height: inherit;
-  vertical-align: top;
-  height: inherit;
-  width: 15%; }
-
-.contentLeftNavCol {
-  padding: 0;
-  margin: 0;
-  border: 1px dotted purple;
-  display: inline-block;
-  height: inherit;
-  vertical-align: top;
-  height: inherit;
-  width: 3%; }
-
-.contentRightNavCol {
-  padding: 0;
-  margin: 0;
-  border: 1px dotted blue;
-  display: inline-block;
-  height: inherit;
-  vertical-align: top;
-  height: inherit;
-  width: 3%; }
-
-.contentCenterCol {
-  padding: 0;
-  margin: 0;
-  border: 1px dotted blue;
-  display: inline-block;
-  height: inherit;
-  vertical-align: top;
-  height: inherit;
-  width: 60%; }
+  width: 50%; }
 
 /*.content{
 	&LeftCol, &CenterCol, &RightCol, &LeftNavCol, &RightNavCol{
