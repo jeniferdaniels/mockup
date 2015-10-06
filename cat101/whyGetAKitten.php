@@ -1,5 +1,5 @@
-<?php include_once 'mockupFunctions.php' ?>
-<?php include_once 'iconVariables.php' ?>
+<?php include_once '../scripts/mockupFunctions.php'; ?>
+<?php include_once '../scripts/globalVariables.php'; ?>
 <?php 
 	$navPrevious = "considerSummary.php";
 	$navNext = "rescue.php";	
@@ -25,7 +25,7 @@
 			
 			<div class="fa fa-calendar fa-2x displayInlineBlock urgent"></div><h2 class="contentTitle displayInlineBlock">Assignment - <?php echo $pageTitle ?></h2>
 			<div class="assignmentDetailsWrapper">
-				<strong>Due - </strong><time class="displayInlineBlock dueTime">October 10, 2015 at 11:59 PM</time>
+				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 18, 2015 at 11:59 PM</time>
 				<br>
 				<strong>Deliverables - </strong> Essay submitted via Blackboard
 			</div>
