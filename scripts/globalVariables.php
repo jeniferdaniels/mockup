@@ -4,7 +4,10 @@ $listCheckMark = '<i class="fa fa-check-circle success fa-lg"></i>';
 $listCheckMarkHidden = '<i class="fa fa-check-circle success fa-lg hidden"></i>';
 $listAssignment = '<i class="fa fa-calendar fa-lg"></i>';
 $listAssignmentUrgent = '<i class="fa fa-calendar fa-lg urgent"></i>';
-$listCurrentSpot = '<i class="fa fa-arrow-right fa-lg current"></i>';
+
+$listCurrentSpotSmall = '<i class="fa fa-arrow-right current"></i>';
+$listCurrentSpotMedium = '<i class="fa fa-arrow-right fa-lg current"></i>';
+$listCurrentSpotLarge = '<i class="fa fa-arrow-right fa-2x current"></i>';
 
 $assignmentCheckMarkUnchecked = '<i class="fa fa-check-circle disabled fa-3x"></i>';
 $assignmentCheckMarkChecked = '<i class="fa fa-check-circle success fa-3x"></i>';
@@ -23,5 +26,7 @@ $iconFileTypeExcelSmall = "<i class='fa fa-file-excel-o'></i>";
 $iconFileTypeExcelMedium = "<i class='fa fa-file-excel-o fa-lg'></i>";
 $iconLinkSmall = "<i class='fa fa-link'></i>";
 $iconLinkMedium = "<i class='fa fa-link fa-lg'></i>";
+
+
 
 ?>
