@@ -22,35 +22,34 @@
 	$showModuleProgress = 0;
 	$pageTitle = "Assignments";
 	
-	
 	$boxes = array (
 		array(
 			"title" => "0. Overview",
 			"boxId" => "overview",
 			"isCollapsed" => $isExpandedListArray[0],
 			"isComplete" => $isDoneList[0],
-			"urlInProgress" => "", 
+			"dates" => "1/10/2015 - 1/15/2015", 
 			"content" => "module0AssignmentList.php"),
 		array(
 			"title" => "1. Choosing a Kitten",
 			"boxId" => "factor",
 			"isCollapsed" => $isExpandedListArray[1],
 			"isComplete" => $isDoneList[1],
-			"urlInProgress" => "",
+			"dates" => "1/15/2015 - 1/23/2015",
 			"content" => "module1AssignmentList.php"),
 		array(
 			"title" => "2. Caring for Your Kitten",
 			"boxId" => "care",
 			"isCollapsed" => $isExpandedListArray[2],
 			"isComplete" => $isDoneList[2],
-			"urlInProgress" => "something.php",
+			"dates" => "1/23/2015 - 1/30/2015",
 			"content" => "module2AssignmentList.php"),
 		array(
 			"title" => "3. Legal Requirements",
 			"boxId" => "legal",
 			"isCollapsed" => $isExpandedListArray[3],
 			"isComplete" => $isDoneList[3],
-			"urlInProgress" => "",
+			"dates" => "1/30/2015 - 2/7/2015",
 			"content" => "module3AssignmentList.php")
 		);
 
