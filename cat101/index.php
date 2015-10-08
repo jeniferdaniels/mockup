@@ -26,28 +26,28 @@
 			"boxId" => "overview",
 			"isCollapsed" => $isExpandedListArray[0],
 			"isComplete" => $isDoneList[0],
-			"urlInProgress" => "", 
+			"dates" => "1/10/2015 - 1/15/2015", 
 			"content" => "module0List.php"),
 		array(
 			"title" => "1. Choosing a Kitten",
 			"boxId" => "factor",
 			"isCollapsed" => $isExpandedListArray[1],
 			"isComplete" => $isDoneList[1],
-			"urlInProgress" => "",
+			"dates" => "1/15/2015 - 1/23/2015",
 			"content" => "module1List.php"),
 		array(
 			"title" => "2. Caring for Your Kitten",
 			"boxId" => "care",
 			"isCollapsed" => $isExpandedListArray[2],
 			"isComplete" => $isDoneList[2],
-			"urlInProgress" => "something.php",
+			"dates" => "1/23/2015 - 1/30/2015",
 			"content" => "module2List.php"),
 		array(
 			"title" => "3. Legal Requirements",
 			"boxId" => "legal",
 			"isCollapsed" => $isExpandedListArray[3],
 			"isComplete" => $isDoneList[3],
-			"urlInProgress" => "",
+			"dates" => "1/30/2015 - 2/7/2015",
 			"content" => "module3List.php")
 		);
 ?>
@@ -61,9 +61,7 @@
 	<body>
 		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
 		
-		<div id="test">test</div>
-		
-		<div class="contentWrapper indexContent">
+		<div class="contentWrapper">
 		<?php 
 			for ($i=0; $i<count($boxes); $i++)
 				writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
@@ -71,8 +69,6 @@
 			if ($msg=="done1")
 				echo "<script>document.getElementById('successBox1').style.display='inline-block';</script>";
 		?>
-		
-		
 		
 		<?php 
 			for ($i=0; $i<count($boxes); $i++)
