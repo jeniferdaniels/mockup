@@ -31,7 +31,7 @@
 				<li><a href="considerOverview.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.1 Overview</a></li>
 				<li><a href="responsibility.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.2 Responsibility</a></li>
 				<li><a href="cost.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.3 Cost</a></li>
-				<li><a href="considerSummary.php"><?php echo $GLOBALS['listCurrentSpot'] ?>1.1.4 Summary</a></li>
+				<li><a href="considerSummary.php"><?php echo $GLOBALS['listCurrentSpotSmall'] ?>1.1.4 Summary</a></li>
 			</ul>
 				
 		</div>
