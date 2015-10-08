@@ -113,22 +113,6 @@
 					"url": "q1.php",
 					"dueDate": "1/23/2015",
 					"dueTime": "11:59 PM"					
-				},
-				{	
-					"subject": "DOG",
-					"number": "320",
-					"title": "3.B Discussion Forum Regarding Pavlov",
-					"url": "#",
-					"dueDate": "1/20/2015",
-					"dueTime": "11:59 PM"					
-				},
-				{	
-					"subject": "ZOM",
-					"number": "150",
-					"title": "3.A Essay About Homemade Weapons",
-					"url": "#",
-					"dueDate": "1/19/2015",
-					"dueTime": "11:59 PM"					
 				}
 			]
 		}
