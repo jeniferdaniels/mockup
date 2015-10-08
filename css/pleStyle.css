@@ -24,7 +24,8 @@ p {
 a {
   color: #ff0080;
   text-decoration: none;
-  transition: all 0.25s ease; }
+  -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease; }
   a:hover, a:visited:hover {
     color: #4488f6;
     text-decoration: underline dotted; }
@@ -34,24 +35,17 @@ a {
 pre {
   word-wrap: break-word; }
 
-/*
-.schduleWrapper{
-	width:100%;
-	height: 800px;
-	border: none;
-}
-*/
 header {
   border-bottom: 1px solid #7d7d7d;
   height: 50px;
   background-color: white; }
 
 .listTopic a, .listSubTopic a, .breadCrumbs a {
-  color: #1778a9; }
+  color: #ff0080; }
 .listTopic a:hover, .listTopic a:visited:hover, .listSubTopic a:hover, .listSubTopic a:visited:hover, .breadCrumbs a:hover, .breadCrumbs a:visited:hover {
-  color: #062c8c; }
+  color: #4488f6; }
 .listTopic a:visited, .listSubTopic a:visited, .breadCrumbs a:visited {
-  color: #8349ff; }
+  color: #ff0080; }
 
 .urgent {
   color: #e74c3c; }
@@ -75,9 +69,6 @@ header {
   .breadCrumbs > li {
     display: inline-block; }
 
-.oduIcon {
-  display: inline-block; }
-
 .moduleProgress {
   padding: 0 20px 0 0;
   float: right; }
@@ -96,7 +87,8 @@ header {
   display: inline-block; }
 
 .contentTitle, .paragraphTitle {
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-weight: 600; }
 
 .courseTitle {
   padding-left: 10px;
@@ -106,16 +98,51 @@ header {
 .top {
   position: fixed;
   width: 100%;
-  background-color: white;
-  border-top: 10px solid #003767;
+  background-color: #9cbff6;
   top: 0;
-  left: 0; }
+  left: 0;
+  height: 100px;
+  vertical-align: top;
+  border: 1px solid black;
+  z-index: 900; }
+  .topUpperButton {
+    width: 25px;
+    border: 1px solid red;
+    display: inline;
+    padding: 5px 3px 5px 3px;
+    background-color: white; }
+  .topLowerButton {
+    width: 25px;
+    border: 1px solid red;
+    display: inline;
+    padding: 5px 3px 5px 3px;
+    background-color: orange;
+    vertical-align: bottom; }
+  .topUpperButtonWrapper {
+    border: 1px solid green;
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    display: inline; }
+  .topLowerButtonWrapper {
+    border: 1px solid green;
+    background-color: red;
+    display: inline-block;
+    float: right;
+    vertical-align: bottom;
+    display: inline; }
+  .topPleHeader {
+    font-size: 2rem;
+    display: block;
+    border: 2px solid black;
+    font-weight: 600; }
+  .topCourseHeader {
+    font-size: 1.5rem;
+    display: inline;
+    border: 1px solid purple; }
 
 nav {
   display: inline-block; }
-
-.fa-caret-left, .fa-caret-right {
-  display: none; }
 
 .moduleProgressWrapper {
   width: 110px;
@@ -126,10 +153,6 @@ nav {
   font-size: .8rem;
   text-align: center;
   width: 110px; }
-
-.searchWrapper {
-  display: inline-block;
-  padding: 0 20px 0 20px; }
 
 #search {
   background-image: url("../images/style1/search.svg");
@@ -180,7 +203,8 @@ nav {
     background: white; }
     #courseMenu ul a {
       color: black;
-      transition: none; }
+      -webkit-transition: none;
+              transition: none; }
       #courseMenu ul a:visited {
         color: black;
         text-decoration: none; }
@@ -198,7 +222,7 @@ nav {
         position: relative;
         z-index: 399;
         cursor: default;
-        background: rgba(23, 120, 169, 0.2);
+        background: #9cbff6;
         color: black; }
         #courseMenu ul li:hover > ul {
           visibility: visible; }
@@ -225,10 +249,6 @@ nav {
   vertical-align: bottom;
   background-image: url("../images/style1/courseMenu.svg"); }
 
-.lhsMenuWrapper {
-  display: inline;
-  position: absolute; }
-
 .toggleBox {
   width: 1100px;
   border: 1px solid #c8c8c8;
@@ -250,6 +270,11 @@ nav {
     color: #141414; }
     .toggleBox a.boxTitle {
       font-size: 1.4rem; }
+  .toggleBox date {
+    color: #7d7d7d;
+    padding-left: 20px;
+    display: inline-block;
+    float: right; }
 
 .boxWrapper {
   padding-top: 10px;
@@ -292,6 +317,9 @@ nav {
   list-style: none; }
   .moduleList a, .courseList a, .assignmentsList a, .whosOnlineList a {
     color: black; }
+    .moduleList a:hover, .courseList a:hover, .assignmentsList a:hover, .whosOnlineList a:hover {
+      text-decoration: underline;
+      color: #4488f6; }
   .moduleList li, .courseList li, .assignmentsList li, .whosOnlineList li {
     padding-top: 3px;
     padding-left: 20px; }
@@ -301,12 +329,6 @@ nav {
 
 .dashboardList li {
   padding-left: 0px; }
-
-time {
-  display: inline-block; }
-
-.fa-calendar, .fa-check-circle {
-  padding-right: 3px; }
 
 .hidden {
   visibility: hidden; }
@@ -329,7 +351,7 @@ time {
 
 .messageBoxSuccess {
   border: 1px solid #00a858;
-  background-color: rgba(18, 168, 88, 0.1);
+  background-color: #e7f6ee;
   color: #00a858;
   width: 100%;
   padding-left: 10px;
@@ -337,26 +359,30 @@ time {
 
 .contentWrapper {
   width: 1200px;
-  border: 1px solid red;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
   padding: 0;
-  margin-top: 140px;
-  vertical-align: top; }
+  vertical-align: top;
+  margin-top: 140px; }
 
+.pleLogoWrapper {
+  padding-left: 50px;
+  display: inline;
+  border: 1px solid green;
+  height: 100%; }
+
+.dashHeader {
+  display: inline;
+  font-size: 2.5rem;
+  border: 1px solid orange;
+  font-weight: 600; }
 .dashTitle {
   font-size: 1.4rem;
   width: 100%;
   border-bottom: 1px solid black; }
 .dashWrapper {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  padding: 0;
-  margin-top: 140px;
-  vertical-align: top; }
+  margin-top: 140px; }
 .dashLeftCol, .dashCenterCol, .dashRightCol {
   padding: 10px;
   position: relative;
@@ -368,39 +394,8 @@ time {
 .dashLeftCol {
   width: 25%; }
 .dashCenterCol {
-  width: 50%; }
+  width: 40%; }
 
-/*.content{
-	&LeftCol, &CenterCol, &RightCol, &LeftNavCol, &RightNavCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted orange;
-		display:table-cell;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		}
-		
-		
-	&LeftCol, &RightCol{
-		width: 10%;
-		}
-	
-	&CenterCol{
-		width:50%;
-		align:left;
-		border: 1px solid green;
-	}
-	
-	&LeftNavCol, &RightNavCol{
-		width:30px;
-		position: fixed;
-		top: 50%;
-		height:100%;
-		//display:block;
-	}		
-}
-*/
 .navWrapper {
   width: 99%;
   height: 100%; }
@@ -421,43 +416,6 @@ time {
 .navNext {
   right: 5px; }
 
-@media screen and (max-width: 1200px) {
-  .contentWrapper {
-    width: 900px; } }
-@media screen and (max-width: 1024px) {
-  .contentWrapper, .toggleBox {
-    width: 700px; }
-
-  .breadCrumbs {
-    font-size: .9rem; } }
-@media screen and (max-width: 768px) {
-  .contentWrapper, .toggleBox {
-    width: 500px; }
-
-  .courseTitle {
-    font-size: 1.5rem;
-    margin-left: 50px; }
-
-  .topRightWrapper {
-    display: none; }
-
-  #courseMenu {
-    position: fixed;
-    top: 10px;
-    left: 5px; }
-
-  .breadCrumbs {
-    display: none; } }
-.oduLogo {
-  display: none; }
-
-@media print {
-  nav, #cssMenu, .lhsMenuWrapper, .moduleProgressWrapper,
-  .topRightWrapper, .navWrapper {
-    display: none; }
-
-  iframe .breadcrumb, iframe #video-container, iframe .container-fluid {
-    display: none; } }
 #moduleProgressBar {
   background: #c8c8c8 none repeat scroll 0 0;
   border-radius: 5px;

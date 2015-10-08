@@ -1,32 +1,27 @@
 //COLORS
-$xxLiteGray: rgba(250, 250, 250, 0.1);
+//$xxLiteGray:
 $xLiteGray: rgba(250, 250, 250, 1);
 $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
-
 $hotPink: rgba(255, 0, 128, 1);
 $red: rgba(231, 76, 60, 1);
-//$orange: rgba( , , , );
+//$orange:
 $xLiteYellow: rgba(254,239,179, 0.05);
 $liteYellow: rgba(254,239,179, 1);
-//$yellow: rgba( , , , );
-$limeGreen: rgba(174,203,54, 1);
-$liteGreen: rgba(18,168,88, 0.1);
-$green: rgba(0,168,88,1);
-$xLiteBlue: rgba(23,120,169,0.2);
-$liteBlue: #1778a9;
+//$yellow:
+$liteGreen: rgba(231, 246, 238, 1);
+$green: rgba(0, 168, 88, 1);
+$darkBlue: rgba(6, 44, 140, 1);
+$liteGoogleBlue: rgba(156, 191, 246, 1);
 $googleBlue:rgba(68,136,246,1);
-$darkBlue: #062c8c;
 $monarchBlue: rgba(0, 55, 103, 1);
-//$litePurple: ;
-//$mediumPurple: 
-$darkPurple: #8349ff;
+//$darkPurple:
 //$brown:
+
 
 //MESSAGE COLORS
 $urgent: $red;
-//$information: ;
 $success: $green;
 $disabled: $liteGray;
 $warning: $liteYellow;
@@ -39,34 +34,17 @@ $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
 
 $font-stack: "Open Sans", Georgia;
-//"Roboto", 
 $font-color: $darkGray; 
 $link-color: $hotPink;
 $link-color-hover: $googleBlue;
 $link-color-visited: $link-color;
 
-$link-color-topic: $liteBlue;
-$link-color-topic-hover: $darkBlue;
-$link-color-topic-visited: $darkPurple;
-
-////////////////////////////////////////////
-@mixin roundedBorderWithBoxShadow{
-    border-radius: 2px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05)
-}
-@mixin boxShadow{
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-}
-@mixin rounded{
-	-moz-border-radius: 25px;
-	-webkit-border-radius: 25px;
-	border-radius: 25px;
-}
-
+//10/8/2015
 html{
 	font-size: 87%;
 }
 
+//10/8/2015
 body{
 	font-family: $font-stack;
 	color:	$font-color;
@@ -77,20 +55,24 @@ body{
 	background-color: white;
 }
 
+//10/8/2015
 h1{
 	font-size: 2.5rem;
 	font-weight: 500;
 }
 
+//10/8/2015
 h2{
 	font-size: 2rem;
 	font-weight: 400;
 	margin-bottom: 10px;
 }
 
+//10/8/2015
 p{
 	margin-bottom: 10px;
 }
+
 
 a{
 	color: $link-color;
@@ -111,13 +93,6 @@ pre{
 	word-wrap: break-word;
 }
 
-/*
-.schduleWrapper{
-	width:100%;
-	height: 800px;
-	border: none;
-}
-*/
 
 header{
 	border-bottom: 1px solid $mediumGray;
@@ -128,18 +103,20 @@ header{
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
 {
 	a{ 
-		color: $link-color-topic;
+		color: $link-color;
 	}
 	 
 	a:hover, a:visited:hover{
-		color: $link-color-topic-hover;
+		color: $link-color-hover;
 	}		
 	
 	a:visited{
-		color: $link-color-topic-visited;
+		color: $link-color-visited;
 	}
 
 }
+
+
 .urgent{
 	color: $urgent;
 }
@@ -155,6 +132,7 @@ header{
 .liteGray{
 	color: $liteGray;
 }
+
 
 .breadCrumbs{
 	list-style: none;
@@ -173,10 +151,6 @@ header{
 	}
 }
 
-.oduIcon{
-	display: inline-block;
-}
-
 .moduleProgress{
 	padding: 0 20px 0 0;
 	//border: 1px solid green;
@@ -190,6 +164,8 @@ header{
 	width: 100%;
 	font-size: .8rem;
 }
+
+
 .column50Percent{
 	width: 49.5%;
 	padding:0;
@@ -200,6 +176,7 @@ header{
 
 .contentTitle, .paragraphTitle{
 	margin-top: 20px;
+	font-weight: 600;
 }
 
 .courseTitle{
@@ -209,29 +186,71 @@ header{
 }
 
 
-
+//10/8/2015
 .top{
 	position:fixed;
 	width:100%;
-	background-color: white;
-	border-top: 10px solid $monarchBlue;
+	background-color: $liteGoogleBlue;
 	top: 0;
 	left: 0;
+	height: 100px;
+	vertical-align: top;
+	border: 1px solid black;
+	z-index: 900;
+
+	&UpperButton{
+		width: 25px;
+		border: 1px solid red;
+		display:inline;
+		padding: 5px 3px 5px 3px;
+		background-color: white;
+	}
+	
+	&LowerButton{
+		width: 25px;
+		border: 1px solid red;
+		display:inline;
+		padding: 5px 3px 5px 3px;
+		background-color: orange;
+		vertical-align: bottom;
+	}
+	
+	
+	&UpperButtonWrapper{
+		border: 1px solid green;
+		display: inline-block;
+		float: right;
+		vertical-align: top;
+		display: inline;
+	}
+	
+	&LowerButtonWrapper{
+		border: 1px solid green;
+		background-color: red;
+		display: inline-block;
+		float: right;
+		vertical-align: bottom;
+		display: inline;
+	}
+	
+	&PleHeader{
+		font-size: 2rem;
+		display:block;
+		border: 2px solid black;
+		font-weight: 600;
+	}
+	
+	&CourseHeader{
+		font-size: 1.5rem;
+		display:inline;
+		border: 1px solid purple;
+	}
 }
+
 
 nav{
 	display: inline-block;
 }
-
-
-
-
-
-//change to inline-block and turn off chevrons to see different views
-.fa-caret-left, .fa-caret-right{
-	display: none;
-}
-
 
 
 .moduleProgressWrapper{
@@ -245,11 +264,6 @@ nav{
 	font-size: .8rem;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
-}
-
-.searchWrapper{
-	display: inline-block;
-	padding: 0 20px 0 20px;
 }
 
 #search{
@@ -325,10 +339,10 @@ nav{
 			color: #000;
 			
 			&:hover {
-				position: relative; 
+				position: relative;  
 				z-index: 399; 
 				cursor: default;
-				background: $xLiteBlue; 
+				background: $liteGoogleBlue; 
 				color: black;
 				& > ul { 
 					visibility: visible;
@@ -367,13 +381,7 @@ nav{
 	background-image: url("../images/style1/courseMenu.svg");
 }
 
-
-.lhsMenuWrapper{
-	display: inline;
-	position: absolute;
-}
-
-
+//10/8/2015
 .toggleBox{
 	width: $contentWidth - 100px;
 	border: 1px solid $liteGray;
@@ -382,7 +390,7 @@ nav{
 	display: inline-block;
 	
 	&:hover{
-		//@include roundedBorderWithBoxShadow;
+		//
 	}
 	&.collapsed{
 		min-height:30px;
@@ -411,6 +419,12 @@ nav{
 		&.boxTitle{
 			font-size: 1.4rem;
 		}		
+	}
+	& date{
+		color: $mediumGray;
+		padding-left: 20px;
+		display: inline-block;
+		float: right;
 	}
 	
 }
@@ -463,9 +477,17 @@ nav{
 	border: 1px solid $mediumGray;
 }
 
+//10/7/2015
 .moduleList, .courseList, .assignmentsList, .whosOnlineList{
 	list-style: none;
-	& a {color:black};
+	& a {
+		color:black;
+		
+		&:hover{
+			text-decoration:underline;
+			color: $googleBlue;
+		}
+	}
 	& li{
 		padding-top: 3px;
 		padding-left: 20px;
@@ -476,18 +498,9 @@ nav{
 	}
 }
 
+//10/7/2015
 .dashboardList{
 	& li { padding-left: 0px; }
-}
-
-
-time{
-	display: inline-block;
-}
-
-
-.fa-calendar, .fa-check-circle{
-	padding-right: 3px;
 }
 
 .hidden{
@@ -528,34 +541,45 @@ time{
 }
 
 .contentWrapper{
-	width: 1200px;
-	border: 1px solid red;
+	width: $contentWidth;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
 	padding: 0;
-	margin-top: 140px;
 	vertical-align: top;
+	margin-top: 140px;
 }
 
+//10/8/2015
+.pleLogoWrapper{
+	padding-left: 50px;
+	display: inline;
+	border: 1px solid green;
+	height: 100%;
+}
+
+//10/8/2015
 .dash{
-	&Title{
-	font-size: 1.4rem;
-	width: 100%;
-	border-bottom: 1px solid black;
+	
+	&Header{
+		display: inline;
+		font-size: 2.5rem;
+		//padding: 20px;
+		//vertical-align: middle;
+		border: 1px solid orange;
+		font-weight: 600;
 	}
 	
-	&Wrapper{
-		width: 1200px;
-		//border: 1px solid red;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: white;
-		padding: 0;
-		margin-top: 140px;
-		vertical-align: top;
+	&Title{
+		font-size: 1.4rem;
+		width: 100%;
+		border-bottom: 1px solid black;
 	}
-
+	
+	//this has to be after contentWrapper
+	&Wrapper{
+		margin-top: 140px;
+	}
 
 	&LeftCol, &CenterCol, &RightCol{
 		padding: 10px;
@@ -574,42 +598,15 @@ time{
 		width: 25%
 	}
 	&CenterCol {
-		width: 50%;
+		width: 40%;
+	}
+
+	&Top{
+		//height: 160px;
 	}
 
 }
 
-/*.content{
-	&LeftCol, &CenterCol, &RightCol, &LeftNavCol, &RightNavCol{
-		padding: 0;
-		margin: 0;
-		border: 1px dotted orange;
-		display:table-cell;
-		height: inherit;
-		vertical-align:top;
-		height: inherit;
-		}
-		
-		
-	&LeftCol, &RightCol{
-		width: 10%;
-		}
-	
-	&CenterCol{
-		width:50%;
-		align:left;
-		border: 1px solid green;
-	}
-	
-	&LeftNavCol, &RightNavCol{
-		width:30px;
-		position: fixed;
-		top: 50%;
-		height:100%;
-		//display:block;
-	}		
-}
-*/	
 .navWrapper{
 	width:99%;
 	height:100%;
@@ -636,84 +633,6 @@ time{
 .navNext{
     right: 5px;
 }
-
-
-
-
-
-
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-
-
-@media screen and (max-width: 1200px){
-	.contentWrapper{
-		width:900px;
-	}
-
-}
-
-
-@media screen and (max-width: 1024px){
-	.contentWrapper, .toggleBox{
-		width:700px;
-	}
-	
-	.breadCrumbs{
-		font-size: .9rem;
-	}
-}
-
-@media screen and (max-width: 768px){
-	.contentWrapper, .toggleBox{
-		width:500px;
-	}
-	.courseTitle{
-		font-size: 1.5rem;
-		margin-left: 50px;
-	}
-
-	.topRightWrapper{
-		display: none;
-	}
-	
-	#courseMenu {
-		position: fixed;
-		top: 10px;
-		left: 5px;
-	}
-	
-	.breadCrumbs{
-		display:none;
-	}
-}
-
-.oduLogo{
-	display:none;
-}
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-@media print{
-
-	nav, #cssMenu, .lhsMenuWrapper, .moduleProgressWrapper,
-	.topRightWrapper, .navWrapper{
-		display: none;
-	}
-
-	//just for big data sample
-	iframe .breadcrumb, iframe #video-container, iframe .container-fluid{
-		display: none;
-	}
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 #moduleProgressBar {
     background: $liteGray none repeat scroll 0 0;
