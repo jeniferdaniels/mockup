@@ -23,8 +23,8 @@ function writeHead($pageTitle){
 function writeNavArrows($navNext, $navPrevious)
 {
 	echo '<div class="navWrapper">';
-		writePreviousNavArrow($navNext);
-		writeNextNavArrow($navPrevious);
+		writePreviousNavArrow($navPrevious);
+		writeNextNavArrow($navNext);
 	echo '</div><!--end nav wrapper-->';
 }
 
@@ -43,41 +43,41 @@ function  writeNextNavArrow($url)
 
 }
 
+//10/8/2015
+function writeDashboardTop(){	
+	echo '<div class="top dashTop">';
+		echo '<div class="pleLogoWrapper"><img src="images/pleLogo.png"></div>';
+		echo '<h1 class="dashHeader">Personal Learning Environment</h1>';
+		echo '<div class="topUpperButtonWrapper">';
+			writeSearchButton();
+			writeChatButton();
+			writeUserButton();
+		echo '</div>';	
+	echo '</div><!--end top-->';
+}
 
-				
+
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
-
 	writeNavArrows($navNext, $navPrevious);
-
 	echo '<div class="top">';
-		echo '<header>';
-			writeTopLeft();
-			writeTopRight();
-		echo '</header>';
-			
-		writeCourseInfoMenu();	
-		writeBreadCrumbs($breadCrumbs);
-
-		if ($showModuleProgress)
-			writeModuleProgressBar();
+		echo '<div class="pleLogoWrapper"><img src="../images/pleLogoSmall.png"></div>';
+		echo '<div><h1 class="topPleHeader">Personal Learning Environment</h1>';	
+		echo '<h2 class="topCourseHeader">'. getCourseName() . '</h2></div>';
+		echo '<div class="topUpperButtonWrapper">';
+			writeSearchButton();
+			writeChatButton();
+			writeUserButton();		
+		echo '</div><!--end topButtonWrapper-->';
+		echo '<div class="topLowerButtonWrapper">';
+			writeDashboardButton();
+			writeCourseInfoButton();
+		echo '</div><!--end topLowerButtonWrapper-->';
 		
 	echo '</div><!--end top-->';
 }
 
-function writeTopRight(){
-	echo '<div class="topRightWrapper">';
-		writeSearchBox();
-		echo '<i class="fa fa-bell fa-2x headIcon"></i>';
-		echo '<i class="fa fa-user fa-2x headIcon"></i>';
-	echo '</div><!--end topRightWrapper-->';
-}
 
-function writeTopLeft(){
-	echo '<div class="topLeftWrapper">';
-	echo '<div class="oduLogo"></div>';
-	echo '<h1 class="courseTitle">' . getCourseName() . '</h1>';
-	echo '</div><!--end left wrapper-->';
-}
+
 
 function writeModuleProgressBar(){
 	echo '<div class="moduleProgressWrapper">';
@@ -105,14 +105,43 @@ function writeBreadCrumbs($breadCrumbs)
 	}		
 }
 
-
-function writeSearchBox(){
-	echo '<div class="searchWrapper">';
-	echo '<form>';
-	echo '<input name="search" id="search" placeholder="search...">';
-	echo '</form>';
+//**********************************************************************
+//BUTTONS
+//**********************************************************************
+function writeSearchButton(){
+	echo '<div class="topUpperButton">';
+		echo $GLOBALS["iconSearchMedium"];	
 	echo '</div><!--end wrapper-->';
 }
+
+function writeUserButton(){
+	echo '<div class="topUpperButton">';
+		echo $GLOBALS["iconUserMedium"];
+	echo '</div>';
+}
+
+function writeChatButton(){
+	echo '<div class="topUpperButton">';
+		echo $GLOBALS["iconChatMedium"];
+	echo '</div>';
+}
+
+function writeDashboardButton(){
+	echo '<div class="topLowerButton">';
+		echo '<a href="../index.php">Dashboard</a>';
+	echo '</div>';
+}
+
+function writeCourseInfoButton(){
+	echo '<div class="topLowerButton">';
+		echo 'Course Info';
+	echo '</div>';
+}
+
+
+
+
+
 
 
 function writeCourseInfoMenu(){
@@ -136,6 +165,7 @@ function writeCourseInfoMenu(){
 function writeToggleBox($box){
 	$boxTitle = $box["title"];
 	$boxId = $box["boxId"];
+	$boxDates = $box["dates"];
 	$isCollapsed = $box["isCollapsed"];
 	$isComplete = $box["isComplete"];
 	$content = $box["content"];
@@ -159,8 +189,8 @@ function writeToggleBox($box){
 	
 	echo '<div class="boxWrapper">';
 	echo $checkmark;
-	echo '<div class="toggleBox collapsed" id="' .$boxId . '_collapsed"' . $collapsedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-right fa-lx"></i> ' . $boxTitle . '</a></div>';
-	echo '<div class="toggleBox expanded" id="' .$boxId . '_expanded"' . $expandedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-down fa-lx"></i> ' . $boxTitle . '</a>';
+	echo '<div class="toggleBox collapsed" id="' .$boxId . '_collapsed"' . $collapsedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-right fa-lx"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date></div>';
+	echo '<div class="toggleBox expanded" id="' .$boxId . '_expanded"' . $expandedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-down fa-lx"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date>';
 	echo '<div>';
 		include $content;
 	echo '</div></div></div>';
@@ -174,9 +204,15 @@ function writeSuccessMessage($id, $string)
 }
 
 
-function writeDashTitle($title)
+function writeDashWidgetTitle($title)
 {
 		echo '<h2 class="dashTitle">' . $title . '</h2>';	
 }
+
+function functionalityNA($msg)
+{
+		echo "javascript:alert(\'" . $msg . "\');";	
+}
+
 
 ?>
