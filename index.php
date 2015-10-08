@@ -39,7 +39,7 @@
 				for(var i = 0; i < arr.length; i++) {
 							
 				str += '<li><a href="' + arr[i].url + '">' + arr[i].subject + ' ' + arr[i].number + ' - ' + arr[i].title + '</a>';
-				str += '<ul><li><?php echo $GLOBALS['listCurrentSpotSmall'] ?><a href="' + arr[i].resumeURL + '"> Resume ' + arr[i].resumeTitle + '</a></li></ul></li>';
+				str += '<ul><li><?php echo $GLOBALS['listCurrentSpotSmall'] ?><a href="' + arr[i].resumeUrl + '"> Resume ' + arr[i].resumeTitle + '</a></li></ul></li>';
 				}
 				document.getElementById("courseList").innerHTML = str;
 			}
@@ -47,7 +47,7 @@
 			function writeUpcomingAssignments(arr) {
 				var str = "";
 				for(var i = 0; i < arr.length; i++) {
-					str += '<li><a href="' + arr[i].url + '">' + arr[i].dueDate + ' '  + arr[i].subject + ' ' + arr[i].number + '-' + arr[i].title + '</a></li>';
+					str += '<li><div style="font-weight:600">' + arr[i].dueDate + '</div><ul><li><a href="' + arr[i].url + '">' + arr[i].subject + ' ' + arr[i].number + " - " + arr[i].title + '</a></li></ul></li>';
 				}
 				document.getElementById("upcomingAssignments").innerHTML = str;			
 			}
@@ -60,19 +60,19 @@
 	</head>
 	
 	<body>
-		<div style="width:100%; background-color:blue">stuff</div>
+		<?php writeDashboardTop() ?>
 	
 	
 	
-		<div class="dashWrapper">
+		<div class="contentWrapper dashWrapper">
 			<div class="dashLeftCol">
 				<div class="scheduleGlanceWrapper">
-					<?php writeDashTitle("Schedule At A Glance") ?>
-					<iframe src="calendar/demos/atAGlance.html" height="300px" style="padding:0"></iframe>
+					<?php writeDashWidgetTitle("Schedule At A Glance") ?>
+					<iframe src="calendar/demos/atAGlance.php" height="250px" style="padding:0; overflow-y: hidden" scrolling="no"></iframe>
 				</div>
 				
 				<div style="margin-top: 50px">
-					<?php writeDashTitle("Upcoming Assignments") ?>
+					<?php writeDashWidgetTitle("Upcoming Assignments") ?>
 					<ul id="upcomingAssignments" class="assignmentsList dashboardList">					
 					</ul>
 				</div>
@@ -81,7 +81,7 @@
 			<div class="dashCenterCol">
 				
 				<div>
-				<?php writeDashTitle("Courses") ?>
+				<?php writeDashWidgetTitle("Courses") ?>
 					<ul id="courseList" class="courseList dashboardList" >
 					</ul>
 				</div>
@@ -89,7 +89,7 @@
 
 				
 				<div style="margin-top: 50px">
-					<?php writeDashTitle("Recent Ask A Question Activity") ?>
+					<?php writeDashWidgetTitle("Recent Ask A Question Activity") ?>
 					<ul>
 						<li>stuff</li>
 						<li>stuff</li>
@@ -101,13 +101,13 @@
 			
 			<div class="dashRightCol">
 				<div>
-					<?php writeDashTitle("Who's Online") ?>
+					<?php writeDashWidgetTitle("Who's Online") ?>
 					<ul id="whosOnline" class="whosOnlineList dashboardList">
 					</ul>
 				</div>
 			
 				<div style="margin-top: 50px">
-					<?php writeDashTitle("Help") ?>
+					<?php writeDashWidgetTitle("Help") ?>
 					<ul>
 						<li>stuff</li>
 						<li>stuff</li>
