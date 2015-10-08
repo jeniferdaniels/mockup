@@ -16,9 +16,9 @@
 <html>
 	<head>
 		<?php writeHead(getCourseName()); ?>
-		<link rel="stylesheet" type="text/css" href="css/resourceTableStyle.css">
-		<script type="text/javascript" src="scripts/js/jquery-latest.js"></script> 
-		<script type="text/javascript" src="scripts/js/jquery.tablesorter.js"></script> 
+		<link rel="stylesheet" type="text/css" href="../css/resourceTableStyle.css">
+		<script type="text/javascript" src="../scripts/js/jquery-latest.js"></script> 
+		<script type="text/javascript" src="../scripts/js/jquery.tablesorter.js"></script> 
 		<script>
 		$(document).ready(function() 
 				{ 
@@ -64,7 +64,7 @@
 				</tr> 
 
 				<tr> 
-					<td><a href="resources/jensCats.xls"><?php echo $GLOBALS["iconFileTypeExcelSmall"] ?> My Cats</a></td> 
+					<td><a href="resources/jensCats.xlsx"><?php echo $GLOBALS["iconFileTypeExcelSmall"] ?> My Cats</a></td> 
 					<td>Excel Spreadsheet</td> 
 					<td>9K</td> 
 				</tr> 
