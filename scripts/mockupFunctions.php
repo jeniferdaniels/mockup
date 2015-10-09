@@ -189,8 +189,8 @@ function writeToggleBox($box){
 	
 	echo '<div class="boxWrapper">';
 	echo $checkmark;
-	echo '<div class="toggleBox collapsed" id="' .$boxId . '_collapsed"' . $collapsedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-right fa-lx"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date></div>';
-	echo '<div class="toggleBox expanded" id="' .$boxId . '_expanded"' . $expandedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-down fa-lx"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date>';
+	echo '<div class="toggleBox collapsed" id="' .$boxId . '_collapsed"' . $collapsedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle">' . $GLOBALS["iconCollapsedMedium"] . ' ' .  $boxTitle . '</a><date>' .  $boxDates . '</date></div>';
+	echo '<div class="toggleBox expanded" id="' .$boxId . '_expanded"' . $expandedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-down fa-lg"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date>';
 	echo '<div>';
 		include $content;
 	echo '</div></div></div>';
@@ -214,5 +214,10 @@ function functionalityNA($msg)
 		echo "javascript:alert(\'" . $msg . "\');";	
 }
 
+function writeFooter()
+{
+	//echo '<iframe src="../aaq.php" width="100%"></iframe>';	
+	include "../aaq.php";
+}
 
 ?>
