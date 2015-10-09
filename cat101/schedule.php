@@ -21,7 +21,7 @@
 	
 		<div class="contentWrapper" id="contentWrapper">
 			
-			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
+			<h2><?php echo $pageTitle ?></h2>
 			
 			 <iframe src="calendar/demos/default.html" class="scheduleWrapper"></iframe> 
 			

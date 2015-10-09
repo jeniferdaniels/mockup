@@ -71,7 +71,7 @@
 	
 		<div class="contentWrapper" id="contentWrapper">
 			
-			<h2 class="contentTitle"><?php echo $pageTitle ?></h2>
+			<h2><?php echo $pageTitle ?></h2>
 			
 			<?php 
 				for ($i=0; $i<count($boxes); $i++)

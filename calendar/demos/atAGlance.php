@@ -160,8 +160,9 @@ if (typeof jQuery == 'undefined') {
 		box-shadow: none;
 	}
 </style>
+</header>
 <div id="recurringCalendar"></div>
-</div>
+</div></div>
             
 </body>
 </html>
