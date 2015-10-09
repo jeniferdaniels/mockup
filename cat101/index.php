@@ -22,33 +22,33 @@
 	$showModuleProgress = 0;
 	$boxes = array (
 		array(
-			"title" => "0. Overview",
+			"title" => "0. Overview and Course Logistics",
 			"boxId" => "overview",
 			"isCollapsed" => $isExpandedListArray[0],
 			"isComplete" => $isDoneList[0],
 			"dates" => "1/10/2015 - 1/15/2015", 
-			"content" => "module0List.php"),
+			"content" => "m0List.php"),
 		array(
 			"title" => "1. Choosing a Kitten",
 			"boxId" => "factor",
 			"isCollapsed" => $isExpandedListArray[1],
 			"isComplete" => $isDoneList[1],
 			"dates" => "1/15/2015 - 1/23/2015",
-			"content" => "module1List.php"),
+			"content" => "m1List.php"),
 		array(
 			"title" => "2. Caring for Your Kitten",
 			"boxId" => "care",
 			"isCollapsed" => $isExpandedListArray[2],
 			"isComplete" => $isDoneList[2],
 			"dates" => "1/23/2015 - 1/30/2015",
-			"content" => "module2List.php"),
+			"content" => "m2List.php"),
 		array(
-			"title" => "3. Legal Requirements",
+			"title" => "3. Legal Requirements of Owning Kittens",
 			"boxId" => "legal",
 			"isCollapsed" => $isExpandedListArray[3],
 			"isComplete" => $isDoneList[3],
 			"dates" => "1/30/2015 - 2/7/2015",
-			"content" => "module3List.php")
+			"content" => "m3List.php")
 		);
 ?>
 

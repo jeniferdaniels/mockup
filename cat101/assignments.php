@@ -24,7 +24,7 @@
 	
 	$boxes = array (
 		array(
-			"title" => "0. Overview",
+			"title" => "0. Overview and Course Logistics",
 			"boxId" => "overview",
 			"isCollapsed" => $isExpandedListArray[0],
 			"isComplete" => $isDoneList[0],
@@ -45,7 +45,7 @@
 			"dates" => "1/23/2015 - 1/30/2015",
 			"content" => "module2AssignmentList.php"),
 		array(
-			"title" => "3. Legal Requirements",
+			"title" => "3. Legal Requirements of Owning Kittens",
 			"boxId" => "legal",
 			"isCollapsed" => $isExpandedListArray[3],
 			"isComplete" => $isDoneList[3],
