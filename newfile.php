@@ -66,7 +66,7 @@
 			.bottomButtonGroup{
 				//position: relative;
 				border: 3px dotted blue;
-				margin-top:40px;
+				margin-top:30px;
 				display: inline-block;
 			}
 		</style>
@@ -81,15 +81,15 @@
 			<div class="imageWrapper"><img src="images/pleLogo.png"></div>
 					<!--  <div class="headerButtonWrapper">-->
 						<div class="buttonGroup">
-							<div class="headerUpperButton"><?php echo $GLOBALS["iconNotificationSmall"];?></div>
-							<div class="headerUpperButton"><?php echo $GLOBALS["iconSearchSmall"];?></div>
-							<div class="headerUpperButton"><?php echo $GLOBALS["iconChatSmall"];?></div>
-							<div class="headerUpperButton"><?php echo $GLOBALS["iconUserSmall"];?></div>
+							<div class="headerUpperButton"><?php echo $GLOBALS["iconNotificationMedium"];?></div>
+							<div class="headerUpperButton"><?php echo $GLOBALS["iconSearchMedium"];?></div>
+							<div class="headerUpperButton"><?php echo $GLOBALS["iconChatMedium"];?></div>
+							<div class="headerUpperButton"><?php echo $GLOBALS["iconUserMedium"];?></div>
 						</div>
 					<!-- </div>-->
 				
 				
-				<div class="titleWrapper">CAT 101 - Fundamentals of Cats</div>
+				<div class="titleWrapper"><h1>CAT 101 - Fundamentals of Cats</h1></div>
 				<div class="bottomButtonGroup">	
 
 						
