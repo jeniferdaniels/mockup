@@ -2,7 +2,7 @@
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "q1.php";
-	$navNext = "m1fb.php";	
+	$navNext = "m1Feedback.php";	
 	$showModuleProgress = 1;
 	$pageTitle = "1.4 Resources";
 	

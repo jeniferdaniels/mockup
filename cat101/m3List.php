@@ -20,5 +20,5 @@
 	<li><a href="hoarders.php"><?php echo $GLOBALS['listAssignment'] ?>3.B Discussion Forum #3</a></li>
 	<li><a href="final.php"><?php echo $GLOBALS['listAssignment'] ?>3.C Final Exam </a></li>
 	<li><a href="m3Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>3.3 Resources</a></li>
-	<li><a href="m3fb.php"><?php echo $GLOBALS['listAssignment'] ?>3.D Module Feedback</a></li>
+	<li><a href="m3Feedback.php"><?php echo $GLOBALS['listAssignment'] ?>3.D Module Feedback</a></li>
 </ul>
