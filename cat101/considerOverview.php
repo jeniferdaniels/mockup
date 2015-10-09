@@ -37,6 +37,6 @@
 			</div>
 				
 		</div>
-		
+		<footer><?php writeFooter() ?></footer>
 	</body>
 </html>
