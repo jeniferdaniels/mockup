@@ -33,4 +33,38 @@ $iconUserSmall = '<i class="fa fa-user fa-fw"></i>';
 $iconUserMedium = '<i class="fa fa-user fa-lg fa-fw"></i>';
 $iconChatSmall = '<i class="fa fa-comments fa-fw"></i>';
 $iconChatMedium = '<i class="fa fa-comments fa-lg fa-fw"></i>';
+
+$iconAaqSmall = '<i class="fa fa-question-circle fa-fw"></i>';
+$iconAaqMedium = '<i class="fa fa-question-circle fa-lg fa-fw"></i>';
+$iconAaqLarge = '<i class="fa fa-question-circle fa-2x fa-fw"></i>';
+$iconAaqXLarge = '<i class="fa fa-question-circle fa-3x fa-fw"></i>';
+
+$iconPinSmall = '<i class="fa fa-thumb-tack fa-fw"></i>';
+$iconPinMedium = '<i class="fa fa-thumb-tack fa-lg fa-fw"></i>';
+
+$iconExpandedSmall = '<i class="fa fa-angle-double-down fa-fw"></i>';
+$iconExpandedMedium = '<i class="fa fa-angle-double-down fa-lg fa-fw"></i>';
+$iconExpandedLarge = '<i class="fa fa-angle-double-down fa-2x fa-fw"></i>';
+$iconExpandedXLarge = '<i class="fa fa-angle-double-down fa-3x fa-fw"></i>';
+
+$iconCollapsedSmall = '<i class="fa fa-angle-double-right fa-fw"></i>';
+$iconCollapsedMedium = '<i class="fa fa-angle-double-right fa-lg fa-fw"></i>';
+$iconCollapsedLarge = '<i class="fa fa-angle-double-right fa-2x fa-fw"></i>';
+$iconCollapsedXLarge = '<i class="fa fa-angle-double-right fa-3x fa-fw"></i>';
+
+$iconStarFilledSmall = '<i class="fa fa-star fa-fw"></i>';
+$iconStarFilledMedium = '<i class="fa fa-star fa-lg fa-fw"></i>';
+
+$iconStarHalfFilledSmall = '<i class="fa fa-star-half-o fa-fw"></i>';
+$iconStarHalfFilledMedium = '<i class="fa fa-star-half-o fa-lg fa-fw"></i>';
+
+$iconStarEmptySmall = '<i class="fa fa-star-o fa-fw"></i>';
+$iconStarEmptyMedium = '<i class="fa fa-star-o fa-lg fa-fw"></i>';
+
+$icon3AndAHalfOf5StarsSmall = $iconStarFilledSmall . $iconStarFilledSmall . $iconStarFilledSmall . $iconStarHalfFilledSmall . $iconStarEmptySmall;
+$icon3AndAHalfOf5StarsMedium = $iconStarFilledMedium . $iconStarFilledMedium . $iconStarFilledMedium . $iconStarHalfFilledMedium . $iconStarEmptyMedium;
+
+
+
+
 ?>
