@@ -59,13 +59,22 @@ body{
 h1{
 	font-size: 2.5rem;
 	font-weight: 500;
+	margin-bottom: 10px;
 }
 
 //10/8/2015
 h2{
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 500;
 	margin-bottom: 10px;
+	margin-top: 20px
+}
+//TODO, h3, h4, h5
+
+h3{
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-top: 20px;		
 }
 
 //10/8/2015
@@ -74,6 +83,7 @@ p{
 }
 
 
+//?
 a{
 	color: $link-color;
 	text-decoration: none;
@@ -89,17 +99,22 @@ a{
 	}
 }
 
+
+
+//?
 pre{
 	word-wrap: break-word;
 }
 
-
+//?
 header{
 	border-bottom: 1px solid $mediumGray;
 	height: 50px;
 	background-color: white;
 }
 
+
+//?
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
 {
 	a{ 
@@ -117,20 +132,10 @@ header{
 }
 
 
-.urgent{
-	color: $urgent;
-}
-
-.success{
-	color: $success;
-}
-
-.disabled{
-	color: $disabled;
-}
-
-.liteGray{
-	color: $liteGray;
+//?
+.breadCrumbWrapper{
+	display: inline-block;
+	width: 100%;
 }
 
 
@@ -151,13 +156,14 @@ header{
 	}
 }
 
+//?
 .moduleProgress{
 	padding: 0 20px 0 0;
 	//border: 1px solid green;
 	float: right;
 }
 
-
+//?
 .expandCollapseAllWrapper{
 	text-align: right;
 	display:block;
@@ -165,7 +171,7 @@ header{
 	font-size: .8rem;
 }
 
-
+//10/9/2015 used in sample pages
 .column50Percent{
 	width: 49.5%;
 	padding:0;
@@ -174,11 +180,7 @@ header{
 	display: inline-block;
  }	 
 
-.contentTitle, .paragraphTitle{
-	margin-top: 20px;
-	font-weight: 600;
-}
-
+//
 .courseTitle{
 	padding-left: 10px;
 	color: $darkGray;
@@ -247,58 +249,24 @@ header{
 	}
 }
 
-
+//?
 nav{
 	display: inline-block;
+	width: 100%; //will this break everything?
 }
 
-
+//?
 .moduleProgressWrapper{
 	width: $moduleProgressBarWrapperWidth;
 	margin-right: 20px;
 	float: right;
 }
 
-
+//?
 .moduleProgressTitle{
 	font-size: .8rem;
 	text-align: center;
 	width: $moduleProgressBarWrapperWidth;
-}
-
-#search{
-	background-image: url("../images/style1/search.svg");
-	background-size: 20px 20px;
-	background-repeat: no-repeat;
-	background-position: calc(100% - 5px);
-	fill: $liteGray;
-	height: 25px;
-	width: 200px;
-	margin: 5px 10px 0 10px;
-	padding: 0 25px 0 5px;
-	border: 1px solid $darkGray;
-}
-
-//TODO: fix the height
-.topLeftWrapper{
-	display:inline-block;
-	margin-left:10px;
-}
-
-.topRightWrapper{
-	display: inline-block;
-	float: right;
-	position: relative;
-	top: 3px;
-	right: 10px;
-	text-align: right;
-	vertical-align: top;
-	margin-right:10px;
-}
-
-.breadCrumbWrapper{
-	display: inline-block;
-	width: 100%;
 }
 
 
@@ -370,16 +338,6 @@ nav{
 	}
 }
 
-.courseMenuIcon{
-	padding: 0;
-	background-size: 50px 50px;
-	background-repeat: no-repeat;
-	display:inline-block;
-	height: 50px;
-	width: 50px;
-	vertical-align: bottom;
-	background-image: url("../images/style1/courseMenu.svg");
-}
 
 //10/8/2015
 .toggleBox{
@@ -435,26 +393,27 @@ nav{
 	align:top;
 }
 
+
+//?
 .inline, .displayInline{
 	display: inline;
 }
 
+//?
 .displayInlineBlock{
 	display: inline-block;
 }
 
+//?
 .displayBlock{
 	display: block;
 }
 
+//?
 .displayNone{
 	display: none;
 }
 
-.current
-{
-	color: $googleBlue;
-}
 
 .blockCheckMark{
 	display: inline-block;
@@ -515,40 +474,27 @@ nav{
 	float:left;
 }
 
-.assignmentDetailsWrapper{
-	border-bottom: 1px solid $darkGray;
-	margin-bottom: 20px;
-}
 
-.assignmentDetailsCheckmarkWrapper
-{
-	float: right;
-
-}
+//?
 .indexContent{
 	margin-top: 40px;
 }
 
-
-.messageBoxSuccess
-{
-	border: 1px solid $green;
-	background-color: $liteGreen;
-	color: $green;
-	width: 100%;
-	padding-left: 10px;
-	margin-top: 20px;
-}
-
-.contentWrapper{
+//10/9/2015
+.contentWrapper, .aaqContentWrapper{
 	width: $contentWidth;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
 	padding: 0;
 	vertical-align: top;
+}
+
+
+.contentWrapper{
 	margin-top: 140px;
 }
+
 
 //10/8/2015
 .pleLogoWrapper{
@@ -606,12 +552,16 @@ nav{
 	}
 
 }
-
+//*****************************************************************************
+//Navigation
+//*****************************************************************************
+//?
 .navWrapper{
 	width:99%;
 	height:100%;
 }	
 	
+//10/9/2015	
 .navPrevious, .navNext{
     position:fixed;
 	vertical-align: middle;
@@ -634,6 +584,8 @@ nav{
     right: 5px;
 }
 
+
+
 #moduleProgressBar {
     background: $liteGray none repeat scroll 0 0;
     border-radius: 5px;
@@ -644,4 +596,120 @@ nav{
     position: relative;
 	border: 0;
 	width:100px;
+}
+
+
+//*****************************************************************************
+//MessageBox
+//*****************************************************************************
+.messageBoxSuccess
+{
+	border: 1px solid $green;
+	background-color: $liteGreen;
+	color: $green;
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 20px;
+}
+
+//*****************************************************************************
+//One hit wonders - colors
+//*****************************************************************************
+.urgent{
+	color: $urgent;
+}
+
+.success{
+	color: $success;
+}
+
+.disabled{
+	color: $disabled;
+}
+
+.liteGray{
+	color: $liteGray;
+}
+
+.current{
+	color: $googleBlue;
+}
+
+
+
+
+.aaq{
+	
+	&HeaderLinks{
+		list-style: none;
+	
+			& a{
+			text-decoration:underline;
+			}
+
+			&> li{
+			display: inline-block;			
+		}
+	}
+	
+	&Answer{
+		border-left: 2px solid black;
+		margin-left: 20px;
+		padding-left: 10px;
+		margin-top: 10px;
+	}
+	
+	&Post{
+		&Title{
+			font-weight: 600;
+		}
+	
+		&Properties{
+			list-style: none;
+			font-size: .8rem;
+			//line-height: 100%;
+				& a{
+					text-decoration:underline;
+				}
+
+				&> li{
+					display: inline-block;			
+				}
+		}
+
+		&Rating{
+			padding-left: 20px;
+			padding-right:20px;
+			width: 100px;
+		}
+
+		&Endorsed{
+			padding-left: 20px;
+			color: $hotPink;
+			width: 150px;	
+		}
+			
+		&CommentCount{
+			padding-left: 20px;
+			width:150px;		
+		}
+		
+		&er{  //ha ha Poster.
+			padding-left: 50px;				
+		}
+		
+		&DateTime{
+			padding-left:50px;
+			float: right;	
+		}
+
+	}
+	
+	&QuestionAndAnswerWrapper{
+		border:1px solid black;
+		padding: 10px;
+		margin-top: 10px;
+	}
+	
+	
 }
