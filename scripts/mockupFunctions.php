@@ -44,15 +44,22 @@ function  writeNextNavArrow($url)
 }
 
 //10/8/2015
-function writeDashboardTop(){	
-	echo '<div class="top dashTop">';
-		echo '<div class="pleLogoWrapper"><img src="images/pleLogo.png"></div>';
-		echo '<h1 class="dashHeader">Personal Learning Environment</h1>';
-		echo '<div class="topUpperButtonWrapper">';
-			writeSearchButton();
-			writeChatButton();
-			writeUserButton();
-		echo '</div>';	
+function writeDashboardTop(){
+	echo '<div class="top dash">';
+		echo '<div class="topWrapper" id="topWrapper">';
+			echo '<div class="topContent" id="topContent">';
+				echo '<div class="pleLogo dash"></div>';
+					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
+						writeNotificationButton();
+						writeSearchButton();
+						writeChatButton();
+						writeUserButton();
+					echo '</div><!--end upperButtonGroup-->';
+					echo '<div class="topTitleWrapper dash"><h1>Welcome back, Jen!</h1></div>';
+					echo '<div class="topLowerButtonGroup" id="topLowerButtonGroup">';
+					echo '</div><!--end lowerButtonGroup-->';
+			echo '</div><!--end top content-->';
+		echo '</div><!--end topWrapper-->';
 	echo '</div><!--end top-->';
 }
 
@@ -60,19 +67,46 @@ function writeDashboardTop(){
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
 	writeNavArrows($navNext, $navPrevious);
 	echo '<div class="top">';
-		echo '<div class="pleLogoWrapper"><img src="../images/pleLogoSmall.png"></div>';
-		echo '<div><h1 class="topPleHeader">Personal Learning Environment</h1>';	
-		echo '<h2 class="topCourseHeader">'. getCourseName() . '</h2></div>';
-		echo '<div class="topUpperButtonWrapper">';
-			writeSearchButton();
-			writeChatButton();
-			writeUserButton();		
-		echo '</div><!--end topButtonWrapper-->';
-		echo '<div class="topLowerButtonWrapper">';
-			writeDashboardButton();
-			writeCourseInfoButton();
-		echo '</div><!--end topLowerButtonWrapper-->';
-		
+		echo '<div class="topWrapper" id="topWrapper">';
+			echo '<div class="topContent" id="topContent">';
+				echo '<div class="pleLogo"></div>';
+					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
+						writeNotificationButton();
+						writeSearchButton();
+						writeChatButton();
+						writeUserButton();
+					echo '</div><!--end upperButtonGroup-->';
+					echo '<div class="topTitleWrapper"><h1>' . getCourseName() . '</h1></div>';
+					echo '<div class="topLowerButtonGroup" id="topLowerButtonGroup">';
+						//echo '<div class="topLowerButton">';
+						//echo '<div id="primary_nav_wrap">';
+						//echo '<ul><li><a href="#">CAT 101 Class Info</a></li><ul><li>Faculty</li><li>Syllabus</li><li>Schedule</li><li>Assignments</li></ul></ul>';
+						//echo '</div>';
+							
+							
+							//echo '<div class="topLowerButton"><a href="../index.php">Dashboard</a></div>';
+					
+					
+					echo '<nav id="primary_nav_wrap">';
+					echo '<ul>';
+						echo '<li><a href="../index.php">Dashboard</a></li>';
+							echo '<li><a href="#">CAT 101 - Class Information</a>';
+								echo '<ul>';
+									echo '<li><a href="faculty.php">Faculty</a></li>';
+									echo '<li><a href="syllabus.php">Syllabus</a></li>';
+									echo '<li><a href="schedule.php">Schedule</a></li>';
+									echo '<li><a href="assignments.php">Assignments</a></li>';
+								echo '</ul>';
+							echo '</li>';
+						echo '</ul>';
+					echo '</nav>';
+					echo '</div><!--end lowerButtonGroup-->';
+					
+					
+					
+			echo '</div><!--end top content-->';
+		echo '</div><!--end topWrapper-->';
+		writeBreadCrumbs($breadCrumbs);
 	echo '</div><!--end top-->';
 }
 
@@ -108,23 +142,28 @@ function writeBreadCrumbs($breadCrumbs)
 //**********************************************************************
 //BUTTONS
 //**********************************************************************
+function writeChatButton(){
+	echo $GLOBALS["iconChatLarge"];
+	echo '<script>document.getElementById("iconChat").className += " topUpperButton";</script>';
+}
+
+function writeNotificationButton(){
+	echo $GLOBALS["iconNotificationLarge"];
+	echo '<script>document.getElementById("iconNotification").className += " topUpperButton";</script>';
+}
+
 function writeSearchButton(){
-	echo '<div class="topUpperButton">';
-		echo $GLOBALS["iconSearchMedium"];	
-	echo '</div><!--end wrapper-->';
+	echo $GLOBALS["iconSearchLarge"];
+	echo '<script>document.getElementById("iconSearch").className += " topUpperButton";</script>';
 }
 
 function writeUserButton(){
-	echo '<div class="topUpperButton">';
-		echo $GLOBALS["iconUserMedium"];
-	echo '</div>';
+	echo $GLOBALS["iconUserLarge"];
+	echo '<script>document.getElementById("iconUser").className += " topUpperButton";</script>';
 }
 
-function writeChatButton(){
-	echo '<div class="topUpperButton">';
-		echo $GLOBALS["iconChatMedium"];
-	echo '</div>';
-}
+
+
 
 function writeDashboardButton(){
 	echo '<div class="topLowerButton">';
