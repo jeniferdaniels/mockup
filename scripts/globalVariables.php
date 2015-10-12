@@ -27,14 +27,18 @@ $iconFileTypeExcelMedium = '<i class="fa fa-file-excel-o fa-lg fa-fw"></i>';
 $iconLinkSmall = '<i class="fa fa-link fa-fw"></i>';
 $iconLinkMedium = '<i class="fa fa-link fa-lg fa-fw"></i>';
 
-$iconNotificationSmall = '<i class="fa fa-bell-o fa-fw"></i>';
-$iconNotificationMedium = '<i class="fa fa-bell-o fa-lg fa-fw"></i>';
-$iconSearchSmall = '<i class="fa fa-search fa-fw"></i>';
-$iconSearchMedium = '<i class="fa fa-search fa-lg fa-fw"></i>';
-$iconChatSmall = '<i class="fa fa-comments fa-fw"></i>';
-$iconChatMedium = '<i class="fa fa-comments fa-lg fa-fw"></i>';
-$iconUserSmall = '<i class="fa fa-user fa-fw"></i>';
-$iconUserMedium = '<i class="fa fa-user fa-lg fa-fw"></i>';
+$iconNotificationSmall = '<i id="iconNotification" class="fa fa-bell-o fa-fw"></i>';
+$iconNotificationMedium = '<i id="iconNotification" class="fa fa-bell-o fa-lg fa-fw"></i>';
+$iconNotificationLarge = '<i id="iconNotification" class="fa fa-bell-o fa-2x fa-fw"></i>';
+$iconSearchSmall = '<i id="iconSearch" class="fa fa-search fa-fw"></i>';
+$iconSearchMedium = '<i id="iconSearch" class="fa fa-search fa-lg fa-fw"></i>';
+$iconSearchLarge = '<i id="iconSearch" class="fa fa-search fa-2x fa-fw"></i>';
+$iconChatSmall = '<i id="iconChat" class="fa fa-comments fa-fw"></i>';
+$iconChatMedium = '<i id="iconChat" class="fa fa-comments fa-lg fa-fw"></i>';
+$iconChatLarge = '<i id="iconChat" class="fa fa-comments fa-2x fa-fw"></i>';
+$iconUserSmall = '<i id="iconUser" class="fa fa-user fa-fw"></i>';
+$iconUserMedium = '<i id="iconUser" class="fa fa-user fa-lg fa-fw"></i>';
+$iconUserLarge = '<i id="iconUser" class="fa fa-user fa-2x fa-fw"></i>';
 
 $iconAaqSmall = '<i class="fa fa-question-circle fa-fw"></i>';
 $iconAaqMedium = '<i class="fa fa-question-circle fa-lg fa-fw"></i>';
