@@ -24,7 +24,7 @@
 			<h2><?php echo $pageTitle ?></h2>
 			
 		
-			<div class="column50Percent"><img src="images/professor.jpg" height="300px" width="450px"></div>
+			<div class="column50Percent"><img src="resources/professor.jpg" height="300px" width="450px"></div>
 			<div class="column50Percent">
 			   <h3 class="paragraphTitle">Some Title</h3>
 			   <b>Phone:</b>555-555-5555
