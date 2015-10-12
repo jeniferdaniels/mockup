@@ -39,6 +39,12 @@ a {
   a:visited {
     color: #ff0080; }
 
+ul {
+  list-style-type: disc; }
+
+li {
+  margin-left: 10px; }
+
 pre {
   word-wrap: break-word; }
 
@@ -66,7 +72,8 @@ header {
   .breadCrumbs > li + li::before {
     content: " > "; }
   .breadCrumbs > li {
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 0px; }
 
 .moduleProgress {
   padding: 0 20px 0 0;
@@ -93,48 +100,72 @@ header {
 .top {
   position: fixed;
   width: 100%;
-  background-color: #9cbff6;
+  background-color: white;
   top: 0;
   left: 0;
-  height: 100px;
+  height: 135px;
   vertical-align: top;
-  border: 1px solid black;
-  z-index: 900; }
-  .topUpperButton {
-    width: 25px;
-    border: 1px solid red;
-    display: inline;
-    padding: 5px 3px 5px 3px;
-    background-color: white; }
+  z-index: 900;
+  border-bottom: 1px solid black; }
+  .topContent {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+    height: 100%; }
+  .top.dash {
+    height: 150px;
+    background-color: #4488f6; }
   .topLowerButton {
-    width: 25px;
-    border: 1px solid red;
-    display: inline;
-    padding: 5px 3px 5px 3px;
-    background-color: orange;
-    vertical-align: bottom; }
-  .topUpperButtonWrapper {
-    border: 1px solid green;
     display: inline-block;
-    float: right;
-    vertical-align: top;
-    display: inline; }
-  .topLowerButtonWrapper {
-    border: 1px solid green;
-    background-color: red;
-    display: inline-block;
-    float: right;
-    vertical-align: bottom;
-    display: inline; }
-  .topPleHeader {
-    font-size: 2rem;
+    border: 1px solid black;
+    padding: 0 10px 0 10px;
+    margin: 0 3px 0 3px;
+    background-color: white; }
+    .topLowerButtonGroup {
+      margin-top: 10px;
+      display: inline-block; }
+  .topTitleWrapper {
     display: block;
-    border: 2px solid black;
-    font-weight: 600; }
-  .topCourseHeader {
-    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 150px; }
+    .topTitleWrapper.dash {
+      margin-top: 30px; }
+  .topUpperButton {
+    background-color: white;
     display: inline;
-    border: 1px solid purple; }
+    border: 1px solid black;
+    padding: 0 3px 0 3px;
+    margin: 3px;
+    height: 50px; }
+    .topUpperButtonGroup {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      padding: 0;
+      margin: 0; }
+  .topWrapper {
+    width: 100%;
+    background-color: #4488f6;
+    padding: 0;
+    margin: 0;
+    height: 110px; }
+
+.pleLogo {
+  background-image: url("../images/pleLogo.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  padding: 3px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  float: left;
+  margin: 10px; }
+  .pleLogo.dash {
+    height: 100px;
+    width: 100px;
+    margin-left: 20px; }
 
 nav {
   display: inline-block;
@@ -149,6 +180,57 @@ nav {
   font-size: .8rem;
   text-align: center;
   width: 110px; }
+
+#primary_nav_wrap {
+  margin: 0;
+  text-align: left; }
+
+#primary_nav_wrap ul {
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+#primary_nav_wrap ul a {
+  display: block;
+  color: #141414;
+  text-decoration: none; }
+
+#primary_nav_wrap ul li {
+  position: relative;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  border: 1px solid black;
+  background-color: white; }
+
+#primary_nav_wrap ul li:hover {
+  background: #fafafa; }
+
+#primary_nav_wrap ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 0;
+  border: 1px solid black; }
+
+#primary_nav_wrap ul ul li {
+  float: none;
+  width: 100px;
+  border: 0; }
+
+#primary_nav_wrap ul ul a {
+  padding: 0px; }
+
+#primary_nav_wrap ul ul ul {
+  top: 0;
+  left: 100%; }
+
+#primary_nav_wrap ul li:hover > ul {
+  display: block; }
 
 #courseMenu {
   padding: 0;
@@ -292,9 +374,6 @@ nav {
 .floatLeft {
   float: left; }
 
-.indexContent {
-  margin-top: 40px; }
-
 .contentWrapper, .aaqContentWrapper {
   width: 1200px;
   margin-left: auto;
@@ -303,14 +382,11 @@ nav {
   padding: 0;
   vertical-align: top; }
 
-.contentWrapper {
-  margin-top: 140px; }
+.indexContentWrapper {
+  margin-top: 20px; }
 
-.pleLogoWrapper {
-  padding-left: 50px;
-  display: inline;
-  border: 1px solid green;
-  height: 100%; }
+.contentWrapper {
+  margin-top: 150px; }
 
 .dashHeader {
   display: inline;
