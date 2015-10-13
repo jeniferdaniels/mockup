@@ -52,11 +52,27 @@
 					"resumeUrl": "cat101/considerSummary.php"
 				},
 				{	
+					"subject": "CAT",
+					"number": "120",
+					"title": "History of Domestic Cats",
+					"url": "#",
+					"resumeTitle": "1.2.3 Cats in Acient Egypt",
+					"resumeUrl": ""
+				},
+				{	
 					"subject": "DOG",
 					"number": "320",
 					"title": "Advanced Dog Training",
 					"url": "#",
 					"resumeTitle": "10.3.4 Fetch",
+					"resumeUrl": "#"
+				},
+				{	
+					"subject": "DOG",
+					"number": "350",
+					"title": "Psycology of Canines",
+					"url": "#",
+					"resumeTitle": "2.1.4 What Are They Really Thinking?",
 					"resumeUrl": "#"
 				},
 				{	
