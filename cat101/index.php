@@ -61,7 +61,7 @@
 	<body>
 		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
 		
-		<div class="contentWrapper">
+		<div class="contentWrapper indexContentWrapper">
 		<?php 
 			for ($i=0; $i<count($boxes); $i++)
 				writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
