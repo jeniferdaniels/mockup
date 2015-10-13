@@ -131,6 +131,12 @@ header {
     margin-left: 150px; }
     .topTitleWrapper.dash {
       margin-top: 30px; }
+    .topTitleWrapper h1 {
+      color: white; }
+      .topTitleWrapper h1 a {
+        color: white; }
+        .topTitleWrapper h1 a:hover {
+          color: white; }
   .topUpperButton {
     background-color: white;
     display: inline;
@@ -220,57 +226,9 @@ nav {
       #primary_nav_wrap ul ul a {
         padding: 0px; }
 
-#courseMenu {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  top: 120px;
-  left: 5px;
-  position: fixed; }
-  #courseMenu ul, #courseMenu ul li, #courseMenu ul ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 0; }
-  #courseMenu ul {
-    position: relative;
-    z-index: 397;
-    width: 35px;
-    background: white; }
-    #courseMenu ul a {
-      color: black;
-      -webkit-transition: none;
-              transition: none; }
-      #courseMenu ul a:visited {
-        color: black;
-        text-decoration: none; }
-      #courseMenu ul a:hover {
-        color: #4488f6; }
-      #courseMenu ul a:active {
-        color: black; }
-    #courseMenu ul li {
-      min-height: 1px;
-      line-height: 1em;
-      vertical-align: middle;
-      padding: 7px 10px;
-      color: #000; }
-      #courseMenu ul li:hover {
-        position: relative;
-        z-index: 399;
-        cursor: default;
-        background: #9cbff6;
-        color: black; }
-        #courseMenu ul li:hover > ul {
-          visibility: visible; }
-    #courseMenu ul ul {
-      visibility: hidden;
-      position: absolute;
-      top: 10px;
-      left: 99%;
-      z-index: 398;
-      width: 100px;
-      border: 1px solid #c8c8c8;
-      margin-left: 25px; }
+.scheduleWrapper {
+  width: 100%;
+  height: 800px; }
 
 .toggleBox {
   width: 1100px;
