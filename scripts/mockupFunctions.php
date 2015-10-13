@@ -52,6 +52,7 @@ function writeDashboardTop(){
 					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
 						writeNotificationButton();
 						writeSearchButton();
+						writeNotepadButton();
 						writeChatButton();
 						writeUserButton();
 					echo '</div><!--end upperButtonGroup-->';
@@ -73,6 +74,7 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
 						writeNotificationButton();
 						writeSearchButton();
+						writeNotepadButton();
 						writeChatButton();
 						writeUserButton();
 					echo '</div><!--end upperButtonGroup-->';
@@ -107,6 +109,8 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 			echo '</div><!--end top content-->';
 		echo '</div><!--end topWrapper-->';
 		writeBreadCrumbs($breadCrumbs);
+		writeAaqButton();
+		writeRatingButton();
 	echo '</div><!--end top-->';
 }
 
@@ -147,6 +151,11 @@ function writeChatButton(){
 	echo '<script>document.getElementById("iconChat").className += " topUpperButton";</script>';
 }
 
+function writeNotepadButton(){
+	echo $GLOBALS["iconNotepadLarge"];
+	echo '<script>document.getElementById("iconNotepad").className += " topUpperButton";</script>';
+}
+
 function writeNotificationButton(){
 	echo $GLOBALS["iconNotificationLarge"];
 	echo '<script>document.getElementById("iconNotification").className += " topUpperButton";</script>';
@@ -164,22 +173,15 @@ function writeUserButton(){
 
 
 
-
-function writeDashboardButton(){
-	echo '<div class="topLowerButton">';
-		echo '<a href="../index.php">Dashboard</a>';
-	echo '</div>';
+function writeAaqButton()
+{
+	
 }
 
-function writeCourseInfoButton(){
-	echo '<div class="topLowerButton">';
-		echo 'Course Info';
-	echo '</div>';
+function writeRatingButton()
+{
+	
 }
-
-
-
-
 
 
 
