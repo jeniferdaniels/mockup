@@ -78,7 +78,7 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 						writeChatButton();
 						writeUserButton();
 					echo '</div><!--end upperButtonGroup-->';
-					echo '<div class="topTitleWrapper"><h1>' . getCourseName() . '</h1></div>';
+					echo '<div class="topTitleWrapper"><h1><a href="index.php">' . getCourseName() . '</a></h1></div>';
 					echo '<div class="topLowerButtonGroup" id="topLowerButtonGroup">';
 						//echo '<div class="topLowerButton">';
 						//echo '<div id="primary_nav_wrap">';
