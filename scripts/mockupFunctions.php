@@ -111,8 +111,8 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 		echo '</div><!--end topWrapper-->';
 		writeBreadCrumbs($breadCrumbs);
 
-		writeAaqButton();
-		writeRatingButton();
+		//writeAaqButton();
+		//writeRatingButton();
 	echo '</div><!--end top-->';
 }
 
