@@ -4,7 +4,7 @@
 	$navPrevious = "";
 	$navNext = "";	
 	$showModuleProgress = 0;
-	$pageTitle = "Schedule";
+	$pageTitle = "Schedule - CAT 101";
 	
 	$breadCrumbs = array(
 		array("url"=>"index.php", "displayTitle"=>"Home"),
@@ -23,7 +23,7 @@
 			
 			<h2><?php echo $pageTitle ?></h2>
 			
-			 <iframe src="calendar/demos/default.html" class="scheduleWrapper"></iframe> 
+			 <iframe src="../calendar/demos/default.html" class="scheduleWrapper"></iframe> 
 			
 			
 			
