@@ -74,7 +74,10 @@ $iconStarEmptyMedium = '<i class="fa fa-star-o fa-lg fa-fw"></i>';
 $icon3AndAHalfOf5StarsSmall = $iconStarFilledSmall . $iconStarFilledSmall . $iconStarFilledSmall . $iconStarHalfFilledSmall . $iconStarEmptySmall;
 $icon3AndAHalfOf5StarsMedium = $iconStarFilledMedium . $iconStarFilledMedium . $iconStarFilledMedium . $iconStarHalfFilledMedium . $iconStarEmptyMedium;
 
+$rateableStars = '<span class="rating" title="Rate this content"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span></span>';
 
+$iconRating = '<div id="iconRating" class="topUpperButton iconRating"></div>';
 
+$aaqButton = '<div id="iconRating" class="topUpperButton iconAaq"></div>';
 
 ?>
