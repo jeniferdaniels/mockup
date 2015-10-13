@@ -276,7 +276,7 @@ nav {
   height: 800px; }
 
 .toggleBox {
-  width: 1100px;
+  width: 100%;
   border: 1px solid #c8c8c8;
   margin: 10px;
   padding: 10px;
@@ -375,6 +375,18 @@ nav {
 
 .contentWrapper {
   margin-top: 150px; }
+
+.indexContent {
+  -webkit-columns: 2 600px;
+  -moz-columns: 2 600px;
+  columns: 2 600px;
+  border: 1px solid red;
+  margin-top: 200px;
+  width: 1200px; }
+
+.scheduleContent, .courseContent {
+  display: block;
+  width: 550px; }
 
 .dashHeader {
   display: inline;

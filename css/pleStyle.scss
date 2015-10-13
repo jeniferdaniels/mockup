@@ -468,7 +468,8 @@ nav{
 
 //10/8/2015
 .toggleBox{
-	width: $contentWidth - 100px;
+	//width: $contentWidth - 100px;
+	width: 100%;
 	border: 1px solid $liteGray;
 	margin: 10px;
 	padding: 10px;
@@ -624,7 +625,20 @@ nav{
 }
 
 
+.indexContent{
+	-webkit-columns: 2 600px;
+	-moz-columns: 2 600px;
+	columns: 2 600px;
+	border: 1px solid red;
+	margin-top: 200px;
+	width: 1200px;
+}
 
+.scheduleContent, .courseContent{
+	display: block;
+	width: 550px;
+	
+}
 
 
 //10/8/2015
