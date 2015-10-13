@@ -56,24 +56,149 @@
 <html>
 	<head>
 		<?php writeHead(getCourseName()); ?>
+		<link href='../calendar/fullcalendar.css' rel='stylesheet' />
+		<link href='../calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+		<script src='../calendar/lib/moment.min.js'></script>
+		<script src='../calendar/lib/jquery.min.js'></script>
+		<script src='../calendar/fullcalendar.min.js'></script>
+		<script>
+
+			$(document).ready(function() {
+				
+				$('#calendar').fullCalendar({
+					header: {
+						left: 'prev,next',
+						center: 'title',
+						right: 'month,basicWeek,agendaText'
+					},
+					views:{
+						agendaText:{
+							type: 'agenda',
+							buttonText: 'text'
+							}
+						},
+					defaultDate: '2015-01-18',
+					editable: false,
+					eventLimit: true, // allow "more" link when too many events
+					events: [
+						{
+							title: 'Overview and Course Logistics',
+							start: '2015-01-10',
+							end: '2015-01-15',
+							color: "#EEEEEE",
+							textColor: "black"
+						},
+						{
+							title: 'Choosing a Kitten',
+							start: '2015-01-15',
+							end: '2015-01-23',
+							color: "#EEEEEE",
+							textColor: "black"
+						},
+						{
+							title: 'Caring for Your Kitten',
+							start: '2015-01-23',
+							end: '2015-01-30',
+							color: "#EEEEEE",
+							textColor: "black"
+						},
+						{
+							title: 'Legal Requiremens of Owning Kittens',
+							start: '2015-01-30',
+							end: '2015-02-07',
+							color: "#EEEEEE",
+							textColor: "black"
+						},
+						{
+							title: '0.A - Send Test Email',
+							start: '2015-01-12T23:59:00'
+						},
+						{
+							title: '0.B - Module Feedback',
+							start: '2015-01-15T23:59:00'
+						},
+						{
+							title: '1.A - Homework #1',
+							start: '2015-01-18T23:59:00'
+						},
+						{
+							title: '1.B Discussion Forum #1',
+							start: '2015-01-20T23:59:00'
+						},
+						{
+							title: '1.C Quiz',
+							start: '2015-01-22T23:59:00'
+						},
+						{
+							title: '1.D Module Feedback',
+							start: '2015-01-22T23:59:00'
+						},
+						{
+							title: '2.A Homework #2',
+							start: '2015-01-25T23:59:00'
+						},
+						{
+							title: '2.B Discussion Forum #2',
+							start: '2015-01-27T23:59:00'
+						},
+						{
+							title: '2.C Homework #3',
+							start: '2015-01-29T23:59:00'
+						},
+						{
+							title: '2.D Module Feedback',
+							start: '2015-01-30T23:59:00'
+						},
+						{
+							title: '3.A Homework #4',
+							start: '2015-02-02T23:59:00'
+						},
+						{
+							title: '3.B Discussion Forum #3',
+							start: '2015-02-05T23:59:00'
+						},
+						{
+							title: '3.C Final Exam',
+							start: '2015-02-06T23:59:00'
+						},
+						{
+							title: '3.D Module Feedback',
+							start: '2015-02-07T23:59:00'
+						}
+					]
+				});
+				
+			});
+		</script>
 	</head>
 	
 	<body>
-		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
+	<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
+		<div class="indexContent">
 		
-		<div class="contentWrapper indexContentWrapper">
-		<?php 
-			for ($i=0; $i<count($boxes); $i++)
-				writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
-		
-			if ($msg=="done1")
-				echo "<script>document.getElementById('successBox1').style.display='inline-block';</script>";
-		?>
-		
-		<?php 
-			for ($i=0; $i<count($boxes); $i++)
-				writeToggleBox($boxes[$i]);
+			<?php 
+				for ($i=0; $i<count($boxes); $i++)
+					writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
+			
+				if ($msg=="done1")
+					echo "<script>document.getElementById('successBox1').style.display='inline-block';</script>";
 			?>
+			
+		
+			<div class="scheduleContent">
+				<div id='calendar'></div>
+			</div>
+			
+			<div class="courseContent">
+			<?php 
+				for ($i=0; $i<count($boxes); $i++)
+					writeToggleBox($boxes[$i]);
+			?>
+			</div>
+			
+			
+			</div>
+		
 		</div>
 	</body>
 </html>
