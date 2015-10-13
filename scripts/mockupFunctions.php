@@ -31,14 +31,14 @@ function writeNavArrows($navNext, $navPrevious)
 function writePreviousNavArrow($url)
 {
 	if (!empty($url)){
-		echo '<div class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></div></a>';
+		echo '<div class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
 	}
 }
 
 function  writeNextNavArrow($url)
 {
 	if (!empty($url)){
-		echo '<div class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></div></a>';
+		echo '<div class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
 	}
 
 }
@@ -67,6 +67,7 @@ function writeDashboardTop(){
 
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
 	writeNavArrows($navNext, $navPrevious);
+
 	echo '<div class="top">';
 		echo '<div class="topWrapper" id="topWrapper">';
 			echo '<div class="topContent" id="topContent">';
@@ -109,6 +110,7 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 			echo '</div><!--end top content-->';
 		echo '</div><!--end topWrapper-->';
 		writeBreadCrumbs($breadCrumbs);
+
 		writeAaqButton();
 		writeRatingButton();
 	echo '</div><!--end top-->';
@@ -175,12 +177,12 @@ function writeUserButton(){
 
 function writeAaqButton()
 {
-	
+	echo $GLOBALS["aaqButton"];
 }
 
 function writeRatingButton()
 {
-	
+	echo $GLOBALS["iconRating"];
 }
 
 
