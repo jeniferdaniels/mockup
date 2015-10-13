@@ -324,12 +324,61 @@ header{
 
 }
 
-#starRating{
+.iconRating{
+	background-image: url("../images/starRating.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 25px;
+	padding: 2px; 
+	border: 1px solid black;
+	background-size: 25px 25px;
+	//position: relative;
+	//top: 20px;
+	//left: 20px;
+		display:block;
+
+}
+
+.iconAaq{
+	background-image: url("../images/userAskingAQuestion.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 25px;
+	padding-top: 1px;
+	padding: 2px; 
+	border: 1px solid black;
+	background-size: 25px 25px;
+	//position: relative;
+	//top: 20px;
+	//left: 20px;
+	margin-top: 20px;
+	display:block;
+}
 
 
-
-
-
+//10/13/2015
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: gold;
 }
 
 //?
@@ -598,6 +647,7 @@ nav{
 	
 	&Wrapper{
 		margin-top: 140px;
+		border: 1px solid green;
 	}
 
 	&LeftCol, &CenterCol, &RightCol{
