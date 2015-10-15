@@ -1,3 +1,8 @@
+<?php header("Location: cat101/index.php"); ?>
+
+
+
+
 <?php include_once 'scripts/mockupFunctions.php' ?>
 <?php include_once 'scripts/globalVariables.php' ?>
 
@@ -21,10 +26,7 @@
 			}
 			xmlhttp.open("GET", url, true);
 			xmlhttp.send();
-			
-			
-			
-			
+
 			function writeWhosOnline(arr) {
 				var str = "";
 				for(var i = 0; i < arr.length; i++) {
@@ -50,10 +52,7 @@
 					str += '<li><div style="font-weight:600">' + arr[i].dueDate + '</div><ul><li><a href="' + arr[i].url + '">' + arr[i].subject + ' ' + arr[i].number + " - " + arr[i].title + '</a></li></ul></li>';
 				}
 				document.getElementById("upcomingAssignments").innerHTML = str;			
-			}
-
-
-			
+			}	
 		</script>
 					
 			
