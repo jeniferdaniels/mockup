@@ -7488,7 +7488,7 @@ $.extend(BasicView.prototype, {
 				'<tbody>' +
 					'<tr>' +
 						'<td class="' + this.widgetContentClass + '">' +
-							'<div class="fc-day-grid-container">' +
+							'<div id="oduCal" class="fc-day-grid-container">' +
 								'<div class="fc-day-grid"/>' +
 							'</div>' +
 						'</td>' +
