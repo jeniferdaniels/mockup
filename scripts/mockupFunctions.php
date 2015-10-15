@@ -1,23 +1,31 @@
 <?php include_once 'globalVariables.php' ?>
 <?php
 
-//TODO change to class global
-function getCourseName(){
-	return "CAT 101 - Fundamentals of Kittens";
+function writeHead($pageTitle){
+	echo "\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
+	echo "\n\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+	echo "\n\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
+	echo "\n\t\t", '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
+	echo "\n\t\t", '<script src="../calendar/lib/moment.min.js"></script>';
+	echo "\n\t\t", '<script src="../calendar/lib/jquery.min.js"></script>';
+	echo "\n\t\t", '<script src="/mockups/scripts/js/url.js"></script>';
+	echo "\n\t\t", '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
+	echo "\n\t\t", '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
+	echo "\n\t\t", '<script>$(document).ready(function(){populateCourseTitle("json/kitten.json");});</script>';
+	echo "\n";
 }
 
-function writeHead($pageTitle){
-	echo '<title>' . $pageTitle . '</title>';
-	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
-	echo '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
-	//echo '<!--fonts from Adobe Typekit -->';
-	//echo '<script src="https://use.typekit.net/shs2gdc.js"></script>';
-	//echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
-	echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
-	echo '<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet" type="text/css">';
-	echo '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
+function writeCourseDashboardHead($pageTitle){
+	writeHead($pageTitle);
+	//calendar scripts
+	echo "\n", '<link href="../calendar/fullcalendar.css" rel="stylesheet">';
+	echo "\n", '<link href="../calendar/fullcalendar.print.css" rel="stylesheet" media="print">';
 
+	echo "\n", '<script src="../calendar/fullcalendar.min.js"></script>';
+	echo "\n", '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
+	echo "\n", '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
+	echo "\n", '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
+	echo "\n";
 }
 
 function writeNavArrows($navNext, $navPrevious)
@@ -43,80 +51,44 @@ function  writeNextNavArrow($url)
 
 }
 
-//10/8/2015
-function writeDashboardTop(){
-	echo '<div class="top dash">';
-		echo '<div class="topWrapper" id="topWrapper">';
-			echo '<div class="topContent" id="topContent">';
-				echo '<div class="pleLogo dash"></div>';
-					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
-						writeNotificationButton();
-						writeSearchButton();
-						writeNotepadButton();
-						writeChatButton();
-						writeUserButton();
-					echo '</div><!--end upperButtonGroup-->';
-					echo '<div class="topTitleWrapper dash"><h1>Welcome back, Jen!</h1></div>';
-					echo '<div class="topLowerButtonGroup" id="topLowerButtonGroup">';
-					echo '</div><!--end lowerButtonGroup-->';
-			echo '</div><!--end top content-->';
-		echo '</div><!--end topWrapper-->';
-	echo '</div><!--end top-->';
-}
-
-
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
 	writeNavArrows($navNext, $navPrevious);
-
-	echo '<div class="top">';
-		echo '<div class="topWrapper" id="topWrapper">';
-			echo '<div class="topContent" id="topContent">';
-				echo '<div class="pleLogo"></div>';
-					echo '<div class="topUpperButtonGroup" id="topUpperButtonGroup">';
-						writeNotificationButton();
-						writeSearchButton();
-						writeNotepadButton();
-						writeChatButton();
-						writeUserButton();
-					echo '</div><!--end upperButtonGroup-->';
-					echo '<div class="topTitleWrapper"><h1><a href="index.php">' . getCourseName() . '</a></h1></div>';
-					echo '<div class="topLowerButtonGroup" id="topLowerButtonGroup">';
-						//echo '<div class="topLowerButton">';
-						//echo '<div id="primary_nav_wrap">';
-						//echo '<ul><li><a href="#">CAT 101 Class Info</a></li><ul><li>Faculty</li><li>Syllabus</li><li>Schedule</li><li>Assignments</li></ul></ul>';
-						//echo '</div>';
-							
-							
-							//echo '<div class="topLowerButton"><a href="../index.php">Dashboard</a></div>';
-					
-					
-					echo '<nav id="primary_nav_wrap">';
-					echo '<ul>';
-						echo '<li><a href="../index.php">Dashboard</a></li>';
-							echo '<li><a href="#">CAT 101 - Class Information</a>';
-								echo '<ul>';
-									echo '<li><a href="faculty.php">Faculty</a></li>';
-									echo '<li><a href="syllabus.php">Syllabus</a></li>';
-									echo '<li><a href="schedule.php">Schedule</a></li>';
-									echo '<li><a href="assignments.php">Assignments</a></li>';
-								echo '</ul>';
-							echo '</li>';
-						echo '</ul>';
-					echo '</nav>';
-					echo '</div><!--end lowerButtonGroup-->';
-					
-					
-					
-			echo '</div><!--end top content-->';
-		echo '</div><!--end topWrapper-->';
+	echo "\r\n\t\t", '<div class="top">';
+		writeTopHtml();
 		writeBreadCrumbs($breadCrumbs);
-
-		//writeAaqButton();
-		//writeRatingButton();
-	echo '</div><!--end top-->';
+	echo "\r\n\t\t", '</div><!--end top-->';
 }
 
-
+function writeTopHtml()
+{
+	echo "\n\t\t\t", '<div class="topWrapper">';
+	echo "\n\t\t\t\t", '<header>';
+	echo "\n\t\t\t\t\t", '<nav id="nav">';
+	echo "\n\t\t\t\t\t\t", '<ul>';
+	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
+	echo "\n\t\t\t\t\t\t\t\t", '<ul>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Announcements</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Ask A Question</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Glossary</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="faculty.php">Faculty</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Notes</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Notifications</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="schedule.php">Schedule</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="syllabus.php">Syllabus</a></li>';
+	echo "\n\t\t\t\t\t\t\t\t", '</ul>';
+	echo "\n\t\t\t\t\t\t\t", '</li>';
+	echo "\r\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
+	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
+	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
+	echo "\n\t\t\t\t\t\t", '</ul>';
+	echo "\n\t\t\t\t\t", '</nav>';
+	echo "\n\t\t\t\t\t", '<div class="pleLogo"></div>';
+	echo "\n\t\t\t\t\t", '<h1 id="courseTitle"></h1>';
+	echo "\n\t\t\t\t\t", '<h2 id="courseInstructor"></h2>';
+	echo "\n\t\t\t\t", '</header>';
+	echo "\n\t\t\t", '</div><!--end topWrapper-->';
+	echo "\n";
+}
 
 
 function writeModuleProgressBar(){
@@ -128,9 +100,10 @@ function writeModuleProgressBar(){
 
 function writeBreadCrumbs($breadCrumbs)
 {
+	echo "\r\n";
 	if (!empty($breadCrumbs))
 	{
-	echo '<div class="breadCrumbWrapper">';
+	echo "\r\n\t\t", '<div class="breadCrumbWrapper">';
 		echo '<nav>';
 		echo '<ul class="breadCrumbs">';
 			//stop short of last item because it will be text instead of a link
@@ -142,7 +115,8 @@ function writeBreadCrumbs($breadCrumbs)
 			echo '<li>' . array_pop($breadCrumbs)["displayTitle"] . '</a></li>';	
 		echo '</ul>';
 		echo '</nav></div>';
-	}		
+	}
+	echo "\n";
 }
 
 //**********************************************************************
@@ -173,8 +147,6 @@ function writeUserButton(){
 	echo '<script>document.getElementById("iconUser").className += " topUpperButton";</script>';
 }
 
-
-
 function writeAaqButton()
 {
 	echo $GLOBALS["aaqButton"];
@@ -182,28 +154,10 @@ function writeAaqButton()
 
 function writeRatingButton()
 {
+	echo '<div class="rateContent"><a href="#">Rate content';
 	echo $GLOBALS["iconRating"];
+	echo '</a></div>';
 }
-
-
-
-function writeCourseInfoMenu(){
-	echo '<div class="lhsMenuWrapper">';
-	echo '<div id="courseMenu">';
-	echo '<ul>';
-	echo '<li class="clearHover"><a href="#" class="courseMenuIcon clearHover"></a>';
-    echo '<ul>';
-	echo '<li><a href="faculty.php?hId=f"><span>Faculty</span></a></li>';
-	echo '<li><a href="syllabus.php"><span>Syllabus</span></a></li>';
-	echo '<li><a href="schedule.php"><span>Schedule</span></a></li>';
-	echo '<li><a href="assignments.php"><span>Assignments</span></a></li>';
-	echo '<li><a href="help.php"><span>Help</help></a></li>';
-	echo '</ul><!--end big list-->';
-	echo '</ul></div>';
-	echo '</div>';
-
-}
-
 
 function writeToggleBox($box){
 	$boxTitle = $box["title"];
@@ -247,16 +201,16 @@ function writeSuccessMessage($id, $string)
 }
 
 
-function writeDashWidgetTitle($title)
+function writeDashWidgetTitle($title, $toggle)
 {
-		echo '<h2 class="dashTitle">' . $title . '</h2>';	
+		echo '<h2>' . $title . '</h2>';
+		if ($toggle){
+			echo '<div class="expandCollapseAllWrapper">';
+			echo '<div id="calendarView" style="display:none"><a href="javascript:toggleDisplay(\'calendarView\', \'listView\'); expandAll();">Calendar View</a></div>';
+			echo '<div id="collapseAll"><a href="javascript:toggleDisplay(\'calendarView\', \'listView\'); collapseAll();">List View</a></div>';
+			echo '</div>';
+		}
 }
-
-function functionalityNA($msg)
-{
-		echo "javascript:alert(\'" . $msg . "\');";	
-}
-
 function writeFooter()
 {
 	//echo '<iframe src="../aaq.php" width="100%"></iframe>';	
