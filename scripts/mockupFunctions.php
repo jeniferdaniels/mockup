@@ -12,6 +12,7 @@ function writeHead($pageTitle){
 	echo "\n\t\t", '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
 	echo "\n\t\t", '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
 	echo "\n\t\t", '<script>$(document).ready(function(){populateCourseTitle("json/kitten.json");});</script>';
+	echo "\n\t\t", '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
 	echo "\n";
 }
 
@@ -34,19 +35,22 @@ function writeNavArrows($navNext, $navPrevious)
 		writePreviousNavArrow($navPrevious);
 		writeNextNavArrow($navNext);
 	echo '</div><!--end nav wrapper-->';
+	echo '<script>useArrowsForNavigation("' . $navPrevious . '", "' . $navNext . '")</script>';
+	
+	
 }
 
 function writePreviousNavArrow($url)
 {
 	if (!empty($url)){
-		echo '<div class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
+		echo '<div id="navPrevious" class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
 	}
 }
 
 function  writeNextNavArrow($url)
 {
 	if (!empty($url)){
-		echo '<div class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
+		echo '<div id="navNext" class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
 	}
 
 }
