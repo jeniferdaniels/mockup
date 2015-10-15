@@ -13,7 +13,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>

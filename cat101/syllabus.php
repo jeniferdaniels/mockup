@@ -75,7 +75,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 		<script>
 			function expandAll(){
 				showItem("readings_expanded");
