@@ -1,5 +1,3 @@
-<!DOCTYPE HTML>
-<head>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 <script type="text/javascript">
 if (typeof jQuery == 'undefined') {
@@ -8,28 +6,9 @@ if (typeof jQuery == 'undefined') {
 </script>
 <script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>
 <link rel="stylesheet" href="https://www.odu.edu/etc/designs/odu/clientlibs.css" type="text/css">
-<link href="https://www.odu.edu/etc/designs/odu.css" rel="stylesheet" type="text/css">
+
 </head>
-<body style="background-color: white">
-<header>
-<style>
-    .cq-eventcomponent-editbtn-wrapper {
-        display: none;
-    }
-    
-    .cq-wcm-edit .cq-eventcomponent-editbtn-wrapper {
-        display: block;
-    }
-    
-    .cq-eventcomponent-editbtn-wrapper {
-        float: right;
-        margin: 5px;
-    }
-    
-    .cq-eventcomponent-editbtn-wrapper td {
-        border: none;
-    }    
-</style>
+
 
 
 <div class="grid-3 alpha">
@@ -90,9 +69,7 @@ if (typeof jQuery == 'undefined') {
 					url: 'cat101/whyBuy.php'
 				}
 			]
-				//[ {title: 'R',start: new Date(2015, 10 - 1, 26),color: "green",url: '/univevents/calendar/2015/10/lifelong_learning_ar'} ]
-            
-        });
+	      });
 
     }
    
@@ -160,9 +137,6 @@ if (typeof jQuery == 'undefined') {
 		box-shadow: none;
 	}
 </style>
-</header>
+
 <div id="recurringCalendar"></div>
-</div></div>
-            
-</body>
-</html>
+</div>
