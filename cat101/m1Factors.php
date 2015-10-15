@@ -2,14 +2,14 @@
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "";
-	$navNext = "m0Introduction.php";
+	$navNext = "m1ConsiderOverview.php";
 	$showModuleProgress = 0;
 
-	$pageTitle = "0.1 Welcome";
+	$pageTitle = "1.1 Factors to Consider When Choosing a Kitten";
 	
 	$breadCrumbs = array(
 		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=1,0,0,0", "displayTitle"=>"0. Overview and Course Logistics"),
+		array("url"=>"index.php?isExpanded=0,1,0,0", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 
@@ -27,12 +27,12 @@
 			<h2><?php echo $pageTitle ?></h2>
 			
 			<p>In this topic you will learn about:</p>
-				<ul>
-					<li><?php echo $GLOBALS['listCheckMark'] ?><a href="m0Introduction.php">0.1.1 Introduction</a></li>
-					<li><?php echo $GLOBALS['listCheckMark'] ?><a href="m0OnlineLearningOrientation.php">0.1.2 Online Learning Orientation</a></li>
-					<li><?php echo $GLOBALS['listCheckMark'] ?><a href="m0techSupport.php">0.1.3 Technical Support</a></li>
-					<li><?php echo $GLOBALS['listCheckMark'] ?><a href="m0Summary.php">0.1.4 Summary</a></li>
-				</ul>
+			<ul class="moduleList">
+				<li><a href="m1ConsiderOverview.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.1 Overview</a></li>
+				<li><a href="m1Responsibility.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.2 Responsibility</a></li>
+				<li><a href="m1Cost.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.3 Cost</a></li>
+				<li><a href="m1ConsiderSummary.php"><?php echo $GLOBALS['listCurrentSpotSmall'] ?>1.1.4 Summary</a></li>
+			</ul>
 				
 		</div>
 		

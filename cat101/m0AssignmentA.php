@@ -1,21 +1,21 @@
 <?php include_once '../scripts/mockupFunctions.php'; ?>
 <?php include_once '../scripts/globalVariables.php'; ?>
 <?php 
-	$navPrevious = "considerSummary.php";
-	$navNext = "rescue.php";	
+	$navPrevious = "m0Summary.php";
+	$navNext = "m0Resources.php";	
 	$showModuleProgress = 1;
-	$pageTitle = "1.A Homework #1";
+	$pageTitle = "0.A Send Test Email";
 	
 	$breadCrumbs = array(
 		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"index.php?isExpanded=1,0,0,0", "displayTitle"=>"0. Overview and Course Logistics"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
@@ -25,24 +25,23 @@
 			
 			<div class="fa fa-calendar fa-2x displayInlineBlock urgent"></div><h2 class="contentTitle displayInlineBlock">Assignment - <?php echo $pageTitle ?></h2>
 			<div class="assignmentDetailsWrapper">
-				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 18, 2015 at 11:59 PM</time>
+				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 12, 2015 at 11:59 PM</time>
 				<br>
-				<strong>Deliverables - </strong> Essay submitted via Blackboard
+				<strong>Deliverables - </strong> Sent Email
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>			
-			<p>What are some benefits to owning a kitten? Write a 300 word essay and submit it via Blackboard.</p>
-				
+							
 				
 			<div class="assignmentDetailsCheckmarkWrapper">
-				<div id="uncheckedMark">
+				<div id="uncheckedMark" style="display:none">
 					<a href="javascript:toggleDisplay('uncheckedMark', 'checkedMark');">
 						Mark assignment as complete. 
 						<?php echo $GLOBALS["assignmentCheckMarkUnchecked"] ?>
 					</a>
 				</div>
 				
-				<div id="checkedMark" style="display:none">
+				<div id="checkedMark" >
 					Complete!
 					<?php echo $GLOBALS["assignmentCheckMarkChecked"] ?>
 				</div>

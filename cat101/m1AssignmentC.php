@@ -1,7 +1,7 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "purchaseSummary.php";
+	$navPrevious = "m1PurchaseSummary.php";
 	$navNext = "m1Resources.php";	
 	$showModuleProgress = 1;
 	$pageTitle = "1.C Quiz #1";
@@ -15,7 +15,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>

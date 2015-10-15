@@ -1,11 +1,11 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "";
-	$navNext = "considerOverview.php";
+	$navPrevious = "m1AssignmentB.php";
+	$navNext = "m1PurchaseOverview.php";
 	$showModuleProgress = 0;
 
-	$pageTitle = "1.1 Factors to Consider When Choosing a Kitten";
+	$pageTitle = "1.3 Purchasing a Kitten";
 	
 	$breadCrumbs = array(
 		array("url"=>"index.php", "displayTitle"=>"Home"),
@@ -16,7 +16,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
@@ -28,10 +28,10 @@
 			
 			<p>In this topic you will learn about:</p>
 			<ul class="moduleList">
-				<li><a href="considerOverview.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.1 Overview</a></li>
-				<li><a href="responsibility.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.2 Responsibility</a></li>
-				<li><a href="cost.php"><?php echo $GLOBALS['listCheckMark'] ?>1.1.3 Cost</a></li>
-				<li><a href="considerSummary.php"><?php echo $GLOBALS['listCurrentSpotSmall'] ?>1.1.4 Summary</a></li>
+				<li><a href="m1PurchaseOverview.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.1 Overview</a></li>
+				<li><a href="m1Buy.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.2 Reasons to Purchase A Kitten</a></li>
+				<li><a href="m1WhereBuy.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.3 Where to Buy</a></li>
+				<li><a href="m1PurchaseSummary.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.3.4 Summary</a></li>
 			</ul>
 				
 		</div>

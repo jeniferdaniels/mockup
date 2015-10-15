@@ -1,14 +1,14 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "m1AssignmentC.php";
-	$navNext = "m1Feedback.php";	
+	$navPrevious = "m0AssignmentA.php";
+	$navNext = "m0Feedback.php";	
 	$showModuleProgress = 1;
-	$pageTitle = "1.4 Resources";
+	$pageTitle = "0.2 Resources";
 	
 	$breadCrumbs = array(
 		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"index.php?isExpanded=1,0,0,0", "displayTitle"=>"0. Overview and Course Logistics"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 

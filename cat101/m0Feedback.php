@@ -1,21 +1,21 @@
-<?php include_once '../scripts/mockupFunctions.php'; ?>
-<?php include_once '../scripts/globalVariables.php'; ?>
+<?php include_once '../scripts/mockupFunctions.php' ?>
+<?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "rescueSummary.php";
-	$navNext = "purchase.php";	
+	$navPrevious = "m1Resources.php";
+	$navNext = "index.php?isExpanded=0,0,0,0&msg=done0&isDone=1,1,0,0";	
 	$showModuleProgress = 1;
-	$pageTitle = "1.B Discussion Forum #1";
+	$pageTitle = "0.B Module Feedback";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+	array("url"=>"index.php", "displayTitle"=>"Home"),
+		array("url"=>"index.php?isExpanded=1,0,0,0", "displayTitle"=>"0. Overview and Course Logistics"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead(getCourseName()); ?>
+		<?php writeHead($pageTitle); ?>
 	</head>
 	
 	<body>
@@ -25,24 +25,24 @@
 			
 			<div class="fa fa-calendar fa-2x displayInlineBlock"></div><h2 class="contentTitle displayInlineBlock">Assignment - <?php echo $pageTitle ?></h2>
 			<div class="assignmentDetailsWrapper">
-				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 20, 2015 at 11:59 PM</time>
+				<strong>Due - </strong><time class="displayInlineBlock dueTime">January 15, 2015 at 11:59 PM</time>
 				<br>
-				<strong>Deliverables - </strong> Comments on Blackboard Discussion Forum
+				<strong>Deliverables - </strong> Submitted feedback
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>			
-			<p>Would you rescue a kitten?  Explain why?</p>
+
 				
 				
 			<div class="assignmentDetailsCheckmarkWrapper">
-				<div id="uncheckedMark">
+				<div id="uncheckedMark" style="display:none">
 					<a href="javascript:toggleDisplay('uncheckedMark', 'checkedMark');">
 						Mark assignment as complete. 
 						<?php echo $GLOBALS["assignmentCheckMarkUnchecked"] ?>
 					</a>
 				</div>
 				
-				<div id="checkedMark" style="display:none">
+				<div id="checkedMark">
 					Complete!
 					<?php echo $GLOBALS["assignmentCheckMarkChecked"] ?>
 				</div>
