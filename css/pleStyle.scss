@@ -109,21 +109,6 @@ li{
 	margin-left: 10px;	
 }
 
-
-
-//?
-pre{
-	word-wrap: break-word;
-}
-
-//?
-header{
-	border-bottom: 1px solid $mediumGray;
-	height: 50px;
-	background-color: white;
-}
-
-
 //?
 .listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
 {
@@ -142,10 +127,15 @@ header{
 }
 
 
-//?
+//10/14/2015
 .breadCrumbWrapper{
-	display: inline-block;
-	width: 100%;
+	display: block;
+	width: $contentWidth;
+	border-bottom: 1px solid black;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	//background-color: $xLiteGray;
 }
 
 
@@ -192,14 +182,6 @@ header{
 	display: inline-block;
  }	 
 
-//
-.courseTitle{
-	padding-left: 10px;
-	color: $darkGray;
-	display: inline-block;
-}
-
-
 
 //10/8/2015
 .top{
@@ -208,100 +190,115 @@ header{
 	background-color: white;
 	top: 0;
 	left: 0;
-	height: 135px;
+	height: 142px;
 	vertical-align: top;
 	//border: 1px solid black;
 	z-index: 900;
-	border-bottom: 1px solid black;
-
-	&Content{
-		width: 1200px;
-		//border: 1px solid blue;
-		margin-left: auto;
-		margin-right:auto;
-		text-align:right;
-		height: 100%;
-	}
+	//border-bottom: 1px solid black;
 	
-	&.dash {
-		height: 150px;
-		background-color: $googleBlue; //hide the bottom white where the breadcrumbs go
-	}
-		
-		
-	//&LogoWrapper{
-		//border: 3px solid yellow;
-	//	display:inline-block;
-	//	float: left;
-	//	margin: 10px;
-	//}
-	
-	&LowerButton{
+	h1{
 		display: inline-block;
-		border: 1px solid black;	
-		padding: 0 10px 0 10px;
-		margin: 0 3px 0 3px;
-		background-color: white;
-
-	
-		&Group{
-			//border: 3px dotted blue;
-			margin-top:10px;
-			display: inline-block;
-		}
-	}
-
-	&TitleWrapper{
-		display: block;
-		//border: 3px solid green;
-		text-align: left;
-		margin-left: 150px;
-
-		&.dash {
-			margin-top: 30px;		
-		}
-		
-		h1{
-			color: white;
-			a{
-				color: white;
-				
-				&:hover{
-					color: white;
-				}
+		margin-top: 25px;
+		a{
+			color: $darkGray;
+			&:hover{
+				color: $googleBlue;
+				text-decoration: underline;
 			}
 		}
-	}	
-
+	}
 	
-	&UpperButton{
-		background-color: white;
-		display:inline;
-		border: 1px solid black;
-		padding: 0 3px 0 3px;
-		margin: 3px;
-		height: 50px;
-	
-		&Group{
-			position: relative;
-			top: 0;
-			left: 0;
-			//border: 3px dotted blue;
-			display: inline-block;
-			padding: 0;
-			margin: 0;
+	h2{
+		margin: 0;
+		padding: 0;
+		display: block;
+		font-size: 1rem;
+		color: $darkGray;
+		
+		a{
+			color: $darkGray;
+			&:hover{
+				color: $googleBlue;
+				text-decoration: underline;
+			}
 		}
+		
 	}
 	
 	&Wrapper{
-		width:100%;
-		background-color: $googleBlue;
+		width: $contentWidth;
+		background-color: white;
 		//border-bottom: 5px solid $liteGoogleBlue;
-		padding:0;
+		padding: 0;
 		margin: 0;
 		height: 110px;
+		margin-left: auto;
+		margin-right:auto;
 	}
 
+}
+
+#nav {
+	width:100%; 
+    display:block;
+    background-color: $googleBlue;
+	//border-bottom:5px solid #2980b9;
+	
+	ul	{
+		padding:5px;
+		margin: 0;
+		list-style: none;
+		position: relative;
+		text-align: right;   
+		
+		&:After {
+			content: "";
+			display:block;
+			clear:both;
+		}
+		
+		li {
+			display:list-item;
+			list-style: none;
+			float:right;
+			background-color:$googleBlue;	
+			i {
+				font-size:25px;
+				width:30px;
+			}
+			a {
+				display:block;
+				//padding:15px 30px;  
+				color:#FFF;
+				text-decoration:none;
+				text-align:center;
+				
+				&:hover { 
+					background-color: $liteGoogleBlue; 
+				}
+			}
+			&:hover > ul {
+				display: list-item;
+			}
+		}
+		
+		 ul {
+			display: none;
+			position: absolute; top: 20px;
+			li {
+				width:150px;
+				float:none;
+				position: relative;
+				border-bottom:none;
+				
+				a {
+					//padding:15px 20px;
+					padding-left: 10px;
+					text-align:left;  
+				}
+			}
+		}
+	}
 }
 
 //10/12/2015
@@ -309,35 +306,28 @@ header{
 	background-image: url("../images/pleLogo.svg");
 	background-color: white;
 	background-repeat: no-repeat;
+	background-size: 75px 75px;
 	padding: 3px;
-	height: 50px;
-	width: 50px;
+	height: 75px;
+	width: 75px;
 	display:inline-block;
 	float: left;
-	margin: 10px;
-		
-	&.dash{
-		height: 100px;
-		width: 100px;
-		margin-left: 20px;
-	}
-
+	margin: 0 10px 0 10px;
 }
 
 .iconRating{
 	background-image: url("../images/starRating.svg");
 	background-color: white;
 	background-repeat: no-repeat;
-	height: 25px;
-	width: 25px;
+	height: 10px;
+	width: 10px;
 	padding: 2px; 
-	border: 1px solid black;
-	background-size: 25px 25px;
-	//position: relative;
-	//top: 20px;
-	//left: 20px;
-		display:block;
-
+	margin-top: 5px;
+	margin-left: 3px;
+	//border: 1px solid black;
+	background-size: 10px 10px;
+	display:block;
+	float: right;
 }
 
 .iconAaq{
@@ -357,36 +347,6 @@ header{
 	display:block;
 }
 
-
-//10/13/2015
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: center;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover,
-.rating > span:hover ~ span {
-  color: transparent;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0;
-   color: gold;
-}
-
-//?
-nav{
-	display: inline-block;
-	width: 100%; //will this break everything?
-}
-
 //?
 .moduleProgressWrapper{
 	width: $moduleProgressBarWrapperWidth;
@@ -401,75 +361,10 @@ nav{
 	width: $moduleProgressBarWrapperWidth;
 }
 
-
-//10/12/2015
-#primary_nav_wrap{
-	margin: 0;
-	text-align: left;
-
-	ul{
-		list-style:none;
-		position:relative;
-		float:left;
-		margin:0;
-		padding:0;
-		//border: 1px solid red;
-		a{
-			display:block;
-			color: $darkGray;
-			text-decoration:none;
-		}
-		
-		li{
-			position:relative;
-			float:left;
-			margin:3px;
-			padding:3px;
-			border: 1px solid black;
-			background-color: white;
-			
-			&:hover{
-				background: $xLiteGray;
-				
-				& > ul{
-					display:block
-				}
-			}
-		}
-	
-		ul{
-			display:none;
-			position:absolute;
-			top:100%;
-			left:0;
-			background:#fff;
-			padding:0;
-			border: 1px solid black;
-			
-			li{
-				float:none;
-				width:100px;
-				border: 0;
-			}
-			a{
-				padding:0px;
-			}
-		}
-	}
-}
-
-//10/12/15
-.scheduleWrapper{
-	width: 100%;
-	height: 800px;
-}
-
-
-
 //10/8/2015
 .toggleBox{
 	//width: $contentWidth - 100px;
-	width: 100%;
+	width: 90%;
 	border: 1px solid $liteGray;
 	margin: 10px;
 	padding: 10px;
@@ -605,13 +500,16 @@ nav{
 
 
 //10/9/2015
-.contentWrapper, .aaqContentWrapper{
+.pageWrapper
+//, .contentWrapper, .aaqContentWrapper
+{
 	width: $contentWidth;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
 	padding: 0;
 	vertical-align: top;
+	border: 1px solid black;
 }
 
 
@@ -620,12 +518,50 @@ nav{
 	margin-top: 20px;
 }
 
+//10/14/2015
 .contentWrapper{
-	margin-top: 150px;
+	margin-top: 160px;
+	vertical-align: top;
+	width: $contentWidth;
+	//border: 1px solid blue;
+	margin-left: auto;
+	margin-right: auto;
+	ul{
+		list-style: none;
+		
+		& li{
+		padding-top: 3px;
+		padding-left: 20px;
+		}
+	}
+	
+	& .rateContent{
+		font-size: .7rem;
+		//border: 1px solid red;
+		float: right;
+		clear: both;
+	}
+	clear: both;
+}
+.scheduleContentWrapper{
+	//display: inline-block;
+	width: 400px;
+	//border: 1px solid green;
+	height: 500px;
+	float: left;
+}
+
+.courseContentWrapper{
+	//display: inline-block;
+	width: 775px;
+	margin-left: 10px;
+	//border: 1px solid green;
+	float: right;
 }
 
 
-.indexContent{
+//not used?
+/*.indexContent{
 	-webkit-columns: 2 600px;
 	-moz-columns: 2 600px;
 	columns: 2 600px;
@@ -633,17 +569,10 @@ nav{
 	margin-top: 200px;
 	width: 1200px;
 }
-
-.scheduleContent, .courseContent{
-	display: block;
-	width: 550px;
-	
-}
-
+*/
 
 //10/8/2015
 .dash{
-	
 	&Header{
 		display: inline;
 		font-size: 2.5rem;
@@ -653,18 +582,20 @@ nav{
 		font-weight: 600;
 	}
 	
-	&Title{
+	//10/14/2015
+	h2{
 		font-size: 1.4rem;
 		width: 100%;
 		border-bottom: 1px solid black;
+		display: inline-block;
 	}
 	
-	&Wrapper{
-		margin-top: 140px;
-		border: 1px solid green;
-	}
+	//&Wrapper{
+	//	margin-top: 140px;
+	//	border: 1px solid green;
+	//}
 
-	&LeftCol, &CenterCol, &RightCol{
+	/*&LeftCol, &CenterCol, &RightCol{
 		padding: 10px;
 		position: relative;
 		//border: 1px solid blue;
@@ -687,7 +618,8 @@ nav{
 	&Top{
 		//height: 160px;
 	}
-
+	*/
+	
 }
 //*****************************************************************************
 //Navigation
@@ -746,7 +678,8 @@ nav{
 	color: $green;
 	width: 100%;
 	padding-left: 10px;
-	margin-top: 20px;
+	//margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 //*****************************************************************************
@@ -776,6 +709,11 @@ nav{
 
 //10/9/2015
 .aaq{
+	margin-top: 50px;
+	width: $contentWidth;
+	background-color: $xLiteGray;
+	//border: 1px solid red;
+
 	
 	&HeaderLinks{
 		list-style: none;
@@ -847,6 +785,9 @@ nav{
 		padding: 10px;
 		margin-top: 10px;
 	}
-	
-	
+
 }
+
+
+
+
