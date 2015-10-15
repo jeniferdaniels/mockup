@@ -76,7 +76,7 @@ $icon3AndAHalfOf5StarsMedium = $iconStarFilledMedium . $iconStarFilledMedium . $
 
 $rateableStars = '<span class="rating" title="Rate this content"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span></span>';
 
-$iconRating = '<div id="iconRating" class="topUpperButton iconRating"></div>';
+$iconRating = '<div id="iconRating" class="iconRating"></div>';
 
 $aaqButton = '<div id="iconRating" class="topUpperButton iconAaq"></div>';
 
