@@ -1,32 +1,44 @@
 <?php include_once 'globalVariables.php' ?>
 <?php
 
+//abbreviated for newline and tab;
+function nt($tabCount)
+{
+	$str = "\n";
+	for ($i=0; $i<$tabCount; $i++)
+		$str .= "\t";
+	return $str; 
+}
+
 function writeHead($pageTitle){
-	echo "\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
-	echo "\n\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo "\n\t\t", '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
-	echo "\n\t\t", '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
-	echo "\n\t\t", '<script src="../calendar/lib/moment.min.js"></script>';
-	echo "\n\t\t", '<script src="../calendar/lib/jquery.min.js"></script>';
-	echo "\n\t\t", '<script src="/mockups/scripts/js/url.js"></script>';
-	echo "\n\t\t", '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
-	echo "\n\t\t", '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
-	echo "\n\t\t", '<script>$(document).ready(function(){populateCourseTitle("json/kitten.json");});</script>';
-	echo "\n\t\t", '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
-	echo "\n";
+	$tabOver = 2;
+	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
+	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
+	echo nt($tabOver), '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
+	echo nt($tabOver), '<script src="../calendar/lib/moment.min.js"></script>';
+	echo nt($tabOver), '<script src="../calendar/lib/jquery.min.js"></script>';
+	echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
+	echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
+	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
+	echo nt($tabOver), '<script>$(document).ready(function(){populateCourseTitle("json/kitten.json");});</script>';
+	echo nt($tabOver), '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
+	echo nt(0);
 }
 
 function writeCourseDashboardHead($pageTitle){
+	$tabOver = 2;
+	
 	writeHead($pageTitle);
 	//calendar scripts
-	echo "\n", '<link href="../calendar/fullcalendar.css" rel="stylesheet">';
-	echo "\n", '<link href="../calendar/fullcalendar.print.css" rel="stylesheet" media="print">';
-
-	echo "\n", '<script src="../calendar/fullcalendar.min.js"></script>';
-	echo "\n", '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
-	echo "\n", '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
-	echo "\n", '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
-	echo "\n";
+	echo nt($tabOver), '<!--calendar scripts-->';
+	echo nt($tabOver), '<link href="../calendar/fullcalendar.css" rel="stylesheet">';
+	echo nt($tabOver), '<link href="../calendar/fullcalendar.print.css" rel="stylesheet" media="print">';
+	echo nt($tabOver), '<script src="../calendar/fullcalendar.min.js"></script>';
+	echo nt($tabOver), '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
+	echo nt($tabOver), '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
+	echo nt($tabOver), '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
+	echo nt(0);
 }
 
 function writeNavArrows($navNext, $navPrevious)
@@ -65,33 +77,36 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 
 function writeTopHtml()
 {
-	echo "\n\t\t\t", '<div class="topWrapper">';
-	echo "\n\t\t\t\t", '<header>';
-	echo "\n\t\t\t\t\t", '<nav id="nav">';
-	echo "\n\t\t\t\t\t\t", '<ul>';
-	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
-	echo "\n\t\t\t\t\t\t\t\t", '<ul>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Announcements</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Ask A Question</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Glossary</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="faculty.php">Faculty</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Notes</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="#">Notifications</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="schedule.php">Schedule</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t\t", '<li><a href="syllabus.php">Syllabus</a></li>';
-	echo "\n\t\t\t\t\t\t\t\t", '</ul>';
-	echo "\n\t\t\t\t\t\t\t", '</li>';
-	echo "\r\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
-	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
-	echo "\n\t\t\t\t\t\t\t", '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
-	echo "\n\t\t\t\t\t\t", '</ul>';
-	echo "\n\t\t\t\t\t", '</nav>';
-	echo "\n\t\t\t\t\t", '<div class="pleLogo"></div>';
-	echo "\n\t\t\t\t\t", '<h1 id="courseTitle"></h1>';
-	echo "\n\t\t\t\t\t", '<h2 id="courseInstructor"></h2>';
-	echo "\n\t\t\t\t", '</header>';
-	echo "\n\t\t\t", '</div><!--end topWrapper-->';
-	echo "\n";
+	$tabOver = 3;
+	
+	echo nt($tabOver), '<div class="topWrapper">';
+	echo nt($tabOver+1), '<header>';
+	echo nt($tabOver+2), '<nav id="nav">';
+	echo nt($tabOver+3), '<ul>';
+	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
+	echo nt($tabOver+5), '<ul>';
+	echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Glossary</a></li>';
+	echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
+	echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
+	echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
+	echo nt($tabOver+5), '</ul>';
+	echo nt($tabOver+4), '</li>';
+	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
+	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
+	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
+	echo nt($tabOver+3), '</ul>';
+	
+	echo nt($tabOver+2), '</nav>';
+	echo nt($tabOver+2), '<div class="pleLogo"></div>';
+	echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
+	echo nt($tabOver+2), '<h2 id="courseInstructor"></h2>';
+	echo nt($tabOver+1), '</header>';
+	echo nt($tabOver), '</div><!--end topWrapper-->';
+	echo nt(0);
 }
 
 
