@@ -14,13 +14,9 @@ $(document).ready(function () {
     });
 	
     $(".navPrevious a").on("click",function(){
-		alert("previous");
-        // your scripts for previous click here
         window.location = previousUrl;  
     });
     $(".navNext a").on("click",function(){
-		alert("next");
-        // your scripts for next click here
         window.location = nextUrl;   
     });
 });
