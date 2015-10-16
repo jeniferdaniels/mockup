@@ -1,0 +1,63 @@
+html 
+body 
+h1 
+h2 
+h3 
+p 
+a 
+a:hover, a:visited:hover 
+ul 
+li 
+.breadCrumbWrapper 
+.breadCrumbs 
+.breadCrumbs > li 
+.top
+.top h1 
+.top h1 a 
+.top h1 a:hover 
+.top h2 
+.top h2 a 
+.top h2 a:hover 
+.topWrapper 
+#nav 
+#nav ul 
+#nav ul:After 
+#nav ul li 
+#nav ul li i 
+#nav ul li a 
+#nav ul li a:hover 
+#nav ul li:hover > ul 
+#nav ul ul 
+#nav ul ul li 
+#nav ul ul li a 
+.pleLogo 
+.navWrapper 
+.navPrevious, .navNext 
+.navPrevious a, .navNext a 
+.navPrevious a:hover, .navNext a:hover 
+.expandCollapseAllWrapper 
+.toggleBox 
+.toggleBox.collapsed 
+.toggleBox.complete:hover 
+.toggleBox.incomplete:hover 
+.toggleBox a 
+.toggleBox date 
+.boxWrapper 
+.blockCheckMark 
+.moduleList
+.moduleList a
+.moduleList a:hover, .courseList a:hover, .assignmentsList a:hover 
+.moduleList li
+.moduleList li ul
+.hidden 
+.contentWrapper 
+.contentWrapper ul 
+.contentWrapper ul li 
+.contentWrapper .provideFeedback 
+.contentWrapper .provideFeedback i 
+.contentWrapper .scheduleContentWrapper 
+.contentWrapper .courseContentWrapper 
+.messageBoxSuccess
+.urgent 
+.success 
+.current

@@ -70,22 +70,11 @@ li {
     display: inline-block;
     margin-left: 0px; }
 
-.moduleProgress {
-  padding: 0 20px 0 0;
-  float: right; }
-
 .expandCollapseAllWrapper {
   text-align: right;
   display: block;
   width: 100%;
   font-size: .8rem; }
-
-.column50Percent {
-  width: 49.5%;
-  padding: 0;
-  margin: 0;
-  vertical-align: top;
-  display: inline-block; }
 
 .top {
   position: fixed;
@@ -121,6 +110,152 @@ li {
     width: 80%;
     padding: 0;
     margin: -30px auto 0 auto; }
+
+.pleLogo {
+  background-image: url("../images/pleLogo.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 75px 75px;
+  padding: 3px;
+  height: 75px;
+  width: 75px;
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 10px; }
+
+.iconRating {
+  background-image: url("../images/starRating.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin-top: 5px;
+  margin-left: 3px;
+  background-size: 10px 10px;
+  display: block;
+  float: right; }
+
+.toggleBox {
+  width: 90%;
+  border: 1px solid #c8c8c8;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block; }
+  .toggleBox.collapsed {
+    min-height: 30px; }
+  .toggleBox.complete {
+    background-color: #fafafa; }
+    .toggleBox.complete:hover {
+      background-color: white; }
+  .toggleBox.incomplete {
+    background-color: #fafafa 0.5;
+    margin-left: 30px; }
+    .toggleBox.incomplete:hover {
+      background-color: rgba(254, 239, 179, 0.05); }
+  .toggleBox a {
+    color: #141414; }
+    .toggleBox a.boxTitle {
+      font-size: 1.4rem; }
+  .toggleBox date {
+    color: #7d7d7d;
+    padding-left: 20px;
+    display: inline-block;
+    float: right; }
+
+.boxWrapper {
+  padding-top: 10px;
+  vertical-align: top;
+  align: top; }
+
+.blockCheckMark {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px; }
+
+.videoAndTranscriptWrapper {
+  margin: auto;
+  text-align: center; }
+
+.transcript {
+  height: 450px;
+  overflow-y: scroll;
+  width: 394px;
+  text-align: left;
+  display: inline-block;
+  border: 1px solid #7d7d7d; }
+
+.moduleList {
+  list-style: none; }
+  .moduleList a {
+    color: black; }
+    .moduleList a:hover {
+      text-decoration: underline;
+      color: #4488f6; }
+  .moduleList li {
+    padding-top: 3px;
+    padding-left: 20px; }
+    .moduleList li ul {
+      list-style: none;
+      padding-left: 20px; }
+
+.contentWrapper {
+  margin-top: 160px;
+  margin-bottom: 10px;
+  vertical-align: top;
+  width: 80%;
+  min-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  overflow: auto; }
+  .contentWrapper ul {
+    list-style: none; }
+    .contentWrapper ul li {
+      padding-top: 3px;
+      padding-left: 20px; }
+  .contentWrapper .rateContent {
+    font-size: .7rem;
+    float: right;
+    clear: both; }
+  .contentWrapper .provideFeedback {
+    font-size: .8rem;
+    float: right;
+    clear: both; }
+    .contentWrapper .provideFeedback i {
+      color: black; }
+  .contentWrapper .scheduleContentWrapper {
+    display: inline-block;
+    width: 30%;
+    height: 500px;
+    float: left; }
+  .contentWrapper .courseContentWrapper {
+    display: inline-block;
+    width: 68%;
+    padding-left: 2%;
+    float: right; }
+
+.navWrapper {
+  width: 99%;
+  height: 100%; }
+
+.navPrevious, .navNext {
+  position: fixed;
+  vertical-align: middle;
+  top: 50%;
+  height: 100%; }
+  .navPrevious a, .navNext a {
+    color: #141414; }
+    .navPrevious a:hover, .navNext a:hover {
+      color: #ff0080; }
+
+.navPrevious {
+  left: 5px; }
+
+.navNext {
+  right: 5px; }
 
 #nav {
   width: 100%;
@@ -165,43 +300,19 @@ li {
           padding-left: 10px;
           text-align: left; }
 
-.pleLogo {
-  background-image: url("../images/pleLogo.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 75px 75px;
-  padding: 3px;
-  height: 75px;
-  width: 75px;
-  display: inline-block;
-  float: left;
-  margin: 0 10px 0 10px; }
-
-.iconRating {
-  background-image: url("../images/starRating.svg");
-  background-color: white;
-  background-repeat: no-repeat;
+#moduleProgressBar {
+  background: #c8c8c8 none repeat scroll 0 0;
+  border-radius: 5px;
   height: 10px;
-  width: 10px;
-  padding: 2px;
-  margin-top: 5px;
-  margin-left: 3px;
-  background-size: 10px 10px;
-  display: block;
-  float: right; }
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: 0;
+  width: 100px; }
 
-.iconAaq {
-  background-image: url("../images/userAskingAQuestion.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  height: 25px;
-  width: 25px;
-  padding-top: 1px;
-  padding: 2px;
-  border: 1px solid black;
-  background-size: 25px 25px;
-  margin-top: 20px;
-  display: block; }
+.moduleProgress {
+  padding: 0 20px 0 0;
+  float: right; }
 
 .moduleProgressWrapper {
   width: 110px;
@@ -212,211 +323,6 @@ li {
   font-size: .8rem;
   text-align: center;
   width: 110px; }
-
-.toggleBox {
-  width: 90%;
-  border: 1px solid #c8c8c8;
-  margin: 10px;
-  padding: 10px;
-  display: inline-block; }
-  .toggleBox.collapsed {
-    min-height: 30px; }
-  .toggleBox.complete {
-    background-color: #fafafa; }
-    .toggleBox.complete:hover {
-      background-color: white; }
-  .toggleBox.incomplete {
-    background-color: #fafafa 0.5;
-    margin-left: 30px; }
-    .toggleBox.incomplete:hover {
-      background-color: rgba(254, 239, 179, 0.05); }
-  .toggleBox a {
-    color: #141414; }
-    .toggleBox a.boxTitle {
-      font-size: 1.4rem; }
-  .toggleBox date {
-    color: #7d7d7d;
-    padding-left: 20px;
-    display: inline-block;
-    float: right; }
-
-.boxWrapper {
-  padding-top: 10px;
-  vertical-align: top;
-  align: top; }
-
-.inline, .displayInline {
-  display: inline; }
-
-.displayInlineBlock {
-  display: inline-block; }
-
-.displayBlock {
-  display: block; }
-
-.displayNone {
-  display: none; }
-
-.blockCheckMark {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 10px; }
-
-.videoAndTranscriptWrapper {
-  margin: auto;
-  text-align: center; }
-
-.transcript {
-  height: 450px;
-  overflow-y: scroll;
-  width: 394px;
-  text-align: left;
-  display: inline-block;
-  border: 1px solid #7d7d7d; }
-
-.moduleList, .courseList, .assignmentsList {
-  list-style: none; }
-  .moduleList a, .courseList a, .assignmentsList a {
-    color: black; }
-    .moduleList a:hover, .courseList a:hover, .assignmentsList a:hover {
-      text-decoration: underline;
-      color: #4488f6; }
-  .moduleList li, .courseList li, .assignmentsList li {
-    padding-top: 3px;
-    padding-left: 20px; }
-    .moduleList li ul, .courseList li ul, .assignmentsList li ul {
-      list-style: none;
-      padding-left: 20px; }
-
-.hidden {
-  visibility: hidden; }
-
-.floatRight {
-  float: right; }
-
-.floatLeft {
-  float: left; }
-
-/*.pageWrapper
-{
-	width: $contentWidth;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: orange;
-	padding: 0;
-	vertical-align: top;
-	border: 1px solid black;
-}
-*/
-.indexContentWrapper {
-  margin-top: 20px; }
-
-.contentWrapper {
-  margin-top: 160px;
-  margin-bottom: 10px;
-  vertical-align: top;
-  width: 80%;
-  min-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  overflow: auto; }
-  .contentWrapper ul {
-    list-style: none; }
-    .contentWrapper ul li {
-      padding-top: 3px;
-      padding-left: 20px; }
-  .contentWrapper .rateContent {
-    font-size: .7rem;
-    float: right;
-    clear: both; }
-  .contentWrapper .scheduleContentWrapper {
-    display: inline-block;
-    width: 30%;
-    height: 500px;
-    float: left; }
-  .contentWrapper .courseContentWrapper {
-    display: inline-block;
-    width: 68%;
-    padding-left: 2%;
-    float: right; }
-
-/*.indexContent{
-	-webkit-columns: 2 600px;
-	-moz-columns: 2 600px;
-	columns: 2 600px;
-	border: 1px solid red;
-	margin-top: 200px;
-	width: 1200px;
-}
-*/
-.dash {
-  	/*&LeftCol, &CenterCol, &RightCol{
-  		padding: 10px;
-  		position: relative;
-  		//border: 1px solid blue;
-  		display:inline-block;
-  		margin: 0;
-  		vertical-align: top;
-  	}
-  
-  	&RightCol{
-  		width: 15%;	
-  	}
-  
-  	&LeftCol{
-  		width: 25%
-  	}
-  	&CenterCol {
-  		width: 40%;
-  	}
-  
-  	&Top{
-  		//height: 160px;
-  	}
-  	*/ }
-  .dashHeader {
-    display: inline;
-    font-size: 2.5rem;
-    border: 1px solid orange;
-    font-weight: 600; }
-  .dash h2 {
-    font-size: 1.4rem;
-    width: 100%;
-    border-bottom: 1px solid black;
-    display: inline-block; }
-
-.navWrapper {
-  width: 99%;
-  height: 100%; }
-
-.navPrevious, .navNext {
-  position: fixed;
-  vertical-align: middle;
-  top: 50%;
-  height: 100%; }
-  .navPrevious a, .navNext a {
-    color: #141414; }
-    .navPrevious a:hover, .navNext a:hover {
-      color: #ff0080; }
-
-.navPrevious {
-  left: 5px; }
-
-.navNext {
-  right: 5px; }
-
-#moduleProgressBar {
-  background: #c8c8c8 none repeat scroll 0 0;
-  border-radius: 5px;
-  height: 10px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  border: 0;
-  width: 100px; }
 
 .messageBoxSuccess {
   border: 1px solid #00a858;
@@ -440,6 +346,34 @@ li {
 
 .current {
   color: #4488f6; }
+
+.hidden {
+  visibility: hidden; }
+
+.inline, .displayInline {
+  display: inline; }
+
+.displayInlineBlock {
+  display: inline-block; }
+
+.displayBlock {
+  display: block; }
+
+.displayNone {
+  display: none; }
+
+.iconAaq {
+  background-image: url("../images/userAskingAQuestion.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+  padding-top: 1px;
+  padding: 2px;
+  border: 1px solid black;
+  background-size: 25px 25px;
+  margin-top: 20px;
+  display: block; }
 
 .aaq {
   margin-top: 100px;

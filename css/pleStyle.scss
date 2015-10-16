@@ -5,22 +5,16 @@ $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
 $googleGray: rgba(247,247,247, 1);
-
 $hotPink: rgba(255, 0, 128, 1);
 $red: rgba(231, 76, 60, 1);
-//$orange:
 $xLiteYellow: rgba(254,239,179, 0.05);
 $liteYellow: rgba(254,239,179, 1);
-//$yellow:
 $liteGreen: rgba(231, 246, 238, 1);
 $green: rgba(0, 168, 88, 1);
 $darkBlue: rgba(6, 44, 140, 1);
 $liteGoogleBlue: rgba(156, 191, 246, 1);
 $googleBlue:rgba(68,136,246,1);
 $monarchBlue: rgba(0, 55, 103, 1);
-//$darkPurple:
-//$brown:
-
 
 //MESSAGE COLORS
 $urgent: $red;
@@ -162,12 +156,7 @@ li{
 	}
 }
 
-//?
-.moduleProgress{
-	padding: 0 20px 0 0;
-	//border: 1px solid green;
-	float: right;
-}
+
 
 //?
 .expandCollapseAllWrapper{
@@ -176,15 +165,6 @@ li{
 	width: 100%;
 	font-size: .8rem;
 }
-
-//10/9/2015 used in sample pages
-.column50Percent{
-	width: 49.5%;
-	padding:0;
-	margin: 0;
-	vertical-align: top;
-	display: inline-block;
- }	 
 
 
 //10/8/2015
@@ -251,16 +231,245 @@ li{
 
 
 
+//10/12/2015
+.pleLogo{
+	background-image: url("../images/pleLogo.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	background-size: 75px 75px;
+	padding: 3px;
+	height: 75px;
+	width: 75px;
+	display:inline-block;
+	float: left;
+	margin: 0 10px 0 10px;
+}
+
+.iconRating{
+	background-image: url("../images/starRating.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	height: 10px;
+	width: 10px;
+	padding: 2px; 
+	margin-top: 5px;
+	margin-left: 3px;
+	//border: 1px solid black;
+	background-size: 10px 10px;
+	display:block;
+	float: right;
+}
 
 
 
 
 
+//10/8/2015
+.toggleBox{
+	//width: $contentWidth - 100px;
+	width: 90%;
+	border: 1px solid $liteGray;
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+	
+	&:hover{
+		//
+	}
+	&.collapsed{
+		min-height:30px;
+	}
+	&.expanded{
+		//height:500px;
+	}
+	&.complete {
+		background-color: $xLiteGray;
+		
+		&:hover{
+			background-color: white;
+		}
+	}
+	&.incomplete{
+		background-color: $xLiteGray 0.5;
+		margin-left: 30px;
+	
+		&:hover{
+			background-color: $xLiteYellow;
+		}
+	}
+	& a{
+		color: $darkGray;
+		
+		&.boxTitle{
+			font-size: 1.4rem;
+		}		
+	}
+	& date{
+		color: $mediumGray;
+		padding-left: 20px;
+		display: inline-block;
+		float: right;
+	}
+	
+}
+
+.boxWrapper{
+	padding-top: 10px;
+	vertical-align: top;
+	align:top;
+}
+
+.blockCheckMark{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+.videoAndTranscriptWrapper{
+	margin: auto;
+	text-align: center;
+	
+}
+
+.transcript{
+	height: 450px;
+	overflow-y: scroll;
+	width: 394px;
+	text-align: left;
+	display: inline-block;
+	border: 1px solid $mediumGray;
+}
+
+
+
+//10/7/2015
+.moduleList{
+	list-style: none;
+	& a {
+		color:black;
+		
+		&:hover{
+			text-decoration:underline;
+			color: $googleBlue;
+		}
+	}
+	& li{
+		padding-top: 3px;
+		padding-left: 20px;
+		& ul {
+			list-style: none;
+			padding-left: 20px;
+		}
+	}
+}
 
 
 
 
+//10/14/2015
+.contentWrapper{
+	margin-top: 160px;
+	margin-bottom: 10px;
+	vertical-align: top;
+	width: $contentWidth;
+	min-width: 900px;
+	//border: 1px solid blue;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	padding: 10px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	//clear: both;
+ 	//-webkit-column-count: 2;
+    //-moz-column-count: 2;
+    //column-count: 2;
+	//-webkit-column-gap: 20px;
+    //-moz-column-gap: 20px;
+    //column-gap: 20px;
+    //border: 1px solid red;
+    overflow:auto;
+	
+	
+	ul{
+		list-style: none;
+		
+		& li{
+		padding-top: 3px;
+		padding-left: 20px;
+		}
+	}
+	
+	& .rateContent{
+		font-size: .7rem;
+		//border: 1px solid red;
+		float: right;
+		clear: both;
+	}
+	
+	& .provideFeedback{
+		font-size: .8rem;
+		float: right;
+		clear: both;
+		
+		& i{
+			color: black;
+		}
+	}
+	
+	& .scheduleContentWrapper{
+		display: inline-block;
+		width: 30%;
+		//border: 1px solid green;
+		height: 500px;
+		float: left;
+	}
+	
+	& .courseContentWrapper{
+		display: inline-block;
+		width: 68%;
+		padding-left: 2%;
+		//margin-left: -150px; //since this is a 2 column layout, the way to make it not be 50% on each column is to hack it
+		//by setting a width per column then having a negative margin
+		//border: 1px solid blue;
+		float: right;
+	}
+}
 
+
+//*****************************************************************************
+//Navigation
+//*****************************************************************************
+
+//Previous and Next Arrows
+.navWrapper{
+	width:99%;
+	height:100%;
+}	
+	
+//10/9/2015	
+.navPrevious, .navNext{
+    position:fixed;
+	vertical-align: middle;
+	top: 50%;
+	height: 100%;
+	& a{
+		color: $darkGray;
+		
+		&:hover {
+			color: $hotPink;
+		}
+	}
+}
+
+.navPrevious{
+    left: 5px;
+}
+
+.navNext{
+    right: 5px;
+}
+
+//top RHS
 #nav {
 	width:100%; 
     display:block;
@@ -325,50 +534,26 @@ li{
 }
 
 
-//10/12/2015
-.pleLogo{
-	background-image: url("../images/pleLogo.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size: 75px 75px;
-	padding: 3px;
-	height: 75px;
-	width: 75px;
-	display:inline-block;
-	float: left;
-	margin: 0 10px 0 10px;
-}
 
-.iconRating{
-	background-image: url("../images/starRating.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	height: 10px;
-	width: 10px;
-	padding: 2px; 
-	margin-top: 5px;
-	margin-left: 3px;
-	//border: 1px solid black;
-	background-size: 10px 10px;
-	display:block;
+//*****************************************************************************
+//Progress bar
+//*****************************************************************************
+#moduleProgressBar {
+    background: $liteGray none repeat scroll 0 0;
+    border-radius: 5px;
+    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+	border: 0;
+	width:100px;
+}
+//?
+.moduleProgress{
+	padding: 0 20px 0 0;
+	//border: 1px solid green;
 	float: right;
-}
-
-.iconAaq{
-	background-image: url("../images/userAskingAQuestion.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	height: 25px;
-	width: 25px;
-	padding-top: 1px;
-	padding: 2px; 
-	border: 1px solid black;
-	background-size: 25px 25px;
-	//position: relative;
-	//top: 20px;
-	//left: 20px;
-	margin-top: 20px;
-	display:block;
 }
 
 //?
@@ -385,61 +570,49 @@ li{
 	width: $moduleProgressBarWrapperWidth;
 }
 
-//10/8/2015
-.toggleBox{
-	//width: $contentWidth - 100px;
-	width: 90%;
-	border: 1px solid $liteGray;
-	margin: 10px;
-	padding: 10px;
-	display: inline-block;
-	
-	&:hover{
-		//
-	}
-	&.collapsed{
-		min-height:30px;
-	}
-	&.expanded{
-		//height:500px;
-	}
-	&.complete {
-		background-color: $xLiteGray;
-		
-		&:hover{
-			background-color: white;
-		}
-	}
-	&.incomplete{
-		background-color: $xLiteGray 0.5;
-		margin-left: 30px;
-	
-		&:hover{
-			background-color: $xLiteYellow;
-		}
-	}
-	& a{
-		color: $darkGray;
-		
-		&.boxTitle{
-			font-size: 1.4rem;
-		}		
-	}
-	& date{
-		color: $mediumGray;
-		padding-left: 20px;
-		display: inline-block;
-		float: right;
-	}
-	
+//*****************************************************************************
+//MessageBox
+//*****************************************************************************
+.messageBoxSuccess
+{
+	border: 1px solid $green;
+	background-color: $liteGreen;
+	color: $green;
+	width: 100%;
+	padding-left: 10px;
+	//margin-top: 20px;
+	margin-bottom: 10px;
 }
 
-.boxWrapper{
-	padding-top: 10px;
-	vertical-align: top;
-	align:top;
+//*****************************************************************************
+//One hit wonders
+//*****************************************************************************
+//10/15/2015
+.urgent{
+	color: $urgent;
 }
 
+//10/15/2015
+.success{
+	color: $success;
+}
+
+.disabled{
+	color: $disabled;
+}
+
+.liteGray{
+	color: $liteGray;
+}
+
+.current{
+	color: $googleBlue;
+}
+
+//10/15/2015
+.hidden{
+	visibility: hidden;
+}
 
 //?
 .inline, .displayInline{
@@ -461,290 +634,25 @@ li{
 	display: none;
 }
 
-
-.blockCheckMark{
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 10px;
-}
-
-.videoAndTranscriptWrapper{
-	margin: auto;
-	text-align: center;
-	
-}
-
-.transcript{
-	height: 450px;
-	overflow-y: scroll;
-	width: 394px;
-	text-align: left;
-	display: inline-block;
-	border: 1px solid $mediumGray;
-}
-
-//10/7/2015
-.moduleList, .courseList, .assignmentsList{
-	list-style: none;
-	& a {
-		color:black;
-		
-		&:hover{
-			text-decoration:underline;
-			color: $googleBlue;
-		}
-	}
-	& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		& ul {
-			list-style: none;
-			padding-left: 20px;
-		}
-	}
-}
-
-
-.hidden{
-	visibility: hidden;
-}
-
-.floatRight{
-	float: right;
-}
-
-.floatLeft{
-	float:left;
-}
-
-
-
-//10/9/2015
-/*.pageWrapper
-{
-	width: $contentWidth;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: orange;
-	padding: 0;
-	vertical-align: top;
-	border: 1px solid black;
-}
-*/
-
-
-//10/12/2015
-.indexContentWrapper{
-	margin-top: 20px;
-}
-
-//10/14/2015
-.contentWrapper{
-	margin-top: 160px;
-	margin-bottom: 10px;
-	vertical-align: top;
-	width: $contentWidth;
-	min-width: 900px;
-	//border: 1px solid blue;
-	margin-left: auto;
-	margin-right: auto;
+//*****************************************************************************
+//AAQ
+//*****************************************************************************
+.iconAaq{
+	background-image: url("../images/userAskingAQuestion.svg");
 	background-color: white;
-	padding: 10px;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	//clear: both;
- 	//-webkit-column-count: 2;
-    //-moz-column-count: 2;
-    //column-count: 2;
-	//-webkit-column-gap: 20px;
-    //-moz-column-gap: 20px;
-    //column-gap: 20px;
-    //border: 1px solid red;
-    overflow:auto;
-	
-	
-	ul{
-		list-style: none;
-		
-		& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		}
-	}
-	
-	& .rateContent{
-		font-size: .7rem;
-		//border: 1px solid red;
-		float: right;
-		clear: both;
-	}
-	
-	
-	& .scheduleContentWrapper{
-		display: inline-block;
-		width: 30%;
-		//border: 1px solid green;
-		height: 500px;
-		float: left;
-	}
-	
-	& .courseContentWrapper{
-		display: inline-block;
-		width: 68%;
-		padding-left: 2%;
-		//margin-left: -150px; //since this is a 2 column layout, the way to make it not be 50% on each column is to hack it
-		//by setting a width per column then having a negative margin
-		//border: 1px solid blue;
-		float: right;
-	}
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 25px;
+	padding-top: 1px;
+	padding: 2px; 
+	border: 1px solid black;
+	background-size: 25px 25px;
+	//position: relative;
+	//top: 20px;
+	//left: 20px;
+	margin-top: 20px;
+	display:block;
 }
-
-
-//not used?
-/*.indexContent{
-	-webkit-columns: 2 600px;
-	-moz-columns: 2 600px;
-	columns: 2 600px;
-	border: 1px solid red;
-	margin-top: 200px;
-	width: 1200px;
-}
-*/
-
-//10/8/2015
-.dash{
-	&Header{
-		display: inline;
-		font-size: 2.5rem;
-		//padding: 20px;
-		//vertical-align: middle;
-		border: 1px solid orange;
-		font-weight: 600;
-	}
-	
-	//10/14/2015
-	h2{
-		font-size: 1.4rem;
-		width: 100%;
-		border-bottom: 1px solid black;
-		display: inline-block;
-	}
-	
-	//&Wrapper{
-	//	margin-top: 140px;
-	//	border: 1px solid green;
-	//}
-
-	/*&LeftCol, &CenterCol, &RightCol{
-		padding: 10px;
-		position: relative;
-		//border: 1px solid blue;
-		display:inline-block;
-		margin: 0;
-		vertical-align: top;
-	}
-
-	&RightCol{
-		width: 15%;	
-	}
-
-	&LeftCol{
-		width: 25%
-	}
-	&CenterCol {
-		width: 40%;
-	}
-
-	&Top{
-		//height: 160px;
-	}
-	*/
-	
-}
-//*****************************************************************************
-//Navigation
-//*****************************************************************************
-//?
-.navWrapper{
-	width:99%;
-	height:100%;
-}	
-	
-//10/9/2015	
-.navPrevious, .navNext{
-    position:fixed;
-	vertical-align: middle;
-	top: 50%;
-	height: 100%;
-	& a{
-		color: $darkGray;
-		
-		&:hover {
-			color: $hotPink;
-		}
-	}
-}
-
-.navPrevious{
-    left: 5px;
-}
-
-.navNext{
-    right: 5px;
-}
-
-
-
-#moduleProgressBar {
-    background: $liteGray none repeat scroll 0 0;
-    border-radius: 5px;
-    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
-    height: 10px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-	border: 0;
-	width:100px;
-}
-
-
-//*****************************************************************************
-//MessageBox
-//*****************************************************************************
-.messageBoxSuccess
-{
-	border: 1px solid $green;
-	background-color: $liteGreen;
-	color: $green;
-	width: 100%;
-	padding-left: 10px;
-	//margin-top: 20px;
-	margin-bottom: 10px;
-}
-
-//*****************************************************************************
-//One hit wonders - colors
-//*****************************************************************************
-.urgent{
-	color: $urgent;
-}
-
-.success{
-	color: $success;
-}
-
-.disabled{
-	color: $disabled;
-}
-
-.liteGray{
-	color: $liteGray;
-}
-
-.current{
-	color: $googleBlue;
-}
-
-
 
 //10/9/2015
 .aaq{
