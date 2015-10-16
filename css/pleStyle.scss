@@ -35,6 +35,8 @@ $link-color: $hotPink;
 $link-color-hover: $googleBlue;
 $link-color-visited: $link-color;
 
+
+
 //10/8/2015
 html{
 	font-size: 87%;
@@ -632,6 +634,14 @@ li{
 //?
 .displayNone{
 	display: none;
+}
+
+.floatRight{
+	float: right;
+}
+
+.floatLeft{
+	float: left;
 }
 
 //*****************************************************************************

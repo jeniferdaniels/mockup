@@ -362,6 +362,12 @@ li {
 .displayNone {
   display: none; }
 
+.floatRight {
+  float: right; }
+
+.floatLeft {
+  float: left; }
+
 .iconAaq {
   background-image: url("../images/userAskingAQuestion.svg");
   background-color: white;
