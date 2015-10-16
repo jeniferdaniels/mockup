@@ -39,10 +39,13 @@ $iconChatLarge = '<i id="iconChat" class="fa fa-comments fa-2x fa-fw"></i>';
 $iconUserSmall = '<i id="iconUser" class="fa fa-user fa-fw"></i>';
 $iconUserMedium = '<i id="iconUser" class="fa fa-user fa-lg fa-fw"></i>';
 $iconUserLarge = '<i id="iconUser" class="fa fa-user fa-2x fa-fw"></i>';
-
 $iconNotepadSmall = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-fw"></i>';
 $iconNotepadMedium = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-lg fa-fw"></i>';
 $iconNotepadLarge = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-2x fa-fw"></i>';
+$iconPencilSmall = '<i id="iconNotepad" class="fa fa-pencil fa-fw"></i>';
+$iconPencilMedium = '<i id="iconNotepad" class="fa fa-pencil fa-lg fa-fw"></i>';
+$iconPencilLarge = '<i id="iconNotepad" class="fa fa-pencil fa-2x fa-fw"></i>';
+
 
 $iconAaqSmall = '<i class="fa fa-question-circle fa-fw"></i>';
 $iconAaqMedium = '<i class="fa fa-question-circle fa-lg fa-fw"></i>';

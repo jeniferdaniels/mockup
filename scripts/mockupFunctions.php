@@ -178,6 +178,13 @@ function writeRatingButton()
 	echo '</a></div>';
 }
 
+function writeProvideFeedbackWidget(){
+	echo '<div class="provideFeedback"><a href="#">Provide Feedback';
+	echo $GLOBALS["iconPencilSmall"];
+	echo '</a></div>';
+}
+
+
 function writeToggleBox($box){
 	$boxTitle = $box["title"];
 	$boxId = $box["boxId"];
