@@ -7,7 +7,7 @@ body {
   line-height: 150%;
   margin: 0;
   padding: 0;
-  background-color: white; }
+  background-color: #f7f7f7; }
 
 h1 {
   font-size: 2.5rem;
@@ -31,7 +31,8 @@ p {
 a {
   color: #ff0080;
   text-decoration: none;
-  transition: all 0.25s ease; }
+  -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease; }
   a:hover, a:visited:hover {
     color: #4488f6;
     text-decoration: underline dotted; }
@@ -53,8 +54,7 @@ li {
 
 .breadCrumbWrapper {
   display: block;
-  width: 1200px;
-  border-bottom: 1px solid black;
+  width: 80%;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto; }
@@ -93,9 +93,11 @@ li {
   background-color: white;
   top: 0;
   left: 0;
-  height: 142px;
+  height: 110px;
   vertical-align: top;
-  z-index: 900; }
+  z-index: 900;
+  border-top: 30px solid #4488f6;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26); }
   .top h1 {
     display: inline-block;
     margin-top: 25px; }
@@ -116,18 +118,13 @@ li {
         color: #4488f6;
         text-decoration: underline; }
   .topWrapper {
-    width: 1200px;
-    background-color: white;
+    width: 80%;
     padding: 0;
-    margin: 0;
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto; }
+    margin: -30px auto 0 auto; }
 
 #nav {
   width: 100%;
-  display: block;
-  background-color: #4488f6; }
+  display: block; }
   #nav ul {
     padding: 5px;
     margin: 0;
@@ -277,22 +274,19 @@ li {
   display: inline-block;
   border: 1px solid #7d7d7d; }
 
-.moduleList, .courseList, .assignmentsList, .whosOnlineList {
+.moduleList, .courseList, .assignmentsList {
   list-style: none; }
-  .moduleList a, .courseList a, .assignmentsList a, .whosOnlineList a {
+  .moduleList a, .courseList a, .assignmentsList a {
     color: black; }
-    .moduleList a:hover, .courseList a:hover, .assignmentsList a:hover, .whosOnlineList a:hover {
+    .moduleList a:hover, .courseList a:hover, .assignmentsList a:hover {
       text-decoration: underline;
       color: #4488f6; }
-  .moduleList li, .courseList li, .assignmentsList li, .whosOnlineList li {
+  .moduleList li, .courseList li, .assignmentsList li {
     padding-top: 3px;
     padding-left: 20px; }
-    .moduleList li ul, .courseList li ul, .assignmentsList li ul, .whosOnlineList li ul {
+    .moduleList li ul, .courseList li ul, .assignmentsList li ul {
       list-style: none;
       padding-left: 20px; }
-
-.dashboardList li {
-  padding-left: 0px; }
 
 .hidden {
   visibility: hidden; }
@@ -303,26 +297,32 @@ li {
 .floatLeft {
   float: left; }
 
-.pageWrapper
- {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  padding: 0;
-  vertical-align: top;
-  border: 1px solid black; }
-
+/*.pageWrapper
+{
+	width: $contentWidth;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: orange;
+	padding: 0;
+	vertical-align: top;
+	border: 1px solid black;
+}
+*/
 .indexContentWrapper {
   margin-top: 20px; }
 
 .contentWrapper {
   margin-top: 160px;
+  margin-bottom: 10px;
   vertical-align: top;
-  width: 1200px;
+  width: 80%;
+  min-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  clear: both; }
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  overflow: auto; }
   .contentWrapper ul {
     list-style: none; }
     .contentWrapper ul li {
@@ -332,16 +332,16 @@ li {
     font-size: .7rem;
     float: right;
     clear: both; }
-
-.scheduleContentWrapper {
-  width: 400px;
-  height: 500px;
-  float: left; }
-
-.courseContentWrapper {
-  width: 775px;
-  margin-left: 10px;
-  float: right; }
+  .contentWrapper .scheduleContentWrapper {
+    display: inline-block;
+    width: 30%;
+    height: 500px;
+    float: left; }
+  .contentWrapper .courseContentWrapper {
+    display: inline-block;
+    width: 68%;
+    padding-left: 2%;
+    float: right; }
 
 /*.indexContent{
 	-webkit-columns: 2 600px;
@@ -442,8 +442,8 @@ li {
   color: #4488f6; }
 
 .aaq {
-  margin-top: 50px;
-  width: 1200px;
+  margin-top: 100px;
+  width: 80%;
   background-color: #fafafa; }
   .aaqHeaderLinks {
     list-style: none; }

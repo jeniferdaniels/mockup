@@ -4,6 +4,8 @@ $xLiteGray: rgba(250, 250, 250, 1);
 $liteGray: rgba(200, 200, 200, 1);
 $mediumGray: rgba(125, 125, 125, 1);
 $darkGray: rgba(20, 20, 20, 1);
+$googleGray: rgba(247,247,247, 1);
+
 $hotPink: rgba(255, 0, 128, 1);
 $red: rgba(231, 76, 60, 1);
 //$orange:
@@ -27,7 +29,7 @@ $disabled: $liteGray;
 $warning: $liteYellow;
 
 //SIZES
-$contentWidth: 1200px;
+$contentWidth: 80%;
 $navWrapperWidth: 1100px;
 $moduleProgressBarWidth: 100px;
 $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
@@ -52,7 +54,7 @@ body{
 	line-height: 150%;
 	margin: 0;
 	padding: 0;
-	background-color: white;
+	background-color: $googleGray;
 }
 
 //10/8/2015
@@ -131,11 +133,13 @@ li{
 .breadCrumbWrapper{
 	display: block;
 	width: $contentWidth;
-	border-bottom: 1px solid black;
+	//border-bottom: 1px solid black;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	//background-color: $xLiteGray;
+	//box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+	
 }
 
 
@@ -190,11 +194,14 @@ li{
 	background-color: white;
 	top: 0;
 	left: 0;
-	height: 142px;
+	height: 110px;
 	vertical-align: top;
 	//border: 1px solid black;
 	z-index: 900;
 	//border-bottom: 1px solid black;
+	border-top: 30px solid $googleBlue;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+	
 	
 	h1{
 		display: inline-block;
@@ -227,21 +234,37 @@ li{
 	
 	&Wrapper{
 		width: $contentWidth;
-		background-color: white;
+		//background-color: white;
 		//border-bottom: 5px solid $liteGoogleBlue;
 		padding: 0;
-		margin: 0;
-		height: 110px;
-		margin-left: auto;
-		margin-right:auto;
+		//margin-top: -30px;
+		//height: 110px;
+		//margin-left: auto;
+		//margin-right:auto;
+		margin: -30px auto 0 auto;
+		
 	}
-
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #nav {
 	width:100%; 
     display:block;
-    background-color: $googleBlue;
+    //background-color: $googleBlue;
 	//border-bottom:5px solid #2980b9;
 	
 	ul	{
@@ -300,6 +323,7 @@ li{
 		}
 	}
 }
+
 
 //10/12/2015
 .pleLogo{
@@ -460,7 +484,7 @@ li{
 }
 
 //10/7/2015
-.moduleList, .courseList, .assignmentsList, .whosOnlineList{
+.moduleList, .courseList, .assignmentsList{
 	list-style: none;
 	& a {
 		color:black;
@@ -480,10 +504,6 @@ li{
 	}
 }
 
-//10/7/2015
-.dashboardList{
-	& li { padding-left: 0px; }
-}
 
 .hidden{
 	visibility: hidden;
@@ -500,17 +520,17 @@ li{
 
 
 //10/9/2015
-.pageWrapper
-//, .contentWrapper, .aaqContentWrapper
+/*.pageWrapper
 {
 	width: $contentWidth;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: white;
+	background-color: orange;
 	padding: 0;
 	vertical-align: top;
 	border: 1px solid black;
 }
+*/
 
 
 //10/12/2015
@@ -521,11 +541,27 @@ li{
 //10/14/2015
 .contentWrapper{
 	margin-top: 160px;
+	margin-bottom: 10px;
 	vertical-align: top;
 	width: $contentWidth;
+	min-width: 900px;
 	//border: 1px solid blue;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: white;
+	padding: 10px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	//clear: both;
+ 	//-webkit-column-count: 2;
+    //-moz-column-count: 2;
+    //column-count: 2;
+	//-webkit-column-gap: 20px;
+    //-moz-column-gap: 20px;
+    //column-gap: 20px;
+    //border: 1px solid red;
+    overflow:auto;
+	
+	
 	ul{
 		list-style: none;
 		
@@ -541,22 +577,25 @@ li{
 		float: right;
 		clear: both;
 	}
-	clear: both;
-}
-.scheduleContentWrapper{
-	//display: inline-block;
-	width: 400px;
-	//border: 1px solid green;
-	height: 500px;
-	float: left;
-}
-
-.courseContentWrapper{
-	//display: inline-block;
-	width: 775px;
-	margin-left: 10px;
-	//border: 1px solid green;
-	float: right;
+	
+	
+	& .scheduleContentWrapper{
+		display: inline-block;
+		width: 30%;
+		//border: 1px solid green;
+		height: 500px;
+		float: left;
+	}
+	
+	& .courseContentWrapper{
+		display: inline-block;
+		width: 68%;
+		padding-left: 2%;
+		//margin-left: -150px; //since this is a 2 column layout, the way to make it not be 50% on each column is to hack it
+		//by setting a width per column then having a negative margin
+		//border: 1px solid blue;
+		float: right;
+	}
 }
 
 
@@ -709,7 +748,7 @@ li{
 
 //10/9/2015
 .aaq{
-	margin-top: 50px;
+	margin-top: 100px;
 	width: $contentWidth;
 	background-color: $xLiteGray;
 	//border: 1px solid red;
