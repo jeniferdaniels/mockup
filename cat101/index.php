@@ -49,7 +49,14 @@
 			"isCollapsed" => $isExpandedListArray[3],
 			"isComplete" => $isDoneList[3],
 			"dates" => "1/30/2015 - 2/7/2015",
-			"content" => "m3List.php")
+			"content" => "m3List.php"),
+		array(
+				"title" => "4. The Evolution of Risk in Information Systems Offsharing:  The Impact of Home Contry Risk, Firm, Learning, and Competitive Dynamics",
+				"boxId" => "long",
+				"isCollapsed" => 0,	//not editing the already exisitng links in the cat content that passes
+				"isComplete" => 0,  //these back as querystrings to add another value
+				"dates" => "12/30/2015 - 12/30/2015",
+				"content" => "m4List.php")
 		);
 ?>
 
@@ -71,7 +78,8 @@
 	
 	<body>
 		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
-		<div class="contentWrapper dash">		
+		
+		<div class="contentWrapper">		
 			<?php 
 				for ($i=0; $i<count($boxes); $i++)
 					writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
