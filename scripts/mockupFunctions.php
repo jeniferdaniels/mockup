@@ -87,10 +87,10 @@ function writeTopHtml()
 	echo nt($tabOver+5), '<ul>';
 	echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
 	echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Glossary</a></li>';
+	//echo nt($tabOver+6), '<li><a href="#">Glossary</a></li>';
 	echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
 	echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
+	//echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
 	echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
 	echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
 	echo nt($tabOver+5), '</ul>';
