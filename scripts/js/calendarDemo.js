@@ -51,8 +51,8 @@ jQuery('#calendar').fullCalendar({
 		{
 			title: '0.B',
 			//title: '0.B - Module Feedback',
-			//start: '2015-01-15T23:59:00',
-			start: '2015-01-15',
+			//start: '2015-01-14T23:59:00',
+			start: '2015-01-14',
 			color: "rgba(68,136,246,1)"
 		},
 		{
@@ -101,14 +101,14 @@ jQuery('#calendar').fullCalendar({
 			title: '2.C',
 			//title: '2.C Homework #3',
 			//start: '2015-01-29T23:59:00',
-			start: '2015-01-29',
+			start: '2015-01-28',
 			color: "rgba(68,136,246,1)"
 		},
 		{
 			title: '2.D',
 			//title: '2.D Module Feedback',
 			//start: '2015-01-30T23:59:00',
-			start: '2015-01-30',
+			start: '2015-01-29',
 			color: "rgba(68,136,246,1)"
 		},
 		{
