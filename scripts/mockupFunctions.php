@@ -36,7 +36,7 @@ function writeCourseDashboardHead($pageTitle){
 	echo nt($tabOver), '<link href="../calendar/fullcalendar.print.css" rel="stylesheet" media="print">';
 	echo nt($tabOver), '<script src="../calendar/fullcalendar.min.js"></script>';
 	echo nt($tabOver), '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
-	echo nt($tabOver), '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
+	//echo nt($tabOver), '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
 	echo nt($tabOver), '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
 	echo nt(0);
 }
@@ -87,8 +87,10 @@ function writeTopHtml()
 	echo nt($tabOver+5), '<ul>';
 	echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
 	echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
-	//echo nt($tabOver+6), '<li><a href="#">Glossary</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Course Glossary</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Course Progress</a></li>';
 	echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
+	echo nt($tabOver+6), '<li><a href="#">Help</a></li>';
 	echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
 	//echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
 	echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
