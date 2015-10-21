@@ -1,61 +1,161 @@
-
-/*
-function loadCourseObject(url) {
-	var courseObject;
-    $.ajax({
+function populateCourse(url) {
+	$.ajax({	
         url: url
-    }).done(function(blah) {
-		return blah;
-	});
-};
-*/
-
-function populateCourseTitle(url) {
-    $.ajax({
-        url: url
-    }).done(function(data) {
-		writeDocumentTitle(data);
-		writeCourseNameAndInstructor(data);
-			
+    }).done(function(obj) {
+    	writeDocumentTitle(obj);
+		writeInstructorInformation(obj);
+		//writeModulesLists(obj);
+		getProperDisplayOrder(obj.course.modules[0].topics, "innerModuleDisplayOrder");
+    	
+    	
 	});
 };
 
+
+//********************************************************************
+//Getters
+//********************************************************************
+function getCourseTitle(obj){
+	return obj.course.courseNumber + "-" + obj.course.title;
+}
+
+function getInstructorObject(obj){
+	return obj.course.instructor;
+}
+
+
+
+
+
+//*****************************************************************************************
+//Name: 		getModuleObject
+//Input:		obj = json object, whole course data
+//				field = field name in the modules array
+//				id = some id to look for a match
+//Returns:		module object if found, null if not found or errors out
+//Description:  looks into the json obj into the modules array for 
+//				a field that matches the id.  This is cool because you can 
+//				pass it differnt field names and it will find the module
+//Example Use:	myModule = getModuleObject(obj, "title", "Overview and Course Logistic");
+//				myModule = getModuleObject(obj, "moduleDisplayOrder", 1); 
+//*****************************************************************************************
+function getModuleObject(obj, field, id){
+	var modules = obj.course.modules;
+	var selectedModule, moduleFieldValue = null; //returning null is better than undefined
+
+	//check to see if there is a module array
+	if (typeof modules != "undefined"){
+
+		//check to see if this is even a valid field
+		if (modules[0].hasOwnProperty(field)){
+
+			for (var i=0; i< modules.length; i++){
+
+				//since we are dynamically getting the field name
+				eval("moduleFieldValue = modules[i]." + field);
+				console.log("module[" + i + "]." + field + " = " + moduleFieldValue)
+				
+				if (moduleFieldValue == id){
+					console.log ("Match for '" + field + "' = '" + id + "' at modules[" + i + "]");
+
+					selectedModule = modules[i];
+					i=modules.length; //jump out of loop so we can return this properly
+				} else 	console.log("No match for '" + field + "' = '" + id + "' at modules[" + i + "]");
+			}//end loop
+								
+		} else console.log("The first module in the array does not have the property '" + field + "'");
+
+	} else console.log("No 'modules' array");
+
+	return selectedModule;
+}
+
+//*****************************************************************************************
+//Name: 		getProperDisplayOrder
+//Input:		obj = json object, specifically the one that needs to get the ordering info
+//
+//*****************************************************************************************
+function getProperDisplayOrder(obj, field)
+{
+	var displayOrderValues = [];
+	var itemDisplayOrderValue = null;
+
+	//check to see if object is legit
+	if (typeof obj != "undefined"){
+
+		if (obj[0].hasOwnProperty(field)){
+
+			for (var i=0; i< obj.length; i++){
+
+				//since we are dynamically getting the field name and the object
+				eval("itemDisplayOrderValue = obj[i]." + field);
+				console.log ("itemDisplayOrderValue = obj[i]." + field);
+
+				displayOrderValues.push(itemDisplayOrderValue);
+				
+			}//end loop
+								
+		} else console.log("The first object in the array does not have the property '" + field + "'");
+
+	} else console.log("Object undefined.");
+
+	//raw data
+	console.log("Raw data values " + displayOrderValues);
+	
+	//order them 
+	displayOrderValues.sort(function(a, b){return a-b});
+	console.log("Items in numerical order " + displayOrderValues);
+	
+	return displayOrderValues;
+}
+
+
+
+//********************************************************************
+//Writers
+//********************************************************************
 function writeDocumentTitle(obj){
 	var strTitle = obj.course.courseNumber + "-" + obj.course.title;
 	document.title = strTitle;
 }
 
-function writeCourseNameAndInstructor(obj){
-	var strTitle = obj.course.courseNumber + "-" + obj.course.title;
-	document.getElementById("courseTitle").innerHTML = "<a href='index.php'>" + strTitle + "</a>";
-	document.getElementById("courseInstructor").innerHTML = "Instructor <a href='faculty.php'>" + obj.course.instructor.name + "</a>";
+
+function writeInstructorInformation(obj)
+{
+	instructor = getInstructorObject(obj);
+	document.getElementById("instructorName").innerHTML = instructor.name;
+	document.getElementById("instructorPhone").innerHTML = instructor.phone;
+	document.getElementById("instructorEmail").innerHTML = instructor.email;	
 }
 
-/*
-function writeSubtopicTitle(obj){
-		document.getElementById("subtopicTitle").innerHTML = obj.title;	
+
+function writeModuleInfo(obj, id)
+{
+	getModuleObject(obj, "moduleDisplayOrder", id); 
 }
 
 
-function getSubtopic(url, obj) {
-	var id=$.url(url, "?id");
-	modules = obj.course.modules;
-	for (var i=0; i<modules.length; i++) {
-		var topics = modules[i].topics;
-		for (var j=0; j<topics.length; j++) {
-			var subtopics = topics[j];
-			for (var k=0; k<subtopics.length; k++){
-				if (subtopics[k].id == id) {
-					return subtopics[k];
-				}
-			}
+function writeModulesLists(obj){	
+	var theModule, theTopic, theSubtopic = null;
+	
+	var moduleNumericalSequence = getProperDisplayOrder(obj.course.modules, "moduleDisplayOrder");	
+	document.getElementById("modules").innerHTML += "<ul>";
+	for (var i=0; i<moduleNumericalSequence.length; i++)
+	{
+		theModule = getModuleObject(obj, "moduleDisplayOrder", moduleNumericalSequence[i])
+		document.getElementById("modules").innerHTML += "<li>" + theModule.title + "<ul>";
+		
+		var modulesTopicNumbericalSequence = getProperDisplayOrder(obj.course.modules[i].topics, "innerModuleDisplayOrder" )
+		for (var j=0; theModule.topics.length; j++){
+				document.getElementById("modules").innerHTML += "<li>" + theModule.topics[j].title + "</li>";
 		}
+
+		document.getElementById("modules").innerHTML += "</ul></li>";
 	}
-	alert("subtopic found" + subtopic.title);
+
+	document.getElementById("modules").innerHTML += "</ul>";
+	
+	
 }
-
-
-/*
-var data;
-$.ajax("json/kitten.json").done(function(newdata) { data=newdata; });
-*/
+		
+		
