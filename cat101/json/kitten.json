@@ -15,7 +15,7 @@
 				"title":"Kitten Acquisition",
 				"parent": 0,
 				"id": 1,
-				"displayOrder": 1,
+				"moduleDisplayOrder": 1,
 				"startDate": "9/30/2015",
 				"endDate": "10/1/2015",
 				"topics":
@@ -24,7 +24,7 @@
 							"title": "Factors to Consider When Choosing a Kitten",
 							"parent": 1,
 							"id": 2,
-							"innerModuleDisplayOrder": 2,
+							"innerModuleDisplayOrder": 1,
 							"url": "factors.php",
 							"subtopics":
 							[
@@ -32,28 +32,28 @@
 									"title": "Overview",
 									"parent":2,
 									"id":3,
-									"innerModuleDisplayOrder":3,
+									"innerTopicDisplayOrder":1,
 									"url":"considerOverview.php"									
 								},
 								{
 									"title": "Responsibility",
 									"parent":2,
 									"id": 4,
-									"innerModuleDisplayOrder":4,
+									"innerTopicDisplayOrder":2,
 									"url":"responsibility.php"									
 								},
 								{
 									"title": "Cost",
 									"parent":2,
 									"id": 5,
-									"innerModuleDisplayOrder":5,
+									"innerTopicDisplayOrder":3,
 									"url":"cost.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":2,
 									"id": 6,
-									"innerModuleDisplayOrder":6,
+									"innerTopicDisplayOrder":4,
 									"url":"considerSummary.php"									
 								}
 							]
@@ -62,7 +62,7 @@
 							"title": "Kitten Rescue",
 							"parent": 1,
 							"id": 7,
-							"innerModuleDisplayOrder": 8,
+							"innerModuleDisplayOrder": 3,
 							"url": "rescue.php",
 							"subtopics":
 							[
@@ -70,28 +70,28 @@
 									"title": "Overview",
 									"parent":7,
 									"id":8,
-									"innerModuleDisplayOrder":9,
+									"innerTopicDisplayOrder":1,
 									"url":"rescueOverview.php"									
 								},
 								{
 									"title": "Reasons to Rescue",
 									"parent":7,
 									"id": 9,
-									"innerModuleDisplayOrder":10,
+									"innerTopicDisplayOrder":2,
 									"url":"reason.php"									
 								},
 								{
 									"title": "Hampton Roads Rescue Organizations",
 									"parent":7,
 									"id": 10,
-									"innerModuleDisplayOrder":11,
+									"innerTopicDisplayOrder":3,
 									"url":"orgs.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":7,
 									"id": 33,
-									"innerModuleDisplayOrder":12,
+									"innerTopicDisplayOrder":4,
 									"url":"rescueSummary.php"									
 								}
 							]
@@ -100,7 +100,7 @@
 							"title": "Purchasing a Kitten",
 							"parent": 1,
 							"id": 11,
-							"innerModuleDisplayOrder": 14,
+							"innerModuleDisplayOrder": 5,
 							"url": "purchase.php",
 							"subtopics":
 							[
@@ -108,77 +108,78 @@
 									"title": "Overview",
 									"parent":11,
 									"id":12,
-									"innerModuleDisplayOrder":15,
+									"innerTopicDisplayOrder":1,
 									"url":"purchaseOverview.php"									
 								},
 								{
 									"title": "Reasons to Purchase A Kitten",
 									"parent":11,
 									"id": 13,
-									"innerModuleDisplayOrder":16,
+									"innerTopicDisplayOrder":2,
 									"url":"buy.php"									
 								},
 								{
 									"title": "Where to Buy",
 									"parent":11,
 									"id": 14,
-									"innerModuleDisplayOrder":17,
+									"innerTopicDisplayOrder":17,
 									"url":"whereBuy.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":11,
 									"id": 15,
-									"innerModuleDisplayOrder":18,
+									"innerTopicDisplayOrder":18,
 									"url":"purchaseSummary.php"									
 								}
 							]
-						},
-						{
-							"title": "Resources",
-							"parent": 1,
-							"id": 16,
-							"innerModuleDisplayOrder": 20,
-							"url": "m1Resources.php"
 						}
 					],
+				"resources": 
+					{
+						"innerModuleDisplayOrder": 7
+					},
 				"assignments":
 					[
 						{
 							"title": "Homework #1",
 							"parent": 1,
 							"id":17,
-							"innerModuleDisplayOrder": 7,
+							"innerModuleDisplayOrder": 2,
 							"url": "whyGetAKitten.php"
 						},
 						{
 							"title": "Discussion Forum #1",
 							"parent": 1,
 							"id":18,
-							"innerModuleDisplayOrder": 13,
+							"innerModuleDisplayOrder": 4,
 							"url": "whyAdopt.php"
 						},
 						{
 							"title": "Quiz #1",
 							"parent": 1,
 							"id":19,
-							"innerModuleDisplayOrder": 19,
+							"innerModuleDisplayOrder": 6,
 							"url": "q1.php"
 						},
 						{
 							"title": "Module Feedback",
 							"parent": 1,
 							"id":20,
-							"innerModuleDisplayOrder": 21,
+							"innerModuleDisplayOrder": 9,
 							"url": "m1fb.php"
 						}	
-					]
+					],
+				"glossary": 
+					{
+						"innerModuleDisplayOrder":8
+					}
 			},
 			{
 				"title":"Caring for Your Kitten",
 				"parent": 0,
 				"id":21,
-				"displayOrder": 22,
+				"moduleDisplayOrder": 3,
 				"startDate": "10/2/2015",
 				"endDate": "10/5/2015",
 				"topics":
@@ -187,7 +188,7 @@
 							"title": "Bringing Your Kitten Home",
 							"parent": 21,
 							"id": 22,
-							"innerModuleDisplayOrder": 23,
+							"innerModuleDisplayOrder": 1,
 							"url": "bringHome.php",
 							"subtopics":
 							[
@@ -195,28 +196,28 @@
 									"title": "Overview",
 									"parent":22,
 									"id":60,
-									"innerModuleDisplayOrder":24,
+									"innerTopicDisplayOrder":5,
 									"url":"homeOverview.php"									
 								},
 								{
 									"title": "Transporting our Kitten",
 									"parent":22,
 									"id":23,
-									"innerModuleDisplayOrder":24,
+									"innerTopicDisplayOrder":6,
 									"url":"transport.php"									
 								},
 								{
 									"title": "Preparing the House",
 									"parent":22,
 									"id": 24,
-									"innerModuleDisplayOrder":25,
+									"innerTopicDisplayOrder":10,
 									"url":"house.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":22,
 									"id": 25,
-									"innerModuleDisplayOrder":26,
+									"innerTopicDisplayOrder":8,
 									"url":"bringSummary.php"									
 								}
 							]
@@ -225,7 +226,7 @@
 							"title": "Feeding and Grooming",
 							"parent": 21,
 							"id": 26,
-							"innerModuleDisplayOrder": 28,
+							"innerModuleDisplayOrder": 3,
 							"url": "feedAndGroom.php",
 							"subtopics":
 							[
@@ -233,28 +234,28 @@
 									"title": "Overview",
 									"parent":26,
 									"id":27,
-									"innerModuleDisplayOrder":29,
+									"innerTopicDisplayOrder":1,
 									"url":"feedOverview.php"									
 								},
 								{
 									"title": "Feeding Guidelines",
 									"parent":26,
 									"id": 28,
-									"innerModuleDisplayOrder":30,
+									"innerTopicDisplayOrder":2,
 									"url":"feedGuidelines.php"									
 								},
 								{
 									"title": "Grooming",
 									"parent":26,
 									"id": 29,
-									"innerModuleDisplayOrder":31,
+									"innerTopicDisplayOrder":3,
 									"url":"groom.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":26,
 									"id": 30,
-									"innerModuleDisplayOrder":32,
+									"innerTopicDisplayOrder":4,
 									"url":"feedSummary.php"									
 								}
 							]
@@ -263,7 +264,7 @@
 							"title": "Entertaining",
 							"parent": 21,
 							"id": 31,
-							"innerModuleDisplayOrder": 34,
+							"innerModuleDisplayOrder": 5,
 							"url": "entertain.php",
 							"subtopics":
 							[
@@ -271,93 +272,94 @@
 									"title": "Overview",
 									"parent":31,
 									"id": 32,
-									"innerModuleDisplayOrder":35,
+									"innerTopicDisplayOrder":1,
 									"url":"entertainOverview.php"									
 								},
 								{
 									"title": "Toys",
 									"parent":31,
 									"id": 33,
-									"innerModuleDisplayOrder":36,
+									"innerTopicDisplayOrder":2,
 									"url":"toys.php"									
 								},
 								{
 									"title": "Cat Nip",
 									"parent":31,
 									"id": 34,
-									"innerModuleDisplayOrder":37,
+									"innerTopicDisplayOrder":8,
 									"url":"nip.php"									
 								},
 								{
 									"title": "Other Pets",
 									"parent":31,
 									"id": 35,
-									"innerModuleDisplayOrder":38,
+									"innerTopicDisplayOrder":12,
 									"url":"otherPets.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":31,
 									"id": 36,
-									"innerModuleDisplayOrder":39,
+									"innerTopicDisplayOrder":22,
 									"url":"entertainSummary.php"									
 								}
 							]
-						},
-						{
-							"title": "Resources",
-							"parent": 21,
-							"id": 37,
-							"innerModuleDisplayOrder": 41,
-							"url": "m2Resources.php"
 						}
 					],
+				"resources": 
+					{
+						"innerModuleDisplayOrder": 10
+					},
 				"assignments":
 					[
 						{
 							"title": "Homework #2",
 							"parent": 21,
 							"id":38,
-							"innerModuleDisplayOrder": 27,
+							"innerModuleDisplayOrder": 2,
 							"url": "cautions.php"
 						},
 						{
 							"title": "Discussion Forum #2",
 							"parent": 21,
 							"id":39,
-							"innerModuleDisplayOrder": 33,
+							"innerModuleDisplayOrder": 4,
 							"url": "cuteNames.php"
 						},
 						{
 							"title": "Homework #3",
 							"parent": 21,
 							"id":40,
-							"innerModuleDisplayOrder": 40,
+							"innerModuleDisplayOrder": 7,
 							"url": "toysUnder5.php"
 						},
 						{
 							"title": "Module Feedback",
 							"parent": 2,
 							"id":41,
-							"innerModuleDisplayOrder": 42,
+							"innerModuleDisplayOrder": 100,
 							"url": "m2fb.php"
 						}	
-					]
+					],
+				"glossary": 
+					{
+						"innerModuleDisplayOrder": 12
+					}
 			},
 			{
 				"title":"Legal Requirements",
 				"parent": 0,
 				"id": 42,
-				"displayOrder": 43,
+				"moduleDisplayOrder": 5,
 				"startDate": "10/6/2015",
 				"endDate": "10/10/2015",
 				"topics":
-				[
+					[
 						{
 							"title" : "Vaccinations",
 							"parent" : 42,
 							"id": 43,
-							"innerModuleDisplayOrder": 44,
+							"innerModuleDisplayOrder": 1,
 							"url" : "vaccinations.php",
 							"subtopics":
 							[
@@ -365,28 +367,28 @@
 									"title": "Overview",
 									"parent":43,
 									"id":44,
-									"innerModuleDisplayOrder":45,
+									"innerTopicDisplayOrder":1,
 									"url":"shotOverview.php"									
 								},
 								{
 									"title": "Initial",
 									"parent":43,
 									"id": 45,
-									"innerModuleDisplayOrder":46,
+									"innerTopicDisplayOrder":2,
 									"url":"initial.php"									
 								},
 								{
 									"title": "Rabies",
 									"parent":43,
 									"id": 46,
-									"innerModuleDisplayOrder":47,
+									"innerTopicDisplayOrder":3,
 									"url":"rabies.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":43,
 									"id": 47,
-									"innerModuleDisplayOrder":48,
+									"innerTopicDisplayOrder":4,
 									"url":"shotSummary.php"									
 								}
 							]
@@ -395,7 +397,7 @@
 							"title" : "City Regulations",
 							"parent" : 42,
 							"id": 48,
-							"innerModuleDisplayOrder": 3,
+							"moduleDisplayOrder": 3,
 							"url" : "cityRegs.php",
 							"subtopics":
 							[
@@ -403,81 +405,79 @@
 									"title": "Overview",
 									"parent":48,
 									"id":49,
-									"innerModuleDisplayOrder":50,
+									"innerTopicDisplayOrder":50,
 									"url":"cityOverview.php"									
 								},
 								{
 									"title": "Licensing",
 									"parent":48,
 									"id": 50,
-									"innerModuleDisplayOrder":51,
+									"innerTopicDisplayOrder":51,
 									"url":"licensing.php"									
 								},
 								{
 									"title": "Leash Laws",
 									"parent":48,
 									"id": 51,
-									"innerModuleDisplayOrder":52,
+									"innerTopicDisplayOrder":52,
 									"url":"leash.php"									
 								},
 								{
 									"title": "Maximum Occupancy",
 									"parent":48,
 									"id": 52,
-									"innerModuleDisplayOrder":53,
+									"innerTopicDisplayOrder":53,
 									"url":"max.php"									
 								},
 								{
 									"title": "Summary",
 									"parent":48,
 									"id": 53,
-									"innerModuleDisplayOrder":54,
+									"innerTopicDisplayOrder":54,
 									"url":"citySummary.php"									
 								}
 							]
-						},
-						{
-							"title" : "Resources",
-							"parent" : 42,
-							"id": 54,
-							"innerModuleDisplayOrder": 57,
-							"url" : "m3Resources.php",
-							"subtopics":
-							[
-							]
 						}
-				],
+					],
+				"resources": 
+					{
+						"innerModuleDisplayOrder": 6
+					},
 				"assignments":
 					[
 						{
 							"title" : "Homework #4",
 							"parent" : 42,
 							"id":55,
-							"innerModuleDisplayOrder": 49,
+							"innerModuleDisplayOrder": 2,
 							"url" : "shotCosts.php"
 						},
 						{
 							"title" : "Discussion Forum #3",
 							"parent" : 42,
 							"id":56,
-							"innerModuleDisplayOrder": 55,
+							"innerModuleDisplayOrder": 4,
 							"url" : "hoarders.php"
 						},
 						{
 							"title" : "Final Exam",
 							"parent" : 42,
 							"id":57,
-							"innerModuleDisplayOrder": 56,
+							"innerModuleDisplayOrder": 5,
 							"url" : "final.php"
 						},
 						{
 							"title" : "Module Feedback",
 							"parent" : 42,
 							"id":58,
-							"innerModuleDisplayOrder": 58,
+							"innerModuleDisplayOrder": 100,
 							"url" : "m3fb.php"
 						}	
-					]
+					],
+				"glossary": 
+					{
+						"innerModuleDisplayOrder": 8
+					}
 			}
 		]
 	}
