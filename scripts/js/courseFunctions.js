@@ -4,8 +4,8 @@ function populateCourse(url) {
     }).done(function(obj) {
     	writeDocumentTitle(obj);
 		writeInstructorInformation(obj);
-		//writeModulesLists(obj);
-		getProperDisplayOrder(obj.course.modules[0].topics, "innerModuleDisplayOrder");
+		getProperDisplayOrder(obj.course.modules, "moduleDisplayOrder");
+		writCourseContent(obj);
     	
     	
 	});
@@ -71,11 +71,11 @@ function getModuleObject(obj, field, id){
 }
 
 //*****************************************************************************************
-//Name: 		getProperDisplayOrder
+//Name: 		getIdWithDisplayOrder
 //Input:		obj = json object, specifically the one that needs to get the ordering info
 //
 //*****************************************************************************************
-function getProperDisplayOrder(obj, field)
+function getIdAndDisplayOrder(obj, field)
 {
 	var displayOrderValues = [];
 	var itemDisplayOrderValue = null;
@@ -100,16 +100,17 @@ function getProperDisplayOrder(obj, field)
 	} else console.log("Object undefined.");
 
 	//raw data
-	console.log("Raw data values " + displayOrderValues);
+	//console.log("Raw data values " + displayOrderValues);
 	
 	//order them 
-	displayOrderValues.sort(function(a, b){return a-b});
-	console.log("Items in numerical order " + displayOrderValues);
+	//displayOrderValues.sort(function(a, b){return a-b});
+	//console.log("Items in numerical order " + displayOrderValues);
+	
+	//TODO
+	//add ids to the display order
 	
 	return displayOrderValues;
 }
-
-
 
 //********************************************************************
 //Writers
@@ -129,32 +130,19 @@ function writeInstructorInformation(obj)
 }
 
 
-function writeModuleInfo(obj, id)
-{
-	getModuleObject(obj, "moduleDisplayOrder", id); 
-}
 
-
-function writeModulesLists(obj){	
-	var theModule, theTopic, theSubtopic = null;
+function writCourseContent(obj){	
 	
 	var moduleNumericalSequence = getProperDisplayOrder(obj.course.modules, "moduleDisplayOrder");	
 	document.getElementById("modules").innerHTML += "<ul>";
+	
 	for (var i=0; i<moduleNumericalSequence.length; i++)
 	{
 		theModule = getModuleObject(obj, "moduleDisplayOrder", moduleNumericalSequence[i])
-		document.getElementById("modules").innerHTML += "<li>" + theModule.title + "<ul>";
-		
-		var modulesTopicNumbericalSequence = getProperDisplayOrder(obj.course.modules[i].topics, "innerModuleDisplayOrder" )
-		for (var j=0; theModule.topics.length; j++){
-				document.getElementById("modules").innerHTML += "<li>" + theModule.topics[j].title + "</li>";
-		}
-
-		document.getElementById("modules").innerHTML += "</ul></li>";
+		document.getElementById("modules").innerHTML += "<li>" + theModule.title + "</li>";		
 	}
 
 	document.getElementById("modules").innerHTML += "</ul>";
-	
 	
 }
 		
