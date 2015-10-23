@@ -10,9 +10,7 @@ function populateCourse(url) {
     	writeDocumentTitle(obj);
 		writeInstructorInformation(obj);
 		
-		myModule = getModuleObject(obj, "moduleDisplayOrder", 3)
-		//stuff = getDisplayOrder(obj.course.modules[1], "moduleDisplayOrder");
-		//writCourseContent(obj);
+		writeCourseContent(obj);
 
 	});
 };
@@ -37,8 +35,8 @@ function getInstructorObject(obj){
 
 
 //*****************************************************************************************
-//Name: 		getModuleObject
-//Input:		obj = json object, whole course data
+//Name: 		getObjectFromArray
+//Input:		obj = json object, an array object
 //				field = field name in the modules array
 //				id = some id to look for a match
 //Returns:		module object if found, null if not found or errors out
@@ -48,83 +46,57 @@ function getInstructorObject(obj){
 //Example Use:	myModule = getModuleObject(obj, "title", "Overview and Course Logistic");
 //				myModule = getModuleObject(obj, "moduleDisplayOrder", 1); 
 //*****************************************************************************************
-function getModuleObject(obj, field, id){
-	var modules = obj.course.modules;
-	var selectedModule, moduleFieldValue = null; //returning null is better than undefined
+function getObjectFromArray(objArray, field, id){
 
-	//check to see if there is a module array
-	if (typeof modules != "undefined"){	
-		for (var i=0; i< modules.length; i++){
+	var selectedItem, itemFieldValue = null; //returning null is better than undefined
+	var matchCount = 0;
+	
+	//check to see if there is an object in the first place
+	if (typeof objArray != "undefined") {
 
-			//check to see if this is even a valid field
-			if (modules[i].hasOwnProperty(field)){
+		//had code to check if it was an array, didn't work. this will work itself out when looking for
+		//the particular field
+		//if its a string, it will loop through each character
+		for (var i=0; i< objArray.length; i++){
 
-				//since we are dynamically getting the field name
-				eval("moduleFieldValue = modules[i]." + field);
-				console.log("module[" + i + "]." + field + " = " + moduleFieldValue)
-					
-				if (moduleFieldValue == id){
-					if (gShowConsoleMsgs) console.log ("Match for '" + field + "' = '" + id + "' at modules[" + i + "]");	
-					selectedModule = modules[i];
-					i=modules.length; //jump out of loop so we can return this properly
-				} else 	{if (gShowConsoleMsgs) console.log("No match for '" + field + "' = '" + id + "' at modules[" + i + "]");}
-
-			} else {if (gShowConsoleMsgs) console.log("modules[" + i +  "] does not have the property '" + field + "'");}
-					
-		}//end loop
-								
-	} else {if (gShowConsoleMsgs) console.log("No 'modules' array");}
-
-	return selectedModule;
-}
-
-
-//*****************************************************************************************
-//Name: 		getTopicObject
-//Input:		obj = json object, the specific module object
-//				field = field name in the topics array
-//				id = some id to look for a match
-//Returns:		topic object if found, null if not found or errors out
-//Description:  looks into the json obj into the topics array under each moduel for 
-//				a field that matches the id.  This is cool because you can 
-//				pass it differnt field names and it will find the module
-//				DO NOT PASS IN "parent" as the field to id on because there can be
-//				several topics in the module and therefore they have the same parent
-//Example Use:	myTopic = getTopicObject(obj.course.modules[1], "title", "Entertaining");
-//				myTopic = getTopicObject(myModule, "moduleDisplayOrder", 1); 
-//*****************************************************************************************
-function getTopicObject(obj, field, id){
-	var topics = obj.topics;
-	var selectedTopic, topicFieldValue = null; //returning null is better than undefined
-
-	//check to see if there is a module array
-	if (typeof topics != "undefined"){
-		
-		for (var i=0; i< topics.length; i++){
-
+				console.log(objArray[i]);
 				//check to see if this is even a valid field
-				if (topics[i].hasOwnProperty(field)){
+				if (objArray[i].hasOwnProperty(field)){
+	
+					//since we are dynamically getting the field name
+					eval("itemFieldValue = objArray[i]." + field);
+					console.log("object[" + i + "]." + field + " = " + itemFieldValue)
+						
+					if (itemFieldValue == id){
+							if (gShowConsoleMsgs) console.log ("Match for '" + field + "' = '" + id + "' at object[" + i + "]");	
+							
+							selectedItem = objArray[i];
+							matchCount++;
+							//normally I would use i=objArray.length; to jump out of loop so we can return this properly
+							//but since something like "parent" can be passed in where more than one item can have 
+							//the same parent id, I'll continue throught the object to see if there are others that match
+							//if there are, then I'll error out after it goes through the loop
+							
+					} else 	{if (gShowConsoleMsgs) console.log("No match for '" + field + "' = '" + id + "' at object[" + i + "]");}
+				} else {if (gShowConsoleMsgs) console.log("object[" + i +  "] does not have the property '" + field + "'");}
 					
-				//since we are dynamically getting the field name
-				eval("topicFieldValue = topics[i]." + field);
-				console.log("topics[" + i + "]." + field + " = " + topicFieldValue)
-				
-				if (moduleFieldValue == id){
-					if (gShowConsoleMsgs) console.log ("Match for '" + field + "' = '" + id + "' at topics[" + i + "]");
-
-					selectedTopic = topics[i];
-					i=topics.length; //jump out of loop so we can return this properly
-				} else 	{if (gShowConsoleMsgs) console.log("No match for '" + field + "' = '" + id + "' at topics[" + i + "]");}
-		
-			} else {if (gShowConsoleMsgs) console.log("topics[" + i +  "] does not have the property '" + field + "'");}
-		}//end loop
-								
-	} else {if (gShowConsoleMsgs) console.log("No 'topics' array");}
-
-	return selectedTopic;
+			}//end loop
+	} else {if (gShowConsoleMsgs) console.log("object is undefined");}
+	
+	if (matchCount < 1)
+	{
+		if(gShowConsoleMsgs) console.log("More than one object found with property '" + field + "' = '" + id + "'. Returning null")
+		selectedItem = null;
+	}
+	
+	return selectedItem;
 }
 
 
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//XXXXXXXXXXXXXXXXXX OBE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 //*****************************************************************************************
 //Name: 		getDisplayOrder
 //Input:		obj = json object, depending on what you pass to it it may be the module,
@@ -153,6 +125,35 @@ function getDisplayOrder(obj, field)
 	return itemDisplayOrder;
 }
 
+function nextChar(c) {
+    //TODO fix this
+	//return String.fromCharCode(c.charCodeAt() + 1);
+	return "j";
+}
+
+
+
+function nextModuleSequenceNumber(runningCount, itemType){
+	return (itemType != "assignments")? runningCount+1 :nextChar(runningCount) ;
+	
+}
+
+
+//*****************************************************************************************************
+//Sorts by field
+//*****************************************************************************************************
+var sort_by = function(field, reverse){
+
+	   var key = function(x) {return x[field]};
+
+	   reverse = !reverse ? 1 : -1;
+
+	   return function (a, b) {
+	       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+	     } 
+}
+
+
 //********************************************************************
 //Writers
 //********************************************************************
@@ -172,19 +173,58 @@ function writeInstructorInformation(obj)
 
 
 
-function writCourseContent(obj){	
+function writeCourseContent(obj){	
 	
-	var moduleNumericalSequence = getProperDisplayOrder(obj.course.modules, "moduleDisplayOrder");	
-	document.getElementById("modules").innerHTML += "<ul>";
+	//put in display order
+	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
 	
-	for (var i=0; i<moduleNumericalSequence.length; i++)
-	{
-		theModule = getModuleObject(obj, "moduleDisplayOrder", moduleNumericalSequence[i])
-		document.getElementById("modules").innerHTML += "<li>" + theModule.title + "</li>";		
-	}
+	//LOOP THROUGH EACH MODULE IN DISPLAY ORDER
+	for (var i=0; i<modules.length; i++){
+		var theModule = modules[i];
+		console.log(i + ". " + theModule.title);
 
-	document.getElementById("modules").innerHTML += "</ul>";
+		moduleItems = theModule.items;
+		oneLevelDeepModuleItems = [];
+
+		//GET THE ITEMS IN THE MODULE, IF THEY HAVE ITEMS THEMSELVES, GET THOSE
+		//FLATTEN THIS ARRAY
+		for (var j=0; j<moduleItems.length; j++){
+
+			//this is where it gets tricky.  the topics and assignments can be intermingled and they are arrays themselves.
+			//so we need to fetch the object and put it in a flattened array for the purposes of this display
+			if ((moduleItems[j].type == "topics")|| moduleItems[j].type == "assignments")
+			{			
+				//dig into each item in the topics or assignments array and pop that item out into the flattened array
+				for (var k=0; k < moduleItems[j].items.length; k++){
+						var moduleItemsItem = moduleItems[j].items[k];
+						//add this part so we can get the numbering correct later
+						moduleItemsItem["type"] = moduleItems[j].type;  //why not add this to the json file in the first place? reduce redundancy in the file.
+						oneLevelDeepModuleItems.push(moduleItemsItem);
+					}
+			}
+			else {
+			//otherwise get the resources and glossary itms or whatver one level deep stuff
+				oneLevelDeepModuleItems.push(moduleItems[j]);
+			}
+		}
+		
+		//order them sequentially
+		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
+
+			for (var m=0; m<oneLevelDeepModuleItems.length; m++){
+				sequenceNumber = nextModuleSequenceNumber(m, oneLevelDeepModuleItems[m].type);
+				
+				console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[m].title);
+				//console.log("  " + m + ". " + oneLevelDeepModuleItems[m].title + " id = " + oneLevelDeepModuleItems[m].id + "displayOrder" + oneLevelDeepModuleItems[m].innerModuleDisplayOrder);
+			
+			}
+		
+		
+		//console.log("oneLevelDeepModuleItems" + oneLevelDeepModuleItems);
+		
+	}
 	
+	//console.log(modules);
 }
 		
 		
