@@ -174,7 +174,11 @@ function setCourseContent(obj){
 		
 		//order them sequentially
 		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
-		html += "<div id='module" + i + "'><div id='module" + i + "Title'>" + i + ". "+ theModule.title + "</div>";
+		
+		
+		//start string to write out
+		html += "<div class='toggleBox'>";
+		html += "<div id='module" + i + "'><a href='' id='module" + i + "Title' class='boxTitle'>" + i + ". "+ theModule.title + "</div>";
 		html += "<ul>";
 		//build module string to write to screen
 		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
@@ -199,6 +203,7 @@ function setCourseContent(obj){
 			html += "</li>";	
 		}
 		html += "</ul></div>";
+		html += "</div>"; //end box wrapper
 		
 		document.getElementById("courseContent").innerHTML = html;
 	}
