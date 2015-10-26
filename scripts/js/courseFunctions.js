@@ -103,7 +103,7 @@ function nextChar(c) {
 
 
 function nextModuleSequenceNumber(runningCount, itemType){
-	return (itemType != "assignments")? runningCount+1 :nextChar(runningCount) ;
+	return (itemType != "assignments")? runningCount+1 : nextChar(runningCount) ;
 	
 }
 
@@ -185,16 +185,17 @@ function writeCourseContent(obj){
 		//build module string to write to screen
 		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
 			sequenceNumber = nextModuleSequenceNumber(n, oneLevelDeepModuleItems[n].type);
+			
 			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
-			html += "<li>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title;
+			html += "<li><a href='" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a>";
 			if (oneLevelDeepModuleItems[n].type == "topics"){
 				html += "<ul>";
 				//get the subtopics on display order
 				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
 					for (var p=0; p<subTopics.length; p++){
 						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
-						html += "<li>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title;
+						html += "<li><a href='" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
 					}
 						
 				
