@@ -27,7 +27,7 @@
 		<div id="instructorContent">Instructor HTML content</div>
 		
 		
-		<div id="modules"></div>
+		<div id="courseContent"></div>
 		
 		
 	</body>
