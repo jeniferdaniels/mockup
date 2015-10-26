@@ -40,11 +40,11 @@ function getInstructorObject(obj){
 //				field = field name in the modules array
 //				id = some id to look for a match
 //Returns:		module object if found, null if not found or errors out
-//Description:  looks into the json obj into the modules array for 
+//Description:  looks into the json obj into the array for 
 //				a field that matches the id.  This is cool because you can 
 //				pass it differnt field names and it will find the module
-//Example Use:	myModule = getModuleObject(obj, "title", "Overview and Course Logistic");
-//				myModule = getModuleObject(obj, "moduleDisplayOrder", 1); 
+//Example Use:	myModule = getObjectFromArray(obj, "title", "Overview and Course Logistic");
+//				myModule = getObjectFromArray(obj, "moduleDisplayOrder", 1); 
 //*****************************************************************************************
 function getObjectFromArray(objArray, field, id){
 
@@ -94,41 +94,10 @@ function getObjectFromArray(objArray, field, id){
 
 
 
-
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-//XXXXXXXXXXXXXXXXXX OBE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-//*****************************************************************************************
-//Name: 		getDisplayOrder
-//Input:		obj = json object, depending on what you pass to it it may be the module,
-//				topic, assignment etc
-//				field, depending on the object, the name of the display order field is different
-//				for modules it is "moduleDisplayOrder" for assignments and topics etc it is
-//				"innerModuleDisplayOrder" etc. See JSON file for specifics
-//Returns:		display order int, or null if not found
-//Description:	takes an individual single object, looks for the display order property (passed
-//				in as 'field' because in the different items it can be named something different
-//				returns the integer if found, else returns null
-//				does not take arrays
-//*****************************************************************************************
-function getDisplayOrder(obj, field)
-{
-	var itemDisplayOrder = null;
-
-	//check to see if object is legit
-	if (typeof obj != "undefined"){
-
-		if (obj.hasOwnProperty(field)){
-				eval("itemDisplayOrder = obj." + field);
-		} else {if (gShowConsoleMsgs) console.log("The object does not have the property '" + field + "'");}
-	} else {if (gShowConsoleMsgs) console.log("Object undefined.");}
-
-	return itemDisplayOrder;
-}
-
 function nextChar(c) {
-    //TODO fix this
-	//return String.fromCharCode(c.charCodeAt() + 1);
-	return "j";
+	//63 is start of capital letters,
+	//64 will give next char
+	return (String.fromCharCode(c+64));
 }
 
 
@@ -174,6 +143,7 @@ function writeInstructorInformation(obj)
 
 
 function writeCourseContent(obj){	
+	var html = "";
 	
 	//put in display order
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
@@ -211,20 +181,31 @@ function writeCourseContent(obj){
 		//order them sequentially
 		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
 
-			for (var m=0; m<oneLevelDeepModuleItems.length; m++){
-				sequenceNumber = nextModuleSequenceNumber(m, oneLevelDeepModuleItems[m].type);
-				
-				console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[m].title);
-				//console.log("  " + m + ". " + oneLevelDeepModuleItems[m].title + " id = " + oneLevelDeepModuleItems[m].id + "displayOrder" + oneLevelDeepModuleItems[m].innerModuleDisplayOrder);
+		html += "<ul> Module " + i;
+		//build module string to write to screen
+		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
+			sequenceNumber = nextModuleSequenceNumber(n, oneLevelDeepModuleItems[n].type);
+			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
+			html += "<li>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title;
+			if (oneLevelDeepModuleItems[n].type == "topics"){
+				html += "<ul>";
+				//get the subtopics on display order
+				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
+					for (var p=0; p<subTopics.length; p++){
+						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
+						html += "<li>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title;
+					}
+						
+				
+				html += "</ul>"; 
 			}
+			html += "</li>";	
+		}
+		html += "</ul>";
 		
-		
-		//console.log("oneLevelDeepModuleItems" + oneLevelDeepModuleItems);
-		
+		document.getElementById("courseContent").innerHTML = html;
 	}
-	
-	//console.log(modules);
 }
 		
 		
