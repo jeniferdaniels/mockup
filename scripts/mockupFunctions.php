@@ -21,8 +21,9 @@ function writeHead($pageTitle){
 	echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
-	echo nt($tabOver), '<script>$(document).ready(function(){populateCourseTitle("json/kitten.json");});</script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
+	echo nt($tabOver), '<script src="../scripts/js/jquery-2.1.3.min.js"></script>';
+	echo nt($tabOver), '<script src="../scripts/js/courseFunctions.js"></script>';
 	echo nt(0);
 }
 
@@ -38,6 +39,7 @@ function writeCourseDashboardHead($pageTitle){
 	echo nt($tabOver), '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
 	//echo nt($tabOver), '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
 	echo nt($tabOver), '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
+	
 	echo nt(0);
 }
 
@@ -105,7 +107,7 @@ function writeTopHtml()
 	echo nt($tabOver+2), '</nav>';
 	echo nt($tabOver+2), '<div class="pleLogo"></div>';
 	echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
-	echo nt($tabOver+2), '<h2 id="courseInstructor"></h2>';
+	echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
 	echo nt($tabOver+1), '</header>';
 	echo nt($tabOver), '</div><!--end topWrapper-->';
 	echo nt(0);
