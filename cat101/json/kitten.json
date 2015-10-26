@@ -28,19 +28,100 @@
 									"title": "Factors to Consider When Choosing a Kitten",
 									"parent": 1,
 									"id": 2,
-									"innerModuleDisplayOrder": 1
+									"innerModuleDisplayOrder": 1,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":2,
+												"id":3,
+												"subtopicDisplayOrder":1									
+											},
+											{
+												"title": "Responsibility",
+												"parent":2,
+												"id": 4,
+												"subtopicDisplayOrder":2									
+											},
+											{
+												"title": "Cost",
+												"parent":2,
+												"id": 5,
+												"subtopicDisplayOrder":3						
+											},
+											{
+												"title": "Summary",
+												"parent":2,
+												"id": 6,
+												"subtopicDisplayOrder":4									
+											}
+										]
 								},
 								{
 									"title": "Kitten Rescue",
 									"parent": 1,
 									"id": 7,
-									"innerModuleDisplayOrder": 3
+									"innerModuleDisplayOrder": 3,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":7,
+												"id":8,
+												"subtopicDisplayOrder":1									
+											},
+											{
+												"title": "Reasons to Rescue",
+												"parent":7,
+												"id": 9,
+												"subtopicDisplayOrder":2						
+											},
+											{
+												"title": "Hampton Roads Rescue Organizations",
+												"parent":7,
+												"id": 10,
+												"subtopicDisplayOrder":3						
+											},
+											{
+												"title": "Summary",
+												"parent":7,
+												"id": 33,
+												"subtopicDisplayOrder":4								
+											}
+										]
 								},
 								{
 									"title": "Purchasing a Kitten",
 									"parent": 1,
 									"id": 11,
-									"innerModuleDisplayOrder": 5
+									"innerModuleDisplayOrder": 5,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":11,
+												"id":12,
+												"subtopicDisplayOrder":1									
+											},
+											{
+												"title": "Reasons to Purchase A Kitten",
+												"parent":11,
+												"id": 13,
+												"subtopicDisplayOrder":2					
+											},
+											{
+												"title": "Where to Buy",
+												"parent":11,
+												"id": 14,
+												"subtopicDisplayOrder":17							
+											},
+											{
+												"title": "Summary",
+												"parent":11,
+												"id": 15,
+												"subtopicDisplayOrder":18								
+											}
+										]
 								}
 							]
 						},	
@@ -108,19 +189,106 @@
 									"title": "Bringing Your Kitten Home",
 									"parent": 21,
 									"id": 22,
-									"innerModuleDisplayOrder": 1
+									"innerModuleDisplayOrder": 1,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":22,
+												"id":60,
+												"subtopicDisplayOrder":5								
+											},
+											{
+												"title": "Transporting our Kitten",
+												"parent":22,
+												"id":23,
+												"subtopicDisplayOrder":6							
+											},
+											{
+												"title": "Preparing the House",
+												"parent":22,
+												"id": 24,
+												"subtopicDisplayOrder":10						
+											},
+											{
+												"title": "Summary",
+												"parent":22,
+												"id": 25,
+												"subtopicDisplayOrder":8								
+											}
+										]
 								},
 								{
 									"title": "Feeding and Grooming",
 									"parent": 21,
 									"id": 26,
-									"innerModuleDisplayOrder": 3
+									"innerModuleDisplayOrder": 3,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":26,
+												"id":27,
+												"subtopicDisplayOrder":1								
+											},
+											{
+												"title": "Feeding Guidelines",
+												"parent":26,
+												"id": 28,
+												"subtopicDisplayOrder":2									
+											},
+											{
+												"title": "Grooming",
+												"parent":26,
+												"id": 29,
+												"subtopicDisplayOrder":3						
+											},
+											{
+												"title": "Summary",
+												"parent":26,
+												"id": 30,
+												"subtopicDisplayOrder":4							
+											}
+										]
 								},
 								{
 									"title": "Entertaining",
 									"parent": 21,
 									"id": 31,
-									"innerModuleDisplayOrder": 5
+									"innerModuleDisplayOrder": 5,
+									"subtopics":
+										[
+											{
+												"title": "Overview",
+												"parent":31,
+												"id": 32,
+												"subtopicDisplayOrder":1									
+											},
+											{
+												"title": "Toys",
+												"parent":31,
+												"id": 33,
+												"subtopicDisplayOrder":2						
+											},
+											{
+												"title": "Cat Nip",
+												"parent":31,
+												"id": 34,
+												"subtopicDisplayOrder":8					
+											},
+											{
+												"title": "Other Pets",
+												"parent":31,
+												"id": 35,
+												"subtopicDisplayOrder":12							
+											},
+											{
+												"title": "Summary",
+												"parent":31,
+												"id": 36,
+												"subtopicDisplayOrder":22									
+											}
+										]
 								}
 							]
 						},
@@ -188,14 +356,74 @@
 									"parent" : 42,
 									"id": 43,
 									"innerModuleDisplayOrder": 1,
-									"url" : "vaccinations.php"
+									"subtopics":
+										[
+									
+											{
+												"title": "Overview",
+												"parent":43,
+												"id":44,
+												"subtopicDisplayOrder":1								
+											},
+											{
+												"title": "Initial",
+												"parent":43,
+												"id": 45,
+												"subtopicDisplayOrder":2						
+											},
+											{
+												"title": "Rabies",
+												"parent":43,
+												"id": 46,
+												"subtopicDisplayOrder":3						
+											},
+											{
+												"title": "Summary",
+												"parent":43,
+												"id": 47,
+												"subtopicDisplayOrder":4							
+											}
+									]
+									
 								},
 								{
 									"title" : "City Regulations",
 									"parent" : 42,
 									"id": 48,
 									"innerModuleDisplayOrder": 3,
-									"url" : "cityRegs.php"
+									"subtopics":
+									[
+										{
+											"title": "Overview",
+											"parent":48,
+											"id":49,
+											"subtopicDisplayOrder":50								
+										},
+										{
+											"title": "Licensing",
+											"parent":48,
+											"id": 50,
+											"subtopicDisplayOrder":51							
+										},
+										{
+											"title": "Leash Laws",
+											"parent":48,
+											"id": 51,
+											"subtopicDisplayOrder":52						
+										},
+										{
+											"title": "Maximum Occupancy",
+											"parent":48,
+											"id": 52,
+											"subtopicDisplayOrder":53					
+										},
+										{
+											"title": "Summary",
+											"parent":48,
+											"id": 53,
+											"subtopicDisplayOrder":54							
+										}
+									]
 								}
 							]
 						},
@@ -214,25 +442,25 @@
 									"title" : "Homework #4",
 									"parent" : 42,
 									"id":55,
-									"innerModuleDisplayOrder": 2
+									"subtopicDisplayOrder": 2
 								},
 								{
 									"title" : "Discussion Forum #3",
 									"parent" : 42,
 									"id":56,
-									"innerModuleDisplayOrder": 4
+									"subtopicDisplayOrder": 4
 								},
 								{
 									"title" : "Final Exam",
 									"parent" : 42,
 									"id":57,
-									"innerModuleDisplayOrder": 5
+									"subtopicDisplayOrder": 5
 								},
 								{
 									"title" : "Module Feedback",
 									"parent" : 42,
 									"id":58,
-									"innerModuleDisplayOrder": 100
+									"subtopicDisplayOrder": 100
 								}	
 							]
 						},						
