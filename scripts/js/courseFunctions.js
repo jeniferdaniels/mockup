@@ -1,24 +1,6 @@
 //GLOBALS
 var gShowConsoleMsgs = true;
 	
-	
-	
-function populateCourse(url) {
-	$.ajax({	
-        url: url
-    }).done(function(obj) {
-    	writeDocumentTitle(obj);
-		writeInstructorInformation(obj);
-		
-		writeCourseContent(obj);
-
-	});
-};
-
-
-
-
-
 //********************************************************************
 //Getters
 //********************************************************************
@@ -93,7 +75,6 @@ function getObjectFromArray(objArray, field, id){
 }
 
 
-
 function nextChar(c) {
 	//63 is start of capital letters,
 	//64 will give next char
@@ -101,12 +82,17 @@ function nextChar(c) {
 }
 
 
-
-function nextModuleSequenceNumber(runningCount, itemType){
-	return (itemType != "assignments")? runningCount+1 : nextChar(runningCount) ;
-	
+function updateRunningCount(runningCounts, itemType){
+	if (itemType == "assignments")
+		runningCounts[1]++;
+	else
+		runningCounts[0]++;
+	return runningCounts;
 }
 
+function showSequenceNumber(runningCounts, itemType){
+	return (itemType != "assignments")? runningCounts[0] :nextChar(runningCounts[1]);	
+}
 
 //*****************************************************************************************************
 //Sorts by field
@@ -124,15 +110,21 @@ var sort_by = function(field, reverse){
 
 
 //********************************************************************
-//Writers
+//setters
 //********************************************************************
-function writeDocumentTitle(obj){
+function setDocumentTitle(obj){
 	var strTitle = obj.course.courseNumber + "-" + obj.course.title;
 	document.title = strTitle;
 }
 
+function setTop(obj){
+	document.getElementById("courseTitle").innerHTML = getCourseTitle(obj);
+	document.getElementById("courseInstructor").innerHTML += "<a href='faculty.php'>" + getInstructorObject(obj).name + "</a>";
+	
+}
 
-function writeInstructorInformation(obj)
+
+function setInstructorInformation(obj)
 {
 	instructor = getInstructorObject(obj);
 	document.getElementById("instructorName").innerHTML = instructor.name;
@@ -142,7 +134,8 @@ function writeInstructorInformation(obj)
 
 
 
-function writeCourseContent(obj){	
+
+function setCourseContent(obj){	
 	var html = "";
 	
 	//put in display order
@@ -159,6 +152,7 @@ function writeCourseContent(obj){
 		//GET THE ITEMS IN THE MODULE, IF THEY HAVE ITEMS THEMSELVES, GET THOSE
 		//FLATTEN THIS ARRAY
 		for (var j=0; j<moduleItems.length; j++){
+			var runningCounts = [0,0]; //numbers, assignments
 
 			//this is where it gets tricky.  the topics and assignments can be intermingled and they are arrays themselves.
 			//so we need to fetch the object and put it in a flattened array for the purposes of this display
@@ -180,11 +174,12 @@ function writeCourseContent(obj){
 		
 		//order them sequentially
 		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
-
-		html += "<ul> Module " + i;
+		html += "<div id='module" + i + "'><div id='module" + i + "Title'>" + i + ". "+ theModule.title + "</div>";
+		html += "<ul>";
 		//build module string to write to screen
 		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
-			sequenceNumber = nextModuleSequenceNumber(n, oneLevelDeepModuleItems[n].type);
+			runningCounts = updateRunningCount(runningCounts, oneLevelDeepModuleItems[n].type);
+			sequenceNumber = showSequenceNumber(runningCounts, oneLevelDeepModuleItems[n].type);
 			
 			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
@@ -203,7 +198,7 @@ function writeCourseContent(obj){
 			}
 			html += "</li>";	
 		}
-		html += "</ul>";
+		html += "</ul></div>";
 		
 		document.getElementById("courseContent").innerHTML = html;
 	}
