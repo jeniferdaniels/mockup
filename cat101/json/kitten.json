@@ -70,18 +70,30 @@
 						"items": 
 							[
 								{
+									"shortTitle": "",
 									"title": "Sent Test Email",
 									"parent": 1209,
 									"id": 1215,
 									"innerModuleDisplayOrder": 2,
-									"url": "m0AssignmentA.php"
+									"url": "m0AssignmentA.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
+												
 								},
 								{
+									"shortTitle": "",
 									"title": "Module Feedback",
 									"parent": 1209,
 									"id": 1216,
 									"innerModuleDisplayOrder": 4,
-									"url": "m0Feedback.php"
+									"url": "m0Feedback.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "none",
+									"deliverable": "",	
+									"description": ""
+									
 								}
 							]
 					},
@@ -240,32 +252,53 @@
 							"items":
 							[
 								{
+									"shortTitle": "",
 									"title": "Homework #1",
 									"parent": 1,
 									"id":17,
 									"innerModuleDisplayOrder": 2,
-									"url": ""
+									"url": "",
+									"start": "'2015-01-12T23:59:00",	
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								},
 								{
+									"shortTitle": "",
 									"title": "Discussion Forum #1",
 									"parent": 1,
 									"id":18,
 									"innerModuleDisplayOrder": 4,
-									"url": ""
+									"url": "",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""	
 								},
 								{
+									"shortTitle": "",
 									"title": "Quiz #1",
 									"parent": 1,
 									"id":19,
 									"innerModuleDisplayOrder": 6,
-									"url": ""
+									"url": "",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
+										
 								},
 								{
+									"shortTitle": "",
 									"title": "Module Feedback",
 									"parent": 1,
 									"id":20,
 									"innerModuleDisplayOrder": 9,
-									"url": ""
+									"url": "",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								}	
 							]
 						},
@@ -428,32 +461,52 @@
 							"items":
 							[
 								{
+									"shortTitle": "",
 									"title": "Homework #2",
 									"parent": 21,
 									"id":38,
 									"innerModuleDisplayOrder": 2,
-									"url": "m2AssignmentA.php"
+									"url": "m2AssignmentA.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""										
 								},
 								{
+									"shortTitle": "",
 									"title": "Discussion Forum #2",
 									"parent": 21,
 									"id":39,
 									"innerModuleDisplayOrder": 4,
-									"url": "m2AssignmentB.php"
+									"url": "m2AssignmentB.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								},
 								{
+									"shortTitle": "",
 									"title": "Homework #3",
 									"parent": 21,
 									"id":40,
 									"innerModuleDisplayOrder": 7,
-									"url": "m2AssignmentC.php"
+									"url": "m2AssignmentC.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								},
 								{
+									"shortTitle": "",
 									"title": "Module Feedback",
 									"parent": 2,
 									"id":41,
 									"innerModuleDisplayOrder": 100,
-									"url": "m2Feedback.php"
+									"url": "m2Feedback.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								}	
 							]
 						},
@@ -579,32 +632,52 @@
 							"items":
 							[
 								{
+									"shortTitle": "",
 									"title" : "Homework #4",
 									"parent" : 42,
 									"id":55,
 									"subtopicDisplayOrder": 2,
-									"url": "m3AssignmentA.php"				
+									"url": "m3AssignmentA.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""														
 								},
 								{
+									"shortTitle": "",
 									"title" : "Discussion Forum #3",
 									"parent" : 42,
 									"id":56,
 									"subtopicDisplayOrder": 4,
-									"url": "m3AssignmentB.php"				
+									"url": "m3AssignmentB.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								},
 								{
+									"shortTitle": "",
 									"title" : "Final Exam",
 									"parent" : 42,
 									"id":57,
 									"subtopicDisplayOrder": 5,
-									"url": "m3AssignmentC.php"				
+									"url": "m3AssignmentC.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								},
 								{
+									"shortTitle": "",
 									"title" : "Module Feedback",
 									"parent" : 42,
 									"id":58,
 									"subtopicDisplayOrder": 100,
-									"url": "m3Feedback.php"				
+									"url": "m3Feedback.php",
+									"start": "'2015-01-12T23:59:00",
+									"assignmentSubmit": "blackboard",
+									"deliverable": "",	
+									"description": ""
 								}	
 							]
 						},						
