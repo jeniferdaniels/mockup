@@ -12,6 +12,7 @@ function nt($tabCount)
 
 function writeHead($pageTitle){
 	$tabOver = 2;
+	echo nt($tabOver), '<meta charset="utf-8" />';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
