@@ -16,8 +16,8 @@
 				"parent": 0,
 				"id": 1209,
 				"moduleDisplayOrder": 0,
-				"startDate": "1/10/2015",
-				"endDate": "1/15/2015",
+				"start": "1/10/2015",
+				"end": "1/15/2015",
 				"items":
 				[
 					{
@@ -114,8 +114,8 @@
 				"parent": 0,
 				"id": 1,
 				"moduleDisplayOrder": 1,
-				"startDate": "1/15/2015",
-				"endDate": "1/23/2015",
+				"start": "1/15/2015",
+				"end": "1/23/2015",
 				"items": 
 					[
 						{
@@ -317,8 +317,8 @@
 				"parent": 0,
 				"id":21,
 				"moduleDisplayOrder": 2,
-				"startDate": "1/23/2015",
-				"endDate": "1/30/2015",
+				"start": "1/23/2015",
+				"end": "1/30/2015",
 				"items": 
 					[
 						{
@@ -525,8 +525,8 @@
 				"parent": 0,
 				"id": 42,
 				"moduleDisplayOrder": 3,
-				"startDate": "1/30/2015",
-				"endDate": "2/7/2015",
+				"start": "1/30/2015",
+				"end": "2/7/2015",
 				"items":
 					[
 						{ 
