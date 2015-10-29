@@ -41,16 +41,16 @@ function getObjectFromArray(objArray, field, id){
 		//if its a string, it will loop through each character
 		for (var i=0; i< objArray.length; i++){
 
-				console.log(objArray[i]);
+				//if (gShowConsoleMsgs) console.log(objArray[i]);
 				//check to see if this is even a valid field
 				if (objArray[i].hasOwnProperty(field)){
 	
 					//since we are dynamically getting the field name
 					eval("itemFieldValue = objArray[i]." + field);
-					console.log("object[" + i + "]." + field + " = " + itemFieldValue)
+					//if (gShowConsoleMsgs) console.log("object[" + i + "]." + field + " = " + itemFieldValue);
 						
 					if (itemFieldValue == id){
-							if (gShowConsoleMsgs) console.log ("Match for '" + field + "' = '" + id + "' at object[" + i + "]");	
+							//if (gShowConsoleMsgs) console.log ("Match for '" + field + "' = '" + id + "' at object[" + i + "]");	
 							
 							selectedItem = objArray[i];
 							matchCount++;
@@ -59,15 +59,15 @@ function getObjectFromArray(objArray, field, id){
 							//the same parent id, I'll continue throught the object to see if there are others that match
 							//if there are, then I'll error out after it goes through the loop
 							
-					} else 	{if (gShowConsoleMsgs) console.log("No match for '" + field + "' = '" + id + "' at object[" + i + "]");}
-				} else {if (gShowConsoleMsgs) console.log("object[" + i +  "] does not have the property '" + field + "'");}
+					} //else 	{if (gShowConsoleMsgs) console.log("No match for '" + field + "' = '" + id + "' at object[" + i + "]");}
+				} //else {if (gShowConsoleMsgs) console.log("object[" + i +  "] does not have the property '" + field + "'");}
 					
 			}//end loop
-	} else {if (gShowConsoleMsgs) console.log("object is undefined");}
+	} //else {if (gShowConsoleMsgs) console.log("object is undefined");}
 	
 	if (matchCount < 1)
 	{
-		if(gShowConsoleMsgs) console.log("More than one object found with property '" + field + "' = '" + id + "'. Returning null")
+		//if(gShowConsoleMsgs) console.log("More than one object found with property '" + field + "' = '" + id + "'. Returning null")
 		selectedItem = null;
 	}
 	
@@ -98,11 +98,10 @@ function showSequenceNumber(runningCounts, itemType){
 //Sorts by field
 //*****************************************************************************************************
 var sort_by = function(field, reverse){
-
+	if (gShowConsoleMsgs) "Sorting....";
+	
 	   var key = function(x) {return x[field]};
-
 	   reverse = !reverse ? 1 : -1;
-
 	   return function (a, b) {
 	       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
 	     } 
@@ -144,7 +143,7 @@ function setCourseContent(obj){
 	//LOOP THROUGH EACH MODULE IN DISPLAY ORDER
 	for (var i=0; i<modules.length; i++){
 		var theModule = modules[i];
-		console.log(i + ". " + theModule.title);
+		if (gShowConsoleMsgs) console.log(i + ". " + theModule.title);
 
 		moduleItems = theModule.items;
 		oneLevelDeepModuleItems = [];
@@ -210,3 +209,76 @@ function setCourseContent(obj){
 }
 		
 		
+
+
+
+////////////////////////////////////////////////////////
+//CALENDAR STUFF
+////////////////////////////////////////////////////////
+//obj = full course info
+function makeJsonCalendarObject(obj)
+{
+	var moduleEventColor = "#EEEEE";
+	var moduleTextColor = "black";
+	var assignmentEventColor = "rgba(68,136,246,1)";
+	var assignmentTextColor = "white";
+	var attributesWanted = ["title", "start", "end", "textColor", "url", "assignmentSubmit", "deliverable"];
+	
+	
+	//default it for now	
+	var jsonCalObj = { 
+			defaultDate: '2015-01-18',
+			header : {
+				left: 'prev',
+				center: 'title',
+				right: 'month,basicWeek,basicDay, next'	
+			},
+			events:[] //title, start, end, color, textColor, url, assignmentSubmit, deliverable, description
+	};
+	
+
+	//put in display order
+	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
+	
+	
+	for (var i=0; i<modules.length; i++){
+		console.log("Module " + i);
+
+		var cEvent = {};
+
+		//make the modules themselves events
+		cEvent.title = modules[i].title;
+		cEvent.start = modules[i].start;
+		cEvent.end = modules[i].end;
+		cEvent.color = moduleEventColor;
+		cEvent.textColor = moduleTextColor;
+		cEvent.assignmentSubmit = "";
+		cEvent.deliverable = "";
+		cEvent.description = "Module " + i + "stuff description stuff stuff";
+	
+		jsonCalObj.events.push(cEvent);
+		//cEvent = "";
+		
+			//now go into the modules, into the assignments and put those into calendar events
+			var assignmentList = getObjectFromArray(modules[i].items, "type", "assignments"); 
+			
+			//for (var j=0; j<assignmentList.length; j++){
+			//the assignment item has almost everything we need, take out what we dont
+			//	console.log("assignmentList " + j + "assignmentList[j]" + assignmentList[j]);
+			//	cEvent = assignmentList[j];
+				
+			//	jsonCalObj.events.push(cEvent); 
+			//}
+	}
+	
+	
+	
+	for (var k=0; k<jsonCalObj.events.length; k++){
+		console.log("eventStuff " + jsonCalObj.events[k].title);
+		
+	}
+}
+
+
+
+
