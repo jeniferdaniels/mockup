@@ -216,67 +216,66 @@ function setCourseContent(obj){
 //CALENDAR STUFF
 ////////////////////////////////////////////////////////
 //obj = full course info
-function makeJsonCalendarObject(obj)
+function getEvents(obj)
 {
-	var moduleEventColor = "#EEEEE";
+	var moduleEventColor = "rgba(250,250,250,1)";
 	var moduleTextColor = "black";
 	var assignmentEventColor = "rgba(68,136,246,1)";
 	var assignmentTextColor = "white";
-	var attributesWanted = ["title", "start", "end", "textColor", "url", "assignmentSubmit", "deliverable"];
-	
 	
 	//default it for now	
-	var jsonCalObj = { 
-			defaultDate: '2015-01-18',
-			header : {
-				left: 'prev',
-				center: 'title',
-				right: 'month,basicWeek,basicDay, next'	
-			},
-			events:[] //title, start, end, color, textColor, url, assignmentSubmit, deliverable, description
-	};
-	
+	var events = [];
 
-	//put in display order
+	//put in display order, in actuality it doesnt matter but this is good for looking at the json file manually
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
 	
 	
 	for (var i=0; i<modules.length; i++){
-		console.log("Module " + i);
-
 		var cEvent = {};
 
 		//make the modules themselves events
+		cEvent.type = "module";
 		cEvent.title = modules[i].title;
 		cEvent.start = modules[i].start;
 		cEvent.end = modules[i].end;
 		cEvent.color = moduleEventColor;
 		cEvent.textColor = moduleTextColor;
-		cEvent.assignmentSubmit = "";
-		cEvent.deliverable = "";
-		cEvent.description = "Module " + i + "stuff description stuff stuff";
+		cEvent.description = modules[i].overview;
 	
-		jsonCalObj.events.push(cEvent);
-		//cEvent = "";
+		events.push(cEvent);
+		cEvent = "";
 		
-			//now go into the modules, into the assignments and put those into calendar events
-			var assignmentList = getObjectFromArray(modules[i].items, "type", "assignments"); 
+		//now go into the modules, into the assignments and put those into calendar events
+		assignmentsObj = getObjectFromArray(modules[i].items, "type", "assignments");
+		assignmentsArray = assignmentsObj.items;
+		for (var j=0; j< assignmentsArray.length; j++){
+			cEvent = assignmentsArray[j];
+			cEvent.type = "assignment";
+			cEvent.textColor = assignmentTextColor;
+			cEvent.color = assignmentEventColor;
 			
-			//for (var j=0; j<assignmentList.length; j++){
-			//the assignment item has almost everything we need, take out what we dont
-			//	console.log("assignmentList " + j + "assignmentList[j]" + assignmentList[j]);
-			//	cEvent = assignmentList[j];
-				
-			//	jsonCalObj.events.push(cEvent); 
-			//}
+			
+			events.push(cEvent);
+		}
+
 	}
 	
 	
+	/*for (var k=0; k<events.length; k++){
+		console.log("----------k is " + k + "---------------" );
+		console.log(events[k].title);
+		console.log(events[k].start);
+		console.log(events[k].end);
+		console.log(events[k].color);
+		console.log(events[k].textColor);
+		console.log(events[k].assignmentSubmit);
+		console.log(events[k].deliverable);
+		console.log(events[k].description);	
+	}*/
 	
-	for (var k=0; k<jsonCalObj.events.length; k++){
-		console.log("eventStuff " + jsonCalObj.events[k].title);
-		
-	}
+	
+	
+	return events;
 }
 
 
