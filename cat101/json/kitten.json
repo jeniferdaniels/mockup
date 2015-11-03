@@ -16,8 +16,22 @@
 				"parent": 0,
 				"id": 1209,
 				"moduleDisplayOrder": 0,
-				"start": "1/10/2015",
-				"end": "1/15/2015",
+				"start": "2015-01-10",
+				"end": "2015-01-15",
+				"overview": "This module introduces students to using Blackboard, PLE and other course logistics.  We'll review the structure of the course websire and get set up for the semester.",
+				"objectiveDescription": "After completing this module, students will be able to:",
+				"objectives": 
+					[
+						{ 
+							"id": 100100,
+							"description": "Identify the requirements, protocols and policies for the online course."
+						 },
+						{ 
+							"id": 100101,
+							"description": "Use the selected technology tools for communication and collaboration."
+						}
+					],
+				"relavance": "An understanding of the tools used in an online course is fundamental in becoming a successful online learner. It is also important to identify the time management skills required in the online format and the the expectations for participation and assignment submission.",	
 				"items":
 				[
 					{
@@ -71,15 +85,15 @@
 							[
 								{
 									"shortTitle": "",
-									"title": "Sent Test Email",
+									"title": "Send Test Email",
 									"parent": 1209,
 									"id": 1215,
 									"innerModuleDisplayOrder": 2,
 									"url": "m0AssignmentA.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-12T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"deliverable": "Submitted email",	
+									"description": "Send a test email with your name, birthdate and credit card number to the following address: <a href='mailto:jdaniels@odu.edu'>jdaniels@odu.edu</a>"
 												
 								},
 								{
@@ -89,11 +103,10 @@
 									"id": 1216,
 									"innerModuleDisplayOrder": 4,
 									"url": "m0Feedback.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-14T23:59:00",
 									"assignmentSubmit": "none",
-									"deliverable": "",	
-									"description": ""
-									
+									"deliverable": "Submitted feedback form",	
+									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}
 							]
 					},
@@ -110,16 +123,31 @@
 				
 			},
 			{
-				"title":"Kitten Acquisition",
+				"title":"Kitten Acquisition!",
 				"parent": 0,
 				"id": 1,
 				"moduleDisplayOrder": 1,
-				"start": "1/15/2015",
-				"end": "1/23/2015",
+				"start": "2015-01-15",
+				"end": "2015-01-23",
+				"overview": "This module a student will learn how to acquire a kitten and what to consider when choosing a kitten.",
+				"objectiveDescription": "After completing this module, students will be able to:",
+				"objectives": 
+					[
+						{ 
+							"id": 100102,
+							"description": "obj 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. "
+						 },
+						{ 
+							"id": 100103,
+							"description": "obj 2 Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique."
+						}
+					],
+				"relavance": "relavance goes here",	
 				"items": 
 					[
 						{
 							"type": "topics",
+							"title": "Kitten Acquisition Topics",
 							"items":
 							[
 								{
@@ -248,6 +276,7 @@
 						},
 						{
 							"type": "assignments",
+							"title": "Kitten Acquision Assignments",
 							"parent": 1,
 							"items":
 							[
@@ -258,10 +287,10 @@
 									"id":17,
 									"innerModuleDisplayOrder": 2,
 									"url": "",
-									"start": "'2015-01-12T23:59:00",	
+									"start": "2015-01-16T23:59:00",	
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"deliverable": "PDF essay",	
+									"description": "What are some benefits to owning a kitten?  Write a 500 word essay in the text editor of your choice, then convert it to PDF and upload it to the assignments section on Blackboard."
 								},
 								{
 									"shortTitle": "",
@@ -270,10 +299,10 @@
 									"id":18,
 									"innerModuleDisplayOrder": 4,
 									"url": "",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-19T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""	
+									"deliverable": "Submitted Discussion Forum Content",	
+									"description": "Go to the discussion forum on Blackboard, write a 100-300 word comment on the topic 'Getting a Kitten'.  Also, reply to 3 other students with 50-100 word comments."	
 								},
 								{
 									"shortTitle": "",
@@ -282,11 +311,10 @@
 									"id":19,
 									"innerModuleDisplayOrder": 6,
 									"url": "",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-20T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
-										
+									"deliverable": "Submitted Quiz",	
+									"description": "Complete Quiz #1 on Blackboard.  <br><br>Using <a href='http://go.proctoru.com'>Proctor U</a> via Blackboard, you may use a 8.5 inch x 11 inch handwritten study sheet.  However, you may not use books, cell phones or other electronic gadgets."
 								},
 								{
 									"shortTitle": "",
@@ -295,10 +323,10 @@
 									"id":20,
 									"innerModuleDisplayOrder": 9,
 									"url": "",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-22T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"deliverable": "Submitted feedback form.",	
+									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
 							]
 						},
@@ -317,8 +345,22 @@
 				"parent": 0,
 				"id":21,
 				"moduleDisplayOrder": 2,
-				"start": "1/23/2015",
-				"end": "1/30/2015",
+				"start": "2015-01-23",
+				"end": "2015-01-29",
+				"overview": "In this module students will learn how to properly care for a kitten and some stuff.",
+				"objectiveDescription": "After completing this module, students will be able to:",
+				"objectives": 
+					[
+						{ 
+							"id": 100104,
+							"description": "obj 1 Suff goes here"
+						 },
+						{ 
+							"id": 100105,
+							"description": "obj 2 Other stuff goes here"
+						}
+					],
+				"relavance": "Stuff stuff stuff. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curab itur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, pos",					
 				"items": 
 					[
 						{
@@ -467,7 +509,7 @@
 									"id":38,
 									"innerModuleDisplayOrder": 2,
 									"url": "m2AssignmentA.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-26T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""										
@@ -479,7 +521,7 @@
 									"id":39,
 									"innerModuleDisplayOrder": 4,
 									"url": "m2AssignmentB.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-27T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""
@@ -491,7 +533,7 @@
 									"id":40,
 									"innerModuleDisplayOrder": 7,
 									"url": "m2AssignmentC.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-27T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""
@@ -503,10 +545,10 @@
 									"id":41,
 									"innerModuleDisplayOrder": 100,
 									"url": "m2Feedback.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-29T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"deliverable": "Submitted feedback form.",	
+									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
 							]
 						},
@@ -525,8 +567,22 @@
 				"parent": 0,
 				"id": 42,
 				"moduleDisplayOrder": 3,
-				"start": "1/30/2015",
-				"end": "2/7/2015",
+				"start": "2015-01-30",
+				"end": "2015-02-08",
+				"overview": "This module introduces students to the legal requirements and stuff",
+				"objectiveDescription": "After completing this module, students will be able to:",
+				"objectives": 
+					[
+						{ 
+							"id": 100106,
+							"description": "Obj 1 dummy data here"
+						 },
+						{ 
+							"id": 100107,
+							"description": "Obj 2 dummy data here"
+						}
+					],
+				"relavance": "Relavance here.",	
 				"items":
 					[
 						{ 
@@ -638,7 +694,7 @@
 									"id":55,
 									"subtopicDisplayOrder": 2,
 									"url": "m3AssignmentA.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-01-30T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""														
@@ -650,7 +706,7 @@
 									"id":56,
 									"subtopicDisplayOrder": 4,
 									"url": "m3AssignmentB.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-02-02T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""
@@ -662,7 +718,7 @@
 									"id":57,
 									"subtopicDisplayOrder": 5,
 									"url": "m3AssignmentC.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-02-02T23:59:00",
 									"assignmentSubmit": "blackboard",
 									"deliverable": "",	
 									"description": ""
@@ -674,10 +730,10 @@
 									"id":58,
 									"subtopicDisplayOrder": 100,
 									"url": "m3Feedback.php",
-									"start": "'2015-01-12T23:59:00",
+									"start": "2015-02-07T23:59:00",
 									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"deliverable": "Submitted feedback form.",	
+									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
 							]
 						},						
