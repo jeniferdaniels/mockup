@@ -18,7 +18,7 @@ h2 {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 10px;
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 h3 {
   font-size: 1.4rem;
@@ -425,5 +425,43 @@ li {
     border: 1px solid black;
     padding: 10px;
     margin-top: 10px; }
+
+.ui-dialog {
+  z-index: 800;
+  background: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+  .ui-dialog-titlebar {
+    border: 1px solid green; }
+  .ui-dialog-title {
+    border: 1px solid blue;
+    text-transform: capitalize; }
+  .ui-dialog-titlebar-close {
+    border: 1px solid orange;
+    text-align: right; }
+  .ui-dialog-content {
+    border: 1px solid purple; }
+  .ui-dialog-buttonpane {
+    border: 1px solid yellow; }
+  .ui-dialog-buttonset {
+    border: 1px solid black; }
+
+.modalContentWrapper {
+  padding: 20px; }
+  .modalContentWrapper h3 {
+    display: inline-block;
+    text-transform: capitalize; }
+  .modalContentWrapper .icon {
+    display: inline-block; }
+  .modalContentWrapper h5 {
+    display: inline-block;
+    font-weight: 600; }
+  .modalContentWrapper .eventDateTime {
+    display: inline-block;
+    color: #7d7d7d; }
+  .modalContentWrapper .assignmentDeliverables {
+    display: inline-block;
+    color: #7d7d7d; }
+  .modalContentWrapper p {
+    padding-top: 20px; }
 
 /*# sourceMappingURL=pleStyle.css.map */

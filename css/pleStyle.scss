@@ -65,7 +65,7 @@ h2{
 	font-size: 2rem;
 	font-weight: 500;
 	margin-bottom: 10px;
-	margin-top: 20px
+	margin-top: 10px
 }
 //TODO, h3, h4, h5
 
@@ -745,6 +745,76 @@ li{
 
 }
 
+//*****************************************************************************
+//Modal
+//*****************************************************************************
+.ui-dialog{
+	z-index: 800;
+	background: white;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+	&-titlebar {
+		border: 1px solid green;
+	}
+
+	&-title{
+		border: 1px solid blue;
+	    text-transform:capitalize;
+	}
+	
+	
+	&-titlebar-close{
+		border: 1px solid orange;
+		text-align:right;
+	}
 
 
+	&-content{
+		border: 1px solid purple;
+	}
+
+	&-buttonpane{
+		border: 1px solid yellow;
+	}
+
+	&-buttonset{
+		border: 1px solid black;
+	}
+	
+}
+
+.modalContentWrapper{
+	padding: 20px;
+	
+	
+	h3 {
+		display: inline-block;
+		text-transform:capitalize;	
+	}
+	
+	& .icon {
+		display: inline-block;
+	}
+	
+	h5 {
+		display: inline-block;
+		font-weight: 600;
+		
+	}
+	
+	& .eventDateTime{
+		display: inline-block;
+		color: $mediumGray;
+	}
+	
+	& .assignmentDeliverables {
+		display: inline-block;
+		color: $mediumGray;
+	}
+	
+	p{
+		padding-top: 20px;
+	
+	}
+}
 
