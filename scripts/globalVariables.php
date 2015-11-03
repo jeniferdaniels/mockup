@@ -2,8 +2,12 @@
 
 $listCheckMark = '<i class="fa fa-check-circle success fa-lg fa-fw"></i>';
 $listCheckMarkHidden = '<i class="fa fa-check-circle success fa-lg fa-fw hidden"></i>';
-$listAssignment = '<i class="fa fa-calendar fa-lg fa-fw"></i>';
-$listAssignmentUrgent = '<i class="fa fa-calendar fa-lg fa-fw urgent"></i>';
+$iconAssignment = '<i class="fa fa-pencil-square-o fa-lg fa-fw"></i>';
+$iconAssignmentLarge = '<i class="fa fa-pencil-square-o fa-2x fa-fw"></i>';
+$listAssignment = $iconAssignment; //until refactoring to set to icon assigment
+$iconAssignmentUrgent = '<i class="fa fa-pencil-square-o fa-lg fa-fw urgent"></i>';
+$iconAssignmentLargeUrgent = '<i class="fa fa-pencil-square-o fa-lg fa-2x urgent"></i>';
+$listAssignmentUrgent = $iconAssignment;
 
 $listCurrentSpotSmall = '<i class="fa fa-arrow-right fa-fw current"></i>';
 $listCurrentSpotMedium = '<i class="fa fa-arrow-right fa-lg fa-fw current"></i>';
