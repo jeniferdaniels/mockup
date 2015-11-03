@@ -9,9 +9,21 @@
 		<script>
 
 		$(document).ready(function(){
-			populateCourse("json/kitten.json");
-			
+			populateCalendar("json/kitten.json");
 			});
+
+		function populateCalendar(url) {
+			$.ajax({	
+		        url: url
+		    }).done(function(obj) {
+		    	makeJsonCalendarObject(obj);
+		    	
+			});
+		};
+		</script>
+		
+		<script>
+
 		
 		</script>
 	</head>
