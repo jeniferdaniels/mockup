@@ -95,8 +95,6 @@
 			
 
 			#eventContent{
-				background: white;
-				border: 1px solid green;
 				z-index: 999;
 			}
 		</style>
