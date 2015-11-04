@@ -753,43 +753,64 @@ li{
 	background: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 
-	&-titlebar {
-		border: 1px solid green;
-	}
+	//&-titlebar {
+	//	
+	//}
 
 	&-title{
-		border: 1px solid blue;
 	    text-transform:capitalize;
+	    padding-left: 10px;
+	    color: $liteGray;
+	    //visibility: hidden;
+	    
 	}
 	
 	
 	&-titlebar-close{
-		border: 1px solid orange;
-		text-align:right;
+		position:relative;
+		background:none;
+		border:0;
+		float:right;
+		margin: 10px;
+		
+		&:after{
+			position: absolute;
+			font-family: FontAwesome;
+			font-size: 1.5em;
+			top:0;
+			right:2px;
+			content: "\f00d ";
+		}
+			
+		& .ui-button-text{
+			display:none;
+		}
 	}
 
 
 	&-content{
-		border: 1px solid purple;
+		//border: 1px solid purple;
 	}
 
 	&-buttonpane{
-		border: 1px solid yellow;
+		//border: 1px solid yellow;
 	}
 
 	&-buttonset{
-		border: 1px solid black;
-	}
-	
+		//border: 1px solid black;
+	}	
 }
+
+
 
 .modalContentWrapper{
 	padding: 20px;
-	
+	background: white;
 	
 	h3 {
 		display: inline-block;
 		text-transform:capitalize;	
+		margin-top: 0;
 	}
 	
 	& .icon {

@@ -430,26 +430,33 @@ li {
   z-index: 800;
   background: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
-  .ui-dialog-titlebar {
-    border: 1px solid green; }
   .ui-dialog-title {
-    border: 1px solid blue;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    padding-left: 10px;
+    color: #c8c8c8; }
   .ui-dialog-titlebar-close {
-    border: 1px solid orange;
-    text-align: right; }
-  .ui-dialog-content {
-    border: 1px solid purple; }
-  .ui-dialog-buttonpane {
-    border: 1px solid yellow; }
-  .ui-dialog-buttonset {
-    border: 1px solid black; }
+    position: relative;
+    background: none;
+    border: 0;
+    float: right;
+    margin: 10px; }
+    .ui-dialog-titlebar-close:after {
+      position: absolute;
+      font-family: FontAwesome;
+      font-size: 1.5em;
+      top: 0;
+      right: 2px;
+      content: "\f00d "; }
+    .ui-dialog-titlebar-close .ui-button-text {
+      display: none; }
 
 .modalContentWrapper {
-  padding: 20px; }
+  padding: 20px;
+  background: white; }
   .modalContentWrapper h3 {
     display: inline-block;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    margin-top: 0; }
   .modalContentWrapper .icon {
     display: inline-block; }
   .modalContentWrapper h5 {
