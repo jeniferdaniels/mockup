@@ -34,7 +34,7 @@ a {
   -webkit-transition: all 0.25s ease;
           transition: all 0.25s ease; }
   a:hover, a:visited:hover {
-    color: #4488f6;
+    color: #003767;
     text-decoration: underline dotted; }
   a:visited {
     color: #ff0080; }
@@ -48,13 +48,13 @@ li {
 .listTopic a, .listSubTopic a, .breadCrumbs a {
   color: #ff0080; }
 .listTopic a:hover, .listTopic a:visited:hover, .listSubTopic a:hover, .listSubTopic a:visited:hover, .breadCrumbs a:hover, .breadCrumbs a:visited:hover {
-  color: #4488f6; }
+  color: #003767; }
 .listTopic a:visited, .listSubTopic a:visited, .breadCrumbs a:visited {
   color: #ff0080; }
 
 .breadCrumbWrapper {
   display: block;
-  width: 80%;
+  width: 1000px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto; }
@@ -85,7 +85,7 @@ li {
   height: 110px;
   vertical-align: top;
   z-index: 900;
-  border-top: 30px solid #4488f6;
+  border-top: 30px solid #003767;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26); }
   .top h1 {
     display: inline-block;
@@ -93,7 +93,7 @@ li {
     .top h1 a {
       color: #141414; }
       .top h1 a:hover {
-        color: #4488f6;
+        color: #003767;
         text-decoration: underline; }
   .top h2 {
     margin: 0;
@@ -104,10 +104,10 @@ li {
     .top h2 a {
       color: #141414; }
       .top h2 a:hover {
-        color: #4488f6;
+        color: #003767;
         text-decoration: underline; }
   .topWrapper {
-    width: 80%;
+    width: 1000px;
     padding: 0;
     margin: -30px auto 0 auto; }
 
@@ -191,7 +191,7 @@ li {
     color: black; }
     .moduleList a:hover {
       text-decoration: underline;
-      color: #4488f6; }
+      color: #003767; }
   .moduleList li {
     padding-top: 3px;
     padding-left: 20px; }
@@ -203,14 +203,14 @@ li {
   margin-top: 160px;
   margin-bottom: 10px;
   vertical-align: top;
-  width: 80%;
+  width: 1000px;
   min-width: 900px;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
   padding: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  overflow: auto; }
+  height: 2500px; }
   .contentWrapper ul {
     list-style: none; }
     .contentWrapper ul li {
@@ -228,12 +228,12 @@ li {
       color: black; }
   .contentWrapper .scheduleContentWrapper {
     display: inline-block;
-    width: 30%;
+    width: 40%;
     height: 500px;
     float: left; }
   .contentWrapper .courseContentWrapper {
     display: inline-block;
-    width: 68%;
+    width: 58%;
     padding-left: 2%;
     float: right; }
 
@@ -274,7 +274,7 @@ li {
       display: list-item;
       list-style: none;
       float: right;
-      background-color: #4488f6; }
+      background-color: #003767; }
       #nav ul li i {
         font-size: 25px;
         width: 30px; }
@@ -345,7 +345,7 @@ li {
   color: #c8c8c8; }
 
 .current {
-  color: #4488f6; }
+  color: #003767; }
 
 .hidden {
   visibility: hidden; }
@@ -383,7 +383,7 @@ li {
 
 .aaq {
   margin-top: 100px;
-  width: 80%;
+  width: 1000px;
   background-color: #fafafa; }
   .aaqHeaderLinks {
     list-style: none; }
@@ -429,26 +429,18 @@ li {
 .ui-dialog {
   z-index: 800;
   background: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border: 1px solid #003767; }
+  .ui-dialog-titlebar {
+    background: #003767; }
   .ui-dialog-title {
     text-transform: capitalize;
     padding-left: 10px;
-    color: #c8c8c8; }
+    color: white;
+    text-weight: 600; }
   .ui-dialog-titlebar-close {
-    position: relative;
-    background: none;
-    border: 0;
     float: right;
-    margin: 10px; }
-    .ui-dialog-titlebar-close:after {
-      position: absolute;
-      font-family: FontAwesome;
-      font-size: 1.5em;
-      top: 0;
-      right: 2px;
-      content: "\f00d "; }
-    .ui-dialog-titlebar-close .ui-button-text {
-      display: none; }
+    margin: 5px; }
 
 .modalContentWrapper {
   padding: 20px;
@@ -470,5 +462,41 @@ li {
     color: #7d7d7d; }
   .modalContentWrapper p {
     padding-top: 20px; }
+
+.upcomingAssignment {
+  border-bottom: 1px solid #003767;
+  margin-bottom: 20px;
+  height: 50px;
+  overflow-y: hidden; }
+  .upcomingAssignment .readMore {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+    background-image: -webkit-linear-gradient(top, transparent, white);
+    background-image: linear-gradient(to bottom, transparent, white); }
+  .upcomingAssignmentDateWrapper {
+    border-radius: 5px;
+    width: 50px;
+    border: 1px solid #003767;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    position: relative; }
+    .upcomingAssignmentDateWrapper h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+      padding: 0; }
+    .upcomingAssignmentDateWrapper h2 {
+      font-size: .9rem;
+      margin: 0;
+      padding: 0; }
+    .upcomingAssignmentDateWrapper h3 {
+      font-size: .7rem;
+      margin: 0;
+      padding: 0; }
 
 /*# sourceMappingURL=pleStyle.css.map */

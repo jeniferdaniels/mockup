@@ -13,8 +13,10 @@ $liteGreen: rgba(231, 246, 238, 1);
 $green: rgba(0, 168, 88, 1);
 $darkBlue: rgba(6, 44, 140, 1);
 $liteGoogleBlue: rgba(156, 191, 246, 1);
-$googleBlue:rgba(68,136,246,1);
+
 $monarchBlue: rgba(0, 55, 103, 1);
+//$googleBlue:rgba(68,136,246,1);
+$googleBlue: $monarchBlue;
 
 //MESSAGE COLORS
 $urgent: $red;
@@ -23,8 +25,8 @@ $disabled: $liteGray;
 $warning: $liteYellow;
 
 //SIZES
-$contentWidth: 80%;
-$navWrapperWidth: 1100px;
+$contentWidth: 1000px;
+$navWrapperWidth: 1000px;
 $moduleProgressBarWidth: 100px;
 $moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
@@ -375,22 +377,13 @@ li{
 	vertical-align: top;
 	width: $contentWidth;
 	min-width: 900px;
-	//border: 1px solid blue;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
 	padding: 10px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	//clear: both;
- 	//-webkit-column-count: 2;
-    //-moz-column-count: 2;
-    //column-count: 2;
-	//-webkit-column-gap: 20px;
-    //-moz-column-gap: 20px;
-    //column-gap: 20px;
     //border: 1px solid red;
-    overflow:auto;
-	
+	height: 2500px;
 	
 	ul{
 		list-style: none;
@@ -420,7 +413,7 @@ li{
 	
 	& .scheduleContentWrapper{
 		display: inline-block;
-		width: 30%;
+		width: 40%;
 		//border: 1px solid green;
 		height: 500px;
 		float: left;
@@ -428,7 +421,7 @@ li{
 	
 	& .courseContentWrapper{
 		display: inline-block;
-		width: 68%;
+		width: 58%;
 		padding-left: 2%;
 		//margin-left: -150px; //since this is a 2 column layout, the way to make it not be 50% on each column is to hack it
 		//by setting a width per column then having a negative margin
@@ -752,41 +745,28 @@ li{
 	z-index: 800;
 	background: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	border: 1px solid $googleBlue;
 
-	//&-titlebar {
-	//	
-	//}
+	&-titlebar {
+		background: $googleBlue;	
+	}
 
 	&-title{
 	    text-transform:capitalize;
 	    padding-left: 10px;
-	    color: $liteGray;
+	    
+	    color: white;
+	    text-weight: 600;
 	    //visibility: hidden;
 	    
 	}
 	
 	
 	&-titlebar-close{
-		position:relative;
-		background:none;
-		border:0;
 		float:right;
-		margin: 10px;
-		
-		&:after{
-			position: absolute;
-			font-family: FontAwesome;
-			font-size: 1.5em;
-			top:0;
-			right:2px;
-			content: "\f00d ";
-		}
-			
-		& .ui-button-text{
-			display:none;
-		}
-	}
+		margin: 5px;
 
+	}
 
 	&-content{
 		//border: 1px solid purple;
@@ -837,5 +817,52 @@ li{
 		padding-top: 20px;
 	
 	}
+}
+
+.upcomingAssignment{
+	border-bottom: 1px solid $googleBlue;
+	margin-bottom: 20px;
+	height: 50px;
+	overflow-y: hidden;
+		
+	& .readMore{
+		  position: absolute; 
+		  bottom: 0; 
+		  left: 0;
+		  text-align: center; 
+		  margin: 0; padding: 30px 0; 
+		  background-image: linear-gradient(to bottom, transparent, white);
+		
+		
+	}
+	
+	&DateWrapper{
+		border-radius: 5px;
+		width: 50px;
+		border: 1px solid $googleBlue;
+		text-align: center;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		
+		& h1{
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin: 0;
+			padding:0;
+		}
+		& h2{
+			font-size: .9rem;
+			margin:0;
+			padding:0;
+		}
+		
+		& h3{
+			font-size: .7rem;
+			margin:0;
+			padding:0;	
+		}
+	}
+	
 }
 
