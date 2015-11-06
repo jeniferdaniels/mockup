@@ -3,7 +3,9 @@
 $listCheckMark = '<i class="fa fa-check-circle success fa-lg fa-fw"></i>';
 $listCheckMarkHidden = '<i class="fa fa-check-circle success fa-lg fa-fw hidden"></i>';
 $iconAssignment = '<i class="fa fa-pencil-square-o fa-lg fa-fw"></i>';
-$iconAssignmentLarge = '<i class="fa fa-pencil-square-o fa-2x fa-fw"></i>';
+$iconAssignmentSmall = '<i class="fa fa-pencil-square-o fa-fw"></i>';
+
+$iconAssignmentLarge = '<i class="fa fa-file-text-o fa-2x fa-fw"></i>';
 $listAssignment = $iconAssignment; //until refactoring to set to icon assigment
 $iconAssignmentUrgent = '<i class="fa fa-file-text-o fa-lg fa-fw urgent"></i>';
 $iconAssignmentLargeUrgent = '<i class="fa fa-file-text-o fa-lg fa-2x urgent"></i>';
