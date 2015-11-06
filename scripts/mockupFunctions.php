@@ -81,35 +81,33 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 function writeTopHtml()
 {
 	$tabOver = 3;
-	
 	echo nt($tabOver), '<div class="topWrapper">';
-	echo nt($tabOver+1), '<header>';
-	echo nt($tabOver+2), '<nav id="nav">';
-	echo nt($tabOver+3), '<ul>';
-	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
-	echo nt($tabOver+5), '<ul>';
-	echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Course Glossary</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Course Progress</a></li>';
-	echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Help</a></li>';
-	echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
-	//echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
-	echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
-	echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
-	echo nt($tabOver+5), '</ul>';
-	echo nt($tabOver+4), '</li>';
-	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
-	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
-	echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
-	echo nt($tabOver+3), '</ul>';
-	
-	echo nt($tabOver+2), '</nav>';
-	echo nt($tabOver+2), '<div class="pleLogo"></div>';
-	echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
-	echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
-	echo nt($tabOver+1), '</header>';
+		echo nt($tabOver+1), '<header>';
+			echo nt($tabOver+2), '<nav id="nav">';
+				echo nt($tabOver+3), '<ul>';
+					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
+						echo nt($tabOver+5), '<ul>';
+							echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
+							echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
+							echo nt($tabOver+6), '<li><a href="#">Course Glossary</a></li>';
+							echo nt($tabOver+6), '<li><a href="#">Course Progress</a></li>';
+							echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
+							echo nt($tabOver+6), '<li><a href="#">Help</a></li>';
+							echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
+							//echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
+							echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
+							echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
+							echo nt($tabOver+5), '</ul>';
+						echo nt($tabOver+4), '</li>';
+					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
+					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
+					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
+					echo nt($tabOver+3), '</ul>';
+			echo nt($tabOver+2), '</nav>';
+			echo nt($tabOver+2), '<div class="pleLogo"></div>';
+			echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
+			echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
+		echo nt($tabOver+1), '</header>';
 	echo nt($tabOver), '</div><!--end topWrapper-->';
 	echo nt(0);
 }
@@ -232,20 +230,35 @@ function writeSuccessMessage($id, $string)
 }
 
 
-function writeDashWidgetTitle($title, $toggle)
+function writeDashWidgetTitle($title)
 {
 		echo '<h2>' . $title . '</h2>';
-		if ($toggle){
-			echo '<div class="expandCollapseAllWrapper">';
-			echo '<div id="calendarView" style="display:none"><a href="javascript:toggleDisplay(\'calendarView\', \'listView\'); expandAll();">Calendar View</a></div>';
-			echo '<div id="collapseAll"><a href="javascript:toggleDisplay(\'calendarView\', \'listView\'); collapseAll();">List View</a></div>';
-			echo '</div>';
-		}
 }
+
 function writeFooter()
 {
 	//echo '<iframe src="../aaq.php" width="100%"></iframe>';	
 	include "../aaq.php";
 }
+
+function writeCalendarModal(){
+	$tabOver = 2;
+	echo nt($tabOver), '<div id="eventContent" title="Event Details" style="display:hidden; z-index: 3000">';
+		echo nt($tabOver+1), '<div class="modalContentWrapper">';
+			echo nt($tabOver+2), '<div class="icon" id="eventIcon">' .  $GLOBALS['iconAssignmentLarge'] . '</div><h3 id="eventTitle"></h3>';
+			echo nt($tabOver+2), '<br>';
+			echo nt($tabOver+2), '<h5 id="assignmentDueHeader">Due - </h5>';
+			echo nt($tabOver+2), '<div class="eventDateTime" id="eventDateTime"></div>';
+			echo nt($tabOver+2), '<br>';
+			echo nt($tabOver+2), '<h5 id="assignmentDeliverableHeader">Deliverable - </h5>';
+			echo nt($tabOver+2), '<div class="assignmentDeliverables" id="assignmentDeliverables"></div>';
+			echo nt($tabOver+2), '<p id="eventDescription"></p>';
+		echo nt($tabOver+1), '</div><!-- modal content wrapper -->';
+	echo nt($tabOver), '</div><!-- event content -->';
+		
+}
+
+
+
 
 ?>
