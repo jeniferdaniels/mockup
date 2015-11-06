@@ -28,5 +28,6 @@
 	</li>
 	<li><a href="toysUnder5.php"><?php echo $GLOBALS['listAssignment'] ?>2.C Homework #3</a></li>
 	<li><a href="m2Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>2.4 Resources</a></li>
+	<li><a href="m2Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>2.5 Glossary</a></li>
 	<li><a href="m2Feedback.php"><?php echo $GLOBALS['listAssignment'] ?>2.D Module Feedback</a></li>
 </ul>

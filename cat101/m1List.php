@@ -27,5 +27,6 @@
 	</li>
 	<li><a href="m1AssignmentC.php"><?php echo $GLOBALS['listAssignment'] ?>1.C Quiz</a></li>
 	<li><a href="m1Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.4 Resources</a></li>
+	<li><a href="m1Resources.php"><?php echo $GLOBALS['listCheckMarkHidden'] ?>1.5 Glossary</a></li>
 	<li><a href="m1Feedback.php"><?php echo $GLOBALS['listAssignment'] ?>1.D Module Feedback</a></li>
 </ul>
