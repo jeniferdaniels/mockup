@@ -1,107 +1,182 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 
-<?php 
-	$isExpandedList = (isset($_GET['isExpanded'])? $_GET['isExpanded']: "0,1,0,0");
-	$isDoneList = (isset($_GET['isDone'])? $_GET['isDone']: "1,0,0,0");
-	$msg = (isset($_GET['msg'])? $_GET['msg']: "none");
-	
-	//if the querystring is corrupt, set them all closed
-	if ($isExpandedList != "")
-		$isExpandedListArray = explode(",", $isExpandedList);
-	else
-		$isExpandedListArray = array(0,0,0,0);
-		
-	if ($isDoneList != "")
-		$isDoneList = explode(",", $isDoneList);
-	else
-		$isDoneList = array(0,0,0,0);
-		
-		
-	$navPrevious = "";
-	$navNext = "";
-	$showModuleProgress = 0;
-	$boxes = array (
-		array(
-			"title" => "0. Overview and Course Logistics",
-			"boxId" => "overview",
-			"isCollapsed" => $isExpandedListArray[0],
-			"isComplete" => $isDoneList[0],
-			"dates" => "1/10/2015 - 1/15/2015", 
-			"content" => "m0List.php"),
-		array(
-			"title" => "1. Choosing a Kitten",
-			"boxId" => "factor",
-			"isCollapsed" => $isExpandedListArray[1],
-			"isComplete" => $isDoneList[1],
-			"dates" => "1/15/2015 - 1/23/2015",
-			"content" => "m1List.php"),
-		array(
-			"title" => "2. Caring for Your Kitten",
-			"boxId" => "care",
-			"isCollapsed" => $isExpandedListArray[2],
-			"isComplete" => $isDoneList[2],
-			"dates" => "1/23/2015 - 1/30/2015",
-			"content" => "m2List.php"),
-		array(
-			"title" => "3. Legal Requirements of Owning Kittens",
-			"boxId" => "legal",
-			"isCollapsed" => $isExpandedListArray[3],
-			"isComplete" => $isDoneList[3],
-			"dates" => "1/30/2015 - 2/7/2015",
-			"content" => "m3List.php"),
-		array(
-				"title" => "4. The Evolution of Risk in Information Systems Offsharing:  The Impact of Home Contry Risk, Firm, Learning, and Competitive Dynamics",
-				"boxId" => "long",
-				"isCollapsed" => 0,	//not editing the already exisitng links in the cat content that passes
-				"isComplete" => 0,  //these back as querystrings to add another value
-				"dates" => "12/30/2015 - 12/30/2015",
-				"content" => "m4List.php")
-		);
-?>
 
 <!doctype html>
 <html>
 	<head>
 		<?php writeCourseDashboardHead(""); ?>
-
+		<link href='../calendar/fullcalendar.css' rel='stylesheet' />
+		<style>
+			.fc-center h2{ font-size: 1.4em; }
+			.fc-time {display: none; }
+			.fc-title, .fc-day-number {font-size: .7rem;}
+			#eventContent{ z-index: 999; }
+		</style>
+		
+		
+		<script src='../calendar/lib/moment.min.js'></script>
+		<script src='../scripts/js/bootstrapmodal.min.js'></script>	
+		<script src='../calendar/lib/jquery.min.js'></script>		
+		<script src="../scripts/js/jquery-ui.min.js"></script>
+		<script src='../calendar/fullcalendar.min.js'></script>
+		
 		
 		<script>
-			
-			$(document).ready(function(){
-				recurringCalendar();
-				//overwrite the stupid thing.
-				document.getElementById("oduCal").style ="height: 355px";
+		$(document).ready(function(){
+			populateCourse("json/kitten.json");
+			populateSchedule("json/kitten.json");
+
+			var $el, $ps, $up, totalHeight;
+
+			$(".upcomingAssignment .button").click(function() {
+			      
+			  totalHeight = 0
+
+			  $el = $(this);
+			  $p  = $el.parent();
+			  $up = $p.parent();
+			  $ps = $up.find("p:not('.readMore')");
+			  
+			  // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+			  $ps.each(function() {
+			    totalHeight += $(this).outerHeight();
+			  });
+			        
+			  $up
+			    .css({
+			      // Set height to prevent instant jumpdown when max height is removed
+			      "height": $up.height(),
+			      "max-height": 9999
+			    })
+			    .animate({
+			      "height": totalHeight
+			    });
+			  
+			  // fade out read-more
+			  $p.fadeOut();
+			  
+			  // prevent jump-down
+			  return false;
+			    
 			});
+			
+
+			
+			});
+		
+		function populateCourse(url) {
+			$.ajax({	
+		        url: url
+		    }).done(function(obj) {
+		    	setDocumentTitle(obj);
+				setTop(obj);
+				setCourseContent(obj);
+
+			});
+		};
+
+		function populateSchedule(url) {
+			$.ajax({	
+		        url: url
+		    }).done(function(obj) {
+				$('#eventContent').hide();
+				$('#calendar').fullCalendar({
+				    events: getEventsAtAGlance(obj),
+				    height: 400,
+				    fixedWeekCount: false,
+				    defaultDate: '2015-01-18',
+				    header: {
+				        left: 'prev',
+				        center: 'title',
+				        right: 'next'
+				    },		    
+				    eventRender: function (event, element) {
+				        element.attr('href', 'javascript:void(0);');
+
+				        if(event.icon){
+				        	element.find(".fc-title").prepend("<i class='fa fa-" + event.icon + "'></a>");
+				        }
+
+				        
+				        element.click(function() {
+
+					        if (event.type == "assignment"){
+								$("#assignmentDeliverables").html(event.deliverable);
+						        $("#eventDateTime").html(moment(event.start).format('MMMM DD, YYYY h:mm A'));
+								//these will not show if a module was clicked on first, so need to turn these back on
+								$("#eventIcon").show();
+								$("#assignmentDueHeader").show();
+								$("#assignmentDeliverableHeader").show();
+						        $("#assignmentDeliverables").show();
+						        $("#assignmentCompletionStatus").show();
+					        }
+					        else{
+								$("#eventIcon").hide();
+								$("#assignmentDueHeader").hide();
+						        $("#eventDateTime").html(moment(event.start).format('MMMM DD') + ' - ' + moment(event.end).format('MMMM DD, YYYY'));
+								$("#assignmentDeliverableHeader").hide();
+						        $("#assignmentDeliverables").hide();
+						        $("#assignmentCompletionStatus").hide();
+					        }
+					        $("#eventTitle").html(event.type + " - " + event.title);
+				            $("#eventDescription").html(event.description);
+				            $("#eventContent").dialog({ modal: true, width:500});
+
+				        });
+				    }
+				});
+			});
+		};
 		</script>
+
 	</head>
 	
 	<body>
-		<?php writeTop($navNext, $navPrevious, $showModuleProgress, ""); ?>
+		<?php writeTop("", "", "", ""); ?>
 		
 		<div class="contentWrapper">		
-			<?php 
-				for ($i=0; $i<count($boxes); $i++)
-					writeSuccessMessage($i, "You have successfully completed module " . $i . "."); 
-			
-				if ($msg=="done1")
-					echo "<script>document.getElementById('successBox1').style.display='inline-block';</script>";
-			?>
 			
 		
 			<div class="scheduleContentWrapper">
-				<?php writeDashWidgetTitle("Schedule At a Glance", true); ?>
+				<?php writeDashWidgetTitle("Schedule At a Glance"); ?>
 				<div id='calendar'></div>
+				<a href="schedule.php">Full Schedule</a>
+		
+				<?php writeDashWidgetTitle("Upcoming Assignments")?>
+				
+				<div id="" class="upcomingAssignment">	
+					<div id="" class="upcomingAssignmentDateWrapper">
+						<h2>Jan</h2>
+						<h1>18</h1>
+						<h3>11:59pm</h3>				
+					</div>
+					
+					<h3>Assignment Title Here</h3>
+					<div id="" class="upcomingAssignmentDeliverable">Deliverable Here</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>										
+					<p class="readMore"><a href="#" class="button">Read More</a></p>
+				</div>
+					
+				
+	
+				<a href="assignments.php">Full Assignment List</a>
+		
+		
+		
+		
 			</div>
 			
 			<div class="courseContentWrapper">
-				<?php writeDashWidgetTitle("Course Content", false); ?>
-				<?php 
-					for ($i=0; $i<count($boxes); $i++)
-						writeToggleBox($boxes[$i]);
-				?>
+				<?php writeDashWidgetTitle("Course Content"); ?>
+				<div id="courseContent"></div>
 			</div>
 		
 		</div>
+		
+		
+		
+		<!-- modal -->
+		<?php writeCalendarModal() ?>
 	</body>
 </html>
