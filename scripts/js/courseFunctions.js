@@ -1,5 +1,5 @@
 //GLOBALS
-var gShowConsoleMsgs = true;
+var gShowConsoleMsgs = false;
 	
 //********************************************************************
 //Getters
@@ -117,7 +117,7 @@ function setDocumentTitle(obj){
 }
 
 function setTop(obj){
-	document.getElementById("courseTitle").innerHTML = getCourseTitle(obj);
+	document.getElementById("courseTitle").innerHTML = "<a href='index.php'>" + getCourseTitle(obj) + "</a>";
 	document.getElementById("courseInstructor").innerHTML += "<a href='faculty.php'>" + getInstructorObject(obj).name + "</a>";
 	
 }
@@ -236,6 +236,7 @@ function getEvents(obj)
 		//make the modules themselves events
 		cEvent.type = "module";
 		cEvent.title = modules[i].title;
+		cEvent.moduleNumber = i;
 		cEvent.start = modules[i].start;
 		cEvent.end = modules[i].end;
 		cEvent.color = moduleEventColor;
@@ -251,10 +252,9 @@ function getEvents(obj)
 		for (var j=0; j< assignmentsArray.length; j++){
 			cEvent = assignmentsArray[j];
 			cEvent.type = "assignment";
+			cEvent.icon = "file-text fa-lg"; //font awesome icon for assignment
 			cEvent.textColor = assignmentTextColor;
 			cEvent.color = assignmentEventColor;
-			
-			
 			events.push(cEvent);
 		}
 
@@ -278,6 +278,47 @@ function getEvents(obj)
 	return events;
 }
 
+function getEventsAtAGlance (obj)
+{
+	var events = getEvents(obj);
+	//now go through the events and change the titles, icons, etc
+	for (var i=0; i<events.length; i++){
+		theEvent = events[i];
+		if (theEvent.type == "module"){
+			theEvent.title = "Module " + theEvent.moduleNumber;
+		}
+		else{
+			theEvent.title = "";
+			theEvent.textColor = "rgba(0, 168, 88, 1);"
+			theEvent.color = "rgba(255,255,255,1)";
+		}
+			
+	}
 
+	return events;
 
+}
 
+function getUpcomingAssignments(obj)
+{
+	var events = getEvents(obj);
+	var assignments = [];
+	var theAssignment = {};
+	
+	for (var i=0; i<events.length; i++){
+		theEvent = events[i];
+		
+		if (!(theEvent.type == "module")){
+			theAssignment.dueDate = theEvent.start;
+			theAssignment.title = theEvent.title;
+			theAssignment.deliverable = theEvent.deliverable;
+			theAssignment.assignmentSubmit = theEvent.assignmentSubmit;
+			theAssignment.description = theEvent.description;
+			
+			assignments.push(theAssignment);
+		}
+	}
+
+	return assignments;
+
+}
