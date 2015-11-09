@@ -1,26 +1,26 @@
-<?php include_once '../scripts/mockupFunctions.php' ?>
-<?php include_once '../scripts/globalVariables.php' ?>
+<?php include_once 'scripts/mockupFunctions.php' ?>
+<?php include_once 'scripts/globalVariables.php' ?>
 
 
 <!doctype html>
 <html>
 	<head>
 		<?php writeCourseDashboardHead(""); ?>
-		<link href='../calendar/fullcalendar.css' rel='stylesheet' />
-		<link href='../css/courseDashboard.css' rel='stylesheet'/>
+		<link href='calendar/fullcalendar.css' rel='stylesheet' />
+		<link href='css/courseDashboard.css' rel='stylesheet'/>
 		
 		
-		<script src='../calendar/lib/moment.min.js'></script>
-		<script src='../scripts/js/bootstrapmodal.min.js'></script>	
-		<script src='../calendar/lib/jquery.min.js'></script>		
-		<script src="../scripts/js/jquery-ui.min.js"></script>
-		<script src='../calendar/fullcalendar.min.js'></script>
+		<script src='calendar/lib/moment.min.js'></script>
+		<script src='scripts/js/bootstrapmodal.min.js'></script>	
+		<script src='calendar/lib/jquery.min.js'></script>		
+		<script src="scripts/js/jquery-ui.min.js"></script>
+		<script src='calendar/fullcalendar.min.js'></script>
 		
 		
 		
 		<script>
 		$(document).ready(function(){
-			makeCourseDashboard("json/kitten.json");
+			makeCourseDashboard("cat101/json/kitten.json");
 			
 			});
 		
