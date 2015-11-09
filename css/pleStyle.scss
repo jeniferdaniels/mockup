@@ -1,50 +1,47 @@
-//COLORS
-//$xxLiteGray:
-$xLiteGray: rgba(250, 250, 250, 1);
-$liteGray: rgba(200, 200, 200, 1);
-$mediumGray: rgba(125, 125, 125, 1);
-$darkGray: rgba(20, 20, 20, 1);
-$googleGray: rgba(247,247,247, 1);
-$hotPink: rgba(255, 0, 128, 1);
-$red: rgba(231, 76, 60, 1);
-$xLiteYellow: rgba(254,239,179, 0.05);
-$liteYellow: rgba(254,239,179, 1);
-$liteGreen: rgba(231, 246, 238, 1);
-$green: rgba(0, 168, 88, 1);
-$darkBlue: rgba(6, 44, 140, 1);
-$liteGoogleBlue: rgba(156, 191, 246, 1);
+@import "colors";
+@import "fonts";
 
-$monarchBlue: rgba(0, 55, 103, 1);
-//$googleBlue:rgba(68,136,246,1);
-$googleBlue: $monarchBlue;
 
-//MESSAGE COLORS
-$urgent: $red;
-$success: $green;
-$disabled: $liteGray;
-$warning: $liteYellow;
 
 //SIZES
 $contentWidth: 1000px;
 $navWrapperWidth: 1000px;
-$moduleProgressBarWidth: 100px;
-$moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
 
 
-$font-stack: "Open Sans", Georgia;
-$font-color: $darkGray; 
-$link-color: $hotPink;
-$link-color-hover: $googleBlue;
-$link-color-visited: $link-color;
+//********************************************************************************************
+//1. UNIVERSAL
+//********************************************************************************************
+//none
 
 
 
-//10/8/2015
+
+
+//********************************************************************************************
+//2. DOCUMENT
+//********************************************************************************************
+//***10-8-2015***
 html{
 	font-size: 87%;
 }
 
-//10/8/2015
+
+
+
+
+//********************************************************************************************
+//3. META DATA
+//********************************************************************************************
+//none
+
+
+
+
+
+//********************************************************************************************
+//4. SECTIONING AND STRUCTURE
+//********************************************************************************************
+//***10-8-2015***
 body{
 	font-family: $font-stack;
 	color:	$font-color;
@@ -55,416 +52,11 @@ body{
 	background-color: $googleGray;
 }
 
-//10/8/2015
-h1{
-	font-size: 2.5rem;
-	font-weight: 500;
-	margin-bottom: 10px;
-}
-
-//10/8/2015
-h2{
-	font-size: 2rem;
-	font-weight: 500;
-	margin-bottom: 10px;
-	margin-top: 10px
-}
-//TODO, h3, h4, h5
-
-h3{
-	font-size: 1.4rem;
-	font-weight: 500;
-	margin-top: 20px;		
-}
-
-//10/8/2015
-p{
-	margin-bottom: 10px;
-}
-
-
-//?
-a{
-	color: $link-color;
-	text-decoration: none;
-	transition: all 0.25s ease;
-
-	&:hover, &:visited:hover{
-		color: $link-color-hover;
-		text-decoration: underline dotted;
-	}
-	
-	&:visited{
-		color: $link-color-visited;
-	}
-}
-
-//10/12/2015
-ul{
-	list-style-type:disc;
-}
-
-//10/12/2015
-li{
-	margin-left: 10px;	
-}
-
-//?
-.listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
-{
-	a{ 
-		color: $link-color;
-	}
-	 
-	a:hover, a:visited:hover{
-		color: $link-color-hover;
-	}		
-	
-	a:visited{
-		color: $link-color-visited;
-	}
-
-}
-
-
-//10/14/2015
-.breadCrumbWrapper{
-	display: block;
-	width: $contentWidth;
-	//border-bottom: 1px solid black;
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	//background-color: $xLiteGray;
-	//box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
-	
-}
-
-
-.breadCrumbs{
-	list-style: none;
-	padding-left: 10px;
-	
-	
-	&a{
-		text-decoration:underline;
-	}
-
-	&> li + li::before{
-		content:" > ";
-	}
-
-	&> li{
-		display: inline-block;
-		margin-left: 0px;
-	}
-}
-
-
-
-//?
-.expandCollapseAllWrapper{
-	text-align: right;
-	display:block;
-	width: 100%;
-	font-size: .8rem;
-}
-
-
-//10/8/2015
-.top{
-	position:fixed;
-	width:100%;
-	background-color: white;
-	top: 0;
-	left: 0;
-	height: 110px;
-	vertical-align: top;
-	//border: 1px solid black;
-	z-index: 900;
-	//border-bottom: 1px solid black;
-	border-top: 30px solid $googleBlue;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
-	
-	
-	h1{
-		display: inline-block;
-		margin-top: 25px;
-		a{
-			color: $darkGray;
-			&:hover{
-				color: $googleBlue;
-				text-decoration: underline;
-			}
-		}
-	}
-	
-	h2{
-		margin: 0;
-		padding: 0;
-		display: block;
-		font-size: 1rem;
-		color: $darkGray;
-		
-		a{
-			color: $darkGray;
-			&:hover{
-				color: $googleBlue;
-				text-decoration: underline;
-			}
-		}
-		
-	}
-	
-	&Wrapper{
-		width: $contentWidth;
-		//background-color: white;
-		//border-bottom: 5px solid $liteGoogleBlue;
-		padding: 0;
-		//margin-top: -30px;
-		//height: 110px;
-		//margin-left: auto;
-		//margin-right:auto;
-		margin: -30px auto 0 auto;
-		
-	}
-	
-}
+//header
 
 
 
 
-
-//10/12/2015
-.pleLogo{
-	background-image: url("../images/pleLogo.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size: 75px 75px;
-	padding: 3px;
-	height: 75px;
-	width: 75px;
-	display:inline-block;
-	float: left;
-	margin: 0 10px 0 10px;
-}
-
-.iconRating{
-	background-image: url("../images/starRating.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	height: 10px;
-	width: 10px;
-	padding: 2px; 
-	margin-top: 5px;
-	margin-left: 3px;
-	//border: 1px solid black;
-	background-size: 10px 10px;
-	display:block;
-	float: right;
-}
-
-
-
-
-
-//10/8/2015
-.toggleBox{
-	//width: $contentWidth - 100px;
-	width: 90%;
-	border: 1px solid $liteGray;
-	margin: 10px;
-	padding: 10px;
-	display: inline-block;
-	
-	&:hover{
-		//
-	}
-	&.collapsed{
-		min-height:30px;
-	}
-	&.expanded{
-		//height:500px;
-	}
-	&.complete {
-		background-color: $xLiteGray;
-		
-		&:hover{
-			background-color: white;
-		}
-	}
-	&.incomplete{
-		background-color: $xLiteGray 0.5;
-		margin-left: 30px;
-	
-		&:hover{
-			background-color: $xLiteYellow;
-		}
-	}
-	& a{
-		color: $darkGray;
-		
-		&.boxTitle{
-			font-size: 1.4rem;
-		}		
-	}
-	& date{
-		color: $mediumGray;
-		padding-left: 20px;
-		display: inline-block;
-		float: right;
-	}
-	
-}
-
-.boxWrapper{
-	padding-top: 10px;
-	vertical-align: top;
-	align:top;
-}
-
-.blockCheckMark{
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 10px;
-}
-
-.videoAndTranscriptWrapper{
-	margin: auto;
-	text-align: center;
-	
-}
-
-.transcript{
-	height: 450px;
-	overflow-y: scroll;
-	width: 394px;
-	text-align: left;
-	display: inline-block;
-	border: 1px solid $mediumGray;
-}
-
-
-
-//10/7/2015
-.moduleList{
-	list-style: none;
-	& a {
-		color:black;
-		
-		&:hover{
-			text-decoration:underline;
-			color: $googleBlue;
-		}
-	}
-	& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		& ul {
-			list-style: none;
-			padding-left: 20px;
-		}
-	}
-}
-
-
-
-
-//10/14/2015
-.contentWrapper{
-	margin-top: 160px;
-	margin-bottom: 10px;
-	vertical-align: top;
-	width: $contentWidth;
-	min-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: white;
-	padding: 10px;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    //border: 1px solid red;
-	height: 2500px;
-	
-	ul{
-		list-style: none;
-		
-		& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		}
-	}
-	
-	& .rateContent{
-		font-size: .7rem;
-		//border: 1px solid red;
-		float: right;
-		clear: both;
-	}
-	
-	& .provideFeedback{
-		font-size: .8rem;
-		float: right;
-		clear: both;
-		
-		& i{
-			color: black;
-		}
-	}
-	
-	& .scheduleContentWrapper{
-		display: inline-block;
-		width: 40%;
-		//border: 1px solid green;
-		height: 500px;
-		float: left;
-	}
-	
-	& .courseContentWrapper{
-		display: inline-block;
-		width: 58%;
-		padding-left: 2%;
-		//margin-left: -150px; //since this is a 2 column layout, the way to make it not be 50% on each column is to hack it
-		//by setting a width per column then having a negative margin
-		//border: 1px solid blue;
-		float: right;
-	}
-}
-
-
-//*****************************************************************************
-//Navigation
-//*****************************************************************************
-
-//Previous and Next Arrows
-.navWrapper{
-	width:99%;
-	height:100%;
-}	
-	
-//10/9/2015	
-.navPrevious, .navNext{
-    position:fixed;
-	vertical-align: middle;
-	top: 50%;
-	height: 100%;
-	& a{
-		color: $darkGray;
-		
-		&:hover {
-			color: $hotPink;
-		}
-	}
-}
-
-.navPrevious{
-    left: 5px;
-}
-
-.navNext{
-    right: 5px;
-}
-
-//top RHS
 #nav {
 	width:100%; 
     display:block;
@@ -530,54 +122,371 @@ li{
 
 
 
-//*****************************************************************************
-//Progress bar
-//*****************************************************************************
-#moduleProgressBar {
-    background: $liteGray none repeat scroll 0 0;
-    border-radius: 5px;
-    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
-    height: 10px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-	border: 0;
-	width:100px;
-}
-//?
-.moduleProgress{
-	padding: 0 20px 0 0;
-	//border: 1px solid green;
-	float: right;
-}
 
-//?
-.moduleProgressWrapper{
-	width: $moduleProgressBarWrapperWidth;
-	margin-right: 20px;
-	float: right;
-}
-
-//?
-.moduleProgressTitle{
-	font-size: .8rem;
-	text-align: center;
-	width: $moduleProgressBarWrapperWidth;
-}
-
-//*****************************************************************************
-//MessageBox
-//*****************************************************************************
-.messageBoxSuccess
-{
-	border: 1px solid $green;
-	background-color: $liteGreen;
-	color: $green;
-	width: 100%;
-	padding-left: 10px;
-	//margin-top: 20px;
+//***10-8-2015***
+p{
 	margin-bottom: 10px;
 }
+
+//main
+//article
+//aside
+//section
+//pre
+//blockquote
+//figure
+//figcaption
+//address
+//summary
+//details
+
+
+//********************************************************************************************
+//5. HEADINGS
+//********************************************************************************************
+
+
+//***10-8-2015***
+h1{
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+//***11-9-2015***
+h2{
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+//?
+h3{
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-top: 20px;		
+}
+
+//hgrroup
+//h4
+//h5
+//h6
+
+//********************************************************************************************
+//6. LISTS
+//********************************************************************************************
+//***10/12/2015***
+ul{
+	list-style-type:disc;
+}
+
+//***10/12/2015***
+li{
+	margin-left: 10px;	
+}
+
+//ol
+//dl
+//dt
+//dd
+//menu
+//menuitem
+
+
+//********************************************************************************************
+//7. MEDIA
+//********************************************************************************************
+//canvas
+//object
+//embed
+//img
+//audio
+//video
+//track
+//map
+//area
+//iframe
+
+
+//********************************************************************************************
+//8. FORMS
+//********************************************************************************************
+//form
+//fieldset
+//legend
+//label
+//input
+//button
+//select
+//optgroup
+//option
+//datalist
+//textarea
+//output
+
+
+
+
+//********************************************************************************************
+//9. TABLES
+//********************************************************************************************
+//table
+//caption
+//colgroup
+//col
+//thead
+//tfoot
+//tbody
+//tr
+//th
+//td
+
+
+//********************************************************************************************
+//10. PHRASING
+//********************************************************************************************
+//***?***
+a{	color: $link-color;
+	text-decoration: none;
+	transition: all 0.25s ease;
+
+	&:hover, &:visited:hover{
+		color: $link-color-hover;
+		text-decoration: underline dotted;
+	}
+	
+	&:visited{
+		color: $link-color-visited;
+	}
+}
+
+//strong
+//em
+//b
+//i
+//u
+//s
+//sup
+//sub
+//small
+//abbr
+//dfn
+//mark
+//del
+//ins
+//q
+//cite
+//data
+//progress
+//time
+//meter
+//code
+//var
+//samp
+//kbd
+//keygen
+//bdi
+//bdo
+//ruby
+//rt
+//rp
+//span
+
+//********************************************************************************************
+//11. MISC
+//********************************************************************************************
+//hr
+//br
+
+
+//********************************************************************************************
+//12. ATTRIBUTES
+//********************************************************************************************
+.boxWrapper{
+	padding-top: 10px;
+	vertical-align: top;
+	align:top;
+}
+
+.blockCheckMark{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+
+
+//***11-09-2015***
+.contentWrapper{
+	width: $contentWidth;
+	margin:0 auto;
+	background-color: $contentBackgroundColor;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	margin-top: 120px;
+}
+
+
+.expandCollapseAllWrapper{
+	text-align: right;
+	display:block;
+	width: 100%;
+	font-size: .8rem;
+}
+
+.listTopic, .listSubTopic, .breadCrumbs //topics and subtopic list are the same for now
+{
+	a{ 
+		color: $link-color;
+	}
+	 
+	a:hover, a:visited:hover{
+		color: $link-color-hover;
+	}		
+	
+	a:visited{
+		color: $link-color-visited;
+	}
+
+}
+
+//***10-7-2015***
+.moduleList{
+	list-style: none;
+	& a {
+		color:black;
+		
+		&:hover{
+			text-decoration:underline;
+			color: $googleBlue;
+		}
+	}
+	& li{
+		padding-top: 3px;
+		padding-left: 20px;
+		& ul {
+			list-style: none;
+			padding-left: 20px;
+		}
+	}
+}
+
+
+
+//***10-12-2015***
+.pleLogo{
+	background-image: url("../images/pleLogo.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	background-size: 75px 75px;
+	padding: 3px;
+	height: 75px;
+	width: 75px;
+	display:inline-block;
+	float: left;
+	margin: 0 10px 0 10px;
+}
+
+.oduOnlineLogo{
+	background-image: url("../images/oduOnlineLogo.svg");
+	background-color: white;
+	background-repeat: no-repeat;
+	background-size: 140px 75px;
+	padding: 3px;
+	height: 75px;
+	width: 140px;
+	display:inline-block;
+	float: left;
+	margin: 0 10px 0 10px;
+	//border: 1px solid red;
+}
+
+
+//***10-8-2015***
+.top{
+	position:fixed;
+	width:100%;
+	background-color: white;
+	top: 0;
+	left: 0;
+	height: 95px;
+	vertical-align: top;
+	//border: 1px solid black;
+	z-index: 900;
+	border-bottom: 10px solid $monarchBlue;
+	//border-top: 30px solid rgba(23,119,167, 1);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+	
+	
+	h1{
+		display: inline-block;
+		margin-top: 25px;
+		a{
+			color: $darkGray;
+			&:hover{
+				color: $googleBlue;
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	h2{
+		margin: 0;
+		padding: 0;
+		display: block;
+		font-size: 1rem;
+		color: $darkGray;
+		
+		a{
+			color: $darkGray;
+			&:hover{
+				color: $googleBlue;
+				text-decoration: underline;
+			}
+		}
+		
+	}
+	
+	&Wrapper{
+		width: $contentWidth;
+		//background-color: white;
+		//border-bottom: 5px solid $liteGoogleBlue;
+		padding: 0;
+		//margin-top: -30px;
+		//height: 110px;
+		//margin-left: auto;
+		//margin-right:auto;
+		margin: -30px auto 0 auto;
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //*****************************************************************************
 //One hit wonders
@@ -637,232 +546,10 @@ li{
 	float: left;
 }
 
-//*****************************************************************************
-//AAQ
-//*****************************************************************************
-.iconAaq{
-	background-image: url("../images/userAskingAQuestion.svg");
-	background-color: white;
-	background-repeat: no-repeat;
-	height: 25px;
-	width: 25px;
-	padding-top: 1px;
-	padding: 2px; 
-	border: 1px solid black;
-	background-size: 25px 25px;
-	//position: relative;
-	//top: 20px;
-	//left: 20px;
-	margin-top: 20px;
-	display:block;
-}
-
-//10/9/2015
-.aaq{
-	margin-top: 100px;
-	width: $contentWidth;
-	background-color: $xLiteGray;
-	//border: 1px solid red;
-
-	
-	&HeaderLinks{
-		list-style: none;
-	
-			& a{
-			text-decoration:underline;
-			}
-
-			&> li{
-			display: inline-block;			
-		}
-	}
-	
-	&Answer{
-		border-left: 2px solid black;
-		margin-left: 20px;
-		padding-left: 10px;
-		margin-top: 10px;
-	}
-	
-	&Post{
-		&Title{
-			font-weight: 600;
-		}
-	
-		&Properties{
-			list-style: none;
-			font-size: .8rem;
-			//line-height: 100%;
-				& a{
-					text-decoration:underline;
-				}
-
-				&> li{
-					display: inline-block;			
-				}
-		}
-
-		&Rating{
-			padding-left: 20px;
-			padding-right:20px;
-			width: 100px;
-		}
-
-		&Endorsed{
-			padding-left: 20px;
-			color: $hotPink;
-			width: 150px;	
-		}
-			
-		&CommentCount{
-			padding-left: 20px;
-			width:150px;		
-		}
-		
-		&er{  //ha ha Poster.
-			padding-left: 50px;				
-		}
-		
-		&DateTime{
-			padding-left:50px;
-			float: right;	
-		}
-
-	}
-	
-	&QuestionAndAnswerWrapper{
-		border:1px solid black;
-		padding: 10px;
-		margin-top: 10px;
-	}
-
-}
-
-//*****************************************************************************
-//Modal
-//*****************************************************************************
-.ui-dialog{
-	z-index: 800;
-	background: white;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	border: 1px solid $googleBlue;
-
-	&-titlebar {
-		background: $googleBlue;	
-	}
-
-	&-title{
-	    text-transform:capitalize;
-	    padding-left: 10px;
-	    
-	    color: white;
-	    text-weight: 600;
-	    //visibility: hidden;
-	    
-	}
-	
-	
-	&-titlebar-close{
-		float:right;
-		margin: 5px;
-
-	}
-
-	&-content{
-		//border: 1px solid purple;
-	}
-
-	&-buttonpane{
-		//border: 1px solid yellow;
-	}
-
-	&-buttonset{
-		//border: 1px solid black;
-	}	
-}
 
 
 
-.modalContentWrapper{
-	padding: 20px;
-	background: white;
-	
-	h3 {
-		display: inline-block;
-		text-transform:capitalize;	
-		margin-top: 0;
-	}
-	
-	& .icon {
-		display: inline-block;
-	}
-	
-	h5 {
-		display: inline-block;
-		font-weight: 600;
-		
-	}
-	
-	& .eventDateTime{
-		display: inline-block;
-		color: $mediumGray;
-	}
-	
-	& .assignmentDeliverables {
-		display: inline-block;
-		color: $mediumGray;
-	}
-	
-	p{
-		padding-top: 20px;
-	
-	}
-}
 
-.upcomingAssignment{
-	border-bottom: 1px solid $googleBlue;
-	margin-bottom: 20px;
-	height: 50px;
-	overflow-y: hidden;
-		
-	& .readMore{
-		  position: absolute; 
-		  bottom: 0; 
-		  left: 0;
-		  text-align: center; 
-		  margin: 0; padding: 30px 0; 
-		  background-image: linear-gradient(to bottom, transparent, white);
-		
-		
-	}
-	
-	&DateWrapper{
-		border-radius: 5px;
-		width: 50px;
-		border: 1px solid $googleBlue;
-		text-align: center;
-		float: left;
-		margin-right: 10px;
-		position: relative;
-		
-		& h1{
-			font-size: 1.5rem;
-			font-weight: 600;
-			margin: 0;
-			padding:0;
-		}
-		& h2{
-			font-size: .9rem;
-			margin:0;
-			padding:0;
-		}
-		
-		& h3{
-			font-size: .7rem;
-			margin:0;
-			padding:0;	
-		}
-	}
-	
-}
+
+
 
