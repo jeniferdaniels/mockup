@@ -1,0 +1,40 @@
+@import "colors";
+@import "fonts";
+
+//*****************************************************************************
+//Progress bar
+//*****************************************************************************
+$moduleProgressBarWidth: 100px;
+$moduleProgressBarWrapperWidth: $moduleProgressBarWidth + 10px;
+
+#moduleProgressBar {
+    background: $liteGray none repeat scroll 0 0;
+    border-radius: 5px;
+    //box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+	border: 0;
+	width:100px;
+}
+//?
+.moduleProgress{
+	padding: 0 20px 0 0;
+	//border: 1px solid green;
+	float: right;
+}
+
+//?
+.moduleProgressWrapper{
+	width: $moduleProgressBarWrapperWidth;
+	margin-right: 20px;
+	float: right;
+}
+
+//?
+.moduleProgressTitle{
+	font-size: .8rem;
+	text-align: center;
+	width: $moduleProgressBarWrapperWidth;
+}

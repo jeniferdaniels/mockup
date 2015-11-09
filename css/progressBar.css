@@ -1,0 +1,25 @@
+#moduleProgressBar {
+  background: #c8c8c8 none repeat scroll 0 0;
+  border-radius: 5px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: 0;
+  width: 100px; }
+
+.moduleProgress {
+  padding: 0 20px 0 0;
+  float: right; }
+
+.moduleProgressWrapper {
+  width: 110px;
+  margin-right: 20px;
+  float: right; }
+
+.moduleProgressTitle {
+  font-size: .8rem;
+  text-align: center;
+  width: 110px; }
+
+/*# sourceMappingURL=progressBar.css.map */

@@ -1,0 +1,13 @@
+//*****************************************************************************
+//MessageBox
+//*****************************************************************************
+.messageBoxSuccess
+{
+	border: 1px solid $green;
+	background-color: $liteGreen;
+	color: $green;
+	width: 100%;
+	padding-left: 10px;
+	//margin-top: 20px;
+	margin-bottom: 10px;
+}
