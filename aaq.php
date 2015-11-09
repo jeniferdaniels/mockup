@@ -1,7 +1,9 @@
-<div class="aaq">
+<?php
+
+/*<div class="aaq">
 	<!--
 	<div>
-		<div class="displayInlineBlock"><?php echo $GLOBALS["iconAaqLarge"]; ?></div>
+		<div class="displayInlineBlock"><?php //echo $GLOBALS["iconAaqLarge"]; ?></div>
 		<h2 class="displayInlineBlock">Questions</h2>
 		<nav>
 		<ul class="aaqHeaderLinks floatLeft">
@@ -16,8 +18,9 @@
 		</nav>
 		
 	</div>
-	-->
 	
+	<h2>Questions about the Material</h2>
+	-->
 	<div class="aaqQuestionAndAnswerWrapper">
 		<div class="aaqQuestion">
 			<span class="aaqPostTitle"><?php echo $GLOBALS["iconExpandedSmall"]; ?>Some question short title here</span>
@@ -87,4 +90,5 @@
 			</ul>
 		</div>
 	</div><!-- end aaqQuestionAndAnswerWrapper -->
-</div><!-- end aaqContentWrapper -->		
+</div><!-- end aaqContentWrapper -->
+*/ ?>		
