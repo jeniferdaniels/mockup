@@ -104,7 +104,7 @@ function writeTopHtml()
 					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
 					echo nt($tabOver+3), '</ul>';
 			echo nt($tabOver+2), '</nav>';
-			echo nt($tabOver+2), '<div class="pleLogo"></div>';
+			echo nt($tabOver+2), '<div class="oduOnlineLogo"></div>';
 			echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
 			echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
 		echo nt($tabOver+1), '</header>';
@@ -258,6 +258,17 @@ function writeCalendarModal(){
 		
 }
 
+function writeUpcomingAssignment($id) {
+	echo '<div id="assignment_' . $id . '" class="assignment">';
+	echo '<div id="date_' . $id . '" class="dateWrapper">';
+	echo '<h4>Jan</h4><h3>18</h3><h5>11:59pm</h5>';
+	echo '</div>';//end dateWrapper
+	echo '<h3>Assignment Title Here</h3>';
+	echo '<div id="" class="deliverable">Deliverable Here</div>';
+	echo '<p id="" class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>';
+	//echo '<p class="readmore" id="readMore_' . $id . '"></p>';
+	echo '</div>';
+}
 
 
 
