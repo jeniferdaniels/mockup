@@ -1,14 +1,14 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "m0AssignmentA.php";
-	$navNext = "m0Feedback.php";	
+	$navPrevious = "#";
+	$navNext = "#";	
 	$showModuleProgress = 1;
-	$pageTitle = "0.2 Resources";
+	$pageTitle = "#.# Resources";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=1,0,0,0", "displayTitle"=>"0. Overview and Course Logistics"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"#. Module Name Here"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 
@@ -16,6 +16,7 @@
 <html>
 	<head>
 		<?php writeHead($pageTitle); ?>
+		
 		<link rel="stylesheet" type="text/css" href="../css/resourceTableStyle.css">
 		<script type="text/javascript" src="../scripts/js/jquery-latest.js"></script> 
 		<script type="text/javascript" src="../scripts/js/jquery.tablesorter.js"></script> 
@@ -26,6 +27,7 @@
 				} 
 			); 
 		</script>
+		<script>$(document).ready(function(){$.ajax({url: "json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
 	</head>
 	
 	<body>
