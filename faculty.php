@@ -1,5 +1,5 @@
-<?php include_once '../scripts/mockupFunctions.php' ?>
-<?php include_once '../scripts/globalVariables.php' ?>
+<?php include_once 'scripts/mockupFunctions.php' ?>
+<?php include_once 'scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "";
 	$navNext = "";	
@@ -14,6 +14,7 @@
 <html>
 	<head>
 		<?php writeHead($pageTitle); ?>
+		<script>$(document).ready(function(){$.ajax({url: "cat101/json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
 	</head>
 	
 	<body>
@@ -24,7 +25,7 @@
 			<h2><?php echo $pageTitle ?></h2>
 			
 		
-			<div class="column50Percent"><img src="resources/professor.jpg" height="300px" width="450px"></div>
+			<div class="column50Percent"><img src="cat101/resources/professor.jpg" height="300px" width="450px"></div>
 			<div class="column50Percent">
 			   <h3 class="paragraphTitle">Some Title</h3>
 			   <b>Phone:</b>555-555-5555
