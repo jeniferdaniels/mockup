@@ -7,8 +7,8 @@
 	$pageTitle = "1.A Homework #1";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 
@@ -17,6 +17,8 @@
 	<head>
 		<?php writeHead($pageTitle); ?>
 		<script>$(document).ready(function(){$.ajax({url: "json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
+		
+	
 	</head>
 	
 	<body>
