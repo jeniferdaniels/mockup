@@ -15,7 +15,7 @@ function writeHead($pageTitle){
 	echo nt($tabOver), '<meta charset="utf-8" />';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
+	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';	
 	echo nt($tabOver), '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
 	//echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
 	//echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
@@ -54,10 +54,13 @@ function  writeNextNavArrow($url)
 
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
 	//writeNavArrows($navNext, $navPrevious);
-	echo "\r\n\t\t", '<div class="top">';
-		writeTopHtml();
-		writeBreadCrumbs($breadCrumbs);
-	echo "\r\n\t\t", '</div><!--end top-->';
+	$tabOver = 2;
+	echo nt($tabOver), '<div class="top">';
+		writeTopHtml();		
+	echo nt($tabOver), '</div><!--end top-->';
+	
+	writeBreadCrumbs($breadCrumbs);
+	
 }
 
 function writeTopHtml()
