@@ -117,8 +117,8 @@ function setDocumentTitle(obj){
 }
 
 function setTop(obj){
-	document.getElementById("courseTitle").innerHTML = "<a href='index.php'>" + getCourseTitle(obj) + "</a>";
-	document.getElementById("courseInstructor").innerHTML += "<a href='faculty.php'>" + getInstructorObject(obj).name + "</a>";
+	document.getElementById("courseTitle").innerHTML = "<a href='/mockups/index.php'>" + getCourseTitle(obj) + "</a>";
+	document.getElementById("courseInstructor").innerHTML += "<a href='/mockups/faculty.php'>" + getInstructorObject(obj).name + "</a>";
 	
 }
 
@@ -136,6 +136,7 @@ function setInstructorInformation(obj)
 
 function setCourseContent(obj){	
 	var html = "";
+	var classNumber = "CAT101";
 	
 	//put in display order
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
@@ -186,14 +187,14 @@ function setCourseContent(obj){
 			
 			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
-			html += "<li><a href='" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a>";
+			html += "<li><a href='" + classNumber + "/" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a>";
 			if (oneLevelDeepModuleItems[n].type == "topics"){
 				html += "<ul>";
 				//get the subtopics on display order
 				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
 					for (var p=0; p<subTopics.length; p++){
 						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
-						html += "<li><a href='" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
+						html += "<li><a href='" + classNumber + "/" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
 					}
 						
 				
