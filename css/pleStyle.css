@@ -97,12 +97,31 @@ a {
   vertical-align: top;
   margin-top: 10px; }
 
+.breadCrumbWrapper {
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 105px;
+  background: #f7f7f7; }
+
+.breadCrumbs {
+  list-style: none;
+  padding-left: 10px; }
+  .breadCrumbsa {
+    text-decoration: underline; }
+  .breadCrumbs > li + li::before {
+    content: " > "; }
+  .breadCrumbs > li {
+    display: inline-block;
+    margin-left: 0px; }
+
 .contentWrapper {
   width: 1000px;
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  margin-top: 120px; }
+  margin-top: 130px;
+  padding: 10px; }
 
 .expandCollapseAllWrapper {
   text-align: right;
@@ -153,7 +172,7 @@ a {
   width: 140px;
   display: inline-block;
   float: left;
-  margin: 0 10px 0 10px; }
+  margin: -30px 10px 0 0; }
 
 .top {
   position: fixed;
@@ -167,8 +186,7 @@ a {
   border-bottom: 10px solid #003767;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26); }
   .top h1 {
-    display: inline-block;
-    margin-top: 25px; }
+    display: inline-block; }
     .top h1 a {
       color: #141414; }
       .top h1 a:hover {
@@ -188,7 +206,7 @@ a {
   .topWrapper {
     width: 1000px;
     padding: 0;
-    margin: -30px auto 0 auto; }
+    margin: 0 auto 0 auto; }
 
 .urgent {
   color: #e74c3c; }
