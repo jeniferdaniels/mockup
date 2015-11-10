@@ -17,30 +17,12 @@ function writeHead($pageTitle){
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
 	echo nt($tabOver), '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
-	echo nt($tabOver), '<script src="../calendar/lib/moment.min.js"></script>';
-	echo nt($tabOver), '<script src="../calendar/lib/jquery.min.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
+	//echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
+	//echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
-	echo nt($tabOver), '<script src="../scripts/js/jquery-2.1.3.min.js"></script>';
-	echo nt($tabOver), '<script src="../scripts/js/courseFunctions.js"></script>';
-	echo nt(0);
-}
-
-function writeCourseDashboardHead($pageTitle){
-	$tabOver = 2;
-	
-	writeHead($pageTitle);
-	//calendar scripts
-	echo nt($tabOver), '<!--calendar scripts-->';
-	echo nt($tabOver), '<link href="../calendar/fullcalendar.css" rel="stylesheet">';
-	echo nt($tabOver), '<link href="../calendar/fullcalendar.print.css" rel="stylesheet" media="print">';
-	echo nt($tabOver), '<script src="../calendar/fullcalendar.min.js"></script>';
-	echo nt($tabOver), '<script type="text/javascript" src="../scripts/js/calendarDemo.js"></script>';
-	//echo nt($tabOver), '<script type="text/javascript" src="https://www.odu.edu/etc/designs/odu/clientlibs.js"></script>';
-	echo nt($tabOver), '<link rel="stylesheet" href="../css/calendarDemo.css" type="text/css">';
-	
+	echo nt($tabOver), '<script src="/mockups/scripts/js/jquery-2.1.3.min.js"></script>';
+	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
 	echo nt(0);
 }
 
@@ -71,7 +53,7 @@ function  writeNextNavArrow($url)
 }
 
 function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
-	writeNavArrows($navNext, $navPrevious);
+	//writeNavArrows($navNext, $navPrevious);
 	echo "\r\n\t\t", '<div class="top">';
 		writeTopHtml();
 		writeBreadCrumbs($breadCrumbs);
@@ -88,13 +70,13 @@ function writeTopHtml()
 					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
 						echo nt($tabOver+5), '<ul>';
 							echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
+							echo nt($tabOver+6), '<li><a href="assignments.php">Assignments</a></li>';
 							echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
 							echo nt($tabOver+6), '<li><a href="#">Course Glossary</a></li>';
 							echo nt($tabOver+6), '<li><a href="#">Course Progress</a></li>';
 							echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
 							echo nt($tabOver+6), '<li><a href="#">Help</a></li>';
 							echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
-							//echo nt($tabOver+6), '<li><a href="#">Notifications</a></li>';
 							echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
 							echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
 							echo nt($tabOver+5), '</ul>';
@@ -104,6 +86,7 @@ function writeTopHtml()
 					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
 					echo nt($tabOver+3), '</ul>';
 			echo nt($tabOver+2), '</nav>';
+			echo nt($tabOver+2), '<div style="clear:both"></div>';
 			echo nt($tabOver+2), '<div class="oduOnlineLogo"></div>';
 			echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
 			echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
