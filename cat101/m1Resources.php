@@ -16,6 +16,7 @@
 <html>
 	<head>
 		<?php writeHead($pageTitle); ?>
+		<script>$(document).ready(function(){$.ajax({url: "json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
 		<link rel="stylesheet" type="text/css" href="../css/resourceTableStyle.css">
 		<script type="text/javascript" src="../scripts/js/jquery-latest.js"></script> 
 		<script type="text/javascript" src="../scripts/js/jquery.tablesorter.js"></script> 

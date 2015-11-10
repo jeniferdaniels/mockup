@@ -17,6 +17,7 @@
 <html>
 	<head>
 		<?php writeHead($pageTitle); ?>
+		<script>$(document).ready(function(){$.ajax({url: "json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
 	</head>
 	
 	<body>
