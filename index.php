@@ -5,10 +5,9 @@
 <!doctype html>
 <html>
 	<head>
-		<?php writeCourseDashboardHead(""); ?>
+		<?php writeHead(""); ?>
 		<link href='calendar/fullcalendar.css' rel='stylesheet' />
 		<link href='css/courseDashboard.css' rel='stylesheet'/>
-		
 		
 		<script src='calendar/lib/moment.min.js'></script>
 		<script src='scripts/js/bootstrapmodal.min.js'></script>	
@@ -16,12 +15,9 @@
 		<script src="scripts/js/jquery-ui.min.js"></script>
 		<script src='calendar/fullcalendar.min.js'></script>
 		
-		
-		
 		<script>
 		$(document).ready(function(){
 			makeCourseDashboard("cat101/json/kitten.json");
-			
 			});
 		
 		function makeCourseDashboard(url) {
