@@ -1,92 +1,103 @@
 <?php
-
-$listCheckMark = '<i class="fa fa-check-circle success fa-lg fa-fw"></i>';
-$listCheckMarkHidden = '<i class="fa fa-check-circle success fa-lg fa-fw hidden"></i>';
-$iconAssignment = '<i class="fa fa-pencil-square-o fa-lg fa-fw"></i>';
-$iconAssignmentSmall = '<i class="fa fa-pencil-square-o fa-fw"></i>';
-
-$iconAssignmentLarge = '<i class="fa fa-file-text-o fa-2x fa-fw"></i>';
-$listAssignment = $iconAssignment; //until refactoring to set to icon assigment
-$iconAssignmentUrgent = '<i class="fa fa-file-text-o fa-lg fa-fw urgent"></i>';
-$iconAssignmentLargeUrgent = '<i class="fa fa-file-text-o fa-lg fa-2x urgent"></i>';
-$listAssignmentUrgent = $iconAssignment;
-
-$listCurrentSpotSmall = '<i class="fa fa-arrow-right fa-fw current"></i>';
-$listCurrentSpotMedium = '<i class="fa fa-arrow-right fa-lg fa-fw current"></i>';
-$listCurrentSpotLarge = '<i class="fa fa-arrow-right fa-2x fa-fw current"></i>';
-
-$assignmentCheckMarkUnchecked = '<i class="fa fa-check-circle disabled fa-fw fa-3x"></i>';
-$assignmentCheckMarkChecked = '<i class="fa fa-check-circle success fa-3x fa-fw"></i>';
-
-$iconFileTypePdfSmall = '<i class="fa fa-file-pdf-o fa-fw"></i>';
-$iconFileTypePdfMedium = '<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>';
-$iconFileTypeAudioSmall = '<i class="fa fa-file-sound-o fa-fw"></i>';
-$iconFileTypeAudioMedium = '<i class="fa fa-file-sound-o fa-lg fa-fw"></i>';
-$iconFileTypeVideoSmall = '<i class="fa fa-file-video-o fa-fw"></i>';
-$iconFileTypeVideoMedium = '<i class="fa fa-file-video-o fa-lg fa-fw"></i>';
-$iconFileTypeWordSmall = '<i class="fa fa-file-word-o fa-fw"></i>';
-$iconFileTypeWordMedium = '<i class="fa fa-file-word-o fa-lg fa-fw"></i>';
-$iconFileTypePowerpointSmall = '<i class="fa fa-file-powerpoint-o fa-fw"></i>';
-$iconFileTypePowerpointMedium = '<i class="fa fa-file-powerpoint-o fa-lg fa-fw"></i>';
-$iconFileTypeExcelSmall = '<i class="fa fa-file-excel-o fa-fw"></i>';
-$iconFileTypeExcelMedium = '<i class="fa fa-file-excel-o fa-lg fa-fw"></i>';
-$iconLinkSmall = '<i class="fa fa-link fa-fw"></i>';
-$iconLinkMedium = '<i class="fa fa-link fa-lg fa-fw"></i>';
-
-$iconNotificationSmall = '<i id="iconNotification" class="fa fa-bell-o fa-fw"></i>';
-$iconNotificationMedium = '<i id="iconNotification" class="fa fa-bell-o fa-lg fa-fw"></i>';
-$iconNotificationLarge = '<i id="iconNotification" class="fa fa-bell-o fa-2x fa-fw"></i>';
-$iconSearchSmall = '<i id="iconSearch" class="fa fa-search fa-fw"></i>';
-$iconSearchMedium = '<i id="iconSearch" class="fa fa-search fa-lg fa-fw"></i>';
-$iconSearchLarge = '<i id="iconSearch" class="fa fa-search fa-2x fa-fw"></i>';
-$iconChatSmall = '<i id="iconChat" class="fa fa-comments fa-fw"></i>';
-$iconChatMedium = '<i id="iconChat" class="fa fa-comments fa-lg fa-fw"></i>';
-$iconChatLarge = '<i id="iconChat" class="fa fa-comments fa-2x fa-fw"></i>';
-$iconUserSmall = '<i id="iconUser" class="fa fa-user fa-fw"></i>';
-$iconUserMedium = '<i id="iconUser" class="fa fa-user fa-lg fa-fw"></i>';
-$iconUserLarge = '<i id="iconUser" class="fa fa-user fa-2x fa-fw"></i>';
-$iconNotepadSmall = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-fw"></i>';
-$iconNotepadMedium = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-lg fa-fw"></i>';
-$iconNotepadLarge = '<i id="iconNotepad" class="fa fa-pencil-square-o fa-2x fa-fw"></i>';
-$iconPencilSmall = '<i id="iconNotepad" class="fa fa-pencil fa-fw"></i>';
-$iconPencilMedium = '<i id="iconNotepad" class="fa fa-pencil fa-lg fa-fw"></i>';
-$iconPencilLarge = '<i id="iconNotepad" class="fa fa-pencil fa-2x fa-fw"></i>';
+//***********************************************************************************************************************
+//Name:  	icon
+//Purpose:	writes an icon, by checking for the type (currently only 2 are supported) and builds the string associated
+//			with that icon
+//Input:	font type: "g" for Google Material Design icons, "fa" for Font Awesome icons
+//			icon use: various values (see code below) indicating what the icon stands for or its use
+//			size: the size of the icon, "small", "medium", "large", "extralarge" or "huge"
+//				  note abbreviations are acceptable "s", "m", "l", "xl", "h"
+//				  also note, Google "huge" icons are the same as the "extralarge"
+//			other style: other user defined styles that want to be added, example "urgent" will set the color red
+//Returns:	icon written to screen
+//***********************************************************************************************************************
 
 
-$iconAaqSmall = '<i class="fa fa-question-circle fa-fw"></i>';
-$iconAaqMedium = '<i class="fa fa-question-circle fa-lg fa-fw"></i>';
-$iconAaqLarge = '<i class="fa fa-question-circle fa-2x fa-fw"></i>';
-$iconAaqXLarge = '<i class="fa fa-question-circle fa-3x fa-fw"></i>';
+function icon ($fontType, $iconUse, $size, $otherStyle){
+	//do some error checking before we begin
+	$fontType = strtolower($fontType);
+	$iconUse = strtolower($iconUse);
+	$size = strtolower($size);
+	
+	$iconString = "";
+	
+	//currently this is only set to use google and font awesome typographic icons
+	if (($fontType != "g") AND ($fontType != "fa")){trigger_error("Font type '" . $fontType . "' passed to icon function not found.");}
 
-$iconPinSmall = '<i class="fa fa-thumb-tack fa-fw"></i>';
-$iconPinMedium = '<i class="fa fa-thumb-tack fa-lg fa-fw"></i>';
+	//google and font-awesome also have different ways to make sizes
+	$sizes = [
+			"s" 			=> ["g" => "md-s", "fa" => ""], 
+			"small" 		=> ["g" => "md-s", "fa" => ""],
+			"m" 			=> ["g" => "md-m", "fa" => "fa-lg"],
+			"medium" 		=> ["g" => "md-m", "fa" => "fa-lg"],
+			"l" 			=> ["g" => "md-l", "fa" => "fa-2x"],
+			"large" 		=> ["g" => "md-l", "fa" => "fa-2x"],
+			"extralarge" 	=> ["g" => "md-xl", "fa" => "fa-3x"],
+			"xlarge" 		=> ["g" => "md-xl", "fa" => "fa-3x"],
+			"xl" 			=> ["g" => "md-xl", "fa" => "fa-3x"],
+			"huge" 			=> ["g" => "md-h", "fa" => "fa-4x"],
+			"h" 			=> ["g" => "md-h", "fa" => "fa-4x"],
+	];	
+	
+	if (!array_key_exists($size, $sizes)){trigger_error("Size '" . $size . "' passed to icon function not found.");}
+	
+	
+   //google and font-awesome have different words for the icons, this is a map
+	$iconUses = [ 
+		"aaq" 				  => ["g" => "forum", 					"fa" => "question-circle"],
+		"assignment" 		  => ["g" => "assignment", 				"fa" => "file-text-o"],
+		"assignmentlate" 	  => ["g" => "assignment_late",			"fa" => "file-text-o"],
+		"assignmentsubmitted" => ["g" => "assignment_turned_in",	"fa" => "file-text-o"],
+		"audio" 			  => ["g" => "", 						"fa" => "sound"],
+		"bookmark" 			  => ["g" => "bookmark",				"fa" => ""],
+		"chat" 				  => ["g" => "chat_bubble", 			"fa" => "comments"],
+		"check" 			  => ["g" => "check",					"fa" => "check-circle"],
+		"collapsed" 		  => ["g" => "expand_more", 			"fa" => "angle-double-right"],
+		"current" 			  => ["g" => "arrow_forward", 			"fa" => "arrow-right"],
+		"edit" 				  => ["g" => "create", 					"fa" => "pencil"],
+		"error" 			  => ["g" => "error", 					"fa" => ""],
+		"excel" 			  => ["g" => "", 						"fa" => "excel-o"],
+		"expanded" 			  => ["g" => "expand_less", 			"fa" => "angle-double-down"],
+		"link" 				  => ["g" => "link", 					"fa" => "link"],
+		"notification" 	  	  => ["g" => "notifications", 			"fa" => "bell-o"],
+		"notificationactive"  => ["g" => "notifications_active",  	"fa" => "bell-o"],		
+		"notes" 			  => ["g" => "", 						"fa" => "pencil-square-o"],
+		"pin" 				  => ["g" => "", 						"fa" => "thumb-tack"],
+		"pdf" 				  => ["g" => "", 						"fa" => "pdf-o"],
+		"powerpoint" 		  => ["g" => "", 						"fa" => "powerpoint-o"],
+		"resume" 			  => ["g" => "", 						"fa" => "arrow-right"],
+		"settings" 			  => ["g" => "settings",				"fa" => ""],
+		"search" 			  => ["g" => "search", 					"fa" => "search"],
+		"starfilled" 		  => ["g" => "star", 					"fa" => "star"],
+		"starhalf" 			  => ["g" => "star_half", 				"fa" => "star-half-o"],
+		"staropen" 			  => ["g" => "star_border", 			"fa" => "star-o"],
+		"success" 			  => ["g" => "check", 					"fa" => "check-circle"],
+		"user" 				  => ["g" => "person", 					"fa" => "user"],
+		"video" 			  => ["g" => "theaters",				"fa" => "video-o"],
+		"warning"			  => ["g" => "warning",					"fa" => ""],
+		"word" 				  => ["g" => "", 						"fa" => "word-o"]
+	];																																		
+	
+	
+	if (!array_key_exists($iconUse, $iconUses)){trigger_error("Icon use '" . $iconUse . "' passed to icon function not found.");}
+	
+	
+	//google strings are formatted as follows:
+	//'<i class="material-icons md-18">chat</i>';
+	$dummyUse = $iconUses[$iconUse];
+	$dummySize = $sizes[$size];
+	if ($fontType == "g") { 
+		$iconString = '<i class="material-icons ' . $dummySize["g"] . ' ' . $otherStyle . '">' . $dummyUse["g"] . '</i>';
+	}
+	//font-awesome strings are formatted as follows:
+	//'<i class="fa fa-question-circle fa-3x fa-fw"></i>'
+	else if ($fontType == "fa"){
+		$iconString = '<i class="fa fa-fw fa-' . $dummyUse["fa"] . ' ' . $dummySize["fa"] . ' ' . $otherStyle .'"></i>'; 
+	}
 
-$iconExpandedSmall = '<i class="fa fa-angle-double-down fa-fw"></i>';
-$iconExpandedMedium = '<i class="fa fa-angle-double-down fa-lg fa-fw"></i>';
-$iconExpandedLarge = '<i class="fa fa-angle-double-down fa-2x fa-fw"></i>';
-$iconExpandedXLarge = '<i class="fa fa-angle-double-down fa-3x fa-fw"></i>';
+	return $iconString;
+	
+}
 
-$iconCollapsedSmall = '<i class="fa fa-angle-double-right fa-fw"></i>';
-$iconCollapsedMedium = '<i class="fa fa-angle-double-right fa-lg fa-fw"></i>';
-$iconCollapsedLarge = '<i class="fa fa-angle-double-right fa-2x fa-fw"></i>';
-$iconCollapsedXLarge = '<i class="fa fa-angle-double-right fa-3x fa-fw"></i>';
-
-$iconStarFilledSmall = '<i class="fa fa-star fa-fw"></i>';
-$iconStarFilledMedium = '<i class="fa fa-star fa-lg fa-fw"></i>';
-
-$iconStarHalfFilledSmall = '<i class="fa fa-star-half-o fa-fw"></i>';
-$iconStarHalfFilledMedium = '<i class="fa fa-star-half-o fa-lg fa-fw"></i>';
-
-$iconStarEmptySmall = '<i class="fa fa-star-o fa-fw"></i>';
-$iconStarEmptyMedium = '<i class="fa fa-star-o fa-lg fa-fw"></i>';
-
-$icon3AndAHalfOf5StarsSmall = $iconStarFilledSmall . $iconStarFilledSmall . $iconStarFilledSmall . $iconStarHalfFilledSmall . $iconStarEmptySmall;
-$icon3AndAHalfOf5StarsMedium = $iconStarFilledMedium . $iconStarFilledMedium . $iconStarFilledMedium . $iconStarHalfFilledMedium . $iconStarEmptyMedium;
-
-$rateableStars = '<span class="rating" title="Rate this content"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span></span>';
-
-$iconRating = '<div id="iconRating" class="iconRating"></div>';
-
-$aaqButton = '<div id="iconRating" class="topUpperButton iconAaq"></div>';
 
 ?>
