@@ -7,10 +7,10 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">
+		<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">		
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css"><?php //has to be last or google will override icons?>
 		<link href='calendar/fullcalendar.css' rel='stylesheet' />
 		<link href='css/courseDashboard.css' rel='stylesheet'/>
 		<link href='css/modal.css' rel='stylesheet'/>
@@ -28,6 +28,7 @@
 
 		$(document).ready(function(){
 			makeCourseDashboard("cat101/json/kitten.json");
+			displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
 			});
 		
 		function makeCourseDashboard(url) {
@@ -51,7 +52,7 @@
 				        element.attr('href', 'javascript:void(0);');
 
 				        if(event.icon){
-				        	element.find(".fc-title").prepend("<i class='fa fa-" + event.icon + "'></a>");
+				        	element.find(".fc-title").prepend("<i class='material-icons md-small'>" + event.icon + "</i></a>");
 				        }
 
 				        
@@ -111,7 +112,7 @@
 				<div id="courseContent"></div>
 			</div>
 
-			<div id="footer"></div>
+			<div id="footer" class="footer"></div>
 		</div>
 
 		<!-- modal -->
