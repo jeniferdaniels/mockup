@@ -15,11 +15,12 @@ function writeHead($pageTitle){
 	echo nt($tabOver), '<meta charset="utf-8" />';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
 	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';	
+
 	echo nt($tabOver), '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
+	echo nt($tabOver), '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
+	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
 	//echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
 	//echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/jquery-2.1.3.min.js"></script>';
 	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
@@ -85,8 +86,8 @@ function writeTopHtml()
 							echo nt($tabOver+5), '</ul>';
 						echo nt($tabOver+4), '</li>';
 					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
-					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-comments fa-lg fa-fw"></i></a></li>';
-					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-search fa-lg fa-fw"></i></a></li>';
+					echo nt($tabOver+4), '<li>' . writeChatButton() .'</li>';
+					echo nt($tabOver+4), '<li>'. writeSearchButton() . '</li>';
 					echo nt($tabOver+3), '</ul>';
 			echo nt($tabOver+2), '</nav>';
 			echo nt($tabOver+2), '<div style="clear:both"></div>';
@@ -146,7 +147,7 @@ function writeNotificationButton(){
 }
 
 function writeSearchButton(){
-	echo $GLOBALS["iconSearchLarge"];
+	echo $GLOBALS["iconSearchMedium"];
 	echo '<script>document.getElementById("iconSearch").className += " topUpperButton";</script>';
 }
 
