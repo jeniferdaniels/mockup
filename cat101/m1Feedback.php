@@ -2,13 +2,13 @@
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
 	$navPrevious = "m1Resources.php";
-	$navNext = "index.php?isExpanded=0,0,0,0&msg=done1&isDone=1,1,0,0";	
+	$navNext = "index.php";	
 	$showModuleProgress = 1;
 	$pageTitle = "1.D Module Feedback";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 

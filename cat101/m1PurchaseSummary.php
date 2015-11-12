@@ -7,9 +7,9 @@
 	$pageTitle = "1.3.4 Summary";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
-		array("url"=>"purchase.php", "displayTitle"=>"1.3 Purchasing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"m1Purchase.php", "displayTitle"=>"1.3 Purchasing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 

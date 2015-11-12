@@ -7,8 +7,8 @@
 	$pageTitle = "1.B Discussion Forum #1";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,0", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 

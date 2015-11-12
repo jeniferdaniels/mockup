@@ -8,8 +8,8 @@
 	$pageTitle = "1.3 Purchasing a Kitten";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
 

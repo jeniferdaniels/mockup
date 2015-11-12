@@ -7,8 +7,8 @@
 	$pageTitle = "1.2.2 Reasons to Rescue";
 	
 	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
+		array("url"=>"../index.php", "displayTitle"=>"Home"),
+		array("url"=>"../index.php?isExpanded=0,1,0,1", "displayTitle"=>"1. Choosing a Kitten"),
 		array("url"=>"rescue.php", "displayTitle"=>"1.2 Kitten Rescue"),
 		array("url"=>"", "displayTitle"=>$pageTitle));
 ?>
