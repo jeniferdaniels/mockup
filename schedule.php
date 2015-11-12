@@ -1,5 +1,5 @@
-<?php include_once '../scripts/mockupFunctions.php' ?>
-<?php include_once '../scripts/globalVariables.php' ?>
+<?php include_once 'scripts/mockupFunctions.php' ?>
+<?php include_once 'scripts/globalVariables.php' ?>
 <?php 
 
 	$pageTitle = "Schedule";
@@ -13,24 +13,24 @@
 	<head>
 		<?php writeHead($pageTitle); ?>
 					
-		<link href='../calendar/fullcalendar.css' rel='stylesheet' />
-		<link href='../calendar/fullcalendar.print.css' rel='stylesheet' media='print' />		
+		<link href='calendar/fullcalendar.css' rel='stylesheet' />
+		<link href='calendar/fullcalendar.print.css' rel='stylesheet' media='print' />		
 		<style>
 			.fc-center h2{ font-size: 1.4em; }
 			#eventContent{ z-index: 999; }
 		</style>
 
 
-		<script src='../calendar/lib/moment.min.js'></script>
-		<script src='../scripts/js/bootstrapmodal.min.js'></script>	
-		<script src='../calendar/lib/jquery.min.js'></script>		
-		<script src="../scripts/js/jquery-ui.min.js"></script>
-		<script src='../calendar/fullcalendar.min.js'></script>
+		<script src='calendar/lib/moment.min.js'></script>
+		<script src='scripts/js/bootstrapmodal.min.js'></script>	
+		<script src='calendar/lib/jquery.min.js'></script>		
+		<script src="scripts/js/jquery-ui.min.js"></script>
+		<script src='calendar/fullcalendar.min.js'></script>
 		
 
 		<script>
 		$(document).ready(function(){
-			populateSchedule("json/kitten.json");
+			populateSchedule("cat101/json/kitten.json");
 			});
 		
 		function populateSchedule(url) {
