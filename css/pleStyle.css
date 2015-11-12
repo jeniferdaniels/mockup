@@ -26,13 +26,10 @@ body {
       display: list-item;
       list-style: none;
       float: right;
-      background-color: #4488f6; }
-      #nav ul li i {
-        font-size: 25px;
-        width: 30px; }
+      color: #003767; }
       #nav ul li a {
         display: block;
-        color: #FFF;
+        color: #003767;
         text-decoration: none;
         text-align: center; }
         #nav ul li a:hover {
@@ -42,15 +39,19 @@ body {
     #nav ul ul {
       display: none;
       position: absolute;
-      top: 20px; }
+      top: 20px;
+      background: white;
+      border: 1px solid #fafafa;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
       #nav ul ul li {
-        width: 150px;
+        width: 125px;
         float: none;
         position: relative;
         border-bottom: none; }
         #nav ul ul li a {
-          padding-left: 10px;
-          text-align: left; }
+          padding-left: 5px;
+          text-align: left;
+          font-size: .8rem; }
 
 p {
   margin-bottom: 10px; }
