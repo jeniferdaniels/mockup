@@ -20,8 +20,7 @@
 
 	& #footer {
 		clear:both;
-		padding:5px 10px;
-		background:#cc9;
+		margin-bottom: 10px;
 		height: 1px;
 	}
 	
@@ -165,3 +164,7 @@ div.fc-toolbar div.fc-center h2,
 	background: $xLiteGray;
 }
 
+
+.fc-prev-button{
+	border: 1px solid red;
+}

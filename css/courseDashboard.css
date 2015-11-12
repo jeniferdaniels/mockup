@@ -8,8 +8,7 @@
   padding: 10px; }
 .dash #footer {
   clear: both;
-  padding: 5px 10px;
-  background: #cc9;
+  margin-bottom: 10px;
   height: 1px; }
 .dash ul {
   list-style: none; }
@@ -96,5 +95,8 @@ div.fc-toolbar div.fc-center h2,
 
 .fc-toolbar {
   background: #fafafa; }
+
+.fc-prev-button {
+  border: 1px solid red; }
 
 /*# sourceMappingURL=courseDashboard.css.map */
