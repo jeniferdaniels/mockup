@@ -98,7 +98,7 @@ function showSequenceNumber(runningCounts, itemType){
 //Sorts by field
 //*****************************************************************************************************
 var sort_by = function(field, reverse){
-	if (gShowConsoleMsgs) "Sorting....";
+	if (gShowConsoleMsgs) "Sorting";
 	
 	   var key = function(x) {return x[field]};
 	   reverse = !reverse ? 1 : -1;
@@ -132,11 +132,14 @@ function setInstructorInformation(obj)
 }
 
 
-
+function hiddenCheck(id){
+	return "<i id='check_" + id + "' class='material-icons md-18 hidden success'>check</i>"
+}
 
 function setCourseContent(obj){	
 	var html = "";
 	var classNumber = "CAT101";
+	
 	
 	//put in display order
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
@@ -188,14 +191,14 @@ function setCourseContent(obj){
 			
 			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
-			html += "<li><a href='" + classNumber + "/" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a>";
+			html += "<li><h4>" + hiddenCheck(oneLevelDeepModuleItems[n].id) + "<a href='" + classNumber + "/" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a></h4>";
 			if (oneLevelDeepModuleItems[n].type == "topics"){
 				html += "<ul>";
 				//get the subtopics on display order
 				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
 					for (var p=0; p<subTopics.length; p++){
 						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
-						html += "<li><a href='" + classNumber + "/" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
+						html += "<li>" + hiddenCheck(subTopics[p].id) + "<a href='" + classNumber + "/" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
 					}
 						
 				
@@ -254,7 +257,7 @@ function getEvents(obj)
 		for (var j=0; j< assignmentsArray.length; j++){
 			cEvent = assignmentsArray[j];
 			cEvent.type = "assignment";
-			cEvent.icon = "file-text fa-lg"; //font awesome icon for assignment
+			cEvent.icon = "assignment"; //font awesome icon for assignment
 			cEvent.textColor = assignmentTextColor;
 			cEvent.color = assignmentEventColor;
 			events.push(cEvent);
@@ -323,4 +326,24 @@ function getUpcomingAssignments(obj)
 
 	return assignments;
 
+}
+
+
+
+function displayChecksForCompletedAssignments(url){
+	$.ajax({	
+        url: url
+    }).done(function(obj) {
+    		var completedItems = obj.completed; //array of ids of completed items
+    		if (gShowConsoleMsgs) {	console.log(completedItems.length + " completed items found");}
+
+	    	for (var i=0; i<completedItems.length; i++){
+	    		eval("var checkmark = '#check_" + completedItems[i].id + "';");
+	    		console.log("checkmark id is" + checkmark);
+	    		$(checkmark).removeClass("hidden");
+	    		
+			}
+    	}
+	);
+	
 }
