@@ -8,7 +8,7 @@
 	<?php 
 	$iconUses = ["aaq","assignment","assignmentlate","assignmentSubmitted",	"audio","bookmark",
 				"chat",	"check", "collapsed", "current","edit",	"error", "excel", "expanded",
-				"link", "notification",	"notificationActive", "notes", "pin", "pdf", "powerPoint",
+				"link", "menu", "notification",	"notificationActive", "notes", "pin", "pdf", "powerPoint",
 				"resume", "settings", "search",	"starFilled", "starHalf", "starOpen", "success",
 				"user", "video", "warning",	"word",];
 	
