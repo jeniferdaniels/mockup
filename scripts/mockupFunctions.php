@@ -66,12 +66,19 @@ function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){
 
 function writeTopHtml()
 {
+	$menuIcon = icon("g", "menu", "l", "");
+	$userIcon = icon("g", "user", "l", "topUpperButton");
+	$chatIcon = icon("g", "chat", "l", "topUpperButton");
+	$searchIcon = icon("g", "search", "l", "topUpperButton");
+	
+	
+	
 	$tabOver = 3;
 	echo nt($tabOver), '<div class="topWrapper">';
 		echo nt($tabOver+1), '<header>';
 			echo nt($tabOver+2), '<nav id="nav">';
 				echo nt($tabOver+3), '<ul>';
-					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-bars fa-lg fa-fw"></i></a>';
+					echo nt($tabOver+4), '<li><a href="#">' .$menuIcon .'</a>';
 						echo nt($tabOver+5), '<ul>';
 							echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
 							echo nt($tabOver+6), '<li><a href="assignments.php">Assignments</a></li>';
@@ -85,9 +92,9 @@ function writeTopHtml()
 							echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
 							echo nt($tabOver+5), '</ul>';
 						echo nt($tabOver+4), '</li>';
-					echo nt($tabOver+4), '<li><a href="#"><i class="fa fa-user fa-lg fa-fw"></i></a></li>';	
-					echo nt($tabOver+4), '<li>' . writeChatButton() .'</li>';
-					echo nt($tabOver+4), '<li>'. writeSearchButton() . '</li>';
+					echo nt($tabOver+4), '<li><a href="#">' . $userIcon .'</a></li>';	
+					echo nt($tabOver+4), '<li><a href="#">' .$chatIcon .'</a></li>';
+					echo nt($tabOver+4), '<li><a href="#">'. $searchIcon . '</a></li>';
 					echo nt($tabOver+3), '</ul>';
 			echo nt($tabOver+2), '</nav>';
 			echo nt($tabOver+2), '<div style="clear:both"></div>';
@@ -128,43 +135,12 @@ function writeBreadCrumbs($breadCrumbs)
 	echo "\n";
 }
 
-//**********************************************************************
-//BUTTONS
-//**********************************************************************
-function writeChatButton(){
-	echo $GLOBALS["iconChatLarge"];
-	echo '<script>document.getElementById("iconChat").className += " topUpperButton";</script>';
-}
 
-function writeNotepadButton(){
-	echo $GLOBALS["iconNotepadLarge"];
-	echo '<script>document.getElementById("iconNotepad").className += " topUpperButton";</script>';
-}
 
-function writeNotificationButton(){
-	echo $GLOBALS["iconNotificationLarge"];
-	echo '<script>document.getElementById("iconNotification").className += " topUpperButton";</script>';
-}
-
-function writeSearchButton(){
-	echo $GLOBALS["iconSearchMedium"];
-	echo '<script>document.getElementById("iconSearch").className += " topUpperButton";</script>';
-}
-
-function writeUserButton(){
-	echo $GLOBALS["iconUserLarge"];
-	echo '<script>document.getElementById("iconUser").className += " topUpperButton";</script>';
-}
-
-function writeAaqButton()
-{
-	echo $GLOBALS["aaqButton"];
-}
-
-function writeRatingButton()
+function writeRatingIcon()
 {
 	echo '<div class="rateContent"><a href="#">Rate content';
-	echo $GLOBALS["iconRating"];
+
 	echo '</a></div>';
 }
 
@@ -232,7 +208,7 @@ function writeCalendarModal(){
 	$tabOver = 2;
 	echo nt($tabOver), '<div id="eventContent" title="Event Details" style="display:hidden; z-index: 3000">';
 		echo nt($tabOver+1), '<div class="modalContentWrapper">';
-			echo nt($tabOver+2), '<div class="icon" id="eventIcon">' .  $GLOBALS['iconAssignmentLarge'] . '</div><h3 id="eventTitle"></h3>';
+			echo nt($tabOver+2), '<div class="icon" id="eventIcon">' .  icon("g", "assignment", "h", "liteGray") . '</div><h3 id="eventTitle"></h3>';
 			echo nt($tabOver+2), '<br>';
 			echo nt($tabOver+2), '<h5 id="assignmentDueHeader">Due - </h5>';
 			echo nt($tabOver+2), '<div class="eventDateTime" id="eventDateTime"></div>';
