@@ -1,34 +1,64 @@
 <?php include_once '../scripts/mockupFunctions.php' ?>
 <?php include_once '../scripts/globalVariables.php' ?>
 <?php 
-	$navPrevious = "#";
-	$navNext = "#";
-	$showModuleProgress = 1;
-	$pageTitle = "#.#.# Some Page Name";
-	
-	$breadCrumbs = array(
-		array("url"=>"../index.php", "displayTitle"=>"Home"),
-		array("url"=>"../index.php", "displayTitle"=>"#. Some Module Name"),
-		array("url"=>"genericTopicPage.php", "displayTitle"=>"#.# Some Topic Name"),
-		array("url"=>"", "displayTitle"=>$pageTitle));
+
 ?>
 
 <!doctype html>
 <html>
 	<head>
 		<?php writeHead($pageTitle); ?>
-		<script>$(document).ready(function(){$.ajax({url: "json/kitten.json"}).done(function(obj) {setTop(obj);});});</script>
+		<script>
+			$(document).ready(function(){
+				$.ajax({
+					url: "json/kitten.json"
+				}).done(function(obj) {
+					setTop(obj);
+					document.title = getCourseTitle(obj);
+					flatCourse = flatten(obj);
+					
+					
+					subTopic = getObjectFromArray(flatCourse, "id", 3);					
+					parent = getObjectFromArray(flatCourse, "id", subTopic.parent);
+					grandParent = getObjectFromArray(flatCourse, "id", parent.parent);
+					previous = flatCourse[flatCourse.indexOf(subTopic)-1];
+					next = flatCourse[flatCourse.indexOf(subTopic)+1];
+					
+					$("#pageTitle").html(subTopic.title);
+					$("#content").html(subTopic.content);
+					$("#moduleCrumb").html("<a href=#>" + grandParent.displayNumber + ". " + grandParent.title + "</a>");
+					$("#topicCrumb").html("<a href=#>" + parent.displayNumber + "." + parent.title + "</a>");
+					$("#thisCrumb").html(subTopic.displayNumber + "." + subTopic.title); 
+					$("#prev").prop("href", previous.url);
+					$("#next").prop("href", next.url);
+					
+					});
+				});
+		</script>
 	</head>
 	
 	<body>
-		<?php writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs); ?>
+		<div class="top"><?php writeTopHtml(); ?></div>
+
+		<div class="breadCrumbWrapper">
+			<nav>
+				<ul class="breadCrumbs">
+					<li><a href="index.php">Home</a></li>
+					<li id="moduleCrumb"></li>
+					<li id="topicCrumb"></li>
+					<li id="thisCrumb"></li>
+				</ul>
+			</nav>
+		</div>
+
+		 
 	
 		<div class="contentWrapper" id="contentWrapper">
-			<h2><?php echo $pageTitle ?></h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>
-			<footer><?php writeFooter() ?></footer>
+			<h2 id="pageTitle"></h2>
+			<p id="content"></p>
+			<a id="prev" href="">Pre</a>
+			<a id="next" href="">Next</a>
 		</div>
+
 	</body>
 </html>

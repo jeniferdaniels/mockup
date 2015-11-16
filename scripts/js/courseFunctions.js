@@ -136,6 +136,8 @@ function hiddenCheck(id){
 	return "<i id='check_" + id + "' class='material-icons md-18 hidden success'>check</i>"
 }
 
+
+
 function setCourseContent(obj){	
 	var html = "";
 	var classNumber = "CAT101";
@@ -214,7 +216,102 @@ function setCourseContent(obj){
 }
 		
 		
+function flatten(obj){	
+	
+	//put in display order
+	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
+	var item = {};
+	var items = [];
+	
+	//LOOP THROUGH EACH MODULE IN DISPLAY ORDER
+	for (var i=0; i<modules.length; i++){
+		
+		var theModule = modules[i];
+		item = {};
+		
+		item.id = theModule.id;
+		item.parent = theModule.parent;
+		item.title = theModule.title;
+		item.displayNumber = i;
+		items.push(item);
+		item = {};
+		
+		moduleItems = theModule.items;
+		oneLevelDeepModuleItems = [];
 
+		//GET THE ITEMS IN THE MODULE, IF THEY HAVE ITEMS THEMSELVES, GET THOSE
+		//FLATTEN THIS ARRAY
+		for (var j=0; j<moduleItems.length; j++){
+			var runningCounts = [0,0]; //numbers, assignments
+
+			//this is where it gets tricky.  the topics and assignments can be intermingled and they are arrays themselves.
+			//so we need to fetch the object and put it in a flattened array for the purposes of this display
+			if ((moduleItems[j].type == "topics")|| moduleItems[j].type == "assignments")
+			{			
+				//dig into each item in the topics or assignments array and pop that item out into the flattened array
+				for (var k=0; k < moduleItems[j].items.length; k++){
+						var moduleItemsItem = moduleItems[j].items[k];
+						//add this part so we can get the numbering correct later
+						moduleItemsItem["type"] = moduleItems[j].type;  //why not add this to the json file in the first place? reduce redundancy in the file.
+						oneLevelDeepModuleItems.push(moduleItemsItem);
+					}
+			}
+			else {
+			//otherwise get the resources and glossary itms or whatver one level deep stuff
+				oneLevelDeepModuleItems.push(moduleItems[j]);
+			}
+		}
+		
+		//order them sequentially
+		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
+
+		//build module string to write to screen
+		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
+			runningCounts = updateRunningCount(runningCounts, oneLevelDeepModuleItems[n].type);
+			sequenceNumber = showSequenceNumber(runningCounts, oneLevelDeepModuleItems[n].type);
+			
+			item.id = oneLevelDeepModuleItems[n].id;
+			item.parent = oneLevelDeepModuleItems[n].parent;
+			item.type = oneLevelDeepModuleItems[n].type;
+			item.title = oneLevelDeepModuleItems[n].title;
+			item.displayNumber = i + "." + sequenceNumber;
+			item.content = "shfkjhasdk";
+			item.description = oneLevelDeepModuleItems[n].description;
+			item.deliverable = oneLevelDeepModuleItems[n].deliverable; //may be null
+			item.assigmentSubmit = oneLevelDeepModuleItems[n].assignmentSubmit; // may be null
+			items.push(item);
+			item = {};
+			
+			
+			if (oneLevelDeepModuleItems[n].type == "topics"){
+				var subtopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
+					for (var p=0; p<subtopics.length; p++){
+						item.id = subtopics[p].id;
+						item.parent = subtopics[p].parent;
+						item.type="subtopic";
+						item.title = subtopics[p].title;
+						item.displayNumber = i + "." + sequenceNumber;
+						item.content = "skjadfklj";		
+						
+						items.push(item);
+						item = {};
+					}
+			}
+		}
+	}
+	
+	//add this to make it easier to find for navigations
+	//yes, you can use the indexOf, but its a pain for
+	//the way this is written
+	//TODO: remove this
+	//for (var q=0; q<items; q++){
+	//	items[q]["position"] = q;
+	//}
+	
+	
+	return items;
+}
+	
 
 
 ////////////////////////////////////////////////////////
@@ -347,3 +444,4 @@ function displayChecksForCompletedAssignments(url){
 	);
 	
 }
+
