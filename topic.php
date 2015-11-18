@@ -7,7 +7,6 @@
 	<head>
 		<?php  includeCsss (); ?>
 		<?php  includeScripts (); ?>
-		
 		<script>
 			$(document).ready(function(){
 				$.ajax({
@@ -33,7 +32,11 @@
 					$("#moduleCrumb").html("<a href='index.php'>" + parent.displayNumber + ". " + parent.title + "</a>");
 					$("#thisCrumb").html(topic.displayNumber + " " + topic.title); 
 					$("#prev").prop("href", previous.url);
-					$("#next").prop("href", next.url);					
+					$("#next").prop("href", next.url);
+
+					$("#editLink").addClass("disabledEditingLink");
+					$("#editIconGroup").attr("title", "Editing disabled because this page is generated via scripts");					
+							
 					});
 				});
 		</script>
@@ -65,10 +68,10 @@
 				<div id="courseMaterial">
 					<h2 id="pageTitle"></h2>
 					<div id="content">In this topic you will learn the following:
-						<ul id="subtopicList" class="subtopicList"></ul>
+						<ul id="subtopicList" class="subtopicList" style="list-style: none;"></ul>
 					</div>
 				</div>
-				<div id="tools"><?php writeTools(false, false, true, false) ?></div>
+				<div id="toolBox"><?php writeTools(false, false, true, true) ?></div>
 				<div id="footer" class="footer"></div>
 			</div>
 	</body>
