@@ -21,21 +21,15 @@
   height: 1px; }
 
 #tools {
-  list-style-type: none; }
+  list-style-type: none;
+  line-height: 90%;
+  text-align: center; }
+  #tools :hover {
+    color: #ff0080; }
   #tools li {
     margin-bottom: 20px; }
     #tools li a {
-      color: #003767; }
-      #tools li a :hover {
-        color: #ff0080; }
-    #tools li dd {
-      font-size: .7rem;
-      line-height: 90%; }
-
-#subtopicList ul {
-  list-style: none; }
-  #subtopicList ul li {
-    padding-top: 3px;
-    padding-left: 20px; }
+      color: #003767;
+      font-size: .7rem; }
 
 /*# sourceMappingURL=courseMaterial.css.map */

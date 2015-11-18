@@ -32,32 +32,24 @@
 		height: 1px;
 	}
 
-#tools{
+	#tools{
 		list-style-type:none;
-
+		line-height: 90%;
+		text-align: center;	
+		
+		& :hover{
+			color: $hotPink;
+		}		
+				
 		& li{
 			margin-bottom: 20px;
 			
 			& a{
 				color: $monarchBlue;
-				& :hover{
-					color: $hotPink;
-				}		
-			}
-			& dd{			
-				font-size: .7rem;
-				line-height: 90%;
+				font-size: .7rem;			
 			}
 		}
 }
 
-#subtopicList{
-	ul{
-		list-style: none;
-		
-		& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		}
-	}
-}
+	
+
