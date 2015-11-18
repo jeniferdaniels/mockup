@@ -90,7 +90,7 @@
 	</head>
 	
 	<body>
-		<?php writeTop("", "", "", "") ?>
+		<div class="top"><?php writeTopHTML() ?></div>
 	
 		<div class="contentWrapper dash" id="dash">
 			<div id="leftHandSide">
