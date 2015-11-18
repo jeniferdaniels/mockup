@@ -1,4 +1,7 @@
 <?php
+
+$mockupDirectory = "/mockups/";
+
 //***********************************************************************************************************************
 //Name:  	icon
 //Purpose:	writes an icon, by checking for the type (currently only 2 are supported) and builds the string associated
@@ -37,6 +40,8 @@ function icon ($fontType, $iconUse, $size, $otherStyle){
 			"xl" 			=> ["g" => "md-xl", "fa" => "fa-3x"],
 			"huge" 			=> ["g" => "md-h", "fa" => "fa-4x"],
 			"h" 			=> ["g" => "md-h", "fa" => "fa-4x"],
+			"enormous"		=> ["g" => "md-e", "fa" => "fa-5x"],
+			"e"				=> ["g" => "md-e", "fa" => "fa-5x"] //TODO: write fa-6x style				
 	];	
 	
 	if (!array_key_exists($size, $sizes)){trigger_error("Size '" . $size . "' passed to icon function not found.");}
@@ -63,7 +68,7 @@ function icon ($fontType, $iconUse, $size, $otherStyle){
 		"glossary"			  => ["g" => "list", 					"fa" => "book"],
 		"link" 				  => ["g" => "link", 					"fa" => "link"],
 		"menu" 	  	 		  => ["g" => "menu", 					"fa" => "bars"],
- 		"next" 			  	  => ["g" => "navigate_next",			"fa" => "angle-left"],
+ 		"next" 			  	  => ["g" => "navigate_next",			"fa" => "angle-right"],
  		"notification" 	  	  => ["g" => "notifications", 			"fa" => "bell-o"],
 		"notificationactive"  => ["g" => "notifications_active",  	"fa" => "bell-o"],		
 		"notes" 			  => ["g" => "", 						"fa" => "sticky-note-o"],
@@ -71,7 +76,7 @@ function icon ($fontType, $iconUse, $size, $otherStyle){
 		"pdf" 				  => ["g" => "", 						"fa" => "file-pdf-o"],
 		"powerpoint" 		  => ["g" => "", 						"fa" => "powerpoint-o"],
 		"print" 			  => ["g" => "print", 					"fa" => "print"],
-		"previous" 			  => ["g" => "navigate_before", 		"fa" => "angle-right"],
+		"previous" 			  => ["g" => "navigate_before", 		"fa" => "angle-left"],
 		"resume" 			  => ["g" => "play_arrow",				"fa" => "arrow-right"],
 		"settings" 			  => ["g" => "settings",				"fa" => "cog"],
 		"search" 			  => ["g" => "search", 					"fa" => "search"],
