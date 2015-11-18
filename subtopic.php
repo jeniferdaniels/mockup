@@ -35,25 +35,28 @@
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
 
-					console.log("next" + next.title + " " + next.url + "id " + next.id);					
-					});
-				});
+					$("#editLink").click(function(){		
+							$("body").toggleClass("editingMode");			
+						}); //edit link										
+					});// done 
+				});//ready
 		</script>
 	</head>
 	
 	<body>
+	
 		<div class="navWrapper">
 			<div id="navPrevious" class="navPrevious"><a id="prev" href=""><?php echo(icon("fa", "previous", "e", "")); ?></a></div>
 			<div id="navNext" class="navNext"><a id="next" href=""><?php echo(icon("fa", "next", "e", "")); ?></a></div>
 		</div>
 	
 	
-		<div class="top"><?php writeTopHtml(); ?></div>
+		<div class="top" id="top"><?php writeTopHtml(); ?></div>
 		
 
-		<div class="breadCrumbWrapper">
+		<div class="breadCrumbWrapper" id="breadCrumbWrapper">
 			<nav>
-				<ul class="breadCrumbs">
+				<ul class="breadCrumbs" id="breadCrumbs">
 					<li><a href="index.php">Home</a></li>
 					<li id="moduleCrumb"></li>
 					<li id="topicCrumb"></li>
@@ -65,12 +68,14 @@
 
 
 			<div class="wrapper">
+				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
 				<div id="courseMaterial">
 					<h2 id="pageTitle"></h2>
 					<div id="content"></div>
 				</div>
-				<div id="tools"><?php writeTools(true, true, true, true) ?></div>
+				<div id="toolBox"><?php writeTools(true, true, true, true) ?></div>
 				<div id="footer" class="footer"></div>
 			</div>
 	</body>
+	
 </html>
