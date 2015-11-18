@@ -35,18 +35,7 @@
 			<p>What are some benefits to owning a kitten? Write a 300 word essay and submit it via Blackboard.</p>
 				
 				
-			<div class="assignmentDetailsCheckmarkWrapper">
-				<div id="uncheckedMark">
-					<a href="javascript:toggleDisplay('uncheckedMark', 'checkedMark');">
-						Mark assignment as complete. 
-						<?php echo $GLOBALS["assignmentCheckMarkUnchecked"] ?>
-					</a>
-				</div>
-				
-				<div id="checkedMark" style="display:none">
-					Complete!
-					<?php echo $GLOBALS["assignmentCheckMarkChecked"] ?>
-				</div>
+			<?php  echo icon("g", "check", "l", "")?>
 				
 			</div>	
 		</div>
