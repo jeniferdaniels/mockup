@@ -1,68 +1,29 @@
 <?php include_once 'globalVariables.php' ?>
 <?php
 
-//abbreviated for newline and tab;
-function nt($tabCount)
-{
-	$str = "\n";
-	for ($i=0; $i<$tabCount; $i++)
-		$str .= "\t";
-	return $str; 
-}
-
-function writeHead($pageTitle){
-	$tabOver = 2;
-	echo nt($tabOver), '<meta charset="utf-8" />';
-	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">';
-	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
-
-	echo nt($tabOver), '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">';
-	echo nt($tabOver), '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
-	echo nt($tabOver), '<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css">';
-	//echo nt($tabOver), '<script src="/mockups/scripts/js/url.js"></script>';
-	//echo nt($tabOver), '<script src="/mockups/scripts/js/toggleDisplay.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/kbNavigate.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/jquery-2.1.3.min.js"></script>';
-	echo nt($tabOver), '<script src="/mockups/scripts/js/courseFunctions.js"></script>';
-	echo nt(0);
-}
-
-function writeNavArrows($navNext, $navPrevious)
-{
-	echo '<div class="navWrapper">';
-		writePreviousNavArrow($navPrevious);
-		writeNextNavArrow($navNext);
-	echo '</div><!--end nav wrapper-->';
-	echo '<script>useArrowsForNavigation("' . $navPrevious . '", "' . $navNext . '")</script>';
+function includeCsss(){
+	echo '<meta charset="utf-8" />';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/reset.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
 	
+	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >';
+	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+	echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
+	
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/pleStyle.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/courseMaterial.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/navArrows.css">';
+}
+
+function includeScripts()
+{
+	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/jquery-2.1.3.min.js"></script>';
+	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/kbNavigate.js"></script>';
+	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/queryStringFunctions.js"></script>';
+	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/courseFunctions.js"></script>';
 	
 }
 
-function writePreviousNavArrow($url)
-{
-	if (!empty($url)){
-		echo '<div id="navPrevious" class="navPrevious"><a href="' . $url . '"><div class="fa fa-angle-left fa-5x"></div></a></div>';
-	}
-}
-
-function  writeNextNavArrow($url)
-{
-	if (!empty($url)){
-		echo '<div id="navNext" class="navNext"><a href="' . $url . '"><div class="fa fa-angle-right fa-5x"></div></a></div>';
-	}
-
-}
-
-function writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs){	
-	//writeNavArrows($navNext, $navPrevious);
-	$tabOver = 2;
-	echo nt($tabOver), '<div class="top">';
-		writeTopHtml();		
-	echo nt($tabOver), '</div><!--end top-->';
-	
-	writeBreadCrumbs($breadCrumbs);
-	
-}
 
 function writeTopHtml()
 {
@@ -71,39 +32,37 @@ function writeTopHtml()
 	$chatIcon = icon("g", "chat", "l", "topUpperButton");
 	$searchIcon = icon("g", "search", "l", "topUpperButton");
 	
+
 	
-	
-	$tabOver = 3;
-	echo nt($tabOver), '<div class="topWrapper">';
-		echo nt($tabOver+1), '<header>';
-			echo nt($tabOver+2), '<nav id="nav">';
-				echo nt($tabOver+3), '<ul>';
-					echo nt($tabOver+4), '<li><a href="#">' .$menuIcon .'</a>';
-						echo nt($tabOver+5), '<ul>';
-							echo nt($tabOver+6), '<li><a href="#">Announcements</a></li>';
-							echo nt($tabOver+6), '<li><a href="assignments.php">Assignments</a></li>';
-							echo nt($tabOver+6), '<li><a href="#">Ask A Question</a></li>';
-							echo nt($tabOver+6), '<li><a href="#">Course Glossary</a></li>';
-							echo nt($tabOver+6), '<li><a href="#">Course Progress</a></li>';
-							echo nt($tabOver+6), '<li><a href="faculty.php">Faculty</a></li>';
-							echo nt($tabOver+6), '<li><a href="#">Help</a></li>';
-							echo nt($tabOver+6), '<li><a href="#">Notes</a></li>';
-							echo nt($tabOver+6), '<li><a href="schedule.php">Schedule</a></li>';
-							echo nt($tabOver+6), '<li><a href="syllabus.php">Syllabus</a></li>';
-							echo nt($tabOver+5), '</ul>';
-						echo nt($tabOver+4), '</li>';
-					echo nt($tabOver+4), '<li><a href="#">' . $userIcon .'</a></li>';	
-					echo nt($tabOver+4), '<li><a href="#">' .$chatIcon .'</a></li>';
-					echo nt($tabOver+4), '<li><a href="#">'. $searchIcon . '</a></li>';
-					echo nt($tabOver+3), '</ul>';
-			echo nt($tabOver+2), '</nav>';
-			echo nt($tabOver+2), '<div style="clear:both"></div>';
-			echo nt($tabOver+2), '<div class="oduOnlineLogo"></div>';
-			echo nt($tabOver+2), '<h1 id="courseTitle"></h1>';
-			echo nt($tabOver+2), '<h2 id="courseInstructor">Instructor - </h2>';
-		echo nt($tabOver+1), '</header>';
-	echo nt($tabOver), '</div><!--end topWrapper-->';
-	echo nt(0);
+	echo '<div class="topWrapper">';
+		echo'<header>';
+			echo'<nav id="nav">';
+				echo '<ul>';
+					echo '<li><a href="#">' .$menuIcon .'</a>';
+						echo '<ul>';
+							echo '<li><a href="#">Announcements</a></li>';
+							echo '<li><a href="assignments.php">Assignments</a></li>';
+							echo '<li><a href="#">Ask A Question</a></li>';
+							echo '<li><a href="#">Course Glossary</a></li>';
+							echo '<li><a href="#">Course Progress</a></li>';
+							echo '<li><a href="faculty.php">Faculty</a></li>';
+							echo '<li><a href="#">Help</a></li>';
+							echo '<li><a href="#">Notes</a></li>';
+							echo '<li><a href="schedule.php">Schedule</a></li>';
+							echo '<li><a href="syllabus.php">Syllabus</a></li>';
+							echo '</ul>';
+						echo '</li>';
+					echo '<li><a href="#">' . $userIcon .'</a></li>';	
+					echo '<li><a href="#">' .$chatIcon .'</a></li>';
+					echo '<li><a href="#">'. $searchIcon . '</a></li>';
+					echo '</ul>';
+			echo '</nav>';
+			echo '<div style="clear:both"></div>';
+			echo '<div class="oduOnlineLogo"></div>';
+			echo '<h1 id="courseTitle"></h1>';
+			echo '<h2 id="courseInstructor">Instructor - </h2>';
+		echo '</header>';
+	echo '</div><!--end topWrapper-->';
 }
 
 
@@ -116,15 +75,13 @@ function writeModuleProgressBar(){
 
 function writeBreadCrumbs($breadCrumbs)
 {
-	echo "\r\n";
-	if (!empty($breadCrumbs))
-	{
-	echo "\r\n\t\t", '<div class="breadCrumbWrapper">';
+	
+	if (!empty($breadCrumbs)){
+	echo '<div class="breadCrumbWrapper">';
 		echo '<nav>';
 		echo '<ul class="breadCrumbs">';
 			//stop short of last item because it will be text instead of a link
-			for ($i = 0; $i < count($breadCrumbs)-1; $i++)
-			{
+			for ($i = 0; $i < count($breadCrumbs)-1; $i++){
 				echo '<li><a href="' . $breadCrumbs[$i]["url"] . '">' . $breadCrumbs[$i]["displayTitle"] . '</a>&nbsp;</li>';
 			}	
 			//not link
@@ -137,53 +94,12 @@ function writeBreadCrumbs($breadCrumbs)
 
 
 
-function writeRatingIcon()
-{
-	echo '<div class="rateContent"><a href="#">Rate content';
-
-	echo '</a></div>';
-}
-
 function writeProvideFeedbackWidget(){
 	echo '<div class="provideFeedback"><a href="#">Provide Feedback';
 	echo $GLOBALS["iconPencilSmall"];
 	echo '</a></div>';
 }
 
-
-function writeToggleBox($box){
-	$boxTitle = $box["title"];
-	$boxId = $box["boxId"];
-	$boxDates = $box["dates"];
-	$isCollapsed = $box["isCollapsed"];
-	$isComplete = $box["isComplete"];
-	$content = $box["content"];
-	//$dates = $box["dates"];
-
-	
-	if (!$isComplete)
-		$checkmark = '<div class="fa fa-check-circle fa-2x success blockCheckMark" style="visibility:hidden" id="' .$boxId . '_check"></div>';
-	else
-		$checkmark = '<div class="fa fa-check-circle fa-2x success blockCheckMark" id="' .$boxId . '_check"></div>';
-	
-	if ($isCollapsed){
-		$collapsedStyle = 'style="display:none"';
-		$expandedStyle = "";
-	}
-	else{
-		$collapsedStyle = "";
-		$expandedStyle = 'style="display:none"';
-	}
-	
-	
-	echo '<div class="boxWrapper">';
-	echo $checkmark;
-	echo '<div class="toggleBox collapsed" id="' .$boxId . '_collapsed"' . $collapsedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle">' . $GLOBALS["iconCollapsedMedium"] . ' ' .  $boxTitle . '</a><date>' .  $boxDates . '</date></div>';
-	echo '<div class="toggleBox expanded" id="' .$boxId . '_expanded"' . $expandedStyle . '><a href="javaScript:toggleBox(\'' . $boxId . '\');" class="boxTitle"><i class="fa fa-angle-double-down fa-lg"></i> ' . $boxTitle . '</a><date>' .  $boxDates . '</date>';
-	echo '<div>';
-		include $content;
-	echo '</div></div></div>';
-}
 
 function writeSuccessMessage($id, $string)
 {
@@ -205,19 +121,21 @@ function writeFooter()
 }
 
 function writeCalendarModal(){
-	$tabOver = 2;
-	echo nt($tabOver), '<div id="eventContent" title="Event Details" style="display:hidden; z-index: 3000">';
-		echo nt($tabOver+1), '<div class="modalContentWrapper">';
-			echo nt($tabOver+2), '<div class="icon" id="eventIcon">' .  icon("g", "assignment", "h", "liteGray") . '</div><h3 id="eventTitle"></h3>';
-			echo nt($tabOver+2), '<br>';
-			echo nt($tabOver+2), '<h5 id="assignmentDueHeader">Due - </h5>';
-			echo nt($tabOver+2), '<div class="eventDateTime" id="eventDateTime"></div>';
-			echo nt($tabOver+2), '<br>';
-			echo nt($tabOver+2), '<h5 id="assignmentDeliverableHeader">Deliverable - </h5>';
-			echo nt($tabOver+2), '<div class="assignmentDeliverables" id="assignmentDeliverables"></div>';
-			echo nt($tabOver+2), '<p id="eventDescription"></p>';
-		echo nt($tabOver+1), '</div><!-- modal content wrapper -->';
-	echo nt($tabOver), '</div><!-- event content -->';
+	
+	echo '<div id="eventContent" title="Event Details" style="display:hidden; z-index: 3000">';
+		echo '<div class="modalContentWrapper">';
+			echo '<div class="icon" id="eventIcon">' .  icon("g", "assignment", "h", "liteGray") . '</div><h3 id="eventTitle"></h3>';
+			
+			echo '<br>';
+			echo '<h5 id="assignmentDueHeader">Due - </h5>';
+			echo '<div class="eventDateTime" id="eventDateTime"></div>';
+			
+			echo '<br>';
+			echo '<h5 id="assignmentDeliverableHeader">Deliverable - </h5>';
+			echo '<div class="assignmentDeliverables" id="assignmentDeliverables"></div>';
+			echo '<p id="eventDescription"></p>';
+		echo '</div><!-- modal content wrapper -->';
+	echo '</div><!-- event content -->';
 		
 }
 
@@ -232,6 +150,26 @@ function writeUpcomingAssignment($id) {
 	//echo '<p class="readmore" id="readMore_' . $id . '"></p>';
 	echo '</div>';
 }
+
+function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
+	echo '<ul id="tools">';
+	
+	if ($showGlossary)
+		echo '<li><dt><a id="glossaryLink" title="glossary">' . icon("fa", "glossary", "l", "") . '<dd>Glossary</dd></dt></a></li>';	
+	if ($showAAQ)
+		echo '<li><dt><a id="aaqLink" title="Ask A Question">' . icon("g", "aaq", "l", "") . '<dd>Ask A Question</dd></dt></a></li>';
+	if ($showFeedback)
+		echo '<li><dt><a id="feedbackLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . '<dd>Give Feedback</dd></dt></a></li>';
+	
+	echo '<li><dt><a id="printLink" title="print">'. icon("g", "print", "l", "") . '<dd>Print</dd></dt></a></li>';
+	if ($showEdit)
+		echo '<li><dt><a id="editLink" title="edit">'. icon("g", "edit", "l", "") . '</a><dd>Edit</dd></dt></li>';
+	
+	
+	echo '</ul>';
+}
+
+
 
 
 
