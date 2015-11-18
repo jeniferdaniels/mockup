@@ -18,6 +18,7 @@
 				"moduleDisplayOrder": 0,
 				"start": "2015-01-10",
 				"end": "2015-01-15",
+				"url": "index.php",
 				"overview": "This module introduces students to using Blackboard, PLE and other course logistics.  We'll review the structure of the course websire and get set up for the semester.",
 				"objectiveDescription": "After completing this module, students will be able to:",
 				"objectives": 
@@ -43,7 +44,7 @@
 									"parent": 1209,
 									"id": 1210,
 									"innerModuleDisplayOrder": 1,
-									"url": "genericTopicPage.php",
+									"url": "topic.php?id=1210",
 									"subtopics":
 										[
 											{										
@@ -51,28 +52,32 @@
 												"parent": 1210,
 												"id": 1211,
 												"subtopicDisplayOrder": 1,
-												"url": "genericContentPage.php"
+												"url": "subtopic.php?id=1211",
+												"content": "genericContent.html"
 											},
 											{
 												"title": "Online Learning Orientation",
 												"parent": 1210,
 												"id": 1212,
 												"subtopicDisplayOrder": 2,
-												"url": "genericContentPage.php"
+												"url": "subtopic.php?id=1212",
+												"content": "genericContent.html"
 											},
 											{
 												"title": "Technical Support",
 												"parent": 1210,
 												"id": 1213,
 												"subtopicDisplayOrder": 3,
-												"url": "genericContentPage.php"
+												"url": "subtopic.php?id=1213",
+												"content": "genericContent.html"
 											},
 											{
 												"title": "Summary",
 												"parent": 1210,
 												"id": 1214,
 												"subtopicDisplayOrder": 4,
-												"url": "genericContentPage.php"
+												"url": "subtopic.php?id=1214",
+												"content": "genericContent.html"
 											}										
 										]								
 								}
@@ -89,9 +94,9 @@
 									"parent": 1209,
 									"id": 1215,
 									"innerModuleDisplayOrder": 2,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=1215",
 									"start": "2015-01-12T23:59:00",
-									"assignmentSubmit": "blackboard",
+									"submitVia": "email",
 									"deliverable": "Submitted email",	
 									"description": "Send a test email with your name, birthdate and credit card number to the following address: <a href='mailto:jdaniels@odu.edu'>jdaniels@odu.edu</a>"
 												
@@ -102,9 +107,9 @@
 									"parent": 1209,
 									"id": 1216,
 									"innerModuleDisplayOrder": 4,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=1216",
 									"start": "2015-01-14T23:59:00",
-									"assignmentSubmit": "none",
+									"submitVia": "none",
 									"deliverable": "Submitted feedback form",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}
@@ -116,7 +121,7 @@
 						"parent": 1209,
 						"id": 1217,
 						"innerModuleDisplayOrder": 3,
-						"url": "genericResourcesPage.php"
+						"url": "resources.php?id=1217"
 					}
 				
 				]
@@ -129,6 +134,7 @@
 				"moduleDisplayOrder": 1,
 				"start": "2015-01-15",
 				"end": "2015-01-23",
+				"url": "index.php",
 				"overview": "This module a student will learn how to acquire a kitten and what to consider when choosing a kitten.",
 				"objectiveDescription": "After completing this module, students will be able to:",
 				"objectives": 
@@ -155,36 +161,40 @@
 									"parent": 1,
 									"id": 2,
 									"innerModuleDisplayOrder": 1,
-									"url" : "m1Factors.php",
+									"url" : "topic.php?id=2",
 									"subtopics":
 										[
 											{
 												"title": "Overview",
-												"parent":2,
-												"id":3,
+												"parent": 2,
+												"id": 3,
 												"subtopicDisplayOrder":1,
-												"url" : "m1ConsiderOverview.php"									
+												"url" : "subtopic.php?id=3",
+												"content": "m1ConsiderOverview.html"									
 											},
 											{
 												"title": "Responsibility",
-												"parent":2,
+												"parent": 2,
 												"id": 4,
 												"subtopicDisplayOrder":2,
-												"url" : "m1Responsibility.php"									
+												"url" : "subtopic.php?id=4",
+												"content": "m1Responsibility.html"									
 											},
 											{
 												"title": "Cost",
-												"parent":2,
+												"parent": 2,
 												"id": 5,
 												"subtopicDisplayOrder":3,
-												"url" : "m1Cost.php"				
+												"url" : "subtopic.php?id=5",
+												"content": "m1Cost.html"				
 											},
 											{
 												"title": "Summary",
-												"parent":2,
+												"parent": 2,
 												"id": 6,
 												"subtopicDisplayOrder":4,
-												"url" : "m1ConsiderSummary.php"									
+												"url" : "subtopic.php?id=6",
+												"content": "m1ConsiderSummary.html"									
 											}
 										]
 								},
@@ -193,7 +203,7 @@
 									"parent": 1,
 									"id": 7,
 									"innerModuleDisplayOrder": 3,
-									"url": "m1Rescue.php",
+									"url": "topic.php?id=7",
 									"subtopics":
 										[
 											{
@@ -201,28 +211,32 @@
 												"parent":7,
 												"id":8,
 												"subtopicDisplayOrder":1,
-												"url": "m1RescueOverview.php"									
+												"url": "subtopic.php?id=8",
+												"content": "m1RescueOverview.html"									
 											},
 											{
 												"title": "Reasons to Rescue",
 												"parent":7,
 												"id": 9,
 												"subtopicDisplayOrder":2,
-												"url": "m1Reasons.php"						
+												"url": "subtopic.php?id=9",
+												"content": "m1Reasons.html"										
 											},
 											{
 												"title": "Hampton Roads Rescue Organizations",
 												"parent":7,
 												"id": 10,
 												"subtopicDisplayOrder":3,
-												"url": "m1Orgs.php"				
+												"url": "subtopic.php?id=10",
+												"content": "m1Orgs.html"								
 											},
 											{
 												"title": "Summary",
 												"parent":7,
 												"id": 33,
 												"subtopicDisplayOrder":4,
-												"url": "m1RescueSummary.php"								
+												"url": "subtopic.php?id=33",
+												"content": "m1RescueSummary.html"												
 											}
 										]
 								},
@@ -231,7 +245,7 @@
 									"parent": 1,
 									"id": 11,
 									"innerModuleDisplayOrder": 5,
-									"url": "m1Purchase.php",
+									"url": "topic.php?id=11",
 									"subtopics":
 										[
 											{
@@ -239,28 +253,32 @@
 												"parent":11,
 												"id":12,
 												"subtopicDisplayOrder":1,
-												"url": "m1PurchaseOverview.php"
+												"url": "subtopic.php?id=12",
+												"content": "m1PurchaseOverview.html"				
 											},
 											{
 												"title": "Reasons to Purchase A Kitten",
 												"parent":11,
 												"id": 13,
 												"subtopicDisplayOrder":2,
-												"url": "m1Buy.php"					
+												"url": "subtopic.php?id=13",
+												"content": "m1Buy.html"									
 											},
 											{
 												"title": "Where to Buy",
 												"parent":11,
 												"id": 14,
 												"subtopicDispayOrder":17,
-												"url": "m1WhereBuy.php"							
+												"url": "subtopic.php?id=14",
+												"content": "m1WhereBuy.html"											
 											},
 											{
 												"title": "Summary",
 												"parent":11,
 												"id": 15,
 												"subtopicDisplayOrder":18,
-												"url": "m1PurchaseSummary.php"								
+												"url": "subtopic.php?id=15",
+												"content": "m1PurchaseSummary.html"												
 											}
 										]
 								}
@@ -272,7 +290,7 @@
 							"id" : 1020,
 							"parent": 1,
 							"innerModuleDisplayOrder": 7,
-							"url": ""
+							"url": "resources.php?id=1020"
 						},
 						{
 							"type": "assignments",
@@ -286,9 +304,9 @@
 									"parent": 1,
 									"id":17,
 									"innerModuleDisplayOrder": 2,
-									"url": "m1AssignmentA.php",
+									"url": "assignment.php?id=17",
 									"start": "2015-01-16T23:59:00",	
-									"assignmentSubmit": "blackboard",
+									"submitVia": "blackboard",
 									"deliverable": "PDF essay",	
 									"description": "What are some benefits to owning a kitten?  Write a 500 word essay in the text editor of your choice, then convert it to PDF and upload it to the assignments section on Blackboard."
 								},
@@ -298,9 +316,9 @@
 									"parent": 1,
 									"id":18,
 									"innerModuleDisplayOrder": 4,
-									"url": "m1AssignmentB.php",
+									"url": "assignment.php?id=18",
 									"start": "2015-01-19T23:59:00",
-									"assignmentSubmit": "blackboard",
+									"submitVia": "blackboard",
 									"deliverable": "Submitted Discussion Forum Content",	
 									"description": "Go to the discussion forum on Blackboard, write a 100-300 word comment on the topic 'Getting a Kitten'.  Also, reply to 3 other students with 50-100 word comments."	
 								},
@@ -310,9 +328,9 @@
 									"parent": 1,
 									"id":19,
 									"innerModuleDisplayOrder": 6,
-									"url": "m1AssignmentC.php",
+									"url": "assignment.php?id=19",
 									"start": "2015-01-20T23:59:00",
-									"assignmentSubmit": "blackboard",
+									"submitVia": "blackboard",
 									"deliverable": "Submitted Quiz",	
 									"description": "Complete Quiz #1 on Blackboard.  <br><br>Using <a href='http://go.proctoru.com'>Proctor U</a> via Blackboard, you may use a 8.5 inch x 11 inch handwritten study sheet.  However, you may not use books, cell phones or other electronic gadgets."
 								},
@@ -322,9 +340,9 @@
 									"parent": 1,
 									"id":20,
 									"innerModuleDisplayOrder": 9,
-									"url": "m1AssignmentFeedback.php",
+									"url": "assignment.php?id=20",
 									"start": "2015-01-22T23:59:00",
-									"assignmentSubmit": "blackboard",
+									"submitVia": "blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -336,7 +354,7 @@
 							"id" : 1005,
 							"parent": 1,
 							"innerModuleDisplayOrder":8,
-							"url": ""
+							"url": "glossary.php?id=1005"
 						}
 					]
 			},
@@ -347,6 +365,7 @@
 				"moduleDisplayOrder": 2,
 				"start": "2015-01-23",
 				"end": "2015-01-29",
+				"url": "index.php",
 				"overview": "In this module students will learn how to properly care for a kitten and some stuff.",
 				"objectiveDescription": "After completing this module, students will be able to:",
 				"objectives": 
@@ -372,7 +391,7 @@
 									"parent": 21,
 									"id": 22,
 									"innerModuleDisplayOrder": 1,
-									"url": "genericTopicPage.php",
+									"url": "topic.php?id=22",
 									"subtopics":
 										[
 											{
@@ -380,28 +399,32 @@
 												"parent":22,
 												"id":60,
 												"subtopicDisplayOrder":5,
-												"url": "genericContentPage.php"								
+												"url": "subtopic.php?id=60",
+												"content": "genericContent.html"
 											},
 											{
 												"title": "Transporting our Kitten",
 												"parent":22,
 												"id":23,
 												"subtopicDisplayOrder":6,
-												"url": "genericContentPage.php"							
+												"url": "subtopic.php?id=23",
+												"content": "genericContent.html"							
 											},
 											{
 												"title": "Preparing the House",
 												"parent":22,
 												"id": 24,
 												"subtopicDisplayOrder":10,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=24",						
+												"content": "genericContent.html"
 											},
 											{
 												"title": "Summary",
 												"parent":22,
 												"id": 25,
-												"subtopicDisplayOrder":8,
-												"url": "genericContentPage.php"								
+												"subtopicDisplayOrder":18,
+												"url": "subtopic.php?id=25",
+												"content": "genericContent.html"									
 											}
 										]
 								},
@@ -410,7 +433,7 @@
 									"parent": 21,
 									"id": 26,
 									"innerModuleDisplayOrder": 3,
-									"url": "genericTopicPage.php",
+									"url": "topic.php?id=26",
 									"subtopics":
 										[
 											{
@@ -418,28 +441,32 @@
 												"parent":26,
 												"id":27,
 												"subtopicDisplayOrder":1,
-												"url": "genericContentPage.php"								
+												"url": "subtopic.php?id=27",
+												"content": "genericContent.html"								
 											},
 											{
 												"title": "Feeding Guidelines",
 												"parent":26,
 												"id": 28,
 												"subtopicDisplayOrder":2,
-												"url": "genericContentPage.php"									
+												"url": "subtopic.php?id=28",
+												"content": "genericContent.html"									
 											},
 											{
 												"title": "Grooming",
 												"parent":26,
 												"id": 29,
 												"subtopicDisplayOrder":3,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=29",
+												"content": "genericContent.html"						
 											},
 											{
 												"title": "Summary",
 												"parent":26,
 												"id": 30,
 												"subtopicDisplayOrder":4,
-												"url": "genericContentPage.php"							
+												"url": "subtopic.php?id=30",
+												"content": "genericContent.html"							
 											}
 										]
 								},
@@ -448,7 +475,7 @@
 									"parent": 21,
 									"id": 31,
 									"innerModuleDisplayOrder": 5,
-									"url": "genericTopicPage.php",
+									"url": "topic.php?id=31",
 									"subtopics":
 										[
 											{
@@ -456,35 +483,40 @@
 												"parent":31,
 												"id": 32,
 												"subtopicDisplayOrder":1,
-												"url": "genericContentPage.php"									
+												"url": "subtopic.php?id=32",
+												"content": "genericContent.html"									
 											},
 											{
 												"title": "Toys",
 												"parent":31,
-												"id": 33,
+												"id": 330,
 												"subtopicDisplayOrder":2,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=330",
+												"content": "genericContent.html"						
 											},
 											{
 												"title": "Cat Nip",
 												"parent":31,
 												"id": 34,
 												"subtopicDisplayOrder":8,
-												"url": "genericContentPage.php"					
+												"url": "subtopic.php?id=34",
+												"content": "genericContent.html"					
 											},
 											{
 												"title": "Other Pets",
 												"parent":31,
 												"id": 35,
 												"subtopicDisplayOrder":12,
-												"url": "genericContentPage.php"							
+												"url": "subtopic.php?id=35",
+												"content": "genericContent.html"							
 											},
 											{
 												"title": "Summary",
 												"parent":31,
 												"id": 36,
 												"subtopicDisplayOrder":22,
-												"url": "genericContentPage.php"									
+												"url": "subtopic.php?id=36",
+												"content": "genericContent.html"									
 											}
 										]
 								}
@@ -496,7 +528,7 @@
 							"id" : 2010,
 							"parent": 21,
 							"innerModuleDisplayOrder": 10,
-							"url": "genericResourcesPage.php"
+							"url": "resources.php?id=2010"
 						},
 						{
 							"type": "assignments",
@@ -508,11 +540,11 @@
 									"parent": 21,
 									"id":38,
 									"innerModuleDisplayOrder": 2,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=38",
 									"start": "2015-01-26T23:59:00",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""										
+									"submitVia": "blackboard",
+									"deliverable": "essay",	
+									"description": "Write a 500 word essay on stuff"										
 								},
 								{
 									"shortTitle": "",
@@ -520,11 +552,11 @@
 									"parent": 21,
 									"id":39,
 									"innerModuleDisplayOrder": 4,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=39",
 									"start": "2015-01-27T23:59:00",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"submitVia": "blackboard",
+									"deliverable": "essay",	
+									"description": "Write a 50000 word email"
 								},
 								{
 									"shortTitle": "",
@@ -532,11 +564,11 @@
 									"parent": 21,
 									"id":40,
 									"innerModuleDisplayOrder": 7,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=40",
 									"start": "2015-01-27T23:59:00",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"submitVia": "blackboard",
+									"deliverable": "discussion",	
+									"description": "Why is this your homework?"
 								},
 								{
 									"shortTitle": "",
@@ -544,9 +576,9 @@
 									"parent": 2,
 									"id":41,
 									"innerModuleDisplayOrder": 100,
-									"url": "genericAssignmentPage.php",
+									"url": "assignment.php?id=41",
 									"start": "2015-01-29T23:59:00",
-									"assignmentSubmit": "blackboard",
+									"submitVia": "blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -558,7 +590,7 @@
 							"id" : 1040,
 							"parent": 21,
 							"innerModuleDisplayOrder": 12,
-							"url": "genericGlossaryPage.php"
+							"url": "glossary.php?id=1040"
 						}
 					]
 			},
@@ -569,6 +601,7 @@
 				"moduleDisplayOrder": 3,
 				"start": "2015-01-30",
 				"end": "2015-02-08",
+				"url": "index.php",
 				"overview": "This module introduces students to the legal requirements and stuff",
 				"objectiveDescription": "After completing this module, students will be able to:",
 				"objectives": 
@@ -594,7 +627,7 @@
 									"parent" : 42,
 									"id": 43,
 									"innerModuleDisplayOrder": 1,
-									"url" : "genericTopicPage.php",
+									"url" : "topic.php?id=43",
 									"subtopics":
 										[
 									
@@ -603,28 +636,32 @@
 												"parent":43,
 												"id":44,
 												"subtopicDisplayOrder":1,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=44",
+												"content": "genericContent.html"						
 											},
 											{
 												"title": "Initial",
 												"parent":43,
 												"id": 45,
 												"subtopicDisplayOrder":2,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=45",
+												"content": "genericContent.html"						
 											},
 											{
 												"title": "Rabies",
 												"parent":43,
 												"id": 46,
 												"subtopicDisplayOrder":3,
-												"url": "genericContentPage.php"						
+												"url": "subtopic.php?id=46",
+												"content": "genericContent.html"						
 											},
 											{
 												"title": "Summary",
 												"parent":43,
 												"id": 47,
 												"subtopicDisplayOrder":4,
-												"url": "genericContentPage.php"							
+												"url": "subtopic.php?id=47",
+												"content": "genericContent.html"							
 											}
 									]
 									
@@ -634,7 +671,7 @@
 									"parent" : 42,
 									"id": 48,
 									"innerModuleDisplayOrder": 3,
-									"url": "genericTopicPage.php",
+									"url": "topic.php?id=48",
 									"subtopics":
 									[
 										{
@@ -642,35 +679,40 @@
 											"parent":48,
 											"id":49,
 											"subtopicDisplayOrder":50,
-											"url": "genericContentPage.php"								
+											"url": "subtopic.php?id=49",
+											"content": "genericContent.html"								
 										},
 										{
 											"title": "Licensing",
 											"parent":48,
 											"id": 50,
 											"subtopicDisplayOrder":51,
-											"url": "genericContentPage.php"											
+											"url": "subtopic.php?id=50",
+											"content": "genericContent.html"											
 										},
 										{
 											"title": "Leash Laws",
 											"parent":48,
 											"id": 51,
 											"subtopicDisplayOrder":52,
-											"url": "genericContentPage.php"										
+											"url": "subtopic.php?id=51",
+											"content": "genericContent.html"										
 										},
 										{
 											"title": "Maximum Occupancy",
 											"parent":48,
 											"id": 52,
 											"subtopicDisplayOrder":53,
-											"url": "genericContentPage.php"									
+											"url": "subtopic.php?id=52",
+											"content": "genericContent.html"									
 										},
 										{
 											"title": "Summary",
 											"parent":48,
 											"id": 53,
 											"subtopicDisplayOrder":54,
-											"url": "genericContentPage.php"											
+											"url": "subtopic.php?id=53"
+											,"content": "genericContent.html"											
 										}
 									]
 								}
@@ -682,7 +724,7 @@
 							"id": 5000,
 							"parent": 42,
 							"innerModuleDisplayOrder": 6,
-							"url" : "genericResourcesPage.php"
+							"url" : "resources.php?id=5000"
 						},
 						{
 							"type": "assignments",
@@ -693,46 +735,46 @@
 									"title" : "Homework #4",
 									"parent" : 42,
 									"id":55,
-									"subtopicDisplayOrder": 2,
+									"innerModuleDisplayOrder": 2,
 									"start": "2015-01-30T23:59:00",
-									"url": "genericAssignmentPage.php",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""														
+									"url": "assignment.php?id=55",
+									"submitVia": "email",
+									"deliverable": "photo",	
+									"description": "upload a cat photo"														
 								},
 								{
 									"shortTitle": "",
 									"title" : "Discussion Forum #3",
 									"parent" : 42,
 									"id":56,
-									"subtopicDisplayOrder": 4,
+									"innerModuleDisplayOrder": 4,
 									"start": "2015-02-02T23:59:00",
-									"url": "genericAssignmentPage.php",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"url": "assignment.php?id=56",
+									"submitVia": "blackboard",
+									"deliverable": "discussion forum",	
+									"description": "do some stuff"
 								},
 								{
 									"shortTitle": "",
 									"title" : "Final Exam",
 									"parent" : 42,
 									"id":57,
-									"subtopicDisplayOrder": 5,
+									"innerModuleDisplayOrder": 5,
 									"start": "2015-02-02T23:59:00",
-									"url": "genericAssignmentPage.php",
-									"assignmentSubmit": "blackboard",
-									"deliverable": "",	
-									"description": ""
+									"url": "assignment.php?id=57",
+									"submitVia": "blackboard",
+									"deliverable": "essay",	
+									"description": "100000 word essay on Grumpy Cat"
 								},
 								{
 									"shortTitle": "",
 									"title" : "Module Feedback",
 									"parent" : 42,
 									"id":58,
-									"subtopicDisplayOrder": 100,
+									"innerModuleDisplayOrder": 100,
 									"start": "2015-02-07T23:59:00",
-									"url": "genericAssignmentPage.php",
-									"assignmentSubmit": "blackboard",
+									"url": "assignment.php?id=58",
+									"submitVia": "blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -744,7 +786,7 @@
 							"id": 201,
 							"parent": 42,
 							"innerModuleDisplayOrder": 8,
-							"url": "genericGlossaryPage.php"				
+							"url": "glossary.php?id=201"				
 						}
 					]
 			}
