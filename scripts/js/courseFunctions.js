@@ -471,12 +471,26 @@ function displayChecksForCompletedAssignments(url){
 
 	    	for (var i=0; i<completedItems.length; i++){
 	    		eval("var checkmark = '#check_" + completedItems[i].id + "';");
-	    		console.log("checkmark id is" + checkmark);
 	    		$(checkmark).removeClass("hidden");
-	    		
 			}
     	}
 	);
+}
+
+function whatWouldThisDo(unfinishedItem){
+	var msg = "This functionality is incomplete.";
+	
+	switch(unfinishedItem){
+		case "chat": 
+			msg ="Dexter has written a chat client which would launch in a pop up window that the user could place anywhere."
+			break;
+		case "search":
+			break;
+	}
+		
+	window.alert(msg);
 	
 }
+
+
 
