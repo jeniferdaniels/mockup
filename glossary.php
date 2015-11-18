@@ -35,9 +35,11 @@
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);	
 
-					console.log("next" + next.title + " " + next.url + "id " + next.id);				
-					});
-				});
+					$("#editLink").click(function(){		
+						$("body").toggleClass("editingMode");			
+					}); //edit link										
+				});// done 
+			});//ready
 		</script>
 	</head>
 	
@@ -69,7 +71,7 @@
 					<div id="content"></div>			
 				</div>
 			
-				<div id="tools"><?php writeTools(false, false, true, true, false) ?></div>
+				<div id="toolBox"><?php writeTools(false, false, true, true, true) ?></div>
 				<div id="footer" class="footer"></div>
 		</div>
 	</body>
