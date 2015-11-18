@@ -7,7 +7,8 @@ body {
   line-height: 150%;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  height: 100%; }
 
 p {
   margin-bottom: 10px; }
@@ -55,10 +56,11 @@ a {
   margin-top: 10px; }
 
 .breadCrumbWrapper {
-  width: 100%;
+  width: 98%;
   display: block;
   position: fixed;
   top: 105px;
+  padding-top: 10px;
   background: #f7f7f7; }
 
 .breadCrumbs {
@@ -98,7 +100,7 @@ a {
   width: 100%;
   display: block; }
   #nav ul {
-    padding: 5px;
+    padding-right: 5px;
     margin: 0;
     list-style: none;
     position: relative;
@@ -124,19 +126,21 @@ a {
     #nav ul ul {
       display: none;
       position: absolute;
-      top: 20px;
+      top: 30px;
+      padding: 5px 5px 5px 0;
       background: white;
       border: 1px solid #fafafa;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
       #nav ul ul li {
-        width: 125px;
+        width: 110px;
         float: none;
         position: relative;
-        border-bottom: none; }
+        border-bottom: none;
+        padding-left: 0; }
         #nav ul ul li a {
-          padding-left: 5px;
+          padding-left: -1px;
           text-align: left;
-          font-size: .8rem; }
+          font-size: .9rem; }
 
 .oduOnlineLogo {
   background-image: url("../images/oduOnlineLogo.svg");
@@ -209,6 +213,35 @@ a {
 .md-e {
   font-size: 6rem; }
 
+#fakeEditor {
+  display: none; }
+
+.editingMode {
+  border: 10px solid red; }
+  .editingMode .top {
+    border-top: 10px solid red;
+    right: 10px;
+    left: 10px;
+    width: 99%; }
+  .editingMode .breadCrumbWrapper {
+    top: 113px; }
+  .editingMode #editIconGroup {
+    background: red;
+    padding: 3px; }
+  .editingMode #editLink {
+    color: white; }
+  .editingMode #chatLink, .editingMode #feedbackLink, .editingMode #askAQuestionLink, .editingMode #printLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink {
+    color: #c8c8c8;
+    cursor: not-allowed;
+    pointer-events: none; }
+  .editingMode #fakeEditor {
+    display: inline-block; }
+
+.disabledEditingLink {
+  color: #c8c8c8 !important;
+  cursor: not-allowed;
+  pointer-events: none; }
+
 .urgent {
   color: #e74c3c; }
 
@@ -216,7 +249,8 @@ a {
   color: #00a858; }
 
 .disabled {
-  color: #c8c8c8; }
+  color: #c8c8c8 !important;
+  cursor: "not-allowed" !important; }
 
 .liteGray {
   color: #c8c8c8; }
