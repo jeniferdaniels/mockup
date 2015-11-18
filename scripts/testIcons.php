@@ -6,13 +6,13 @@
 	
 	<body>
 	<?php 
-	$iconUses = ["aaq","assignment","assignmentlate","assignmentSubmitted",	"audio","bookmark",
+	$iconUses = ["aaq","assignment","assignmentlate","assignmentSubmitted",	"audio","bookmark","bookmarkopen",
 				"chat",	"check", "collapsed", "current","edit",	"error", "excel", "expanded",
-				"link", "menu", "notification",	"notificationActive", "notes", "pin", "pdf", "powerPoint",
-				"resume", "settings", "search",	"starFilled", "starHalf", "starOpen", "success",
+				"link", "menu", "next", "notification",	"notificationActive", "notes", "pin", "pdf", "powerPoint",
+				"print", "previous", "resume", "settings", "search", "starFilled", "starHalf", "starOpen", "success",
 				"user", "video", "warning",	"word",];
 	
-	$sizes = ["small", "medium", "large", "extraLarge", "huge"];
+	$sizes = ["small", "medium", "large", "extraLarge", "huge", "enormous"];
 	
 	echo "<table><tr><td width='300'>Size</td><td width='300'> Google</td><td width='300'> Font Awesome</td></tr>";
 	
