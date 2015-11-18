@@ -8,7 +8,7 @@ function includeCsss(){
 	
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >';
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
-	echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
+	//echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
 	
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/pleStyle.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/courseMaterial.css">';
@@ -40,25 +40,30 @@ function writeTopHtml()
 				echo '<ul>';
 					echo '<li><a href="#">' .$menuIcon .'</a>';
 						echo '<ul>';
-							echo '<li><a href="#">Announcements</a></li>';
-							echo '<li><a href="assignments.php">Assignments</a></li>';
-							echo '<li><a href="#">Ask A Question</a></li>';
-							echo '<li><a href="#">Course Glossary</a></li>';
-							echo '<li><a href="#">Course Progress</a></li>';
-							echo '<li><a href="faculty.php">Faculty</a></li>';
-							echo '<li><a href="#">Help</a></li>';
-							echo '<li><a href="#">Notes</a></li>';
-							echo '<li><a href="schedule.php">Schedule</a></li>';
-							echo '<li><a href="syllabus.php">Syllabus</a></li>';
+							echo '<li><a href="#" id="announcementsLink">Announcements</a></li>';
+							echo '<li><a href="assignments.php" id="assignmentsLink">Assignments</a></li>';
+							echo '<li><a href="#" id="aaqLink">Ask A Question</a></li>';
+							echo '<li><a href="#" id="glossaryLink">Course Glossary</a></li>';
+							echo '<li><a href="#" id="courseProgressLink">Course Progress</a></li>';
+							echo '<li><a href="faculty.php" id="facultyLink">Faculty</a></li>';
+							echo '<li><a href="#" id="helpLink">Help</a></li>';
+							echo '<li><a href="notes.php" id="notesLink">Notes</a></li>';
+							echo '<li><a href="schedule.php" id="scheduleLink">Schedule</a></li>';
+							echo '<li><a href="syllabus.php" id="syllabusLink">Syllabus</a></li>';
 							echo '</ul>';
-						echo '</li>';
-					echo '<li><a href="#">' . $userIcon .'</a></li>';	
-					echo '<li><a href="#">' .$chatIcon .'</a></li>';
-					echo '<li><a href="#">'. $searchIcon . '</a></li>';
+					echo '</li>';
+					echo '<li><a href="#" id="userLink">' . $userIcon .'</a>';
+						echo '<ul>';
+							echo '<li><a href="#" id="profileLink">Profile</a></li>';
+							echo '<li><a href="#" id="preferencesLink">Preferences</a></li>';
+						echo '</ul>';
+					echo '</li>';	
+					echo '<li><a href="javascript:whatWouldThisDo(\'chat\')" id="chatLink">' .$chatIcon .'</a></li>';
+					echo '<li><a href="#" id="searchLink">'. $searchIcon . '</a></li>';
 					echo '</ul>';
 			echo '</nav>';
 			echo '<div style="clear:both"></div>';
-			echo '<div class="oduOnlineLogo"></div>';
+			echo '<div id="logo" class="oduOnlineLogo"></div>';
 			echo '<h1 id="courseTitle"></h1>';
 			echo '<h2 id="courseInstructor">Instructor - </h2>';
 		echo '</header>';
@@ -155,15 +160,16 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 	echo '<ul id="tools">';
 	
 	if ($showGlossary)
-		echo '<li><dt><a id="glossaryLink" title="glossary">' . icon("fa", "glossary", "l", "") . '<dd>Glossary</dd></dt></a></li>';	
+		echo '<li id="glossaryIconGroup"><a id="glossaryLink" title="glossary">' . icon("fa", "glossary", "l", "") . 'Glossary</a></li>';	
 	if ($showAAQ)
-		echo '<li><dt><a id="aaqLink" title="Ask A Question">' . icon("g", "aaq", "l", "") . '<dd>Ask A Question</dd></dt></a></li>';
-	if ($showFeedback)
-		echo '<li><dt><a id="feedbackLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . '<dd>Give Feedback</dd></dt></a></li>';
+		echo '<li id="aaqIconGroup"><a id="askAQuestionLink" title="Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
 	
-	echo '<li><dt><a id="printLink" title="print">'. icon("g", "print", "l", "") . '<dd>Print</dd></dt></a></li>';
+	if ($showFeedback)
+		echo '<li id="feedbackIconGroup"><a id="feedbackLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</a></li>';
+	
+	echo '<li id="printIconIconGroup"><a id="printLink" title="print">'. icon("g", "print", "l", "") . 'Print</a></li>';
 	if ($showEdit)
-		echo '<li><dt><a id="editLink" title="edit">'. icon("g", "edit", "l", "") . '</a><dd>Edit</dd></dt></li>';
+		echo '<li id="editIconGroup"><a id="editLink" title="edit">'. icon("g", "edit", "l", "") . 'Edit</a></li>';
 	
 	
 	echo '</ul>';
