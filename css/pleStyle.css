@@ -9,50 +9,6 @@ body {
   padding: 0;
   background-color: #f7f7f7; }
 
-#nav {
-  width: 100%;
-  display: block; }
-  #nav ul {
-    padding: 5px;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    text-align: right; }
-    #nav ul:After {
-      content: "";
-      display: block;
-      clear: both; }
-    #nav ul li {
-      display: list-item;
-      list-style: none;
-      float: right;
-      color: #003767; }
-      #nav ul li a {
-        display: block;
-        color: #003767;
-        text-decoration: none;
-        text-align: center; }
-        #nav ul li a:hover {
-          background-color: #9cbff6; }
-      #nav ul li:hover > ul {
-        display: list-item; }
-    #nav ul ul {
-      display: none;
-      position: absolute;
-      top: 20px;
-      background: white;
-      border: 1px solid #fafafa;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
-      #nav ul ul li {
-        width: 125px;
-        float: none;
-        position: relative;
-        border-bottom: none; }
-        #nav ul ul li a {
-          padding-left: 5px;
-          text-align: left;
-          font-size: .8rem; }
-
 p {
   margin-bottom: 10px; }
 
@@ -124,19 +80,6 @@ a {
   margin-top: 130px;
   padding: 10px; }
 
-.expandCollapseAllWrapper {
-  text-align: right;
-  display: block;
-  width: 100%;
-  font-size: .8rem; }
-
-.listTopic a, .listSubTopic a, .breadCrumbs a {
-  color: #ff0080; }
-.listTopic a:hover, .listTopic a:visited:hover, .listSubTopic a:hover, .listSubTopic a:visited:hover, .breadCrumbs a:hover, .breadCrumbs a:visited:hover {
-  color: #4488f6; }
-.listTopic a:visited, .listSubTopic a:visited, .breadCrumbs a:visited {
-  color: #ff0080; }
-
 .moduleList {
   list-style: none; }
   .moduleList a {
@@ -151,17 +94,49 @@ a {
       list-style: none;
       padding-left: 20px; }
 
-.pleLogo {
-  background-image: url("../images/pleLogo.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 75px 75px;
-  padding: 3px;
-  height: 75px;
-  width: 75px;
-  display: inline-block;
-  float: left;
-  margin: 0 10px 0 10px; }
+#nav {
+  width: 100%;
+  display: block; }
+  #nav ul {
+    padding: 5px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    text-align: right; }
+    #nav ul:After {
+      content: "";
+      display: block;
+      clear: both; }
+    #nav ul li {
+      display: list-item;
+      list-style: none;
+      float: right;
+      color: #003767; }
+      #nav ul li a {
+        display: block;
+        color: #003767;
+        text-decoration: none;
+        text-align: center; }
+        #nav ul li a:hover {
+          background-color: #9cbff6; }
+      #nav ul li:hover > ul {
+        display: list-item; }
+    #nav ul ul {
+      display: none;
+      position: absolute;
+      top: 20px;
+      background: white;
+      border: 1px solid #fafafa;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+      #nav ul ul li {
+        width: 125px;
+        float: none;
+        position: relative;
+        border-bottom: none; }
+        #nav ul ul li a {
+          padding-left: 5px;
+          text-align: left;
+          font-size: .8rem; }
 
 .oduOnlineLogo {
   background-image: url("../images/oduOnlineLogo.svg");
@@ -174,6 +149,18 @@ a {
   display: inline-block;
   float: left;
   margin: -30px 10px 0 0; }
+
+.pleLogo {
+  background-image: url("../images/pleLogo.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 75px 75px;
+  padding: 3px;
+  height: 75px;
+  width: 75px;
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 10px; }
 
 .top {
   position: fixed;
@@ -219,6 +206,8 @@ a {
   font-size: 3rem; }
 .md-h {
   font-size: 4rem; }
+.md-e {
+  font-size: 6rem; }
 
 .urgent {
   color: #e74c3c; }
