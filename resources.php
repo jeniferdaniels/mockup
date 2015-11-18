@@ -69,7 +69,7 @@
 					<div id="content"></div>			
 				</div>
 			
-				<div id="tools"><?php writeTools(false, false, true, true, false) ?></div>
+				<div id="toolBox"><?php writeTools(false, false, true, true, false) ?></div>
 				<div id="footer" class="footer"></div>
 		</div>
 	</body>
