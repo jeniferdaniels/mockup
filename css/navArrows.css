@@ -1,0 +1,21 @@
+.navWrapper {
+  width: 99%;
+  height: 100%; }
+
+.navPrevious, .navNext {
+  position: fixed;
+  vertical-align: middle;
+  top: 50%;
+  height: 100%; }
+  .navPrevious a, .navNext a {
+    color: #141414; }
+    .navPrevious a:hover, .navNext a:hover {
+      color: #ff0080; }
+
+.navPrevious {
+  left: 5px; }
+
+.navNext {
+  right: 5px; }
+
+/*# sourceMappingURL=navArrows.css.map */
