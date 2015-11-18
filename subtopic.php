@@ -33,7 +33,9 @@
 					$("#topicCrumb").html("<a href='index.php'>" + parent.displayNumber + " " + parent.title + "</a>");
 					$("#thisCrumb").html(subtopic.displayNumber + " " + subtopic.title); 
 					$("#prev").prop("href", previous.url);
-					$("#next").prop("href", next.url);				
+					$("#next").prop("href", next.url);
+
+					console.log("next" + next.title + " " + next.url + "id " + next.id);					
 					});
 				});
 		</script>
