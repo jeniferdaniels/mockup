@@ -1,6 +1,6 @@
 //GLOBALS
 var gShowConsoleMsgs = false;
-	
+
 //********************************************************************
 //Getters
 //********************************************************************
@@ -11,10 +11,6 @@ function getCourseTitle(obj){
 function getInstructorObject(obj){
 	return obj.course.instructor;
 }
-
-
-
-
 
 //*****************************************************************************************
 //Name: 		getObjectFromArray
@@ -141,7 +137,7 @@ function hiddenCheck(id){
 function setCourseContent(obj){	
 	var html = "";
 	var classNumber = "CAT101";
-	
+	//TODO: just print to screen using flat(obj)
 	
 	//put in display order
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
@@ -193,14 +189,14 @@ function setCourseContent(obj){
 			
 			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
 			
-			html += "<li><h4>" + hiddenCheck(oneLevelDeepModuleItems[n].id) + "<a href='" + classNumber + "/" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a></h4>";
+			html += "<li><h4>" + hiddenCheck(oneLevelDeepModuleItems[n].id) + "<a href='" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a></h4>";
 			if (oneLevelDeepModuleItems[n].type == "topics"){
 				html += "<ul>";
 				//get the subtopics on display order
 				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
 					for (var p=0; p<subTopics.length; p++){
 						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
-						html += "<li>" + hiddenCheck(subTopics[p].id) + "<a href='" + classNumber + "/" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
+						html += "<li>" + hiddenCheck(subTopics[p].id) + "<a href='" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
 					}
 						
 				
@@ -233,6 +229,7 @@ function flatten(obj){
 		item.parent = theModule.parent;
 		item.title = theModule.title;
 		item.displayNumber = i;
+		item.url = theModule.url;
 		items.push(item);
 		item = {};
 		
@@ -270,15 +267,22 @@ function flatten(obj){
 			runningCounts = updateRunningCount(runningCounts, oneLevelDeepModuleItems[n].type);
 			sequenceNumber = showSequenceNumber(runningCounts, oneLevelDeepModuleItems[n].type);
 			
+			displayNumber = i + "." + sequenceNumber;
 			item.id = oneLevelDeepModuleItems[n].id;
 			item.parent = oneLevelDeepModuleItems[n].parent;
 			item.type = oneLevelDeepModuleItems[n].type;
 			item.title = oneLevelDeepModuleItems[n].title;
-			item.displayNumber = i + "." + sequenceNumber;
-			item.content = "shfkjhasdk";
-			item.description = oneLevelDeepModuleItems[n].description;
-			item.deliverable = oneLevelDeepModuleItems[n].deliverable; //may be null
-			item.assigmentSubmit = oneLevelDeepModuleItems[n].assignmentSubmit; // may be null
+			item.displayNumber = displayNumber;
+			item.url = oneLevelDeepModuleItems[n].url;
+			
+			
+			
+			if (oneLevelDeepModuleItems[n].type == "assignments"){
+				item.due = oneLevelDeepModuleItems[n].start;
+				item.deliverable = oneLevelDeepModuleItems[n].deliverable; //may be null
+				item.submitVia = oneLevelDeepModuleItems[n].submitVia; // may be null
+				item.description = oneLevelDeepModuleItems[n].description;
+			}
 			items.push(item);
 			item = {};
 			
@@ -286,12 +290,14 @@ function flatten(obj){
 			if (oneLevelDeepModuleItems[n].type == "topics"){
 				var subtopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
 					for (var p=0; p<subtopics.length; p++){
+						sequenceNumber = showSequenceNumber(runningCounts, oneLevelDeepModuleItems[n].type);						
 						item.id = subtopics[p].id;
 						item.parent = subtopics[p].parent;
 						item.type="subtopic";
 						item.title = subtopics[p].title;
-						item.displayNumber = i + "." + sequenceNumber;
-						item.content = "skjadfklj";		
+						item.displayNumber = displayNumber + "." + p;
+						item.content = subtopics[p].content;		
+						item.url = subtopics[p].url;
 						
 						items.push(item);
 						item = {};
@@ -300,18 +306,21 @@ function flatten(obj){
 		}
 	}
 	
-	//add this to make it easier to find for navigations
-	//yes, you can use the indexOf, but its a pain for
-	//the way this is written
-	//TODO: remove this
-	//for (var q=0; q<items; q++){
-	//	items[q]["position"] = q;
-	//}
-	
-	
 	return items;
 }
 	
+function testFlat(items){
+	for (i in items){
+		item = items[i];
+			console.log("--------------");
+			for (j in item){
+				console.log(j + " " + item[j]);
+			}
+	}
+	
+	
+}
+
 
 
 ////////////////////////////////////////////////////////
@@ -370,7 +379,7 @@ function getEvents(obj)
 		console.log(events[k].end);
 		console.log(events[k].color);
 		console.log(events[k].textColor);
-		console.log(events[k].assignmentSubmit);
+		console.log(events[k].submitVia);
 		console.log(events[k].deliverable);
 		console.log(events[k].description);	
 	}*/
@@ -414,7 +423,7 @@ function getUpcomingAssignments(obj)
 			theAssignment.dueDate = theEvent.start;
 			theAssignment.title = theEvent.title;
 			theAssignment.deliverable = theEvent.deliverable;
-			theAssignment.assignmentSubmit = theEvent.assignmentSubmit;
+			theAssignment.submitVia = theEvent.submitVia;
 			theAssignment.description = theEvent.description;
 			
 			assignments.push(theAssignment);
@@ -425,7 +434,33 @@ function getUpcomingAssignments(obj)
 
 }
 
+function getSubtopics(flatCourse, topicIndex){
+	var subtopics = [];
+	for (var i = topicIndex+1; i<flatCourse.length; i++){
+		item = flatCourse[i];
+		if (item.type == "subtopic"){
+			subtopics.push(item);
+		}
+		else{
+			i = flatCourse.length;
+			//jump out because all the subtopics will be listed after eachother
+			//anything not marked subtopic like "topic", "assignment" whatever
+			//means we've run out of subtopics
+		}
+	}
+	return subtopics;
+}
 
+
+function writeSubtopicList(subtopics){
+	var htmlString = "";
+	
+	for (var i =0; i<subtopics.length; i++){
+		htmlString += '<li><a href="' + subtopics[i].url + '">' + subtopics[i].displayNumber + " " + subtopics[i].title + "</a></li>";
+	}
+	
+	return htmlString;
+}
 
 function displayChecksForCompletedAssignments(url){
 	$.ajax({	
