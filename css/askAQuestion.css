@@ -1,0 +1,45 @@
+.aaq {
+  width: 1000;
+  background-color: white; }
+  .aaqHeaderLinks {
+    list-style: none; }
+    .aaqHeaderLinks a {
+      text-decoration: underline; }
+    .aaqHeaderLinks > li {
+      display: inline-block; }
+  .aaqAnswer {
+    border-left: 2px solid black;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-top: 10px; }
+  .aaqPostTitle {
+    font-weight: 600; }
+  .aaqPostProperties {
+    list-style: none;
+    font-size: .8rem; }
+    .aaqPostProperties a {
+      text-decoration: underline; }
+    .aaqPostProperties > li {
+      display: inline-block; }
+  .aaqPostRating {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100px; }
+  .aaqPostEndorsed {
+    padding-left: 20px;
+    color: #ff0080;
+    width: 150px; }
+  .aaqPostCommentCount {
+    padding-left: 20px;
+    width: 150px; }
+  .aaqPoster {
+    padding-left: 50px; }
+  .aaqPostDateTime {
+    padding-left: 50px;
+    float: right; }
+  .aaqQuestionAndAnswerWrapper {
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px; }
+
+/*# sourceMappingURL=askAQuestion.css.map */
