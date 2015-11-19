@@ -505,3 +505,34 @@ function makeAwesomeDialog(){
 	});	
 }
 
+
+
+function toolBoxFunctionality(){
+	
+	
+	//***************************************
+	//add functionality
+	//***************************************
+	$("#editToolLink").click(function(){		
+			$("body").toggleClass("editingMode");			
+		}); //edit link
+
+	$("#aaqToolLink").click(function(){
+			$("#ask").toggleClass("displayNone");
+			$("#aaqIconGroup").toggleClass("askAQuestionOn");
+
+			var title = 'Hide Ask A Question' ;
+		    if( $("#ask").hasClass('displayNone')){
+		       title = 'Show Ask A Question';
+		    }
+			$(this).attr('title', title);
+		}); //aaq link
+
+	$("#glossaryToolLink").click(function(){
+			$("#glossaryIconGroup").toggleClass("glossaryOn");
+			makeAwesomeDialog();
+			
+		});//glossary link	
+	
+}
+
