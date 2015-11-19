@@ -34,7 +34,9 @@
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
 
-					$("#editLink").addClass("disabledEditingLink");
+
+					
+					$("#editToolLink").addClass("disabledEditingLink");
 					$("#editIconGroup").attr("title", "Editing disabled because this page is generated via scripts");					
 							
 					});
@@ -65,7 +67,7 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial" class="paper hidden">
+				<div id="courseMaterial" class="paper">
 					<h2 id="pageTitle"></h2>
 					<div id="content">In this topic you will learn the following:
 						<ul id="subtopicList" class="subtopicList" style="list-style: none;"></ul>
