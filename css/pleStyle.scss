@@ -527,11 +527,11 @@ a{	color: $link-color;
 		padding:3px;
 	}
 	
-	& #editLink{
+	& #editToolLink{
 		color:white;
 	}
 	
-	& #chatLink, & #feedbackLink, & #askAQuestionLink, & #printLink,
+	& #chatLink, & #feedbackToolLink, & #aaqToolLink, & #printToolLink,
 	& #aaqLink, & #helpLink, #notesLink,
 	{
 		color: $liteGray;

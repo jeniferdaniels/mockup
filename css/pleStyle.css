@@ -229,9 +229,9 @@ a {
   .editingMode #editIconGroup {
     background: red;
     padding: 3px; }
-  .editingMode #editLink {
+  .editingMode #editToolLink {
     color: white; }
-  .editingMode #chatLink, .editingMode #feedbackLink, .editingMode #askAQuestionLink, .editingMode #printLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink {
+  .editingMode #chatLink, .editingMode #feedbackToolLink, .editingMode #aaqToolLink, .editingMode #printToolLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink {
     color: #c8c8c8;
     cursor: not-allowed;
     pointer-events: none; }
