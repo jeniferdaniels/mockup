@@ -1,11 +1,12 @@
 .wrapper {
-  width: 1070px;
+  width: 1100px;
   margin: 160px auto 0 auto; }
 
 #courseMaterial {
   float: left;
   width: 1000px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 250px; }
 
 .paper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -26,7 +27,8 @@
 #tools {
   list-style-type: none;
   line-height: 90%;
-  text-align: center; }
+  text-align: center;
+  vertical-align: top; }
   #tools :hover {
     color: #ff0080; }
   #tools li {

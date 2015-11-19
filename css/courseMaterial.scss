@@ -6,7 +6,7 @@
 //********************************************************************************************
 .wrapper
 {
-	width: 1070px;
+	width: 1100px;
 	margin: 160px auto 0 auto;
 	
 }
@@ -15,7 +15,7 @@
 		float: left;
 		width: 1000px;
 		margin:0 auto;
-		
+		min-height: 250px;
 	}
 
 	.paper{
@@ -41,6 +41,7 @@
 		list-style-type:none;
 		line-height: 90%;
 		text-align: center;	
+		vertical-align:top;
 		
 		& :hover{
 			color: $hotPink;
