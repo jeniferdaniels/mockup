@@ -1,10 +1,8 @@
-<?php
+<?php echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/askAQuestion.css">' ?>
 
-/*<div class="aaq">
-	<!--
+<div class="aaq">
 	<div>
-		<div class="displayInlineBlock"><?php //echo $GLOBALS["iconAaqLarge"]; ?></div>
-		<h2 class="displayInlineBlock">Questions</h2>
+
 		<nav>
 		<ul class="aaqHeaderLinks floatLeft">
 			<li><a href="">Ask A New Question</a></li>
@@ -17,15 +15,16 @@
 		</ul>
 		</nav>
 		
+		<div style="clear:both"></div>
+		
 	</div>
 	
 	<h2>Questions about the Material</h2>
-	-->
 	<div class="aaqQuestionAndAnswerWrapper">
 		<div class="aaqQuestion">
-			<span class="aaqPostTitle"><?php echo $GLOBALS["iconExpandedSmall"]; ?>Some question short title here</span>
+			<span class="aaqPostTitle"><?php echo icon("fa", "expanded", "s", "") ?>Some question short title here</span>
 			<div class="floatRight">
-				 <?php echo $GLOBALS["iconPinSmall"]; ?>
+				 <?php echo icon("fa", "pin", "s", "") ?>
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas</p>
@@ -47,7 +46,7 @@
 			
 			<ul class="aaqPostProperties">
 				<li><a href="">Reply</a></li>
-				<li class="aaqPostRating"><?php echo $GLOBALS["icon3AndAHalfOf5StarsSmall"]; ?></li>
+				<li class="aaqPostRating"><?php writeStarRating("3.5:5"); ?></li>
 				<li class="aaqPostEndorsed"></li>
 				<li class="aaqPostCommentCount">0 comments</li>
 				<li class="aaqPoster">Carl Grimes</li>
@@ -61,7 +60,7 @@
 			
 			<ul class="aaqPostProperties">
 				<li><a href="">Reply</a></li>
-				<li class="aaqPostRating"><?php echo $GLOBALS["icon3AndAHalfOf5StarsSmall"]; ?></li>
+				<li class="aaqPostRating"><?php writeStarRating("2:5"); ?></li>
 				<li class="aaqPostEndorsed">Instructor Endorsed</li>
 				<li class="aaqPostCommentCount">0 comments</li>
 				<li class="aaqPoster">Beth Greene</li>
@@ -73,9 +72,9 @@
 
 	<div class="aaqQuestionAndAnswerWrapper">
 		<div class="aaqQuestion">
-			<span class="aaqPostTitle"><?php echo $GLOBALS["iconCollapsedSmall"]; ?>Some question short title here</span>
+			<span class="aaqPostTitle"><?php echo icon("fa", "collapsed", "s", "") ?>Some question short title here</span>
 			<div class="floatRight">
-				 <?php echo $GLOBALS["iconPinSmall"]; ?>
+				<?php echo icon("fa", "pin", "s", "") ?>
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas</p>
@@ -90,5 +89,4 @@
 			</ul>
 		</div>
 	</div><!-- end aaqQuestionAndAnswerWrapper -->
-</div><!-- end aaqContentWrapper -->
-*/ ?>		
+</div><!-- end aaqContentWrapper -->	
