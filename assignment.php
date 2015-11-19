@@ -39,7 +39,7 @@
 					$("#thisCrumb").html(assignment.displayNumber + " " + assignment.title); 
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
-					$("#editLink").click(function(){		
+					$("#editToolLink").click(function(){		
 						$("body").toggleClass("editingMode");			
 					}); //edit link										
 				});// done 
