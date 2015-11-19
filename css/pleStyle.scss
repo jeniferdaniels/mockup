@@ -541,6 +541,19 @@ a{	color: $link-color;
 	& #fakeEditor{
 		display: inline-block;
 	}
+	
+	
+	& #ask{
+		visibility: hidden;
+		display: none;
+	}
+	
+	& #aaqIconGroup{
+		border: 0;
+		padding: 0;
+		color: $liteGray;
+	}
+	
 }
 
 .disabledEditingLink{
@@ -550,6 +563,17 @@ a{	color: $link-color;
 }
 
 
+.askAQuestionOn{
+	//background: green;
+	border-left: 3px solid green;
+	padding-left: 3px;
+	
+	
+	& #askAQuestionLink{
+		color: green;
+	}
+	
+}
 
 
 
@@ -583,6 +607,15 @@ a{	color: $link-color;
 //10/15/2015
 .hidden{
 	visibility: hidden;
+}
+
+.animatedHidden{
+	visibility: hidden;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -ms-transition:0.4s;
+    -o-transition:0.4s;
+    transition:0.4s;
 }
 
 //?

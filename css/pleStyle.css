@@ -236,11 +236,24 @@ a {
     pointer-events: none; }
   .editingMode #fakeEditor {
     display: inline-block; }
+  .editingMode #ask {
+    visibility: hidden;
+    display: none; }
+  .editingMode #aaqIconGroup {
+    border: 0;
+    padding: 0;
+    color: #c8c8c8; }
 
 .disabledEditingLink {
   color: #c8c8c8 !important;
   cursor: not-allowed;
   pointer-events: none; }
+
+.askAQuestionOn {
+  border-left: 3px solid green;
+  padding-left: 3px; }
+  .askAQuestionOn #askAQuestionLink {
+    color: green; }
 
 .urgent {
   color: #e74c3c; }
@@ -260,6 +273,11 @@ a {
 
 .hidden {
   visibility: hidden; }
+
+.animatedHidden {
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
 
 .inline, .displayInline {
   display: inline; }
