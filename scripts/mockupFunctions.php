@@ -162,7 +162,7 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 	if ($showGlossary)
 		echo '<li id="glossaryIconGroup"><a id="glossaryLink" title="glossary">' . icon("fa", "glossary", "l", "") . 'Glossary</a></li>';	
 	if ($showAAQ)
-		echo '<li id="aaqIconGroup"><a id="askAQuestionLink" title="Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
+		echo '<li id="aaqIconGroup"><a id="askAQuestionLink" title="Show Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
 	
 	if ($showFeedback)
 		echo '<li id="feedbackIconGroup"><a id="feedbackLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</a></li>';
@@ -176,7 +176,33 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 }
 
 
+function writeStarRating($rating){
+	//needs to come in as
+	//3:4 or  3.5:4
+	$hasHalfStar = 0;
+	$starInfo = explode(":", $rating);
+	$goodStars = explode(".", $starInfo[0]);
+	$wholeStars = $goodStars[0];
+	$totalStars = $starInfo[1];
+	
+	$starString = "";
+	
+	for ($i=0; $i<$wholeStars; $i++)
+		$starString .= icon("fa", "starFilled", "s", "");
+	if (sizeOf($goodStars) > 1){
+		$starString .= icon("fa", "starhalf", "s", "");
+		$hasHalfStar = 1;
+	}
 
+	$emptyStars = $totalStars - $wholeStars - $hasHalfStar;
+	
+	for($j=0; $j<$emptyStars; $j++)
+		$starString .= icon("fa", "staropen", "s", "");	
+		
+		
+	echo $starString;	
+		
+}
 
 
 ?>
