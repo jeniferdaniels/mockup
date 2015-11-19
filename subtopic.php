@@ -37,7 +37,22 @@
 
 					$("#editLink").click(function(){		
 							$("body").toggleClass("editingMode");			
-						}); //edit link										
+						}); //edit link
+
+					$("#askAQuestionLink").click(function(){
+							console.log("here");
+							$("#ask").toggleClass("displayNone");
+							$("#aaqIconGroup").toggleClass("askAQuestionOn");
+
+							var title = 'Hide Ask A Question' ;
+						    if( $("#ask").hasClass('displayNone')){
+						       title = 'Show Ask A Question';
+						    }
+							$(this).attr('title', title);
+
+							
+											
+						}); //aaq link										
 					});// done 
 				});//ready
 		</script>
@@ -70,9 +85,16 @@
 			<div class="wrapper">
 				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
 				<div id="courseMaterial">
-					<h2 id="pageTitle"></h2>
-					<div id="content"></div>
+					<div class="paper">
+						<h2 id="pageTitle"></h2>
+						<div id="content"></div>
+					</div>
+					
+					<div id="ask" class="paper displayNone"><?php include 'aaq.php'?></div>
 				</div>
+				
+				
+				
 				<div id="toolBox"><?php writeTools(true, true, true, true) ?></div>
 				<div id="footer" class="footer"></div>
 			</div>
