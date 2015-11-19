@@ -1,17 +1,10 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
 <?php include_once 'scripts/globalVariables.php' ?>
-<?php 
-
-	$pageTitle = "Schedule";
-	
-	$breadCrumbs = array(
-		array("url"=>"index.php", "displayTitle"=>"Home"),
-		array("url"=>"", "displayTitle"=>$pageTitle));
-?>
 <!doctype html>
 <html>
 	<head>
-		<?php writeHead($pageTitle); ?>
+		<?php  includeCsss (); ?>
+		<?php  includeScripts (); ?>
 					
 		<link href='calendar/fullcalendar.css' rel='stylesheet' />
 		<link href='calendar/fullcalendar.print.css' rel='stylesheet' media='print' />		
@@ -84,12 +77,33 @@
 	</head>
 	
 	<body>
-		<?php writeTop("", "", 0, $breadCrumbs); ?>
-	
-		<div class="contentWrapper" id="contentWrapper">	
-			<h2><?php echo $pageTitle ?></h2>
-			<div id='calendar'></div>
+		<div class="top" id="top"><?php writeTopHtml(); ?></div>
+			<div class="breadCrumbWrapper" id="breadCrumbWrapper">
+			<nav>
+				<ul class="breadCrumbs" id="breadCrumbs">
+					<li><a href="index.php">Home</a></li>
+					<li id="thisCrumb">Schedule</li>
+				</ul>
+			</nav>
 		</div>
+		
+		
+		
+			<div class="wrapper">
+				<div id="courseMaterial">
+					<div class="paper">
+						<h2 id="pageTitle">Schedule</h2>
+						<div id="calendar"></div>
+					</div>					
+				</div>
+				
+				
+				
+				<div id="toolBox"><?php writeTools(false, false, false, true) ?></div>
+				<div id="footer" class="footer"></div>
+			</div>
+		
+		
 		
 		<!-- modal -->
 		<?php writeCalendarModal() ?>
