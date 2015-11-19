@@ -64,7 +64,7 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial">
+				<div id="courseMaterial" class="paper">
 					<h2 id="pageTitle"></h2>
 					<div id="content"></div>			
 				</div>

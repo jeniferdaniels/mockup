@@ -70,7 +70,7 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial">
+				<div id="courseMaterial" class="paper">
 					<h2 id="pageTitle">Assignment</h2>
 					<div id="content">
 						<div class="icon"><?php echo icon("g", "assignment", "h", "darkGray") ?></div>

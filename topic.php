@@ -65,7 +65,7 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial">
+				<div id="courseMaterial" class="paper hidden">
 					<h2 id="pageTitle"></h2>
 					<div id="content">In this topic you will learn the following:
 						<ul id="subtopicList" class="subtopicList" style="list-style: none;"></ul>
