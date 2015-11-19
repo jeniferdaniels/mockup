@@ -492,5 +492,16 @@ function whatWouldThisDo(unfinishedItem){
 	
 }
 
-
+	
+function makeAwesomeDialog(){
+//function makeAwesomeDialog(height, width, isModal, isDraggable, isResizeable, buttons, canUseEsc, hasClose){
+	$("#popWindow").dialog({
+		modal: false,
+		position: { my: "left", at: "left bottom", of: "#prev" },
+		draggable: true,
+		resizeable: true,
+		width: 200,
+		dialogClass: 'ui-dialog'		
+	});	
+}
 

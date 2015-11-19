@@ -13,11 +13,13 @@ function includeCsss(){
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/pleStyle.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/courseMaterial.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/navArrows.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/modal.css">';
 }
 
 function includeScripts()
 {
 	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/jquery-2.1.3.min.js"></script>';
+	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/jquery-ui.min.js"></script>';
 	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/kbNavigate.js"></script>';
 	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/queryStringFunctions.js"></script>';
 	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/courseFunctions.js"></script>';
@@ -160,16 +162,16 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 	echo '<ul id="tools">';
 	
 	if ($showGlossary)
-		echo '<li id="glossaryIconGroup"><a id="glossaryLink" title="glossary">' . icon("fa", "glossary", "l", "") . 'Glossary</a></li>';	
+		echo '<li id="glossaryIconGroup"><a id="glossaryToolLink" title="Module Glossary">' . icon("fa", "glossary", "l", "") . 'Glossary</a></li>';	
 	if ($showAAQ)
-		echo '<li id="aaqIconGroup"><a id="askAQuestionLink" title="Show Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
+		echo '<li id="aaqIconGroup"><a id="aaqToolLink" title="Show Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
 	
 	if ($showFeedback)
-		echo '<li id="feedbackIconGroup"><a id="feedbackLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</a></li>';
+		echo '<li id="feedbackIconGroup"><a id="feedbackToolLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</a></li>';
 	
-	echo '<li id="printIconIconGroup"><a id="printLink" title="print">'. icon("g", "print", "l", "") . 'Print</a></li>';
+	echo '<li id="printIconIconGroup"><a id="prinTooltLink" title="Print">'. icon("g", "print", "l", "") . 'Print</a></li>';
 	if ($showEdit)
-		echo '<li id="editIconGroup"><a id="editLink" title="edit">'. icon("g", "edit", "l", "") . 'Edit</a></li>';
+		echo '<li id="editIconGroup"><a id="editToolLink" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</a></li>';
 	
 	
 	echo '</ul>';
@@ -203,6 +205,13 @@ function writeStarRating($rating){
 	echo $starString;	
 		
 }
+
+
+function writeDummyGlossaryTerms($count) {
+	for ($i=0; $i<$count; $i++)
+		echo "<dt>Some term " . $i . "</dt><dd>Definition goes here</dd>";
+}
+
 
 
 ?>

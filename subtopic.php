@@ -13,6 +13,10 @@
 				$.ajax({
 					url: "cat101/json/kitten.json"
 				}).done(function(obj) {
+
+					//***************************************
+					//set page content
+					//***************************************
 					setTop(obj);
 					document.title = getCourseTitle(obj);
 					flatCourse = flatten(obj);
@@ -30,17 +34,22 @@
 					$("#pageTitle").html(subtopic.title);
 					$("#content").load("cat101/" + subtopic.content);
 					$("#moduleCrumb").html("<a href='index.php'>" + grandParent.displayNumber + ". " + grandParent.title + "</a>");
-					$("#topicCrumb").html("<a href='index.php'>" + parent.displayNumber + " " + parent.title + "</a>");
+					$("#topicCrumb").html("<a href='" + parent.url + "'>" + parent.displayNumber + " " + parent.title + "</a>");							
 					$("#thisCrumb").html(subtopic.displayNumber + " " + subtopic.title); 
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
 
-					$("#editLink").click(function(){		
+					
+					
+
+					//***************************************
+					//add functionality
+					//***************************************
+					$("#editToolLink").click(function(){		
 							$("body").toggleClass("editingMode");			
 						}); //edit link
 
-					$("#askAQuestionLink").click(function(){
-							console.log("here");
+					$("#aaqToolLink").click(function(){
 							$("#ask").toggleClass("displayNone");
 							$("#aaqIconGroup").toggleClass("askAQuestionOn");
 
@@ -49,16 +58,22 @@
 						       title = 'Show Ask A Question';
 						    }
 							$(this).attr('title', title);
+						}); //aaq link
 
+					$("#glossaryToolLink").click(function(){
+							$("#glossaryIconGroup").toggleClass("glossaryOn");
+							makeAwesomeDialog();
 							
-											
-						}); //aaq link										
+						});//glossary link	
+							
+															
 					});// done 
 				});//ready
 		</script>
 	</head>
 	
 	<body>
+		<div id="popWindow" class="displayNone"><?php writeDummyGlossaryTerms(10)?></div>
 	
 		<div class="navWrapper">
 			<div id="navPrevious" class="navPrevious"><a id="prev" href=""><?php echo(icon("fa", "previous", "e", "")); ?></a></div>
@@ -98,6 +113,10 @@
 				<div id="toolBox"><?php writeTools(true, true, true, true) ?></div>
 				<div id="footer" class="footer"></div>
 			</div>
+			
+			
+			
+			
 	</body>
 	
 </html>

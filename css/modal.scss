@@ -4,10 +4,12 @@
 //Modal
 //*****************************************************************************
 .ui-dialog{
-	z-index: 800;
+	z-index: 5000;
 	background: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	border: 1px solid $googleBlue;
+	font-size: .9rem;
+	
 
 	&-titlebar {
 		background: $googleBlue;	
@@ -31,7 +33,8 @@
 	}
 
 	&-content{
-		//border: 1px solid purple;
+		border: 1px solid purple;
+		padding:5px;
 	}
 
 	&-buttonpane{

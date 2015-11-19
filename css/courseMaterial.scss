@@ -6,7 +6,7 @@
 //********************************************************************************************
 .wrapper
 {
-	width: 1100px;
+	width: 1070px;
 	margin: 160px auto 0 auto;
 	
 }
@@ -56,4 +56,24 @@
 		}
 }
 
+.askAQuestionOn{
+	//background: green;
+	border-left: 3px solid green;
+	padding-left: 3px;
+	
+	
+	& #aaqToolLink{
+		color: green;
+	}
+	
+}
 
+
+.glossaryOn{
+	border-left: 3px solid green;
+	padding-left: 3px;
+	
+	& #glossaryToolLink{
+		color: green;
+	}
+}
