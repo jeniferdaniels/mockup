@@ -5,10 +5,13 @@
 #courseMaterial {
   float: left;
   width: 1000px;
-  margin: 0 auto;
-  background-color: white;
+  margin: 0 auto; }
+
+.paper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  padding: 10px; }
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: white; }
 
 #tools {
   float: right;
