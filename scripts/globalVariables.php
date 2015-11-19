@@ -58,7 +58,7 @@ function icon ($fontType, $iconUse, $size, $otherStyle){
 		"bookmarkopen" 		  => ["g" => "bookmark",				"fa" => "bookmark-o"],
 		"chat" 				  => ["g" => "chat_bubble_outline", 	"fa" => "comments"],
 		"check" 			  => ["g" => "check",					"fa" => "check-circle"],
-		"collapsed" 		  => ["g" => "expand_more", 			"fa" => "angle-double-right"],
+		"collapsed" 		  => ["g" => "expand_less", 			"fa" => "angle-double-right"],
 		"current" 			  => ["g" => "arrow_forward", 			"fa" => "arrow-right"],
 		"edit" 				  => ["g" => "create", 					"fa" => "pencil"],
 		"error" 			  => ["g" => "error", 					"fa" => "exclamation-circle"],
