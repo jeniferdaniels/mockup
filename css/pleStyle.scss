@@ -23,6 +23,7 @@ $navWrapperWidth: 1000px;
 //***10-8-2015***
 html{
 	font-size: 87%;
+	overflow-y: scroll;
 }
 
 
@@ -560,19 +561,6 @@ a{	color: $link-color;
 	color: $liteGray !important;
 	cursor: not-allowed;
 	pointer-events: none;
-}
-
-
-.askAQuestionOn{
-	//background: green;
-	border-left: 3px solid green;
-	padding-left: 3px;
-	
-	
-	& #askAQuestionLink{
-		color: green;
-	}
-	
 }
 
 
