@@ -1,42 +1,6 @@
 .ui-dialog {
-  z-index: 5000;
-  background: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  border: 1px solid #4488f6;
+  margin-left: 75px;
+  margin-top: 150px;
   font-size: .9rem; }
-  .ui-dialog-titlebar {
-    background: #4488f6; }
-  .ui-dialog-title {
-    text-transform: capitalize;
-    padding-left: 10px;
-    color: white;
-    text-weight: 600; }
-  .ui-dialog-titlebar-close {
-    float: right;
-    margin: 5px; }
-  .ui-dialog-content {
-    border: 1px solid purple;
-    padding: 5px; }
-
-.modalContentWrapper {
-  padding: 20px;
-  background: white; }
-  .modalContentWrapper h3 {
-    display: inline-block;
-    text-transform: capitalize;
-    margin-top: 0; }
-  .modalContentWrapper .icon {
-    display: inline-block; }
-  .modalContentWrapper h5 {
-    display: inline-block;
-    font-weight: 600; }
-  .modalContentWrapper .eventDateTime {
-    display: inline-block;
-    color: #7d7d7d; }
-  .modalContentWrapper .assignmentDeliverables {
-    display: inline-block;
-    color: #7d7d7d; }
-  .modalContentWrapper p {
-    padding-top: 20px; }
 
 /*# sourceMappingURL=modal.css.map */
