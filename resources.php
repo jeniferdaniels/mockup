@@ -15,7 +15,7 @@
 				}).done(function(obj) {
 					setTop(obj);
 					document.title = getCourseTitle(obj);
-					flatCourse = flatten(obj);
+					flatCourse = flattenCourse(obj);
 					
 					var resourceId = (typeof $.QueryString["id"] !== undefined) ? $.QueryString["id"] : "3"; //default it to something for now 
 					//TODO: make a default id and handle that
@@ -64,9 +64,11 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial" class="paper">
-					<h2 id="pageTitle"></h2>
-					<div id="content"></div>			
+				<div id="courseMaterial">
+					<div class="paper">
+						<h2 id="pageTitle"></h2>
+						<div id="content"></div>			
+					</div>
 				</div>
 			
 				<div id="toolBox"><?php writeTools(false, false, true, true, false) ?></div>

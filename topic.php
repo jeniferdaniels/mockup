@@ -14,7 +14,7 @@
 				}).done(function(obj) {
 					setTop(obj);
 					document.title = getCourseTitle(obj);
-					flatCourse = flatten(obj);
+					flatCourse = flattenCourse(obj);
 
 					var topicId = (typeof $.QueryString["id"] !== undefined) ? $.QueryString["id"] : "3"; //default it to something for now 
 					//TODO: make a default id and handle that
@@ -45,6 +45,8 @@
 	</head>
 	
 	<body>
+		<div id="popWindow" class="displayNone"><?php writeDummyGlossaryTerms(10)?></div>
+	
 		<div class="navWrapper">
 			<div id="navPrevious" class="navPrevious"><a id="prev" href=""><?php echo(icon("fa", "previous", "e", "")); ?></a></div>
 			<div id="navNext" class="navNext"><a id="next" href=""><?php echo(icon("fa", "next", "e", "")); ?></a></div>
@@ -67,10 +69,12 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial" class="paper">
-					<h2 id="pageTitle"></h2>
-					<div id="content">In this topic you will learn the following:
-						<ul id="subtopicList" class="subtopicList" style="list-style: none;"></ul>
+				<div id="courseMaterial">
+					<div class="paper">
+						<h2 id="pageTitle"></h2>
+						<div id="content">In this topic you will learn the following:
+							<ul id="subtopicList" class="subtopicList" style="list-style: none;"></ul>
+						</div>
 					</div>
 				</div>
 				<div id="toolBox"><?php writeTools(false, false, true, true) ?></div>
