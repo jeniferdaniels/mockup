@@ -81,25 +81,25 @@ p{
 //********************************************************************************************
 
 
-//***10-8-2015***
+//***11-24-2015***
 h1{
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	font-weight: 500;
 	margin-bottom: 10px;
 }
 
 //***11-9-2015***
 h2{
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: 500;
 	margin-bottom: 10px;
 }
 
 //?
 h3{
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: 500;
-	margin-top: 20px;		
+	margin-top: 10px;		
 }
 
 //hgrroup
@@ -122,8 +122,15 @@ li{
 
 //ol
 //dl
-//dt
-//dd
+dt{
+	font-weight:600;
+	padding-right: 2px;
+
+}
+dd
+{
+	margin-bottom: 10px;	
+}
 //menu
 //menuitem
 
@@ -254,10 +261,11 @@ a{	color: $link-color;
 	width: 98%;
 	display: block;
 	position: fixed;
-	top: 105px;
+	top: 88px;
 	padding-top:10px;
 	//border-bottom: 1px solid black;
 	background: $googleGray;
+	z-index: 899;
 }
 
 
@@ -281,39 +289,16 @@ a{	color: $link-color;
 }
 
 
-//***11-09-2015***
+//***11-24-2015***
 .contentWrapper{
 	width: $contentWidth;
 	margin:0 auto;
 	background-color: $contentBackgroundColor;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	margin-top: 130px;
+	//box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	margin-top: 110px;
 	padding: 10px;
+	border: 1px solid $liteGray;
 }
-
-
-
-//***10-7-2015***
-.moduleList{
-	list-style: none;
-	& a {
-		color:black;
-		
-		&:hover{
-			text-decoration:underline;
-			color: $googleBlue;
-		}
-	}
-	& li{
-		padding-top: 3px;
-		padding-left: 20px;
-		& ul {
-			list-style: none;
-			padding-left: 20px;
-		}
-	}
-}
-
 
 
 
@@ -366,7 +351,7 @@ a{	color: $link-color;
 			padding: 5px 5px 5px 0;
 			background: white;
 			border: 1px solid $xLiteGray;
-			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+			//box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 			
 			li {
 				width:110px;
@@ -391,13 +376,13 @@ a{	color: $link-color;
 	background-image: url("../images/oduOnlineLogo.svg");
 	background-color: white;
 	background-repeat: no-repeat;
-	background-size: 140px 75px;
+	background-size: 140px 45px;
 	padding: 3px;
-	height: 75px;
+	height: 45px;
 	width: 140px;
 	display:inline-block;
 	float: left;
-	margin: -30px 10px 0 0;
+	margin: -10px 10px 0 0;
 	//border: 1px solid red;
 }
 
@@ -422,13 +407,13 @@ a{	color: $link-color;
 	background-color: white;
 	top: 0;
 	left: 0;
-	height: 95px;
+	height: 90px;
 	vertical-align: top;
 	//border: 1px solid black;
 	z-index: 900;
-	border-bottom: 10px solid $monarchBlue;
+	border-bottom: 5px solid $monarchBlue;
 	//border-top: 30px solid rgba(23,119,167, 1);
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+	//box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
 	
 	
 	h1{
@@ -443,7 +428,7 @@ a{	color: $link-color;
 	}
 	
 	h2{
-		margin: 0;
+		margin-left: 160px;
 		padding: 0;
 		display: block;
 		font-size: 1rem;
@@ -477,6 +462,10 @@ a{	color: $link-color;
 
 //**11-1-2015
 .md-{
+		&t{
+			font-size: .8rem;
+		}
+		
 		&s{
 			font-size: 1rem;
 		}
@@ -519,24 +508,27 @@ a{	color: $link-color;
 	}
 	
 	& .breadCrumbWrapper{
-		top: 113px;
+		top: 100px;
 	}
 	
-	& #editIconGroup{
+	& #editToolListItem{
 		background: red;
+		color: white;
 		padding:3px;
+		
+		&:hover, & i:hover{
+			color: black;
+		}
 	}
 	
-	& #editToolLink{
-		color:white;
-	}
-	
-	& #chatLink, & #feedbackToolLink, & #aaqToolLink, & #printToolLink,
-	& #aaqLink, & #helpLink, #notesLink,
+
+	& #chatLink, & #aaqLink, & #helpLink, #notesLink,
+	& #glossaryToolListItem, & #aaqToolListItem, & #feedbackToolListItem, & #printToolListItem
 	{
 		color: $liteGray;
 		cursor: not-allowed;
-		pointer-events: none;	
+		pointer-events: none;
+		border: 0px;	
 	}
 	
 	& #fakeEditor{
@@ -548,13 +540,6 @@ a{	color: $link-color;
 		visibility: hidden;
 		display: none;
 	}
-	
-	& #aaqIconGroup{
-		border: 0;
-		padding: 0;
-		color: $liteGray;
-	}
-	
 }
 
 .disabledEditingLink{
@@ -597,14 +582,6 @@ a{	color: $link-color;
 	visibility: hidden;
 }
 
-.animatedHidden{
-	visibility: hidden;
-    -webkit-transition:0.4s;
-    -moz-transition:0.4s;
-    -ms-transition:0.4s;
-    -o-transition:0.4s;
-    transition:0.4s;
-}
 
 //?
 .inline, .displayInline{
@@ -634,9 +611,14 @@ a{	color: $link-color;
 	float: left;
 }
 
+.marginBottom20{
+	margin-bottom: 20px;
+}
 
-
-
+.googleBlue
+{
+	color: $googleBlue
+}
 
 
 

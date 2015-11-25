@@ -15,25 +15,32 @@ p {
   margin-bottom: 10px; }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 10px; }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 10px; }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 ul {
   list-style-type: disc; }
 
 li {
   margin-left: 10px; }
+
+dt {
+  font-weight: 600;
+  padding-right: 2px; }
+
+dd {
+  margin-bottom: 10px; }
 
 a {
   color: #ff0080;
@@ -60,9 +67,10 @@ a {
   width: 98%;
   display: block;
   position: fixed;
-  top: 105px;
+  top: 88px;
   padding-top: 10px;
-  background: #f7f7f7; }
+  background: #f7f7f7;
+  z-index: 899; }
 
 .breadCrumbs {
   list-style: none;
@@ -79,23 +87,9 @@ a {
   width: 1000px;
   margin: 0 auto;
   background-color: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  margin-top: 130px;
-  padding: 10px; }
-
-.moduleList {
-  list-style: none; }
-  .moduleList a {
-    color: black; }
-    .moduleList a:hover {
-      text-decoration: underline;
-      color: #4488f6; }
-  .moduleList li {
-    padding-top: 3px;
-    padding-left: 20px; }
-    .moduleList li ul {
-      list-style: none;
-      padding-left: 20px; }
+  margin-top: 110px;
+  padding: 10px;
+  border: 1px solid #c8c8c8; }
 
 #nav {
   width: 100%;
@@ -130,8 +124,7 @@ a {
       top: 30px;
       padding: 5px 5px 5px 0;
       background: white;
-      border: 1px solid #fafafa;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+      border: 1px solid #fafafa; }
       #nav ul ul li {
         width: 110px;
         float: none;
@@ -147,13 +140,13 @@ a {
   background-image: url("../images/oduOnlineLogo.svg");
   background-color: white;
   background-repeat: no-repeat;
-  background-size: 140px 75px;
+  background-size: 140px 45px;
   padding: 3px;
-  height: 75px;
+  height: 45px;
   width: 140px;
   display: inline-block;
   float: left;
-  margin: -30px 10px 0 0; }
+  margin: -10px 10px 0 0; }
 
 .pleLogo {
   background-image: url("../images/pleLogo.svg");
@@ -173,11 +166,10 @@ a {
   background-color: white;
   top: 0;
   left: 0;
-  height: 95px;
+  height: 90px;
   vertical-align: top;
   z-index: 900;
-  border-bottom: 10px solid #003767;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26); }
+  border-bottom: 5px solid #003767; }
   .top h1 {
     display: inline-block; }
     .top h1 a {
@@ -186,7 +178,7 @@ a {
         color: #4488f6;
         text-decoration: underline; }
   .top h2 {
-    margin: 0;
+    margin-left: 160px;
     padding: 0;
     display: block;
     font-size: 1rem;
@@ -201,6 +193,8 @@ a {
     padding: 0;
     margin: 0 auto 0 auto; }
 
+.md-t {
+  font-size: .8rem; }
 .md-s {
   font-size: 1rem; }
 .md-m {
@@ -225,25 +219,23 @@ a {
     left: 10px;
     width: 99%; }
   .editingMode .breadCrumbWrapper {
-    top: 113px; }
-  .editingMode #editIconGroup {
+    top: 100px; }
+  .editingMode #editToolListItem {
     background: red;
+    color: white;
     padding: 3px; }
-  .editingMode #editToolLink {
-    color: white; }
-  .editingMode #chatLink, .editingMode #feedbackToolLink, .editingMode #aaqToolLink, .editingMode #printToolLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink {
+    .editingMode #editToolListItem:hover, .editingMode #editToolListItem i:hover {
+      color: black; }
+  .editingMode #chatLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink, .editingMode #glossaryToolListItem, .editingMode #aaqToolListItem, .editingMode #feedbackToolListItem, .editingMode #printToolListItem {
     color: #c8c8c8;
     cursor: not-allowed;
-    pointer-events: none; }
+    pointer-events: none;
+    border: 0px; }
   .editingMode #fakeEditor {
     display: inline-block; }
   .editingMode #ask {
     visibility: hidden;
     display: none; }
-  .editingMode #aaqIconGroup {
-    border: 0;
-    padding: 0;
-    color: #c8c8c8; }
 
 .disabledEditingLink {
   color: #c8c8c8 !important;
@@ -269,11 +261,6 @@ a {
 .hidden {
   visibility: hidden; }
 
-.animatedHidden {
-  visibility: hidden;
-  -webkit-transition: 0.4s;
-  transition: 0.4s; }
-
 .inline, .displayInline {
   display: inline; }
 
@@ -291,5 +278,11 @@ a {
 
 .floatLeft {
   float: left; }
+
+.marginBottom20 {
+  margin-bottom: 20px; }
+
+.googleBlue {
+  color: #4488f6; }
 
 /*# sourceMappingURL=pleStyle.css.map */
