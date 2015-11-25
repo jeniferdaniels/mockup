@@ -14,6 +14,7 @@ function includeCsss(){
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/courseMaterial.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/navArrows.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/modal.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/jquery-ui-1.10.4.custom.css">';
 }
 
 function includeScripts()
@@ -162,16 +163,18 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 	echo '<ul id="tools">';
 	
 	if ($showGlossary)
-		echo '<li id="glossaryIconGroup"><a id="glossaryToolLink" title="Module Glossary">' . icon("fa", "glossary", "l", "") . 'Glossary</a></li>';	
+		echo '<li id="glossaryToolListItem" title="Module Glossary">'. icon("fa", "glossary", "l", "") . 'Glossary</li>';	
+				
 	if ($showAAQ)
-		echo '<li id="aaqIconGroup"><a id="aaqToolLink" title="Show Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</a></li>';
+		echo '<li id="aaqToolListItem" title="Show Ask A Question">' . icon("g", "aaq", "l", "") . 'Ask A Question</li>';
 	
 	if ($showFeedback)
-		echo '<li id="feedbackIconGroup"><a id="feedbackToolLink" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</a></li>';
+		echo '<li id="feedbackToolListItem" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</li>';
 	
-	echo '<li id="printIconIconGroup"><a id="prinTooltLink" title="Print">'. icon("g", "print", "l", "") . 'Print</a></li>';
+	echo '<li id="printToolListItem" title="Print">'. icon("g", "print", "l", "") . 'Print</li>';
+
 	if ($showEdit)
-		echo '<li id="editIconGroup"><a id="editToolLink" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</a></li>';
+		echo '<li id="editToolListItem" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</li>';
 	
 	
 	echo '</ul>';
@@ -208,8 +211,30 @@ function writeStarRating($rating){
 
 
 function writeDummyGlossaryTerms($count) {
-	for ($i=0; $i<$count; $i++)
-		echo "<dt>Some term " . $i . "</dt><dd>Definition goes here</dd>";
+	
+	$htmlString = "<dl><dt>Ailurophile</dt>";
+	$htmlString .= "<dd>One who loves cats.</dd>";
+
+	$htmlString .= "<dt>Ailurophobe</dt>";
+	$htmlString .= "<dd>One who hates or fears cats.</dd>";
+
+	$htmlString .= "<dt>Caregiver</dt>";
+	$htmlString .= "<dd>person responsible for a pet cat or for a feral colony; these days the term 'owner' suffers from political incorrectness.</dd>";
+
+	$htmlString .= "<dt>Domestic</dt>";
+	$htmlString .= "<dd>an animal which has become adapted to humans over many generations, has a genetic predisposition to tameness.</dd>";
+
+	$htmlString .= "<dt>Feral</dt>";
+	$htmlString .= "<dd>an ex-domestic cat which has reverted to being fully wild or the wild-born (never known domesticity) offspring of stray cats.</dd>";
+
+	$htmlString .= "<dt>Guardian</dt>";
+	$htmlString .= "<dd>another 'politically correct' term for a pet cat's owner or a feral cat's caregiver.</dd>";
+
+	$htmlString .= "<dt>Pedigreed</dt>";
+	$htmlString .= "<dd>A cat whose lineage has been tracked.  Points: The coldest parts of the cats body, such as the face, ears, legs and tail. Often the coat on these parts is different than the body color.</dd></dl>";
+
+	echo $htmlString;
+	
 }
 
 
