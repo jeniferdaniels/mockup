@@ -13,9 +13,14 @@
 				$.ajax({
 					url: "cat101/json/kitten.json"
 				}).done(function(obj) {
+					var disclaimer = "Marking an assignment as submitted, does not automatically submit the assignment via Blackboard.";
+					var resubmit = "Click the checkmark again to mark the assignment as not submitted.";
+					var submit = "Mark Assignment as Submitted";
+					var submitted = "Assignment Submitted!";
+					
 					setTop(obj);
 					document.title = getCourseTitle(obj);
-					flatCourse = flatten(obj);
+					flatCourse = flattenCourse(obj);
 					
 					var assignmentId = (typeof $.QueryString["id"] !== undefined) ? $.QueryString["id"] : "3"; //default it to something for now 
 					//TODO: make a default id and handle that
@@ -39,9 +44,37 @@
 					$("#thisCrumb").html(assignment.displayNumber + " " + assignment.title); 
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
+
+					$("#checkmarkDisclaimer").html(disclaimer);
+					$("#checkmarkCaption").html(submit);
+					
 					$("#editToolLink").click(function(){		
 						$("body").toggleClass("editingMode");			
+					}); //edit link
+
+					$("#checkmarkWrapper").click(function(){
+						console.log	("clicked");
+
+						if ($("#checkmark").hasClass("disabled")){
+							console.log("here");
+							$("#checkmarkCaption").html(submitted);
+							$("#checkmarkDisclaimer").html(resubmit);
+							$("#checkmark").addClass("success");
+							$("#checkmark").removeClass("disabled");
+						}
+						else{
+							console.log("right here");
+									
+							$("#checkmarkCaption").html(submit);	
+							$("#checkmarkDisclaimer").html(disclaimer);
+							$("#checkmark").addClass("disabled");
+							$("#checkmark").removeClass("success");
+						}
+						
+						
 					}); //edit link										
+
+															
 				});// done 
 			});//ready
 		</script>
@@ -70,26 +103,33 @@
 
 
 			<div class="wrapper">
-				<div id="courseMaterial" class="paper">
-					<h2 id="pageTitle">Assignment</h2>
-					<div id="content">
-						<div class="icon"><?php echo icon("g", "assignment", "h", "darkGray") ?></div>
-						<h3 id="assignmentTitle"></h3>
-						<br>
-						<h5 id="dueHeader">Due-</h5><div id="due"></div>
-						<br>
-						<h5 id="submitHeader">Submit via-</h5><div id="submitVia"></div>
-						<h5 id="deliverableHeader">Deliverable-</h5><div id="deliverable"></div>
-						<br>
-						<p id="description"></p>
-						<br>
-						
-						<div id="checkmark"><?php echo icon("g", "check", "l", "success")?></div>
-						
-					
+				<div id="courseMaterial">
+					<div class="paper">
+						<div id="content">
+							<div class="assignmentLogo"></div>
+							<h1 id="pageTitle">Assignment</h1>
+							<h3 id="assignmentTitle"></h3>
+							
+							<ul class="assignmentProperties" class="assignmentProperties">
+								<li><div id="dueHeader">Due- </div><div id="due"></div></li>
+								<li><div id="submitHeader">Submit via- </div><div id="submitVia"></div></li>
+								<li><div id="deliverableHeader">Deliverable- </div><div id="deliverable"></div></li>
+							</ul>
+							
+							<p id="description"></p>
+							
+							<div id="checkmarkWrapper" class="checkmarkWrapper">
+								<div id="checkmark" class="checkmark disabled"><?php echo icon("g", "check", "h", "")?></div>
+								<div id="checkmarkCaption" class="checkmarkCaption"></div>
+								<div id="checkmarkDisclaimer" class="checkmarkDisclaimer"></div>
+							</div>
+							
+							<div style="clear: both"></div>
+						</div>
 					</div>
 				</div>
-				<div id="toolBox"><?php writeTools(false, false, true, true, false) ?></div>
+				
+				<div id="toolBox"><?php writeTools(false, true, true, true, false) ?></div>
 				<div id="footer" class="footer"></div>
 			</div>
 	</body>
