@@ -129,90 +129,13 @@ function setInstructorInformation(obj)
 
 
 function hiddenCheck(id){
-	return "<i id='check_" + id + "' class='material-icons md-18 hidden success'>check</i>"
+	return "<i id='check_" + id + "' class='material-icons md-m hidden success checkMark'>check</i>";
+	//return "<i id='check_" + id + "' class='fa fa-fw fa-check-circle hidden success checkMark'></i>";
+	
 }
 
 
-
-function setCourseContent(obj){	
-	var html = "";
-	var classNumber = "CAT101";
-	//TODO: just print to screen using flat(obj)
-	
-	//put in display order
-	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
-	
-	//LOOP THROUGH EACH MODULE IN DISPLAY ORDER
-	for (var i=0; i<modules.length; i++){
-		var theModule = modules[i];
-		if (gShowConsoleMsgs) console.log(i + ". " + theModule.title);
-
-		moduleItems = theModule.items;
-		oneLevelDeepModuleItems = [];
-
-		//GET THE ITEMS IN THE MODULE, IF THEY HAVE ITEMS THEMSELVES, GET THOSE
-		//FLATTEN THIS ARRAY
-		for (var j=0; j<moduleItems.length; j++){
-			var runningCounts = [0,0]; //numbers, assignments
-
-			//this is where it gets tricky.  the topics and assignments can be intermingled and they are arrays themselves.
-			//so we need to fetch the object and put it in a flattened array for the purposes of this display
-			if ((moduleItems[j].type == "topics")|| moduleItems[j].type == "assignments")
-			{			
-				//dig into each item in the topics or assignments array and pop that item out into the flattened array
-				for (var k=0; k < moduleItems[j].items.length; k++){
-						var moduleItemsItem = moduleItems[j].items[k];
-						//add this part so we can get the numbering correct later
-						moduleItemsItem["type"] = moduleItems[j].type;  //why not add this to the json file in the first place? reduce redundancy in the file.
-						oneLevelDeepModuleItems.push(moduleItemsItem);
-					}
-			}
-			else {
-			//otherwise get the resources and glossary itms or whatver one level deep stuff
-				oneLevelDeepModuleItems.push(moduleItems[j]);
-			}
-		}
-		
-		//order them sequentially
-		oneLevelDeepModuleItems.sort(sort_by("innerModuleDisplayOrder", false));
-		
-		
-		//start string to write out
-		html += "<div class='toggleBox' id='toggleBox_" + i + "'>";
-		html += "<h3 id='moduleTitle_" + i + "' class='trigger_" + i + "'>" + i + ". " + theModule.title + "</h3>";
-		html += "<div class='toggleWrap_" + i + "'>";
-		html += "<ul>";
-		//build module string to write to screen
-		for (var n=0; n<oneLevelDeepModuleItems.length; n++){
-			runningCounts = updateRunningCount(runningCounts, oneLevelDeepModuleItems[n].type);
-			sequenceNumber = showSequenceNumber(runningCounts, oneLevelDeepModuleItems[n].type);
-			
-			if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "type is" + oneLevelDeepModuleItems[n].type); }
-			
-			html += "<li><h4>" + hiddenCheck(oneLevelDeepModuleItems[n].id) + "<a href='" + oneLevelDeepModuleItems[n].url + "'>" + i + "." + sequenceNumber + " " + oneLevelDeepModuleItems[n].title + "</a></h4>";
-			if (oneLevelDeepModuleItems[n].type == "topics"){
-				html += "<ul>";
-				//get the subtopics on display order
-				var subTopics = oneLevelDeepModuleItems[n].subtopics.sort(sort_by("subtopicDisplayOrder", false));
-					for (var p=0; p<subTopics.length; p++){
-						if (gShowConsoleMsgs) { console.log(i + "." + sequenceNumber + "." + p + " " + subTopics[p].title)}
-						html += "<li>" + hiddenCheck(subTopics[p].id) + "<a href='" + subTopics[p].url + "'>" + i + "." + sequenceNumber + "." + p + " " + subTopics[p].title + "</a></li>";
-					}
-						
-				
-				html += "</ul>"; 
-			}
-			html += "</li>";	
-		}
-		html += "</ul></div></div>";
-		html += "</div>"; //end box wrapper
-		
-		document.getElementById("courseContent").innerHTML = html;
-	}
-}
-		
-		
-function flatten(obj){	
+function flattenCourse(obj){	
 	
 	//put in display order
 	var modules = obj.course.modules.sort(sort_by("moduleDisplayOrder", false));
@@ -226,6 +149,7 @@ function flatten(obj){
 		item = {};
 		
 		item.id = theModule.id;
+		item.type = theModule.type;
 		item.parent = theModule.parent;
 		item.title = theModule.title;
 		item.displayNumber = i;
@@ -243,7 +167,7 @@ function flatten(obj){
 
 			//this is where it gets tricky.  the topics and assignments can be intermingled and they are arrays themselves.
 			//so we need to fetch the object and put it in a flattened array for the purposes of this display
-			if ((moduleItems[j].type == "topics")|| moduleItems[j].type == "assignments")
+			if ((moduleItems[j].type == "topics")|| (moduleItems[j].type == "assignments"))
 			{			
 				//dig into each item in the topics or assignments array and pop that item out into the flattened array
 				for (var k=0; k < moduleItems[j].items.length; k++){
@@ -282,6 +206,7 @@ function flatten(obj){
 				item.deliverable = oneLevelDeepModuleItems[n].deliverable; //may be null
 				item.submitVia = oneLevelDeepModuleItems[n].submitVia; // may be null
 				item.description = oneLevelDeepModuleItems[n].description;
+				item.type = "assignment";
 			}
 			items.push(item);
 			item = {};
@@ -308,17 +233,73 @@ function flatten(obj){
 	
 	return items;
 }
+
+
+function writeCourseContent(flatCourse){
+	var htmlString = "";
+	var oldDepth = 0;
 	
-function testFlat(items){
+	for (var i=0; i<flatCourse.length; i++)
+		{
+			item= flatCourse[i];
+			
+			depth = (item.displayNumber + "").split(".").length;  //needs + "" so it knows its a string. Its js being stupid
+
+			if (depth - oldDepth == 1){
+				if (item.type == "module")
+					htmlString += "<ul class='moduleList'>";
+				else if (item.type == "topics")
+					htmlString += "<ul class='moduleContentList' id='moduleContentList_" + item.id + "'>";
+				else if (item.type == "subtopics")
+					htmlString += "<ul class='topicContentList'>";
+				else
+					htmlString += "<ul>";				
+			}
+
+			else if (depth - oldDepth == -1)
+				htmlString += "</li></ul>";
+			else 
+				htmlString += "</li>";
+
+			
+			
+			
+			if (item.type == "module"){
+				//htmlString += "<li id='" + item.id  + "'><i class='fa fa-fw fa-angle-double-right fa-2x'></i>";
+				htmlString += "<li id='" + item.id  + "'>" + hiddenCheck(item.id);
+				htmlString += "<div class='moduleTitle' id='title_" + item.id + "'>";
+				htmlString += "<i class='fa fa-fw fa-caret-right fa-lg googleBlue displayNone' id='module_" + item.id + "_expanded'></i><i class='fa fa-fw fa-caret-down googleBlue fa-lg' id='module_" + item.id + "_collapsed'></i>";
+				htmlString += item.displayNumber + " " + item.title + "</div>";
+			}
+			else if (item.type == "topics"){
+				//htmlString += "<li id='" + item.id + "'>";
+				htmlString += "<li id='" + item.id + "'>" + hiddenCheck(item.id);
+				htmlString += "<div class='topicTitle' id='title_" + item.id + "'><a href='" + item.url + "'>" + item.displayNumber + " " + item.title + "</a></div>";
+			}
+			else{	
+				//htmlString += "<li id='" + item.id + "'>";
+				htmlString += "<li id='" + item.id + "'>" + hiddenCheck(item.id);
+				htmlString +=  "<a href='" + item.url + "'>" + item.displayNumber + " " + item.title + "</a>";
+			}
+			
+			
+			
+			oldDepth = depth;
+		}
+
+	return htmlString;
+}
+
+
+
+function writeFlatInConsole(items){
 	for (i in items){
 		item = items[i];
 			console.log("--------------");
 			for (j in item){
 				console.log(j + " " + item[j]);
 			}
-	}
-	
-	
+	}	
 }
 
 
@@ -497,11 +478,14 @@ function makeAwesomeDialog(){
 //function makeAwesomeDialog(height, width, isModal, isDraggable, isResizeable, buttons, canUseEsc, hasClose){
 	$("#popWindow").dialog({
 		modal: false,
+		title: "Module Glossary",
 		position: { my: "left", at: "left bottom", of: "#prev" },
 		draggable: true,
 		resizeable: true,
-		width: 200,
-		dialogClass: 'ui-dialog'		
+		width: 275,
+		height: 400,
+		dialogClass: 'ui-dialog',
+		buttons: [{text: "Highlight Terms", click: function (){window.alert("terms found on page would be highlighted.");} }]
 	});	
 }
 
@@ -513,13 +497,23 @@ function toolBoxFunctionality(){
 	//***************************************
 	//add functionality
 	//***************************************
-	$("#editToolLink").click(function(){		
-			$("body").toggleClass("editingMode");			
+	$("#editToolListItem").click(function(){		
+		if ( $("#glossaryToolListItem").hasClass("on")){
+			$("#popWindow").dialog("close");
+			$("#glossaryToolListItem").removeClass("on");
+		}
+		if ( $("#aaqToolListItem").hasClass("on")){
+			$("#aaqToolListItem").removeClass("on");
+		}
+		
+		$("body").toggleClass("editingMode");
+			
+			
 		}); //edit link
 
-	$("#aaqToolLink").click(function(){
+	$("#aaqToolListItem").click(function(){
 			$("#ask").toggleClass("displayNone");
-			$("#aaqIconGroup").toggleClass("askAQuestionOn");
+			$("#aaqToolListItem").toggleClass("on");
 
 			var title = 'Hide Ask A Question' ;
 		    if( $("#ask").hasClass('displayNone')){
@@ -528,11 +522,14 @@ function toolBoxFunctionality(){
 			$(this).attr('title', title);
 		}); //aaq link
 
-	$("#glossaryToolLink").click(function(){
-			$("#glossaryIconGroup").toggleClass("glossaryOn");
-			makeAwesomeDialog();
+	$("#glossaryToolListItem").click(function(){
+			$("#glossaryToolListItem").toggleClass("on");
 			
+			if ( $("#glossaryToolListItem").hasClass("on"))
+				makeAwesomeDialog();	
+			else
+				$("#popWindow").dialog("close");
+				
 		});//glossary link	
 	
 }
-
