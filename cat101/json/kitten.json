@@ -13,6 +13,7 @@
 		[
 			{
 				"title": "Overview and Course Logistics",
+				"type": "module",
 				"parent": 0,
 				"id": 1209,
 				"moduleDisplayOrder": 0,
@@ -41,14 +42,17 @@
 							[
 								{
 									"title": "Welcome",
+									"type": "topic",
 									"parent": 1209,
 									"id": 1210,
 									"innerModuleDisplayOrder": 1,
 									"url": "topic.php?id=1210",
+									"type": "topic",
 									"subtopics":
 										[
 											{										
 												"title": "Introduction",
+												"type": "subtopic",
 												"parent": 1210,
 												"id": 1211,
 												"subtopicDisplayOrder": 1,
@@ -57,6 +61,7 @@
 											},
 											{
 												"title": "Online Learning Orientation",
+												"type": "subtopic",
 												"parent": 1210,
 												"id": 1212,
 												"subtopicDisplayOrder": 2,
@@ -65,6 +70,7 @@
 											},
 											{
 												"title": "Technical Support",
+												"type": "subtopic",
 												"parent": 1210,
 												"id": 1213,
 												"subtopicDisplayOrder": 3,
@@ -73,6 +79,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent": 1210,
 												"id": 1214,
 												"subtopicDisplayOrder": 4,
@@ -89,20 +96,20 @@
 						"items": 
 							[
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Send Test Email",
 									"parent": 1209,
 									"id": 1215,
 									"innerModuleDisplayOrder": 2,
 									"url": "assignment.php?id=1215",
 									"start": "2015-01-12T23:59:00",
-									"submitVia": "email",
+									"submitVia": "Email",
 									"deliverable": "Submitted email",	
 									"description": "Send a test email with your name, birthdate and credit card number to the following address: <a href='mailto:jdaniels@odu.edu'>jdaniels@odu.edu</a>"
 												
 								},
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Module Feedback",
 									"parent": 1209,
 									"id": 1216,
@@ -131,6 +138,7 @@
 				"title":"Kitten Acquisition!",
 				"parent": 0,
 				"id": 1,
+				"type": "module",
 				"moduleDisplayOrder": 1,
 				"start": "2015-01-15",
 				"end": "2015-01-23",
@@ -158,6 +166,7 @@
 							[
 								{
 									"title": "Factors to Consider When Choosing a Kitten",
+									"type": "topic",
 									"parent": 1,
 									"id": 2,
 									"innerModuleDisplayOrder": 1,
@@ -166,6 +175,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent": 2,
 												"id": 3,
 												"subtopicDisplayOrder":1,
@@ -174,6 +184,7 @@
 											},
 											{
 												"title": "Responsibility",
+												"type": "subtopic",
 												"parent": 2,
 												"id": 4,
 												"subtopicDisplayOrder":2,
@@ -182,6 +193,7 @@
 											},
 											{
 												"title": "Cost",
+												"type": "subtopic",
 												"parent": 2,
 												"id": 5,
 												"subtopicDisplayOrder":3,
@@ -190,6 +202,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent": 2,
 												"id": 6,
 												"subtopicDisplayOrder":4,
@@ -200,6 +213,7 @@
 								},
 								{
 									"title": "Kitten Rescue",
+									"type": "topic",
 									"parent": 1,
 									"id": 7,
 									"innerModuleDisplayOrder": 3,
@@ -208,6 +222,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":7,
 												"id":8,
 												"subtopicDisplayOrder":1,
@@ -216,6 +231,7 @@
 											},
 											{
 												"title": "Reasons to Rescue",
+												"type": "subtopic",
 												"parent":7,
 												"id": 9,
 												"subtopicDisplayOrder":2,
@@ -224,6 +240,7 @@
 											},
 											{
 												"title": "Hampton Roads Rescue Organizations",
+												"type": "subtopic",
 												"parent":7,
 												"id": 10,
 												"subtopicDisplayOrder":3,
@@ -232,6 +249,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":7,
 												"id": 33,
 												"subtopicDisplayOrder":4,
@@ -242,6 +260,7 @@
 								},
 								{
 									"title": "Purchasing a Kitten",
+									"type": "topic",
 									"parent": 1,
 									"id": 11,
 									"innerModuleDisplayOrder": 5,
@@ -250,6 +269,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":11,
 												"id":12,
 												"subtopicDisplayOrder":1,
@@ -258,6 +278,7 @@
 											},
 											{
 												"title": "Reasons to Purchase A Kitten",
+												"type": "subtopic",
 												"parent":11,
 												"id": 13,
 												"subtopicDisplayOrder":2,
@@ -266,6 +287,7 @@
 											},
 											{
 												"title": "Where to Buy",
+												"type": "subtopic",
 												"parent":11,
 												"id": 14,
 												"subtopicDispayOrder":17,
@@ -274,6 +296,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":11,
 												"id": 15,
 												"subtopicDisplayOrder":18,
@@ -299,50 +322,50 @@
 							"items":
 							[
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Homework #1",
 									"parent": 1,
 									"id":17,
 									"innerModuleDisplayOrder": 2,
 									"url": "assignment.php?id=17",
 									"start": "2015-01-16T23:59:00",	
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "PDF essay",	
-									"description": "What are some benefits to owning a kitten?  Write a 500 word essay in the text editor of your choice, then convert it to PDF and upload it to the assignments section on Blackboard."
+									"description": "What are some benefits to owning a kitten?  Write a 500 word essay in the text editor of your choice, then convert it to PDF and upload it to the assignments section on Blackboard. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique."
 								},
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Discussion Forum #1",
 									"parent": 1,
 									"id":18,
 									"innerModuleDisplayOrder": 4,
 									"url": "assignment.php?id=18",
 									"start": "2015-01-19T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "Submitted Discussion Forum Content",	
 									"description": "Go to the discussion forum on Blackboard, write a 100-300 word comment on the topic 'Getting a Kitten'.  Also, reply to 3 other students with 50-100 word comments."	
 								},
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Quiz #1",
 									"parent": 1,
 									"id":19,
 									"innerModuleDisplayOrder": 6,
 									"url": "assignment.php?id=19",
 									"start": "2015-01-20T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "Submitted Quiz",	
 									"description": "Complete Quiz #1 on Blackboard.  <br><br>Using <a href='http://go.proctoru.com'>Proctor U</a> via Blackboard, you may use a 8.5 inch x 11 inch handwritten study sheet.  However, you may not use books, cell phones or other electronic gadgets."
 								},
 								{
-									"shortTitle": "",
+									"type": "assignment",
 									"title": "Module Feedback",
 									"parent": 1,
 									"id":20,
 									"innerModuleDisplayOrder": 9,
 									"url": "assignment.php?id=20",
 									"start": "2015-01-22T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -354,7 +377,45 @@
 							"id" : 1005,
 							"parent": 1,
 							"innerModuleDisplayOrder":8,
-							"url": "glossary.php?id=1005"
+							"url": "glossary.php?id=1005",
+							"items":
+								[
+									{
+										"id": 2500,
+										"term": "Ailurophile",
+										"definition": "One who loves cats."
+									},
+									{
+										"id": 2501,
+										"term": "Ailurophobe",
+										"description": "One who hates or fears cats."
+									},
+									{
+										"id": 2502,
+										"term": "Caregiver",
+										"description": "person responsible for a pet cat or for a feral colony; these days the term 'owner' suffers from political incorrectness."
+									},
+									{
+										"id": 2503,
+										"term": "Domestic",
+										"description": "an animal which has become adapted to humans over many generations, has a genetic predisposition to tameness."
+									},
+									{
+										"id": 2504,
+										"term": "Feral",
+										"description": "an ex-domestic cat which has reverted to being fully wild or the wild-born (never known domesticity) offspring of stray cats."
+									},
+									{
+										"id": 2505,
+										"term": "Guardian",
+										"description": "another 'politically correct' term for a pet cat's owner or a feral cat's caregiver."
+									},
+									{
+										"id": 2506,
+										"term": "Pedigreed",
+										"description": "A cat whose lineage has been tracked.  Points: The coldest parts of the cats body, such as the face, ears, legs and tail. Often the coat on these parts is different than the body color."
+									}
+								]
 						}
 					]
 			},
@@ -362,6 +423,7 @@
 				"title":"Caring for Your Kitten",
 				"parent": 0,
 				"id":21,
+				"type": "module",
 				"moduleDisplayOrder": 2,
 				"start": "2015-01-23",
 				"end": "2015-01-29",
@@ -388,6 +450,7 @@
 							[
 								{
 									"title": "Bringing Your Kitten Home",
+									"type": "topic",
 									"parent": 21,
 									"id": 22,
 									"innerModuleDisplayOrder": 1,
@@ -396,6 +459,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":22,
 												"id":60,
 												"subtopicDisplayOrder":5,
@@ -404,6 +468,7 @@
 											},
 											{
 												"title": "Transporting our Kitten",
+												"type": "subtopic",
 												"parent":22,
 												"id":23,
 												"subtopicDisplayOrder":6,
@@ -412,6 +477,7 @@
 											},
 											{
 												"title": "Preparing the House",
+												"type": "subtopic",
 												"parent":22,
 												"id": 24,
 												"subtopicDisplayOrder":10,
@@ -420,6 +486,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":22,
 												"id": 25,
 												"subtopicDisplayOrder":18,
@@ -438,6 +505,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":26,
 												"id":27,
 												"subtopicDisplayOrder":1,
@@ -446,6 +514,7 @@
 											},
 											{
 												"title": "Feeding Guidelines",
+												"type": "subtopic",
 												"parent":26,
 												"id": 28,
 												"subtopicDisplayOrder":2,
@@ -454,6 +523,7 @@
 											},
 											{
 												"title": "Grooming",
+												"type": "subtopic",
 												"parent":26,
 												"id": 29,
 												"subtopicDisplayOrder":3,
@@ -462,6 +532,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":26,
 												"id": 30,
 												"subtopicDisplayOrder":4,
@@ -480,6 +551,7 @@
 										[
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":31,
 												"id": 32,
 												"subtopicDisplayOrder":1,
@@ -488,6 +560,7 @@
 											},
 											{
 												"title": "Toys",
+												"type": "subtopic",
 												"parent":31,
 												"id": 330,
 												"subtopicDisplayOrder":2,
@@ -496,6 +569,7 @@
 											},
 											{
 												"title": "Cat Nip",
+												"type": "subtopic",
 												"parent":31,
 												"id": 34,
 												"subtopicDisplayOrder":8,
@@ -504,6 +578,7 @@
 											},
 											{
 												"title": "Other Pets",
+												"type": "subtopic",
 												"parent":31,
 												"id": 35,
 												"subtopicDisplayOrder":12,
@@ -512,6 +587,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":31,
 												"id": 36,
 												"subtopicDisplayOrder":22,
@@ -535,50 +611,46 @@
 							"items":
 							[
 								{
-									"shortTitle": "",
 									"title": "Homework #2",
 									"parent": 21,
 									"id":38,
 									"innerModuleDisplayOrder": 2,
 									"url": "assignment.php?id=38",
 									"start": "2015-01-26T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "essay",	
 									"description": "Write a 500 word essay on stuff"										
 								},
 								{
-									"shortTitle": "",
 									"title": "Discussion Forum #2",
 									"parent": 21,
 									"id":39,
 									"innerModuleDisplayOrder": 4,
 									"url": "assignment.php?id=39",
 									"start": "2015-01-27T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "essay",	
 									"description": "Write a 50000 word email"
 								},
 								{
-									"shortTitle": "",
 									"title": "Homework #3",
 									"parent": 21,
 									"id":40,
 									"innerModuleDisplayOrder": 7,
 									"url": "assignment.php?id=40",
 									"start": "2015-01-27T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "discussion",	
 									"description": "Why is this your homework?"
 								},
 								{
-									"shortTitle": "",
 									"title": "Module Feedback",
 									"parent": 2,
 									"id":41,
 									"innerModuleDisplayOrder": 100,
 									"url": "assignment.php?id=41",
 									"start": "2015-01-29T23:59:00",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -590,12 +662,31 @@
 							"id" : 1040,
 							"parent": 21,
 							"innerModuleDisplayOrder": 12,
-							"url": "glossary.php?id=1040"
+							"url": "glossary.php?id=1040",
+							"items":
+							[							
+								{
+									"id": 2520,
+									"term": "Catnip",
+									"description": "A hairy aromatic perennial herb (Nepeta cataria) in the mint family, native to Eurasia and containing an aromatic oil to which cats are strongly attracted."
+								},
+								{
+									"id": 2521,
+									"term": "Dander",
+									"description": "Skin cells that a cat continually sheds. Danders protein causes allergic reactions in sensitive people. In addition, when cats groom themselves, the cells mix with saliva, providing another method for the spread of the allergen."
+								},
+								{
+									"id": 2522,
+									"term": "Litterbox",
+									"description": "A container filled with kitty litter and serving as a sanitary place for cats to eliminate."
+								}
+							]
 						}
 					]
 			},
 			{
 				"title":"Legal Requirements",
+				"type": "module",
 				"parent": 0,
 				"id": 42,
 				"moduleDisplayOrder": 3,
@@ -624,6 +715,7 @@
 							[
 								{
 									"title" : "Vaccinations",
+									"type": "topic",
 									"parent" : 42,
 									"id": 43,
 									"innerModuleDisplayOrder": 1,
@@ -633,6 +725,7 @@
 									
 											{
 												"title": "Overview",
+												"type": "subtopic",
 												"parent":43,
 												"id":44,
 												"subtopicDisplayOrder":1,
@@ -641,6 +734,7 @@
 											},
 											{
 												"title": "Initial",
+												"type": "subtopic",
 												"parent":43,
 												"id": 45,
 												"subtopicDisplayOrder":2,
@@ -649,6 +743,7 @@
 											},
 											{
 												"title": "Rabies",
+												"type": "subtopic",
 												"parent":43,
 												"id": 46,
 												"subtopicDisplayOrder":3,
@@ -657,6 +752,7 @@
 											},
 											{
 												"title": "Summary",
+												"type": "subtopic",
 												"parent":43,
 												"id": 47,
 												"subtopicDisplayOrder":4,
@@ -668,53 +764,59 @@
 								},
 								{
 									"title" : "City Regulations",
+									"type": "topic",
 									"parent" : 42,
 									"id": 48,
 									"innerModuleDisplayOrder": 3,
 									"url": "topic.php?id=48",
 									"subtopics":
-									[
-										{
-											"title": "Overview",
-											"parent":48,
-											"id":49,
-											"subtopicDisplayOrder":50,
-											"url": "subtopic.php?id=49",
-											"content": "genericContent.html"								
-										},
-										{
-											"title": "Licensing",
-											"parent":48,
-											"id": 50,
-											"subtopicDisplayOrder":51,
-											"url": "subtopic.php?id=50",
-											"content": "genericContent.html"											
-										},
-										{
-											"title": "Leash Laws",
-											"parent":48,
-											"id": 51,
-											"subtopicDisplayOrder":52,
-											"url": "subtopic.php?id=51",
-											"content": "genericContent.html"										
-										},
-										{
-											"title": "Maximum Occupancy",
-											"parent":48,
-											"id": 52,
-											"subtopicDisplayOrder":53,
-											"url": "subtopic.php?id=52",
-											"content": "genericContent.html"									
-										},
-										{
-											"title": "Summary",
-											"parent":48,
-											"id": 53,
-											"subtopicDisplayOrder":54,
-											"url": "subtopic.php?id=53"
-											,"content": "genericContent.html"											
-										}
-									]
+										[
+											{
+												"title": "Overview",
+												"type": "subtopic",
+												"parent":48,
+												"id":49,
+												"subtopicDisplayOrder":50,
+												"url": "subtopic.php?id=49",
+												"content": "genericContent.html"								
+											},
+											{
+												"title": "Licensing",
+												"type": "subtopic",
+												"parent":48,
+												"id": 50,
+												"subtopicDisplayOrder":51,
+												"url": "subtopic.php?id=50",
+												"content": "genericContent.html"											
+											},
+											{
+												"title": "Leash Laws",
+												"type": "subtopic",
+												"parent":48,
+												"id": 51,
+												"subtopicDisplayOrder":52,
+												"url": "subtopic.php?id=51",
+												"content": "genericContent.html"										
+											},
+											{
+												"title": "Maximum Occupancy",
+												"type": "subtopic",
+												"parent":48,
+												"id": 52,
+												"subtopicDisplayOrder":53,
+												"url": "subtopic.php?id=52",
+												"content": "genericContent.html"									
+											},
+											{
+												"title": "Summary",
+												"type": "subtopic",
+												"parent":48,
+												"id": 53,
+												"subtopicDisplayOrder":54,
+												"url": "subtopic.php?id=53",
+												"content": "genericContent.html"											
+											}
+										]
 								}
 							]
 						},
@@ -731,7 +833,6 @@
 							"items":
 							[
 								{
-									"shortTitle": "",
 									"title" : "Homework #4",
 									"parent" : 42,
 									"id":55,
@@ -743,38 +844,35 @@
 									"description": "upload a cat photo"														
 								},
 								{
-									"shortTitle": "",
 									"title" : "Discussion Forum #3",
 									"parent" : 42,
 									"id":56,
 									"innerModuleDisplayOrder": 4,
 									"start": "2015-02-02T23:59:00",
 									"url": "assignment.php?id=56",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "discussion forum",	
 									"description": "do some stuff"
 								},
 								{
-									"shortTitle": "",
 									"title" : "Final Exam",
 									"parent" : 42,
 									"id":57,
 									"innerModuleDisplayOrder": 5,
 									"start": "2015-02-02T23:59:00",
 									"url": "assignment.php?id=57",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "essay",	
 									"description": "100000 word essay on Grumpy Cat"
 								},
 								{
-									"shortTitle": "",
 									"title" : "Module Feedback",
 									"parent" : 42,
 									"id":58,
 									"innerModuleDisplayOrder": 100,
 									"start": "2015-02-07T23:59:00",
 									"url": "assignment.php?id=58",
-									"submitVia": "blackboard",
+									"submitVia": "Blackboard",
 									"deliverable": "Submitted feedback form.",	
 									"description": "Complete the feedback form for this module. Your feedback is valuable and will be used for the current and future offerings of this course."
 								}	
@@ -786,7 +884,25 @@
 							"id": 201,
 							"parent": 42,
 							"innerModuleDisplayOrder": 8,
-							"url": "glossary.php?id=201"				
+							"url": "glossary.php?id=201", 
+							"items":
+							[							
+								{
+									"id": 2530,
+									"term": "Cat Hoarder",
+									"description": "another term, possibly a better one, for a cat collector."
+								},
+								{
+									"id": 2531,
+									"term": "Rabies",
+									"description": "An acute, infectious, often fatal viral disease of most warm-blooded animals, especially wolves, cats, and dogs, that attacks the central nervous system and is transmitted by the bite of infected animals."
+								},
+								{
+									"id": 2532,
+									"term": "Vaccine",
+									"description": "A preparation of a weakened or killed pathogen, such as a bacterium or virus, or of a portion of the pathogen’s structure that upon administration stimulates antibody production or cellular immunity against the pathogen but is incapable of causing severe infection."
+								}
+							]				
 						}
 					]
 			}
