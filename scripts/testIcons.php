@@ -2,7 +2,10 @@
 <?php include_once 'mockupFunctions.php' ?>
 <!doctype html>
 <html>
-	<head><?php writeHead("Test"); ?></head>
+	<head>
+		<?php  includeCsss (); ?>
+		<?php  includeScripts (); ?>
+	</head>
 	
 	<body>
 	<?php 
