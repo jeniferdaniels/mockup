@@ -13,8 +13,8 @@
 .dash ul {
   list-style: none; }
   .dash ul li {
-    padding-top: 3px;
-    padding-left: 20px; }
+    padding-top: 5px;
+    padding-left: 5px; }
 .dash h2 {
   color: #4488f6; }
 
@@ -66,6 +66,28 @@
     font-size: .9rem;
     line-height: 125%; }
 
+#courseContent {
+  margin-left: 10px; }
+  #courseContent a {
+    color: black; }
+    #courseContent a:hover {
+      color: #4488f6;
+      border-bottom: 1px dotted #4488f6; }
+  #courseContent .moduleTitle {
+    font-size: 1.4rem;
+    cursor: pointer; }
+  #courseContent .moduleTitle, #courseContent .topicTitle {
+    display: inline-block; }
+  #courseContent .checkMark {
+    display: inline-block; }
+  #courseContent .moduleContentList {
+    border: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    width: 475px; }
+    #courseContent .moduleContentList ul ul {
+      border: 0; }
+
 .toggleBox {
   width: 90%;
   border: 1px solid #c8c8c8;
@@ -79,24 +101,31 @@
   .toggleBox a {
     color: #141414; }
 
-div.fc-toolbar div.fc-center h2,
-.fc-center h2 {
-  font-size: 1.2em;
-  color: #141414; }
+/* div.fc-toolbar div.fc-center h2,
+.fc-center h2{
+	font-size: 1.2em; 
+	color: $darkGray;
+}
 
 .fc-time {
-  display: none; }
+	display: none; 
+}
 
 .fc-title, .fc-day-number {
-  font-size: .7rem; }
+	font-size: .7rem;
+}
 
-#eventContent {
-  z-index: 999; }
+#eventContent{ 
+	z-index: 999; 
+}
 
-.fc-toolbar {
-  background: #fafafa; }
+.fc-toolbar{
+	background: $xLiteGray;
+}
 
-.fc-prev-button {
-  border: 1px solid red; }
+
+.fc-prev-button{
+	//border: 1px solid red;
+} */
 
 /*# sourceMappingURL=courseDashboard.css.map */
