@@ -1,23 +1,19 @@
 .wrapper {
-  width: 1100px;
-  margin: 160px auto 0 auto; }
+  width: 1070px;
+  margin: 140px auto 0 auto; }
 
 #courseMaterial {
   float: left;
   width: 1000px;
   margin: 0 auto;
-  min-height: 250px; }
+  min-height: 300px; }
 
 .paper {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 10px;
   margin-bottom: 30px;
-  background-color: white; }
-
-#tools {
-  float: right;
-  width: 50px;
-  padding: 10px; }
+  background-color: white;
+  border: 1px solid #c8c8c8;
+  min-height: 250px; }
 
 #footer {
   clear: both;
@@ -25,28 +21,65 @@
   height: 1px; }
 
 #tools {
+  float: right;
+  width: 50px;
+  padding: 10px 15px 10px 0;
+  color: white;
+  font-size: .7rem;
   list-style-type: none;
   line-height: 90%;
   text-align: center;
-  vertical-align: top; }
+  vertical-align: top;
+  background: #464646; }
   #tools :hover {
-    color: #ff0080; }
+    color: #4488f6; }
   #tools li {
-    margin-bottom: 20px; }
-    #tools li a {
-      color: #003767;
-      font-size: .7rem; }
+    margin-bottom: 20px;
+    padding: 3px; }
+  #tools .on {
+    border-left: 3px solid yellow;
+    color: yellow; }
 
-.askAQuestionOn {
-  border-left: 3px solid green;
-  padding-left: 3px; }
-  .askAQuestionOn #aaqToolLink {
-    color: green; }
+.ui-dialog {
+  padding: 0	!important; }
 
-.glossaryOn {
-  border-left: 3px solid green;
-  padding-left: 3px; }
-  .glossaryOn #glossaryToolLink {
-    color: green; }
+.assignmentLogo {
+  background-image: url("../images/clipboard.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 45px 45px;
+  padding: 3px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 200px 0; }
+
+.assignmentProperties {
+  list-style-type: none;
+  margin: 10px 0 10px 0; }
+
+#dueHeader, #submitHeader, #deliverableHeader {
+  font-weight: 600;
+  margin-right: 3px;
+  display: inline-block; }
+
+#due, #submitVia, #deliverable {
+  display: inline-block; }
+
+#description {
+  border-top: 1px solid #c8c8c8;
+  margin: 10px 0 10px 60px;
+  padding-top: 10px; }
+
+.checkmarkDisclaimer {
+  color: #7d7d7d;
+  font-size: .7rem;
+  line-height: 120%; }
+
+.checkmarkWrapper {
+  width: 300px;
+  float: right;
+  cursor: pointer; }
 
 /*# sourceMappingURL=courseMaterial.css.map */
