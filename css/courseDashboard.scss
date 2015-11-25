@@ -27,9 +27,9 @@
 	ul{
 		list-style: none;
 		
-		& li{
-		padding-top: 3px;
-		padding-left: 20px;
+		li{
+		padding-top: 5px;
+		padding-left: 5px;
 		}
 	}
 	
@@ -115,6 +115,48 @@
 //********************************************************************************************
 //COURSE CONTENT
 //********************************************************************************************
+//html body div#dash.contentWrapper.dash div#rightHandSide.courseContent div#courseContent ul.module
+#courseContent 
+{
+	margin-left: 10px;
+	
+	a{
+		color: black;
+		
+		&:hover{
+			color: $googleBlue;
+			border-bottom: 1px dotted $googleBlue;
+		}
+	}
+	
+	.moduleTitle{
+		font-size: 1.4rem;
+		cursor: pointer;
+	}
+	
+	.moduleTitle, .topicTitle{
+		display: inline-block;
+	}
+	
+	.checkMark{
+		display: inline-block;
+	}
+	
+	.moduleContentList{
+		border: 1px solid $liteGray;
+		margin-bottom: 20px;
+		margin-left: 25px;
+		width: 475px;
+		
+		ul{
+			//border: 1px solid $liteGray;			
+			ul {
+				border: 0;
+			}
+		}
+	}
+}
+
 
 .toggleBox{
 	//width: $contentWidth - 100px;
@@ -142,7 +184,7 @@
 //********************************************************************************************
 //CALENDAR
 //********************************************************************************************
-div.fc-toolbar div.fc-center h2,
+/* div.fc-toolbar div.fc-center h2,
 .fc-center h2{
 	font-size: 1.2em; 
 	color: $darkGray;
@@ -166,5 +208,5 @@ div.fc-toolbar div.fc-center h2,
 
 
 .fc-prev-button{
-	border: 1px solid red;
-}
+	//border: 1px solid red;
+} */
