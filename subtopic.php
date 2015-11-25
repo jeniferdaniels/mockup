@@ -6,7 +6,9 @@
 <html>
 	<head>
 		<?php  includeCsss (); ?>
+		<script src="http://ple2.odu.edu/ple-videoplayer/public/addon/jquery/2.1.4/jquery.min.js"></script>
 		<?php  includeScripts (); ?>
+		
 		
 		<script>
 			$(document).ready(function(){
@@ -19,7 +21,7 @@
 					//***************************************
 					setTop(obj);
 					document.title = getCourseTitle(obj);
-					flatCourse = flatten(obj);
+					flatCourse = flattenCourse(obj);
 
 					var subtopicId = (typeof $.QueryString["id"] !== undefined) ? $.QueryString["id"] : "3"; //default it to something for now 
 					//TODO: make a default id and handle that
@@ -39,10 +41,7 @@
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
 
-
-					toolBoxFunctionality();
-					
-																				
+					toolBoxFunctionality();																				
 					});// done 
 				});//ready
 		</script>
@@ -77,7 +76,7 @@
 				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
 				<div id="courseMaterial">
 					<div class="paper">
-						<h2 id="pageTitle"></h2>
+						<h1 id="pageTitle"></h1>
 						<div id="content"></div>
 					</div>
 					
