@@ -3,24 +3,27 @@
 <!doctype html>
 <html>
 	<head>
-		<?php  includeCsss (); ?>
-		<?php  includeScripts (); ?>
-					
+		<?php includeCsss() ?>
 		<link href='calendar/fullcalendar.css' rel='stylesheet' />
-		<link href='calendar/fullcalendar.print.css' rel='stylesheet' media='print' />		
-		<style>
-			.fc-center h2{ font-size: 1.4em; }
-			#eventContent{ z-index: 999; }
-		</style>
+		<link href='css/courseDashboard.css' rel='stylesheet'/>
 
-
-		<script src='calendar/lib/moment.min.js'></script>
-		<script src='scripts/js/bootstrapmodal.min.js'></script>	
-		<script src='calendar/lib/jquery.min.js'></script>		
-		<script src="scripts/js/jquery-ui.min.js"></script>
+		<?php includeScripts() ?>
+		<script src='calendar/lib/moment.min.js'></script>	
 		<script src='calendar/fullcalendar.min.js'></script>
 		
-
+		<style>
+			.fc-center h2{
+				font-size: 1.4em;
+				margin-left: 100px;
+			 }
+			#eventContent{ 
+				z-index: 999; 
+			}
+			#wrapper{
+				margin: 150px auto 0;
+			}
+		</style>
+		
 		<script>
 		$(document).ready(function(){
 			populateSchedule("cat101/json/kitten.json");
@@ -33,15 +36,18 @@
 		    	setDocumentTitle(obj);
 				setTop(obj);
 				$('#eventContent').hide();
+				
 				$('#calendar').fullCalendar({
 				    events: getEvents(obj),
-				    height: 750,
+				    editable: true,	
+				    height: 770,
 				    defaultDate: '2015-01-18',
+				    theme: true,
 				    header: {
 				        left: 'prev',
 				        center: 'title',
-				        right: 'month,basicWeek,basicDay, next'
-				    },		    
+				        right: 'month,basicWeek, next'
+				    },	    
 				    eventRender: function (event, element) {
 				        element.attr('href', 'javascript:void(0);');
 				        element.click(function() {
@@ -66,11 +72,18 @@
 					        }
 					        $("#eventTitle").html(event.type + " - " + event.title);
 				            $("#eventDescription").html(event.description);
-				            $("#eventContent").dialog({ modal: true, width:500});
+				            $("#eventContent").dialog({ modal: false, width:500});
 
 				        });
 				    }
 				});
+
+
+				$("#editToolListItem").click(function(){				
+					$("body").toggleClass("editingMode");
+					$('#calendar').fullCalendar('editable', true);
+				});
+				
 			});
 		};
 		</script>
