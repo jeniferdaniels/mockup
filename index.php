@@ -5,24 +5,22 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="/mockups/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="/mockups/fonts/font-awesome-4.4.0/css/font-awesome.min.css">		
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="/mockups/css/pleStyle.css"><?php //has to be last or google will override icons?>
+		<?php includeCsss() ?>
 		<link href='calendar/fullcalendar.css' rel='stylesheet' />
 		<link href='css/courseDashboard.css' rel='stylesheet'/>
-		<link href='css/modal.css' rel='stylesheet'/>
-		
-		
-		<script src="scripts/js/jquery-2.1.3.min.js"></script>
-		<script src='calendar/lib/moment.min.js'></script>
-		<script src='scripts/js/bootstrapmodal.min.js'></script>	
-		<script src='calendar/lib/jquery.min.js'></script>		
-		<script src="scripts/js/jquery-ui.min.js"></script>
+
+		<?php includeScripts() ?>
+		<script src='calendar/lib/moment.min.js'></script>	
 		<script src='calendar/fullcalendar.min.js'></script>
-		<script src="scripts/js/courseFunctions.js"></script>
+		<style>
+			.fc-time{
+				display : none;
+			}
+			.fc-day-number{
+				font-size: .7rem;
+			}
+		</style>
+
 		
 		<script>
 
@@ -36,11 +34,44 @@
 		        url: url
 		    }).done(function(obj) {
 		    	setTop(obj);
-		    	setCourseContent(obj);
-				$('#eventContent').hide();
+		    	$("#courseContent").html(writeCourseContent(flattenCourse(obj)));
+
+		    	//in production, do this programmatically
+				$("#title_1209").click(function(){
+					$("#title_1209").toggleClass("marginBottom20");
+					$("#moduleContentList_1210").toggleClass("displayNone");
+					$("#module_1209_collapsed").toggleClass("displayNone");
+					$("#module_1209_expanded").toggleClass("displayNone");	
+				});						
+				
+				$("#title_1").click(function(){
+					$("#title_1").toggleClass("marginBottom20");
+					$("#moduleContentList_2").toggleClass("displayNone");
+					$("#module_1_collapsed").toggleClass("displayNone");
+					$("#module_1_expanded").toggleClass("displayNone");	
+				});	
+
+				$("#title_21").click(function(){
+					$("#title_21").toggleClass("marginBottom20");
+					$("#moduleContentList_22").toggleClass("displayNone");
+					$("#module_21_collapsed").toggleClass("displayNone");
+					$("#module_21_expanded").toggleClass("displayNone");	
+				});	
+				
+				$("#title_42").click(function(){
+					$("#title_42").toggleClass("marginBottom20");
+					$("#moduleContentList_43").toggleClass("displayNone");
+					$("#module_42_collapsed").toggleClass("displayNone");
+					$("#module_42_expanded").toggleClass("displayNone");	
+				});	
+
+
+		    	
+				$('#eventContent').hide();  //modal
+				
 				$('#calendar').fullCalendar({
 				    events: getEventsAtAGlance(obj),
-				    height: 400,
+				    height: 420,
 				    fixedWeekCount: false,
 				    defaultDate: '2015-01-18',
 				    header: {
@@ -52,7 +83,9 @@
 				        element.attr('href', 'javascript:void(0);');
 
 				        if(event.icon){
-				        	element.find(".fc-title").prepend("<i class='material-icons md-small'>" + event.icon + "</i></a>");
+				        	//element.find(".fc-title").prepend("<i class='material-icons md-small'>" + event.icon + "</i></a>");
+				        	element.find(".fc-title").prepend("<i class='material-icons md-m'>" + event.icon + "</i></a>");
+
 				        }
 
 				        
@@ -78,11 +111,12 @@
 					        }
 					        $("#eventTitle").html(event.type + " - " + event.title);
 				            $("#eventDescription").html(event.description);
-				            $("#eventContent").dialog({ modal: true, width:500});
+				            $("#eventContent").dialog({ modal: false, width:500});
 
 				        });
 				    }
 				});
+
 			});
 		};
 		</script>
@@ -117,6 +151,11 @@
 
 		<!-- modal -->
 		<?php  writeCalendarModal(); ?>
+
+
+
+		<div id="poop"></div>
+
 
 	</body>
 </html>
