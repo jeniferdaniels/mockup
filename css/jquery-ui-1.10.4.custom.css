@@ -327,7 +327,7 @@ button.ui-button::-moz-focus-inner {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-	font-family: arial;
+	font-family: "Open Sans", Georgia;
 	font-size: .8;
 }
 .ui-widget .ui-widget {
