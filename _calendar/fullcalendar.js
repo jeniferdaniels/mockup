@@ -9053,7 +9053,7 @@ function Header(calendar, options) {
 	
 	
 	function renderSection(position) {
-		var sectionEl = $('<div class="fc-' + position + '"/>');
+		var sectionEl = $('<div class="fc-' + position + '"/ id="calendarButton_' + position + '"/>');
 		var buttonStr = options.header[position];
 
 		if (buttonStr) {
