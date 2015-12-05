@@ -129,22 +129,31 @@ function writeFooter()
 }
 
 function writeCalendarModal(){
-	
 	echo '<div id="eventContent" title="Event Details" style="display:hidden; z-index: 3000">';
-		echo '<div class="modalContentWrapper">';
-			echo '<div class="icon" id="eventIcon">' .  icon("g", "assignment", "h", "liteGray") . '</div><h3 id="eventTitle"></h3>';
-			
-			echo '<br>';
-			echo '<h5 id="assignmentDueHeader">Due - </h5>';
-			echo '<div class="eventDateTime" id="eventDateTime"></div>';
-			
-			echo '<br>';
-			echo '<h5 id="assignmentDeliverableHeader">Deliverable - </h5>';
-			echo '<div class="assignmentDeliverables" id="assignmentDeliverables"></div>';
-			echo '<p id="eventDescription"></p>';
-		echo '</div><!-- modal content wrapper -->';
-	echo '</div><!-- event content -->';
-		
+		echo '<div id="modalContentWrapper">';
+			echo '<div id="content">';
+				echo '<div id="eventIcon" class="assignmentIcon"></div>';
+				echo '<h1 id="modalTitle"></h1>';
+				echo '<h3 id="assignmentTitle"></h3>';
+	
+				echo '<ul id="assignmentProperties" class="assignmentProperties">';
+					echo '<li><div id="dueHeader">Due- </div><div id="due"></div></li>';
+					echo '<li><div id="submitHeader">Submit via- </div><div id="submitVia"></div></li>';
+					echo '<li><div id="deliverableHeader">Deliverable- </div><div id="deliverable"></div></li>';
+				echo '</ul>';
+					
+				echo '<p id="eventDate"></p>';
+				echo '<p id="description"></p>';
+	
+				echo '<div id="checkmarkWrapper" class="checkmarkWrapper">';
+					echo '<div id="checkmark" class="checkmark disabled">' . icon("g", "check", "xl", "") . '</div>';
+					echo '<div id="checkmarkCaption" class="checkmarkCaption"></div>';
+					echo '<div id="checkmarkDisclaimer" class="checkmarkDisclaimer"></div>';
+				echo '</div>';
+							
+				echo '<div style="clear: both"></div>';
+			echo '</div>';
+		echo '</div>';
 }
 
 function writeUpcomingAssignment($id) {
