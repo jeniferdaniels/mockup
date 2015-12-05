@@ -106,11 +106,11 @@
 				<div id="courseMaterial">
 					<div class="paper">
 						<div id="content">
-							<div class="assignmentLogo"></div>
+							<div id="assignmentIcon" class="assignmentIcon"></div>
 							<h1 id="pageTitle">Assignment</h1>
 							<h3 id="assignmentTitle"></h3>
 							
-							<ul class="assignmentProperties" class="assignmentProperties">
+							<ul id="assignmentProperties" class="assignmentProperties">
 								<li><div id="dueHeader">Due- </div><div id="due"></div></li>
 								<li><div id="submitHeader">Submit via- </div><div id="submitVia"></div></li>
 								<li><div id="deliverableHeader">Deliverable- </div><div id="deliverable"></div></li>
