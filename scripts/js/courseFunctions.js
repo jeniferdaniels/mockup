@@ -308,6 +308,14 @@ function writeFlatInConsole(items){
 //CALENDAR STUFF
 ////////////////////////////////////////////////////////
 //obj = full course info
+//event has type
+//			title
+//			moduleNumber
+//			start
+//			end
+//			textColor
+//			description
+//			icon
 function getEvents(obj)
 {
 	var moduleEventColor = "rgba(250,250,250,1)";
@@ -334,6 +342,7 @@ function getEvents(obj)
 		cEvent.color = moduleEventColor;
 		cEvent.textColor = moduleTextColor;
 		cEvent.description = modules[i].overview;
+		
 	
 		events.push(cEvent);
 		cEvent = "";
@@ -344,7 +353,7 @@ function getEvents(obj)
 		for (var j=0; j< assignmentsArray.length; j++){
 			cEvent = assignmentsArray[j];
 			cEvent.type = "assignment";
-			cEvent.icon = "assignment"; //font awesome icon for assignment
+			cEvent.icon = "assignment"; //font awesome icon for assignment TODO: fix this
 			cEvent.textColor = assignmentTextColor;
 			cEvent.color = assignmentEventColor;
 			events.push(cEvent);
@@ -352,8 +361,13 @@ function getEvents(obj)
 
 	}
 	
-	
-	/*for (var k=0; k<events.length; k++){
+	//objString = "";
+	//for (var k=0; k<events.length; k++){	
+	//	objString += "\n\n{\n\ttitle: '" + events[k].title + "', \n\tstart: '" + events[k].start + "', \n\tend: '" + events[k].end + "', \n\tcolor: '" + events[k].color 
+	//				+ "', \n\ttextColor: '" + events[k].textColor + "', \n\tsubmitVia: '" + events[k].submitVia + "', \n\tdeliverable: '" + events[k].deliverable 
+	//				+ "', \n\tdescription: '" + events[k].description + "'\n},";
+		
+		/*
 		console.log("----------k is " + k + "---------------" );
 		console.log(events[k].title);
 		console.log(events[k].start);
@@ -362,9 +376,10 @@ function getEvents(obj)
 		console.log(events[k].textColor);
 		console.log(events[k].submitVia);
 		console.log(events[k].deliverable);
-		console.log(events[k].description);	
-	}*/
-	
+		console.log(events[k].description);
+		*/	
+	}	
+	//console.log(objString);
 	
 	
 	return events;
