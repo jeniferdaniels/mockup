@@ -7,6 +7,7 @@ $darkGray: rgba(20, 20, 20, 1);
 $googleGray: rgba(247,247,247, 1);
 $hotPink: rgba(255, 0, 128, 1);
 $red: rgba(231, 76, 60, 1);
+$liteRed: rgba(255, 186, 186, 1);
 $xLiteYellow: rgba(254,239,179, 0.05);
 $liteYellow: rgba(254,239,179, 1);
 $liteGreen: rgba(231, 246, 238, 1);
@@ -26,6 +27,8 @@ $oduOnlineTertiaryBlue: rgba(139,197,233, 1);
 
 //MESSAGE COLORS
 $urgent: $red;
+$errorText: $red;
+$errorBackground: $liteRed;
 $success: $green;
 $disabled: $liteGray;
 $warning: $liteYellow;
