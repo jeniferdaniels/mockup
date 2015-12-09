@@ -106,12 +106,12 @@
 								//TODO: cross check with list of completed items and mark accordingly	
 					        }
 					        else{
-					        	$("#pageTitle").append(event.moduleNumber);
+					        	$("#modalTitle").append(" " + event.moduleNumber);
 								$('#eventIcon').hide();	
 								$('#assignmentTitle').hide();	
 								$('#assignmentProperties').hide();
 								$('#eventDate').show();
-								$("#eventDateTime").html(moment(event.start).format('MMMM DD') + ' - ' + moment(event.end).format('MMMM DD, YYYY'));
+								$("#eventDate").html(moment(event.start).format('MMMM DD') + ' - ' + moment(event.end).format('MMMM DD, YYYY'));
 								$('#checkmarkWrapper').hide();
 						   }
 					       
