@@ -81,6 +81,9 @@ function writeModuleProgressBar(){
 	echo '</div>';
 }
 
+
+//not used anymore
+
 function writeBreadCrumbs($breadCrumbs)
 {
 	
