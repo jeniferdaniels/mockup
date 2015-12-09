@@ -378,7 +378,7 @@ function getEvents(obj)
 		console.log(events[k].deliverable);
 		console.log(events[k].description);
 		*/	
-	}	
+	//}	
 	//console.log(objString);
 	
 	
