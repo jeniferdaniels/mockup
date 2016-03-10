@@ -215,16 +215,28 @@ body {
 //__CALENDAR MODAL_____________________________________________________________
 
 .assignmentIcon {
-  background-image: url("images/clipboard.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 45px 45px;
-  padding: 3px;
-  height: 45px;
-  width: 45px;
-  display: inline-block;
-  float: left;
-  margin: 0 5px 200px 0; 
+  	background-image: url("images/clipboard.svg");
+  	background-color: white;
+  	background-repeat: no-repeat;
+  	padding: 3px;
+	display: inline-block; 
+	background-size: 45px 45px;
+	height: 45px;
+  	width: 45px;
+  	float: left;
+  	margin: 0 5px 200px 0; 
+}
+
+.smallAssignmentIcon{
+	background-image: url("images/clipboardColor.svg");
+	background-color: rgba(68,136,246,1);
+	background-repeat: no-repeat;
+	padding: 3px;
+	display: inline-block; 
+	backgroundSize: 25px 20px;
+	height: 20px;
+	width: 20px;
+	margin: 0;
 }
 
 .assignmentProperties {
