@@ -4,53 +4,12 @@
 <html>
 	<head>
 		<?php includeCsss() ?>
-		<link href='css/fullcalendar.min.css' rel='stylesheet' />
-		
+		<link rel="stylesheet" type="text/css" href="lib/calendar/css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="css/pleStyle.css">
 
 		<?php includeScripts() ?>
-		<script src='scripts/js/moment.min.js'></script>	
-		<script src='scripts/js/fullcalendar.min.js'></script>
-		
-		<style>
-			.fc-center h2{
-				font-size: 1.4em;
-				margin-left: 100px !important;
-				font-family: "Open Sans", Georgia;
-			 }
-
-			 .fc-view-container{
-			 	border-bottom: 1px solid #AAAAAA;
-			 }
-			 
-			#eventContent{ 
-				z-index: 999; 
-			}
-			#wrapper{
-				margin: 150px auto 0;
-			}
-			
-			.ui-icon-odu_left-chevron{
-				background-image: url("images/leftChevron.svg") !important;
-				background-repeat: no-repeat;
-				background-size: 18px 18px;
-				height: 18px;
-				width: 18px;
-			}
-			
-			.ui-icon-odu_right-chevron{
-				background-image: url("images/rightChevron.svg") !important;
-				background-repeat: no-repeat;
-				background-size: 18px 18px;
-				height: 18px;
-				width: 18px;
-			}
-			.ui-state-default{
-				border: 1px solid #CCC;
-			}
-			.ui-state-active{
-				border: 1px solid black;
-			}
-		</style>
+		<script src='lib/calendar/js/moment.min.js'></script>	
+		<script src='lib/calendar/js/fullcalendar.min.js'></script>
 		
 		<script>
 		$(document).ready(function(){
