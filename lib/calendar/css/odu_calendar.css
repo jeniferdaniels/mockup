@@ -1,0 +1,124 @@
+body {
+  color: #141414;
+  line-height: 150%;
+  background-color: #f7f7f7; }
+
+.current {
+  color: #4488f6; }
+
+.googleBlue {
+  color: #4488f6; }
+
+.marginBottom20 {
+  margin-bottom: 20px; }
+
+#noEvents {
+  border: 1px solid black;
+  color: #141414;
+  background-color: #ffff99;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: block;
+  width: 83%; }
+
+.assignmentIcon {
+  background-image: url("images/clipboard.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 45px 45px;
+  padding: 3px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 200px 0; }
+
+.assignmentProperties {
+  list-style-type: none;
+  margin: 10px 0 10px 0; }
+
+#dueHeader, #submitViaHeader, #deliverableHeader {
+  font-weight: 600;
+  margin-right: 3px;
+  display: inline-block; }
+
+#due, #submitVia, #deliverable {
+  display: inline-block; }
+
+#description {
+  border-top: 1px solid #c8c8c8;
+  margin: 10px 45px 15px 15px;
+  padding-top: 10px;
+  height: 230px;
+  overflow-y: hidden; }
+
+#calendarPopUp {
+  z-index: 999;
+  background: white;
+  overflow-y: hidden;
+  margin-bottom: 10px; }
+
+#moreLink {
+  color: #003767;
+  float: right;
+  margin-right: 45px; }
+  #moreLink:hover {
+    color: #ff0080; }
+
+.ui-dialog {
+  margin-left: 75px;
+  margin-top: 5px;
+  font-size: .9rem;
+  padding: 0 !important; }
+
+.paper {
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: white;
+  border: 1px solid #c8c8c8;
+  min-height: 250px; }
+
+#calendarWrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+
+#--CALENDAR DISPLAY-NEEDS TO BE LAST TO OVERRIDE .fc and .ui styles-------------
+.fc-center h2 {
+  font-size: 1.4em;
+  margin-left: 100px !important;
+  font-family: "Open Sans", Georgia; }
+
+.fc-view-container {
+  border-bottom: 1px solid #AAAAAA; }
+
+.ui-icon-odu_left-chevron {
+  background-image: url("images/leftChevron.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  height: 18px;
+  width: 18px; }
+
+.ui-icon-odu_right-chevron {
+  background-image: url("images/rightChevron.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  height: 18px;
+  width: 18px; }
+
+.ui-state-default {
+  border: 1px solid #CCC; }
+
+.ui-state-active {
+  border: 1px solid black; }
+
+#calendar .ui-state-highlight {
+  background: #ffff99 !important;
+  border-top: 5px solid #4488f6 !important; }
+
+/*# sourceMappingURL=odu_calendar.css.map */
