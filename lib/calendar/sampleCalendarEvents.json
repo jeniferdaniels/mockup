@@ -3,7 +3,9 @@
 	[
 	   {
 		  "type":"assignment",
+		  "icon": "clipboard",
 		  "deliverable":"Email to instructor",
+		  "shortTitle": "1.A",
 		  "title":"Do This First",
 		  "moduleNumber":1,
 		  "start":"2016-01-17T23:59:00",
@@ -16,7 +18,18 @@
 		  "description":"JMD: submitVia field, filled.  Deliverable field, filled.  <br> First, get some idea about how this course is organized.&nbsp;Read ALL the information within the Blackboard &quot;START HERE&quot; section. Then, go to the Topics section here in the PLE and look at the first Topic. It has a subtopic,&nbsp;Let&#39;s Get Started, that explains the&nbsp;servers involved in the course. &nbsp;<br><br>Below, there are several administrative&nbsp;assignments that you should complete as soon as possible. &nbsp;You cannot participate in the course without completing them. &nbsp;These include the following:<br><br><br>\tGetting a CS department account<br>\tCompleting the course infomation form and getting a course password<br>\tCompleting the course syllabus and submitting it<br>\tMaking sure your Oracle account is set up properly<br><br><br>The Administrivia Checklist and Course Guide will help you get started.<br><br>Secondly, you should get going on the actual course content. This includes the other assignments and topics sections, as well as the material in resources."
 	   },
 	   {
+		  "type":"module",
+		  "moduleNumber":1,
+		  "start":"2016-01-17T23:59:00",
+		  "end": "2016-01-20T23:59:00",
+		  "color":"rgba(240,240,240,1)",
+		  "textColor":"white",
+		  "description":"module description goes here."
+	   },
+	   {
 		  "type":"assignment",
+		  "icon": "clipboard",
+		  "shortTitle": "1.B",
 		  "title":"Required Reading",
 		  "submitVia":"",
 		  "moduleNumber":1,
@@ -31,6 +44,8 @@
 	   },
 	   {
 		  "type":"assignment",
+		  "icon": "clipboard",
+		  "shortTitle": "1.C",
 		  "title":"Required Video Lectures",
 		  "moduleNumber":1,
 		  "start":"2016-01-19T23:59:00",
@@ -42,6 +57,8 @@
 	   },
 	   {
 		  "type":"assignment",
+		  "icon": "clipboard",
+		  "shortTitle": "1.D",
 		  "title":"Module 1  Introduction Discussion",
 		  "moduleNumber":1,
 		  "start":"2016-01-19T23:59:00",
@@ -53,6 +70,8 @@
 	   },
 	   {
 		  "type":"assignment",
+		  "icon": "clipboard",
+		  "shortTitle": "1.E",
 		  "title":"Visit Course Homepage on CS Server",
 		  "moduleNumber":1,
 		  "start":"2016-01-20T23:59:00",
