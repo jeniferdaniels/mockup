@@ -386,6 +386,17 @@ a{	color: $link-color;
 	//border: 1px solid red;
 }
 
+//
+.paper {
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: white;
+  border: 1px solid $liteGray;
+  min-height: 250px; 
+ }
+
 //***10-12-2015***
 .pleLogo{
 	background-image: url("../images/pleLogo.svg");

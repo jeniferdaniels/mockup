@@ -45,8 +45,7 @@ dd {
 a {
   color: #ff0080;
   text-decoration: none;
-  -webkit-transition: all 0.25s ease;
-          transition: all 0.25s ease; }
+  transition: all 0.25s ease; }
   a:hover, a:visited:hover {
     color: #4488f6;
     text-decoration: underline dotted; }
@@ -147,6 +146,15 @@ a {
   display: inline-block;
   float: left;
   margin: -10px 10px 0 0; }
+
+.paper {
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: white;
+  border: 1px solid #c8c8c8;
+  min-height: 250px; }
 
 .pleLogo {
   background-image: url("../images/pleLogo.svg");
