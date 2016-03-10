@@ -39,7 +39,6 @@
 body {
 	color: $font-color;
 	line-height: 150%;
- 	background-color: #f7f7f7;
 }
 
 //header
@@ -185,7 +184,7 @@ body {
 //13. ONE HIT WONDERS
 //*****************************************************************************
 .current {
-  color: $googleBlue; 
+  color: $current; 
 }
 
 .googleBlue {
@@ -233,6 +232,10 @@ body {
   margin: 10px 0 10px 0; 
 }
 
+.current{
+	color: $current;
+}
+
 #dueHeader, #submitViaHeader, #deliverableHeader {
   font-weight: 600;
   margin-right: 3px;
@@ -244,7 +247,7 @@ body {
 }
 
 #description {
-	border-top: 1px solid #c8c8c8;
+	border-top: 1px solid $liteGray;
 	margin: 10px 45px 15px 15px;
 	padding-top: 10px;
 	height: 230px;
@@ -253,7 +256,7 @@ body {
 
 #calendarPopUp{ 
 	z-index: 999; 
-	background: white;
+	background: $popUpBackground;
 	overflow-y: hidden;
 	margin-bottom: 10px;
 }
@@ -268,6 +271,12 @@ body {
 
 }
 
+#popUpContentWrapper {
+  height: 400px;
+  overflow-y: hidden;
+  margin-right: 45px; 
+}
+  
 .ui-dialog {
   margin-left: 75px;
   margin-top: 5px;
@@ -277,15 +286,7 @@ body {
 
   
 //__PAGE LAYOUT________________________________________________________________
-.paper {
-  padding: 10px;
-  margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-  background-color: white;
-  border: 1px solid $liteGray;
-  min-height: 250px; 
- }
+
 
 #calendarWrapper{
 	width: 90%;
@@ -293,16 +294,25 @@ body {
 	margin-right: auto;
 }
 
- #--CALENDAR DISPLAY-NEEDS TO BE LAST TO OVERRIDE .fc and .ui styles-------------
+#odu_smallCalendar.fc.fc-ltr.ui-widget div.fc-toolbar div.fc-center h2 {
+	font-size: 1.2rem !important;
+	margin: 0 !important;
+	color: black;
+}
+
+.odu_smallCalendarNumber{
+	font-size: .7rem !important;
+}
+
 
 .fc-center h2{
-	font-size: 1.4em;
+	font-size: 1.4em !important;
 	margin-left: 100px !important;
-	font-family: $font-stack;
+	font-family: $font-stack !important;
  }
 
  .fc-view-container{
-	border-bottom: 1px solid #AAAAAA;
+	border-bottom: 1px solid $calendarLiteGray !important;
  }
 
 .ui-icon-odu_left-chevron{
@@ -322,7 +332,7 @@ body {
 }
 
 .ui-state-default{
-	border: 1px solid #CCC;
+	border: 1px solid $calendarMediumGray;
 }
 .ui-state-active{
 	border: 1px solid black;
