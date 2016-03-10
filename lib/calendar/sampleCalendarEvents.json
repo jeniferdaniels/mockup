@@ -1,0 +1,68 @@
+{
+"events":
+	[
+	   {
+		  "type":"assignment",
+		  "deliverable":"Email to instructor",
+		  "title":"Do This First",
+		  "moduleNumber":1,
+		  "start":"2016-01-17T23:59:00",
+		  "end":"",
+		  "color":"rgba(68,136,246,1)",
+		  "textColor":"white",
+		  "submitVia":"email",
+		  "deliverable": "stuff",
+		  "moreUrl":"/courses/201520/cs450/module/1/assignments#9a50c8a873a65b2b15d3b8d52b9dd9de0559916abfe62e6cee09487bff6366e33c9eb2d3",
+		  "description":"JMD: submitVia field, filled.  Deliverable field, filled.  <br> First, get some idea about how this course is organized.&nbsp;Read ALL the information within the Blackboard &quot;START HERE&quot; section. Then, go to the Topics section here in the PLE and look at the first Topic. It has a subtopic,&nbsp;Let&#39;s Get Started, that explains the&nbsp;servers involved in the course. &nbsp;<br><br>Below, there are several administrative&nbsp;assignments that you should complete as soon as possible. &nbsp;You cannot participate in the course without completing them. &nbsp;These include the following:<br><br><br>\tGetting a CS department account<br>\tCompleting the course infomation form and getting a course password<br>\tCompleting the course syllabus and submitting it<br>\tMaking sure your Oracle account is set up properly<br><br><br>The Administrivia Checklist and Course Guide will help you get started.<br><br>Secondly, you should get going on the actual course content. This includes the other assignments and topics sections, as well as the material in resources."
+	   },
+	   {
+		  "type":"assignment",
+		  "title":"Required Reading",
+		  "submitVia":"",
+		  "moduleNumber":1,
+		  "start":"2016-01-18T23:59:00",
+		  "end":"",
+		  "color":"rgba(68,136,246,1)",
+		  "textColor":"white",
+		  "submitVia":"",
+		  "deliverable":"",
+		  "moreUrl":"/courses/201520/cs450/modules/1/assignments#261f4c37cf5085ef776e69f7a7f2aa0e4392d76cb10bd635da3784032f2ce4df063d4a42",
+		  "description":"JMD: submit via field, blank. Deliverable field, blank. <br>Textbook chapters:<br><br><br>\t<br>\t\t<br>\t\t\t<br>\t\t\t<br>\t\t\t\tElmasri, &nbsp;Databases and Database Users<br>\t\t\t\tElmasri, &nbsp;Database Systems Concepts &amp; Architecture<br>\t\t\t\tElmasri, &nbsp;Disk Storage, Basic File Structure and Hashing&nbsp;(selections):<br>\t\t\t\t<br>\t\t\t\t\tBuffering of Blocks<br>\t\t\t\t\tPlacing File Records on Disk<br>\t\t\t\t\tOperations on Files<br>\t\t\t\t\tFiles of Unsorted Records (Heap Files)<br>\t\t\t\t\tFiles of Ordered Records (Sorted Files)<br>\t\t\t\t\tHashing Techniques<br>\t\t\t\t\tOther Primary File Organizations<br>\t\t\t\t<br>\t\t\t\t<br>\t\t\t\tElmasri,&nbsp;Indexing Structure for Files&nbsp;(selections):<br>\t\t\t\t<br>\t\t\t\t\tTypes of Single-Level Ordered Indexes<br>\t\t\t\t\tMultilevel Indexes<br>\t\t\t\t\tDynamic Multilevel Indexes Using B-Trees and B+-Trees"
+	   },
+	   {
+		  "type":"assignment",
+		  "title":"Required Video Lectures",
+		  "moduleNumber":1,
+		  "start":"2016-01-19T23:59:00",
+		  "end":"",
+		  "color":"rgba(68,136,246,1)",
+		  "textColor":"white",
+		  "moreUrl":"/courses/201520/cs450/modules/1/assignments#4764f763197facaa7e60cf611bda73b9a95526398dc6fc6942b7854d379b0ae0936a6b93",
+		  "description":"JMD: No submit field. No deliverable field <br>Be sure to view all the video lectures in the&nbsp;Topics&nbsp;section."
+	   },
+	   {
+		  "type":"assignment",
+		  "title":"Module 1  Introduction Discussion",
+		  "moduleNumber":1,
+		  "start":"2016-01-19T23:59:00",
+		  "end":"",
+		  "color":"rgba(68,136,246,1)",
+		  "textColor":"white",
+		  "deliverable":"Introduction Discussion Posting",
+		  "description":"JMD: No submit field. Deliverable field filled. <br>Proceed to Discussion Forums in Blackboard and complete the Personal Introductions forum."
+	   },
+	   {
+		  "type":"assignment",
+		  "title":"Visit Course Homepage on CS Server",
+		  "moduleNumber":1,
+		  "start":"2016-01-20T23:59:00",
+		  "end":"",
+		  "color":"rgba(68,136,246,1)",
+		  "textColor":"white",
+		  "deliverable":"",
+		  "submitVia":"Fed Ex",
+		  "moreUrl": "/courses/201520/cs450/modules/1/assignments#3798fb4bc61285edeeeca90a8f1e526b14b4acff9e91a44b0301725bea62f634f5de0d06",
+		  "description":"JMD: submit field, filled. Deliverable field, blank. While the Online course is organized around Blackboard and the PLE, you may find it useful to visit the&nbsp;&nbsp;from time to time."
+	   }
+	]
+}
