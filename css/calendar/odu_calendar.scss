@@ -1,5 +1,5 @@
-@import "colors";
-@import "fonts";
+@import "../colors";
+@import "../fonts";
 
 
 //SIZES
@@ -215,7 +215,7 @@ body {
 //__CALENDAR MODAL_____________________________________________________________
 
 .assignmentIcon {
-  	background-image: url("images/clipboard.svg");
+  	background-image: url("../images/clipboard.svg");
   	background-color: white;
   	background-repeat: no-repeat;
   	padding: 3px;
@@ -228,7 +228,7 @@ body {
 }
 
 .smallAssignmentIcon{
-	background-image: url("images/clipboardColor.svg");
+	background-image: url("../images/clipboardColor.svg");
 	background-color: rgba(68,136,246,1);
 	background-repeat: no-repeat;
 	padding: 3px;
@@ -266,8 +266,8 @@ body {
 	overflow-y: hidden;
 }
 
-#calendarPopUp{ 
-	z-index: 999; 
+#odu_popUpContent{ 
+	z-index: 9999; 
 	background: $popUpBackground;
 	overflow-y: hidden;
 	margin-bottom: 10px;
@@ -283,19 +283,11 @@ body {
 
 }
 
-#popUpContentWrapper {
+#odu_popUpContentWrapper {
   height: 400px;
   overflow-y: hidden;
-  margin-right: 45px; 
 }
   
-.ui-dialog {
-  margin-left: 75px;
-  margin-top: 5px;
-  font-size: .9rem; 
-  padding: 0 !important; 
-}
-
   
 //__PAGE LAYOUT________________________________________________________________
 
@@ -328,7 +320,7 @@ body {
  }
 
 .ui-icon-odu_left-chevron{
-	background-image: url("images/leftChevron.svg") !important;
+	background-image: url("../images/leftChevron.svg") !important;
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	height: 18px;
@@ -336,7 +328,7 @@ body {
 }
 
 .ui-icon-odu_right-chevron{
-	background-image: url("images/rightChevron.svg") !important;
+	background-image: url("../images/rightChevron.svg") !important;
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	height: 18px;

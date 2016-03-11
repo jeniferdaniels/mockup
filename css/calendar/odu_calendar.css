@@ -24,7 +24,7 @@ body {
   width: 83%; }
 
 .assignmentIcon {
-  background-image: url("images/clipboard.svg");
+  background-image: url("../images/clipboard.svg");
   background-color: white;
   background-repeat: no-repeat;
   padding: 3px;
@@ -36,7 +36,7 @@ body {
   margin: 0 5px 200px 0; }
 
 .smallAssignmentIcon {
-  background-image: url("images/clipboardColor.svg");
+  background-image: url("../images/clipboardColor.svg");
   background-color: #4488f6;
   background-repeat: no-repeat;
   padding: 3px;
@@ -68,8 +68,8 @@ body {
   height: 230px;
   overflow-y: hidden; }
 
-#calendarPopUp {
-  z-index: 999;
+#odu_popUpContent {
+  z-index: 9999;
   background: white;
   overflow-y: hidden;
   margin-bottom: 10px; }
@@ -81,16 +81,9 @@ body {
   #moreLink:hover {
     color: #ff0080; }
 
-#popUpContentWrapper {
+#odu_popUpContentWrapper {
   height: 400px;
-  overflow-y: hidden;
-  margin-right: 45px; }
-
-.ui-dialog {
-  margin-left: 75px;
-  margin-top: 5px;
-  font-size: .9rem;
-  padding: 0 !important; }
+  overflow-y: hidden; }
 
 #calendarWrapper {
   width: 90%;
@@ -114,14 +107,14 @@ body {
   border-bottom: 1px solid #cccccc !important; }
 
 .ui-icon-odu_left-chevron {
-  background-image: url("images/leftChevron.svg") !important;
+  background-image: url("../images/leftChevron.svg") !important;
   background-repeat: no-repeat;
   background-size: 18px 18px;
   height: 18px;
   width: 18px; }
 
 .ui-icon-odu_right-chevron {
-  background-image: url("images/rightChevron.svg") !important;
+  background-image: url("../images/rightChevron.svg") !important;
   background-repeat: no-repeat;
   background-size: 18px 18px;
   height: 18px;
