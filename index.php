@@ -14,7 +14,7 @@
 		<?php includeScripts() ?>
 		<script src="lib/calendar/js/moment.min.js"></script>	
 		<script src="lib/calendar/js/fullcalendar.min.js"></script>
-		<script src="lib/calendar/js/odu_populateCalendar.js"></script>
+		<script src="lib/calendar/js/odu_calendar.js"></script>
 	
 		<script>
 		$(document).ready(function(){
