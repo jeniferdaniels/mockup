@@ -35,8 +35,8 @@ function populateCalendar(url) {
 			eventRender: function (event, element) {
 				element.attr('href', 'javascript:void(0);');
 				element.click(function() {
-					populateEventPopUp(event);
-					$("#calendarPopUp").dialog({ modal: false, width:600, height: 500});
+					writeEventPopUp(event);
+					$("#odu_calendarPopUp").dialog({ modal: false, width:600, height: 500});
 				});				
 			}
 		});
@@ -51,49 +51,54 @@ function populateCalendar(url) {
 //				 on the webpage
 //*****************************************************************************************
 function writeSmallCalendar(url, scheduleUrl) {
-	
 	$.ajax({ 
 		url: url
 	}).done(function(obj){
 		
 		//override these calendar.op these styles specifically for the small calendar
 		$("<style type='text/css'> .fc-time{display: none} .fc-day-number{font-size: .7rem}</style>").appendTo("head");
-		$('#odu_smallCalendarContainer').after($("<a>").attr("href", scheduleUrl).html("Full Schedule"));
-				 
-		$('#odu_smallCalendar').fullCalendar({
-			events: setShortTitleEvents(obj), 	//set short title for small calendar
+		
+		//add link to full schedule
+		$("#odu_smallCalendarContainer").after($("<a>").attr("href", scheduleUrl).html("Full Schedule"));
+		
+		//add divs for pop up
+		$("#odu_smallCalendarContainer").append($("<div>").attr("id", "odu_calendarPopUp").attr("class","displayNone").css("z-index", "30000").attr("title", "Assignment Details"));
+		$("#odu_calendarPopUp").append($("<div>").attr("id", "odu_popUpContentWrapper"));
+		$("#odu_popUpContentWrapper").append($("<div>").attr("id", "odu_popUpContent"));
+
+		//add small calendar
+		$("#odu_smallCalendar").fullCalendar({
+			events: setShortTitleEvents(obj), //set short title for small calendar
 			height: 430,
 			fixedWeekCount: true,
-			//defaultDate: moment().format('YYYY-MM-DD'),
-			defaultDate: moment().format('2016-01-18'),
+			defaultDate: moment().format('2016-01-18'), //defaultDate: moment().format('YYYY-MM-DD'),
 			theme: true,
 			header: {
-				left: 'prev',
+				left:   'prev',
 				center: 'title',
-				right: 'next'
+				right:  'next'
 			},
 			themeButtonIcons: {
-				prev: 'odu_left-chevron',
-				next: 'odu_right-chevron'
+				prev:  'odu_left-chevron',
+				next:  'odu_right-chevron'
 			},
 			eventRender: function (event, element) {
 				element.attr('href', 'javascript:void(0);');
-				if(event.icon){
-		        	//element.find(".fc-title").prepend("<i class='material-icons md-small'>" + event.icon + "</i></a>");
+				if(event.icon)
 					element.find(".fc-title").prepend("<i class='smallAssignmentIcon'></i></a>");
-					
-		        }
 				element.click(function() {
-					populateEventPopUp(event);
-					$("#calendarPopUp").dialog({ modal: false, width:600, height: 500});
+					writeEventPopUp(event);
+					$("#odu_calendarPopUp").dialog({ modal: false, width:600, height: 500});
 				});				
 			}
 		});
+	
+		$("#odu_popUpContent").attr("class", "displayBlock");		
 	});
 }
 
 //*****************************************************************************************
-//Function Name: populateEventPopUp()
+//Function Name: writeEventPopUp()
 //Input: 		 event object which has the following properties:
 //					type (example "assignment" or "module")	
 //					title (string)
@@ -110,14 +115,19 @@ function writeSmallCalendar(url, scheduleUrl) {
 //Purpose:		 takes an event object and fills in objects on the dom with the event
 //				 object properties
 //*****************************************************************************************
-function populateEventPopUp(event){
-	$("#popUpContent").empty();
+function writeEventPopUp(event){
+	//debug
+	showObjValuesInConsole(event);
+	
+	//it may contain residual items
+	$("#odu_popUpContent").empty();
 
+	
 	if (event.type == "assignment"){
-		$("#popUpContent").append($("<div>").attr("id", "eventIcon").addClass("assignmentIcon"));
-		$("#popUpContent").append($("<h1>").attr("id", "modalTitle").html("Assignment"));
-		$("#popUpContent").append($("<h3>").attr("id", "assignmentTitle").html(event.title));
-		$("#popUpContent").append($("<ul>").attr("id", "assignmentProperties").addClass("assignmentProperties"));
+		$("#odu_popUpContent").append($("<div>").attr("id", "eventIcon").addClass("assignmentIcon"));
+		$("#odu_popUpContent").append($("<h1>").attr("id", "modalTitle").html("Assignment"));
+		$("#odu_popUpContent").append($("<h3>").attr("id", "assignmentTitle").html(event.longTitle));
+		$("#odu_popUpContent").append($("<ul>").attr("id", "assignmentProperties").addClass("assignmentProperties"));
 		
 		if (!(typeof event.start === 'undefined')){
 			if (event.start != ""){
@@ -146,16 +156,21 @@ function populateEventPopUp(event){
 			}
 		}
 		
-		$("#popUpContent").append($("<div>").attr("id", "clear").attr("style", "clear:both"));
+		$("#odu_popUpContent").append($("<div>").attr("id", "clear").attr("style", "clear:both"));
 		
 		if (!(typeof event.moreUrl === 'undefined')){
 			if (event.moreUrl != "") {
-				$("#popUpContent").append($("<div>").append($("<a>").attr("id", "moreLink").attr("href", event.moreUrl).html("View more on module assignment page...")));
+				$("#odu_popUpContent").append($("<div>").append($("<a>").attr("id", "moreLink").attr("href", event.moreUrl).html("View more on module assignment page...")));
 			}
 		}
 	}
 	//write code here for Module Info popup (need to grab objectives, description etc which are not avaiable in the JSON file yet)
 }
+
+
+
+
+
 
 function setShortTitleEvents(obj)
 {
@@ -169,11 +184,14 @@ function setShortTitleEvents(obj)
 		shortTitleEvent = {}; //clear it out
 		shortTitleEvent = orgEvent;
 		
-		if (orgEvent.shortTitle != "")
+		if (orgEvent.shortTitle != ""){
+			shortTitleEvent.longTitle = orgEvent.title;
 			shortTitleEvent.title = orgEvent.shortTitle;
-		else
-			shortTitleEvent.title = "More...";
-		
+			}
+		else{
+			shortTitleEvent.longTitle = orgEvent.title;
+			shortTitleEvent.title = "";
+		}
 		shortEvents.push(shortTitleEvent);
 	}
 
