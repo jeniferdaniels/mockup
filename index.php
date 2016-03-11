@@ -6,21 +6,21 @@
 <html>
 	<head>
 		<?php includeCsss() ?>
-		<link href="lib/calendar/css/fullcalendar.min.css" rel="stylesheet" />
-		<link href="lib/calendar/css/odu_calendar.css" rel="stylesheet" />
-		
+		<link href="css/calendar/fullcalendar.min.css" rel="stylesheet" />
+		<link href="css/calendar/odu_calendar.css" rel="stylesheet" />
 		<link href="css/courseDashboard.css" rel="stylesheet"/>
 
 		<?php includeScripts() ?>
-		<script src="lib/calendar/js/moment.min.js"></script>	
-		<script src="lib/calendar/js/fullcalendar.min.js"></script>
-		<script src="lib/calendar/js/odu_calendar.js"></script>
+		<script src="scripts/js/utils.js"></script>
+		<script src="scripts/js/moment.min.js"></script>	
+		<script src="scripts/js/calendar/fullcalendar.min.js"></script>
+		<script src="scripts/js/calendar/odu_calendar.js"></script>
 	
 		<script>
 		$(document).ready(function(){
 
 			var scheduleUrl = "schedule.php";
-			writeSmallCalendar("lib/calendar/sampleCalendarEvents.json", scheduleUrl);
+			writeSmallCalendar("sampleJson/sampleCalendarEvents.json", scheduleUrl);
 
 
 
@@ -95,8 +95,5 @@
 			<div id="footer" class="footer"></div>
 		</div>
 
-		<!-- modal -->
-		<?php  writeCalendarModal(); ?>
-		<div id="poop"></div>
 	</body>
 </html>
