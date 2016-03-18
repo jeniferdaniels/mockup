@@ -85,7 +85,22 @@
 					<div id="odu_smallCalendar"></div>
 				</div>
 				
-				<div class="odu_upcomingAssignments"></div>				
+				<div id="odu_upcomingEvents">
+				
+					<div id="assignment_5" class="assignment">
+						<div class="dateWrapper">
+							<h4>Jan</h4>
+							<h3>18</h3>
+							<h5>11:59pm</h5>
+						</div>
+						<h3>A.1 Assignment Long Title Here dfjk  sdkjf sakdjfl ksjdflk dasf  sdljflska jsdkjdlsj</h3>
+						<div id="" class="deliverable">Deliverable Here</div>
+						<p id="" class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>
+						<p class="readmore"></p>
+					</div>
+				</div>
+				
+								
 			</div><!-- end left hand side -->
 			
 			<div id="rightHandSide" class="courseContent">		
