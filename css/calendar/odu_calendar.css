@@ -1,19 +1,43 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\0000339}}
 body {
-  color: #141414;
+  color: #505050;
   line-height: 150%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003186}}
 .current {
   color: #4488f6; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003190}}
 .googleBlue {
   color: #4488f6; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003194}}
 .marginBottom20 {
   margin-bottom: 20px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003202}}
 #noEvents {
   border: 1px solid black;
-  color: #141414;
+  color: #505050;
   background-color: #ffff99;
   margin-left: auto;
   margin-right: auto;
@@ -23,6 +47,7 @@ body {
   display: block;
   width: 83%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003217}}
 .assignmentIcon {
   background-image: url("../images/clipboard.svg");
   background-color: white;
@@ -35,6 +60,7 @@ body {
   float: left;
   margin: 0 5px 200px 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003230}}
 .smallAssignmentIcon {
   background-image: url("../images/clipboardColor.svg");
   background-color: #4488f6;
@@ -46,21 +72,26 @@ body {
   width: 20px;
   margin: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003242}}
 .assignmentProperties {
   list-style-type: none;
   margin: 10px 0 10px 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003247}}
 .current {
   color: #4488f6; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003251}}
 #dueHeader, #submitViaHeader, #deliverableHeader {
   font-weight: 600;
   margin-right: 3px;
   display: inline-block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003257}}
 #due, #submitVia, #deliverable {
   display: inline-block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003261}}
 #description {
   border-top: 1px solid #c8c8c8;
   margin: 10px 45px 15px 15px;
@@ -68,44 +99,111 @@ body {
   height: 230px;
   overflow-y: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003269}}
 #odu_popUpContent {
   z-index: 9999;
   background: white;
   overflow-y: hidden;
   margin-bottom: 10px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003276}}
 #moreLink {
   color: #003767;
   float: right;
   margin-right: 45px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003280}}
   #moreLink:hover {
     color: #ff0080; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003286}}
 #odu_popUpContentWrapper {
   height: 400px;
   overflow-y: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003295}}
 #calendarWrapper {
   width: 90%;
   margin-left: auto;
   margin-right: auto; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003301}}
 #odu_smallCalendar.fc.fc-ltr.ui-widget div.fc-toolbar div.fc-center h2 {
   font-size: 1.2rem !important;
   margin: 0 !important;
   color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003307}}
 .odu_smallCalendarNumber {
   font-size: .7rem !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003311}}
+#odu_upcomingEventsContainer {
+  margin-top: 4rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003320}}
+#odu_upcomingEventsContainer h1 {
+  font-size: 1.5rem;
+  padding-left: 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003329}}
+.odu_upcomingEvent {
+  border-bottom: 1px solid #c8c8c8;
+  padding: 10px;
+  margin-bottom: 1rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003335}}
+  .odu_upcomingEvent .date {
+    border: 1px solid #4488f6;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003344}}
+  .odu_upcomingEvent .dateTitleWrapper {
+    height: 78px;
+    color: black;
+    vertical-align: bottom; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003351}}
+  .odu_upcomingEvent h2 {
+    font-size: 2rem;
+    margin: .25rem 0 .25rem 0;
+    font-weight: 700;
+    color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003358}}
+  .odu_upcomingEvent h3 {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    float: right;
+    width: 310px;
+    vertical-align: bottom; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003366}}
+    .odu_upcomingEvent h3 a {
+      text-decoration: none;
+      color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003370}}
+      .odu_upcomingEvent h3 a:hover {
+        color: #7d7d7d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003378}}
+  .odu_upcomingEvent time {
+    font-size: .8rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003383}}
+  .odu_upcomingEvent .description {
+    display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003387}}
+  .odu_upcomingEvent .readMore {
+    display: inline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003392}}
 .fc-center h2 {
   font-size: 1.4em !important;
   margin-left: 100px !important;
   font-family: "Open Sans", Georgia !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003398}}
 .fc-view-container {
-  border-bottom: 1px solid #cccccc !important; }
+  border-bottom: 1px solid #c8c8c8 !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003402}}
 .ui-icon-odu_left-chevron {
   background-image: url("../images/leftChevron.svg") !important;
   background-repeat: no-repeat;
@@ -113,6 +211,7 @@ body {
   height: 18px;
   width: 18px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003410}}
 .ui-icon-odu_right-chevron {
   background-image: url("../images/rightChevron.svg") !important;
   background-repeat: no-repeat;
@@ -120,12 +219,15 @@ body {
   height: 18px;
   width: 18px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003418}}
 .ui-state-default {
   border: 1px solid #aaaaaa; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003421}}
 .ui-state-active {
   border: 1px solid black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003428}}
 #calendar .ui-state-highlight {
   background: #ffff99 !important;
   border-top: 5px solid #4488f6 !important; }

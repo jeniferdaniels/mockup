@@ -16,15 +16,12 @@
 		<script src="scripts/js/calendar/fullcalendar.min.js"></script>
 		<script src="scripts/js/calendar/odu_calendar.js"></script>
 	
+
 		<script>
 		$(document).ready(function(){
 
 			var scheduleUrl = "schedule.php";
 			writeSmallCalendar("sampleJson/sampleCalendarEvents.json", scheduleUrl);
-
-
-
-			
 			makeCourseDashboard("cat101/json/kitten.json");
 			displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
 			});
@@ -80,25 +77,34 @@
 		<div class="top"><?php writeTopHTML() ?></div>
 	
 		<div class="contentWrapper dash" id="dash">
-			<div id="leftHandSide">
+				<div id="leftHandSide">
 				<div id="odu_smallCalendarContainer">
 					<div id="odu_smallCalendar"></div>
 				</div>
 				
-				<div id="odu_upcomingEvents">
-				
-					<div id="assignment_5" class="assignment">
-						<div class="dateWrapper">
-							<h4>Jan</h4>
-							<h3>18</h3>
-							<h5>11:59pm</h5>
+				<div id="odu_upcomingEventsContainer">
+					<h1>Upcoming Events </h1>
+					
+					
+					<?php for ($i = 1; $i<4; $i++){ ?>
+						<div id="assignment_5" class="odu_upcomingEvent">
+							<div class="dateTitleWrapper">
+								<div class="date">
+									Jan
+									<h2>18</h2>
+									<time>11:59 pm</time>
+								</div>
+								
+								<h3><a href="#">Assignment: A.1 itle Here dfjk  sdkjf sakdjfl ksjdflk dasfj sdljflska jsdkjdlsj</a></h3>
+							</div>
+							
+							<div class="clearFix"></div>
+							
+							<p id="" class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula</p>
+							<a href="#" class="readmore">More ></a>
 						</div>
-						<h3>A.1 Assignment Long Title Here dfjk  sdkjf sakdjfl ksjdflk dasf  sdljflska jsdkjdlsj</h3>
-						<div id="" class="deliverable">Deliverable Here</div>
-						<p id="" class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas eu nulla in orci porta pretium. Fusce placerat luctus posuere. Donec blandit ligula non malesuada tristique.</p>
-						<p class="readmore"></p>
+					<?php } ?>
 					</div>
-				</div>
 				
 								
 			</div><!-- end left hand side -->
