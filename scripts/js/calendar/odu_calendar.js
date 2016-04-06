@@ -169,7 +169,27 @@ function writeEventPopUp(event){
 
 
 
-
+//*****************************************************************************************
+//Function Name: setShortTitleEvents()
+//Input: 		 event object which has the following properties:
+//					type (example "assignment" or "module")	
+//					title (string)
+//					start (date, formatted YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)
+//					end (date, same format as above, for assignments leave off end date)
+//					textColor (string, rgba, hex or htmt reserved word such as 'white'		
+//					description (string)
+//					if the type is "assignment" then it also has the following:
+//						submitVia (string)
+//						deliverable (string)
+//						icon (string)
+//						moreUrl (string) to the assignment's full page	 
+//Output:		 array of objects with shortTitle, longTitle and regularTitle
+//Purpose:		 Takes conglomerate of info and returns only title items, if there is a short
+//				 title sent, call that the title.  Make a property called long title and set
+//				 the title to to.  This is a work around for the small calendar because it 
+//				 still calls the obj.title and we need to make a short title without changing
+//				 the code for the fullcalendar.io.
+//**********************************************************************************************
 
 
 function setShortTitleEvents(obj)
@@ -199,3 +219,21 @@ function setShortTitleEvents(obj)
 
 }
 
+
+//*****************************************************************************************
+//Function Name: writeUpcomingEvents()
+//Input: 		 event object which has the following properties:
+//					type (example "assignment" or "module")	
+//					title (string)
+//					start (date, formatted YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)
+//					end (date, same format as above, for assignments leave off end date)
+//					textColor (string, rgba, hex or htmt reserved word such as 'white'		
+//					description (string)
+//					if the type is "assignment" then it also has the following:
+//						submitVia (string)
+//						deliverable (string)
+//						icon (string)
+//						moreUrl (string) to the assignment's full page	 
+//Output:		 array of objects with longTitle, date and description
+//Purpose:		 
+//*******************************************************************************************
