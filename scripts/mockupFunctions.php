@@ -1,29 +1,31 @@
 <?php include_once 'globalVariables.php' ?>
+<?php include_once 'config.php' ?>
 <?php
 
 function includeCsss(){
 	echo '<meta charset="utf-8" />';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/reset.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'fonts/font-awesome-4.4.0/css/font-awesome.min.css">';
+
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . 'css/reset.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/fonts/font-awesome/css/font-awesome.min.css">';
 	
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >';
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 	//echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
 	
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/pleStyle.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/courseMaterial.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/navArrows.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/modal.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/jquery-ui-1.10.4.custom.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrows.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">';
 }
 
 function includeScripts()
 {
-	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/jquery-2.1.3.min.js"></script>';
-	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/jquery-ui.min.js"></script>';
-	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/kbNavigate.js"></script>';
-	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/queryStringFunctions.js"></script>';
-	echo '<script src="' . $GLOBALS['mockupDirectory'] . 'scripts/js/courseFunctions.js"></script>';
+	echo '<script src="' . WEB_ROOT . '/scripts/js/jquery-2.1.3.min.js"></script>';
+	echo '<script src="' . WEB_ROOT . '/scripts/js/jquery-ui.min.js"></script>';
+	echo '<script src="' . WEB_ROOT . '/scripts/js/kbNavigate.js"></script>';
+	echo '<script src="' . WEB_ROOT . '/scripts/js/queryStringFunctions.js"></script>';
+	echo '<script src="' . WEB_ROOT . '/scripts/js/courseFunctions.js"></script>';
 	
 }
 
