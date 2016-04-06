@@ -1,42 +1,76 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\000035}}
 .aaq {
   width: 1000;
   background-color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000312}}
   .aaqHeaderLinks {
     list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000315}}
     .aaqHeaderLinks a {
       text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000319}}
     .aaqHeaderLinks > li {
       display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000324}}
   .aaqAnswer {
     border-left: 2px solid black;
     margin-left: 20px;
     padding-left: 10px;
     margin-top: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000332}}
   .aaqPostTitle {
     font-weight: 600; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000336}}
   .aaqPostProperties {
     list-style: none;
     font-size: .8rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000340}}
     .aaqPostProperties a {
       text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000344}}
     .aaqPostProperties > li {
       display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000349}}
   .aaqPostRating {
     padding-left: 20px;
     padding-right: 20px;
     width: 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000355}}
   .aaqPostEndorsed {
     padding-left: 20px;
     color: #ff0080;
     width: 150px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000361}}
   .aaqPostCommentCount {
     padding-left: 20px;
     width: 150px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000366}}
   .aaqPoster {
     padding-left: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000370}}
   .aaqPostDateTime {
     padding-left: 50px;
     float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/askAQuestion\.scss}line{font-family:\0000377}}
   .aaqQuestionAndAnswerWrapper {
     border: 1px solid black;
     padding: 10px;
