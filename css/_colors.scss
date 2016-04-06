@@ -1,43 +1,69 @@
 //COLORS
 //$xxLiteGray:
-$xLiteGray: rgba(250, 250, 250, 1);
 
 $mediumGray: rgba(125, 125, 125, 1);
 
 $googleGray: rgba(247,247,247, 1);
-$hotPink: rgba(255, 0, 128, 1);
-$red: rgba(231, 76, 60, 1);
-$liteRed: rgba(255, 186, 186, 1);
-$xLiteYellow: rgba(254,239,179, 0.05);
-//$liteYellow: rgba(254,239,179, 1); old
-$liteGreen: rgba(231, 246, 238, 1);
-$green: rgba(0, 168, 88, 1);
-$darkBlue: rgba(6, 44, 140, 1);
-$liteGoogleBlue: rgba(156, 191, 246, 1);
-$almostBlack: rgba(70, 70, 70, 1);
+//$xLiteYellow: rgba(254,239,179, 0.05);
 
-$contentBackgroundColor: rgba(255, 255, 255,1);
+$almostBlack: rgba(50, 50, 50, 1);
 
 
 //COLORS verified in use
-$liteGray: rgba(200,200,200,1); 			//#c8c8c8
-$calendarLiteGray: rgba(204,204,204,1);		//#CCCCCC
 $calendarMediumGray: rgba(170,170,170,1);	//#AAAAAA
-$darkGray: rgba(20,20,20,1);				//#141414
+$darkBlue: rgba(6, 44, 140, 1);
+$darkGray: rgba(80,80,80,1);				//#141414
+$green: rgba(0, 168, 88, 1);
+$googleBlue: rgba(68,136,246,1);			//#4488f6
+$gold: rgba(245, 176, 65, 1);
+$hotPink: rgba(255, 0, 128, 1); 
+$liteBlue: rgba(189,229,248, 1);			//#BDE5F8
+$liteRed: rgba(255, 186, 186, 1);
+$liteGray: rgba(200, 200, 200, 1);
+$liteGoogleBlue: rgba(68,136,246,.25);		//#4488f6
+$liteGreen: rgba(231, 246, 238, 1);
 $liteYellow: rgba(255,255,153,1);			//#ffff99
 $monarchBlue: rgba(0,55,103,1);				//#003767
-$pink: rgba(255,0,128,1); 					//#ff0080
-$googleBlue: rgba(68,136,246,1);			//#4488f6
-$white: rgba(255, 255, 255, 1);				 //#FFFFFF
+$red: rgba(231, 76, 60, 1);
+$white: rgba(255, 255, 255, 1);				//#FFFFFF
+$xLiteGray: rgba(250, 250, 250, 1);
+
+
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+
 
 
 //MESSAGE COLORS
 $urgent: $red;
-$errorText: $red;
+$error: $red;
 $errorBackground: $liteRed;
-$success: $green;
+$success: $green; 
+$successBackground: $liteGreen;
 $disabled: $liteGray;
-$warning: $liteYellow;
+$infoBackground: $liteBlue;
+$info: $googleBlue;
+$warningBackground: $liteYellow;
+$warning: $gold;
+$noticeBackground: $liteYellow;
+$notice: $gold;
 
 $font-color: $darkGray; 
 $link-color: $hotPink;
@@ -45,5 +71,6 @@ $link-color-hover: $googleBlue;
 $link-color-visited: $link-color;
 
 //MISC COLORS
-$current: $googleBlue;
+$current: $googleBlue;			//WFT IS THIS FOR?
 $popUpBackground: $white;
+$contentBackgroundColor: $white;
