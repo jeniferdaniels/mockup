@@ -6,10 +6,11 @@
 <html>
 	<head>
 		<?php includeCsss() ?>
-		<link href="css/calendar/fullcalendar.min.css" rel="stylesheet" />
-		<link href="css/calendar/odu_calendar.css" rel="stylesheet" />
-		<link href="css/courseDashboard.css" rel="stylesheet"/>
-		<link href="css/pnotify.custom.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="css/calendar/fullcalendar.min.css"  />
+		<link rel="stylesheet" href="css/calendar/odu_calendar.css" />
+		<link rel="stylesheet" href="css/upcomingEvents/odu_upcomingEvents.css" />
+		<link rel="stylesheet" href="css/courseDashboard.css" />
+		<link rel="stylesheet" href="css/pnotify.custom.css" />
 
 		<?php includeScripts() ?>
 		<script src="scripts/js/utils.js"></script>
