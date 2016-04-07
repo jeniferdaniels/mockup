@@ -38,7 +38,7 @@ body {
 #noEvents {
   border: 1px solid black;
   color: #505050;
-  background-color: #ffff99;
+  background-color: #fffdd9;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -172,7 +172,7 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/calendar\/odu_calendar\.scss}line{font-family:\00003344}}
 #calendar .ui-state-highlight {
-  background: #ffff99 !important;
+  background: #fffdd9 !important;
   border-top: 5px solid #4488f6 !important; }
 
 /*# sourceMappingURL=odu_calendar.css.map */

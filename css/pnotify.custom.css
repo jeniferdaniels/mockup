@@ -152,12 +152,12 @@ body > .ui-pnotify-modal-overlay {
 
 .brighttheme-notice {
   background-color: #ffff99;
-  border: 1px solid #323232;
+  border: 1px solid #e74c3c;
   color: #323232; }
 
 .brighttheme-info {
-  background-color: #bde5f8;
-  border: 1px solid #4488f6;
+  background-color: #fffdd9;
+  border: 1px solid #323232;
   color: #323232; }
 
 .brighttheme-success {
@@ -203,15 +203,15 @@ body > .ui-pnotify-modal-overlay {
     top: 1.5rem; }
 
 .brighttheme-icon-notice {
-  color: #323232;
-  font-size: 1.8rem; }
+  color: #323232; }
   .brighttheme-icon-notice:after {
     content: '\f06a'; }
 
 .brighttheme-icon-info {
-  color: #4488f6; }
+  color: #323232;
+  font-size: 1.8rem; }
   .brighttheme-icon-info:after {
-    content: '\f05a'; }
+    content: '\f0a1'; }
 
 .brighttheme-icon-success {
   color: #00a858; }
