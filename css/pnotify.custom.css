@@ -36,7 +36,7 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   right: 36px;
   position: absolute;
   height: auto;
-  z-index: 2; }
+  z-index: 1000; }
 
 body > .ui-pnotify {
   /* Notices in the body context should be fixed to the viewport. */
@@ -88,9 +88,9 @@ body > .ui-pnotify-modal-overlay {
   opacity: 1; }
 
 .ui-pnotify .ui-pnotify-shadow {
-  -webkit-box-shadow: 0px 6px 28px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 6px 28px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 6px 28px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1); }
 
 .ui-pnotify-container {
   background-position: 0 0;
@@ -114,7 +114,8 @@ body > .ui-pnotify-modal-overlay {
 .ui-pnotify-title {
   display: block;
   margin-bottom: .4em;
-  margin-top: 0; }
+  margin-top: 0;
+  font-weight: 600; }
 
 .ui-pnotify-text {
   display: block; }
@@ -138,9 +139,6 @@ body > .ui-pnotify-modal-overlay {
   right: auto;
   margin-left: -150px; }
 
-/*
-Color Scheme: http://paletton.com/palette.php?uid=c1T3n2J040kpEKzpEKzbEPSOEyiNk9W
-*/
 .brighttheme {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -154,57 +152,61 @@ Color Scheme: http://paletton.com/palette.php?uid=c1T3n2J040kpEKzpEKzbEPSOEyiNk9
 
 .brighttheme-notice {
   background-color: #ffff99;
-  border: 0 solid #f5b041;
+  border: 1px solid #323232;
   color: #323232; }
 
 .brighttheme-info {
   background-color: #bde5f8;
-  border: 0 solid #4488f6;
+  border: 1px solid #4488f6;
   color: #323232; }
 
 .brighttheme-success {
   background-color: #e7f6ee;
-  border: 0 solid #00a858;
+  border: 1px solid #00a858;
   color: #323232; }
 
 .brighttheme-error {
   background-color: #ffbaba;
-  border: 0 solid #e74c3c;
+  border: 1px solid #e74c3c;
   color: #323232; }
 
 .brighttheme-icon-notice,
 .brighttheme-icon-info,
 .brighttheme-icon-success,
+.brighttheme-icon-error,
 .brighttheme-icon-closer,
-.brighttheme-icon-error
 .brighttheme-icon-sticker {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: 400;
   display: inline-block;
-  font-size: 2rem;
   width: 1rem;
-  margin-right: 2rem;
   text-align: center;
   font-variant: normal;
   text-transform: none;
   line-height: 1rem;
   vertical-align: middle;
   margin-bottom: .5rem; }
+
+.brighttheme-icon-notice,
+.brighttheme-icon-info,
+.brighttheme-icon-success,
+.brighttheme-icon-error {
+  font-size: 2rem;
+  margin-right: 2rem; }
   .brighttheme-icon-notice:after,
   .brighttheme-icon-info:after,
   .brighttheme-icon-success:after,
-  .brighttheme-icon-closer:after,
-  .brighttheme-icon-error
-  .brighttheme-icon-sticker:after {
+  .brighttheme-icon-error:after {
     position: absolute;
-    top: 0;
-    left: 4px; }
+    left: .8rem;
+    top: 1.5rem; }
 
 .brighttheme-icon-notice {
-  color: #323232; }
+  color: #323232;
+  font-size: 1.8rem; }
   .brighttheme-icon-notice:after {
-    content: ''; }
+    content: '\f06a'; }
 
 .brighttheme-icon-info {
   color: #4488f6; }
@@ -223,27 +225,30 @@ Color Scheme: http://paletton.com/palette.php?uid=c1T3n2J040kpEKzpEKzbEPSOEyiNk9
 
 .brighttheme-icon-closer,
 .brighttheme-icon-sticker {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1rem; }
 
 .brighttheme-icon-closer:after {
   top: -4px;
-  content: "X"; }
+  font-family: "Open Sans", Georgia;
+  content: "X";
+  padding: .25rem .5rem; }
 
 .brighttheme-icon-sticker:after {
   top: -5px;
   content: '\f08d';
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg); }
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
 
 .brighttheme-icon-sticker.brighttheme-icon-stuck:after {
-  -moz-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg); }
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 .brighttheme .ui-pnotify-action-bar {
   padding-top: 12px; }
