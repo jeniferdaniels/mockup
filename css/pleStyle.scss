@@ -1,11 +1,10 @@
 @import "colors";
 @import "fonts";
-
+@import "sizes"; 
 
 
 //SIZES
-$contentWidth: 1000px;
-$navWrapperWidth: 1000px;
+
 
 
 //********************************************************************************************
@@ -255,6 +254,9 @@ a{	color: $link-color;
 	vertical-align: top;
 	margin-top: 10px;
 }
+
+
+
 
 //**11-09-2015***
 .breadCrumbWrapper{
