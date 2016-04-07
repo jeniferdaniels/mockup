@@ -144,15 +144,14 @@ body > .ui-pnotify-modal-overlay {
 }
 
 //JMD update below here
-
 .brighttheme-notice {
     background-color: $noticeBackground;
-    border: 1px solid $almostBlack;
+    border: 1px solid $urgent;
     color: $almostBlack;
 }
 .brighttheme-info {
-    background-color: $infoBackground;
-    border: 1px solid $info;
+    background-color: $announcementBackground;	//nope. using this for class announcements
+    border: 1px solid $almostBlack;
     color: $almostBlack;
 }
 .brighttheme-success {
@@ -200,17 +199,17 @@ body > .ui-pnotify-modal-overlay {
 }
 
 .brighttheme-icon-notice {
-    color: $almostBlack;
-	font-size: 1.8rem; //slightly too big
+    color: $almostBlack;	
 	&:after{
 		content: '\f06a';
 	}
 }
 
 .brighttheme-icon-info {
-    color: $googleBlue;
+    color: $almostBlack;
+	font-size: 1.8rem; //slightly too big
 	&:after{
-		content: '\f05a';	
+		content: '\f0a1';	
 	}
 	
 }
