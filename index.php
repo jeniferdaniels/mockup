@@ -30,8 +30,37 @@
 			makeCourseDashboard("cat101/json/kitten.json");
 			displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
 
-			var msg = { "text" : "some text"};
-			var notification = getSystemNotification(msg);
+			var notifications = 
+			[
+				{
+					"announcement_id": "2",
+					"message": "PLE will be going down for maintenance April 5 from 3AM - 5AM. Please plan accordingly.",
+					"crn": "0",
+					"type": "notice"
+				},
+				{
+					"announcement_id": "5",
+					"message": "Homework #4 is not due until Friday, May 13, 2016.",
+					"crn": "23561",
+					"type": "info"
+				},
+				{
+					"announcement_id": "5",
+					"title" : "Oops!",
+					"message": "Dude, something went wrong.",
+					"crn": "23561",
+					"type": "error"
+				},
+				{
+					"announcement_id": "5",
+					"title" : "Congrats!",
+					"message": "You've successfully completed Module 1, Kitten Acquisition.",
+					"crn": "23561",
+					"type": "success"
+				}
+			]
+			
+			processNotifications(notifications);
 			
 			});
 		
