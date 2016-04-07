@@ -64,7 +64,7 @@ $xDarkTeal: rgba(  1, 40, 49,1);
     content: '\f057'; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/messages\.scss}line{font-family:\00003248}}
 .odu_msgWarning {
-  background: #ffff99;
+  background: #fffdd9;
   border: 1px solid #f5b041; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/messages\.scss}line{font-family:\00003252}}
   .odu_msgWarning:before {
