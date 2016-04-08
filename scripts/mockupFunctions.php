@@ -90,9 +90,9 @@ function writeBreadCrumbs($breadCrumbs)
 {
 	
 	if (!empty($breadCrumbs)){
-	echo '<div class="breadCrumbWrapper">';
+	echo '<div class="odu_breadCrumbWrapper">';
 		echo '<nav>';
-		echo '<ul class="breadCrumbs">';
+		echo '<ul class="odu_breadCrumbs">';
 			//stop short of last item because it will be text instead of a link
 			for ($i = 0; $i < count($breadCrumbs)-1; $i++){
 				echo '<li><a href="' . $breadCrumbs[$i]["url"] . '">' . $breadCrumbs[$i]["displayTitle"] . '</a>&nbsp;</li>';
