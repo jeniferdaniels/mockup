@@ -97,7 +97,7 @@ a {
   margin-top: 10px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003262}}
-.breadCrumbWrapper {
+.odu_breadCrumbWrapper {
   width: 98%;
   display: block;
   position: fixed;
@@ -107,17 +107,17 @@ a {
   z-index: 899; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003274}}
-.breadCrumbs {
+.odu_breadCrumbs {
   list-style: none;
   padding-left: 10px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003279}}
-  .breadCrumbsa {
+  .odu_breadCrumbsa {
     text-decoration: underline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003283}}
-  .breadCrumbs > li + li::before {
+  .odu_breadCrumbs > li + li::before {
     content: " > "; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003287}}
-  .breadCrumbs > li {
+  .odu_breadCrumbs > li {
     display: inline-block;
     margin-left: 0px; }
 
