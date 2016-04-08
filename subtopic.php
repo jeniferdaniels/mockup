@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<?php  includeCsss (); ?>
-		<script src="http://ple2.odu.edu/ple-videoplayer/public/addon/jquery/2.1.4/jquery.min.js"></script>
+		
 		<?php  includeScripts (); ?>
 		
 		
@@ -59,9 +59,9 @@
 		<div class="top" id="top"><?php writeTopHtml(); ?></div>
 		
 
-		<div class="breadCrumbWrapper" id="breadCrumbWrapper">
+		<div class="odu_breadCrumbWrapper" id="odu_breadCrumbWrapper">
 			<nav>
-				<ul class="breadCrumbs" id="breadCrumbs">
+				<ul class="odu_breadCrumbs" id="odu_breadCrumbs">
 					<li><a href="index.php">Home</a></li>
 					<li id="moduleCrumb"></li>
 					<li id="topicCrumb"></li>
@@ -73,7 +73,7 @@
 
 
 			<div class="wrapper">
-				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
+				<div class="fakeEditor" id="fakeEditor"><img src="<?PHP echo WEB_ROOT ?>images/CKEditorSample.png"></div>
 				<div id="courseMaterial">
 					<div class="paper">
 						<h1 id="pageTitle"></h1>
