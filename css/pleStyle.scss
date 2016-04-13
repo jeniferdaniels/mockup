@@ -439,13 +439,17 @@ a{	color: $link-color;
 			}
 		}
 	}
-	
+
 	h2{
-		margin-left: 160px;
+		margin-left: 50px;
 		padding: 0;
 		display: block;
 		font-size: 1rem;
 		color: $darkGray;
+		
+		span{
+			margin-right: 50px;
+		}
 		
 		a{
 			color: $darkGray;
@@ -640,5 +644,38 @@ a{	color: $link-color;
 	color: $googleBlue
 }
 
+.topPosition25{
+	top: 25px;
+}
 
+#editTab{
+	height: 50px;
+	width: 50px;
+	background: $editBackground;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	position: fixed;
+	left:0;
+	top:20px;
+	cursor: pointer;
+	overflow: hidden;
+	
+	span{
+	 font-size: .8rem;
+	}
+		
+}
 
+#editModeNotification{
+	height: 25px;
+	background: $editBackground;
+	text-align: center;
+	color: white;
+	z-index: 1200;
+	position: fixed;
+	width: 100%;
+	//display: none;
+	overflow: hidden;
+	cursor: pointer;
+}
