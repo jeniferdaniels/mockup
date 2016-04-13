@@ -41,13 +41,36 @@
 					$("#prev").prop("href", previous.url);
 					$("#next").prop("href", next.url);
 
-					toolBoxFunctionality();																				
+					toolBoxFunctionality();	
+
+					$("#editTab").click(function (){
+						
+						//$("#editModeNotification").animate({width: "toggle"});
+						$("#editModeNotification").slideDown();
+						$("#editTab").animate({width: "toggle"});
+						$("#top").addClass("topPosition25");
+						$("#toolBox").hide();
+						$("#fakeEditor").show();
+						//$("#breadCrumbWrapper").addClass("topPosition25");
+						//$("#wrapper").addClass("topPosition25");
+						
+					});
+					$("#editModeNotification").click(function (){
+						//$("#editModeNotification").animate({width: "toggle"});
+						$("#editModeNotification").slideUp();
+						$("#editTab").animate({width: "toggle"});
+						$("#top").removeClass("topPosition25");
+						$("#toolBox").show();
+						$("#fakeEditor").hide();
+					});
+					
 					});// done 
 				});//ready
 		</script>
 	</head>
 	
 	<body>
+		<div id="editModeNotification" class="displayNone">You are in Edit Mode</div>
 		<div id="popWindow" class="displayNone"><?php writeDummyGlossaryTerms(10)?></div>
 	
 		<div class="navWrapper">
@@ -73,7 +96,8 @@
 
 
 			<div class="wrapper">
-				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
+				<div class="fakeEditor" id="fakeEditor"><img src="<?PHP echo WEB_ROOT ?>/images/CKEditorSample.png"></div>
+
 				<div id="courseMaterial">
 					<div class="paper">
 						<h1 id="pageTitle"></h1>
