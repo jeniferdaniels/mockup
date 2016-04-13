@@ -1,4 +1,4 @@
-<?php echo '<link rel="stylesheet" type="text/css" href="' . $GLOBALS['mockupDirectory'] . 'css/askAQuestion.css">' ?>
+<?php echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/askAQuestion.css">' ?>
 
 <div class="aaq">
 	<div>
