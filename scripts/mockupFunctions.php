@@ -5,7 +5,7 @@
 function includeCsss(){
 	echo '<meta charset="utf-8" />';
 
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . 'css/reset.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/reset.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/fonts/font-awesome/css/font-awesome.min.css">';
 	
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >';
@@ -14,7 +14,7 @@ function includeCsss(){
 	
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrows.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrowStyle.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">';
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">';
 }
@@ -36,6 +36,7 @@ function writeTopHtml()
 	$userIcon = icon("g", "user", "l", "topUpperButton");
 	$chatIcon = icon("g", "chat", "l", "topUpperButton");
 	$searchIcon = icon("g", "search", "l", "topUpperButton");
+	//$editIcon = icon ("fa", "edit", "l", "topUpperButton");
 	
 
 	
@@ -65,13 +66,18 @@ function writeTopHtml()
 					echo '</li>';	
 					echo '<li><a href="javascript:whatWouldThisDo(\'chat\')" id="chatLink">' .$chatIcon .'</a></li>';
 					echo '<li><a href="#" id="searchLink">'. $searchIcon . '</a></li>';
+					//echo '<li><a href="#" id="adminLink" style="color: rgba(255, 102, 0, 1)">'. $editIcon . '</a></li>';
 					echo '</ul>';
 			echo '</nav>';
 			echo '<div style="clear:both"></div>';
 			echo '<div id="logo" class="oduOnlineLogo"></div>';
 			echo '<h1 id="courseTitle"></h1>';
-			echo '<h2 id="courseInstructor">Instructor - </h2>';
+			echo '<h2 id="courseInstructor"><span>Fall 2015</span>Instructor - </h2>';
 		echo '</header>';
+		
+		
+		echo '<div id="editTab">' . icon("g", "edit", "l", "") . " <span>Edit</span></div>";
+		
 	echo '</div><!--end topWrapper-->';
 }
 
@@ -186,12 +192,14 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 		echo '<li id="feedbackToolListItem" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</li>';
 	
 	echo '<li id="printToolListItem" title="Print">'. icon("g", "print", "l", "") . 'Print</li>';
-
-	if ($showEdit)
-		echo '<li id="editToolListItem" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</li>';
-	
 	
 	echo '</ul>';
+	
+	/*echo '<ul id="editBox">';
+	if ($showEdit)
+		echo '<li id="editToolListItem" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</li>';
+	echo '</ul>';
+	*/
 }
 
 
