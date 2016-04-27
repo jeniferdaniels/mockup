@@ -116,7 +116,7 @@ ul{
 
 //***10/12/2015***
 li{
-	margin-left: 10px;	
+	margin-left: 25px;	
 }
 
 //ol
@@ -375,7 +375,7 @@ a{	color: $link-color;
 
 
 .oduOnlineLogo{
-	background-image: url("../images/oduOnlineLogo.svg");
+	background-image: url("images/oduOnlineLogo.svg");
 	background-color: white;
 	background-repeat: no-repeat;
 	background-size: 140px 45px;
@@ -392,8 +392,6 @@ a{	color: $link-color;
 .paper {
   padding: 10px;
   margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
   background-color: white;
   border: 1px solid $liteGray;
   min-height: 250px; 
@@ -439,16 +437,21 @@ a{	color: $link-color;
 			}
 		}
 	}
-	
+
 	h2{
-		margin-left: 160px;
+		margin-left: 50px;
 		padding: 0;
 		display: block;
 		font-size: 1rem;
 		color: $darkGray;
 		
+		span{
+			margin-right: 50px;
+		}
+		
 		a{
-			color: $darkGray;
+			//color: $darkGray;
+			text-decoration: underline;
 			&:hover{
 				color: $googleBlue;
 				text-decoration: underline;
@@ -640,5 +643,38 @@ a{	color: $link-color;
 	color: $googleBlue
 }
 
+.topPosition25{
+	top: 25px;
+}
 
+#editTab{
+	height: 50px;
+	width: 50px;
+	background: $editBackground;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	position: fixed;
+	left:0;
+	top:20px;
+	cursor: pointer;
+	overflow: hidden;
+	
+	span{
+	 font-size: .8rem;
+	}
+		
+}
 
+#editModeNotification{
+	height: 25px;
+	background: $editBackground;
+	text-align: center;
+	color: white;
+	z-index: 1200;
+	position: fixed;
+	width: 100%;
+	//display: none;
+	overflow: hidden;
+	cursor: pointer;
+}
