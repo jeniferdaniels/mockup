@@ -1,0 +1,36 @@
+@import "colors";
+@import "fonts";
+
+
+//*****************************************************************************
+//Navigation
+//*****************************************************************************
+
+//Previous and Next Arrows
+.navWrapper{
+	width:99%;
+	height:100%;
+}	
+	
+//10/9/2015	
+.navPrevious, .navNext{
+    position:fixed;
+	vertical-align: middle;
+	top: 50%;
+	height: 100%;
+	& a{
+		color: $darkGray;
+		
+		&:hover {
+			color: $hotPink;
+		}
+	}
+}
+
+.navPrevious{
+    left: 5px;
+}
+
+.navNext{
+    right: 5px;
+}
