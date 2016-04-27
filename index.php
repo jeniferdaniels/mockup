@@ -58,9 +58,9 @@
 					"crn": "23561",
 					"type": "success"
 				}
-			]
+			];
 			
-			processNotifications(notifications);
+			//processNotifications(notifications);
 			
 			});
 		
@@ -114,8 +114,7 @@
 	<body>
 		<div class="top"><?php writeTopHTML() ?></div>
 		<div class="contentWrapper dash" id="dash">
-			<div id="odu_msg"></div>
-			
+					
 			<div id="leftHandSide">
 				<div id="odu_smallCalendarContainer">
 					<div id="odu_smallCalendar"></div>
