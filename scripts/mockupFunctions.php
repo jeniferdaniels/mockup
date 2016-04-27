@@ -5,18 +5,18 @@
 function includeCsss(){
 	echo '<meta charset="utf-8" />';
 
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . 'css/reset.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/fonts/font-awesome/css/font-awesome.min.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/reset.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/fonts/font-awesome/css/font-awesome.min.css">' . PHP_EOL;
 	
-	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >';
-	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">' . PHP_EOL;
 	//echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
 	
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrows.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">';
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">';
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrowStyle.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">' . PHP_EOL;
 }
 
 function includeScripts()
@@ -36,6 +36,7 @@ function writeTopHtml()
 	$userIcon = icon("g", "user", "l", "topUpperButton");
 	$chatIcon = icon("g", "chat", "l", "topUpperButton");
 	$searchIcon = icon("g", "search", "l", "topUpperButton");
+	//$editIcon = icon ("fa", "edit", "l", "topUpperButton");
 	
 
 	
@@ -65,13 +66,18 @@ function writeTopHtml()
 					echo '</li>';	
 					echo '<li><a href="javascript:whatWouldThisDo(\'chat\')" id="chatLink">' .$chatIcon .'</a></li>';
 					echo '<li><a href="#" id="searchLink">'. $searchIcon . '</a></li>';
+					//echo '<li><a href="#" id="adminLink" style="color: rgba(255, 102, 0, 1)">'. $editIcon . '</a></li>';
 					echo '</ul>';
 			echo '</nav>';
 			echo '<div style="clear:both"></div>';
 			echo '<div id="logo" class="oduOnlineLogo"></div>';
 			echo '<h1 id="courseTitle"></h1>';
-			echo '<h2 id="courseInstructor">Instructor - </h2>';
+			echo '<h2 id="courseInstructor"><span>Fall 2015</span>Instructors - <a href="' . WEB_ROOT . '/faculty.php?midas=jdani001">Jen Daniels,</a> <a href="' . WEB_ROOT . '/faculty.php?midas=dmarceli">Dexter Marcelino</a>, <a href="' . WEB_ROOT . '/faculty.php?midas=grodrigu">Gabriel Rodriguez</a></h2>';
 		echo '</header>';
+		
+		
+		//echo '<div id="editTab">' . icon("g", "edit", "l", "") . " <span>Edit</span></div>";
+		
 	echo '</div><!--end topWrapper-->';
 }
 
@@ -82,30 +88,6 @@ function writeModuleProgressBar(){
 	echo '<div class="moduleProgressTitle">Module Progress</div>';
 	echo '</div>';
 }
-
-
-//not used anymore
-
-function writeBreadCrumbs($breadCrumbs)
-{
-	
-	if (!empty($breadCrumbs)){
-	echo '<div class="odu_breadCrumbWrapper">';
-		echo '<nav>';
-		echo '<ul class="odu_breadCrumbs">';
-			//stop short of last item because it will be text instead of a link
-			for ($i = 0; $i < count($breadCrumbs)-1; $i++){
-				echo '<li><a href="' . $breadCrumbs[$i]["url"] . '">' . $breadCrumbs[$i]["displayTitle"] . '</a>&nbsp;</li>';
-			}	
-			//not link
-			echo '<li>' . array_pop($breadCrumbs)["displayTitle"] . '</a></li>';	
-		echo '</ul>';
-		echo '</nav></div>';
-	}
-	echo "\n";
-}
-
-
 
 function writeProvideFeedbackWidget(){
 	echo '<div class="provideFeedback"><a href="#">Provide Feedback';
@@ -174,9 +156,9 @@ function writeUpcomingAssignment($id) {
 }
 
 function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
-	echo '<ul id="tools">';
+	echo '<ul id="tools" style="height: 300px; margin-left: 0px;">';
 	
-	if ($showGlossary)
+	/*if ($showGlossary)
 		echo '<li id="glossaryToolListItem" title="Module Glossary">'. icon("fa", "glossary", "l", "") . 'Glossary</li>';	
 				
 	if ($showAAQ)
@@ -186,11 +168,13 @@ function writeTools($showGlossary, $showAAQ, $showFeedback, $showEdit){
 		echo '<li id="feedbackToolListItem" title="Give Feedback">' . icon("g", "feedback", "l", "") . 'Give Feedback</li>';
 	
 	echo '<li id="printToolListItem" title="Print">'. icon("g", "print", "l", "") . 'Print</li>';
-
+	
+	echo '</ul>';
+	*/
+	/*echo '<ul id="editBox">';
 	if ($showEdit)
 		echo '<li id="editToolListItem" title="Edit">'. icon("g", "edit", "l", "") . 'Edit</li>';
-	
-	
+	*/
 	echo '</ul>';
 }
 
