@@ -1,41 +1,33 @@
 /* tables */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\000036}}
 table.tablesorter {
   margin: 10px 0pt 15px;
   width: 100%;
   text-align: left;
   border: 1px solid #c8c8c8; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000312}}
   table.tablesorter a {
     color: black; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000316}}
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
   background-color: #4488f6;
   color: white;
   padding-left: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000321}}
 table.tablesorter thead tr .header {
   background-repeat: no-repeat;
   background-position: center right;
   cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000326}}
 table.tablesorter tbody td {
   padding: 4px;
   background-color: #FFF;
   vertical-align: top; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000331}}
 table.tablesorter thead tr .headerSortUp {
   background-image: url(../images/asc.gif); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000334}}
 table.tablesorter thead tr .headerSortDown {
   background-image: url(../images/desc.gif); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/resourceTableStyle\.scss}line{font-family:\0000337}}
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
   background-color: rgba(68, 136, 246, 0.2);
   color: black; }

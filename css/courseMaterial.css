@@ -17,19 +17,16 @@ $liteTeal: #8FCEDD;
 $darkTeal: rgba(  2,134,165,1);
 $xDarkTeal: rgba(  1, 40, 49,1);
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\000037}}
 .wrapper {
   width: 1070px;
   margin: 140px auto 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000313}}
 #courseMaterial {
   float: left;
   width: 1000px;
   margin: 0 auto;
   min-height: 300px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000320}}
 .paper {
   padding: 10px;
   margin-bottom: 30px;
@@ -37,13 +34,11 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   border: 1px solid #c8c8c8;
   min-height: 250px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000329}}
 #footer {
   clear: both;
   margin-bottom: 10px;
   height: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000335}}
 #tools {
   float: right;
   width: 50px;
@@ -55,23 +50,18 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   text-align: center;
   vertical-align: top;
   background: #323232; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000348}}
   #tools :hover {
     color: #4488f6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000353}}
   #tools li {
     margin-bottom: 20px;
     padding: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000358}}
   #tools .on {
     border-left: 3px solid yellow;
     color: yellow; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000365}}
 .ui-dialog {
   padding: 0	!important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000370}}
 .assignmentIcon {
   background-image: url("../images/clipboard.svg");
   background-color: white;
@@ -84,34 +74,28 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   float: left;
   margin: 0 5px 200px 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000384}}
 .assignmentProperties {
   list-style-type: none;
   margin: 10px 0 10px 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000389}}
 #dueHeader, #submitHeader, #deliverableHeader {
   font-weight: 600;
   margin-right: 3px;
   display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000395}}
 #due, #submitVia, #deliverable {
   display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\0000399}}
 #description {
   border-top: 1px solid #c8c8c8;
   margin: 10px 0 10px 60px;
   padding-top: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\00003105}}
 .checkmarkDisclaimer {
   color: #7d7d7d;
   font-size: .7rem;
   line-height: 120%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseMaterial\.scss}line{font-family:\00003111}}
 .checkmarkWrapper {
   width: 300px;
   float: right;

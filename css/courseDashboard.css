@@ -17,36 +17,28 @@ $liteTeal: #8FCEDD;
 $darkTeal: rgba(  2,134,165,1);
 $xDarkTeal: rgba(  1, 40, 49,1);
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\000039}}
 .dash #leftHandSide {
   float: left;
   width: 40%;
   padding: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000315}}
 .dash #rightHandSide {
   float: right;
   width: 55%;
   padding: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000321}}
 .dash #footer {
   clear: both;
   margin-bottom: 10px;
   height: 1px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000327}}
 .dash ul {
   list-style: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000330}}
   .dash ul li {
     padding-top: 5px;
     padding-left: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000336}}
 .dash h2 {
   color: #4488f6; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000346}}
 .upcomingAssignments h2 {
   margin-top: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000350}}
 .upcomingAssignments .assignment {
   border-bottom: 1px solid #505050;
   margin-bottom: 20px;
@@ -63,7 +55,6 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   	background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
   	}
   */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000368}}
   .upcomingAssignments .assignment .dateWrapper {
     width: 50px;
     border: 1px solid #c8c8c8;
@@ -73,74 +64,58 @@ $xDarkTeal: rgba(  1, 40, 49,1);
     margin-right: 10px;
     margin-bottom: 10px;
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000378}}
     .upcomingAssignments .assignment .dateWrapper h3 {
       font-size: 1.5rem;
       font-weight: 600;
       margin: 0;
       padding: 0;
       color: red; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000385}}
     .upcomingAssignments .assignment .dateWrapper h4 {
       font-size: .9rem;
       margin: 0;
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\0000391}}
     .upcomingAssignments .assignment .dateWrapper h5 {
       font-size: .7rem;
       margin: 0;
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003100}}
   .upcomingAssignments .assignment h3 {
     color: #505050;
     margin-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003106}}
   .upcomingAssignments .assignment p {
     font-size: .9rem;
     line-height: 125%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003119}}
 #courseContent {
   margin-left: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003123}}
   #courseContent a {
     color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003126}}
     #courseContent a:hover {
       color: #4488f6;
       border-bottom: 1px dotted #4488f6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003132}}
   #courseContent .moduleTitle {
     font-size: 1.4rem;
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003137}}
   #courseContent .moduleTitle, #courseContent .topicTitle {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003141}}
   #courseContent .checkMark {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003145}}
   #courseContent .moduleContentList {
     border: 1px solid #c8c8c8;
     margin-bottom: 20px;
     margin-left: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003153}}
     #courseContent .moduleContentList ul ul {
       border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003161}}
 .toggleBox {
   width: 90%;
   border: 1px solid #c8c8c8;
   margin: 10px;
   padding: 10px;
   display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003169}}
   .toggleBox h3 {
     font-size: 1.4rem;
     margin-top: 0;
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/courseDashboard\.scss}line{font-family:\00003175}}
   .toggleBox a {
     color: #505050; }
 
