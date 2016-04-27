@@ -17,12 +17,10 @@ $liteTeal: #8FCEDD;
 $darkTeal: rgba(  2,134,165,1);
 $xDarkTeal: rgba(  1, 40, 49,1);
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000323}}
 html {
   font-size: 87%;
   overflow-y: scroll; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000345}}
 body {
   font-family: "Open Sans", Georgia;
   color: #505050;
@@ -32,71 +30,57 @@ body {
   background-color: #f7f7f7;
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000361}}
 p {
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000384}}
 h1 {
   font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000391}}
 h2 {
   font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\0000398}}
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
   margin-top: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003113}}
 ul {
   list-style-type: disc; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003118}}
 li {
-  margin-left: 10px; }
+  margin-left: 25px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003124}}
 dt {
   font-weight: 600;
   padding-right: 2px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003129}}
 dd {
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003190}}
 a {
   color: #ff0080;
   text-decoration: none;
   transition: all 0.25s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003194}}
   a:hover, a:visited:hover {
     color: #4488f6;
     text-decoration: underline dotted; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003199}}
   a:visited {
     color: #ff0080; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003246}}
 .boxWrapper {
   padding-top: 10px;
   vertical-align: top;
   align: top; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003252}}
 .blockCheckMark {
   display: inline-block;
   vertical-align: top;
   margin-top: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003262}}
 .odu_breadCrumbWrapper {
   width: 98%;
   display: block;
@@ -106,22 +90,17 @@ a {
   background: #f7f7f7;
   z-index: 899; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003274}}
 .odu_breadCrumbs {
   list-style: none;
   padding-left: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003279}}
   .odu_breadCrumbsa {
     text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003283}}
   .odu_breadCrumbs > li + li::before {
     content: " > "; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003287}}
   .odu_breadCrumbs > li {
     display: inline-block;
     margin-left: 0px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003295}}
 .contentWrapper {
   width: 1000px;
   margin: 0 auto;
@@ -130,41 +109,33 @@ a {
   padding: 10px;
   border: 1px solid #c8c8c8; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003308}}
 #nav {
   width: 100%;
   display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003313}}
   #nav ul {
     padding-right: 5px;
     margin: 0;
     list-style: none;
     position: relative;
     text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003321}}
     #nav ul:After {
       content: "";
       display: block;
       clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003327}}
     #nav ul li {
       display: list-item;
       list-style: none;
       float: right;
       color: #003767; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003333}}
       #nav ul li a {
         display: block;
         color: #003767;
         text-decoration: none;
         text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003340}}
         #nav ul li a:hover {
           background-color: rgba(68, 136, 246, 0.25); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003344}}
       #nav ul li:hover > ul {
         display: list-item; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003349}}
     #nav ul ul {
       display: none;
       position: absolute;
@@ -172,22 +143,19 @@ a {
       padding: 5px 5px 5px 0;
       background: white;
       border: 1px solid #fafafa; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003358}}
       #nav ul ul li {
         width: 110px;
         float: none;
         position: relative;
         border-bottom: none;
         padding-left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003365}}
         #nav ul ul li a {
           padding-left: -1px;
           text-align: left;
           font-size: .9rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003377}}
 .oduOnlineLogo {
-  background-image: url("../images/oduOnlineLogo.svg");
+  background-image: url("images/oduOnlineLogo.svg");
   background-color: white;
   background-repeat: no-repeat;
   background-size: 140px 45px;
@@ -198,17 +166,13 @@ a {
   float: left;
   margin: -10px 10px 0 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003392}}
 .paper {
   padding: 10px;
   margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
   background-color: white;
   border: 1px solid #c8c8c8;
   min-height: 250px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003403}}
 .pleLogo {
   background-image: url("../images/pleLogo.svg");
   background-color: white;
@@ -221,7 +185,6 @@ a {
   float: left;
   margin: 0 10px 0 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003417}}
 .top {
   position: fixed;
   width: 100%;
@@ -232,162 +195,152 @@ a {
   vertical-align: top;
   z-index: 900;
   border-bottom: 5px solid #003767; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003432}}
   .top h1 {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003434}}
     .top h1 a {
       color: #505050; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003436}}
       .top h1 a:hover {
         color: #4488f6;
         text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003443}}
   .top h2 {
-    margin-left: 160px;
+    margin-left: 50px;
     padding: 0;
     display: block;
     font-size: 1rem;
     color: #505050; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003450}}
+    .top h2 span {
+      margin-right: 50px; }
     .top h2 a {
-      color: #505050; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003452}}
+      text-decoration: underline; }
       .top h2 a:hover {
         color: #4488f6;
         text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003460}}
   .topWrapper {
     width: 1000px;
     padding: 0;
     margin: 0 auto 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003478}}
 .md-t {
   font-size: .8rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003482}}
 .md-s {
   font-size: 1rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003486}}
 .md-m {
   font-size: 1.3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003490}}
 .md-l {
   font-size: 2rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003494}}
 .md-xl {
   font-size: 3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003498}}
 .md-h {
   font-size: 4rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003502}}
 .md-e {
   font-size: 6rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003508}}
 #fakeEditor {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003513}}
 .editingMode {
   border: 10px solid red; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003516}}
   .editingMode .top {
     border-top: 10px solid red;
     right: 10px;
     left: 10px;
     width: 99%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003523}}
   .editingMode .breadCrumbWrapper {
     top: 100px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003527}}
   .editingMode #editToolListItem {
     background: red;
     color: white;
     padding: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003532}}
     .editingMode #editToolListItem:hover, .editingMode #editToolListItem i:hover {
       color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003538}}
   .editingMode #chatLink, .editingMode #aaqLink, .editingMode #helpLink, .editingMode #notesLink, .editingMode #glossaryToolListItem, .editingMode #aaqToolListItem, .editingMode #feedbackToolListItem, .editingMode #printToolListItem {
     color: #c8c8c8;
     cursor: not-allowed;
     pointer-events: none;
     border: 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003547}}
   .editingMode #fakeEditor {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003552}}
   .editingMode #ask {
     visibility: hidden;
     display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003558}}
 .disabledEditingLink {
   color: #c8c8c8 !important;
   cursor: not-allowed;
   pointer-events: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003570}}
 .clearFix {
   float: none;
   clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003578}}
 .urgent {
   color: #e74c3c; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003583}}
 .success {
   color: #00a858; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003587}}
 .disabled {
   color: #c8c8c8 !important;
   cursor: "not-allowed" !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003592}}
 .liteGray {
   color: #c8c8c8; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003596}}
 .current {
   color: #4488f6; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003601}}
 .hidden {
   visibility: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003607}}
 .inline, .displayInline {
   display: inline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003612}}
 .displayInlineBlock {
   display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003617}}
 .displayBlock {
   display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003622}}
 .displayNone {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003626}}
 .floatRight {
   float: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003630}}
 .floatLeft {
   float: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003634}}
 .marginBottom20 {
   margin-bottom: 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/_mockUp\/css\/pleStyle\.scss}line{font-family:\00003638}}
 .googleBlue {
   color: #4488f6; }
 
-/*# sourceMappingURL=pleStyle.css.map */
+.topPosition25 {
+  top: 25px; }
+
+#editTab {
+  height: 50px;
+  width: 50px;
+  background: #ff6600;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  left: 0;
+  top: 20px;
+  cursor: pointer;
+  overflow: hidden; }
+  #editTab span {
+    font-size: .8rem; }
+
+#editModeNotification {
+  height: 25px;
+  background: #ff6600;
+  text-align: center;
+  color: white;
+  z-index: 1200;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer; }
