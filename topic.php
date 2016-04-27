@@ -56,9 +56,9 @@
 		<div class="top"><?php writeTopHtml(); ?></div>
 		
 
-		<div class="breadCrumbWrapper">
+		<div class="odu_breadCrumbWrapper">
 			<nav>
-				<ul class="breadCrumbs">
+				<ul class="odu_breadCrumbs">
 					<li><a href="index.php">Home</a></li>
 					<li id="moduleCrumb"></li>
 					<li id="thisCrumb"></li>
