@@ -197,9 +197,11 @@ a {
   border-bottom: 5px solid #003767; }
   .top h1 {
     display: inline-block; }
-    .top h1 a {
+    .top h1 a,
+    .top h1 a:visited {
       color: #505050; }
-      .top h1 a:hover {
+      .top h1 a:hover,
+      .top h1 a:visited:hover {
         color: #4488f6;
         text-decoration: underline; }
   .top h2 {
@@ -344,3 +346,23 @@ a {
   width: 100%;
   overflow: hidden;
   cursor: pointer; }
+
+.odu_progressNavBar {
+  width: 1000px;
+  height: 15px;
+  display: table;
+  font-size: .85rem; }
+  .odu_progressNavBar a {
+    display: table-cell;
+    background: #00a858;
+    margin-right: 3px;
+    border-right: 2px solid white;
+    min-width: 10px;
+    transition: all .125s ease;
+    height: 10px; }
+    .odu_progressNavBar a.new {
+      background: #dcdcdc; }
+      .odu_progressNavBar a.new:hover {
+        background: #c8c8c8; }
+    .odu_progressNavBar a:hover {
+      background: #4488f6; }

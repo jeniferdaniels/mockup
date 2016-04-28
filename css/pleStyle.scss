@@ -429,7 +429,8 @@ a{	color: $link-color;
 	
 	h1{
 		display: inline-block;
-		a{
+		a,
+		a:visited{
 			color: $darkGray;
 			&:hover{
 				color: $googleBlue;
@@ -678,3 +679,36 @@ a{	color: $link-color;
 	overflow: hidden;
 	cursor: pointer;
 }
+
+//---------------for alt
+.odu_progressNavBar{
+	width: $contentWidth;
+	height: 15px;
+	display: table;
+	font-size: .85rem; //to enable height to shrink
+	a{
+		display: table-cell;
+		background: $green;
+		margin-right: 3px;
+		border-right: 2px solid $white;
+		min-width: 10px;
+		transition: all .125s ease;
+		height: 10px;
+		
+		&.new{
+			background: #dcdcdc;
+			&:hover{
+				background: $liteGray;
+			}
+		
+		}
+		
+		&:hover{
+			background: $googleBlue;
+		
+		}
+		
+	}
+}
+
+
