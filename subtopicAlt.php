@@ -31,16 +31,24 @@
 					grandParent = getObjectFromArray(flatCourse, "id", parent.parent);
 					previous = flatCourse[flatCourse.indexOf(subtopic)-1];
 					next = flatCourse[flatCourse.indexOf(subtopic)+1];
-
-					useArrowsForNavigation(previous.url, next.url);
+					//TODO: kludge so I dont have to open the json file to either change the url or add
+					//an alt url or take the querystring part off the url
+					//useArrowsForNavigation(previous.url, next.url);
+					prevUrl = "subtopicAlt.php?id=" + previous.id;
+					nextUrl = "subtopicAlt.php?id=" + next.id;
+					console.log("nav urls Prev:" + prevUrl + " Next: " + nextUrl);
+					useArrowsForNavigation(prevUrl, nextUrl);
+										
+					
+					
 					
 					$("#pageTitle").html(subtopic.title);
 					$("#content").load("cat101/" + subtopic.content);
 					$("#moduleCrumb").html("<a href='index.php'>" + grandParent.displayNumber + ". " + grandParent.title + "</a>");
 					$("#topicCrumb").html("<a href='" + parent.url + "'>" + parent.displayNumber + " " + parent.title + "</a>");							
 					$("#thisCrumb").html(subtopic.displayNumber + " " + subtopic.title); 
-					$("#prev").prop("href", previous.url);
-					$("#next").prop("href", next.url);
+					$("#prev").prop("href", prevUrl);
+					$("#next").prop("href", nextUrl);
 					
 					
 					//toolBoxFunctionality();																				
@@ -49,7 +57,7 @@
 		</script>
 	</head>
 	
-	<body style="margin-top: 140px">
+	<body class="bodyAlt">
 		<div id="popWindow" class="displayNone"><?php writeDummyGlossaryTerms(10)?></div>
 	
 		<div class="navWrapper">
@@ -61,36 +69,25 @@
 		<div class="top" id="top"><?php writeTopHtml(); ?></div>
 		
 
-		<div class="odu_breadCrumbWrapper" id="odu_breadCrumbWrapper">
-			<nav>
-				<ul class="odu_breadCrumbs" id="odu_breadCrumbs">
-					<li><a href="index.php">Home</a></li>
-					<li id="moduleCrumb"></li>
-					<li id="topicCrumb"></li>
-					<li id="thisCrumb"></li>
-				</ul>
-			</nav>
-		</div>
-
-
-
-
-		<div class="odu_wrapper" id="odu_wrapper">
-			<div class="odu_content" id="odu_content">
+		<div class="odu_wrapper odu_wrapperAlt" id="odu_wrapper">
+			<div class="odu_titleAlt"><h1 id="pageTitle"></h1></div>
+			
+			<div class="odu_toolbox odu_toolboxAlt" id="odu_toolbox">
+				stuff goes here
+			</div>
+			<div class="odu_content odu_contentAlt" id="odu_content">
 				<div class="odu_progressBarWrapper" id="odu_progressBarWrapper"></div>
-				<div class="odu_paper" id="odu_paper">
+				<div class="odu_paper odu_paperAlt" id="odu_paper">
 					<div class="fakeEditor" id="fakeEditor"><img src="<?PHP echo WEB_ROOT ?>/images/CKEditorSample.png"></div>
 					<?php writeProgressNavBar() ?>
 						
-						<h1 id="pageTitle"></h1>
+						
 					
 					<div class="odu_stuff" id="content"></div>
 				</div>
 			</div>
 			
-			<div class="odu_toolbox" id="odu_toolbox">
-				stuff goes here
-			</div>
+			
 			
 		</div>
 
