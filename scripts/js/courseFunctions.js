@@ -114,14 +114,14 @@ function setDocumentTitle(obj){
 
 function setTop(obj){
 	document.getElementById("courseTitle").innerHTML = "<a href='/mockups/index.php'>" + getCourseTitle(obj) + "</a>";
-	document.getElementById("courseInstructor").innerHTML += "<a href='/mockups/faculty.php'>" + getInstructorObject(obj).name + "</a>";
+	//document.getElementById("courseInstructor").innerHTML += "<a href='/mockups/faculty.php'>" + getInstructorObject(obj).name + "</a>";
 	
 }
 
 
 function setInstructorInformation(obj)
 {
-	instructor = getInstructorObject(obj);
+	//instructor = getInstructorObject(obj);
 	document.getElementById("instructorName").innerHTML = instructor.name;
 	document.getElementById("instructorPhone").innerHTML = instructor.phone;
 	document.getElementById("instructorEmail").innerHTML = instructor.email;	
