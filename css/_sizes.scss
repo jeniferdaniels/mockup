@@ -1,2 +1,15 @@
 $contentWidth: 1000px;
 $navWrapperWidth: 1000px;
+
+$indent: 25px;
+
+$w_oduContent: 1000px;
+$w_oduStuff: $w_oduContent;
+$w_oduToolbox: 60px;
+$w_oduWrapper: $w_oduContent + $w_oduToolbox + 3px;
+$w_oduNavWrapper: 1000px;
+
+$w_oduProgressBar: 200px;
+$h_oduProgressBar: 10px;
+
+$w_navButtonWrapper: 50px;
