@@ -1,0 +1,107 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+.odu_breadCrumbWrapper {
+  width: 98%;
+  display: block;
+  position: fixed;
+  top: 88px;
+  padding-top: 10px;
+  background: #f7f7f7;
+  z-index: 899; }
+
+.odu_breadCrumbs {
+  list-style: none;
+  padding-left: 10px; }
+  .odu_breadCrumbs a {
+    text-decoration: none; }
+  .odu_breadCrumbs > li + li::before {
+    content: " > "; }
+  .odu_breadCrumbs > li {
+    display: inline-block;
+    margin-left: 0px; }
+
+.odu_wrapper {
+  width: 1063px;
+  margin: 0 auto; }
+
+.odu_content {
+  margin: 0 auto;
+  min-height: 300px;
+  width: 1000px;
+  float: left; }
+
+.odu_paper {
+  margin-bottom: 30px;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid #c8c8c8;
+  min-height: 500px; }
+
+.odu_stuff {
+  margin: 25px; }
+  .odu_stuff li {
+    margin-left: 25px; }
+
+#odu_toolbox {
+  background: #505050;
+  width: 63px;
+  margin: 0 auto;
+  padding-top: 0;
+  text-align: center;
+  line-height: 80%;
+  float: right; }
+
+#odu_toolbox#odu_tools,
+#odu_toolbox#odu_adminTools {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 70%; }
+
+ul#odu_tools li,
+ul#odu_adminTools li {
+  display: block;
+  margin: 0; }
+  ul#odu_tools li a,
+  ul#odu_adminTools li a {
+    display: block;
+    width: 100%;
+    color: white;
+    background: #505050;
+    padding: 10px 0; }
+    ul#odu_tools li a span,
+    ul#odu_adminTools li a span {
+      font-size: .8rem;
+      display: block; }
+    ul#odu_tools li a:hover, ul#odu_tools li a:visited:hover,
+    ul#odu_adminTools li a:hover,
+    ul#odu_adminTools li a:visited:hover {
+      color: #003767;
+      background: white; }
+
+#odu_toolbox > ul#odu_adminTools li a,
+#odu_toolbox > ul#odu_tools li a {
+  width: auto; }
+
+#odu_adminTools {
+  border-top: 3px solid #f7f7f7; }
+
+/*# sourceMappingURL=contentLayoutStyle.css.map */
