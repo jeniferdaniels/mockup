@@ -682,7 +682,9 @@ a{	color: $link-color;
 
 //---------------for alt
 .odu_progressNavBar{
-	width: $contentWidth;
+	//width: $contentWidth;
+	margin: 0 auto;
+	width: 90%;
 	height: 15px;
 	display: table;
 	font-size: .85rem; //to enable height to shrink
@@ -711,4 +713,53 @@ a{	color: $link-color;
 	}
 }
 
+.odu_video{
+	&Center{
+		margin-right:auto;
+		margin-left: auto;
+		margin-bottom: 20px;
+	}
+	&Size{	
+		&640{
+			width: 640px;
+		}
+		&720{
+			width:720px;
+		}
+		&800{
+			width:800px;
+		}
+	}
+}
 
+//ALTERNATIVE VIEW
+.odu_toolboxAlt{
+	float: left !important;
+	background: $white !important;
+}
+.odu_contentAlt{
+	float: right !important;
+}
+
+.odu_titleAlt{
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid $liteGray;
+	display: block;
+}
+
+.bodyAlt{
+	background:white !important;
+	margin-top: 140px !important;
+}
+
+.odu_wrapperAlt{
+}
+
+.odu_paperAlt{
+	padding-top: 30px;
+	border-top: 0 !important;
+	border-right: 0 !important;
+	border-bottom:0 !important;
+	border-left: 1px solid $liteGray;
+}

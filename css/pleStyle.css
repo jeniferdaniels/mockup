@@ -348,7 +348,8 @@ a {
   cursor: pointer; }
 
 .odu_progressNavBar {
-  width: 1000px;
+  margin: 0 auto;
+  width: 90%;
   height: 15px;
   display: table;
   font-size: .85rem; }
@@ -366,3 +367,38 @@ a {
         background: #c8c8c8; }
     .odu_progressNavBar a:hover {
       background: #4488f6; }
+
+.odu_videoCenter {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px; }
+.odu_videoSize640 {
+  width: 640px; }
+.odu_videoSize720 {
+  width: 720px; }
+.odu_videoSize800 {
+  width: 800px; }
+
+.odu_toolboxAlt {
+  float: left !important;
+  background: white !important; }
+
+.odu_contentAlt {
+  float: right !important; }
+
+.odu_titleAlt {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #c8c8c8;
+  display: block; }
+
+.bodyAlt {
+  background: white !important;
+  margin-top: 140px !important; }
+
+.odu_paperAlt {
+  padding-top: 30px;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 1px solid #c8c8c8; }
