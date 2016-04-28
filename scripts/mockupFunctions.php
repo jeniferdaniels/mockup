@@ -14,6 +14,7 @@ function includeCsss(){
 	
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/contentLayoutStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrowStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">' . PHP_EOL;
@@ -70,7 +71,7 @@ function writeTopHtml()
 					echo '</ul>';
 			echo '</nav>';
 			echo '<div style="clear:both"></div>';
-			echo '<div id="logo" class="oduOnlineLogo"></div>';
+			echo '<a href="' . WEB_ROOT . '"><div id="logo" class="oduOnlineLogo"></div></a>';
 			echo '<h1 id="courseTitle"></h1>';
 			echo '<h2 id="courseInstructor"><span>Fall 2015</span>Instructors - <a href="' . WEB_ROOT . '/faculty.php?midas=jdani001">Jen Daniels,</a> <a href="' . WEB_ROOT . '/faculty.php?midas=dmarceli">Dexter Marcelino</a>, <a href="' . WEB_ROOT . '/faculty.php?midas=grodrigu">Gabriel Rodriguez</a></h2>';
 		echo '</header>';
@@ -235,6 +236,18 @@ function writeDummyGlossaryTerms($count) {
 	
 }
 
+function writeProgressNavBar(){
+	echo "<div class='odu_progressNavBar'>";
+		for ($i=0; $i<5; $i++)
+		{
+			echo "<a href='#'></a>";
+		}
+		for ($i=0; $i<8; $i++)
+		{
+			echo "<a href='#' class='new'></a>";
+		}
+	echo "</div>";
+}
 
 
 ?>
