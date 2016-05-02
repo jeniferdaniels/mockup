@@ -350,7 +350,7 @@ a {
 .odu_progressNavBar {
   margin: 0 auto;
   width: 90%;
-  height: 15px;
+  height: 10px;
   display: table;
   font-size: .85rem; }
   .odu_progressNavBar a {
@@ -379,6 +379,9 @@ a {
 .odu_videoSize800 {
   width: 800px; }
 
+.odu_wrapper {
+  width: 1075px !important; }
+
 .odu_toolboxAlt {
   float: left !important;
   background: white !important; }
@@ -402,3 +405,53 @@ a {
   border-right: 0 !important;
   border-bottom: 0 !important;
   border-left: 1px solid #c8c8c8; }
+
+.odu_dashboardIcon {
+  background-image: url("images/dashboard.svg");
+  background-color: none;
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  padding: 0px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0;
+  color: #7d7d7d;
+  text-align: center;
+  margin: 0 auto; }
+
+#odu_toolboxAlt {
+  background: none;
+  width: 75px;
+  margin-right: 30px;
+  padding-right: 30px;
+  padding-top: 0;
+  text-align: center;
+  line-height: 80%;
+  float: left; }
+
+#odu_toolboxAlt#odu_toolsAlt {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 70%; }
+
+ul#odu_toolsAlt li {
+  display: block;
+  margin: 0; }
+  ul#odu_toolsAlt li a {
+    display: block;
+    width: 100%;
+    color: #7d7d7d;
+    background: none;
+    padding: 10px 0; }
+    ul#odu_toolsAlt li a span {
+      font-size: .8rem;
+      display: block; }
+    ul#odu_toolsAlt li a:hover, ul#odu_toolsAlt li a:visited:hover {
+      color: #003767;
+      background: white; }
+
+#odu_toolboxAlt > ul#odu_toolsAlt li a {
+  width: auto; }

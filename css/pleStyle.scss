@@ -685,7 +685,7 @@ a{	color: $link-color;
 	//width: $contentWidth;
 	margin: 0 auto;
 	width: 90%;
-	height: 15px;
+	height: 10px;
 	display: table;
 	font-size: .85rem; //to enable height to shrink
 	a{
@@ -733,6 +733,11 @@ a{	color: $link-color;
 }
 
 //ALTERNATIVE VIEW
+.odu_wrapper{
+	width: 1075px !important;
+
+}
+
 .odu_toolboxAlt{
 	float: left !important;
 	background: $white !important;
@@ -763,3 +768,76 @@ a{	color: $link-color;
 	border-bottom:0 !important;
 	border-left: 1px solid $liteGray;
 }
+
+
+.odu_dashboardIcon{
+	background-image: url("images/dashboard.svg");
+	background-color: none;
+	background-repeat: no-repeat;
+	background-size: 50px 50px;
+	padding: 0px;
+	height: 50px;
+	width: 50px;
+	display:block;
+	margin: 0;
+	color: $mediumGray;
+	text-align:center;
+	//border: 1px solid red;
+	margin: 0 auto;
+}
+
+#odu_toolboxAlt
+{
+	background: none;
+	width: 75px;
+	//margin: 0 auto;
+	margin-right: 30px;
+	padding-right: 30px;
+	padding-top: 0;
+	//padding: 1em 0;
+	text-align: center;
+	line-height: 80%;
+	float: left;
+}
+
+#odu_toolboxAlt#odu_toolsAlt
+{
+	text-align: left;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	width: 70%;
+}
+
+ul#odu_toolsAlt li
+{
+	display: block;
+	margin: 0;
+	
+	
+	a{
+		display: block;
+		width: 100%;
+		color: $mediumGray;
+		background: none;
+		padding: 10px 0;
+	
+		span{
+			font-size: .8rem;
+			display: block;
+		}
+		
+		&:hover,
+		&:visited:hover{
+			color: $monarchBlue;
+			background: $white;
+		}
+	}
+	
+	
+	
+}
+
+#odu_toolboxAlt>ul#odu_toolsAlt li a { 
+	width: auto; }
+	
