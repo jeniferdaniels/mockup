@@ -1,5 +1,5 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
-<?php include_once 'scripts/globalVariables.php' ?>
+
 <!doctype html>
 <html>
 	<head>
@@ -40,12 +40,12 @@
 		</div>
 
 		<div class="wrapper">
-				<div class="fakeEditor" id="fakeEditor"><img src="/mockups/images/CKEditorSample.png"></div>
+				<div class="fakeEditor" id="fakeEditor"><img src="/mockup/images/CKEditorSample.png"></div>
 				<div id="courseMaterial">
 					<div class="paper">
 						<h2 id="pageTitle"></h2>
 						<div id="content">						
-								<img src="/mockups/cat101/resources/professor.jpg" height="300px" width="450px" style="float: left; padding-right: 10px">
+								<img src="/mockup/cat101/resources/professor.jpg" height="300px" width="450px" style="float: left; padding-right: 10px">
 							   <h3 class="paragraphTitle">Some Title</h3>
 							   <b>Phone:</b>555-555-5555
 							   <br><b>Email:</b> <a href="mailto:someAddress@odu.edu">someAddress@odu.edu</a>

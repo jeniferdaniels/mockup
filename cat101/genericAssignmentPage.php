@@ -1,5 +1,4 @@
 <?php include_once '../scripts/mockupFunctions.php'; ?>
-<?php include_once '../scripts/globalVariables.php'; ?>
 <?php 
 	$navPrevious = "#";
 	$navNext = "#";	

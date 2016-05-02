@@ -1,4 +1,4 @@
-<?php include_once 'globalVariables.php' ?>
+
 <?php include_once 'mockupFunctions.php' ?>
 <!doctype html>
 <html>

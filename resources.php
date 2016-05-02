@@ -1,5 +1,5 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
-<?php include_once 'scripts/globalVariables.php' ?>
+
 <?php $subtopicId = (isset($_REQUEST['id'])? $_GET["id"] : "3");?>
 
 <!doctype html>
