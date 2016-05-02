@@ -113,8 +113,8 @@ function setDocumentTitle(obj){
 }
 
 function setTop(obj){
-	document.getElementById("courseTitle").innerHTML = "<a href='/mockups/index.php'>" + getCourseTitle(obj) + "</a>";
-	//document.getElementById("courseInstructor").innerHTML += "<a href='/mockups/faculty.php'>" + getInstructorObject(obj).name + "</a>";
+	document.getElementById("courseTitle").innerHTML = "<a href='/mockup/index.php'>" + getCourseTitle(obj) + "</a>";
+	//document.getElementById("courseInstructor").innerHTML += "<a href='/mockup/faculty.php'>" + getInstructorObject(obj).name + "</a>";
 	
 }
 
