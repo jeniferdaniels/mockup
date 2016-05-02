@@ -1,9 +1,7 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
-<?php include_once 'scripts/globalVariables.php' ?>
+
 <?php 
 		
-	$navPrevious = "";
-	$navNext = "";	
 	$showModuleProgress = 0;
 	$pageTitle = "Assignments";
 
@@ -15,12 +13,32 @@
 
 <!doctype html>
 <html>
-	<head>
-		<?php writeHead($pageTitle); ?>
+<head>
+		<?php  includeCsss (); ?>
+		
+		<?php  includeScripts (); ?>
+		
+		
+		<script>
+			$(document).ready(function(){
+				$.ajax({
+					url: "cat101/json/kitten.json"
+				}).done(function(obj) {
+
+					//***************************************
+					//set page content
+					//***************************************
+					setTop(obj);
+					document.title = getCourseTitle(obj);
+
+					
+					toolBoxFunctionality();																				
+					});// done 
+				});//ready
+		</script>
 	</head>
-	
 	<body>
-		<?php writeTop($navNext, $navPrevious, $showModuleProgress, $breadCrumbs); ?>
+		<div class="top" id="top"><?php writeTopHtml(); ?></div>
 	
 		<div class="contentWrapper" id="contentWrapper">
 			
