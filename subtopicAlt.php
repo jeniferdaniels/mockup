@@ -1,5 +1,4 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
-<?php include_once 'scripts/globalVariables.php' ?>
 <?php $subtopicId = (isset($_REQUEST['id'])? $_GET["id"] : "3");?>
 
 <!doctype html>
@@ -73,7 +72,7 @@
 			<div class="odu_titleAlt"><h1 id="pageTitle"></h1></div>
 			
 			<div class="odu_toolbox odu_toolboxAlt" id="odu_toolbox">
-				stuff goes here
+				<?PHP writeToolsAlt(1) ?>
 			</div>
 			<div class="odu_content odu_contentAlt" id="odu_content">
 				<div class="odu_progressBarWrapper" id="odu_progressBarWrapper"></div>
