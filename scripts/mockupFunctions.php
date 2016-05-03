@@ -44,7 +44,7 @@ function writeTopHtml()
 		echo'<header>';
 			echo'<nav id="nav">';
 				echo '<ul>';
-					echo '<li><a href="#">' .$menuIcon .'</a>';
+					echo '<li id="dropDownMenu"><a href="#">' .$menuIcon .'</a>';
 						echo '<ul>';
 							echo '<li><a href="#" id="announcementsLink">Announcements</a></li>';
 							echo '<li><a href="assignments.php" id="assignmentsLink">Assignments</a></li>';
