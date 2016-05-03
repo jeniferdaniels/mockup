@@ -49,7 +49,7 @@
 					$("#prev").prop("href", prevUrl);
 					$("#next").prop("href", nextUrl);
 					
-					
+					$("#dropDownMenu").hide();
 					//toolBoxFunctionality();																				
 					});// done 
 				});//ready
