@@ -60,7 +60,7 @@
 				}
 			];
 			
-			//processNotifications(notifications);
+			processNotifications(notifications);
 			
 			});
 		
