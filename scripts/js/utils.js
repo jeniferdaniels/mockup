@@ -37,3 +37,23 @@ function dump(arr,level) {
 
 
 
+//changes the key name
+//if the key is not there, it returns the object unaltered
+function changeKeyName(obj, currentName, newName){
+	if (typeof obj != "undefined"){
+		if (obj.hasOwnProperty(currentName)){
+			var newValue = obj[currentName];
+			obj[newName] = newValue;
+			delete obj[currentName];
+		}
+	}
+	return obj;
+}
+
+//adds key value pair to object
+function addKeyValuePair(obj, key, value){
+	if (typeof obj != "undefined"){
+		obj[key] = value;
+	}
+	return obj;
+}
