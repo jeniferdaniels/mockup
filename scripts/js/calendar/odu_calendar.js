@@ -9,7 +9,7 @@
 function writeSmallCalendar(url) {
 	$.ajax({ 
 		url: url
-	}).done(function(obj){
+	}).done(function(eventList){
 		
 		//add link to full schedule
 		//$("#odu_smallCalendarContainer").after($("<a>").attr("href", scheduleUrl).html("Full Schedule"));
@@ -21,7 +21,7 @@ function writeSmallCalendar(url) {
 
 		//add small calendar
 		$("#odu_smallCalendar").fullCalendar({
-			events: formatForSmallCal(obj), //set short title for small calendar
+			events: formatForSmallCal(eventList), //set short title for small calendar
 			height: 430,
 			fixedWeekCount: true,
 			defaultDate: moment().format('2016-01-18'), //defaultDate: moment().format('YYYY-MM-DD'),
