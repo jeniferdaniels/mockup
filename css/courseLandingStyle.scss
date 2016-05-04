@@ -1,0 +1,123 @@
+//content layout
+//|---------------
+//|____top________|
+//|				  |
+//|	 landing      |
+//|				  |
+//|_______________|
+
+//odu_wrapper
+//	odu_landingContent
+//		odu_landingLhs
+//		odu_landingRhs
+//odu_footer
+@import "colors";
+@import "fonts";
+@import "sizes"; 
+
+
+
+.odu_landingContent{
+	width: $w_oduWrapper;
+	background: white;
+	border: 1px solid $darkGray;
+	padding: 10px;
+	
+	
+	& .wrapper{
+		width: 91%;
+		//border: 1px solid black;
+		min-height: 30px;
+		display: block;
+		border-right: 1px solid $darkGray;
+		border-bottom: 1px solid $darkGray;
+		border-left: 1px solid $darkGray;
+		margin: 10px;
+	}
+	
+	
+	
+}
+
+
+.odu_landingLhs{
+	width: $w_oduLandingLhs;
+	float:left;
+	//border: 1px solid green;
+}
+.odu_landingRhs{
+	width: $w_oduLandingRhs;
+	float: right;
+	//border: 1px solid blue;
+}
+
+h1
+{
+	width: 100%;
+	background: $xLiteGray;
+	color: $almostBlack;
+	vertical-align: middle;
+	font-size: 1.6rem;
+	padding: 8px 0px 9px 0px;
+	border-top: 1px solid $mediumGray;
+	border-right: 1px solid $mediumGray;
+	border-bottom: 1px solid $mediumGray;
+	
+	&.calendar,
+	&.modules,
+	&.syllabus,
+	&.upEvents{
+		&::before{
+			font-family: fontAwesome;
+			background: $darkGray;
+			color: $white;
+			min-width: 50px;
+			font-size: 1.4rem;
+			margin-right: 10px;
+			padding: 10px;
+		}
+	}
+	
+	&.calendar{
+		&::before{
+			content: "\f073";
+
+		}
+	}
+	&.modules{
+		&::before{
+			content: "\f114";
+
+		}
+	}
+	&.syllabus{
+		&::before{
+			content: "\f02d";
+		}
+	}
+	&.upEvents{
+		&::before{
+			content: "\f017";
+		}
+	}
+
+	&:hover{
+		&::after{
+			font-family:fontAwesome;
+			color: $mediumGray;
+			content: "\f078";
+			float: right;
+			font-size: 1rem;
+			padding-right: 10px;
+		}
+		&.calendar,
+		&.modules,
+		&.syllabus,
+		&.upEvents{
+			&::before{
+				background: $googleBlue;
+			}
+		}
+	}
+	
+}
