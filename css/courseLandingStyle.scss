@@ -20,7 +20,7 @@
 .odu_landingContent{
 	width: $w_oduWrapper;
 	background: white;
-	border: 1px solid $darkGray;
+	border: 1px solid $liteGray;
 	padding: 10px;
 	
 	
@@ -29,9 +29,9 @@
 		//border: 1px solid black;
 		min-height: 30px;
 		display: block;
-		border-right: 1px solid $darkGray;
-		border-bottom: 1px solid $darkGray;
-		border-left: 1px solid $darkGray;
+		border-right: 1px solid $liteGray;
+		border-bottom: 1px solid $liteGray;
+		border-left: 1px solid $liteGray;
 		margin: 10px;
 	}
 	
@@ -51,7 +51,7 @@
 	//border: 1px solid blue;
 }
 
-h1
+.odu_landingContent h1
 {
 	width: 100%;
 	background: $xLiteGray;
@@ -59,9 +59,9 @@ h1
 	vertical-align: middle;
 	font-size: 1.6rem;
 	padding: 8px 0px 9px 0px;
-	border-top: 1px solid $mediumGray;
-	border-right: 1px solid $mediumGray;
-	border-bottom: 1px solid $mediumGray;
+	border-top: 1px solid $liteGray;
+	border-right: 1px solid $liteGray;
+	border-bottom: 1px solid $liteGray;
 	
 	&.calendar,
 	&.modules,
