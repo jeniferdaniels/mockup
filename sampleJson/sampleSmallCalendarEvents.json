@@ -1,0 +1,39 @@
+[
+   {
+	  "type":"assignment",
+	  "title": "1.A",
+	  "longTitle":"Do This First",
+	  "due":"2016-01-17T23:59:00",
+	  "url":"urlToDirectAssignment"
+   },
+   {
+	  "type":"module",
+	  "title": "Module 1",
+	  "longTitle": "Kitten Acquisition",
+	  "start":"2016-01-17T23:59:00",
+	  "end": "2016-01-20T23:59:00",
+	  "url":"urlToModuleNav"
+   },
+   {
+	  "type":"assignment",
+	  "title": "1.B",
+	  "longTitle":"Required Reading",
+	  "due":"2016-01-18T23:59:00",
+	  "url":"urlToDirectAssignment"
+   },
+   {
+	  "type":"assignment",
+	  "title": "1.C and 1.D",
+	  "longTitle":"Multiple Assignments",
+	  "start":"2016-01-19T23:59:00",
+	  "url":"urlToModulesAssignmentNavPage"
+   },
+   {
+	  "type":"assignment",
+	  "title": "1.E",
+	  "longTitle":"Visit Course Homepage on CS Server",
+	  "start":"2016-01-20T23:59:00",
+	  "end":"",
+	  "url":"stuff"
+   }
+]
