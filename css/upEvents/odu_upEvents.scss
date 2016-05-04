@@ -1,0 +1,71 @@
+@import "../colors";
+@import "../fonts";
+@import "../sizes";
+
+#odu_upEventsContainer{
+	//padding: 10px;
+}
+
+
+.odu_upEvent{
+	border-bottom: 1px solid $liteGray;
+	padding: 10px;
+	margin-bottom: 1rem;
+
+	& .dateTitleWrapper{
+		vertical-align: bottom;
+		
+		& .date{
+			border: 1px solid $darkGray;
+			width: $w_upEventsDate;
+			text-align: center;
+			display: inline-block;
+			float: left;
+			
+			h2{
+				font-size: 1.8rem;
+				margin: 0;
+				font-weight: 700;
+				color: black !important;
+			}
+			
+		 	time{
+				font-size: .8rem;
+				margin: 0;
+			}
+
+		}		
+
+		h3 {
+			display: inline-block;
+			font-size: 1.1rem;
+			font-weight: 600;
+			vertical-align: bottom;
+			width: $w_upEventsTitle !important;
+			//padding-left: 5px;
+			margin: 0px;
+			float: right;
+			& a{
+				text-decoration: none;
+				color: black;
+				
+				&:hover{
+					color: $mediumGray;
+					
+				}
+			
+			}
+		}
+		
+	}
+		
+	& p{
+		display: inline;
+	}
+	
+	& a{
+		display: inline;
+		margin-left: 5px;
+	}
+}
+
