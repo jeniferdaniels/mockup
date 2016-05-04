@@ -57,3 +57,18 @@ function addKeyValuePair(obj, key, value){
 	}
 	return obj;
 }
+
+
+function hasEmptyKeys(obj, keys){
+	var isEmpty = 0;
+	
+	if (typeof obj != "undefined"){
+		for(var i=0; i<keys.length; i++){
+			if (!obj.hasOwnProperty(keys[i])){
+				isEmpty = 1; 
+				console.log("key " + keys[i] + " NOT found in object");
+			}
+		} 
+	}
+	return isEmpty;
+}
