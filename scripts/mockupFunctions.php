@@ -12,7 +12,7 @@ function includeCsss(){
 	//echo '<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">';
 	
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">' . PHP_EOL;
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">' . PHP_EOL;
+	//echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/courseMaterial.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/contentLayoutStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrowStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">' . PHP_EOL;
