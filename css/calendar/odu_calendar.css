@@ -104,15 +104,37 @@ body {
   height: 400px;
   overflow-y: hidden; }
 
+#odu_smallCalendar {
+  width: 300px !important;
+  height: 300px !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 10px 10px 10px; }
+
+#odu_smallCalendar .fc-toolbar {
+  margin: 0; }
+
+#odu_smallCalendar h2 {
+  font-size: 1.2rem !important;
+  margin: 0 !important; }
+
+#odu_smallCalendar .fc-toolbar button {
+  border: 0; }
+
+#odu_smallCalendar table {
+  font-size: .8rem !important;
+  line-height: 120%; }
+
+#odu_smallCalendar .fc-time {
+  display: none; }
+
+#odu_smallCalendar .fc-day-number {
+  font-size: .7rem; }
+
 #calendarWrapper {
   width: 90%;
   margin-left: auto;
   margin-right: auto; }
-
-#odu_smallCalendar.fc.fc-ltr.ui-widget div.fc-toolbar div.fc-center h2 {
-  font-size: 1.2rem !important;
-  margin: 0 !important;
-  color: black; }
 
 .odu_smallCalendarNumber {
   font-size: .7rem !important; }
@@ -125,19 +147,18 @@ body {
 .fc-view-container {
   border-bottom: 1px solid #c8c8c8 !important; }
 
-.ui-icon-odu_left-chevron {
-  background-image: url("../images/leftChevron.svg") !important;
+.ui-icon-odu_left-chevron,
+.ui-icon-odu_right-chevron {
   background-repeat: no-repeat;
-  background-size: 18px 18px;
-  height: 18px;
-  width: 18px; }
+  background-size: 15px 15px;
+  height: 15px;
+  width: 15px; }
+
+.ui-icon-odu_left-chevron {
+  background-image: url("../images/leftChevron.svg") !important; }
 
 .ui-icon-odu_right-chevron {
-  background-image: url("../images/rightChevron.svg") !important;
-  background-repeat: no-repeat;
-  background-size: 18px 18px;
-  height: 18px;
-  width: 18px; }
+  background-image: url("../images/rightChevron.svg") !important; }
 
 .ui-state-default {
   border: 1px solid #aaaaaa; }
