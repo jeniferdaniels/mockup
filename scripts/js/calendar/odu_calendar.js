@@ -6,13 +6,10 @@
 //Purpose:		 calls the fullCalendar function and populates the #calendar object
 //				 on the webpage
 //*****************************************************************************************
-function writeSmallCalendar(url, scheduleUrl) {
+function writeSmallCalendar(url) {
 	$.ajax({ 
 		url: url
 	}).done(function(obj){
-		console.log(dump(obj));
-		//override these calendar.op these styles specifically for the small calendar
-		$("<style type='text/css'> .fc-time{display: none} .fc-day-number{font-size: .7rem}</style>").appendTo("head");
 		
 		//add link to full schedule
 		//$("#odu_smallCalendarContainer").after($("<a>").attr("href", scheduleUrl).html("Full Schedule"));
@@ -52,8 +49,6 @@ function writeSmallCalendar(url, scheduleUrl) {
 }
 
 
-
-
 //gets object with keys:
 //type, title, longTitle, start, end, url  [module or other event]
 //type, title, longTitle, due, url [assignment]
@@ -65,8 +60,8 @@ function formatForSmallCal(eventList){
 	//TODO: fix this later
 	var assTextColor = "white";
 	var assColor = "rgba(68,136,246,1)";
-	var modTextColor = "black";
-	var modColor = "rgba(240,240,240,1)";
+	var modTextColor = "white";
+	var modColor = "#ba68c8";
 
 	
 	if (typeof eventList != "undefined"){
@@ -86,32 +81,9 @@ function formatForSmallCal(eventList){
 					obj = addKeyValuePair(obj, "color", assColor);
 					obj = addKeyValuePair(obj, "textColor", assTextColor);
 				}
-			console.log(dump(obj));
 			}
 		}
 	}
-
-	console.log(dump(eventList));
 	return eventList;
 }
 
-//changes the key name
-//if the key is not there, it returns the object unaltered
-function changeKeyName(obj, currentName, newName){
-	if (typeof obj != "undefined"){
-		if (obj.hasOwnProperty(currentName)){
-			var newValue = obj[currentName];
-			obj[newName] = newValue;
-			delete obj[currentName];
-		}
-	}
-	return obj;
-}
-
-
-function addKeyValuePair(obj, key, value){
-	if (typeof obj != "undefined"){
-		obj[key] = value;
-	}
-	return obj;
-}
