@@ -1,0 +1,78 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+.odu_landingContent {
+  width: 1063px;
+  background: white;
+  border: 1px solid #505050;
+  padding: 10px; }
+  .odu_landingContent .wrapper {
+    width: 91%;
+    min-height: 30px;
+    display: block;
+    border-right: 1px solid #505050;
+    border-bottom: 1px solid #505050;
+    border-left: 1px solid #505050;
+    margin: 10px; }
+
+.odu_landingLhs {
+  width: 529.5px;
+  float: left; }
+
+.odu_landingRhs {
+  width: 529.5px;
+  float: right; }
+
+h1 {
+  width: 100%;
+  background: #fafafa;
+  color: #323232;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  padding: 8px 0px 9px 0px;
+  border-top: 1px solid #7d7d7d;
+  border-right: 1px solid #7d7d7d;
+  border-bottom: 1px solid #7d7d7d; }
+  h1.calendar::before, h1.modules::before, h1.syllabus::before, h1.upEvents::before {
+    font-family: fontAwesome;
+    background: #505050;
+    color: white;
+    min-width: 50px;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    padding: 10px; }
+  h1.calendar::before {
+    content: "\f073"; }
+  h1.modules::before {
+    content: "\f114"; }
+  h1.syllabus::before {
+    content: "\f02d"; }
+  h1.upEvents::before {
+    content: "\f017"; }
+  h1:hover::after {
+    font-family: fontAwesome;
+    color: #7d7d7d;
+    content: "\f078";
+    float: right;
+    font-size: 1rem;
+    padding-right: 10px; }
+  h1:hover.calendar::before, h1:hover.modules::before, h1:hover.syllabus::before, h1:hover.upEvents::before {
+    background: #4488f6; }
+
+/*# sourceMappingURL=courseLandingStyle.css.map */
