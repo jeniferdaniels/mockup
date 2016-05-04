@@ -8,6 +8,8 @@ $w_oduStuff: $w_oduContent;
 $w_oduToolbox: 60px;
 $w_oduWrapper: $w_oduContent + $w_oduToolbox + 3px;
 $w_oduNavWrapper: 1000px;
+$w_oduLandingRhs: $w_oduWrapper/2-2px;
+$w_oduLandingLhs: $w_oduWrapper/2-2px;
 
 $w_oduProgressBar: 200px;
 $h_oduProgressBar: 10px;
