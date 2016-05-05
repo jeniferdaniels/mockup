@@ -59,18 +59,23 @@ $xDarkTeal: rgba(  1, 40, 49,1);
     padding: 10px; }
   .odu_landingContent h1.calendar::before {
     content: "\f073"; }
-  .odu_landingContent h1.modules::before {
-    content: "\f114"; }
+  .odu_landingContent h1.modules {
+    margin-top: 20px; }
+    .odu_landingContent h1.modules::before {
+      content: "\f114"; }
   .odu_landingContent h1.syllabus::before {
     content: "\f02d"; }
-  .odu_landingContent h1.upEvents::before {
-    content: "\f017"; }
+  .odu_landingContent h1.upEvents {
+    margin-top: 20px; }
+    .odu_landingContent h1.upEvents::before {
+      content: "\f017"; }
   .odu_landingContent h1:hover::after {
     font-family: fontAwesome;
     color: #7d7d7d;
-    content: "\f078";
+    content: "\f107";
     float: right;
     font-size: 1rem;
+    padding-top: 0;
     padding-right: 10px; }
   .odu_landingContent h1:hover.calendar::before, .odu_landingContent h1:hover.modules::before, .odu_landingContent h1:hover.syllabus::before, .odu_landingContent h1:hover.upEvents::before {
     background: #4488f6; }

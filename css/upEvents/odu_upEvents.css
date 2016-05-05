@@ -1,0 +1,59 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
+
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+.odu_upEvent {
+  border-bottom: 1px solid #c8c8c8;
+  padding: 10px;
+  margin-bottom: 1rem; }
+  .odu_upEvent .dateTitleWrapper {
+    vertical-align: bottom; }
+    .odu_upEvent .dateTitleWrapper .date {
+      border: 1px solid #505050;
+      width: 55px;
+      text-align: center;
+      display: inline-block;
+      float: left; }
+      .odu_upEvent .dateTitleWrapper .date h2 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: 700;
+        color: black !important; }
+      .odu_upEvent .dateTitleWrapper .date time {
+        font-size: .8rem;
+        margin: 0; }
+    .odu_upEvent .dateTitleWrapper h3 {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      vertical-align: bottom;
+      width: 235px !important;
+      margin: 0px;
+      float: right; }
+      .odu_upEvent .dateTitleWrapper h3 a {
+        text-decoration: none;
+        color: black; }
+        .odu_upEvent .dateTitleWrapper h3 a:hover {
+          color: #7d7d7d; }
+  .odu_upEvent p {
+    display: inline; }
+  .odu_upEvent a {
+    display: inline;
+    margin-left: 5px; }
+
+/*# sourceMappingURL=odu_upEvents.css.map */

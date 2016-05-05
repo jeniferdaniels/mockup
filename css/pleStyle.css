@@ -29,7 +29,7 @@ body {
   padding: 0;
   background-color: #f7f7f7;
   height: 100%;
-  margin-top: 140px; }
+  margin-top: 130px; }
 
 p {
   margin-bottom: 10px; }
@@ -174,18 +174,6 @@ a {
   border: 1px solid #c8c8c8;
   min-height: 250px; }
 
-.pleLogo {
-  background-image: url("../images/pleLogo.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 75px 75px;
-  padding: 3px;
-  height: 75px;
-  width: 75px;
-  display: inline-block;
-  float: left;
-  margin: 0 10px 0 10px; }
-
 .top {
   position: fixed;
   width: 100%;
@@ -197,14 +185,13 @@ a {
   z-index: 900;
   border-bottom: 5px solid #003767; }
   .top h1 {
-    display: inline-block; }
-    .top h1 a,
-    .top h1 a:visited {
-      color: #505050; }
-      .top h1 a:hover,
-      .top h1 a:visited:hover {
-        color: #4488f6;
-        text-decoration: underline; }
+    display: inline-block;
+    margin-top: -10px; }
+  .top a {
+    color: #505050; }
+    .top a:hover {
+      color: #4488f6;
+      text-decoration: underline; }
   .top h2 {
     margin-left: 50px;
     padding: 0;
@@ -219,7 +206,7 @@ a {
         color: #4488f6;
         text-decoration: underline; }
   .topWrapper {
-    width: 1000px;
+    width: 1063px;
     padding: 0;
     margin: 0 auto 0 auto; }
 
@@ -350,7 +337,7 @@ a {
 
 .odu_progressNavBar {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
   height: 10px;
   display: table;
   font-size: .85rem; }
@@ -398,7 +385,7 @@ a {
 
 .bodyAlt {
   background: white !important;
-  margin-top: 140px !important; }
+  margin-top: 110px !important; }
 
 .odu_paperAlt {
   padding-top: 30px;
