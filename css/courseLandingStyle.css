@@ -19,9 +19,7 @@ $xDarkTeal: rgba(  1, 40, 49,1);
 */
 .odu_landingContent {
   width: 1063px;
-  background: white;
-  border: 1px solid #c8c8c8;
-  padding: 10px; }
+  background: white; }
   .odu_landingContent .wrapper {
     width: 91%;
     min-height: 30px;

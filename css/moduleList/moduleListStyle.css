@@ -2,13 +2,11 @@
   list-style: none; }
 
 .odu_wrapper ul li {
-  padding-top: 5px; }
+  padding-top: 5px;
+  margin-left: 10px !important; }
 
 .odu_wrapper h2 {
   color: #4488f6; }
-
-.odu_moduleList {
-  margin-left: 10px; }
 
 .odu_moduleList a {
   color: black; }
@@ -31,8 +29,8 @@
 .odu_moduleList .moduleContentList {
   border: 1px solid #c8c8c8;
   margin-bottom: 20px;
-  margin-left: 25px;
-  margin-right: 25px; }
+  margin-left: 50px;
+  margin-right: 10px; }
 
 .odu_moduleList .moduleContentList ul ul {
   border: 0; }

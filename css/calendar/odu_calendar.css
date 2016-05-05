@@ -106,13 +106,22 @@ body {
 
 #odu_smallCalendar {
   width: 300px !important;
-  height: 300px !important;
+  height: 310px !important;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0 10px 10px 10px; }
 
 #odu_smallCalendar .fc-toolbar {
   margin: 0; }
+
+#odu_smallCalendar .fc-title {
+  font-size: 0rem; }
+
+#odu_smallCalendar .fc-content {
+  height: 2px; }
+
+#odu_smallCalendar .fc-week {
+  max-height: 5px; }
 
 #odu_smallCalendar h2 {
   font-size: 1.2rem !important;
