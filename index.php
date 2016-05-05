@@ -64,15 +64,20 @@
 			//LAZY
 			$("#title_1209").click(function(){
 				$("#moduleContentList_1210").toggle();
+				$("#title_1209").toggleClass("marginBottom20");
 			});
 			$("#title_1").click(function(){
 				$("#moduleContentList_2").toggle();
+				$("#title_1").toggleClass("marginBottom20");
+
 			});
 			$("#title_21").click(function(){
 				$("#moduleContentList_22").toggle();
+				$("#title_21").toggleClass("marginBottom20");
 			});
 			$("#title_42").click(function(){
 				$("#moduleContentList_43").toggle();
+				$("#title_42").toggleClass("marginBottom20");
 			});
 			
 		});
