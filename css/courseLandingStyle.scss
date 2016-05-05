@@ -16,14 +16,12 @@
 @import "sizes"; 
 
 
-
 .odu_landingContent{
 	width: $w_oduWrapper;
 	background: white;
-	border: 1px solid $liteGray;
-	padding: 10px;
-	
-	
+	//border: 1px solid $liteGray;
+	//padding: 10px;
+
 	& .wrapper{
 		width: 91%;
 		//border: 1px solid black;
@@ -34,9 +32,6 @@
 		border-left: 1px solid $liteGray;
 		margin: 10px;
 	}
-	
-	
-	
 }
 
 
@@ -85,6 +80,7 @@
 		}
 	}
 	&.modules{
+		margin-top: 20px;
 		&::before{
 			content: "\f114";
 
@@ -96,6 +92,7 @@
 		}
 	}
 	&.upEvents{
+		margin-top: 20px;
 		&::before{
 			content: "\f017";
 		}
@@ -105,9 +102,10 @@
 		&::after{
 			font-family:fontAwesome;
 			color: $mediumGray;
-			content: "\f078";
+			content: "\f107";
 			float: right;
 			font-size: 1rem;
+			padding-top:0;
 			padding-right: 10px;
 		}
 		&.calendar,
