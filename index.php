@@ -7,9 +7,10 @@
 	<head>
 		<?php includeCsss() ?>
 		<link rel="stylesheet" href="css/calendar/fullcalendar.min.css"  />
+		<link rel="stylesheet" href="css/courseLandingStyle.css" />
 		<link rel="stylesheet" href="css/calendar/odu_calendar.css" />
 		<link rel="stylesheet" href="css/upEvents/odu_upEvents.css" />
-		<link rel="stylesheet" href="css/courseLandingStyle.css" />
+		<link rel="stylesheet" href="css/moduleList/moduleListStyle.css" />
 		<link rel="stylesheet" href="css/pnotify.custom.css" />
 
 		
@@ -60,6 +61,20 @@
 				$("#odu_smallCalendar").toggle();						
 			});
 			
+			//LAZY
+			$("#title_1209").click(function(){
+				$("#moduleContentList_1210").toggle();
+			});
+			$("#title_1").click(function(){
+				$("#moduleContentList_2").toggle();
+			});
+			$("#title_21").click(function(){
+				$("#moduleContentList_22").toggle();
+			});
+			$("#title_42").click(function(){
+				$("#moduleContentList_43").toggle();
+			});
+			
 		});
 		
 		
@@ -76,7 +91,7 @@
 			
 				<!--left hand side-->
 				<div id="odu_landingLhs" class="odu_landingLhs">		
-					<div id="odu_smallCalendarWrapper" class="wrapper">
+					<div id="odu_smallCalendarContainer" class="wrapper">
 						<h1 class="calendar" id="odu_smallCalendarHeader">Calendar</h1>
 						<div id="odu_smallCalendar"></div>
 					</div>
@@ -90,14 +105,14 @@
 				
 				
 				<div id="odu_landingRhs" class="odu_landingRhs">
-					<div id="odu_SyllabusWrapper" class="wrapper">
+					<div id="odu_SyllabusContainer" class="wrapper">
 						<h1 class="syllabus">Syllabus</h1>
 						
 					</div>
 
-					<div id="odu_ModulesWrapper" class="wrapper">
+					<div id="odu_ModulesContainer" class="wrapper">
 						<h1 class="modules">Modules</h1>
-							
+						<div id="odu_modulesWrapper"><?PHP writeModuleList() ?></div>
 					</div>
 
 					
