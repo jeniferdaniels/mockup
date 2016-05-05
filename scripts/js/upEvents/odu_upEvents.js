@@ -12,9 +12,6 @@ function writeUpEvents(eventList) {
 		for (var i=0; i< eventList.length; i++){
 			var theEvent = []; //clear out any residule
 			theEvent = eventList[i];
-			
-			console.log(dump(theEvent));
-			
 			theEvent = changeKeyName(theEvent, "dueDate", "theDate");	//to make js not barf
 			theEvent = changeKeyName(theEvent, "date", "theDate");	//to make js not barf
 			
