@@ -42,8 +42,10 @@ function writeTopHtml()
 				echo '<ul>';
 					echo '<li><a href="#" id="userLink">' . $userIcon .'</a>';
 						echo '<ul>';
-							echo '<li><a href="#" id="profileLink">Profile</a></li>';
+							echo '<li><a href="#" id="">All Course Notes</a></li>';
+							echo '<li><a href="#" id="">Course Progress</a></li>';
 							echo '<li><a href="#" id="preferencesLink">Preferences</a></li>';
+							echo '<li><a href="#" id="profileLink">Profile</a></li>';
 						echo '</ul>';
 					echo '</li>';	
 					echo '<li><a href="javascript:whatWouldThisDo(\'chat\')" id="chatLink">' .$chatIcon .'</a></li>';
