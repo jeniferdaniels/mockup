@@ -27,8 +27,34 @@
 		<script>
 		$(document).ready(function(){
 
+			//preferences
+			//PREFS can be globally accessible and used as ie: alert(PREFS['calendar']);...alert(PREFS['events']);
+			PREFS = new Array();
+			$.ajax({
+				url: 'http://ple1.odu.edu:4243/api/preference/201530/comm270a',
+				type: 'GET',
+				dataType: 'json',
+				success: function(data) { 
+					for (i = 0; i < data.length; ++i) {
+						PREFS[data[i].name] = data[i].value;						
+					}
+				},
+				error: function() { console.log("There was an error getting the CalendarEvents"); },
+				xhrFields: { withCredentials: true	},
+				crossDomain: true
+			});
+			
 			//calendar
-			writeSmallCalendar("sampleJson/sampleSmallCalendarEvents.json");
+			$.ajax({
+				url: 'http://ple1.odu.edu:4243/api/calendar/201530/comm270a',
+				type: 'GET',
+				dataType: 'json',
+				success: function(data) { writeSmallCalendar(data)},
+				error: function() { console.log("There was an error getting the CalendarEvents"); },
+				xhrFields: { withCredentials: true	},
+				crossDomain: true
+			});
+			
 			
 			//upcoming events
 			$.ajax({
