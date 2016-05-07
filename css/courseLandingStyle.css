@@ -21,17 +21,17 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   width: 1063px;
   background: white; }
   .odu_landingContent .wrapper {
-    width: 91%;
     min-height: 30px;
     display: block;
     border-right: 1px solid #c8c8c8;
     border-bottom: 1px solid #c8c8c8;
     border-left: 1px solid #c8c8c8;
-    margin: 10px; }
+    padding-top: 10px; }
 
 .odu_landingLhs {
-  width: 350px;
-  float: left; }
+  width: 325px;
+  float: left;
+  margin-right: 25px; }
 
 .odu_landingRhs {
   width: 713px;
@@ -42,12 +42,14 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   background: #fafafa;
   color: #323232;
   vertical-align: middle;
-  font-size: 1.6rem;
-  padding: 8px 0px 9px 0px;
+  font-size: 1.4rem;
+  padding: 8px 0px 0px 0px;
   border-top: 1px solid #c8c8c8;
   border-right: 1px solid #c8c8c8;
-  border-bottom: 1px solid #c8c8c8; }
-  .odu_landingContent h1.calendar::before, .odu_landingContent h1.modules::before, .odu_landingContent h1.syllabus::before, .odu_landingContent h1.upEvents::before {
+  border-bottom: 1px solid #c8c8c8;
+  margin-bottom: 0;
+  height: 31px; }
+  .odu_landingContent h1.announcements::before, .odu_landingContent h1.calendar::before, .odu_landingContent h1.faculty::before, .odu_landingContent h1.modules::before, .odu_landingContent h1.syllabus::before, .odu_landingContent h1.upEvents::before {
     font-family: fontAwesome;
     background: #505050;
     color: white;
@@ -55,7 +57,11 @@ $xDarkTeal: rgba(  1, 40, 49,1);
     font-size: 1.4rem;
     margin-right: 10px;
     padding: 10px; }
+  .odu_landingContent h1.announcements::before {
+    content: "\f073"; }
   .odu_landingContent h1.calendar::before {
+    content: "\f073"; }
+  .odu_landingContent h1.faculty::before {
     content: "\f073"; }
   .odu_landingContent h1.modules {
     margin-top: 20px; }
@@ -67,15 +73,12 @@ $xDarkTeal: rgba(  1, 40, 49,1);
     margin-top: 20px; }
     .odu_landingContent h1.upEvents::before {
       content: "\f017"; }
-  .odu_landingContent h1:hover::after {
-    font-family: fontAwesome;
-    color: #7d7d7d;
-    content: "\f107";
-    float: right;
-    font-size: 1rem;
-    padding-top: 0;
-    padding-right: 10px; }
-  .odu_landingContent h1:hover.calendar::before, .odu_landingContent h1:hover.modules::before, .odu_landingContent h1:hover.syllabus::before, .odu_landingContent h1:hover.upEvents::before {
+  .odu_landingContent h1:hover::before {
     background: #4488f6; }
+
+.buttonContainer h1 {
+  display: inline-block;
+  width: 227.66667px;
+  margin-right: 10px; }
 
 /*# sourceMappingURL=courseLandingStyle.css.map */
