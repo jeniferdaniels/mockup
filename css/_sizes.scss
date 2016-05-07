@@ -8,8 +8,9 @@ $w_oduStuff: $w_oduContent;
 $w_oduToolbox: 60px;
 $w_oduWrapper: $w_oduContent + $w_oduToolbox + 3px;
 $w_oduNavWrapper: 1000px;
-$w_oduLandingLhs: 350px;
-$w_oduLandingRhs: $w_oduWrapper - $w_oduLandingLhs;
+$w_oduLandingLhs: 325px;
+$w_oduLandingMarginBetween: 25px;
+$w_oduLandingRhs: $w_oduWrapper - $w_oduLandingLhs - $w_oduLandingMarginBetween;
 
 $w_oduProgressBar: 200px;
 $h_oduProgressBar: 10px;
@@ -17,3 +18,4 @@ $h_oduProgressBar: 10px;
 $w_navButtonWrapper: 50px;
 $w_upEventsDate: 55px;
 $w_upEventsTitle: $w_oduLandingLhs - $w_upEventsDate - 60px;
+$w_oduLandingButton: $w_oduLandingRhs/3 - 10px;
