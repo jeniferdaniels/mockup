@@ -46,6 +46,7 @@
 			displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
 
 			//announcements
+			/*
 			$.ajax({
 				url: 'http://ple1.odu.edu:4243/api/announcement;list=user',
 				type: 'GET',
@@ -55,7 +56,8 @@
 				xhrFields: { withCredentials: true	},
 				crossDomain: true
 			});
-
+			*/
+			
 			
 			$("#odu_smallCalendarHeader").click(function(){
 				$("#odu_smallCalendar").toggle();						
@@ -96,24 +98,27 @@
 			
 				<!--left hand side-->
 				<div id="odu_landingLhs" class="odu_landingLhs">		
-					<div id="odu_smallCalendarContainer" class="wrapper">
 						<h1 class="calendar" id="odu_smallCalendarHeader">Calendar</h1>
-						<div id="odu_smallCalendar"></div>
-					</div>
+						<div id="calendarContainer" class="wrapper">
+							<div id="odu_smallCalendar"></div>
+						</div>
+						
 					
-					<div id="odu_upEventsContainer" class="wrapper">
 						<h1 class="upEvents">Upcoming Events</h1>
-						<div style="odu_upEventsWrapper" id="odu_upEventsWrapper"></div>
-					</div>
+						<div id="odu_upEventsContainer" class="wrapper">
+							<div style="odu_upEventsWrapper" id="odu_upEventsWrapper"></div>
+						</div>
 				</div>
 				<!--end left hand side-->
 				
 				
 				<div id="odu_landingRhs" class="odu_landingRhs">
-					<div id="odu_SyllabusContainer" class="wrapper">
+					<div id="container" class="buttonContainer">
 						<h1 class="syllabus">Syllabus</h1>
-						
+						<h1 class="faculty">Faculty</h1>
+						<h1 class="announcements">Announcements</h1>
 					</div>
+					
 
 					<div id="odu_ModulesContainer" class="wrapper">
 						<h1 class="modules">Modules</h1>
