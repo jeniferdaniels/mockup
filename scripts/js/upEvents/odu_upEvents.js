@@ -3,6 +3,7 @@
 //Input: 		 url with location of json file 		 
 //Output:		 none, fills an html dom element
 //Purpose:		 writes events in nice format for landing page, assumes landing page div is 
+//Dependencies:	 needs utils.js function hasEmptyKeys()
 //*****************************************************************************************
 function writeUpEvents(eventList) {
 
@@ -41,7 +42,7 @@ function writeUpEvents(eventList) {
 				);
 
 				
-				string = '<div class="odu_upEvent" id="event_5"><div class="dateTitleWrapper"><div class="date">Jan<h2>18</h2><time>11:59 pm</time></div><h3><a href="#">Assignment: A.1 itle Here dfjk  sdkjf sakdjfl ksjdflk dasfj sdljflska jsdkjdlsj</a></h3></div><div class="clearFix"></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula</p><a href="#">More &gt;</a></div>';
+				//string = '<div class="odu_upEvent" id="event_5"><div class="dateTitleWrapper"><div class="date">Jan<h2>18</h2><time>11:59 pm</time></div><h3><a href="#">Assignment: A.1 itle Here dfjk  sdkjf sakdjfl ksjdflk dasfj sdljflska jsdkjdlsj</a></h3></div><div class="clearFix"></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula</p><a href="#">More &gt;</a></div>';
 				//$("#odu_upEventsWrapper").html(string);
 				
 			}
