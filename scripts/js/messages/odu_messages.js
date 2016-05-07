@@ -1,20 +1,31 @@
+
+//needs hasEmptyKeys from utils.js
+//TODO: investigate http://requirejs.org/
+
+
 function processNotifications(notifications){
+	expectedKeys = ["announcement_id", "message", "start_date", "finish_date", "announcement_type_id", "crn", "type"];
+		
 	if (!((notifications == "") || (notifications === null) || (typeof notifications === "undefined")))
 	{
 		for (var i=0; i<notifications.length; i++){
-			var notification = "";
+			var notification = "";	//clear out residule
 			notification = notifications[i];
 
-			//this comes in as "message", needs to be "text" for pNotify
-			notification.text = notification.message; 
-			
-			if ((notification.title == "") || (typeof notification.title === "undefined")){
-				if (notification.crn == "0") notification.title = "PLE System Notification";
-				else notification.title = "Announcement";
+			//if it missing any of the mandatory keys noted above, then skip the announcement_id
+			//this checks to ensure a properly formatted string/json object is passed
+			if (!hasEmptyKeys(notification, expectedKeys))
+			{
+				//this comes in as "message", needs to be "text" for pNotify
+				notification.text = notification.message; 
+				
+				//default the message to something since title is not required as a key
+				if ((notification.title == "") || (typeof notification.title === "undefined")){
+					notification.title = "PLE System Notification";
+				}
+							
+				writeNotification(notification);
 			}
-						
-			writeNotification(notification);
-			
 		}
 	}
 }
@@ -25,6 +36,7 @@ function processNotifications(notifications){
 //Input: 		 json object
 //Output:		 nothing
 //Purpose:		 creates a notification with some predetermined values
+//				 notification types expected by pNotify are: notice, info, success, error
 //*****************************************************************************************
 function writeNotification(notification){
 	var notice = 
@@ -43,7 +55,7 @@ function writeNotification(notification){
 	});
 	
 	notice.get().click(function() {	notice.remove(); markAsRead(notification.announcement_id);});
-	
+	console.log("notice processed" + notification.title);
 	return;
 }
 
@@ -59,10 +71,3 @@ function markAsRead(id){
 }
 
 
-//TODO: move this to a global library
-function dumpObject(obj){
-	for (var key in obj){
-		if (obj.hasOwnProperty(key))
-			console.log(key + "->" + obj[key]);
-	}
-}
