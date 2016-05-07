@@ -66,9 +66,27 @@ function hasEmptyKeys(obj, keys){
 		for(var i=0; i<keys.length; i++){
 			if (!obj.hasOwnProperty(keys[i])){
 				isEmpty = 1; 
-				console.log("key " + keys[i] + " NOT found in object");
+				//console.log("key " + keys[i] + " NOT found in object");
 			}
 		} 
 	}
 	return isEmpty;
+}
+
+
+
+//stolen
+//http://jquery-howto.blogspot.com/2009/09/get-url-parameters-values-with-jquery.html
+//var first = getUrlVars()["me"];
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
 }
