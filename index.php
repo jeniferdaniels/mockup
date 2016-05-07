@@ -23,67 +23,48 @@
 		<script src="scripts/js/upEvents/odu_upEvents.js"></script>
 		<script src="scripts/js/pnotify.custom.js"></script>
 		<script src="scripts/js/messages/odu_messages.js"></script>
+		<script src="scripts/js/personalization/odu_preferences.js"></script>
 
 		<script>
 		$(document).ready(function(){
+			
+			var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
+			var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/comm270a";
+			var preferencesUrl   = "http://ple1.odu.edu:4243/api/preference/201530/comm270a";
+			var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/comm270a"; 
+		
+			//put this in onload file
+			function loadDataAndRun(url, funct, msg){
+				$.ajax({
+					url: url,
+					type: 'GET',
+					dataType: 'json',
+					success: function(data) { funct(data) },
+					error: function() { console.log(msg); },
+					xhrFields: { withCredentials: true	},
+					crossDomain: true
+				});
+			}
+		
+			//JMD: for testing, remove in production 
+			if (getUrlVars()["noExternal"] == 1){
+				announcementsUrl = "sampleJson/sampleAnnouncements.json";
+				smallCalendarUrl = "sampleJson/sampleSmallCalendarEvents.json";
+				preferencesUrl = "sampleJson/samplePreferences.json";
+				upEventsUrl = "sampleJson/sampleUpEvents.json";				
+			}
 
-			//preferences
-			//PREFS can be globally accessible and used as ie: alert(PREFS['calendar']);...alert(PREFS['events']);
-			PREFS = new Array();
-			$.ajax({
-				url: 'http://ple1.odu.edu:4243/api/preference/201530/comm270a',
-				type: 'GET',
-				dataType: 'json',
-				success: function(data) { 
-					for (i = 0; i < data.length; ++i) {
-						PREFS[data[i].name] = data[i].value;						
-					}
-				},
-				error: function() { console.log("There was an error getting the CalendarEvents"); },
-				xhrFields: { withCredentials: true	},
-				crossDomain: true
-			});
-			
-			//calendar
-			$.ajax({
-				url: 'http://ple1.odu.edu:4243/api/calendar/201530/comm270a',
-				type: 'GET',
-				dataType: 'json',
-				success: function(data) { writeSmallCalendar(data)},
-				error: function() { console.log("There was an error getting the CalendarEvents"); },
-				xhrFields: { withCredentials: true	},
-				crossDomain: true
-			});
-			
-			
-			//upcoming events
-			$.ajax({
-				url: 'http://ple1.odu.edu:4243/api/event/201530/comm270a',
-				type: 'GET',
-				dataType: 'json',
-				success: function(data) { writeUpEvents(data)},
-				error: function() { console.log("There was an error getting the upcomingEvents"); },
-				xhrFields: { withCredentials: true	},
-				crossDomain: true
-			});
+			if (getUrlVars()["noAnn"] != 1){
+				loadDataAndRun(announcementsUrl, processNotifications, "There was a problem loading the announcements");			
+			}
+			loadDataAndRun(smallCalendarUrl, writeSmallCalendar, "There was an error loading the small calendar events");
+			//loadDataAndRun(preferencesUrl, loadPreferences, "There was an error getting the preferences");
+			loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
 			
 			
 			
-			displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
+			//displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
 
-			//announcements
-			/*
-			$.ajax({
-				url: 'http://ple1.odu.edu:4243/api/announcement;list=user',
-				type: 'GET',
-				dataType: 'json',
-				success: function(data) { processNotifications(data)},
-				error: function() { console.log("There was an error getting the announcements"); },
-				xhrFields: { withCredentials: true	},
-				crossDomain: true
-			});
-			*/
-			
 			
 			$("#odu_smallCalendarHeader").click(function(){
 				$("#odu_smallCalendar").toggle();						
