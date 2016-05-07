@@ -1,0 +1,42 @@
+[
+    {
+        "announcement_id": "3",
+        "message": "Homework #5 is now due on Saturday due to the snow",
+        "start_date": "2015-03-26 00:00:00.000",
+        "finish_date": "2017-05-20 00:00:00.000",
+        "announcement_type_id": "4",
+        "crn": "12345",
+        "type": "info",
+		"title": "Class Announcement"
+    },
+    {
+        "announcement_id": "5",
+        "message": "PLE will be going offline for maintenance from 3am to 4am on Saturday.",
+        "start_date": "2015-03-26 00:00:00.000",
+        "finish_date": "2017-05-20 00:00:00.000",
+        "announcement_type_id": "1",
+        "crn": "0",
+        "type": "notice",
+		"title": "PLE System Notification"
+    },
+    {
+        "announcement_id": "7",
+        "message": "All students from Physiology programs please report to your Faculty principal before the end of summer.",
+        "start_date": "2015-03-02",
+        "finish_date": "2017-04-02",
+        "announcement_type_id": "2",
+        "crn": "2222",
+        "type": "error",
+		"title": "End of Semester Announcement"
+    },
+	{
+        "announcement_id": "8",
+        "message": "Congrats! You finished module 30!",
+        "start_date": "2015-03-26 00:00:00.000",
+        "finish_date": "2017-05-20 00:00:00.000",
+        "announcement_type_id": "3",
+        "crn": "54321",
+        "type": "success",
+		"title": "Success!"
+    }
+]
