@@ -16,22 +16,83 @@
 @import "sizes"; 
 
 
-.odu_landingContent{
+main.odu_landing{
 	width: $w_oduWrapper;
 	background: white;
-	//border: 1px solid $liteGray;
+	//border: 1px solid $red;
 	//padding: 10px;
 
-	& .wrapper{
-		//width: 91%;
-		//border: 1px solid black;
-		min-height: 30px;
-		display: block;
-		border-right: 1px solid $liteGray;
-		border-bottom: 1px solid $liteGray;
-		border-left: 1px solid $liteGray;
-		//margin: 10px;
-		padding-top: 10px;
+	& section{
+		//border: 1px solid red;
+		margin-top: 20px;
+		
+		& h1 {
+			background: $xLiteGray;
+			font-size: 1.4rem;
+			padding: 10px 10px 10px 0;
+			margin-bottom: 0px !important;
+			border: 1px solid $liteGray;
+			
+			&.calendar,
+			&.upEvents,
+			&.syllabus,
+			&.faculty,
+			&.announcements,
+			&.moduleList{
+				&::before{
+					font-family: fontAwesome;
+					background: $darkGray;
+					color: $white;
+					min-width: 50px;
+					//font-size: 2rem;
+					padding: 11px;	//odd size, but needed to fill up the bar
+					margin-right: 10px;
+				}
+			}
+						
+			&.calendar::before		{content: "\f073";}
+			&.upEvents::before		{content: "\f017";}
+			&.syllabus::before		{content: "\f02d";}
+			&.faculty::before 		{content: "\f073";}
+			&.announcements::before {content: "\f073";}
+			&.moduleList::before	{content: "\f114";}
+			
+			&.syllabus,
+			&.faculty,
+			&.announcements{
+				width: $w_oduLandingRhs/3 - 21px;	//again, another odd size to account for borders
+				display: inline-block;
+			}
+			&.syllabus,
+			&.faculty{
+				margin-right: 10px;
+			}
+			
+
+			
+			&:hover{
+				color: $googleBlue;
+			
+				&.calendar,
+				&.upEvents,
+				&.syllabus,
+				&.faculty,
+				&.announcements,
+				&.moduleList{
+					&::before{
+						background: $googleBlue;
+					}
+				}
+				
+				
+			}
+		}
+		& .wrapper{
+			margin-top: 0;
+			border: 1px solid $liteGray;
+			border-top: 0px;
+		}
+		
 	}
 }
 
@@ -39,7 +100,7 @@
 .odu_landingLhs{
 	width: $w_oduLandingLhs;
 	float:left;
-	margin-right: $w_oduLandingMarginBetween;
+	margin-right: $w_oduLandingMarginBetween -5;
 	//border: 1px solid green;
 }
 .odu_landingRhs{
@@ -48,83 +109,3 @@
 	//border: 1px solid blue;
 }
 
-.odu_landingContent h1
-{
-	width: 100%;
-	background: $xLiteGray;
-	color: $almostBlack;
-	vertical-align: middle;
-	font-size: 1.4rem;
-	padding: 8px 0px 0px 0px;
-	border-top: 1px solid $liteGray;
-	border-right: 1px solid $liteGray;
-	border-bottom: 1px solid $liteGray;
-	margin-bottom: 0;	//override default
-	height: 31px;
-	
-	
-	&.announcements,
-	&.calendar,
-	&.faculty,
-	&.modules,
-	&.syllabus,
-	&.upEvents{
-		&::before{
-			font-family: fontAwesome;
-			background: $darkGray;
-			color: $white;
-			min-width: 50px;
-			font-size: 1.4rem;
-			margin-right: 10px;
-			padding: 10px;
-		}
-	}
-	
-	&.announcements{
-		&::before{
-			content: "\f073";
-		}
-	}
-	&.calendar{
-		&::before{
-			content: "\f073";
-		}
-	}
-	&.faculty{
-		&::before{
-			content: "\f073";
-		}
-	}
-	&.modules{
-		margin-top: 20px;
-		&::before{
-			content: "\f114";
-		}
-	}
-	&.syllabus{
-		&::before{
-			content: "\f02d";
-		}
-	}
-	&.upEvents{
-		margin-top: 20px;
-		&::before{
-			content: "\f017";
-		}
-	}
-
-	&:hover{
-		&::before{
-			background: $googleBlue;
-		}
-	}	
-}
-
-.buttonContainer{
-	h1 {
-		display: inline-block;
-		width: $w_oduLandingButton;
-		margin-right: 10px;
-	}
-
-}

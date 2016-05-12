@@ -57,9 +57,9 @@
 			if (getUrlVars()["noAnn"] != 1){
 				loadDataAndRun(announcementsUrl, processNotifications, "There was a problem loading the announcements");			
 			}
-			loadDataAndRun(smallCalendarUrl, writeSmallCalendar, "There was an error loading the small calendar events");
+			//loadDataAndRun(smallCalendarUrl, writeSmallCalendar, "There was an error loading the small calendar events");
 			//loadDataAndRun(preferencesUrl, loadPreferences, "There was an error getting the preferences");
-			loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
+			//loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
 			
 			
 			
@@ -101,43 +101,48 @@
 
 		<header></header>
 		<div id="odu_wrapper" class="odu_wrapper">
-			<div id="odu_landingContent" class="odu_landingContent">
+			<main class="odu_landing">
 			
 				<!--left hand side-->
-				<div id="odu_landingLhs" class="odu_landingLhs">		
-						<h1 class="calendar" id="odu_smallCalendarHeader">Calendar</h1>
-						<div id="calendarContainer" class="wrapper">
-							<div id="odu_smallCalendar"></div>
+				<div id="odu_landingLhs" class="odu_landingLhs">
+					<section id="odu_smallCalendarSection">
+						<h1 class="calendar">Calendar</h1>
+						<div id="odu_smallCalendarWrapper" class="wrapper">
+							<div id="odu_smallCalendar">Calendar here</div>
 						</div>
-						
+					</section>
 					
+					
+					<section id="odu_upEventsSection">
 						<h1 class="upEvents">Upcoming Events</h1>
-						<div id="odu_upEventsContainer" class="wrapper">
-							<div style="odu_upEventsWrapper" id="odu_upEventsWrapper"></div>
+						<div id="odu_upEventsWrapper" class="wrapper">
+							<div id="odu_upEvents">Upcoming Events here</div>
 						</div>
+					</section>
 				</div>
 				<!--end left hand side-->
 				
-				
+				<!--right hand side-->
 				<div id="odu_landingRhs" class="odu_landingRhs">
-					<div id="container" class="buttonContainer">
+					<section id="odu_singles">
 						<h1 class="syllabus">Syllabus</h1>
 						<h1 class="faculty">Faculty</h1>
 						<h1 class="announcements">Announcements</h1>
-					</div>
+					</section>
 					
 
-					<div id="odu_ModulesContainer" class="wrapper">
-						<h1 class="modules">Modules</h1>
-						<div id="odu_modulesWrapper"><?PHP writeModuleList() ?></div>
-					</div>
+					<section id="odu_moduleListSection">
+						<h1 class="moduleList">Modules</h1>
+						<div id="odu_moduleListWrapper" class="wrapper">
+							<div id="odu_moduleList">module list here</div>
+						</div>
+					</section>
+				</div>
+				<!--end right hand side -->
 
-					
-				
 
-				</div>						
 				<div class="clearFix"></div>
-			</div>
+			</main>
 		<div id="footer" class="footer"></div>
 	</body>
 </html>
