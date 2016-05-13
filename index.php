@@ -124,11 +124,18 @@
 				
 				<!--right hand side-->
 				<div id="odu_landingRhs" class="odu_landingRhs">
-					<section id="odu_singles">
-						<h1 class="syllabus">Syllabus</h1>
-						<h1 class="faculty">Faculty</h1>
-						<h1 class="announcements">Announcements</h1>
-					</section>
+					
+						<section id="odu_iconListSection">
+							<ul>
+								<li><a href="#" class="assignment"><span>Assignments</span></a></li>
+								<li><a href="#" class="announcements"><span>Announcements</span></a></li>
+								<li><a href="#" class="faculty"><span>Faculty</span></a></li>
+								<li><a href="#" class="glossary"><span>Glossaries</span></a></li>
+								<li><a href="#" class="notes"><span>Notes</span></a></li>
+								<li><a href="#" class="resources"><span>Resources</span></a></li>
+								<li><a href="#" class="syllabus"><span>Syllabus</span></a></li>
+							</ul>
+						</section>
 					
 
 					<section id="odu_moduleListSection">
