@@ -35,9 +35,9 @@ main.odu_landing{
 			
 			&.calendar,
 			&.upEvents,
-			&.syllabus,
-			&.faculty,
-			&.announcements,
+			//&.syllabus,
+			//&.faculty,
+			//&.announcements,
 			&.moduleList{
 				&::before{
 					font-family: fontAwesome;
@@ -52,21 +52,21 @@ main.odu_landing{
 						
 			&.calendar::before		{content: "\f073";}
 			&.upEvents::before		{content: "\f017";}
-			&.syllabus::before		{content: "\f02d";}
-			&.faculty::before 		{content: "\f073";}
-			&.announcements::before {content: "\f073";}
+			//&.syllabus::before		{content: "\f02d";}
+			//&.faculty::before 		{content: "\f073";}
+			//&.announcements::before {content: "\f073";}
 			&.moduleList::before	{content: "\f114";}
 			
-			&.syllabus,
-			&.faculty,
-			&.announcements{
-				width: $w_oduLandingRhs/3 - 21px;	//again, another odd size to account for borders
-				display: inline-block;
-			}
-			&.syllabus,
-			&.faculty{
-				margin-right: 10px;
-			}
+			//&.syllabus,
+			//&.faculty,
+			//&.announcements{
+			//	width: $w_oduLandingRhs/3 - 21px;	//again, another odd size to account for borders
+			//	display: inline-block;
+			//}
+			//&.syllabus,
+			//&.faculty{
+			//	margin-right: 10px;
+			//}
 			
 
 			
@@ -75,9 +75,9 @@ main.odu_landing{
 			
 				&.calendar,
 				&.upEvents,
-				&.syllabus,
-				&.faculty,
-				&.announcements,
+				//&.syllabus,
+				//&.faculty,
+				//&.announcements,
 				&.moduleList{
 					&::before{
 						background: $googleBlue;
@@ -93,7 +93,67 @@ main.odu_landing{
 			border-top: 0px;
 		}
 		
+		
+		& ul{
+			//border: 1px solid red;
+			list-style-type: none;
+			//width: 100%;
+			display: table-row;
+			
+			& li{
+				display:table-cell;
+				text-align: center;
+				
+				& a{
+					color: $darkGray;
+					font-family: fontAwesome;
+					font-size: 2.5rem;
+					display: inline-block;
+					text-align: center;
+					line-height: 85%; //looks best?
+					
+					&.assignment::before    {content: "\f1fd";}
+					&.announcements::before {content: "\f0a1";}
+					&.faculty::before 		{content: "\f19c";}
+					&.glossary::before 		{content: "\f06b";}
+					&.notes::before 		{content: "\f24a";}
+					&.resources::before 	{content: "\f1bb";}
+					&.syllabus::before		{content: "\f0f6";}
+					
+					//&.announcements::before {content: "\f0a1";}
+				
+					& span{
+						font-family: $font-stack;
+						font-size: .8rem;
+						display: block;
+					
+					}
+					
+					&:hover{
+						color: $googleBlue;
+						text-decoration: none;
+					}
+				}
+			
+				
+			
+			}
+		}
 	}
+	#odu_iconListSection{
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+	}
+	
+}
+
+
+#odu_landingMisc{
+	//border: 1px solid green;
+	vertical-align: bottom;
+	
+
 }
 
 
