@@ -16,7 +16,7 @@
 @import "sizes"; 
 
 
-main.odu_landing{
+main.odu_landing {
 	width: $w_oduWrapper;
 	background: white;
 	//border: 1px solid $red;
@@ -93,8 +93,7 @@ main.odu_landing{
 			border-top: 0px;
 		}
 		
-		
-		& ul{
+		&#odu_iconListSection ul{
 			//border: 1px solid red;
 			list-style-type: none;
 			//width: 100%;
