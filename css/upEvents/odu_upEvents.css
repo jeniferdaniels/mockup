@@ -42,7 +42,7 @@ $xDarkTeal: rgba(  1, 40, 49,1);
       font-size: 1.1rem;
       font-weight: 600;
       vertical-align: bottom;
-      width: 235px !important;
+      width: 210px !important;
       margin: 0px;
       float: right; }
       .odu_upEvent .dateTitleWrapper h3 a {
@@ -51,7 +51,8 @@ $xDarkTeal: rgba(  1, 40, 49,1);
         .odu_upEvent .dateTitleWrapper h3 a:hover {
           color: #7d7d7d; }
   .odu_upEvent p {
-    display: inline; }
+    display: inline;
+    font-size: .9rem; }
   .odu_upEvent a {
     display: inline;
     margin-left: 5px; }
