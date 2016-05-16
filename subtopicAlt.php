@@ -33,7 +33,7 @@
 					
 					
 					
-					$("#pageTitle").html(subtopic.title);
+					$("#pageTitle").html(subtopic.displayNumber + " " + subtopic.title);
 					$("#content").load("cat101/" + subtopic.content);
 					$("#moduleCrumb").html("<a href='index.php'>" + grandParent.displayNumber + ". " + grandParent.title + "</a>");
 					$("#topicCrumb").html("<a href='" + parent.url + "'>" + parent.displayNumber + " " + parent.title + "</a>");							
