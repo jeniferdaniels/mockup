@@ -3,45 +3,45 @@
         "type": "assignment",
         "title": "1.A",
         "longTitle": "Read Textbook Chapters",
-        "id": "4e7fd56dd4a60041092a5c1b1966eec2fc948abdbf93e23ff930bc69fe9b570c98b21163",
+        "id": "8",
         "dueDate": "2016-05-18 00:00:00",
-        "url": "courses/201530/comm270a/modules/1/assignments#1",
-        "description": "Chapter 1&nbsp;Online Student ResourcesOnline Student Resources&nbsp;"
+        "url": "#",
+        "description": "Read the first 5 chapters of the textbook. Be sure to read the definitions section..."
     },
     {
         "type": "assignment",
         "title": "1.B",
-        "longTitle": "View Topics and Video Lectures",
-        "id": "2ac0a199ead91473205b6e83b1ed2d9dcc09c8bb5d17df63925cf84e968bbdc2ac16d77f",
+        "longTitle": "Discussion",
+        "id": "3",
         "dueDate": "2016-05-18 00:00:00",
-        "url": "courses/201530/comm270a/modules/1/assignments#2",
-        "description": "After completing the readings for this module, go to Topics in the module menu and review each topic.Make sure to watch the video lecture(s) and take notes in order to succeed on the quizzes. Some quiz..."
+        "url": "#",
+        "description": "Go to Blackboard and in the discussion section, under the heading 'Kitten Facts' describe..."
     },
     {
         "type": "assignment",
         "title": "1.C",
         "longTitle": "Watch Movie",
-        "id": "f5f5061589a71079f902e7d18224a7c948d05db97f1fd7815b6005a4526752f1860ce4fd",
+        "id": "1",
         "dueDate": "2016-05-20 00:00:00",
-        "url": "courses/201530/comm270a/modules/1/assignments#3",
-        "description": "Watch the movie \"The Graduate\". You can watch it on iTunes for $3.99.The Graduate&nbsp;"
+        "url": "#",
+        "description": "Watch the movie \"The Kittens\". You can watch it on iTunes for $3.99 or borrow..."
     },
     {
         "type": "assignment",
         "title": "1.D",
-        "longTitle": "Blog Assignment #1 - The Graduate",
-        "id": "3dea7842bdaae3726936a53c2bcae02a3b4d33fd94a91ea5c5eee7938fe2ba7be0b38132",
+        "longTitle": "Blog Assignment #1",
+        "id": "2",
         "dueDate": "2016-05-22 00:00:00",
-        "url": "courses/201530/comm270a/modules/1/assignments#4",
-        "description": "Blog Assignment #1 - The GraduateBlog Assignment #1 - The GraduateAccess Course Blackboard site, in the Blackboard &gt; Blog space, you will find the class blog space. Throughout this course, you will..."
+        "url": "#",
+        "description": "On Blackboard &gt; Blog space, you will find the class blog space. Throughout this course, you will find..."
     },
     {
         "type": "assignment",
         "title": "1.E",
-        "longTitle": "Complete Quiz for this Module in Blackboard",
-        "id": "6163ccff7b1c137b05a01e42fc981fa3bd0d15d7055c8600262f8fbbfa21ad10c45197ae",
+        "longTitle": "Complete Essay for this Module in Blackboard",
+        "id": "5",
         "dueDate": "2016-05-22 00:00:00",
-        "url": "courses/201530/comm270a/modules/1/assignments#5",
-        "description": "75 points.75 points.This is a&nbsp;50 minutes timed quiz. The Quiz will only be available on the Quiz due date.Reviewing this Module's readings and topics will help greatly to be prepared for this quiz.Proceed..."
+        "url": "#",
+        "description": "Complete a 300 word essay on kitten ownership and the responsibility of owining a kitten..."
     }
 ]
