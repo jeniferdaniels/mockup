@@ -1,3 +1,83 @@
+/*
+$yellow: rgba(255,255, 51,1);	
+$liteYellow: rgba(255,255,162,1);
+$xDarkYellow: rgba( 79, 79,  0,1);
 
+$green: rgba( 92,235, 47,1);
+$liteGreen: rgba(175,242,154,1);
+$darkGreen: #35DB00;
+$xDarkGreen: rgba( 16, 67,  0,1);
+
+$red: rgba(255, 70, 51,1);	
+$liteRed: #FFABA2;
+$xDarkRed: rgba( 79,  8,  0,1);
+
+$teal: rgba( 45,175,205,1);	
+$liteTeal: #8FCEDD;
+$darkTeal: rgba(  2,134,165,1);
+$xDarkTeal: rgba(  1, 40, 49,1);
+*/
+#listContainer {
+  margin-top: 15px; }
+
+#moduleList a:hover {
+  background-color: #c6cdde; }
+
+#moduleList ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer; }
+
+#moduleList li {
+  line-height: 140%;
+  text-indent: 0px;
+  margin-left: 1.5rem; }
+
+#moduleList li:hover {
+  background: #fafafa; }
+
+#moduleList .notHighlighted {
+  background: white !important; }
+
+#moduleList .collapsed::before,
+#moduleList .expanded::before {
+  font-family: fontAwesome;
+  font-size: 1.5rem;
+  color: #4488f6;
+  margin-left: .5rem;
+  padding-right: .5rem; }
+
+#moduleList .collapsed::before {
+  content: "\f0da"; }
+
+/* Expanded state for list element
+/* NOTE: This class must be located UNDER the collapsed one */
+#moduleList .expanded::before {
+  content: "\f0d7"; }
+
+#moduleList .expanded > a,
+#moduleList .collapsed > a {
+  padding-left: 2px; }
+
+#moduleList .noChildren {
+  padding-left: 2.75rem; }
+
+.listControl {
+  margin-bottom: 15px; }
+
+.listControl a {
+  border: 1px solid #555555;
+  color: #555555;
+  cursor: pointer;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-right: 5px;
+  padding: 4px 10px; }
+
+.listControl a:hover {
+  background-color: #555555;
+  color: #222222;
+  font-weight: normal; }
 
 /*# sourceMappingURL=moduleListStyle.css.map */
