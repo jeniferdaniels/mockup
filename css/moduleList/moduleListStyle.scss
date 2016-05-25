@@ -9,18 +9,20 @@
  
 #moduleList a:hover { background-color: #c6cdde; } 
  
+
 #moduleList ul, li {
     list-style: none;
     margin:0;
     padding:0;
     cursor: pointer;
+	font-size: .9rem;
 }
 
 
 #moduleList li {
-    line-height:140%;
+    line-height:180%;
     text-indent:0px;
-    margin-left: 1.5rem;;
+    margin-left: 1.5rem;
 }
 
 
@@ -46,11 +48,13 @@
 
 #moduleList .collapsed::before {
 	content: "\f0da";
+		margin-left: 2rem;
 }
 /* Expanded state for list element
 /* NOTE: This class must be located UNDER the collapsed one */
 #moduleList .expanded::before {
 	content: "\f0d7";
+
 }
 
 #moduleList .expanded {
@@ -63,9 +67,37 @@
 }
 
 #moduleList .noChildren {
-	padding-left: 2.75rem; //idk why this not a round #
+	padding-left: 3.1rem; //idk why this not a round #
+}
+#moduleList .noChildren:hover {
+	background: white !important;
+	cursor: default;
 }
 
+#moduleList h1,
+#moduleList h2,
+#moduleList h3,
+#moduleList a
+{
+	color: black;
+	display: inline;
+}
+#moduleList h1{
+	font-size: 1.2rem;
+}
+	
+#moduleList h2{
+	font-size: 1rem;
+}
+
+#moduleList h3{
+	font-size: .8rem !important;
+	color: red;
+}
+
+#moduleList .marginTop25{
+	margin-top: 25px;
+}
 .listControl{
       margin-bottom: 15px;
     }
