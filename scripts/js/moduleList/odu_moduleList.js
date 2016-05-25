@@ -1,5 +1,5 @@
 function writeModuleList(pageList, menuDiv){
-	var htmlString = "<ul>";
+	var htmlString = "<ul id='moduleList'>";
 	var currentParent = 0;
 	var oldDepth = -1;
 	var openLiCount = 1;
@@ -13,12 +13,12 @@ function writeModuleList(pageList, menuDiv){
 		
 		
 		if (depth - oldDepth == 1){
-				htmlString += "<ul>";				
+				htmlString += "<ul>";	
 		}
 		else if (depth - oldDepth <= -1){
 			htmlString += "</li>";
 			for (var j=0; j<oldDepth-depth; j++){
-				htmlString += "</ul>"
+				htmlString += "</ul>";
 			}
 		}
 		else 
@@ -27,10 +27,13 @@ function writeModuleList(pageList, menuDiv){
 		}
 
 		
-		htmlString +=  "<li><a href='#'>" + item.displayNumber + " " + item.title + "</a>";
+		
 		oldDepth = depth;
+		if (depth > 5) depth = 5; //only go down to h5 in size
+		htmlString +=  "<li><a href='" + item.url + "'><h" + depth + ">" + item.displayNumber + " " + item.title + "</h" + depth + "></a>";
 	}
 
+	htmlString += "</ul>"; //close out id=moduleList
 	
 	$("#" + menuDiv).html(htmlString);
 
