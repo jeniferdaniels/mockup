@@ -188,13 +188,14 @@ dd
 //10. PHRASING
 //********************************************************************************************
 //***?***
-a{	color: $link-color;
+a{	
+	color: $link-color;
 	text-decoration: none;
-	transition: all 0.25s ease;
+	transition: all 0.125s ease;
 
 	&:hover, &:visited:hover{
 		color: $link-color-hover;
-		text-decoration: underline dotted;
+		text-decoration: underline;
 	}
 	
 	&:visited{

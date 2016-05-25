@@ -63,14 +63,14 @@ dd {
   margin-bottom: 10px; }
 
 a {
-  color: #ff0080;
+  color: #4488f6;
   text-decoration: none;
-  transition: all 0.25s ease; }
+  transition: all 0.125s ease; }
   a:hover, a:visited:hover {
-    color: #4488f6;
-    text-decoration: underline dotted; }
+    color: #2b3990;
+    text-decoration: underline; }
   a:visited {
-    color: #ff0080; }
+    color: #4488f6; }
 
 .boxWrapper {
   padding-top: 10px;
