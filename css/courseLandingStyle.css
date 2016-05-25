@@ -22,28 +22,28 @@ main.odu_landing {
   background: white; }
   main.odu_landing section {
     margin-top: 20px; }
-    main.odu_landing section h1 {
+    main.odu_landing section .odu_sectionH1 {
       background: #fafafa;
       font-size: 1.4rem;
       padding: 10px 10px 10px 0;
       margin-bottom: 0px !important;
       border: 1px solid #c8c8c8; }
-      main.odu_landing section h1.calendar::before, main.odu_landing section h1.upEvents::before, main.odu_landing section h1.moduleList::before {
+      main.odu_landing section .odu_sectionH1.calendar::before, main.odu_landing section .odu_sectionH1.upEvents::before, main.odu_landing section .odu_sectionH1.moduleList::before {
         font-family: fontAwesome;
         background: #505050;
         color: white;
         min-width: 50px;
         padding: 11px;
         margin-right: 10px; }
-      main.odu_landing section h1.calendar::before {
+      main.odu_landing section .odu_sectionH1.calendar::before {
         content: "\f073"; }
-      main.odu_landing section h1.upEvents::before {
+      main.odu_landing section .odu_sectionH1.upEvents::before {
         content: "\f017"; }
-      main.odu_landing section h1.moduleList::before {
+      main.odu_landing section .odu_sectionH1.moduleList::before {
         content: "\f114"; }
-      main.odu_landing section h1:hover {
+      main.odu_landing section .odu_sectionH1:hover {
         color: #4488f6; }
-        main.odu_landing section h1:hover.calendar::before, main.odu_landing section h1:hover.upEvents::before, main.odu_landing section h1:hover.moduleList::before {
+        main.odu_landing section .odu_sectionH1:hover.calendar::before, main.odu_landing section .odu_sectionH1:hover.upEvents::before, main.odu_landing section .odu_sectionH1:hover.moduleList::before {
           background: #4488f6; }
     main.odu_landing section .wrapper {
       margin-top: 0;
