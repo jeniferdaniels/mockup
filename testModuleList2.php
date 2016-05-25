@@ -26,41 +26,14 @@
 			
 			
 		<script>
-			function prepareList() {			
-				$('#moduleList').find('li:has(ul)')
-				.click( function(event) {
-					if (this == event.target) {
-						$(this).toggleClass('expanded');
-						$(this).children('ul').toggle('medium');
-					}
-					return false;
-				})
-				.addClass('collapsed')
-				.children('ul').hide();
 
-				//Create the button funtionality
-				$('#expandList')
-				.unbind('click')
-				.click( function() {
-					$('.collapsed').addClass('expanded');
-					$('.collapsed').children().show('medium');
-				});
-				
-				$('#collapseList')
-				.unbind('click')
-				.click( function() {
-					$('.collapsed').removeClass('expanded');
-					$('.collapsed').children().hide('medium');
-				});
-
-			}
 			
 			
 			$.ajax({
-				url: "sampleJson/sampleModuleListForNav.Json",
+				url: "http://ple1.odu.edu:4243/api/modulenavigation/201530/comm270a",
 				type: 'GET',
 				dataType: 'json',
-				success: function(data) { writeModuleList(data, "odu_moduleListContainer") },
+				success: function(data) { writeModuleList(data, "moduleList", "odu_moduleListContainer") },
 				error: function() { console.log("There was an error loading moduleList"); },
 				xhrFields: { withCredentials: true	},
 				crossDomain: true
@@ -68,24 +41,7 @@
 				
 		
 		$(document).ready(function(){
-	
-			setTimeout(function(){ 
-				prepareList();
-				$("ul").addClass("parentsList");
-			
-				$("#moduleList li").each(function(){
-					if ($(this).children("ul").length > 0){
-						$(this).addClass("parent");
-						$(this).children("ul").addClass("parentsList");
-					}
-					else
-						$(this).addClass("noChildren");
-				});
-			
-			$('#moduleList .parentsList').hover(function(){$(this).parent().toggleClass("notHighlighted");});
-			$('#moduleList .parent').hover(function(){$(this).children('ul').toggleClass("notHighlighted");});
-			}, 100);
-			
+			setTimeout(function(){ formatList();}, 500);		
 		});
 		</script>
 			
