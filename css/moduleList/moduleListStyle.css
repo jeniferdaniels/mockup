@@ -20,48 +20,58 @@ $xDarkTeal: rgba(  1, 40, 49,1);
 #listContainer {
   margin-top: 15px; }
 
-#moduleList a:hover {
-  background-color: #c6cdde; }
-
-#moduleList ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer; }
-
-#moduleList li {
-  line-height: 140%;
-  text-indent: 0px;
-  margin-left: 1.5rem; }
-
-#moduleList li:hover {
-  background: #fafafa; }
-
-#moduleList .notHighlighted {
-  background: white !important; }
-
-#moduleList .collapsed::before,
-#moduleList .expanded::before {
-  font-family: fontAwesome;
-  font-size: 1.5rem;
-  color: #4488f6;
-  margin-left: .5rem;
-  padding-right: .5rem; }
-
-#moduleList .collapsed::before {
-  content: "\f0da"; }
-
-/* Expanded state for list element
-/* NOTE: This class must be located UNDER the collapsed one */
-#moduleList .expanded::before {
-  content: "\f0d7"; }
-
-#moduleList .expanded > a,
-#moduleList .collapsed > a {
-  padding-left: 2px; }
-
-#moduleList .noChildren {
-  padding-left: 2.75rem; }
+#moduleList {
+  min-height: 300px; }
+  #moduleList a {
+    color: #4488f6; }
+    #moduleList a:hover {
+      background-color: #c8c8c8;
+      text-decoration: underline; }
+  #moduleList h1, #moduleList h2, #moduleList h3 {
+    color: black;
+    display: inline; }
+  #moduleList h1 {
+    font-size: 1.2rem; }
+  #moduleList h2 {
+    font-size: 1rem; }
+  #moduleList h3 {
+    font-size: .9rem !important;
+    color: #4488f6; }
+  #moduleList ul, #moduleList li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer; }
+  #moduleList li {
+    line-height: 180%;
+    text-indent: 0px;
+    margin-left: 1.5rem; }
+    #moduleList li:hover {
+      background: #fafafa; }
+  #moduleList .noChildren {
+    padding-left: 3.1rem; }
+    #moduleList .noChildren:hover {
+      background: white !important;
+      cursor: default; }
+  #moduleList .noUrl {
+    cursor: pointer !important; }
+  #moduleList .notHighlighted {
+    background: white !important; }
+  #moduleList .collapsed > a,
+  #moduleList .expanded > a {
+    padding-left: 2px; }
+  #moduleList .collapsed::before,
+  #moduleList .expanded::before {
+    font-family: fontAwesome;
+    font-size: 1.5rem;
+    color: #4488f6;
+    margin-left: .5rem;
+    padding-right: .5rem; }
+  #moduleList .collapsed::before {
+    content: "\f0da";
+    margin-left: 2rem; }
+  #moduleList .expanded::before {
+    content: "\f0d7"; }
 
 .listControl {
   margin-bottom: 15px; }

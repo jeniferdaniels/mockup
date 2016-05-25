@@ -6,98 +6,100 @@
 #listContainer{
   margin-top:15px;
 }
- 
-#moduleList a:hover { background-color: #c6cdde; } 
- 
 
-#moduleList ul, li {
-    list-style: none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
-	font-size: .9rem;
-}
+#moduleList{
+	min-height: 300px;
 
+	a{
+		color: $googleBlue;
 
-#moduleList li {
-    line-height:180%;
-    text-indent:0px;
-    margin-left: 1.5rem;
-}
-
-
-#moduleList li:hover{
-	background: $xLiteGray;
-}
-
-
-
-#moduleList .notHighlighted{
-	background: white !important;
-}
-
-
-#moduleList .collapsed::before,
-#moduleList .expanded::before{
-	font-family: fontAwesome;
-	font-size: 1.5rem;
-	color: $odu_briteBlue;
-	margin-left: .5rem;
-	padding-right: .5rem;
-}
-
-#moduleList .collapsed::before {
-	content: "\f0da";
-		margin-left: 2rem;
-}
-/* Expanded state for list element
-/* NOTE: This class must be located UNDER the collapsed one */
-#moduleList .expanded::before {
-	content: "\f0d7";
-
-}
-
-#moduleList .expanded {
-    //background-image: url("img/icon-expand.gif");
-}
-
-#moduleList .expanded > a,
-#moduleList .collapsed > a {
-  padding-left: 2px;
-}
-
-#moduleList .noChildren {
-	padding-left: 3.1rem; //idk why this not a round #
-}
-#moduleList .noChildren:hover {
-	background: white !important;
-	cursor: default;
-}
-
-#moduleList h1,
-#moduleList h2,
-#moduleList h3,
-#moduleList a
-{
-	color: black;
-	display: inline;
-}
-#moduleList h1{
-	font-size: 1.2rem;
-}
+		&:hover { //#moduleList a:hover
+			background-color: $liteGray; 
+			text-decoration: underline;
+		} 
+	}
 	
-#moduleList h2{
-	font-size: 1rem;
+	h1, h2, h3{
+		color: black;
+		display: inline;
+	}
+	
+	
+	h1{
+		font-size: 1.2rem;
+	}
+		
+	h2{
+		font-size: 1rem;
+	}
+
+	h3{
+		font-size: .9rem !important;
+		color: $googleBlue;
+	}
+	
+	ul, li {
+		list-style: none;
+		margin:0;
+		padding:0;
+		cursor: pointer;
+	}
+	
+	li {
+		line-height:180%;
+		text-indent:0px;
+		margin-left: 1.5rem;
+		
+		&:hover { //#moduleList li:hover
+			background: $xLiteGray;
+		}
+	}
+
+	.noChildren{
+		padding-left: 3.1rem;
+		&:hover {
+			background: white !important;
+			cursor: default;
+		}
+	}
+	.noUrl{
+		cursor: pointer !important;
+	}
+	.notHighlighted{
+		background: white !important;	//TODO: var for container bkg
+	}
+	
+	//collapse & expand
+	.collapsed,
+	.expanded{
+		
+		& > a { //#moduleList .expanded > a
+			padding-left: 2px;
+		}
+	
+		&::before{	//#moduleList .collapsed::before and #moduleList .expanded::before
+			font-family: fontAwesome;
+			font-size: 1.5rem;
+			color: $odu_briteBlue;
+			margin-left: .5rem;
+			padding-right: .5rem;
+		}		
+	}
+	.collapsed{
+		&::before{
+			content: "\f0da";
+			margin-left: 2rem;
+		}
+	}
+	.expanded{
+		&::before{
+			content: "\f0d7";		
+		}
+	}
+	
 }
 
-#moduleList h3{
-	font-size: .8rem !important;
-	color: red;
-}
 
-#moduleList .marginTop25{
-	margin-top: 25px;
-}
 .listControl{
       margin-bottom: 15px;
     }
