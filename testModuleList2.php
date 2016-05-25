@@ -41,7 +41,7 @@
 				
 		
 		$(document).ready(function(){
-			setTimeout(function(){ formatList();}, 500);		
+			setTimeout(function(){ formatList("moduleList");}, 500);		
 		});
 		</script>
 			
