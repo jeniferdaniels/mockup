@@ -1,4 +1,4 @@
-function writeModuleList(pageList, moduleListId, menuDiv){
+function writeModuleList(pageList, moduleListId, moduleListContainerId){
 	var htmlString = "<ul id='" + moduleListId + "'>";
 	var currentParent = 0;
 	var oldDepth = -1;
@@ -36,7 +36,7 @@ function writeModuleList(pageList, moduleListId, menuDiv){
 
 	htmlString += "</ul>"; //close out id=moduleList
 	
-	$("#" + menuDiv).html(htmlString);
+	$("#" + moduleListContainerId).html(htmlString);
 }
 
 
@@ -75,7 +75,7 @@ function formatList(moduleListId) {
 	});
 
 	
-	$("ul").addClass("parentsList");
+	$("#" + moduleListId + " ul").addClass("parentsList");
 			
 	$("#" + moduleListId + ' li').each(function(){
 		if ($(this).children("ul").length > 0){
