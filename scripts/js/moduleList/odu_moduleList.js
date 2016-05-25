@@ -42,8 +42,8 @@ function writeModuleList(pageList, moduleListId, menuDiv){
 
 
 
-function formatList() {			
-	$('#moduleList').find('li:has(ul)')
+function formatList(moduleListId) {			
+	$("#" + moduleListId).find('li:has(ul)')
 	.click( function(event) {
 		if (this == event.target) {
 			$(this).toggleClass('expanded');
@@ -54,7 +54,7 @@ function formatList() {
 	.addClass('collapsed')
 	.children('ul').hide();
 
-	$('#moduleList a').unbind('click').click(function() {
+	$("#" + moduleListId + ' a').unbind('click').click(function() {
 		window.location = $(this).attr('href');
 		return false;
 	});
@@ -77,7 +77,7 @@ function formatList() {
 	
 	$("ul").addClass("parentsList");
 			
-	$("#moduleList li").each(function(){
+	$("#" + moduleListId + ' li').each(function(){
 		if ($(this).children("ul").length > 0){
 			$(this).addClass("parent");
 			$(this).children("ul").addClass("parentsList");
@@ -86,8 +86,8 @@ function formatList() {
 			$(this).addClass("noChildren");
 	});
 
-	$('#moduleList .parentsList').hover(function(){$(this).parent().toggleClass("notHighlighted");});
-	$('#moduleList .parent').hover(function(){$(this).children('ul').toggleClass("notHighlighted");});
+	$("#" + moduleListId + ' .parentsList').hover(function(){$(this).parent().toggleClass("notHighlighted");});
+	$("#" + moduleListId + ' .parent').hover(function(){$(this).children('ul').toggleClass("notHighlighted");});
 	
 
 	
