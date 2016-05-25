@@ -26,7 +26,7 @@
 					previous = flatCourse[topicIndex-1];
 					next = flatCourse[topicIndex+1];
 					
-					$("#pageTitle").html(topic.title);
+					$("#pageTitle").html(topic.displayNumber + " " + topic.title);
 					console.log("title" + topic.title);
 					$("#subtopicList").html(writeSubtopicList(getSubtopics(flatCourse, topicIndex))); 
 					$("#moduleCrumb").html("<a href='index.php'>" + parent.displayNumber + ". " + parent.title + "</a>");
@@ -61,6 +61,7 @@
 					<nav>
 						<ul class="odu_breadCrumbs">
 							<li id="moduleCrumb"></li>
+							<li id="thisCrumb"></li>
 						</ul>
 					</nav>
 				</div>
