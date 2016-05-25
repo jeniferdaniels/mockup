@@ -17,44 +17,40 @@ $liteTeal: #8FCEDD;
 $darkTeal: rgba(  2,134,165,1);
 $xDarkTeal: rgba(  1, 40, 49,1);
 */
-.odu_upEvent {
-  border-bottom: 1px solid #c8c8c8;
-  padding: 10px;
-  margin-bottom: 1rem; }
-  .odu_upEvent .dateTitleWrapper {
-    vertical-align: bottom; }
-    .odu_upEvent .dateTitleWrapper .date {
-      border: 1px solid #505050;
-      width: 55px;
-      text-align: center;
-      display: inline-block;
-      float: left; }
-      .odu_upEvent .dateTitleWrapper .date h2 {
-        font-size: 1.8rem;
-        margin: 0;
-        font-weight: 700;
-        color: black !important; }
-      .odu_upEvent .dateTitleWrapper .date time {
-        font-size: .8rem;
-        margin: 0; }
-    .odu_upEvent .dateTitleWrapper h3 {
-      display: inline-block;
-      font-size: 1.1rem;
-      font-weight: 600;
-      vertical-align: bottom;
-      width: 210px !important;
-      margin: 0px;
-      float: right; }
-      .odu_upEvent .dateTitleWrapper h3 a {
-        text-decoration: none;
-        color: black; }
-        .odu_upEvent .dateTitleWrapper h3 a:hover {
-          color: #7d7d7d; }
-  .odu_upEvent p {
-    display: inline;
-    font-size: .9rem; }
-  .odu_upEvent a {
-    display: inline;
-    margin-left: 5px; }
+#odu_upEvents {
+  font-size: .9rem;
+  line-height: 130%;
+  padding: 1rem;
+  list-style-type: none !important; }
+  #odu_upEvents li {
+    margin-left: 0;
+    margin-top: 10px;
+    border-bottom: 1px solid #505050; }
+    #odu_upEvents li:first-child {
+      margin-top: 0; }
+    #odu_upEvents li:last-child {
+      border-bottom: 0; }
+      #odu_upEvents li:last-child p {
+        margin-bottom: 0; }
+  #odu_upEvents .odu_upEvent .dateBox {
+    border: 1px solid #505050;
+    width: 4rem;
+    text-align: center;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: .5rem; }
+  #odu_upEvents .odu_upEvent .dateBoxMonth {
+    background: #7d7d7d;
+    color: white;
+    font-size: .7rem; }
+  #odu_upEvents .odu_upEvent .dateBoxDay {
+    font-size: 2rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem; }
+  #odu_upEvents .odu_upEvent .dateBoxTime {
+    font-size: .8rem; }
+  #odu_upEvents .odu_upEvent h1 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem; }
 
 /*# sourceMappingURL=odu_upEvents.css.map */
