@@ -52,5 +52,7 @@ $xDarkTeal: rgba(  1, 40, 49,1);
   #odu_upEvents .odu_upEvent h1 {
     font-size: 1.2rem;
     margin-bottom: .5rem; }
+  #odu_upEvents .odu_upEvent a {
+    padding-left: .25rem; }
 
 /*# sourceMappingURL=odu_upEvents.css.map */
