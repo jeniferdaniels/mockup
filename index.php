@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="css/upEvents/odu_upEvents.css" />
 		<link rel="stylesheet" href="css/moduleList/moduleListStyle.css" />
 		<link rel="stylesheet" href="css/pnotify.custom.css" />
-		<!--<link rel="stylesheet" href="css/moduleList/collapsible-tree-theme.css" />-->
 
 		
 		
@@ -26,7 +25,6 @@
 		<script src="scripts/js/messages/odu_messages.js"></script>
 		<script src="scripts/js/personalization/odu_preferences.js"></script>
 		<script src="scripts/js/moduleList/odu_moduleList.js"></script>
-		<script src="scripts/js/moduleList/jquery.ntm.js"></script>		
 
 		<script>
 		$(document).ready(function(){
@@ -35,6 +33,7 @@
 			var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/comm270a";
 			var preferencesUrl   = "http://ple1.odu.edu:4243/api/preference/201530/comm270a";
 			var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/comm270a"; 
+			var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/201530/comm270a"; 
 		
 			//put this in onload file
 			function loadDataAndRun(url, funct, msg){
@@ -62,16 +61,31 @@
 			}
 			loadDataAndRun(smallCalendarUrl, writeSmallCalendar, "There was an error loading the small calendar events");
 			loadDataAndRun(preferencesUrl, loadPreferences, "There was an error getting the preferences");
-			loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
+			//loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
 			
-			//$(".demo").ntm();
-			
-			//displayChecksForCompletedAssignments("cat101/json/courseStatus.json");
-
-			
-			$("#odu_smallCalendarHeader").click(function(){
-				$("#odu_smallCalendar").toggle();						
+			$.ajax({
+				url: moduleListUrl,
+				type: 'GET',
+				dataType: 'json',
+				success: function(data) { writeModuleList(data, "moduleList", "odu_moduleList") },
+				error: function() { console.log("There was an error loading moduleList"); },
+				xhrFields: { withCredentials: true	},
+				crossDomain: true
 			});
+
+			$.ajax({
+				url: upEventsUrl,
+				type: 'GET',
+				dataType: 'json',
+				success: function(data) { writeUpEvents(data, "odu_upEventsWrapper") },
+				error: function() { console.log("There was an error loading moduleList"); },
+				xhrFields: { withCredentials: true	},
+				crossDomain: true
+			});
+				
+		
+			setTimeout(function(){ formatList("moduleList");}, 500);					
+			$("#odu_smallCalendarSection").click(function(){$("#odu_smallCalendar").toggle();});
 			
 			
 			
@@ -79,18 +93,7 @@
 		
 		
 		</script>
-	
-		<style>
-			#odu_moduleList div#tree-menu.tree-menu.demo ul{
-				list-style-type: none !important;
-				color: black;
-				
-			}
-			#odu_moduleList div#tree-menu.tree-menu.demo ul a{
-				color: black;
-				
-			}
-		</style>
+
 	</head>
 	
 	<body>
@@ -103,7 +106,7 @@
 				<!--left hand side-->
 				<div id="odu_landingLhs" class="odu_landingLhs">
 					<section id="odu_smallCalendarSection">
-						<h1 class="calendar">Calendar</h1>
+						<h1 class="odu_sectionH1 calendar">Calendar</h1>
 						<div id="odu_smallCalendarWrapper" class="wrapper">
 							<div id="odu_smallCalendar"></div>
 						</div>
@@ -111,10 +114,8 @@
 					
 					
 					<section id="odu_upEventsSection">
-						<h1 class="upEvents">Upcoming Events</h1>
-						<div id="odu_upEventsWrapper" class="wrapper">
-							<div id="odu_upEvents"></div>
-						</div>
+						<h1 class="odu_sectionH1 upEvents">Upcoming Events</h1>
+						<div id="odu_upEventsWrapper" class="wrapper"></div>
 					</section>
 				</div>
 				<!--end left hand side-->
@@ -136,15 +137,9 @@
 					
 
 					<section id="odu_moduleListSection">
-						<h1 class="moduleList">Modules</h1>
+						<h1 class="odu_sectionH1 moduleList">Modules</h1>
 						<div id="odu_moduleListWrapper" class="wrapper">
-							<div id="odu_moduleList" style="height: 500px">
-							<div id="tree-menu" class="tree-menu demo">
-							
-								&nbsp;List Here
-								
-								</div>
-							</div>
+							<div id="odu_moduleList"></div>	<!--expecting id=moduleList for list inside for css-->
 						</div>
 					</section>
 				</div>
