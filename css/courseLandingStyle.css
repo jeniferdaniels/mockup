@@ -24,10 +24,11 @@ main.odu_landing {
     margin-top: 20px; }
     main.odu_landing section .odu_sectionH1 {
       background: #fafafa;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       padding: 10px 10px 10px 0;
       margin-bottom: 0px !important;
-      border: 1px solid #c8c8c8; }
+      border: 1px solid #c8c8c8;
+      font-weight: 600; }
       main.odu_landing section .odu_sectionH1.calendar::before, main.odu_landing section .odu_sectionH1.upEvents::before, main.odu_landing section .odu_sectionH1.moduleList::before {
         font-family: fontAwesome;
         background: #505050;
