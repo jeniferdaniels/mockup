@@ -11,7 +11,7 @@ function includeCsss(){
 	echo '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">' . PHP_EOL;
 	
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/pleStyle.css">' . PHP_EOL;
-	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/contentLayoutStyle.css">' . PHP_EOL;
+	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/basicContent.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/navArrowStyle.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/modal.css">' . PHP_EOL;
 	echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/jquery-ui-1.10.4.custom.css">' . PHP_EOL;

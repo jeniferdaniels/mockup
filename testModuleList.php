@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="css/pleStyle.css">
-		<link rel="stylesheet" href="css/contentLayoutStyle.css">
+		<link rel="stylesheet" href="css/basicContent.css">
 		<link rel="stylesheet" href="css/courseHome.css" />
 		<link rel="stylesheet" href="css/moduleList/moduleListStyle.css" />	
 		<link rel="stylesheet" href="css/moduleList/collapsible-tree-theme.css" />	
