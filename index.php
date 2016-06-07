@@ -16,63 +16,75 @@
 		
 		
 		<?php includeScripts() ?>
-		<script src="scripts/js/utils.js"></script>
-		<script src="scripts/js/moment.min.js"></script>	
-		<script src="scripts/js/calendar/fullcalendar.min.js"></script>
-		<script src="scripts/js/calendar/odu_calendar.js"></script>
-		<script src="scripts/js/upEvents/odu_upEvents.js"></script>
-		<script src="scripts/js/pnotify.custom.js"></script>
-		<script src="scripts/js/messages/odu_messages.js"></script>
-		<script src="scripts/js/personalization/odu_preferences.js"></script>
-		<script src="scripts/js/moduleList/odu_moduleList.js"></script>
+		<script type="text/javascript" src="scripts/js/utils.js"></script>
+		<script type="text/javascript" src="scripts/js/moment.min.js"></script>	
+		<script type="text/javascript" src="scripts/js/calendar/fullcalendar.min.js"></script>
+		<script type="text/javascript" src="scripts/js/calendar/odu_calendar.js"></script>
+		<script type="text/javascript" src="scripts/js/upEvents/odu_upEvents.js"></script>
+		<script type="text/javascript" src="scripts/js/pnotify.custom.js"></script>
+		<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
+		<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
+		<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
 
-		<script>
+		<script type="text/javascript">
 		$(document).ready(function(){
 			
 			var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
 			var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/comm270a";
-			var preferencesUrl   = "http://ple1.odu.edu:4243/api/preference/201530/comm270a";
+			//var preferencesUrl   = "http://ple1.odu.edu:4243/api/preference/201530/comm270a";
 			var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/comm270a"; 
 			var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/201530/comm270a"; 
 		
 			//put this in onload file
-			function loadDataAndRun(url, funct, msg){
-				$.ajax({
-					url: url,
-					type: 'GET',
-					dataType: 'json',
-					success: function(data) { funct(data) },
-					error: function() { console.log(msg); },
-					xhrFields: { withCredentials: true	},
-					crossDomain: true
-				});
-			}
-		
 			//JMD: for testing, remove in production 
 			if (getUrlVars()["noExternal"] == 1){
 				announcementsUrl = "sampleJson/sampleAnnouncements.json";
 				smallCalendarUrl = "sampleJson/sampleSmallCalendarEvents.json";
 				//preferencesUrl = "sampleJson/samplePreferences.json";
 				upEventsUrl = "sampleJson/sampleUpEvents.json";				
+				moduleListUrl      = "sampleJson/sampleModuleListForNav.json"; 
 			}
 
-			if (getUrlVars()["noAnn"] != 1){
-				loadDataAndRun(announcementsUrl, processNotifications, "There was a problem loading the announcements");			
-			}
-			loadDataAndRun(smallCalendarUrl, writeSmallCalendar, "There was an error loading the small calendar events");
-			loadDataAndRun(preferencesUrl, loadPreferences, "There was an error getting the preferences");
-			//loadDataAndRun(upEventsUrl, writeUpEvents, "There was a problem loading the upcoming events");
 			
+			//announcements
+			if (getUrlVars()["noAnn"] != 1){
+				$.ajax({
+					url: announcementsUrl,
+					type: 'GET',
+					dataType: 'json',
+					success: function(data) { processNotifications(data) },
+					error: function() { console.log("There was a problem loading the announcements"); },
+					xhrFields: { withCredentials: true	},
+					crossDomain: true
+				});//.done(function (data, status, jqXHR) {
+				//	console.log(data);
+				//});
+			}
+			
+			//small calendar
+			$.ajax({
+				url: smallCalendarUrl,
+				type: 'GET',
+				dataType: 'json',
+				success: function(data) { writeSmallCalendar(data) },
+				error: function() { console.log("There was an error loading the small calendar events"); },
+				xhrFields: { withCredentials: true	},
+				crossDomain: true
+			});
+				
+			//moduleList  
 			$.ajax({
 				url: moduleListUrl,
 				type: 'GET',
 				dataType: 'json',
-				success: function(data) { writeModuleList(data, "moduleList", "odu_moduleList") },
+				//format list after it has loaded.
+				success: function(data) { writeModuleList(data, "moduleList", "odu_moduleList"); formatList("moduleList"); },
 				error: function() { console.log("There was an error loading moduleList"); },
 				xhrFields: { withCredentials: true	},
 				crossDomain: true
 			});
 
+			//upcoming events
 			$.ajax({
 				url: upEventsUrl,
 				type: 'GET',
@@ -83,11 +95,7 @@
 				crossDomain: true
 			});
 				
-		
-			setTimeout(function(){ formatList("moduleList");}, 500);					
-			$("#odu_smallCalendarSection").click(function(){$("#odu_smallCalendar").toggle();});
-			
-			
+
 			
 		});
 		
