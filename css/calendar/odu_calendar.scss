@@ -1,6 +1,4 @@
-@import "../colors";
-@import "../fonts";
-@import "../sizes";
+@import "../configs";
 
 
 //*****************************************************************************
@@ -225,7 +223,7 @@ body {
 }
 
 .smallAssignmentIcon{
-	background-image: url("../images/clipboardColor.svg");
+	background-image: url("../images/clipboardColo.svg");
 	background-color: rgba(68,136,246,1);
 	background-repeat: no-repeat;
 	padding: 3px;
@@ -239,10 +237,6 @@ body {
 .assignmentProperties {
   list-style-type: none;
   margin: 10px 0 10px 0; 
-}
-
-.current{
-	color: $current;
 }
 
 #dueHeader, #submitViaHeader, #deliverableHeader {

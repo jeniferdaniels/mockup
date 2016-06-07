@@ -1,0 +1,122 @@
+//THESE ARE SITE WIDE SETTINGS, INDIVIDUAL WIDGETS MAY HAVE THEIR OWN SETTING FILE
+
+//-----------------------
+//COLORS
+//-----------------------
+
+//GRAYS
+//$xxLiteGray:
+$xLiteGray: rgba(250, 250, 250, 1);
+$liteGray: rgba(200, 200, 200, 1);
+$mediumGray: rgba(125, 125, 125, 1);
+$calendarMediumGray: rgba(170,170,170,1);	//#AAAAAA
+$darkGray: rgba(80,80,80,1);				//#141414
+$googleGray: rgba(247,247,247, 1);
+$almostBlack: rgba(50, 50, 50, 1);
+
+//RAINBOW
+$liteRed: rgba(255, 186, 186, 1);
+$red: rgba(231, 76, 60, 1);
+$orange: rgba(255, 102, 0, 1);
+$liteYellow: rgba(255,253,217,1);			//#ffff99
+$yellow: rgba(255,255,153,1);
+$gold: rgba(245, 176, 65, 1);
+$liteGreen: rgba(231, 246, 238, 1);
+$green: rgba(0, 168, 88, 1);
+$liteBlue: rgba(189,229,248, 1);			//#BDE5F8
+$googleBlue: rgba(68,136,246,1);			//#4488f6
+$liteGoogleBlue: rgba(68,136,246,.25);		//#4488f6
+$monarchBlue: rgba(0,55,103,1);				//#003767
+$darkBlue: rgba(6, 44, 140, 1);
+$white: rgba(255, 255, 255, 1);				//#FFFFFF
+$hotPink: rgba(255, 0, 128, 1); 
+
+//CLT FLYER
+$odu_red: #be1e2d;
+$odu_orange: #f58220;
+$odu_darkBlue: #002f4e;
+$odu_mediumBlue: #2b3990;
+$odu_briteBlue: $googleBlue;
+$odu_purple: #662d91;
+$odu_magenta: #e91f63;
+
+
+//--------------------------------------
+//COLOR ASSIGNMENTS
+//--------------------------------------
+
+$odu_contentBackgroundColor: $white;
+
+//MESSAGE/ANNOUNCEMENT COLORS
+$urgent: $red;
+$error: $red;
+$errorBackground: $liteRed;
+$success: $green; 
+$successBackground: $liteGreen;
+$disabled: $liteGray;
+$infoBackground: $liteBlue;
+$info: $googleBlue;
+$warningBackground: $liteYellow;
+$warning: $gold;
+$noticeBackground: $yellow;
+$notice: $gold;
+$announcementBackground: $liteYellow;
+
+//PLE GENERAL
+$current: $googleBlue;			//WFT IS THIS FOR?
+$editBackground: $orange;
+$font-color: $darkGray; 
+$link-color: $googleBlue;
+$link-color-hover: $odu_mediumBlue;
+$link-color-visited: $googleBlue;
+$popUpBackground: $white;
+$contentBackgroundColor: $white;
+
+//--------------------------------------
+//FONT
+//--------------------------------------
+$font-stack: "Open Sans", Georgia;
+
+//--------------------------------------
+//ICONS
+//--------------------------------------
+$aaq = "images/teapot.svg";
+$adminTools = "images/breifcase.svg";
+$calendar = "mages/teapot.svg";
+$edit = "mages/teapot.svg";
+$faculty = "images/teapot.svg";
+$glossary = "images/contact-book.svg";
+$home = "images/home.svg";
+$modules = "images/teapot.svg";
+$notes = "images/teapot.svg";
+$print = "images/teapot.svg";
+$search = "images/teapot.svg";
+$syllabus = "images/teapot.svg";
+$user = "images/teapot.svg";
+$upEvents = "images/clock.svg";
+
+
+
+//--------------------------------------
+//SIZES
+//--------------------------------------
+$indent: 25px;
+$w_oduContent: 1000px;
+$w_oduStuff: $w_oduContent;
+$w_oduToolbox: 60px;
+$w_oduWrapper: $w_oduContent + $w_oduToolbox + 3px;
+$w_oduNavWrapper: 1000px;
+
+$w_oduLandingLhs: 325px;
+$w_oduLandingMarginBetween: 25px;
+$w_oduLandingHeaderFlyoutIcon: 20px;
+
+$w_oduLandingRhs: $w_oduWrapper - $w_oduLandingLhs - $w_oduLandingMarginBetween;
+
+$w_oduProgressBar: 200px;	//not used?
+$h_oduProgressBar: 10px;	//not used?
+
+$w_navButtonWrapper: 50px;
+$w_upEventsDate: 55px;
+$w_upEventsTitle: $w_oduLandingLhs - $w_upEventsDate - 60px;
+$w_oduLandingButton: $w_oduLandingRhs/3 - 10px;

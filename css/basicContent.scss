@@ -19,11 +19,7 @@
 //			odu_tools
 //				(specific buttons)
 //odu_footer
-@import "colors";
-@import "fonts";
-@import "sizes"; 
-
-$DEBUG: false;
+@import "configs";
 
 .odu_breadCrumbWrapper{
 	width: 98%;

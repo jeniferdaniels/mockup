@@ -1,7 +1,4 @@
-@import "colors";
-@import "fonts";
-@import "sizes"; 
-
+@import "configs";
 
 //SIZES
 
@@ -290,9 +287,9 @@ a{
 
 //***11-24-2015***
 .contentWrapper{
-	width: $contentWidth;
+	width: $w_oduContent;
 	margin:0 auto;
-	background-color: $contentBackgroundColor;
+	background-color: $odu_contentBackgroundColor;
 	//box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	margin-top: 110px;
 	padding: 10px;
