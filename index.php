@@ -107,55 +107,55 @@
 	<body>
 		<div class="top"><?php writeTopHTML() ?></div>
 
-		<header></header>
-		<div id="odu_wrapper" class="odu_wrapper">
-			<main class="odu_landing">
-			
-				<!--left hand side-->
-				<div id="odu_landingLhs" class="odu_landingLhs">
-					<section id="odu_smallCalendarSection">
-						<h1 class="odu_sectionH1 calendar">Calendar</h1>
-						<div id="odu_smallCalendarWrapper" class="wrapper">
-							<div id="odu_smallCalendar"></div>
-						</div>
-					</section>
-					
-					
-					<section id="odu_upEventsSection">
-						<h1 class="odu_sectionH1 upEvents">Upcoming Events</h1>
-						<div id="odu_upEventsWrapper" class="wrapper"></div>
-					</section>
-				</div>
-				<!--end left hand side-->
+			<div id="odu_wrapper" class="odu_wrapper">
+				<main class="odu_landing">
 				
-				<!--right hand side-->
-				<div id="odu_landingRhs" class="odu_landingRhs">
-					
-						<section id="odu_iconListSection">
-							<ul>
-								<li><a href="#" class="assignment"><span>Assignments</span></a></li>
-								<li><a href="#" class="announcements"><span>Announcements</span></a></li>
-								<li><a href="#" class="faculty"><span>Faculty</span></a></li>
-								<li><a href="#" class="glossary"><span>Glossaries</span></a></li>
-								<li><a href="#" class="notes"><span>Notes</span></a></li>
-								<li><a href="#" class="resources"><span>Resources</span></a></li>
-								<li><a href="#" class="syllabus"><span>Syllabus</span></a></li>
-							</ul>
+					<!--left hand side-->
+					<div id="odu_landingLhs" class="odu_landingLhs">
+						<section id="odu_smallCalendarSection">
+							<h1 class="odu_sectionH1 calendar">Calendar</h1>
+							<div id="odu_smallCalendarWrapper" class="wrapper">
+								<div id="odu_smallCalendar"></div>
+							</div>
 						</section>
+						
+						
+						<section id="odu_upEventsSection">
+							<h1 class="odu_sectionH1 upEvents">Upcoming Events</h1>
+							<div id="odu_upEventsWrapper" class="wrapper"></div>
+						</section>
+					</div>
+					<!--end left hand side-->
 					
+					<!--right hand side-->
+					<div id="odu_landingRhs" class="odu_landingRhs">
+						
+							<section id="odu_iconListSection">
+								<ul>
+									<li><a href="#" class="assignment"><span>Assignments</span></a></li>
+									<li><a href="#" class="announcements"><span>Announcements</span></a></li>
+									<li><a href="#" class="faculty"><span>Faculty</span></a></li>
+									<li><a href="#" class="glossary"><span>Glossaries</span></a></li>
+									<li><a href="#" class="notes"><span>Notes</span></a></li>
+									<li><a href="#" class="resources"><span>Resources</span></a></li>
+									<li><a href="#" class="syllabus"><span>Syllabus</span></a></li>
+								</ul>
+							</section>
+						
 
-					<section id="odu_moduleListSection">
-						<h1 class="odu_sectionH1 moduleList">Modules</h1>
-						<div id="odu_moduleListWrapper" class="wrapper">
-							<div id="odu_moduleList"></div>	<!--expecting id=moduleList for list inside for css-->
-						</div>
-					</section>
-				</div>
-				<!--end right hand side -->
+						<section id="odu_moduleListSection">
+							<h1 class="odu_sectionH1 moduleList">Modules</h1>
+							<div id="odu_moduleListWrapper" class="wrapper">
+								<div id="odu_moduleList"></div>	<!--expecting id=moduleList for list inside for css-->
+							</div>
+						</section>
+					</div>
+					<!--end right hand side -->
 
 
-				<div class="clearFix"></div>
-			</main>
+					<div class="clearFix"></div>
+				</main>
+			</div>
 		<div id="footer" class="footer"></div>
 	</body>
 </html>
