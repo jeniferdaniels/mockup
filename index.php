@@ -7,7 +7,7 @@
 	<head>
 		<?php includeCsss() ?>
 		<link rel="stylesheet" href="css/calendar/fullcalendar.min.css"  />
-		<link rel="stylesheet" href="css/courseLandingStyle.css" />
+		<link rel="stylesheet" href="css/courseHome.css" />
 		<link rel="stylesheet" href="css/calendar/odu_calendar.css" />
 		<link rel="stylesheet" href="css/upEvents/odu_upEvents.css" />
 		<link rel="stylesheet" href="css/moduleList/moduleListStyle.css" />
