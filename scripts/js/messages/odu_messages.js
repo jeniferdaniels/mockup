@@ -16,8 +16,6 @@ function processNotifications(notifications){
 			//this checks to ensure a properly formatted string/json object is passed
 			if (!hasEmptyKeys(notification, expectedKeys))
 			{
-				//this comes in as "message", needs to be "text" for pNotify
-				notification.text = notification.message; 
 				
 				//default the message to something since title is not required as a key
 				if ((notification.title == "") || (typeof notification.title === "undefined")){
@@ -38,24 +36,23 @@ function processNotifications(notifications){
 //Purpose:		 creates a notification with some predetermined values
 //				 notification types expected by pNotify are: notice, info, success, error
 //*****************************************************************************************
-function writeNotification(notification){
+function writeNotification(notificationData){
 	var notice = 
 		new PNotify ({	
-			title: notification.title,
-			text: notification.text,
+			title: notificationData.title,
+			text: notificationData.message,
 			buttons: {sticker: false, closer: true},
 			closer_hover: false,
-			type: notification.type,
-			addclass: notification.addclass,
+			//addclass: notificationData.addclass,
 			width: "500px",
 			remove: true,
 			delay: 600000, //10 min
 			hide: true,
-			type: notification.type
+			type: notificationData.type
 	});
 	
-	notice.get().click(function() {	notice.remove(); markAsRead(notification.announcement_id);});
-	console.log("notice processed" + notification.title);
+	notice.get().click(function() {	markAsRead(notificationData); notice.remove();});
+	console.log("notice processed" + notificationData.title);
 	return;
 }
 
@@ -66,8 +63,19 @@ function writeNotification(notification){
 //Purpose:		 calls functions to write message as seen by user into db
 //*****************************************************************************************
 
-function markAsRead(id){
-	console.log ("add code here to write to db saying this user clicked message " + id + "at " + moment().format('YYYY-MM-DD'));		
+function markAsRead(notificationData){
+	console.log ("add code here to write to db saying this user clicked message " + notificationData.announcement_id + " at " + moment().format('YYYY-MM-DD'));
+	$.ajax({
+		url: "", //service here,
+		data: notificationData, //data for the service to process (json),
+		dataType: "json",
+		method: "POST",
+		xhr: true,
+		success: function() {console.log("I posted the message for " + notificationData.announcement_id);},
+		error: function() {console.log("I failed to contact the server");},
+		xhrFields: { withCredentials: true	},
+		crossDomain: true
+	});
 }
 
 
