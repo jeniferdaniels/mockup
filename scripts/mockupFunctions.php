@@ -136,8 +136,8 @@ function writeToolsAlt($showEdit){
 		echo '<ul id="odu_toolsAlt" class="odu_toolsAlt">';
 			
 			echo '<li><a href="' . WEB_ROOT . '">'. icon("fa", "home", "l", "") .'<span>Home</span></a></li>';
-			echo '<li><a href=#>'. icon("fa", "syllabus", "l", "") .'<span>Syllabus</span></a></li>';
-			echo '<li><a href=#>'. icon("fa", "modules", "l", "") . '<span>Modules</span></a></li>';
+			echo '<li><a href=#><i class="fa fa-2x fa-ban"></i><span>Syllabus</span></a></li>';
+			echo '<li><a href=#><i class="fa fa-2x fa-ban"></i><span>Modules</span></a></li>';
 			echo '<li><a href=#>'. icon("fa", "calendar", "l", "") . '<span>Calendar</span></a></li>';
 
 			echo '<li><a href=#>'. icon("g", "aaq", "l", "") . '<span>Ask A Question</span></a></li>';
