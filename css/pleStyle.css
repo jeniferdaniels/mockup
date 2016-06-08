@@ -10,7 +10,7 @@ body {
   padding: 0;
   background: white;
   height: 100%;
-  margin-top: 110px; }
+  margin-top: 90px; }
 
 p {
   margin-bottom: 10px; }
@@ -158,7 +158,7 @@ a {
   background-color: white;
   top: 0;
   left: 0;
-  height: 90px;
+  height: 75px;
   vertical-align: top;
   z-index: 900;
   border-bottom: 5px solid #003767; }
@@ -417,5 +417,3 @@ ul#odu_toolsAlt li {
 
 #odu_toolboxAlt > ul#odu_toolsAlt li a {
   width: auto; }
-
-/*# sourceMappingURL=pleStyle.css.map */
