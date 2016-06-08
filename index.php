@@ -25,6 +25,7 @@
 		<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
 		<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
 		<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
+		<script type="text/javascript" src="scripts/js/odu_basicContent.js"></script>
 
 		<script type="text/javascript">
 		$(document).ready(function(){
@@ -95,7 +96,7 @@
 				crossDomain: true
 			});
 				
-
+			writePageHeader("#top");
 			
 		});
 		
@@ -105,7 +106,7 @@
 	</head>
 	
 	<body>
-		<div class="top"><?php writeTopHTML() ?></div>
+		<div id="top" class="top"></div>
 
 			<div id="odu_wrapper" class="odu_wrapper">
 				<main class="odu_landing">
