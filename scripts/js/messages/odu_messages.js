@@ -52,7 +52,7 @@ function writeNotification(notificationData){
 	});
 	
 	notice.get().click(function() {	markAsRead(notificationData); notice.remove();});
-	console.log("notice processed" + notificationData.title);
+	console.log("notice processed->" + notificationData.title);
 	return;
 }
 
@@ -63,17 +63,19 @@ function writeNotification(notificationData){
 //Purpose:		 calls functions to write message as seen by user into db
 //*****************************************************************************************
 
-function markAsRead(notificationData){
-	console.log ("add code here to write to db saying this user clicked message " + notificationData.announcement_id + " at " + moment().format('YYYY-MM-DD'));
+function markAsRead(data){
+	var postData = {"announcement_id": data.announcement_id};
+	
+	console.log(postData);
 	$.ajax({
-		url: "", //service here,
-		data: notificationData, //data for the service to process (json),
+		url: "http://ple1.odu.edu:4243/api/announcement/log", 
+		data: postData, 
 		dataType: "json",
 		method: "POST",
-		xhr: true,
-		success: function() {console.log("I posted the message for " + notificationData.announcement_id);},
-		error: function() {console.log("I failed to contact the server");},
-		xhrFields: { withCredentials: true	},
+		Xhr: true,	//do not change case
+		Xhrfields: { withCredentials: true}, //do not change case
+		success: function() {console.log("Posted the message for " + data.announcement_id);},
+		error: function(jqXHR, textStatus, errorThrown) {console.log("error!->" +  " " + textStatus + " " + errorThrown);},
 		crossDomain: true
 	});
 }
