@@ -73,9 +73,6 @@ function hasEmptyKeys(obj, keys){
 	return isEmpty;
 }
 
-
-
-//stolen
 //http://jquery-howto.blogspot.com/2009/09/get-url-parameters-values-with-jquery.html
 //var first = getUrlVars()["me"];
 function getUrlVars()
@@ -90,3 +87,10 @@ function getUrlVars()
     }
     return vars;
 }
+
+
+//JMD
+function isUndefined(obj){
+	return ((obj == "") || (obj === null) || (typeof obj === "undefined"));
+}
+
