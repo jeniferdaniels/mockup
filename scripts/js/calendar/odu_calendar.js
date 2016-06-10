@@ -6,7 +6,7 @@
 //Purpose:		 calls the fullCalendar function and populates the #calendar object
 //				 on the webpage
 //*****************************************************************************************
-function writeSmallCalendar(eventList) {
+function writeSmallCalendar(eventList, calendarIdField) {
 
 		
 		//add link to full schedule
@@ -18,11 +18,11 @@ function writeSmallCalendar(eventList) {
 		//$("#odu_popUpContentWrapper").append($("<div>").attr("id", "odu_popUpContent"));
 
 		//add small calendar
-		$("#odu_smallCalendar").fullCalendar({
+		$("#" + calendarIdField).fullCalendar({
 			events: formatForSmallCal(eventList), //set short title for small calendar
 			height: 430,
 			fixedWeekCount: true,
-			defaultDate: moment().format('2016-01-18'), //defaultDate: moment().format('YYYY-MM-DD'),
+			defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
 			theme: true,
 			header: {
 				left:   'prev',
@@ -42,8 +42,7 @@ function writeSmallCalendar(eventList) {
 			}
 		});
 	
-		$("#odu_popUpContent").attr("class", "displayBlock");		
-	
+		$("#odu_popUpContent").attr("class", "displayBlock");
 }
 
 //*****************************************************************************************
