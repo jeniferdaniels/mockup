@@ -630,36 +630,8 @@ a{
 	top: 25px;
 }
 
-#editTab{
-	height: 50px;
-	width: 50px;
-	background: $editBackground;
-	color: white;
-	text-align: center;
-	padding: 5px;
-	position: fixed;
-	left:0;
-	top:20px;
-	cursor: pointer;
-	overflow: hidden;
-	
-	span{
-	 font-size: .8rem;
-	}
-		
-}
-
-#editModeNotification{
-	height: 25px;
-	background: $editBackground;
-	text-align: center;
-	color: white;
-	z-index: 1200;
-	position: fixed;
-	width: 100%;
-	//display: none;
-	overflow: hidden;
-	cursor: pointer;
+.errorMsg{
+	color: $error;
 }
 
 //---------------for alt
