@@ -1,4 +1,7 @@
 function writeModuleList(pageList, moduleListId, moduleListContainerId){
+	
+	
+	
 	var htmlString = "<ul id='" + moduleListId + "'>";
 	var currentParent = 0;
 	var oldDepth = -1;
@@ -25,20 +28,41 @@ function writeModuleList(pageList, moduleListId, moduleListContainerId){
 		
 		oldDepth = depth;
 		if (depth > 5) depth = 5; //only go down to h5 in size
+		level = "class='level" + depth + "'";
 		
 		//add li with text/link
 		if ((item.url == "")	|| (typeof item.url === undefined) || (item.url == null))
-			htmlString +=  "<li><h" + depth + " class='noUrl'>" + item.displayNumber + " " + item.title + "</h" + depth + ">";				
+			htmlString +=  "<li " + level + "><h" + depth + " class='noUrl'>" + item.displayNumber + " " + item.title + "</h" + depth + ">";				
 		else
-			htmlString +=  "<li><a href='" + item.url + "'><h" + depth + ">" + item.displayNumber + " " + item.title + "</h" + depth + "></a>";
+			htmlString +=  "<li " + level + "><a href='\\" + item.url + "'><h" + depth + ">" + item.displayNumber + " " + item.title + "</h" + depth + "></a>";
 
 	}
 
 	htmlString += "</ul>"; //close out id=moduleList
 	
 	$("#" + moduleListContainerId).html(htmlString);
+	$("#" + moduleListContainerId).prepend($("<a>").attr("id", "expandList").html("expand all"));
+	$("#" + moduleListContainerId).prepend($("<a>").attr("id", "collapseList").html("collapse all"));
+	
 }
 
+/*function writeAnotherModuleList(pageList, moduleListId, moduleListContainerId){
+	$("#" + moduleListContainerId).append($("<ul>").attr("id", moduleListId);
+	
+	for (var i=0; i<pageList.length; i++)
+	{
+		item= pageList[i];
+		depth = (item.displayNumber + "").split(".").length;  //needs + "" so it knows its a string. Its js being stupid
+		
+		if ((item.url == "")	|| (typeof item.url === undefined) || (item.url == null)){
+			
+			
+		}
+		
+	}
+ 
+}
+*/
 
 
 
@@ -64,14 +88,21 @@ function formatList(moduleListId) {
 	.unbind('click')
 	.click( function() {
 		$('.collapsed').addClass('expanded');
-		$('.collapsed').children().show('medium');
+		$('.collapsed').children().show();
+		
+		$('.level2').show();
 	});
 	
 	$('#collapseList')
 	.unbind('click')
 	.click( function() {
-		$('.collapsed').removeClass('expanded');
-		$('.collapsed').children().hide('medium');
+		$('.level2').hide();
+		$('.level1').removeClass('expanded');
+		
+		//$('.expanded').removeClass('expanded');
+		//$('.collapsed').removeClass('expanded');
+		//$('.parentsList').children().hide('medium');
+		//$('.collapsed').children().hide('medium');
 	});
 
 	
@@ -89,6 +120,7 @@ function formatList(moduleListId) {
 	$("#" + moduleListId + ' .parentsList').hover(function(){$(this).parent().toggleClass("notHighlighted");});
 	$("#" + moduleListId + ' .parent').hover(function(){$(this).children('ul').toggleClass("notHighlighted");});
 	
+	//$("#expandAll").click(function(){ });
 
 	
 }
