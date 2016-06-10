@@ -46,15 +46,28 @@
 	
 	<script type="text/javascript" src="scripts/js/onLoad.js"></script>
 	<script>
-		
-		$(document).ready(function(){
-		
-			var dummy = { "course_title": "Fluid Mechanics Cats", "course_number": "270a",  "course_subject": "COMM",  "semester_display": "Summer 2016", "faculties": [  { "preferred_name": "Gabe Miracle", "email": "grodrigu@odu.edu"  }, { "preferred_name": "J Daniels Cat", "email": "jdaniels@odu.edu" }]};
+		$(document).ready(function(){		
 
-			//getCourseAttributes("1234");
-			writePageHeader("#top", dummy);
-			loadHomeContent(dummy.course_subject+dummy.course_number); //TODO: replace with course_id when it is available
-	
+			//string is formatted /courses/201502/cat101/
+			temp = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
+			tempCourseNumber = temp[temp.length-2];	//-2 because its the second to last item in the array due to the / at the end
+			//var dummy = { "course_title": "Fluid Mechanics Cats", "course_number": "270a",  "course_subject": "COMM",  "semester_display": "Summer 2016", "faculties": [  { "preferred_name": "Gabe Miracle", "email": "grodrigu@odu.edu"  }, { "preferred_name": "J Daniels Cat", "email": "jdaniels@odu.edu" }]};
+		
+			dummy = getCourseAttributes(tempCourseNumber);			
+			$(document.body).promise().done(function(){	//idfk this works
+				test1();
+				headerError = writePageHeader("#top", dummy);
+				writeHomeSkeleton();
+			})//;
+			.then(function(more){  
+				test2();
+				loadHomeContent();
+			});
+			
+			
+			
+			//.then(function(more){  doStuff(more); });
+			//writePageHeader("#top", dummy);
 		});
 	
 	</script>
@@ -64,55 +77,29 @@
 </head>
 
 	<body>
-		<div class="top" id="top"></div>
-		
-		<div id="odu_wrapper" class="odu_wrapper">
-			<main class="odu_landing">
-			
-				<!--left hand side-->
-				<div id="odu_landingLhs" class="odu_landingLhs">
-					<section id="odu_smallCalendarSection">
-						<h1 class="odu_sectionH1 calendar">Calendar</h1>
-						<div id="odu_smallCalendarWrapper" class="wrapper">
-							<div id="odu_smallCalendar"></div>
-						</div>
-					</section>
-					
-					
-					<section id="odu_upEventsSection">
-						<h1 class="odu_sectionH1 upEvents">Upcoming Events</h1>
-						<div id="odu_upEventsWrapper" class="wrapper"></div>
-					</section>
-				</div>
-				<!--end left hand side-->
-				
-				<!--right hand side-->
-				<div id="odu_landingRhs" class="odu_landingRhs">
-					
-						<section id="odu_iconListSection">
-							<ul>
-								<li><a href="assignment" class="assignment"><mark><span>Assignments</span></mark></a></li>
-								<li><a href="announcements" class="announcements"><mark><span>Announcements</span></mark></a></li>
-								<li><a href="faculty" class="faculty"><span>Faculty</span></a></li>
-								<li><a href="glossary" class="glossary"><mark><span>Glossaries</span></mark></a></li>
-								<li><a href="notes" class="notes"><mark><span>Notes</span></a></mark></li>
-								<li><a href="resources" class="resources"><mark><span>Resources</span></mark></a></li>
-								<li><a href="syllabus/" class="syllabus"><span>Syllabus</span></a></li>
-							</ul>
-						</section>
-					
-
-					<section id="odu_moduleListSection">
-						<h1 class="odu_sectionH1 moduleList">Modules</h1>
-						<div id="odu_moduleListWrapper" class="wrapper">
-							<div id="odu_moduleList"></div>	<!--expecting id=moduleList for list inside for css-->
-						</div>
-					</section>
-				</div>
-				<!--end right hand side -->
-				<div class="clearFix"></div>
-			</main>
-			
-			<footer class="odu_footer"></footer>
+		<div id="errorMsg" class="errorMsg"></div>
+		<div id="top" class="top"></div>
+		<div id="odu_wrapper" class="odu_wrapper"></div>	
+		<footer class="odu_footer"></footer>
 	</body>
 </html>	
+
+
+<script>
+	function test1(){
+		var d = new Date();
+		console.log("-test1 start-" + d.getTime());
+		setTimeout(somethingSlow() , 10000000);
+		console.log("-test1 end-" + d.getTime());
+	}	
+	function test2(){
+		var d = new Date();
+		console.log("-test2 start-" + d.getTime());
+		console.log("-test2 end-" + d.getTime());
+	}	
+	function somethingSlow(){
+		var d = new Date();
+		console.log("-something slow start-" + d.getTime());
+	}	
+
+</script>
