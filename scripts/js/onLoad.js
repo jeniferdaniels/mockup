@@ -3,7 +3,7 @@
 
 function writePageHeader(topDiv, courseData){
 	hasProblem = true;
-
+	console.log("inside write page header");
 	//check to see that object is not empty, if it is then display minimal header
 	if (!((topDiv == "")	|| (typeof topDiv === undefined) || (topDiv == null)))
 	{
@@ -55,69 +55,70 @@ function writePageHeader(topDiv, courseData){
 }
 
 
-function writeHomeSkeleton(){
+function writeHomeSkeleton(homeDiv){
+
+	console.log("Loading home skeleton");
+
+	//<main>, lhs and rhs
+	$(homeDiv)
+		.append($("<main>").attr("id", "odu_main").addClass("odu_landing")	//TODO: update name to odu_main and update all css
+			.append($("<div>").attr("id", "odu_landingLhs").addClass("odu_landingLhs"))
+			.append($("<div>").attr("id", "odu_landingRhs").addClass("odu_landingRhs"))
+		);
+
+	//left side
+	$("#odu_landingLhs")
+		.append($("<section>").attr("id", "odu_smallCalendarSection"))
+		.append($("<section>").attr("id", "odu_upEventsSection"));
 	
-	console.log("loading home skeleton");
-	//write out skeleton
-	$("#odu_wrapper").append("stuff");
-
-	/*<main class="odu_landing">
-			
-				<!--left hand side-->
-				<div id="odu_landingLhs" class="odu_landingLhs">
-					<section id="odu_smallCalendarSection">
-						<h1 class="odu_sectionH1 calendar">Calendar</h1>
-						<div id="odu_smallCalendarWrapper" class="wrapper">
-							<div id="odu_smallCalendar"></div>
-						</div>
-					</section>
-					
-					
-					<section id="odu_upEventsSection">
-						<h1 class="odu_sectionH1 upEvents">Upcoming Events</h1>
-						<div id="odu_upEventsWrapper" class="wrapper"></div>
-					</section>
-				</div>
-				<!--end left hand side-->
-				
-				<!--right hand side-->
-				<div id="odu_landingRhs" class="odu_landingRhs">
-					
-						<section id="odu_iconListSection">
-							<ul>
-								<li><a href="<!-- string::site_urlbase -->assignment" class="assignment"><mark><span>Assignments</span></mark></a></li>
-								<li><a href="<!-- string::site_urlbase -->announcements" class="announcements"><mark><span>Announcements</span></mark></a></li>
-								<li><a href="<!-- string::site_urlbase -->faculty" class="faculty"><span>Faculty</span></a></li>
-								<li><a href="<!-- string::site_urlbase -->glossary" class="glossary"><mark><span>Glossaries</span></mark></a></li>
-								<li><a href="<!-- string::site_urlbase -->notes" class="notes"><mark><span>Notes</span></a></mark></li>
-								<li><a href="<!-- string::site_urlbase -->resources" class="resources"><mark><span>Resources</span></mark></a></li>
-								<li><a href="<!-- string::site_urlbase -->syllabus/" class="syllabus"><span>Syllabus</span></a></li>
-							</ul>
-						</section>
-					
-
-					<section id="odu_moduleListSection">
-						<h1 class="odu_sectionH1 moduleList">Modules</h1>
-						<div id="odu_moduleListWrapper" class="wrapper">
-							<div id="odu_moduleList"></div>	<!--expecting id=moduleList for list inside for css-->
-						</div>
-					</section>
-				</div>
-				<!--end right hand side -->
-				<div class="clearFix"></div>
-			</main>*/
-
-
-
-
-
-
-
-
-
-
+	//calendar skeleton
+	$("#odu_smallCalendarSection")
+		.append($("<h1>").addClass("odu_sectionH1 calendar").html("Calendar"))
+		.append($("<div>").attr("id", "odu_smallCalendarWrapper").addClass("wrapper")
+			.append($("<div>").attr("id", "odu_smallCalendar")));
 	
 	
+	//upcoming events skeleton
+	$("#odu_upEventsSection")
+		.append($("<h1>").addClass("odu_sectionH1 upEvents").html("Upcoming Events"))
+		.append($("<div>").attr("id", "odu_upEventsWrapper"));
+	
+	
+	//right side
+	$("#odu_landingRhs")
+		.append($("<section>").attr("id", "odu_iconListSection"))
+		.append($("<section>").attr("id", "odu_moduleListSection"));
+	
+	//icon section
+	$("#odu_iconListSection")
+		.append($("<ul>")
+			.append($("<li>").attr("id", "assignmentsListItem")
+				.append($("<a>").attr("href","assignments/").addClass("assignment")
+					.append($("<span>").html("Assignments"))))
+			.append($("<li>").attr("id", "announcementsListItem")
+				.append($("<a>").attr("href","announcements/").addClass("announcements")
+					.append($("<span>").html("Announcements"))))
+			.append($("<li>").attr("id", "facultyListItem")
+				.append($("<a>").attr("href","faculty/").addClass("faculty")
+					.append($("<span>").html("Faculty"))))
+			.append($("<li>").attr("id", "glossaryListItem")
+				.append($("<a>").attr("href","glossary/").addClass("glossary")
+					.append($("<span>").html("Glossary"))))
+			.append($("<li>").attr("id", "notesListItem")
+				.append($("<a>").attr("href","notes/").addClass("notes")
+					.append($("<span>").html("Notes"))))
+			.append($("<li>").attr("id", "resourcesListItem")
+				.append($("<a>").attr("href","resources").addClass("resources")
+					.append($("<span>").html("Resources"))))
+			.append($("<li>").attr("id", "syllabusListItem")
+				.append($("<a>").attr("href","syllabus/").addClass("syllabus")
+					.append($("<span>").html("Syllabus")))));	
+
+	//module list
+	$("#odu_moduleListSection")
+		.append($("<h1>").addClass("odu_sectionH1 moduleList").html("Modules"))
+		.append($("<div>").attr("id", "odu_moduleListWrapper").addClass("wrapper")
+			.append($("<div>").attr("id","odu_moduleList")));
 }
 
 
@@ -126,25 +127,12 @@ function writeHomeSkeleton(){
 //not the header, and not the course content
 //uses unique course id
 function loadHomeContent(course_id){	
-	/*var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
+	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
 	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/201530/" + course_id; 
 	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/" + course_id;
 	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/" + course_id; 
-	*/
-	
-	
 
-
-
-
-
-
-
-
-
-
-
-
+	console.log("moduleListUrl url" + moduleListUrl);
 	
 	//announcements
 	/*$.ajax({
@@ -161,7 +149,7 @@ function loadHomeContent(course_id){
 	*/
 	
 	//small calendar
-	/*$.ajax({
+	$.ajax({
 		url: smallCalendarUrl,
 		type: 'GET',
 		dataType: 'json',
@@ -187,13 +175,14 @@ function loadHomeContent(course_id){
 		url: upEventsUrl,
 		type: 'GET',
 		dataType: 'json',
-		success: function(data) { writeUpEvents(data, "odu_upEventsWrapper") },
+		success: function(data) { writeUpEvents(data, "#odu_upEventsWrapper") },
 		error: function() { $("#odu_upEventsWrapper").append("Unable to list upcoming events right now."); console.log("There was an error loading upcoming events."); },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
 	});
 	
 	
+	//clicky collapsible headers
 	//TODO: make it dynamic
 	$(".calendar").click(function(){
 		console.log("clicked cal header");
@@ -210,7 +199,7 @@ function loadHomeContent(course_id){
 		$("#odu_moduleListWrapper").toggleClass("displayNone");
 		//add to preference
 	});
-	*/
+	
 }
 
 
