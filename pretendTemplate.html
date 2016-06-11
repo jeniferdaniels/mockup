@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
 	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
 	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
+	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
 	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
 	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
 	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
@@ -47,33 +48,21 @@
 	<script type="text/javascript" src="scripts/js/onLoad.js"></script>
 	<script>
 		$(document).ready(function(){		
-
 			//string is formatted /courses/201502/cat101/
-			temp = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
-			tempCourseNumber = temp[temp.length-2];	//-2 because its the second to last item in the array due to the / at the end
-			//var dummy = { "course_title": "Fluid Mechanics Cats", "course_number": "270a",  "course_subject": "COMM",  "semester_display": "Summer 2016", "faculties": [  { "preferred_name": "Gabe Miracle", "email": "grodrigu@odu.edu"  }, { "preferred_name": "J Daniels Cat", "email": "jdaniels@odu.edu" }]};
-		
-			dummy = getCourseAttributes(tempCourseNumber);			
+			tempCoursePath = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
+			tempCourseNumber = tempCoursePath[tempCoursePath.length-2];	//-2 because its the second to last item in the array due to the / at the end
+			dummy = getCourseAttributes(tempCourseNumber);
+
 			$(document.body).promise().done(function(){	//idfk this works
-				test1();
-				headerError = writePageHeader("#top", dummy);
-				writeHomeSkeleton();
-			})//;
-			.then(function(more){  
-				test2();
-				loadHomeContent();
+				writePageHeader("#top", dummy);
+				writeHomeSkeleton("#odu_wrapper");
+			})
+			.then(function(){  
+				loadHomeContent(tempCourseNumber);
 			});
-			
-			
-			
-			//.then(function(more){  doStuff(more); });
-			//writePageHeader("#top", dummy);
 		});
 	
 	</script>
-
-	
-	
 </head>
 
 	<body>
@@ -83,23 +72,3 @@
 		<footer class="odu_footer"></footer>
 	</body>
 </html>	
-
-
-<script>
-	function test1(){
-		var d = new Date();
-		console.log("-test1 start-" + d.getTime());
-		setTimeout(somethingSlow() , 10000000);
-		console.log("-test1 end-" + d.getTime());
-	}	
-	function test2(){
-		var d = new Date();
-		console.log("-test2 start-" + d.getTime());
-		console.log("-test2 end-" + d.getTime());
-	}	
-	function somethingSlow(){
-		var d = new Date();
-		console.log("-something slow start-" + d.getTime());
-	}	
-
-</script>
