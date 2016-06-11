@@ -95,8 +95,8 @@
 				xhrFields: { withCredentials: true	},
 				crossDomain: true
 			});
-				
-			writePageHeader("#top");
+			var dummy = { "course_title": "Fluid Mechanics Cats", "course_number": "270a",  "course_subject": "COMM",  "semester_display": "Summer 2016", "faculties": [  { "preferred_name": "Gabe Miracle", "email": "grodrigu@odu.edu"  }, { "preferred_name": "J Daniels Cat", "email": "jdaniels@odu.edu" }]};	
+			writePageHeader("#top", dummy);
 			
 		});
 		
