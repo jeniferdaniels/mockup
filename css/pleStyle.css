@@ -142,7 +142,7 @@ a {
   float: left;
   margin: -10px 30px 0 0; }
 
-.top {
+.odu_top {
   position: fixed;
   width: 100%;
   background-color: white;
@@ -152,28 +152,28 @@ a {
   vertical-align: top;
   z-index: 900;
   border-bottom: 5px solid #003767; }
-  .top h1 {
+  .odu_top h1 {
     display: inline-block;
     margin-top: -10px; }
-  .top a {
+  .odu_top a {
     color: #505050; }
-    .top a:hover {
+    .odu_top a:hover {
       color: #4488f6;
       text-decoration: underline; }
-  .top h2 {
+  .odu_top h2 {
     margin-left: 50px;
     padding: 0;
     display: block;
     font-size: 1rem;
     color: #505050; }
-    .top h2 span {
+    .odu_top h2 span {
       margin-right: 50px; }
-    .top h2 a {
+    .odu_top h2 a {
       text-decoration: underline; }
-      .top h2 a:hover {
+      .odu_top h2 a:hover {
         color: #4488f6;
         text-decoration: underline; }
-  .topWrapper {
+  .odu_topWrapper {
     width: 1063px;
     padding: 0;
     margin: 0 auto 0 auto; }
@@ -224,9 +224,6 @@ a {
 
 .googleBlue {
   color: #4488f6; }
-
-.topPosition25 {
-  top: 25px; }
 
 .errorMsg {
   color: #e74c3c; }
