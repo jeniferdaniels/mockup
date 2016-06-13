@@ -48,12 +48,49 @@ body{
 	//background-color: $googleGray;
 	background: white;
 	height: 100%;
-	margin-top: 90px;
+	margin-top: 80px;
 }
 
 //header
 
 //nav
+nav{
+	width: 100%;
+	display: block;
+	
+	& ul {
+		padding-right: 5px;
+		margin:0;
+		list-style: none;
+		position: relative;
+		text-align: right;
+			
+			&:After {
+				content: "";
+				display:block;
+				clear:both;
+			}
+	}
+	
+	& li {
+		display:list-item;
+		list-style: none;
+		float:right;
+		color: $monarchBlue;
+
+		a {
+			display:block;
+			//padding:15px 30px;  
+			color:$monarchBlue;
+			text-decoration:none;
+			text-align:center;
+			
+			&:hover { background-color: $liteGoogleBlue; }
+		}
+			
+	}
+}
+
 
 //***10-8-2015***
 p{
@@ -255,108 +292,128 @@ a{
 	margin-top: 10px;
 }
 */
+//*****************************************************************************
+//One hit wonders
+//*****************************************************************************
+.clearFix{
+	float: none;
+	clear: both;
+
+}
+
+//10/15/2015
+.urgent{
+	color: $urgent;
+}
+
+//10/15/2015
+.success{
+	color: $success;
+}
+
+.disabled{
+	color: $disabled !important; 
+	cursor: "not-allowed" !important;
+}
+
+.liteGray{
+	color: $liteGray;
+}
+
+.current{
+	color: $googleBlue;
+}
+
+//10/15/2015
+.hidden{
+	visibility: hidden;
+}
 
 
+//?
+.inline, .displayInline{
+	display: inline;
+}
+
+//?
+.displayInlineBlock{
+	display: inline-block;
+}
+
+//?
+.displayBlock{
+	display: block;
+}
+
+//?
+.displayNone{
+	display: none;
+}
+
+.floatRight{
+	float: right;
+}
+
+.floatLeft{
+	float: left;
+}
+
+.marginBottom20{
+	margin-bottom: 20px;
+}
+
+.googleBlue
+{
+	color: $googleBlue
+}
+
+.errorMsg{
+	color: $error;
+}
+
+
+//**************************************
+// ODU specific
+//**************************************
+.odu_pageTitle{
+	padding: 25px 10px 25px 0;
+	border-bottom: 2px solid $mediumGray;
+	margin: 0;
+}
+
+.odu_breadCrumbWrapper{
+	width: inherit;	//fill up odu_wrapper
+	display: block;
+	//position: fixed;
+	//top: 88px;
+	//padding-top:10px;
+	//border-bottom: 1px solid black;
+	//background: $googleGray;
+	z-index: 899;
+	//border: 1px solid red;
+}
+
+//04-15-2016
 .odu_breadCrumbs{
 	list-style: none;
-	padding-left: 10px;
-	
-	
+	//padding-left: 10px;
+	width: auto;
+	//border: 1px solid blue;
 	& a{
-		text-decoration:underline;
+		text-decoration:none;
 	}
 
-	& > li + li::before{
+	&> li + li::before{
 		content:" > ";
 	}
 
-	& > li{
+	&> li{
 		display: inline-block;
 		margin-left: 0px;
 	}
 }
 
 
-//***11-24-2015***
-.contentWrapper{
-	width: $w_oduContent;
-	margin:0 auto;
-	background-color: $odu_contentBackgroundColor;
-	//box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	margin-top: 110px;
-	padding: 10px;
-	border: 1px solid $liteGray;
-}
-
-
-
-//***11-12-2015***
-#nav {
-	width:100%; 
-    display:block;
-    //background-color: $googleBlue;
-	
-	ul	{
-		
-		padding-right: 5px;
-		margin: 0;
-		list-style: none;
-		position: relative;
-		text-align: right;   
-		
-		&:After {
-			content: "";
-			display:block;
-			clear:both;
-		}
-		
-		li {
-			display:list-item;
-			list-style: none;
-			float:right;
-			color: $monarchBlue;
-
-			a {
-				display:block;
-				//padding:15px 30px;  
-				color:$monarchBlue;
-				text-decoration:none;
-				text-align:center;
-				
-				&:hover { 
-					background-color: $liteGoogleBlue; 
-				}
-			}
-			&:hover > ul {
-				display: list-item;
-			}
-		}
-		
-		 ul {
-			display: none;
-			position: absolute; 
-			top: 30px;
-			padding: 5px 5px 5px 0;
-			background: white;
-			border: 1px solid $xLiteGray;
-			//box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-			
-			li {
-				width:110px;
-				float:none;
-				position: relative;
-				border-bottom:none;
-				padding-left: 0;
-				
-				a {
-					padding-left: -1px;
-					text-align:left;
-					font-size: .9rem;  
-				}
-			}
-		}
-	}
-}
 
 .oduOnlineLogo{
 	background-image: url("images/oduOnlineLogo.svg");
@@ -441,93 +498,14 @@ a{
 }
 
 
-//*****************************************************************************
-//One hit wonders
-//*****************************************************************************
-.clearFix{
-	float: none;
-	clear: both;
-
-}
-
-//10/15/2015
-.urgent{
-	color: $urgent;
-}
-
-//10/15/2015
-.success{
-	color: $success;
-}
-
-.disabled{
-	color: $disabled !important; 
-	cursor: "not-allowed" !important;
-}
-
-.liteGray{
-	color: $liteGray;
-}
-
-.current{
-	color: $googleBlue;
-}
-
-//10/15/2015
-.hidden{
-	visibility: hidden;
-}
-
-
-//?
-.inline, .displayInline{
-	display: inline;
-}
-
-//?
-.displayInlineBlock{
-	display: inline-block;
-}
-
-//?
-.displayBlock{
-	display: block;
-}
-
-//?
-.displayNone{
-	display: none;
-}
-
-.floatRight{
-	float: right;
-}
-
-.floatLeft{
-	float: left;
-}
-
-.marginBottom20{
-	margin-bottom: 20px;
-}
-
-.googleBlue
-{
-	color: $googleBlue
-}
-
-.errorMsg{
-	color: $error;
-}
-
-
-
-
-
 //---------------for alt
 .odu_progressNavBar{
 	//width: $contentWidth;
-	margin: 0 0 10px 20px;
+	width: auto;
+	//border: 1px solid red;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	margin: 0;
 	width: 100%;
 	height: 5px;
 	display: table;
@@ -579,156 +557,106 @@ a{
 .odu_wrapper{
 	width: $w_oduWrapper;
 	margin: 0 auto;
-	border: 1px solid red;
+	//border: 1px solid red;
 }
 
-#odu_toolbox
+.odu_toolbox
 {
 	background: none;
-	width: 75px;
+	width: $w_oduToolbox;
 	//margin: 0 auto;
-	margin-right: 30px;
-	padding-right: 30px;
+	//margin-right: 30px;
+	//padding-right: 30px;
 	padding-top: 0;
+	margin: 0;
 	//padding: 1em 0;
-	text-align: center;
-	line-height: 80%;
+	//text-align: center;
+	//line-height: 80%;
 	float: left;
+	//border: 1px solid blue;
+	
 }
 
-#odu_toolbox#odu_tools
+.odu_toolboxList
 {
-	text-align: left;
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	width: 70%;
-}
-
-ul#odu_toolsAlt li
-{
-	display: block;
-	margin: 0;
-	
-	
-	a{
-		display: block;
-		width: 100%;
-		color: $mediumGray;
-		background: none;
-		padding: 10px 0;
-	
-		span{
-			font-size: .8rem;
-			display: block;
-		}
-		
-		&:hover,
-		&:visited:hover{
-			color: $monarchBlue;
-			background: $white;
-		}
-	}
-	
-	
-	
-}
-
-#odu_toolboxAlt>ul#odu_toolsAlt li a { 
-	width: auto; }
-	
-
-.odu_breadCrumbWrapper{
-	width: 98%;
-	display: block;
-	position: fixed;
-	top: 88px;
-	padding-top:10px;
-	//border-bottom: 1px solid black;
-	background: $googleGray;
-	z-index: 899;
-}
-
-//04-15-2016
-.odu_breadCrumbs{
-	list-style: none;
-	padding-left: 10px;
-	
-	& a{
-		text-decoration:none;
-	}
-
-	&> li + li::before{
-		content:" > ";
-	}
-
-	&> li{
-		display: inline-block;
-		margin-left: 0px;
-	}
-}
-
-
-/*	
-#odu_toolbox
-{
-	background: $darkGray;
-	width: 63px;
-	margin: 0 auto;
-	padding-top: 0;
-	//padding: 1em 0;
 	text-align: center;
-	line-height: 80%;
-	float: right;
-}
-
-#odu_toolbox#odu_tools,
-#odu_toolbox#odu_adminTools
-{
-	text-align: left;
 	list-style: none;
 	padding: 0;
-	margin: 0 auto;
-	width: 70%;
-}
+	margin: 0 .5rem 0 0;
+	//width: 70%;
+	//border: 1px solid purple;
 
-ul#odu_tools li,
-ul#odu_adminTools li
-{
-	display: block;
-	margin: 0;
-	
-	
-	a{
+	& ul{
 		display: block;
-		width: 100%;
-		color: $white;
-		background: $darkGray;
-		padding: 10px 0;
-	
-		span{
-			font-size: .8rem;
-			display: block;
-		}
+		margin: 0;
+		text-align: center;
+	}
+	& li {
+		margin: 0;
+		padding-bottom: 1.2rem;
+		display: block;
+		width: $w_oduToolbox - 5px;
 		
-		&:hover,
-		&:visited:hover{
-			color: $monarchBlue;
-			background: $white;
+		&:last-child{
+			padding-bottom: 0;
+		}
+		&:first-child{
+			padding-top: 10px;
+		}
+	
+		a{
+			display: block;
+			width: 100%;
+			color: $mediumGray;
+			background: none;
+			margin: 0;
+			//padding: 10px 0;
+		
+			span{
+				font-size: .8rem;
+				display: block;
+				line-height: .8rem;
+			}
+		
+			&:hover,
+			&:visited:hover{
+				color: $monarchBlue;
+				background: $white;
+			}
 		}
 	}
 	
-	
+}
+
+.odu_contentSection{
+	//border: 1px solid orange;
+	width: $w_oduContent;
+	float: right;
+	margin: 0;
+	padding: 0;
+	border-left: 2px solid $mediumGray;
+	min-height: 600px;
+}
+
+.odu_contentWrapper{
+	padding: 1rem;
+	//border: 1px solid red;
+}
+
+.odu_content{
+	//border: 1px solid green;
 	
 }
 
-#odu_toolboxAltAlt>ul#odu_adminTools li a,
-#odu_toolboxAltAlt>ul#odu_tools li a { 
-	width: auto; }
-	
-#odu_adminTools{
-	border-top: 3px solid $googleGray;
-}	
 
-*/
+.higherBreadCrumbWrapper{
+	width: 100%;
+	//border: 1px solid red;
+	padding-top:0;
+	background: $xLiteGray;
+}
 
+.higherBreadcrumbs{
+	width: $w_oduWrapper;
+	margin: 0 auto;
+}
