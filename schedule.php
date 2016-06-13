@@ -99,7 +99,7 @@
 	</head>
 	
 	<body>
-		<div class="top" id="top"><?php writeTopHtml(); ?></div>
+		<div class="odu_top" id="odu_top"><?php writeTopHtml(); ?></div>
 			<div class="breadCrumbWrapper" id="breadCrumbWrapper">
 			<nav>
 				<ul class="breadCrumbs" id="breadCrumbs">
