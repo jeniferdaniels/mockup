@@ -53,21 +53,20 @@
 			dummy = getCourseAttributes(tempCourseNumber);
 
 			$(document.body).promise().done(function(){	//idfk this works
-				writePageHeader("#top", dummy);
+				writePageHeader("#odu_top", dummy);
 				writeHomeSkeleton("#odu_wrapper");
 			})
 			.then(function(){  
 				loadHomeContent(tempCourseNumber);
 			});
 		});
-	
 	</script>
 </head>
 
 	<body>
 		<div id="errorMsg" class="errorMsg"></div>
-		<div id="top" class="top"></div>
-		<div id="odu_wrapper" class="odu_wrapper"></div>	
+		<div id="odu_top" class="odu_top"></div>
+		<div id="odu_wrapper" class="odu_wrapper">here</div>	
 		<footer class="odu_footer"></footer>
 	</body>
 </html>	
