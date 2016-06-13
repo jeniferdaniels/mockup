@@ -18,28 +18,28 @@
 	"parent": 1210,
 	"id": 1211,
 	"displayNumber": "0.1.0",
-	"url": "subtopicAlt.php?id=1211"
+	"url": "subtopic.php?id=1211"
 	},
 	{
 	"title": "Online Learning Orientation",
 	"parent": 1210,
 	"id": 1212,
 	"displayNumber": "0.1.1",
-	"url": "subtopicAlt.php?id=1212"
+	"url": "subtopic.php?id=1212"
 	},
 	{
 	"title": "Technical Support",
 	"parent": 1210,
 	"id": 1213,
 	"displayNumber": "0.1.2",
-	"url": "subtopicAlt.php?id=1213"
+	"url": "subtopic.php?id=1213"
 	},
 	{
 	"title": "Summary",
 	"parent": 1210,
 	"id": 1214,
 	"displayNumber": "0.2",
-	"url": "subtopicAlt.php?id=1214"
+	"url": "subtopic.php?id=1214"
 	},
 	{
 	"title": "Resources",
@@ -81,7 +81,7 @@
 	"parent": 2,
 	"id": 3,
 	"displayNumber":"1.1",
-	"url" : "subtopicAlt.php?id=3"
+	"url" : "subtopic.php?id=3"
 	},
 	
 	{
@@ -97,14 +97,14 @@
 	"parent": 2,
 	"id": 4,
 	"displayNumber":"1.2.2",
-	"url" : "subtopicAlt.php?id=4"
+	"url" : "subtopic.php?id=4"
 	},
 	{
 	"title": "Cost",
 	"parent": 2,
 	"id": 5,
 	"displayNumber":"1.2.3",
-	"url" : "subtopicAlt.php?id=5"
+	"url" : "subtopic.php?id=5"
 	},
 	{
 	"title": "Kitten Rescue",
@@ -118,14 +118,14 @@
 	"parent":7,
 	"id": 9,
 	"displayNumber": "1.3.1",
-	"url": "subtopicAlt.php?id=9"
+	"url": "subtopic.php?id=9"
 	},
 	{
 	"title": "Hampton Roads Rescue Organizations",
 	"parent":7,
 	"id": 10,
 	"displayNumber":"1.3.2",
-	"url": "subtopicAlt.php?id=10"
+	"url": "subtopic.php?id=10"
 	},
 	{
 	"title": "Purchasing a Kitten",
@@ -139,21 +139,21 @@
 	"parent":11,
 	"id": 13,
 	"displayNumber":"1.4.1",
-	"url": "subtopicAlt.php?id=13"
+	"url": "subtopic.php?id=13"
 	},
 	{
 	"title": "Where to Buy",
 	"parent":11,
 	"id": 14,
 	"displayNumber":"1.4.2",
-	"url": "subtopicAlt.php?id=14"
+	"url": "subtopic.php?id=14"
 	},
 	{
 	"title": "Summary",
 	"parent":11,
 	"id": 15,
 	"displayNumber":"1.5",
-	"url": "subtopicAlt.php?id=15"
+	"url": "subtopic.php?id=15"
 	},
 	{
 	"title": "Resources",
@@ -209,7 +209,7 @@
 	"parent":22,
 	"id":60,
 	"displayNumber":"2.1",
-	"url": "subtopicAlt.php?id=60"
+	"url": "subtopic.php?id=60"
 	},
 	{
 	"title": "Bringing Your Kitten Home",
@@ -223,14 +223,14 @@
 	"parent":22,
 	"id":23,
 	"displayNumber":"2.2.2",
-	"url": "subtopicAlt.php?id=23"
+	"url": "subtopic.php?id=23"
 	},
 	{
 	"title": "Preparing the House",
 	"parent":22,
 	"id": 24,
 	"displayNumber":"2.2.3",
-	"url": "subtopicAlt.php?id=24"						
+	"url": "subtopic.php?id=24"						
 	},
 	{
 	"title": "Feeding and Grooming",
@@ -244,14 +244,14 @@
 	"parent":26,
 	"id": 28,
 	"displayNumber":"2.3.1",
-	"url": "subtopicAlt.php?id=28"
+	"url": "subtopic.php?id=28"
 	},
 	{
 	"title": "Grooming",
 	"parent":26,
 	"id": 29,
 	"displayNumber":"2.3.2",
-	"url": "subtopicAlt.php?id=29"
+	"url": "subtopic.php?id=29"
 	},	
 	{
 	"title": "Entertaining",
@@ -265,28 +265,28 @@
 	"parent":31,
 	"id": 330,
 	"displayNumber":"2.4.1",
-	"url": "subtopicAlt.php?id=330"
+	"url": "subtopic.php?id=330"
 	},
 	{
 	"title": "Cat Nip",
 	"parent":31,
 	"id": 34,
 	"displayNumber":"2.4.2",
-	"url": "subtopicAlt.php?id=34"
+	"url": "subtopic.php?id=34"
 	},
 	{
 	"title": "Other Pets",
 	"parent":31,
 	"id": 35,
 	"displayNumber":"2.4.3",
-	"url": "subtopicAlt.php?id=35"
+	"url": "subtopic.php?id=35"
 	},
 	{
 	"title": "Summary",
 	"parent":31,
 	"id": 36,
 	"displayNumber":"2.5",
-	"url": "subtopicAlt.php?id=36"
+	"url": "subtopic.php?id=36"
 	},
 	{
 	"title": "Resources",
@@ -342,7 +342,7 @@
 	"parent":43,
 	"id":44,
 	"displayNumber": "3.1",
-	"url": "subtopicAlt.php?id=44"
+	"url": "subtopic.php?id=44"
 	},
 	{
 	"title" : "Vaccinations",
@@ -356,14 +356,14 @@
 	"parent":43,
 	"id": 45,
 	"displayNumber":"3.2.1",
-	"url": "subtopicAlt.php?id=45"
+	"url": "subtopic.php?id=45"
 	},
 	{
 	"title": "Rabies",
 	"parent":43,
 	"id": 46,
 	"displayNumber":"3.2.2",
-	"url": "subtopicAlt.php?id=46"
+	"url": "subtopic.php?id=46"
 	},
 	{
 	"title" : "City Regulations",
@@ -377,28 +377,28 @@
 	"parent":48,
 	"id": 50,
 	"displayNumber":"3.3.1",
-	"url": "subtopicAlt.php?id=50"
+	"url": "subtopic.php?id=50"
 	},
 	{
 	"title": "Leash Laws",
 	"parent":48,
 	"id": 51,
 	"displayNumber":"3.3.2",
-	"url": "subtopicAlt.php?id=51"
+	"url": "subtopic.php?id=51"
 	},
 	{
 	"title": "Maximum Occupancy",
 	"parent":48,
 	"id": 52,
 	"displayNumber":"3.3.3",
-	"url": "subtopicAlt.php?id=52"
+	"url": "subtopic.php?id=52"
 	},
 	{
 	"title": "Summary",
 	"parent":48,
 	"id": 53,
 	"displayNumber":"3.4",
-	"url": "subtopicAlt.php?id=53"
+	"url": "subtopic.php?id=53"
 	},
 	{
 	"title": "Resources",
