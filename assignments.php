@@ -1,5 +1,5 @@
 <?php include_once 'scripts/mockupFunctions.php' ?>
-
+<?php //TODO: redo this page to use js ?>
 <?php 
 		
 	$showModuleProgress = 0;
