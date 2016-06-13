@@ -61,13 +61,13 @@ function writeHomeSkeleton(homeDiv){
 
 	//<main>, lhs and rhs
 	$(homeDiv)
-		.append($("<main>").attr("id", "odu_main").addClass("odu_landing")	//TODO: update name to odu_main and update all css
-			.append($("<div>").attr("id", "odu_landingLhs").addClass("odu_landingLhs"))
-			.append($("<div>").attr("id", "odu_landingRhs").addClass("odu_landingRhs"))
+		.append($("<main>").attr("id", "odu_main").addClass("odu_courseHome")	//TODO: update name to odu_main and update all css
+			.append($("<div>").attr("id", "odu_courseHomeLhs").addClass("odu_courseHomeLhs"))
+			.append($("<div>").attr("id", "odu_courseHomeRhs").addClass("odu_courseHomeRhs"))
 		);
 
 	//left side
-	$("#odu_landingLhs")
+	$("#odu_courseHomeLhs")
 		.append($("<section>").attr("id", "odu_smallCalendarSection"))
 		.append($("<section>").attr("id", "odu_upEventsSection"));
 	
@@ -85,7 +85,7 @@ function writeHomeSkeleton(homeDiv){
 	
 	
 	//right side
-	$("#odu_landingRhs")
+	$("#odu_courseHomeRhs")
 		.append($("<section>").attr("id", "odu_iconListSection"))
 		.append($("<section>").attr("id", "odu_moduleListSection"));
 	
@@ -119,6 +119,10 @@ function writeHomeSkeleton(homeDiv){
 		.append($("<h1>").addClass("odu_sectionH1 moduleList").html("Modules"))
 		.append($("<div>").attr("id", "odu_moduleListWrapper").addClass("wrapper")
 			.append($("<div>").attr("id","odu_moduleList")));
+			
+			
+	//clear fix
+	$(homeDiv).append("<div>").addClass("clearFix");
 }
 
 

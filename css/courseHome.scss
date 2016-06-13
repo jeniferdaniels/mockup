@@ -1,19 +1,7 @@
-//content layout
-//|---------------
-//|____top________|
-//|				  |
-//|	 landing      |
-//|				  |
-//|_______________|
-
-//odu_wrapper
-//	odu_landingContent
-//		odu_landingLhs
-//		odu_landingRhs
-//odu_footer
+//TODO: add here
 @import "configs";
 
-main.odu_landing {
+main.odu_courseHome {
 	width: $w_oduWrapper;
 	background: white;
 	//border: 1px solid $red;
@@ -58,7 +46,7 @@ main.odu_landing {
 			//&.syllabus,
 			//&.faculty,
 			//&.announcements{
-			//	width: $w_oduLandingRhs/3 - 21px;	//again, another odd size to account for borders
+			//	width: $w_oducourseHomeRhs/3 - 21px;	//again, another odd size to account for borders
 			//	display: inline-block;
 			//}
 			//&.syllabus,
@@ -145,23 +133,14 @@ main.odu_landing {
 	
 }
 
-
-#odu_landingMisc{
-	//border: 1px solid green;
-	vertical-align: bottom;
-	
-
-}
-
-
-.odu_landingLhs{
-	width: $w_oduLandingLhs;
+.odu_courseHomeLhs{
+	width: $w_oduCourseHomeLhs;
 	float:left;
-	margin-right: $w_oduLandingMarginBetween -5;
+	margin-right: $w_oduCourseHomeMarginBetween - 5;
 	//border: 1px solid green;
 }
-.odu_landingRhs{
-	width: $w_oduLandingRhs;
+.odu_courseHomeRhs{
+	width: $w_oduCourseHomeRhs;
 	float: right;
 	//border: 1px solid blue;
 }

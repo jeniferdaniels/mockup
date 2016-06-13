@@ -109,10 +109,10 @@
 		<div id="top" class="top"></div>
 
 			<div id="odu_wrapper" class="odu_wrapper">
-				<main class="odu_landing">
+				<main class="odu_courseHome">
 				
 					<!--left hand side-->
-					<div id="odu_landingLhs" class="odu_landingLhs">
+					<div id="odu_courseHomeLhs" class="odu_courseHomeLhs">
 						<section id="odu_smallCalendarSection">
 							<h1 class="odu_sectionH1 calendar">Calendar</h1>
 							<div id="odu_smallCalendarWrapper" class="wrapper">
@@ -129,7 +129,7 @@
 					<!--end left hand side-->
 					
 					<!--right hand side-->
-					<div id="odu_landingRhs" class="odu_landingRhs">
+					<div id="odu_courseHomeRhs" class="odu_courseHomeRhs">
 						
 							<section id="odu_iconListSection">
 								<ul>
