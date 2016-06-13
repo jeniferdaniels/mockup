@@ -26,45 +26,6 @@ function includeScripts()
 	
 }
 
-
-function writeTopHtml()
-{
-	$menuIcon = icon("g", "menu", "l", "");
-	$userIcon = icon("g", "user", "l", "topUpperButton");
-	$chatIcon = icon("g", "chat", "l", "topUpperButton");
-	$searchIcon = icon("g", "search", "l", "topUpperButton");
-	//$editIcon = icon ("fa", "edit", "l", "topUpperButton");
-
-	echo '<div class="topWrapper">';
-		echo'<header>';
-			echo'<nav id="nav">';
-				echo '<ul>';
-					echo '<li><a href="#" id="userLink">' . $userIcon .'</a>';
-						echo '<ul>';
-							echo '<li><a href="#" id="">All Course Notes</a></li>';
-							echo '<li><a href="#" id="">Course Progress</a></li>';
-							echo '<li><a href="#" id="preferencesLink">Preferences</a></li>';
-							echo '<li><a href="#" id="profileLink">Profile</a></li>';
-						echo '</ul>';
-					echo '</li>';	
-					echo '<li><a href="javascript:whatWouldThisDo(\'chat\')" id="chatLink">' .$chatIcon .'</a></li>';
-					echo '<li><a href="#" id="searchLink">'. $searchIcon . '</a></li>';
-					//echo '<li><a href="#" id="adminLink" style="color: rgba(255, 102, 0, 1)">'. $editIcon . '</a></li>';
-					echo '</ul>';
-			echo '</nav>';
-			echo '<div style="clear:both"></div>';
-			echo '<div class="oduOnlineLogo"></div>';
-			echo '<a href="' . WEB_ROOT . '"><h1 id="courseTitle">CAT 101: Introduction to Kittens</h1></a>';
-			echo '<h2 id="courseInstructor"><span>Fall 2015</span>Instructors - <a href="' . WEB_ROOT . '/faculty.php?midas=jdani001">Jen Daniels,</a> <a href="' . WEB_ROOT . '/faculty.php?midas=dmarceli">Dexter Marcelino</a>, <a href="' . WEB_ROOT . '/faculty.php?midas=grodrigu">Gabriel Rodriguez</a></h2>';
-		echo '</header>';
-		
-		
-		//echo '<div id="editTab">' . icon("g", "edit", "l", "") . " <span>Edit</span></div>";
-		
-	echo '</div><!--end topWrapper-->';
-}
-
-
 function writeModuleProgressBar(){
 	echo '<div class="moduleProgressWrapper">';
 	echo '<progress class="moduleProgressBar" value="30" max="100" title="30%" id="moduleProgressBar"></progress>';
