@@ -3,7 +3,7 @@
 //Input: 		 eventList - json file 
 //				 eventListContainerId - id for where to put this list		 
 //Output:		 none, fills an html dom element
-//Purpose:		 writes events in nice format for landing page, assumes landing page div is 
+//Purpose:		 writes events in nice format for home page, assumes home page div is 
 //Dependencies:	 needs utils.js function hasEmptyKeys()
 //*****************************************************************************************
 function writeUpEvents(eventList, eventListContainerId) {
