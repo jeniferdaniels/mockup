@@ -29,7 +29,7 @@ function writePageHeader(topDiv, courseData){
 			
 		
 			//now display it
-			$(topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("topWrapper")
+			$(topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
 				.append($("<header>")
 						.append($("<nav>").attr("id", "nav")
 							.append($("<ul>")
