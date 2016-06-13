@@ -55,12 +55,12 @@ function writePageHeader(topDiv, courseData){
 }
 
 
-function writeHomeSkeleton(homeDiv){
+function writeHomeSkeleton(baseDiv){
 
 	console.log("Loading home skeleton");
 
 	//<main>, lhs and rhs
-	$(homeDiv)
+	$(baseDiv)
 		.append($("<main>").attr("id", "odu_main").addClass("odu_courseHome")	//TODO: update name to odu_main and update all css
 			.append($("<div>").attr("id", "odu_courseHomeLhs").addClass("odu_courseHomeLhs"))
 			.append($("<div>").attr("id", "odu_courseHomeRhs").addClass("odu_courseHomeRhs"))
@@ -209,9 +209,79 @@ function loadHomeContent(course_id){
 
 
 
-function loadBasicContent(){
+function writeBasicContentSkeleton(baseDiv){
+	
+	//page title
+	$(baseDiv)
+		.append($("<h1>").attr("id", "odu_pageTitle").addClass("odu_pageTitle").html("Page Title"));
+	
+	//toolbox
+	$(baseDiv)
+		.append($("<nav>").attr("id","odu_toolbox").addClass("odu_toolbox")
+			.append($("<ul>").attr("id","odu_toolboxList").addClass("odu_toolboxList")
+				//home link
+				.append($("<li>").attr("id","odu_homeLi")
+					.append($("<a>").attr("id","odu_homeLink").attr("href", "#")
+						.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("fa fa-2x fa-ban"))
+						.append($("<span>").html("Home"))))
+				//syllabus link
+					.append($("<li>").attr("id","odu_syllabusLi")
+						.append($("<a>").attr("id","odu_syllabusLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Syllabus"))))
+				//modules link
+						.append($("<li>").attr("id","odu_modulesLi")
+							.append($("<a>").attr("id","odu_modulesLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_modulesLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Modules"))))
+				//calendar link
+						.append($("<li>").attr("id","odu_calendarLi")
+							.append($("<a>").attr("id","odu_calendarLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_calendarLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Calendar"))))
+				//ask A question link
+						.append($("<li>").attr("id","odu_aaqLi")
+							.append($("<a>").attr("id","odu_aaqLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_aqqLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Ask a Question"))))
+				//notes link
+						.append($("<li>").attr("id","odu_notesLi")
+							.append($("<a>").attr("id","odu_notesLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_notesLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Notes"))))
+				//print link
+						.append($("<li>").attr("id","odu_printLi")
+							.append($("<a>").attr("id","odu_printLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_printLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Print"))))
+				//edit link
+						.append($("<li>").attr("id","odu_editLi")
+							.append($("<a>").attr("id","odu_editLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_editLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Edit"))))
+				//admin tools link
+						.append($("<li>").attr("id","odu_adminToolsLi")
+							.append($("<a>").attr("id","odu_adminToolsLink").attr("href", "#")
+								.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("fa fa-2x fa-ban"))
+								.append($("<span>").html("Syllabus"))))
+			)//end ul
+		)//end nav
+
+	//content
+	$(baseDiv)
+		.append($("<section>").attr("id","odu_contentSection").addClass("odu_contentSection")
+		.append($("<div>").attr("odu_contentWrapper","odu_contentWrapper").addClass("odu_contentWrapper")
+		.append($("<div>").attr("id","odu_content").addClass("odu_content"))));
+		
+	//clear fix
+	$(baseDiv)
+		.append($("<div>").addClass("clearFix"));
+		
 
 }
+
+
+
 
 
 //TODO: TEST THIS
