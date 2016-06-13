@@ -9,7 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	
-	<link rel="stylesheet" type="text/css" href="css/basicContent.css">
 	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
