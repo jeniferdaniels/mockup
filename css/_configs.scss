@@ -100,20 +100,16 @@ $odu_iconUpEvents: "images/clock.svg";
 //--------------------------------------
 //SIZES
 //--------------------------------------
-$contentWidth: 1000px;
-$navWrapperWidth: 1000px;
-
 $indent: 25px;
 
 $w_oduContent: 1000px;
-//$w_oduStuff: $w_oduContent;
-$w_oduToolbox: 60px;
-$w_oduWrapper: $w_oduContent + $w_oduToolbox + 3px;
-$w_oduNavWrapper: 1000px;
+$w_oduToolbox: 50px;
+$w_oduWrapper: $w_oduContent + $w_oduToolbox + 10px;
+$w_oduNavWrapper: $w_oduContent;
 
 $w_oduCourseHomeLhs: 325px;
 $w_oduCourseHomeMarginBetween: 25px;
-$w_oduCourseHomeHeaderFlyoutIcon: 20px;
+//$w_oduCourseHomeHeaderFlyoutIcon: 20px;
 
 $w_oduCourseHomeRhs: $w_oduWrapper - $w_oduCourseHomeLhs - $w_oduCourseHomeMarginBetween;
 
@@ -123,4 +119,4 @@ $h_oduProgressBar: 10px;	//not used?
 $w_navButtonWrapper: 50px;
 $w_upEventsDate: 55px;
 $w_upEventsTitle: $w_oduCourseHomeLhs - $w_upEventsDate - 60px;
-$w_oduCourseHomeButton: $w_oduCourseHomeRhs/3 - 10px;
+//$w_oduCourseHomeButton: $w_oduCourseHomeRhs/3 - 10px;
