@@ -3,6 +3,13 @@
 <!doctype html>
 <html>
 	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>XXXXX:XXXXX</title>
+	
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/pleStyle.css">	
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
@@ -33,11 +40,31 @@
 	<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
 	<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
 	<script type="text/javascript" src="scripts/js/odu_basicContent.js"></script>
-		
+
+
+	<script type="text/javascript" src="scripts/js/onLoad.js"></script>
+	<script>
+		$(document).ready(function(){		
+			//string is formatted /courses/201502/cat101/
+			tempCoursePath = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
+			tempCourseNumber = tempCoursePath[tempCoursePath.length-2];	//-2 because its the second to last item in the array due to the / at the end
+			dummy = getCourseAttributes(tempCourseNumber);
+
+			$(document.body).promise().done(function(){	//idfk this works
+				writePageHeader("#odu_top", dummy);
+
+			})
+			.then(function(){  
+
+			});
+		});
+	</script>
+	
 	</head>
 	
 	<body>
-		<div id="popWindow" class="displayNone">Glossary</div>
+		<div id="errorMsg" class="errorMsg"></div>
+		<!--add later <div id="popWindow" class="displayNone">Glossary</div>-->
 	
 		<div class="navWrapper">
 			<div id="navPrevious" class="navPrevious"><a id="prev" href="#"><i class="fa fa-fw fa-angle-left fa-5x "></i></a></div>
@@ -45,11 +72,17 @@
 		</div>
 	
 	
-		<div class="top" id="top">header</div>
+		<div class="odu_top" id="odu_top"></div>
 		
 
 		<div class="odu_wrapper" id="odu_wrapper">
-			<div class="odu_titleAlt"><h1 id="pageTitle">Page Title</h1></div>
+			<h1 id="pageTitle">Page Title</h1>
+			
+			
+			
+			
+			
+			
 			<div class="odu_breadCrumbWrapperAlt">
 				<nav>
 					<ul class="odu_breadCrumbs" id="odu_breadCrumbs">
