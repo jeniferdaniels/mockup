@@ -54,10 +54,12 @@
 
 			$(document.body).promise().done(function(){	//idfk this works
 				writePageHeader("#odu_top", dummy);
-				writeHomeSkeleton("#odu_wrapper");
+				//writeHomeSkeleton("#odu_wrapper");
+				writeBasicContentSkeleton("#odu_wrapper");
 			})
 			.then(function(){  
-				loadHomeContent(tempCourseNumber);
+				//loadHomeContent(tempCourseNumber);
+				//
 			});
 		});
 	</script>
@@ -66,7 +68,7 @@
 	<body>
 		<div id="errorMsg" class="errorMsg"></div>
 		<div id="odu_top" class="odu_top"></div>
-		<div id="odu_wrapper" class="odu_wrapper">here</div>	
+		<div id="odu_wrapper" class="odu_wrapper"></div>	
 		<footer class="odu_footer"></footer>
 	</body>
 </html>	
