@@ -2,8 +2,15 @@
 
 
 function writePageHeader(topDiv, courseData){
+	
 	hasProblem = true;
-	console.log("inside write page header");
+	console.log("Inside write page header");
+	console.log(courseData);
+
+	for(key in courseData){
+		console.log("key " + key  + "value" + courseData[key]);
+	}
+			
 	//check to see that object is not empty, if it is then display minimal header
 	if (!((topDiv == "")	|| (typeof topDiv === undefined) || (topDiv == null)))
 	{
@@ -12,6 +19,7 @@ function writePageHeader(topDiv, courseData){
 		}
 		else 
 		{
+		
 			//make sure the things that are needed are here, otherwise fill it in with blanks, so the show can go on
 			var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties", "potatoe"];
 			//var expectedFacKeys = ["preferred_name", "email"];
@@ -19,9 +27,13 @@ function writePageHeader(topDiv, courseData){
 			
 			//load only the keys we need and load it with "unknown" if the key dne
 			//TODO: does it matter that there are extra keys?, fix later
-			for (var i=0; i< expectedKeys.length; i++)
+			for (var i=0; i< expectedKeys.length; i++){
 				groomedCourseData[expectedKeys[i]] = (courseData.hasOwnProperty(expectedKeys[i]))? courseData[expectedKeys[i]] : "unknown";
-
+				console.log(courseData[expectedKeys[i]]);
+			}
+			
+			//TODO: deal with faculty display
+			
 			//have to cut the title short for the longer courses. 
 			//TODO:There has to be a limit in banner. What is it?
 			//50 fits in the header at 2.2rem
@@ -215,63 +227,14 @@ function writeBasicContentSkeleton(baseDiv){
 	$(baseDiv)
 		.append($("<h1>").attr("id", "odu_pageTitle").addClass("odu_pageTitle").html("Page Title"));
 	
-	//toolbox
-	$(baseDiv)
-		.append($("<nav>").attr("id","odu_toolbox").addClass("odu_toolbox")
-			.append($("<ul>").attr("id","odu_toolboxList").addClass("odu_toolboxList")
-				//home link
-				.append($("<li>").attr("id","odu_homeLi")
-					.append($("<a>").attr("id","odu_homeLink").attr("href", "#")
-						.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("fa fa-2x fa-ban"))
-						.append($("<span>").html("Home"))))
-				//syllabus link
-					.append($("<li>").attr("id","odu_syllabusLi")
-						.append($("<a>").attr("id","odu_syllabusLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("fa fa-2x fa-ban"))
-							.append($("<span>").html("Syllabus"))))
-				//modules link
-						.append($("<li>").attr("id","odu_modulesLi")
-							.append($("<a>").attr("id","odu_modulesLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_modulesLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Modules"))))
-				//calendar link
-						.append($("<li>").attr("id","odu_calendarLi")
-							.append($("<a>").attr("id","odu_calendarLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_calendarLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Calendar"))))
-				//ask A question link
-						.append($("<li>").attr("id","odu_aaqLi")
-							.append($("<a>").attr("id","odu_aaqLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_aqqLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Ask a Question"))))
-				//notes link
-						.append($("<li>").attr("id","odu_notesLi")
-							.append($("<a>").attr("id","odu_notesLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_notesLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Notes"))))
-				//print link
-						.append($("<li>").attr("id","odu_printLi")
-							.append($("<a>").attr("id","odu_printLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_printLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Print"))))
-				//edit link
-						.append($("<li>").attr("id","odu_editLi")
-							.append($("<a>").attr("id","odu_editLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_editLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Edit"))))
-				//admin tools link
-						.append($("<li>").attr("id","odu_adminToolsLi")
-							.append($("<a>").attr("id","odu_adminToolsLink").attr("href", "#")
-								.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("fa fa-2x fa-ban"))
-								.append($("<span>").html("Syllabus"))))
-			)//end ul
-		)//end nav
+	
 
 	//content
-	$(baseDiv)
-		.append($("<section>").attr("id","odu_contentSection").addClass("odu_contentSection")
-		.append($("<div>").attr("odu_contentWrapper","odu_contentWrapper").addClass("odu_contentWrapper")
-		.append($("<div>").attr("id","odu_content").addClass("odu_content"))));
+	//boo. have to load this on the template.html page
+	//$(baseDiv)
+	//	.append($("<section>").attr("id","odu_contentSection").addClass("odu_contentSection")
+	//	.append($("<div>").attr("odu_contentWrapper","odu_contentWrapper").addClass("odu_contentWrapper")
+	//	.append($("<div>").attr("id","odu_content").addClass("odu_content"))));
 		
 	//clear fix
 	$(baseDiv)
@@ -281,22 +244,73 @@ function writeBasicContentSkeleton(baseDiv){
 }
 
 
-
+function writeToolbox(toolboxDiv, baseUrl){
+	//toolbox
+	$(toolboxDiv)
+		.append($("<ul>").attr("id","odu_toolboxList").addClass("odu_toolboxList")
+			//home link
+			.append($("<li>").attr("id","odu_homeLi")
+				.append($("<a>").attr("id","odu_homeLink").attr("href", baseUrl+"welcome")
+					.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("fa fa-2x fa-ban"))
+					.append($("<span>").html("Home"))))
+			//syllabus link
+				.append($("<li>").attr("id","odu_syllabusLi")
+					.append($("<a>").attr("id","odu_syllabusLink").attr("href", baseUrl+"syllabus/")
+						.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("fa fa-2x fa-ban"))
+						.append($("<span>").html("Syllabus"))))
+			//modules link
+					.append($("<li>").attr("id","odu_modulesLi")
+						.append($("<a>").attr("id","odu_modulesLink").attr("href", baseUrl+"module_listing")
+							.append($("<i>").attr("id", "odu_modulesLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Modules"))))
+			//calendar link
+					.append($("<li>").attr("id","odu_calendarLi")
+						.append($("<a>").attr("id","odu_calendarLink").attr("href", baseUrl+"calendar")
+							.append($("<i>").attr("id", "odu_calendarLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Calendar"))))
+			//ask A question link
+					.append($("<li>").attr("id","odu_aaqLi")
+						.append($("<a>").attr("id","odu_aaqLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_aqqLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Ask a Question"))))
+			//notes link
+					.append($("<li>").attr("id","odu_notesLi")
+						.append($("<a>").attr("id","odu_notesLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_notesLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Notes"))))
+			//print link
+					.append($("<li>").attr("id","odu_printLi")
+						.append($("<a>").attr("id","odu_printLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_printLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Print"))))
+			//edit link
+					.append($("<li>").attr("id","odu_editLi")
+						.append($("<a>").attr("id","odu_editLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_editLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Edit"))))
+			//admin tools link
+					.append($("<li>").attr("id","odu_adminToolsLi")
+						.append($("<a>").attr("id","odu_adminToolsLink").attr("href", "#")
+							.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("fa fa-2x fa-ban"))
+							.append($("<span>").html("Admin Tools"))))
+		);//end ul
+}
 
 
 //TODO: TEST THIS
 //course_id is our db id because CRN and semester code cannot positively identify a single instance of a course
-function getCourseAttributes(course_id){
-	return $.ajax({
-		url: "http://ple1.odu.edu:4243/api/course/201530/" + course_id,
+function getCourseAttributes(courseId){
+	console.log("---course attr-----");
+	console.log("Getting course attributes for " + courseId);
+	$.ajax({
+		url: "http://ple1.odu.edu:4243/api/course/" + "201330/bnal206",
 		type: 'GET',
 		dataType: 'json',
-		//success: function(data) { console.log("hi"); }
+		success: function(data) { writePageHeader("#odu_top", data);},
 		//error: function() { console.log("There was an error getting course attributes"); },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true,
 		
 	});
 }
-
 
