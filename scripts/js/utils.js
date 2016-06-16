@@ -94,3 +94,14 @@ function isUndefined(obj){
 	return ((obj == "") || (obj === null) || (typeof obj === "undefined"));
 }
 
+
+function benchMark(place, functionName, params){
+	d = new Date; 
+	console.log("-----" + place + " of " + functionName + "-----");
+	console.log("|" + d.getTime());
+	console.log("| Has vars/params:")
+	console.log("| " + dump(params));
+	console.log("---------------------------------");
+}
+
+
