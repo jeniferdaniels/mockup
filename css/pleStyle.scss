@@ -40,7 +40,7 @@ html{
 //********************************************************************************************
 body{
 	font-family: $font-stack;
-	color:	$font-color;
+	color: $almostBlack;
 	//border: 1px solid red;
 	line-height: 150%;
 	margin: 0;
@@ -49,6 +49,8 @@ body{
 	background: white;
 	height: 100%;
 	margin-top: 80px;
+	//font-smooth: auto | never | always | <absolute-size> | length | initial | inherit
+	//-webkit-font-smoothing : none | subpixel-antialiased | antialiased;
 }
 
 //header
@@ -659,4 +661,11 @@ a{
 .higherBreadcrumbs{
 	width: $w_oduWrapper;
 	margin: 0 auto;
+}
+
+.pleBlockIcon{
+	font-size: 2.4rem;
+	padding: 5px;
+	color: $white;
+
 }
