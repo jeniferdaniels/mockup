@@ -1,11 +1,9 @@
 //functions that are run onLoad
 
-
 function writePageHeader(topDiv, courseData){
-	
+	if (DEBUG) benchMark("start", "writePageHeader", {"topDiv": topDiv, "courseData":courseData});   
+
 	hasProblem = true;
-	console.log("Inside write page header");
-	console.log(courseData);
 
 	for(key in courseData){
 		console.log("key " + key  + "value" + courseData[key]);
@@ -15,7 +13,7 @@ function writePageHeader(topDiv, courseData){
 	if (!((topDiv == "")	|| (typeof topDiv === undefined) || (topDiv == null)))
 	{
 		if ((courseData == "")	|| (typeof courseData === undefined) || (courseData == null)) {
-			$(topDiv).prepend($("<div>").html("Missing data for header.")); 
+			$("#errorMsg").addClass("displayBlock").append($("<span>").html("Missing course data for header.")); 
 		}
 		else 
 		{
@@ -63,13 +61,16 @@ function writePageHeader(topDiv, courseData){
 		hasProblem = false;
 	} 
 	else { $("#errorMsg").html("Cannot load header, top div missing."); }
+	
+	if (DEBUG) benchMark("end", "writePageHeader", {"topDiv": topDiv, "courseData":courseData}); 
+	
 	return hasProblem;
 }
 
 
 function writeHomeSkeleton(baseDiv){
-
-	console.log("Loading home skeleton");
+	if (DEBUG) benchMark("start", "writeHomeSkeleton", {"baseDiv": baseDiv});  
+	
 
 	//<main>, lhs and rhs
 	$(baseDiv)
@@ -88,8 +89,7 @@ function writeHomeSkeleton(baseDiv){
 		.append($("<h1>").addClass("odu_sectionH1 calendar").html("Calendar"))
 		.append($("<div>").attr("id", "odu_smallCalendarWrapper").addClass("wrapper")
 			.append($("<div>").attr("id", "odu_smallCalendar")));
-	
-	
+		
 	//upcoming events skeleton
 	$("#odu_upEventsSection")
 		.append($("<h1>").addClass("odu_sectionH1 upEvents").html("Upcoming Events"))
@@ -134,7 +134,9 @@ function writeHomeSkeleton(baseDiv){
 			
 			
 	//clear fix
-	$(homeDiv).append("<div>").addClass("clearFix");
+	$(baseDiv).append("<div>").addClass("clearFix");
+	
+	if (DEBUG) benchMark("end", "writeHomeSkeleton", {"baseDiv": baseDiv}); 
 }
 
 
@@ -142,13 +144,18 @@ function writeHomeSkeleton(baseDiv){
 //loads the home page with the calendar, module, upcoming events, icons etc.
 //not the header, and not the course content
 //uses unique course id
-function loadHomeContent(course_id){	
+function loadHomeContent(course_id){
+	if (DEBUG) benchMark("start", "loadHomeContent", {"course_id": course_id}); 
+	
 	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
 	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/201530/" + course_id; 
 	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/" + course_id;
 	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/" + course_id; 
 
-	console.log("moduleListUrl url" + moduleListUrl);
+	if (DEBUG) console.log("announcementsUrl" + announcementsUrl);
+	if (DEBUG) console.log("moduleListUrl" + moduleListUrl);
+	if (DEBUG) console.log("smallCalendarUrl" + smallCalendarUrl);
+	if (DEBUG) console.log("upEventsUrl" + upEventsUrl);
 	
 	//announcements
 	/*$.ajax({
@@ -216,13 +223,16 @@ function loadHomeContent(course_id){
 		//add to preference
 	});
 	
+	
+	if (DEBUG) benchMark("end", "loadHomeContent", {"course_id": course_id}); 
 }
 
 
 
 
 function writeBasicContentSkeleton(baseDiv){
-	
+	if (DEBUG) benchMark("start", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
+
 	//page title
 	$(baseDiv)
 		.append($("<h1>").attr("id", "odu_pageTitle").addClass("odu_pageTitle").html("Page Title"));
@@ -240,11 +250,13 @@ function writeBasicContentSkeleton(baseDiv){
 	$(baseDiv)
 		.append($("<div>").addClass("clearFix"));
 		
-
+	if (DEBUG) benchMark("end", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
 }
 
 
 function writeToolbox(toolboxDiv, baseUrl){
+	if (DEBUG) benchMark("start", "writeToolbox", {"toolboxDiv": toolboxDiv, "baseUrl":baseUrl }); 
+	
 	//toolbox
 	$(toolboxDiv)
 		.append($("<ul>").attr("id","odu_toolboxList").addClass("odu_toolboxList")
@@ -294,14 +306,15 @@ function writeToolbox(toolboxDiv, baseUrl){
 							.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("fa fa-2x fa-ban"))
 							.append($("<span>").html("Admin Tools"))))
 		);//end ul
+	if (DEBUG) benchMark("end", "writeToolbox", {"toolboxDiv": toolboxDiv, "baseUrl":baseUrl }); 
 }
 
 
 //TODO: TEST THIS
 //course_id is our db id because CRN and semester code cannot positively identify a single instance of a course
 function getCourseAttributes(courseId){
-	console.log("---course attr-----");
-	console.log("Getting course attributes for " + courseId);
+	if (DEBUG) benchMark("start", "getCourseAttributes", {"courseId": courseId}); 
+	
 	$.ajax({
 		url: "http://ple1.odu.edu:4243/api/course/" + "201330/bnal206",
 		type: 'GET',
@@ -312,5 +325,6 @@ function getCourseAttributes(courseId){
 		crossDomain: true,
 		
 	});
+	if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
 }
 
