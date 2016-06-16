@@ -12,7 +12,8 @@
 		<link rel="stylesheet" href="css/upEvents/odu_upEvents.css" />
 		<link rel="stylesheet" href="css/moduleList/moduleListStyle.css" />
 		<link rel="stylesheet" href="css/pnotify.custom.css" />
-
+		<link href="https://file.myfontastic.com/mANwL9MeuPjGTDYjGjCNGA/icons.css" rel="stylesheet">
+	
 		
 		
 		<?php includeScripts() ?>
