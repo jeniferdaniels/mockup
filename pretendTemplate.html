@@ -11,20 +11,22 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/pleStyle.css">	
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="fonts/ple-awesome/styles.css">-->
+	<link href="https://file.myfontastic.com/mANwL9MeuPjGTDYjGjCNGA/icons.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" >
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
 	
 	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
 	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
 	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
-	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
 	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
 	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
 	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
 	<link rel="stylesheet" type="text/css" href="css/pnotify.custom.css" />
 	
+	<script>DEBUG = true;</script>
 	<script type="text/javascript" src="scripts/js/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="scripts/js/jquery-ui.min.js"></script>
 	<!--<script type="text/javascript" src="<!-- string::webdir_assets --><!--js/_odu/courseFunctions.js"></script>	-->	
@@ -37,7 +39,7 @@
 	<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
 	<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
 	<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
-	<script type="text/javascript" src="scripts/js/odu_basicContent.js"></script>
+	
 	
 	
 	<!--NEED CRN -->
@@ -50,15 +52,19 @@
 			//string is formatted /courses/201502/cat101/
 			tempCoursePath = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
 			tempCourseNumber = tempCoursePath[tempCoursePath.length-2];	//-2 because its the second to last item in the array due to the / at the end
+			
+			//due to the inability to return dummy to the promise (idk?) 
+			//write page header is called inside getCourseAttributes.
+			//I do not like this. I want getCourseAttributes to return dummy.
 			dummy = getCourseAttributes(tempCourseNumber);
 
-			$(document.body).promise().done(function(){	//idfk this works
-				writePageHeader("#odu_top", dummy);
-				//writeHomeSkeleton("#odu_wrapper");
-				writeBasicContentSkeleton("#odu_wrapper");
+			$(document.body).promise().done(function(){	
+				//writePageHeader("#odu_top", dummy); //see note above
+				writeHomeSkeleton("#odu_wrapper");
+				//writeBasicContentSkeleton("#odu_wrapper");
 			})
 			.then(function(){  
-				//loadHomeContent(tempCourseNumber);
+				loadHomeContent(tempCourseNumber);
 				//
 			});
 		});
@@ -68,7 +74,9 @@
 	<body>
 		<div id="errorMsg" class="errorMsg"></div>
 		<div id="odu_top" class="odu_top"></div>
-		<div id="odu_wrapper" class="odu_wrapper"></div>	
+		<div id="odu_wrapper" class="odu_wrapper"></div>
+		<div class="ple-printer">asdkjf</div>
+		
 		<footer class="odu_footer"></footer>
 	</body>
 </html>	
