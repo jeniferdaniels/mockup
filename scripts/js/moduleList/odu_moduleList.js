@@ -1,7 +1,7 @@
 function writeModuleList(pageList, moduleListId, moduleListContainerId){
 	
 	
-	
+	//TODO: rewrite in jquery
 	var htmlString = "<ul id='" + moduleListId + "'>";
 	var currentParent = 0;
 	var oldDepth = -1;
@@ -41,9 +41,11 @@ function writeModuleList(pageList, moduleListId, moduleListContainerId){
 	htmlString += "</ul>"; //close out id=moduleList
 	
 	$("#" + moduleListContainerId).html(htmlString);
-	$("#" + moduleListContainerId).prepend($("<a>").attr("id", "expandList").html("expand all"));
-	$("#" + moduleListContainerId).prepend($("<a>").attr("id", "collapseList").html("collapse all"));
-	
+	$("#" + moduleListContainerId).prepend($("<ul>").attr("id", "odu_listControl").addClass("odu_listControl")
+		.append($("<li>").attr("id", "expandList")
+			.append($("<a>").html("Expand All")))
+		.append($("<li>").attr("id","collapseList")
+			.append($("<a>").html("Collapse All"))));
 }
 
 /*function writeAnotherModuleList(pageList, moduleListId, moduleListContainerId){
