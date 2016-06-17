@@ -34,8 +34,8 @@ function writePageHeader(topDiv, courseData){
 			
 			//have to cut the title short for the longer courses. 
 			//TODO:There has to be a limit in banner. What is it?
-			//50 fits in the header at 2.2rem
-			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(1, 50);
+			//55 fits in the header at 2.2rem
+			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(1, 55);
 			
 		
 			//now display it
