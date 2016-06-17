@@ -268,7 +268,7 @@ function writeToolbox(toolboxDiv, baseUrl){
 			//syllabus link
 				.append($("<li>").attr("id","odu_syllabusLi")
 					.append($("<a>").attr("id","odu_syllabusLink").attr("href", baseUrl+"syllabus/")
-						.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("ple-pages-lines"))
+						.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("ple-page-lines"))
 						.append($("<span>").html("Syllabus"))))
 			//modules link
 					.append($("<li>").attr("id","odu_modulesLi")
