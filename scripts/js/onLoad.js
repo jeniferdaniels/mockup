@@ -263,7 +263,7 @@ function writeToolbox(toolboxDiv, baseUrl){
 			//home link
 			.append($("<li>").attr("id","odu_homeLi")
 				.append($("<a>").attr("id","odu_homeLink").attr("href", baseUrl+"welcome")
-					.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("ple-home"))
+					.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("ple-house"))
 					.append($("<span>").html("Home"))))
 			//syllabus link
 				.append($("<li>").attr("id","odu_syllabusLi")
