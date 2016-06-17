@@ -74,7 +74,10 @@ function hasEmptyKeys(obj, keys){
 }
 
 //http://jquery-howto.blogspot.com/2009/09/get-url-parameters-values-with-jquery.html
-//var first = getUrlVars()["me"];
+//returns array
+//to access data getUrlVars()["key"]
+//so for http://something?first=John&last=Doe
+//using getUrlVara()["first"] would return John
 function getUrlVars()
 {
     var vars = [], hash;
