@@ -55,19 +55,17 @@
   #moduleList .expanded::before {
     content: "\f0d7"; }
 
-.listControl {
-  margin-bottom: 15px; }
+.odu_listControl {
+  text-align: right;
+  cursor: pointer; }
+  .odu_listControl li {
+    list-style-type: none;
+    display: inline;
+    color: #4488f6;
+    margin-left: 10px; }
+    .odu_listControl li:hover {
+      color: #002f4e; }
+    .odu_listControl li:last-child {
+      padding-right: 5px; }
 
-.listControl a {
-  border: 1px solid #555555;
-  color: #555555;
-  cursor: pointer;
-  height: 1.5em;
-  line-height: 1.5em;
-  margin-right: 5px;
-  padding: 4px 10px; }
-
-.listControl a:hover {
-  background-color: #555555;
-  color: #222222;
-  font-weight: normal; }
+/*# sourceMappingURL=moduleListStyle.css.map */
