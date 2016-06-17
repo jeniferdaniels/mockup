@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ple-awesome";
+  src:url("fonts/ple-awesome.eot");
+  src:url("fonts/ple-awesome.eot?#iefix") format("embedded-opentype"),
+    url("fonts/ple-awesome.woff") format("woff"),
+    url("fonts/ple-awesome.ttf") format("truetype"),
+    url("fonts/ple-awesome.svg#ple-awesome") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "ple-awesome" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="ple-"]:before,
+[class*=" ple-"]:before {
+  font-family: "ple-awesome" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ple-paper-edit:before {
+  content: "\61";
+}
+.ple-alarm-clock:before {
+  content: "\62";
+}
+.ple-arrow-circle-left:before {
+  content: "\63";
+}
+.ple-arrow-circle-right:before {
+  content: "\64";
+}
+.ple-arrow-left:before {
+  content: "\65";
+}
+.ple-arrow-left-box:before {
+  content: "\66";
+}
+.ple-arrow-left-open:before {
+  content: "\67";
+}
+.ple-arrow-right:before {
+  content: "\68";
+}
+.ple-arrow-right-box:before {
+  content: "\69";
+}
+.ple-arrow-right-open:before {
+  content: "\6a";
+}
+.ple-book:before {
+  content: "\6b";
+}
+.ple-book-person:before {
+  content: "\6c";
+}
+.ple-book-spines:before {
+  content: "\6d";
+}
+.ple-case:before {
+  content: "\6e";
+}
+.ple-bubble-question:before {
+  content: "\6f";
+}
+.ple-bullhorn:before {
+  content: "\70";
+}
+.ple-calendar:before {
+  content: "\71";
+}
+.ple-check:before {
+  content: "\72";
+}
+.ple-checklist:before {
+  content: "\73";
+}
+.ple-check-open:before {
+  content: "\74";
+}
+.ple-check-out-of-circle:before {
+  content: "\75";
+}
+.ple-cheer-cone:before {
+  content: "\76";
+}
+.ple-chevron-left:before {
+  content: "\77";
+}
+.ple-chevron-right:before {
+  content: "\78";
+}
+.ple-clipboard-check:before {
+  content: "\79";
+}
+.ple-clipboard-lines:before {
+  content: "\41";
+}
+.ple-clipboard-list:before {
+  content: "\42";
+}
+.ple-clipboard-minus:before {
+  content: "\43";
+}
+.ple-clipboard-pencil:before {
+  content: "\44";
+}
+.ple-clipboard-plain:before {
+  content: "\45";
+}
+.ple-clipboard-plus:before {
+  content: "\46";
+}
+.ple-clipboard-rounded:before {
+  content: "\47";
+}
+.ple-clipboard-slash:before {
+  content: "\48";
+}
+.ple-clock:before {
+  content: "\49";
+}
+.ple-facebook:before {
+  content: "\4a";
+}
+.ple-folder:before {
+  content: "\4b";
+}
+.ple-folder-check:before {
+  content: "\4c";
+}
+.ple-gague:before {
+  content: "\4d";
+}
+.ple-gear:before {
+  content: "\4e";
+}
+.ple-graduation-cap:before {
+  content: "\4f";
+}
+.ple-hotdog:before {
+  content: "\50";
+}
+.ple-house:before {
+  content: "\51";
+}
+.ple-magnifying-glass:before {
+  content: "\52";
+}
+.ple-note:before {
+  content: "\53";
+}
+.ple-notepad-lines:before {
+  content: "\54";
+}
+.ple-notepad-plain:before {
+  content: "\55";
+}
+.ple-page:before {
+  content: "\56";
+}
+.ple-page-lines:before {
+  content: "\57";
+}
+.ple-paper-with-s:before {
+  content: "\58";
+}
+.ple-pencil:before {
+  content: "\59";
+}
+.ple-person:before {
+  content: "\5a";
+}
+.ple-person-ask:before {
+  content: "\30";
+}
+.ple-person-hair:before {
+  content: "\31";
+}
+.ple-person-talk:before {
+  content: "\32";
+}
+.ple-printer:before {
+  content: "\33";
+}
+.ple-tabbed-book:before {
+  content: "\34";
+}
+.ple-twitter:before {
+  content: "\35";
+}
+.ple-wrist-watch:before {
+  content: "\36";
+}
+.ple-you-tube:before {
+  content: "\37";
+}
+.ple-teapot:before {
+  content: "\38";
+}
+.ple-picture:before {
+  content: "\39";
+}
+.ple-music:before {
+  content: "\21";
+}
+.ple-link:before {
+  content: "\7a";
+}
+.ple-trash:before {
+  content: "\23";
+}
+.ple-video-camera:before {
+  content: "\24";
+}
+.ple-book-download:before {
+  content: "\25";
+}
