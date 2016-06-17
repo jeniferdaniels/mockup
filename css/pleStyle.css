@@ -4,13 +4,39 @@ html {
 
 body {
   font-family: "Open Sans", Georgia;
-  color: #505050;
+  color: #050505;
   line-height: 150%;
   margin: 0;
   padding: 0;
   background: white;
   height: 100%;
-  margin-top: 90px; }
+  margin-top: 80px; }
+
+nav {
+  width: 100%;
+  display: block; }
+  nav ul {
+    padding-right: 5px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    text-align: right; }
+    nav ul:After {
+      content: "";
+      display: block;
+      clear: both; }
+  nav li {
+    display: list-item;
+    list-style: none;
+    float: right;
+    color: #003767; }
+    nav li a {
+      display: block;
+      color: #003767;
+      text-decoration: none;
+      text-align: center; }
+      nav li a:hover {
+        background-color: rgba(68, 136, 246, 0.25); }
 
 p {
   margin-bottom: 10px; }
@@ -66,118 +92,6 @@ a {
 	margin-top: 10px;
 }
 */
-.odu_breadCrumbs {
-  list-style: none;
-  padding-left: 10px; }
-  .odu_breadCrumbs a {
-    text-decoration: underline; }
-  .odu_breadCrumbs > li + li::before {
-    content: " > "; }
-  .odu_breadCrumbs > li {
-    display: inline-block;
-    margin-left: 0px; }
-
-.contentWrapper {
-  width: 1000px;
-  margin: 0 auto;
-  background-color: white;
-  margin-top: 110px;
-  padding: 10px;
-  border: 1px solid #c8c8c8; }
-
-#nav {
-  width: 100%;
-  display: block; }
-  #nav ul {
-    padding-right: 5px;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    text-align: right; }
-    #nav ul:After {
-      content: "";
-      display: block;
-      clear: both; }
-    #nav ul li {
-      display: list-item;
-      list-style: none;
-      float: right;
-      color: #003767; }
-      #nav ul li a {
-        display: block;
-        color: #003767;
-        text-decoration: none;
-        text-align: center; }
-        #nav ul li a:hover {
-          background-color: rgba(68, 136, 246, 0.25); }
-      #nav ul li:hover > ul {
-        display: list-item; }
-    #nav ul ul {
-      display: none;
-      position: absolute;
-      top: 30px;
-      padding: 5px 5px 5px 0;
-      background: white;
-      border: 1px solid #fafafa; }
-      #nav ul ul li {
-        width: 110px;
-        float: none;
-        position: relative;
-        border-bottom: none;
-        padding-left: 0; }
-        #nav ul ul li a {
-          padding-left: -1px;
-          text-align: left;
-          font-size: .9rem; }
-
-.oduOnlineLogo {
-  background-image: url("images/oduOnlineLogo.svg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 140px 45px;
-  padding: 3px;
-  height: 45px;
-  width: 140px;
-  display: inline-block;
-  float: left;
-  margin: -10px 30px 0 0; }
-
-.odu_top {
-  position: fixed;
-  width: 100%;
-  background-color: white;
-  top: 0;
-  left: 0;
-  height: 75px;
-  vertical-align: top;
-  z-index: 900;
-  border-bottom: 5px solid #003767; }
-  .odu_top h1 {
-    display: inline-block;
-    margin-top: -10px; }
-  .odu_top a {
-    color: #505050; }
-    .odu_top a:hover {
-      color: #4488f6;
-      text-decoration: underline; }
-  .odu_top h2 {
-    margin-left: 50px;
-    padding: 0;
-    display: block;
-    font-size: 1rem;
-    color: #505050; }
-    .odu_top h2 span {
-      margin-right: 50px; }
-    .odu_top h2 a {
-      text-decoration: underline; }
-      .odu_top h2 a:hover {
-        color: #4488f6;
-        text-decoration: underline; }
-  .odu_topWrapper {
-    width: 1063px;
-    padding: 0;
-    margin: 0 auto 0 auto; }
-
 .clearFix {
   float: none;
   clear: both; }
@@ -228,8 +142,80 @@ a {
 .errorMsg {
   color: #e74c3c; }
 
+.odu_pageTitle {
+  padding: 25px 10px 25px 0;
+  border-bottom: 2px solid #7d7d7d;
+  margin: 0; }
+
+.odu_breadCrumbWrapper {
+  width: inherit;
+  display: block;
+  z-index: 899; }
+
+.odu_breadCrumbs {
+  list-style: none;
+  width: auto; }
+  .odu_breadCrumbs a {
+    text-decoration: none; }
+  .odu_breadCrumbs > li + li::before {
+    content: " > "; }
+  .odu_breadCrumbs > li {
+    display: inline-block;
+    margin-left: 0px; }
+
+.oduOnlineLogo {
+  background-image: url("images/oduOnlineLogo.svg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 140px 45px;
+  padding: 3px;
+  height: 45px;
+  width: 140px;
+  display: inline-block;
+  float: left;
+  margin: -10px 30px 0 0; }
+
+.odu_top {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 75px;
+  vertical-align: top;
+  z-index: 900;
+  border-bottom: 5px solid #003767; }
+  .odu_top h1 {
+    display: inline-block;
+    margin-top: -10px; }
+  .odu_top a {
+    color: #505050; }
+    .odu_top a:hover {
+      color: #4488f6;
+      text-decoration: underline; }
+  .odu_top h2 {
+    margin-left: 50px;
+    padding: 0;
+    display: block;
+    font-size: 1rem;
+    color: #505050; }
+    .odu_top h2 span {
+      margin-right: 50px; }
+    .odu_top h2 a {
+      text-decoration: underline; }
+      .odu_top h2 a:hover {
+        color: #4488f6;
+        text-decoration: underline; }
+  .odu_topWrapper {
+    width: 1060px;
+    padding: 0;
+    margin: 0 auto 0 auto; }
+
 .odu_progressNavBar {
-  margin: 0 0 10px 20px;
+  width: auto;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  margin: 0;
   width: 100%;
   height: 5px;
   display: table;
@@ -261,125 +247,69 @@ a {
   width: 800px; }
 
 .odu_wrapper {
-  width: 1063px;
-  margin: 0 auto;
-  border: 1px solid red; }
+  width: 1060px;
+  margin: 0 auto; }
 
-#odu_toolbox {
+.odu_toolbox {
   background: none;
-  width: 75px;
-  margin-right: 30px;
-  padding-right: 30px;
+  width: 50px;
   padding-top: 0;
-  text-align: center;
-  line-height: 80%;
+  margin: 0;
   float: left; }
 
-#odu_toolbox#odu_tools {
-  text-align: left;
+.odu_toolboxList {
+  text-align: center;
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  width: 70%; }
-
-ul#odu_toolsAlt li {
-  display: block;
-  margin: 0; }
-  ul#odu_toolsAlt li a {
+  margin: 0 .5rem 0 0; }
+  .odu_toolboxList ul {
     display: block;
-    width: 100%;
-    color: #7d7d7d;
-    background: none;
-    padding: 10px 0; }
-    ul#odu_toolsAlt li a span {
-      font-size: .8rem;
-      display: block; }
-    ul#odu_toolsAlt li a:hover, ul#odu_toolsAlt li a:visited:hover {
-      color: #003767;
-      background: white; }
+    margin: 0;
+    text-align: center; }
+  .odu_toolboxList li {
+    margin: 0;
+    padding-bottom: 1.2rem;
+    display: block;
+    width: 45px; }
+    .odu_toolboxList li:last-child {
+      padding-bottom: 0; }
+    .odu_toolboxList li:first-child {
+      padding-top: 10px; }
+    .odu_toolboxList li a {
+      display: block;
+      width: 100%;
+      color: #7d7d7d;
+      background: none;
+      margin: 0; }
+      .odu_toolboxList li a span {
+        font-size: .8rem;
+        display: block;
+        line-height: .8rem; }
+      .odu_toolboxList li a:hover, .odu_toolboxList li a:visited:hover {
+        color: #003767;
+        background: white; }
 
-#odu_toolboxAlt > ul#odu_toolsAlt li a {
-  width: auto; }
+.odu_contentSection {
+  width: 1000px;
+  float: right;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #7d7d7d;
+  min-height: 600px; }
 
-.odu_breadCrumbWrapper {
-  width: 98%;
-  display: block;
-  position: fixed;
-  top: 88px;
-  padding-top: 10px;
-  background: #f7f7f7;
-  z-index: 899; }
+.odu_contentWrapper {
+  padding: 1rem; }
 
-.odu_breadCrumbs {
-  list-style: none;
-  padding-left: 10px; }
-  .odu_breadCrumbs a {
-    text-decoration: none; }
-  .odu_breadCrumbs > li + li::before {
-    content: " > "; }
-  .odu_breadCrumbs > li {
-    display: inline-block;
-    margin-left: 0px; }
+.higherBreadCrumbWrapper {
+  width: 100%;
+  padding-top: 0;
+  background: #fafafa; }
 
-/*	
-#odu_toolbox
-{
-	background: $darkGray;
-	width: 63px;
-	margin: 0 auto;
-	padding-top: 0;
-	//padding: 1em 0;
-	text-align: center;
-	line-height: 80%;
-	float: right;
-}
+.higherBreadcrumbs {
+  width: 1060px;
+  margin: 0 auto; }
 
-#odu_toolbox#odu_tools,
-#odu_toolbox#odu_adminTools
-{
-	text-align: left;
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	width: 70%;
-}
-
-ul#odu_tools li,
-ul#odu_adminTools li
-{
-	display: block;
-	margin: 0;
-	
-	
-	a{
-		display: block;
-		width: 100%;
-		color: $white;
-		background: $darkGray;
-		padding: 10px 0;
-	
-		span{
-			font-size: .8rem;
-			display: block;
-		}
-		
-		&:hover,
-		&:visited:hover{
-			color: $monarchBlue;
-			background: $white;
-		}
-	}
-	
-	
-	
-}
-
-#odu_toolboxAltAlt>ul#odu_adminTools li a,
-#odu_toolboxAltAlt>ul#odu_tools li a { 
-	width: auto; }
-	
-#odu_adminTools{
-	border-top: 3px solid $googleGray;
-}	
-
-*/
+.pleBlockIcon {
+  font-size: 2.4rem;
+  padding: 5px;
+  color: white; }
