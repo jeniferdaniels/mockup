@@ -19,60 +19,13 @@ main.odu_courseHome {
 			border: 1px solid $liteGray;
 			font-weight: 600;
 			
-			&.calendar,
-			&.upEvents,
-			//&.syllabus,
-			//&.faculty,
-			//&.announcements,
-			&.moduleList{
-				&::before{
-					font-family: fontAwesome;
-					background: $darkGray;
-					color: $white;
-					min-width: 50px;
-					//font-size: 2rem;
-					padding: 11px;	//odd size, but needed to fill up the bar
-					margin-right: 10px;
-				}
-			}
-						
-			&.calendar::before		{content: "\f073";}
-			&.upEvents::before		{content: "\f017";}
-			//&.syllabus::before		{content: "\f02d";}
-			//&.faculty::before 		{content: "\f073";}
-			//&.announcements::before {content: "\f073";}
-			&.moduleList::before	{content: "\f114";}
-			
-			//&.syllabus,
-			//&.faculty,
-			//&.announcements{
-			//	width: $w_oducourseHomeRhs/3 - 21px;	//again, another odd size to account for borders
-			//	display: inline-block;
-			//}
-			//&.syllabus,
-			//&.faculty{
-			//	margin-right: 10px;
-			//}
-			
-
 			
 			&:hover{
 				color: $googleBlue;
-			
-				&.calendar,
-				&.upEvents,
-				//&.syllabus,
-				//&.faculty,
-				//&.announcements,
-				&.moduleList{
-					&::before{
-						background: $googleBlue;
-					}
-				}
-				
-				
 			}
+			
 		}
+		
 		& .wrapper{
 			margin-top: 0;
 			border: 1px solid $liteGray;
@@ -80,9 +33,7 @@ main.odu_courseHome {
 		}
 		
 		&#odu_iconListSection ul{
-			//border: 1px solid red;
 			list-style-type: none;
-			//width: 100%;
 			display: table-row;
 			
 			& li{
@@ -90,28 +41,12 @@ main.odu_courseHome {
 				text-align: center;
 				
 				& a{
-					color: $darkGray;
-					font-family: fontAwesome;
-					font-size: 2.5rem;
-					display: inline-block;
-					text-align: center;
-					line-height: 85%; //looks best?
-					
-					&.assignment::before    {content: "\f1fd";}
-					&.announcements::before {content: "\f0a1";}
-					&.faculty::before 		{content: "\f19c";}
-					&.glossary::before 		{content: "\f06b";}
-					&.notes::before 		{content: "\f24a";}
-					&.resources::before 	{content: "\f1bb";}
-					&.syllabus::before		{content: "\f0f6";}
-					
-					//&.announcements::before {content: "\f0a1";}
-				
+					font-size: 2.4rem;
+					color: $almostBlack;
 					& span{
 						font-family: $font-stack;
 						font-size: .8rem;
 						display: block;
-					
 					}
 					
 					&:hover{
@@ -119,9 +54,6 @@ main.odu_courseHome {
 						text-decoration: none;
 					}
 				}
-			
-				
-			
 			}
 		}
 	}

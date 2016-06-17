@@ -1,5 +1,5 @@
 main.odu_courseHome {
-  width: 1063px;
+  width: 1060px;
   background: white; }
   main.odu_courseHome section {
     margin-top: 20px; }
@@ -10,23 +10,8 @@ main.odu_courseHome {
       margin-bottom: 0px !important;
       border: 1px solid #c8c8c8;
       font-weight: 600; }
-      main.odu_courseHome section .odu_sectionH1.calendar::before, main.odu_courseHome section .odu_sectionH1.upEvents::before, main.odu_courseHome section .odu_sectionH1.moduleList::before {
-        font-family: fontAwesome;
-        background: #505050;
-        color: white;
-        min-width: 50px;
-        padding: 11px;
-        margin-right: 10px; }
-      main.odu_courseHome section .odu_sectionH1.calendar::before {
-        content: "\f073"; }
-      main.odu_courseHome section .odu_sectionH1.upEvents::before {
-        content: "\f017"; }
-      main.odu_courseHome section .odu_sectionH1.moduleList::before {
-        content: "\f114"; }
       main.odu_courseHome section .odu_sectionH1:hover {
         color: #4488f6; }
-        main.odu_courseHome section .odu_sectionH1:hover.calendar::before, main.odu_courseHome section .odu_sectionH1:hover.upEvents::before, main.odu_courseHome section .odu_sectionH1:hover.moduleList::before {
-          background: #4488f6; }
     main.odu_courseHome section .wrapper {
       margin-top: 0;
       border: 1px solid #c8c8c8;
@@ -38,26 +23,8 @@ main.odu_courseHome {
         display: table-cell;
         text-align: center; }
         main.odu_courseHome section#odu_iconListSection ul li a {
-          color: #505050;
-          font-family: fontAwesome;
-          font-size: 2.5rem;
-          display: inline-block;
-          text-align: center;
-          line-height: 85%; }
-          main.odu_courseHome section#odu_iconListSection ul li a.assignment::before {
-            content: "\f1fd"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.announcements::before {
-            content: "\f0a1"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.faculty::before {
-            content: "\f19c"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.glossary::before {
-            content: "\f06b"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.notes::before {
-            content: "\f24a"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.resources::before {
-            content: "\f1bb"; }
-          main.odu_courseHome section#odu_iconListSection ul li a.syllabus::before {
-            content: "\f0f6"; }
+          font-size: 2.4rem;
+          color: #050505; }
           main.odu_courseHome section#odu_iconListSection ul li a span {
             font-family: "Open Sans", Georgia;
             font-size: .8rem;
@@ -76,7 +43,7 @@ main.odu_courseHome {
   margin-right: 20px; }
 
 .odu_courseHomeRhs {
-  width: 713px;
+  width: 710px;
   float: right; }
 
 /*# sourceMappingURL=courseHome.css.map */
