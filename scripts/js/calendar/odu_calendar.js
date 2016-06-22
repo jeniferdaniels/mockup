@@ -21,7 +21,7 @@ function writeSmallCalendar(eventList, calendarIdField) {
 		$("#" + calendarIdField).fullCalendar({
 			events: formatForSmallCal(eventList), //set short title for small calendar
 			height: 430,
-			fixedWeekCount: true,
+			fixedWeekCount: false,
 			defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
 			theme: true,
 			header: {
@@ -136,17 +136,10 @@ function formatForSmallCal(eventList){
 			obj = eventList[i];
 			
 			if (typeof obj != "undefined"){
+				console.log("obj is type " + obj.type);
 				obj = changeKeyName(obj, "due", "start");
-			
-				//TODO: fix this so its not so stupid 
-				if (obj.type == "module"){
-					obj = addKeyValuePair(obj, "color", modColor);
-					obj = addKeyValuePair(obj, "textColor", modTextColor);
-				}
-				else{
-					obj = addKeyValuePair(obj, "color", assColor);
-					obj = addKeyValuePair(obj, "textColor", assTextColor);
-				}
+				cssName = obj.type + "SmallEvent";
+				obj = addKeyValuePair(obj, "className", cssName); //there are classes named "module" and "event"
 			}
 		}
 	}
