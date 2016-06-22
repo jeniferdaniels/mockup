@@ -309,7 +309,6 @@ a {
   width: 1060px;
   margin: 0 auto; }
 
-.pleBlockIcon {
-  font-size: 2.4rem;
-  padding: 5px;
-  color: white; }
+.odu_toolboxIcon {
+  font-size: 2.2rem;
+  padding: 10px; }
