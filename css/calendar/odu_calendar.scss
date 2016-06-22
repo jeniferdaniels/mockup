@@ -1,200 +1,19 @@
 @import "../configs";
 
-
-//*****************************************************************************
-//1. UNIVERSAL
-//*****************************************************************************
-//none
-
-
-
-
-
-//*****************************************************************************
-//2. DOCUMENT
-//*****************************************************************************
-//html
-
-
-
-
-
-//*****************************************************************************
-//3. META DATA
-//*****************************************************************************
-//none
-
-
-
-
-
-//*****************************************************************************
-//4. SECTIONING AND STRUCTURE
-//*****************************************************************************
-body {
-	color: $font-color;
-	line-height: 150%;
+.moduleSmallEvent{
+	background: $liteGray;
+	height: 3px;
 }
 
-//header
-//nav
-//p
-//main
-//article
-//aside
-//section
-//pre
-//blockquote
-//figure
-//figcaption
-//address
-//summary
-//details
-
-
-//*****************************************************************************
-//5. HEADINGS
-//*****************************************************************************
-//h1
-//h2
-//h3
-//hgrroup
-//h4
-//h5
-//h6
-
-//*****************************************************************************
-//6. LISTS
-//*****************************************************************************
-//ul
-//li
-//ol
-//dl
-//dt
-//dd
-//menu
-//menuitem
-
-
-//*****************************************************************************
-//7. MEDIA
-//*****************************************************************************
-//canvas
-//object
-//embed
-//img
-//audio
-//video
-//track
-//map
-//area
-//iframe
-
-
-//*****************************************************************************
-//8. FORMS
-//*****************************************************************************
-//form
-//fieldset
-//legend
-//label
-//input
-//button
-//select
-//optgroup
-//option
-//datalist
-//textarea
-//output
-
-
-
-
-//*****************************************************************************
-//9. TABLES
-//*****************************************************************************
-//table
-//caption
-//colgroup
-//col
-//thead
-//tfoot
-//tbody
-//tr
-//th
-//td
-
-
-//*****************************************************************************
-//10. PHRASING
-//*****************************************************************************
-//a
-//strong
-//em
-//b
-//i
-//u
-//s
-//sup
-//sub
-//small
-//abbr
-//dfn
-//mark
-//del
-//ins
-//q
-//cite
-//data
-//progress
-//time
-//meter
-//code
-//var
-//samp
-//kbd
-//keygen
-//bdi
-//bdo
-//ruby
-//rt
-//rp
-//span
-
-//*****************************************************************************
-//11. MISC
-//*****************************************************************************
-//hr
-//br
-
-
-//*****************************************************************************
-//12. ATTRIBUTES
-//*****************************************************************************
-
-
-
-
-//*****************************************************************************
-//13. ONE HIT WONDERS
-//*****************************************************************************
-
-//TODO: check to see if these are in PLE.scss
-.current {
-  color: $current; 
+.assignmentSmallEvent{
+	background: $odu_green;
+	height: 5px;
 }
-
-.googleBlue {
-  color: $googleBlue; 
+.moduleSmallEvent,
+.assignmentSmallEvent{
+	border: 0;
+	border-radius: 0;
 }
-
-.marginBottom20 {
-  margin-bottom: 20px; 
-}
-
-//*****************************************************************************
-//14. SPECIFIC TO THIS PAGE OR APP
-//*****************************************************************************
 
 #noEvents{
 	border: 1px solid black;
@@ -288,13 +107,15 @@ body {
 
 #odu_smallCalendar{
 	width: 300px !important;
-	height: 310px !important;
-	overflow-y: scroll;
 	overflow-x: hidden;
 	padding: 0 10px 10px 10px;
 }
 #odu_smallCalendar .fc-toolbar{
 	margin: 0;
+}
+
+#odu_smallCalendar .fc-row .ui-widget-header{
+	background: $mediumGray;
 }
 
 #odu_smallCalendar .fc-title{
@@ -303,7 +124,7 @@ body {
 }
 
 #odu_smallCalendar .fc-content{
-	height: 2px;
+	//height: 2px;
 }
 
 #odu_smallCalendar .fc-week //,
@@ -335,16 +156,6 @@ body {
 #odu_smallCalendar .fc-day-number{
 	font-size: .7rem;
 }
-
-
-
-#calendarWrapper{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
 
 .odu_smallCalendarNumber{
 	font-size: .7rem !important;
@@ -384,12 +195,8 @@ body {
 	border: 1px solid black;
 }
 
-//needs to be last so its not overwritten 
-//although it says important, it doesnt necessarily
-//respect that
-#calendar .ui-state-highlight {
-	background: $liteYellow !important;
-	border-top: 5px solid $googleBlue !important;
+.fc-today{
+	background: red;
+
 }
- 
  

@@ -1,15 +1,15 @@
-body {
-  color: #505050;
-  line-height: 150%; }
+.moduleSmallEvent {
+  background: #c8c8c8;
+  height: 3px; }
 
-.current {
-  color: #4488f6; }
+.assignmentSmallEvent {
+  background: #3bb60b;
+  height: 5px; }
 
-.googleBlue {
-  color: #4488f6; }
-
-.marginBottom20 {
-  margin-bottom: 20px; }
+.moduleSmallEvent,
+.assignmentSmallEvent {
+  border: 0;
+  border-radius: 0; }
 
 #noEvents {
   border: 1px solid black;
@@ -84,19 +84,17 @@ body {
 
 #odu_smallCalendar {
   width: 300px !important;
-  height: 310px !important;
-  overflow-y: scroll;
   overflow-x: hidden;
   padding: 0 10px 10px 10px; }
 
 #odu_smallCalendar .fc-toolbar {
   margin: 0; }
 
+#odu_smallCalendar .fc-row .ui-widget-header {
+  background: #7d7d7d; }
+
 #odu_smallCalendar .fc-title {
   font-size: 0rem; }
-
-#odu_smallCalendar .fc-content {
-  height: 2px; }
 
 #odu_smallCalendar .fc-week {
   max-height: 5px; }
@@ -117,11 +115,6 @@ body {
 
 #odu_smallCalendar .fc-day-number {
   font-size: .7rem; }
-
-#calendarWrapper {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto; }
 
 .odu_smallCalendarNumber {
   font-size: .7rem !important; }
@@ -153,8 +146,7 @@ body {
 .ui-state-active {
   border: 1px solid black; }
 
-#calendar .ui-state-highlight {
-  background: #fffdd9 !important;
-  border-top: 5px solid #4488f6 !important; }
+.fc-today {
+  background: red; }
 
 /*# sourceMappingURL=odu_calendar.css.map */
