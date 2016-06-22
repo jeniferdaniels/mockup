@@ -1,11 +1,8 @@
 @import "../configs";
 
-#listContainer{
-  margin-top:15px;
-}
-
 #moduleList{
-	min-height: 300px;
+	min-height: 500px;
+	margin: 0 0 20px 0;
 
 	a{
 		color: $googleBlue;
@@ -48,6 +45,9 @@
 		text-indent:0px;
 		margin-left: 1.5rem;
 		
+		&.level1{
+			margin-left: 0 !important;
+		}
 		&:hover { //#moduleList li:hover
 			background: $xLiteGray;
 		}

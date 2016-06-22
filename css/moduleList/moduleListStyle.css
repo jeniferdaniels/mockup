@@ -1,8 +1,6 @@
-#listContainer {
-  margin-top: 15px; }
-
 #moduleList {
-  min-height: 300px; }
+  min-height: 500px;
+  margin: 0 0 20px 0; }
   #moduleList a {
     color: #4488f6; }
     #moduleList a:hover {
@@ -28,6 +26,8 @@
     line-height: 180%;
     text-indent: 0px;
     margin-left: 1.5rem; }
+    #moduleList li.level1 {
+      margin-left: 0 !important; }
     #moduleList li:hover {
       background: #fafafa; }
   #moduleList .noChildren {
