@@ -1,5 +1,5 @@
 //functions that are run onLoad
-
+DEBUG=true;
 function writePageHeader(topDiv, courseData){
 	if (DEBUG) benchMark("start", "writePageHeader", {"topDiv": topDiv, "courseData":courseData});   
 
@@ -70,7 +70,8 @@ function writePageHeader(topDiv, courseData){
 
 function writeHomeSkeleton(baseDiv){
 	if (DEBUG) benchMark("start", "writeHomeSkeleton", {"baseDiv": baseDiv});  
-	
+
+	$(baseDiv).html(" ");//clear out 
 
 	//<main>, lhs and rhs
 	$(baseDiv)
@@ -207,7 +208,7 @@ function loadHomeContent(course_id){
 	
 	//clicky collapsible headers
 	//TODO: make it dynamic
-	$(".calendar").click(function(){
+	/*$(".calendar").click(function(){
 		console.log("clicked cal header");
 		$("#odu_smallCalendarWrapper").toggleClass("displayNone");
 		//add to preference
@@ -222,7 +223,7 @@ function loadHomeContent(course_id){
 		$("#odu_moduleListWrapper").toggleClass("displayNone");
 		//add to preference
 	});
-	
+	*/
 	
 	if (DEBUG) benchMark("end", "loadHomeContent", {"course_id": course_id}); 
 }
@@ -262,48 +263,48 @@ function writeToolbox(toolboxDiv, baseUrl){
 		.append($("<ul>").attr("id","odu_toolboxList").addClass("odu_toolboxList")
 			//home link
 			.append($("<li>").attr("id","odu_homeLi")
-				.append($("<a>").attr("id","odu_homeLink").attr("href", baseUrl+"welcome")
-					.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("ple-house"))
+				.append($("<a>").attr("id","odu_homeLink").attr("href", baseUrl+"/")
+					.append($("<i>").attr("id", "odu_homeLinkIcon").addClass("odu_toolboxIcon ple-house"))
 					.append($("<span>").html("Home"))))
 			//syllabus link
 				.append($("<li>").attr("id","odu_syllabusLi")
 					.append($("<a>").attr("id","odu_syllabusLink").attr("href", baseUrl+"syllabus/")
-						.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("ple-page-lines"))
+						.append($("<i>").attr("id", "odu_syllabusLinkIcon").addClass("odu_toolboxIcon ple-page-lines"))
 						.append($("<span>").html("Syllabus"))))
 			//modules link
 					.append($("<li>").attr("id","odu_modulesLi")
 						.append($("<a>").attr("id","odu_modulesLink").attr("href", baseUrl+"module_listing")
-							.append($("<i>").attr("id", "odu_modulesLinkIcon").addClass("ple-folder"))
+							.append($("<i>").attr("id", "odu_modulesLinkIcon").addClass("odu_toolboxIcon ple-folder"))
 							.append($("<span>").html("Modules"))))
 			//calendar link
 					.append($("<li>").attr("id","odu_calendarLi")
 						.append($("<a>").attr("id","odu_calendarLink").attr("href", baseUrl+"calendar")
-							.append($("<i>").attr("id", "odu_calendarLinkIcon").addClass("ple-calendar"))
+							.append($("<i>").attr("id", "odu_calendarLinkIcon").addClass("odu_toolboxIcon ple-calendar"))
 							.append($("<span>").html("Calendar"))))
 			//ask A question link
 					.append($("<li>").attr("id","odu_aaqLi")
 						.append($("<a>").attr("id","odu_aaqLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_aqqLinkIcon").addClass("ple-person-ask"))
+							.append($("<i>").attr("id", "odu_aqqLinkIcon").addClass("odu_toolboxIcon ple-person-ask"))
 							.append($("<span>").html("Ask a Question"))))
 			//notes link
 					.append($("<li>").attr("id","odu_notesLi")
 						.append($("<a>").attr("id","odu_notesLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_notesLinkIcon").addClass("ple-notepad-lines"))
+							.append($("<i>").attr("id", "odu_notesLinkIcon").addClass("odu_toolboxIcon ple-notepad-lines"))
 							.append($("<span>").html("Notes"))))
 			//print link
 					.append($("<li>").attr("id","odu_printLi")
 						.append($("<a>").attr("id","odu_printLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_printLinkIcon").addClass("ple-printer"))
+							.append($("<i>").attr("id", "odu_printLinkIcon").addClass("odu_toolboxIcon ple-printer"))
 							.append($("<span>").html("Print"))))
 			//edit link
 					.append($("<li>").attr("id","odu_editLi")
 						.append($("<a>").attr("id","odu_editLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_editLinkIcon").addClass("ple-pencil"))
+							.append($("<i>").attr("id", "odu_editLinkIcon").addClass("odu_toolboxIcon ple-pencil"))
 							.append($("<span>").html("Edit"))))
 			//admin tools link
 					.append($("<li>").attr("id","odu_adminToolsLi")
 						.append($("<a>").attr("id","odu_adminToolsLink").attr("href", "#")
-							.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("ple-case "))
+							.append($("<i>").attr("id", "odu_adminToolsLinkIcon").addClass("odu_toolboxIcon ple-case "))
 							.append($("<span>").html("Admin Tools"))))
 		);//end ul
 	if (DEBUG) benchMark("end", "writeToolbox", {"toolboxDiv": toolboxDiv, "baseUrl":baseUrl }); 
@@ -316,7 +317,7 @@ function getCourseAttributes(courseId){
 	if (DEBUG) benchMark("start", "getCourseAttributes", {"courseId": courseId}); 
 	
 	$.ajax({
-		url: "http://ple1.odu.edu:4243/api/course/" + "201330/bnal206",
+		url: "http://ple1.odu.edu:4243/api/course/" + courseId,
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) { writePageHeader("#odu_top", data);},
@@ -325,6 +326,6 @@ function getCourseAttributes(courseId){
 		crossDomain: true,
 		
 	});
-	if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
+	//if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
 }
 
