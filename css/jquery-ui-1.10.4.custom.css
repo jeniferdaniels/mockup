@@ -416,8 +416,8 @@ button.ui-button::-moz-focus-inner {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-	border: 1px solid #fff233;
-	background: #ffdd1b url("images/ui-bg_glass_55_ffdd1b_1x400.png") 50% 50% repeat-x;
+	border: 1px solid rgba(170, 170, 170, 1);
+	background: #cfff0f;
 	color: #363636;
 }
 .ui-state-highlight a,
