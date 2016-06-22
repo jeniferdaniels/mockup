@@ -24,16 +24,16 @@ main.odu_courseHome {
 			
 			&.calendar{
 				background: $odu_green;
-				&::before{	}				
-				&:hover{
-					&::after{
-						font-family: fontAwesome;
-						size: 1.2rem;
-						content: "\f103";
-						float: right;
-						font-weight: 500;
-					}
-				}
+				//&::before{	}				
+				//&:hover{
+				//	&::after{
+				//		font-family: fontAwesome;
+				//		size: 1.2rem;
+				//		content: "\f103";
+				//		float: right;
+				//		font-weight: 500;
+				//	}
+				//}
 			}
 			&.upEvents{
 				background: $odu_purple;
@@ -48,8 +48,10 @@ main.odu_courseHome {
 			margin-top: 0;
 			border: 1px solid $liteGray;
 			border-top: 0px;
+
 		}
-		
+
+	
 		&#odu_iconListSection ul{
 			list-style-type: none;
 			display: table-row;

@@ -13,12 +13,6 @@ main.odu_courseHome {
       color: white; }
       main.odu_courseHome section .odu_sectionH1.calendar {
         background: #3bb60b; }
-        main.odu_courseHome section .odu_sectionH1.calendar:hover::after {
-          font-family: fontAwesome;
-          size: 1.2rem;
-          content: "\f103";
-          float: right;
-          font-weight: 500; }
       main.odu_courseHome section .odu_sectionH1.upEvents {
         background: #662d91; }
       main.odu_courseHome section .odu_sectionH1.moduleList {
