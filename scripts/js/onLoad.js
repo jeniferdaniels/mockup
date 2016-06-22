@@ -1,13 +1,29 @@
 //functions that are run onLoad
 DEBUG=true;
+
+
+//----------------------------------------------------------------------------------------------------
+//Function Name:	writePageHeader
+//Parameters:		topDiv - string formatted "#stuff" with the id of the <div> that is acting as the
+//						top section of the page
+//					courseData - json object with
+//						course_title 
+//						course_number
+//						course_subject
+//						semester_display
+//						faculties - json object with
+//							preferred_name 
+//							email
+//Purpose:			writes the top portion of the webpage and loads it with the course data to 
+//					customize it for each course
+//Returns:			true = no problems found.  false = problems found
+//----------------------------------------------------------------------------------------------------
 function writePageHeader(topDiv, courseData){
 	if (DEBUG) benchMark("start", "writePageHeader", {"topDiv": topDiv, "courseData":courseData});   
 
-	hasProblem = true;
+	hasProblem = false;
 
-	for(key in courseData){
-		console.log("key " + key  + "value" + courseData[key]);
-	}
+	if (DEBUG) {for(key in courseData){ console.log("key " + key  + "value" + courseData[key]); }}
 			
 	//check to see that object is not empty, if it is then display minimal header
 	if (!((topDiv == "")	|| (typeof topDiv === undefined) || (topDiv == null)))
@@ -32,10 +48,11 @@ function writePageHeader(topDiv, courseData){
 			
 			//TODO: deal with faculty display
 			
-			//have to cut the title short for the longer courses. 
+			//have to cut the title short for the longer courses. The titles will have to be shortened in the json object
+			//if they are supposed to fit, then they need to be trimmed/abbreviated on the json side
 			//TODO:There has to be a limit in banner. What is it?
-			//55 fits in the header at 2.2rem
-			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(1, 55);
+			//56 fits in the header at 2.2rem
+			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(0, 55);
 			
 		
 			//now display it
@@ -58,7 +75,7 @@ function writePageHeader(topDiv, courseData){
 					)//end header
 				)//end div
 		}
-		hasProblem = false;
+		hasProblem = true;
 	} 
 	else { $("#errorMsg").html("Cannot load header, top div missing."); }
 	
@@ -67,7 +84,13 @@ function writePageHeader(topDiv, courseData){
 	return hasProblem;
 }
 
-
+//----------------------------------------------------------------------------------------------------
+//Function Name:	writeHomeSkeleton
+//Parameters:		baseDiv - string formatted "#stuff" with the id of the <div> that is acting as the
+//						starting point for the skeleton
+//Purpose:			writes the empty tags for the home page
+//Returns:			nothing, writes to screen
+//----------------------------------------------------------------------------------------------------
 function writeHomeSkeleton(baseDiv){
 	if (DEBUG) benchMark("start", "writeHomeSkeleton", {"baseDiv": baseDiv});  
 
@@ -142,16 +165,22 @@ function writeHomeSkeleton(baseDiv){
 
 
 
-//loads the home page with the calendar, module, upcoming events, icons etc.
-//not the header, and not the course content
-//uses unique course id
+
+//----------------------------------------------------------------------------------------------------
+//Function Name:	loadHomeContent
+//Parameters:		course_id - string, should be unique course Id, for now it is uses 
+//					semesterCode + "/" + courseNumber
+//Purpose:			loads the home page with the calendar, module, upcoming events, icons etc.
+//					not the header, and not the course content
+//Returns:			nothing, writes to screen
+//----------------------------------------------------------------------------------------------------
 function loadHomeContent(course_id){
 	if (DEBUG) benchMark("start", "loadHomeContent", {"course_id": course_id}); 
 	
 	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
-	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/201530/" + course_id; 
-	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/201530/" + course_id;
-	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/201530/" + course_id; 
+	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/" + course_id; 
+	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
+	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/" + course_id; 
 
 	if (DEBUG) console.log("announcementsUrl" + announcementsUrl);
 	if (DEBUG) console.log("moduleListUrl" + moduleListUrl);
@@ -159,7 +188,7 @@ function loadHomeContent(course_id){
 	if (DEBUG) console.log("upEventsUrl" + upEventsUrl);
 	
 	//announcements
-	/*$.ajax({
+	$.ajax({
 		url: announcementsUrl,
 		type: 'GET',
 		dataType: 'json',
@@ -170,7 +199,7 @@ function loadHomeContent(course_id){
 	});//.done(function (data, status, jqXHR) {
 	//	console.log(data);
 	//});
-	*/
+	
 	
 	//small calendar
 	$.ajax({
@@ -205,32 +234,20 @@ function loadHomeContent(course_id){
 		crossDomain: true
 	});
 	
-	
-	//clicky collapsible headers
-	//TODO: make it dynamic
-	/*$(".calendar").click(function(){
-		console.log("clicked cal header");
-		$("#odu_smallCalendarWrapper").toggleClass("displayNone");
-		//add to preference
-	});
-	$(".upEvents").click(function(){
-		console.log("clicked up events header");
-		$("#odu_upEventsWrapper").toggleClass("displayNone");
-		//add to preference
-	});
-	$(".moduleList").click(function(){
-		console.log("clicked up events header");
-		$("#odu_moduleListWrapper").toggleClass("displayNone");
-		//add to preference
-	});
-	*/
-	
+
 	if (DEBUG) benchMark("end", "loadHomeContent", {"course_id": course_id}); 
 }
 
 
 
-
+//----------------------------------------------------------------------------------------------------
+//Function Name:	writeBasicContentSkeleton
+//Parameters:		baseDiv - string formatted "#stuff" with the id of the <div> that is acting as the
+//						starting point for the skeleton
+//Purpose:			writes the empty tags for the content page
+//Returns:			nothing, writes to screen
+//NOTE:				not currently being used because template.html has hard coded html
+//----------------------------------------------------------------------------------------------------
 function writeBasicContentSkeleton(baseDiv){
 	if (DEBUG) benchMark("start", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
 
@@ -254,7 +271,15 @@ function writeBasicContentSkeleton(baseDiv){
 	if (DEBUG) benchMark("end", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
 }
 
-
+//----------------------------------------------------------------------------------------------------
+//Function Name:	writeBasicContentSkeleton
+//Parameters:		toolboxDiv - string formatted "#stuff" with the id of the <div> that is acting as the
+//						starting point for the toolbox
+//					baseUrl - string with the base url for the course
+//Purpose:			writes the toolbox icons
+//Returns:			nothing, writes to screen
+//NOTE:				not currently being used because template.html has hard coded html
+//----------------------------------------------------------------------------------------------------
 function writeToolbox(toolboxDiv, baseUrl){
 	if (DEBUG) benchMark("start", "writeToolbox", {"toolboxDiv": toolboxDiv, "baseUrl":baseUrl }); 
 	
