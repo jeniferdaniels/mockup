@@ -1,4 +1,4 @@
-<?php echo '<link rel="stylesheet" type="text/css" href="' . WEB_ROOT . '/css/askAQuestion.css">' ?>
+<?php echo '<link rel="stylesheet" type="text/css" href="css/askAQuestion.css">' ?>
 
 <div class="aaq">
 	<div>
@@ -22,9 +22,9 @@
 	<h2>Questions about the Material</h2>
 	<div class="aaqQuestionAndAnswerWrapper">
 		<div class="aaqQuestion">
-			<span class="aaqPostTitle"><?php echo icon("fa", "expanded", "s", "") ?>Some question short title here</span>
+			<span class="aaqPostTitle">[icon]Some question short title here</span>
 			<div class="floatRight">
-				 <?php echo icon("fa", "pin", "s", "") ?>
+				 [icon]
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas</p>
@@ -46,7 +46,7 @@
 			
 			<ul class="aaqPostProperties">
 				<li><a href="">Reply</a></li>
-				<li class="aaqPostRating"><?php writeStarRating("3.5:5"); ?></li>
+				<li class="aaqPostRating">***</li>
 				<li class="aaqPostEndorsed"></li>
 				<li class="aaqPostCommentCount">0 comments</li>
 				<li class="aaqPoster">Carl Grimes</li>
@@ -60,7 +60,7 @@
 			
 			<ul class="aaqPostProperties">
 				<li><a href="">Reply</a></li>
-				<li class="aaqPostRating"><?php writeStarRating("2:5"); ?></li>
+				<li class="aaqPostRating">*****</li>
 				<li class="aaqPostEndorsed">Instructor Endorsed</li>
 				<li class="aaqPostCommentCount">0 comments</li>
 				<li class="aaqPoster">Beth Greene</li>
@@ -72,9 +72,9 @@
 
 	<div class="aaqQuestionAndAnswerWrapper">
 		<div class="aaqQuestion">
-			<span class="aaqPostTitle"><?php echo icon("fa", "collapsed", "s", "") ?>Some question short title here</span>
+			<span class="aaqPostTitle">[icon]Some question short title here</span>
 			<div class="floatRight">
-				<?php echo icon("fa", "pin", "s", "") ?>
+				[icon]
 			</div>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum sem id mauris vehicula lobortis. Aliquam ut tortor odio. Curabitur cursus leo eu pellentesque consequat. Curabitur sapien nibh, vestibulum sed tortor eget, posuere rhoncus nibh. Curabitur efficitur tellus risus. Nullam sit amet massa ultrices lacus facilisis maximus cursus ac arcu. Maecenas</p>
