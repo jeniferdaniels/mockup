@@ -4,14 +4,26 @@ main.odu_courseHome {
   main.odu_courseHome section {
     margin-top: 20px; }
     main.odu_courseHome section .odu_sectionH1 {
-      background: #fafafa;
       font-size: 1.45rem;
-      padding: 10px 10px 10px 0;
+      padding: 10px 10px 10px 10px;
       margin-bottom: 0px !important;
-      border: 1px solid #c8c8c8;
-      font-weight: 600; }
-      main.odu_courseHome section .odu_sectionH1:hover {
-        color: #4488f6; }
+      font-weight: 600;
+      display: inline-block;
+      width: 305px;
+      color: white; }
+      main.odu_courseHome section .odu_sectionH1.calendar {
+        background: #3bb60b; }
+        main.odu_courseHome section .odu_sectionH1.calendar:hover::after {
+          font-family: fontAwesome;
+          size: 1.2rem;
+          content: "\f103";
+          float: right;
+          font-weight: 500; }
+      main.odu_courseHome section .odu_sectionH1.upEvents {
+        background: #662d91; }
+      main.odu_courseHome section .odu_sectionH1.moduleList {
+        background: #002f4e;
+        width: 689px; }
     main.odu_courseHome section .wrapper {
       margin-top: 0;
       border: 1px solid #c8c8c8;
@@ -45,5 +57,13 @@ main.odu_courseHome {
 .odu_courseHomeRhs {
   width: 710px;
   float: right; }
+
+.odu_calendarIcon {
+  color: #3bb60b;
+  background-color: red;
+  display: inline-block;
+  width: 35px;
+  margin: 0;
+  padding: 3px; }
 
 /*# sourceMappingURL=courseHome.css.map */

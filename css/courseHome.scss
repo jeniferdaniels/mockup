@@ -12,18 +12,36 @@ main.odu_courseHome {
 		margin-top: 20px;
 		
 		& .odu_sectionH1 {
-			background: $xLiteGray;
+			//background: $xLiteGray;
 			font-size: 1.45rem;
-			padding: 10px 10px 10px 0;
+			padding: 10px 10px 10px 10px;
 			margin-bottom: 0px !important;
-			border: 1px solid $liteGray;
+			//border: 1px solid $liteGray;
 			font-weight: 600;
+			display: inline-block;
+			width: 305px;	//TODO: fix this so its not a hard #
+			color: white;
 			
-			
-			&:hover{
-				color: $googleBlue;
+			&.calendar{
+				background: $odu_green;
+				&::before{	}				
+				&:hover{
+					&::after{
+						font-family: fontAwesome;
+						size: 1.2rem;
+						content: "\f103";
+						float: right;
+						font-weight: 500;
+					}
+				}
 			}
-			
+			&.upEvents{
+				background: $odu_purple;
+			}
+			&.moduleList{
+				background: $odu_darkBlue;
+				width: 689px;	//TODO: fix this so it is not a hard#
+			}
 		}
 		
 		& .wrapper{
@@ -77,3 +95,23 @@ main.odu_courseHome {
 	//border: 1px solid blue;
 }
 
+.odu_calendarIcon{
+	//height: 2.4rem;
+	//width:  2.4rem;
+	//background-image: url("images/icon_calendar.svg");					
+	//background-color: black;
+	//background-repeat: no-repeat;
+	//background-size: 35px 35px;
+	//padding: 3px;
+	//margin: 5px;
+	//display:inline-block;
+	//content: "q";
+	//font-family: ple-awesome;
+	//size: 1.4rem;
+	color: $odu_green;
+	background-color: red;
+	display: inline-block;
+	width: 35px;
+	margin: 0;
+	padding: 3px;
+}
