@@ -79,7 +79,8 @@ nav{
 		list-style: none;
 		float:right;
 		color: $monarchBlue;
-
+		height: 35px;
+		
 		a {
 			display:block;
 			//padding:15px 30px;  
@@ -87,7 +88,10 @@ nav{
 			text-decoration:none;
 			text-align:center;
 			
-			&:hover { background-color: $liteGoogleBlue; }
+			&:hover { 
+				//background-color: $liteGoogleBlue; 
+				text-decoration: none;
+			}
 		}
 			
 	}
@@ -666,4 +670,12 @@ a{
 .odu_toolboxIcon{
 	font-size: 2.2rem;
 	padding: 10px;
+}
+
+
+.odu_iconHelp{
+	height:25px;
+	width:25px;
+	background-image: url("images/icon_help.svg");
+	background-repeat: no-repeat;
 }
