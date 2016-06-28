@@ -35,15 +35,14 @@ function writePageHeader(topDiv, courseData){
 		{
 		
 			//make sure the things that are needed are here, otherwise fill it in with blanks, so the show can go on
-			var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties", "potatoe"];
-			//var expectedFacKeys = ["preferred_name", "email"];
+			var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties"];
 			var groomedCourseData = [];
 			
 			//load only the keys we need and load it with "unknown" if the key dne
 			//TODO: does it matter that there are extra keys?, fix later
 			for (var i=0; i< expectedKeys.length; i++){
 				groomedCourseData[expectedKeys[i]] = (courseData.hasOwnProperty(expectedKeys[i]))? courseData[expectedKeys[i]] : "unknown";
-				console.log(courseData[expectedKeys[i]]);
+				if (DEBUG) console.log(courseData[expectedKeys[i]]);
 			}
 			
 			//TODO: deal with faculty display
@@ -61,7 +60,7 @@ function writePageHeader(topDiv, courseData){
 						.append($("<nav>").attr("id", "nav")
 							.append($("<ul>")
 								.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").html("XX")))
-								.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").html("XX")))
+							//	.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").html("XX")))
 							)//end ul	
 						)//end nav
 						.append($("<div>").addClass("clearFix"))
@@ -69,11 +68,21 @@ function writePageHeader(topDiv, courseData){
 						.append($("<a>").attr("href", "\mockup").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
 						.append($("<h2>").attr("id", "courseInstructorTitle")
 								.append($("<span>").attr("id", "semester").html(groomedCourseData.semester_display))
-								.append($("<span>").attr("id", "Instructor").html(" Instructor(s)"))
-								.append($("<a>").attr("id", "courseInstructor").attr("href", "faculty").html("Jen Daniels"))
+								
+								//
 						)//end h2
 					)//end header
-				)//end div
+				);//end div
+				
+				numFaculty = groomedCourseData.faculties.length;
+				$("#courseInstructorTitle").append($("<span>").attr("id", "instructorLabel").html((numFaculty > 1) ? "Instructors" : "Instructor"))
+							
+				for(i=0; i<numFaculty; i++){
+					//TODO: add internal anchors to faculty page to go straight to the clicked instructor
+					$("#instructorLabel").append($("<a>").attr("id", "courseInstructor_" + i).addClass("odu_instructorLink")
+						.attr("href", groomedCourseData.course_subject + groomedCourseData.course_number + "/faculty")
+						.html(groomedCourseData.faculties[i].preferred_name));
+				}
 		}
 		hasProblem = true;
 	} 
@@ -178,7 +187,7 @@ function loadHomeContent(course_id){
 	if (DEBUG) benchMark("start", "loadHomeContent", {"course_id": course_id}); 
 	
 	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
-	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/" + course_id; 
+	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/202020/dev101"; //+ course_id; 
 	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
 	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/" + course_id; 
 
@@ -340,6 +349,8 @@ function writeToolbox(toolboxDiv, baseUrl){
 //course_id is our db id because CRN and semester code cannot positively identify a single instance of a course
 function getCourseAttributes(courseId){
 	if (DEBUG) benchMark("start", "getCourseAttributes", {"courseId": courseId}); 
+	
+	
 	
 	$.ajax({
 		url: "http://ple1.odu.edu:4243/api/course/" + courseId,
