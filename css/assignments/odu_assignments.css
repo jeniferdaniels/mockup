@@ -1,0 +1,19 @@
+#odu_assignments {
+  list-style-type: none !important; }
+  #odu_assignments li {
+    margin: 0; }
+  #odu_assignments h2 {
+    color: red; }
+  #odu_assignments h3 {
+    font-size: 1.1rem;
+    color: green;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0 10px 0 0; }
+  #odu_assignments .odu_assignmentDetails {
+    list-style-type: none !important;
+    border-bottom: 1px solid red;
+    margin-bottom: 20px;
+    padding-bottom: 10px; }
+
+/*# sourceMappingURL=odu_assignments.css.map */
