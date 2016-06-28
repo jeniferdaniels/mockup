@@ -59,8 +59,8 @@ function writePageHeader(topDiv, courseData){
 				.append($("<header>")
 						.append($("<nav>").attr("id", "nav")
 							.append($("<ul>")
-								.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").html("XX")))
-							//	.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").html("XX")))
+								.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
+								.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
 							)//end ul	
 						)//end nav
 						.append($("<div>").addClass("clearFix"))
