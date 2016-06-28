@@ -1,0 +1,17 @@
+{
+    "course_title": "Public Speaking",
+    "course_number": "box",
+    "course_subject": "sand",
+    "semester": "202020",
+    "semester_display": "Spring 2021",
+    "faculties": [
+        {
+            "preferred_name": "Gabe Miracle",
+            "email": "grodrigu@odu.edu"
+        },
+        {
+            "preferred_name": "J Daniels Cat",
+            "email": "jdaniels@odu.edu"
+        }
+    ]
+}
