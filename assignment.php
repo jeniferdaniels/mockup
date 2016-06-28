@@ -7,8 +7,35 @@
 <!doctype html>
 <html>
 	<head>
-		<?php  includeCsss (); ?>
-		<?php  includeScripts (); ?>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/pleStyle.css">	
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/ple-awesome/styles.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
+	
+	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
+	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
+	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
+	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
+	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/pnotify.custom.css" />
+	
+	<script>DEBUG = true;</script>
+	<script type="text/javascript" src="scripts/js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="scripts/js/jquery-ui.min.js"></script>
+	<!--<script type="text/javascript" src="<!-- string::webdir_assets --><!--js/_odu/courseFunctions.js"></script>	-->	
+	<script type="text/javascript" src="scripts/js/utils.js"></script>
+	<script type="text/javascript" src="scripts/js/moment.min.js"></script>	
+	<script type="text/javascript" src="scripts/js/calendar/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="scripts/js/calendar/odu_calendar.js"></script>
+	<script type="text/javascript" src="scripts/js/upEvents/odu_upEvents.js"></script>
+	<script type="text/javascript" src="scripts/js/pnotify.custom.js"></script>
+	<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
+	<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
+	<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
 		
 		<script>
 			$(document).ready(function(){
@@ -83,27 +110,6 @@
 	</head>
 	
 	<body>
-		<div class="navWrapper">
-			<div id="navPrevious" class="navPrevious"><a id="prev" href=""><?php echo(icon("fa", "previous", "e", "")); ?></a></div>
-			<div id="navNext" class="navNext"><a id="next" href=""><?php echo(icon("fa", "next", "e", "")); ?></a></div>
-		</div>
-	
-	
-		<div class="top"><?php writeTopHtml(); ?></div>
-		
-
-		<div class="breadCrumbWrapper">
-			<nav>
-				<ul class="breadCrumbs">
-					<li><a href="index.php">Home</a></li>
-					<li id="moduleCrumb"></li>
-					<li id="thisCrumb"></li>
-				</ul>
-			</nav>
-		</div>
-
-
-
 			<div class="wrapper">
 				<div id="courseMaterial">
 					<div class="paper">
