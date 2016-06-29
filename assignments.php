@@ -38,20 +38,21 @@
 
 			
 			<section id="odu_assignmentsSection">
-				<h1 class="odu_sectionH1 assignments">Assignments</h1>
-				<div class="odu_assignmentsWrapper" class="wrapper">
+				<!--<h1 class="odu_sectionH1 assignments">Assignments</h1>-->
+				<div class="odu_assignmentsWrapper wrapper">
 					<ul id="odu_assignments">
 						<li id="odu_assignment_1">
 							<ul class="odu_assignmentDetails">
 								<li><h2>1.A.1 Review Required Materials</h2></li>
-								<li><h3>Due</h3><span>May 31, 2001 at 11:59 PM</span></li>
-								<li><h3>Submit Via</h3><span>Blackboard</span></li>
-								<li><h3>Deliverable</h3><span>Speech outline and video link</span></li>
+								<li><h3>Due</h3>May 31, 2001 at 11:59 PM</li>
+								<li><h3>Submit Via</h3>Blackboard</li>
+								<li><h3>Deliverable</h3>Speech outline and video link</li>
 								<li><h3>Description</h3><p>Please scan that room with the camera so that I can see your audience before you  begin spealing. You need to speak to a LIVE audience with 2-3  people for each speech. Sorry, animals are great supports but cannot critique your speech.
 									Submit your speech outline and video link to Blackboard > Submissions > Self-Introduction Speech. Details of this assignment are located in the previous module: Module 2 > Topics > Self-Introduction Speeches. 
 									For each speech, you will upload your video and PowerPoint presentations and then combine them using either Zentation or Knovio. For instructions on how to do this, please visit: Combining PowerPoint with Video. (This is located in Module 1 > Topics > Course Technology > Combining PowerPoint with Video.) Videos must be accessible via a link for classmates and the professor to readily click on. Individual videos submitted in .mp4, .wmv, etc. will not be accepted unless they are placed into a zentation, knovio, or a similar third party platform for viewing with PPT.
 									</p>
 								</li>
+								<li><div id="odu_assignmentCheckmark_1" class="odu_checkmark">Mark Assignment As Complete</div></li>
 							</ul>	
 						</li>
 						<li id="odu_assignment_2">
@@ -68,6 +69,9 @@
 							</ul>	
 						</li>
 					</ul>
+					
+					<p class="odu_asteriskedNote">*Note: Marking assignments as complete does not submit the assignment. Marking the assignment as complete is for personal assignment tracking purposes only.</p>
+					
 				</div>
 			</section>
 
