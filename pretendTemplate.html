@@ -29,6 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
 	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
 	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/assignments/odu_assignments.css" />
 	<link rel="stylesheet" type="text/css" href="css/pnotify.custom.css" />
 	
 	<script>DEBUG = true;</script>
@@ -44,38 +45,19 @@
 	<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
 	<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
 	<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
+	<script type="text/javascript" src="scripts/js/assignments/odu_assignments.js"></script>
 	
 	
 	
-	<!--NEED CRN -->
-	<!--NEED MIDAS-->
+
 	
 	
 	<script type="text/javascript" src="scripts/js/onLoad.js"></script>
 	<script>
 		$(document).ready(function(){		
-			//string is formatted /courses/201502/cat101/
-			tempCoursePath = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
-			tempCourseNumber = tempCoursePath[tempCoursePath.length-2];	//-2 because its the second to last item in the array due to the / at the end
 			
-			//due to the inability to return dummy to the promise (idk?) 
-			//write page header is called inside getCourseAttributes.
-			//I do not like this. I want getCourseAttributes to return dummy.
-			dummy = getCourseAttributes(tempCourseNumber);
-
-			$(document.body).promise().done(function(){	
-				//writePageHeader("#odu_top", dummy); //see note above
-				//if (getUrlVars()["isHome"])
-				//	writeHomeSkeleton("#odu_wrapper");
-				//else
-				//	writeBasicContentSkeleton("#odu_wrapper");
-					
-					writeHomeSkeleton("#odu_wrapper");
-			})
-			.then(function(){  
-				//if (getUrlVars()["isHome"])
-					loadHomeContent(tempCourseNumber);
-			});
+			writePageHeader("#odu_top", "x");
+			loadAssignments("#odu_wrapper", "2", "all")
 		});
 	</script>
 </head>
@@ -83,19 +65,7 @@
 	<body>
 		<div id="errorMsg" class="errorMsg"></div>
 		<div id="odu_top" class="odu_top"></div>
-		<div id="odu_wrapper" class="odu_wrapper">
-		<!--<main id="odu_main" class="odu_courseHome">
-			<div id="odu_courseHomeLhs" class="odu_courseHomeLhs">
-				<section id="odu_smallCalendarSection">
-
-					<h1 class="odu_sectionH1 calendar">Calendar</h1>
-					
-					<div id="odu_smallCalendarWrapper" class="wrapper">
-				</section>
-			</div>
-		</main>
-		-->
-		</div>
+		<div id="odu_wrapper" class="odu_wrapper"></div>
 		
 		
 		<footer class="odu_footer"></footer>
