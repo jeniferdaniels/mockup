@@ -243,9 +243,17 @@ a{
 	}
 }
 
-//strong
+strong {
+	font-weight: 600;
+}
 //em
-//b
+b {
+	font-color: $hotPink;
+	
+}
+b::before{
+	content: "ILLEGAL HTML TAG";
+}
 //i
 //u
 //s
@@ -387,6 +395,16 @@ a{
 	margin: 0;
 }
 
+//the *text part that explains the item for example:
+//Free Kittens*
+//Get tomorrow at Webb.
+//*Only purple kittens.
+
+//This style is for the "*Only purple kittens" part.
+.odu_asteriskedNote{
+	font-size: .9rem;
+	font-style: italic;
+}
 .odu_breadCrumbWrapper{
 	width: inherit;	//fill up odu_wrapper
 	display: block;

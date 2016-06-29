@@ -80,6 +80,15 @@ a {
   a:visited {
     color: #4488f6; }
 
+strong {
+  font-weight: 600; }
+
+b {
+  font-color: #ff0080; }
+
+b::before {
+  content: "ILLEGAL HTML TAG"; }
+
 /*
 .boxWrapper{
 	padding-top: 10px;
@@ -147,6 +156,10 @@ a {
   padding: 25px 10px 25px 0;
   border-bottom: 2px solid #7d7d7d;
   margin: 0; }
+
+.odu_asteriskedNote {
+  font-size: .9rem;
+  font-style: italic; }
 
 .odu_breadCrumbWrapper {
   width: inherit;
