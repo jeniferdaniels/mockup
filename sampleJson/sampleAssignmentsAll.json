@@ -5,6 +5,8 @@
         "title": "1.A.1",
         "longTitle": "Read Textbook Chapters",
         "id": "1",
+		"submitVia": "Something",
+		"deliverable": "email",
         "dueDate": "2016-05-12 00:00:00",
         "url": "courses/201530/comm270a/modules/1/assignments#1",
         "description": "asdkfj asa ladks fj safjsadfj asdjflkasdjflds"
@@ -13,6 +15,8 @@
         "title": "1.A.2",
         "longTitle": "other stuff",
         "id": "2",
+		"submitVia": "nothing",
+		"deliverable": "photo",
         "dueDate": "2016-05-14 00:00:00",
         "url": "courses/201530/comm270a/modules/1/assignments#2",
         "description": "asdkfj las lkadsjflkas lkjaslfasdlkfas dfj sadladskfsalk afasd fladsjfasdkflsa flkasjdfl"
@@ -22,6 +26,8 @@
         "longTitle": "some name",
         "id": "3",
         "dueDate": "2016-05-17 00:00:00",
+		"deliverable": "pony",
+		"submitVia": "Email",
         "url": "courses/201530/comm270a/modules/1/assignments#3",
         "description": "sajkdf kasdf kdasjf lksadjflkdsjfldksjf 'ladksjfldska jlsdfj l sjfdslkjfdksafjasdfjsdalf sakf "
     }, {
@@ -30,6 +36,8 @@
         "longTitle": "blah",
         "id": "4",
         "dueDate": "2016-05-18 00:00:00",
+		"deliverable": "word file",
+		"submitVia": "dropbox",
         "url": "courses/201530/comm270a/modules/2/assignments#1",
         "description": "stuff"
     },{
@@ -37,6 +45,7 @@
         "title": "2.A.2",
         "longTitle": "more other stuff",
         "id": "5",
+		"deliverable": "toast",
         "dueDate": "2016-05-19 00:00:00",
         "url": "courses/201530/comm270a/modules/2/assignments#2",
         "description": "stuff"

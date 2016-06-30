@@ -1,27 +1,33 @@
 {
     "pageTitle": "Module 1 Assignments",
     "assignments": [{
-        "module": 1,
+		"module": 1,
         "title": "1.A.1",
         "longTitle": "Read Textbook Chapters",
         "id": "1",
+		"submitVia":"Email",
+		"deliverable": "500 word email",
         "dueDate": "2016-05-12 00:00:00",
         "url": "courses/201530/comm270a/modules/1/assignments#1",
         "description": "asdkfj asa ladks fj safjsadfj asdjflkasdjflds"
     }, {
-        "module": 1,
-        "title": "1.A.2",
+		"module": 1,
+		"title": "1.A.2",
         "longTitle": "other stuff",
         "id": "2",
         "dueDate": "2016-05-17 00:00:00",
+		"submitVia": "Backboard",
+		"deliverable": "essay",
         "url": "courses/201530/comm270a/modules/1/assignments#2",
         "description": "asdkfj las lkadsjflkas lkjaslfasdlkfas dfj sadladskfsalk afasd fladsjfasdkflsa flkasjdfl"
     }, {
-        "module": 1,
-        "title": "1.A.3",
+  		"module": 1,
+		"title": "1.A.3",
         "longTitle": "some name",
         "id": "3",
         "dueDate": "2016-05-18 00:00:00",
+		"submitVia": "",
+		"deliverable": "NA",
         "url": "courses/201530/comm270a/modules/1/assignments#3",
         "description": "sajkdf kasdf kdasjf lksadjflkdsjfldksjf 'ladksjfldska jlsdfj l sjfdslkjfdksafjasdfjsdalf sakf "
     }]
