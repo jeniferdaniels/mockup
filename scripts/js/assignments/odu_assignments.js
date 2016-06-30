@@ -1,8 +1,11 @@
 DEBUG = true;
 
+//TODO: JMD make this robust, currently there is not error/format checking.
 function writeAssignment(baseDiv, assignmentData){
 	if (DEBUG) benchMark("start", "writeAssignment", {"baseDiv": baseDiv, "assignmentData":assignmentData}); 
 
+	
+	
 		$(baseDiv)
 			.append($("<li>").attr("id","odu_assignment_" + assignmentData.id)
 				.append($("<ul>").attr("id","odu_assignmentDetails_" + assignmentData.id).addClass("odu_assignmentDetails")
@@ -12,7 +15,7 @@ function writeAssignment(baseDiv, assignmentData){
 						.append($("<h3>").html("Due"))
 						.append($("<span>").html(assignmentData.dueDate))))); //TODO: format with moment
 
-				if (assignmentData.submitVia != ""){
+				if (!((assignmentData.submitVia == "")	|| (typeof assignmentData.submitVia === undefined) || (assignmentData.submitVia == null))){
 					$("#odu_assignmentDetails_" + assignmentData.id)
 						.append($("<li>")
 							.append($("<h3>").html("Submit Via"))
@@ -57,10 +60,10 @@ function loadAssignments(baseDiv, id, listType){
 	if (DEBUG) benchMark("start", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
 	
 	var assignmentsUrl = "sampleJson/sampleAssignmentsAll.json"; //default
-	if (listType == "assignment")
-		assignmentsUrl = "sampleJson/sampleAssignmentsSingular.json";
-	else if (listType == "module")
-		assignmentsUrl = "sampleJson/sampleAssigmentsModule.json";
+	if (listType.toLowerCase() == "single")
+		assignmentsUrl = "sampleJson/sampleAssignmentsSingle.json";
+	else if (listType.toLowerCase() == "module")
+		assignmentsUrl = "sampleJson/sampleAssignmentsModule.json";
 
 	//get data
 	$.ajax({
