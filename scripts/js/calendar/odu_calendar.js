@@ -7,56 +7,65 @@
 //Purpose:		 calls the fullCalendar function and populates the small calendar object
 //				 on the webpage
 //*****************************************************************************************
-function writeSmallCalendar(smalLCalDiv, eventList) {
+function writeSmallCalendar(smallCalDiv, eventList) {
 
-		if (DEBUG) benchMark("start", "writeSmallCalendar", {"eventList": eventList, "smalLCalDiv": smalLCalDiv});
+		if (DEBUG) benchMark("start", "writeSmallCalendar", {"eventList": eventList, "smallCalDiv": smallCalDiv});
 		
 		
-		//is a value passed?
-		if (!((smalLCalDiv == "") || (typeof smalLCalDiv === undefined) || (smalLCalDiv == null))){
-			
-			
-		}
-		else{
-			if (DEBUG) console.log("smalLCalDiv not passed to writeSmallCalendar.");
-		
-		}
-		
-		
-		//add divs for pop up
-		/*$(smalLCalDiv).append($("<div>").attr("id", "odu_calendarPopUp").attr("class","displayNone").css("z-index", "30000"));	//TODO: add class not css
-		$("#odu_calendarPopUp").append($("<div>").attr("id", "odu_popUpWrapper"));
-		$("#odu_popUpWrapper").append($("<div>").attr("id", "odu_popUp"));
+		//is a value passed
+		if (!((smallCalDiv == "") || (typeof smallCalDiv === undefined) || (smallCalDiv == null))){
 
-		//add small calendar
-		$("#" + smalLCalDiv).fullCalendar({
-			events: formatForSmallCal(eventList), //set short title for small calendar
-			height: 430,
-			fixedWeekCount: false,
-			defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
-			theme: true,
-			header: {
-				left:   'prev',
-				center: 'title',
-				right:  'next'
-			},
-			themeButtonIcons: {
-				prev:  'odu_left-chevron',
-				next:  'odu_right-chevron'
-			},
-			eventRender: function (event, element) {
-				element.attr('href', 'javascript:void(0);');
-				element.click(function() {
-					populateEventPopUp("#odu_popUpContent", event);
-					$("#odu_popUpContent").dialog({ modal: false, width:600, height: 500});
-				});				
-			}				
-		});
+			//is the div there?
+			if ((smallCalDiv.length)){
+				$(smallCalDiv).append($("<div>").attr("id", smallCalDiv + "PopUpSection")
+					.append($("<div>").attr("id", smallCalDiv + "PopUpWrapper")
+						.append($("<div>").attr("id", smallCalDiv + "PopUp"))));
+
+				//check to see that there was an events var passsed and that there is something in the object					
+				if (!((eventList == "") || (typeof eventList === undefined) || (eventList == null))){
+					console.log("eventList found");
+				}
+				else { if (DEBUG) console.log("eventList not found"); }
+			}
+			else{ if (DEBUG) console.log("smallCalDiv '" + smallCalDiv + "' does not exist"); }
+		}
+		else { if (DEBUG) console.log("smalLCalDiv not passed to writeSmallCalendar.");	}
+		
+		
+		
+		
 	
-		$("#odu_popUpContent").attr("class", "displayBlock");
-		*/
+		//$("#odu_popUpContent").attr("class", "displayBlock");
+	
 }
-
+/*
+						//add small calendar
+							$(smalLCalDiv).fullCalendar({
+								events: formatForSmallCal(eventList), //set short title for small calendar
+								height: 430,
+								fixedWeekCount: false,
+								defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
+								theme: true,
+								header: {
+									left:   'prev',
+									center: 'title',
+									right:  'next'
+								},
+								themeButtonIcons: {
+									prev:  'odu_left-chevron',
+									next:  'odu_right-chevron'
+								},
+								eventRender: function (event, element) {
+									element.attr('href', 'javascript:void(0);');
+									element.click(function() {
+										populateEventPopUp(smallCalDiv + "PopUp", event);
+										$(smallCalDiv + "PopUp").dialog({ modal: false, width:600, height: 500});
+									});				
+								}				
+							});
+					
+*/
+					
 
 
 //gets object with keys:
