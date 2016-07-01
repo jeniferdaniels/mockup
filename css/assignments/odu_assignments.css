@@ -2,6 +2,8 @@
   list-style-type: none !important; }
   #odu_assignments li {
     margin: 0; }
+  #odu_assignments p li {
+    margin-left: 25px; }
   #odu_assignments h2 {
     color: red; }
   #odu_assignments h3 {
@@ -10,6 +12,9 @@
     font-weight: 600;
     display: inline-block;
     margin: 0 10px 0 0; }
+  #odu_assignments h5 {
+    color: #505050;
+    font-size: 0.9rem; }
   #odu_assignments .odu_assignmentDetails {
     list-style-type: none !important;
     border-bottom: 1px solid red;

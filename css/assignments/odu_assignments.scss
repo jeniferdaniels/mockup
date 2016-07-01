@@ -4,7 +4,9 @@
 #odu_assignments{
 	list-style-type: none !important;
 	& li{margin: 0;}
-	
+	& p li{
+		margin-left: $indent;
+	}
 	& h2{
 		
 		//border-top: 1px solid $darkGray;
@@ -19,6 +21,11 @@
 		margin: 0 10px 0 0;
 	}
 	
+	h5{
+		color: $darkGray;
+		font-size: 0.9rem;
+	
+	}
 	& .odu_assignmentDetails{
 		list-style-type: none !important;
 		border-bottom: 1px solid red;
