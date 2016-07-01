@@ -1,9 +1,10 @@
 
 //*****************************************************************************************
 //Function Name: writeSmallCalendar()
-//Input: 		 eventList with json data 
+//Input: 		 smallCalDiv - where the calendar should be written
+//				 eventList - json obj of events
 //Output:		 none, fills an html dom element
-//Purpose:		 calls the fullCalendar function and populates the #calendar object
+//Purpose:		 calls the fullCalendar function and populates the small calendar object
 //				 on the webpage
 //*****************************************************************************************
 function writeSmallCalendar(smalLCalDiv, eventList) {
