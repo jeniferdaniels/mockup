@@ -23,49 +23,41 @@ function writeSmallCalendar(smallCalDiv, eventList) {
 
 				//check to see that there was an events var passsed and that there is something in the object					
 				if (!((eventList == "") || (typeof eventList === undefined) || (eventList == null))){
-					console.log("eventList found");
+					
+					$(smallCalDiv).fullCalendar({
+						events: formatForSmallCal(eventList), //set short title for small calendar
+						height: 430,
+						fixedWeekCount: false,
+						defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
+						theme: true,
+						header: {
+							left:   'prev',
+							center: 'title',
+							right:  'next'
+						},
+						themeButtonIcons: {
+							prev:  'odu_left-chevron',
+							next:  'odu_right-chevron'
+						},
+						eventRender: function (event, element) {
+							element.attr('href', 'javascript:void(0);');
+							element.click(function() {
+								populateEventPopUp(smallCalDiv + "PopUp", event);
+								$(smallCalDiv + "PopUp").dialog({ modal: false, width:600, height: 500});
+							});				
+						}				
+					});
+					
 				}
-				else { if (DEBUG) console.log("eventList not found"); }
+				else { if (DEBUG) console.log("eventList passed to writeSmallCalendar is null"); }
 			}
 			else{ if (DEBUG) console.log("smallCalDiv '" + smallCalDiv + "' does not exist"); }
 		}
 		else { if (DEBUG) console.log("smalLCalDiv not passed to writeSmallCalendar.");	}
-		
-		
-		
-		
 	
-		//$("#odu_popUpContent").attr("class", "displayBlock");
+		//$(smallCalDiv + "PopUp").attr("class", "displayBlock");
 	
 }
-/*
-						//add small calendar
-							$(smalLCalDiv).fullCalendar({
-								events: formatForSmallCal(eventList), //set short title for small calendar
-								height: 430,
-								fixedWeekCount: false,
-								defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
-								theme: true,
-								header: {
-									left:   'prev',
-									center: 'title',
-									right:  'next'
-								},
-								themeButtonIcons: {
-									prev:  'odu_left-chevron',
-									next:  'odu_right-chevron'
-								},
-								eventRender: function (event, element) {
-									element.attr('href', 'javascript:void(0);');
-									element.click(function() {
-										populateEventPopUp(smallCalDiv + "PopUp", event);
-										$(smallCalDiv + "PopUp").dialog({ modal: false, width:600, height: 500});
-									});				
-								}				
-							});
-					
-*/
-					
 
 
 //gets object with keys:
