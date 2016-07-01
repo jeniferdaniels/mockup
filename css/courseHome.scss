@@ -19,7 +19,7 @@ main.odu_courseHome {
 			//border: 1px solid $liteGray;
 			font-weight: 600;
 			display: inline-block;
-			width: 305px;	//TODO: fix this so its not a hard #
+			width: $w_oduCourseHomeLhsHeader;
 			color: white;
 			
 			&.calendar{
@@ -40,7 +40,7 @@ main.odu_courseHome {
 			}
 			&.moduleList{
 				background: $odu_darkBlue;
-				width: 689px;	//TODO: fix this so it is not a hard#
+				width: $w_oduCourseHomeRhsHeader;
 			}
 		}
 		

@@ -1,5 +1,5 @@
 main.odu_courseHome {
-  width: 1060px;
+  width: 1000px;
   background: white; }
   main.odu_courseHome section {
     margin-top: 20px; }
@@ -17,7 +17,7 @@ main.odu_courseHome {
         background: #662d91; }
       main.odu_courseHome section .odu_sectionH1.moduleList {
         background: #002f4e;
-        width: 689px; }
+        width: 640px; }
     main.odu_courseHome section .wrapper {
       margin-top: 0;
       border: 1px solid #c8c8c8;
@@ -46,10 +46,10 @@ main.odu_courseHome {
 .odu_courseHomeLhs {
   width: 325px;
   float: left;
-  margin-right: 20px; }
+  margin-right: 10px; }
 
 .odu_courseHomeRhs {
-  width: 710px;
+  width: 660px;
   float: right; }
 
 .odu_calendarIcon {
