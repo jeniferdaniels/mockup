@@ -8,11 +8,11 @@
 //$xxLiteGray:
 $xLiteGray: rgba(250, 250, 250, 1);
 $liteGray: rgba(200, 200, 200, 1);
-$mediumGray: rgba(125, 125, 125, 1);
+$mediumGray: rgba(125, 125, 125, 1);		//#7D7D7D
 $calendarMediumGray: rgba(170,170,170,1);	//#AAAAAA
 $darkGray: rgba(80,80,80,1);				//#141414
 $googleGray: rgba(247,247,247, 1);
-$almostBlack: rgba(5, 5, 5, 1);
+$almostBlack: rgba(5, 5, 5, 1);				//#050505
 
 //RAINBOW
 $liteRed: rgba(255, 186, 186, 1);
@@ -78,6 +78,13 @@ $link-color-visited: $googleBlue;
 $popUpBackground: $white;
 $contentBackgroundColor: $white;
 
+$homeWidgetBorderColor: $mediumGray;
+
+//?change name
+$modalHeaderColor: $odu_briteBlue;
+$modalHeaderBorderColor: $mediumGray;
+$modalBorder: $mediumGray;
+
 //--------------------------------------
 //FONT
 //--------------------------------------
@@ -108,16 +115,19 @@ $odu_iconUpEvents: "images/clock.svg";
 //--------------------------------------
 $indent: 25px;
 
-$w_oduContent: 1000px;
+$w_oduContent: 940px;
 $w_oduToolbox: 50px;
 $w_oduWrapper: $w_oduContent + $w_oduToolbox + 10px;
 $w_oduNavWrapper: $w_oduContent;
 
 $w_oduCourseHomeLhs: 325px;
-$w_oduCourseHomeMarginBetween: 25px;
+$w_oduCourseHomeMarginBetween: 15px;
 //$w_oduCourseHomeHeaderFlyoutIcon: 20px;
 
 $w_oduCourseHomeRhs: $w_oduWrapper - $w_oduCourseHomeLhs - $w_oduCourseHomeMarginBetween;
+$w_oduCourseHomeRhsHeader: $w_oduCourseHomeRhs - $w_oduCourseHomeMarginBetween - 5px; //idfk why -5?
+$w_oduCourseHomeLhsHeader: $w_oduCourseHomeLhs - $w_oduCourseHomeMarginBetween - 5px; //still dont know
+
 
 $w_oduProgressBar: 200px;	//not used?
 $h_oduProgressBar: 10px;	//not used?
