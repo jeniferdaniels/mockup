@@ -26,8 +26,10 @@ function writePageHeader(topDiv, courseData){
 	if (DEBUG) {for(key in courseData){ console.log("key " + key  + "value" + courseData[key]); }}
 			
 	//check to see that object is not empty, if it is then display minimal header
-	if (!((topDiv == "")	|| (typeof topDiv === undefined) || (topDiv == null)))
+	if (!((topDiv == "") || (typeof topDiv === undefined) || (topDiv == null)))
 	{
+		//TODO: check to make sure div exists
+		
 		if ((courseData == "")	|| (typeof courseData === undefined) || (courseData == null)) {
 			$("#errorMsg").addClass("displayBlock").append($("<span>").html("Missing course data for header.")); 
 		}
@@ -146,15 +148,15 @@ function writeHomeSkeleton(baseDiv){
 			.append($("<li>").attr("id", "facultyListItem")
 				.append($("<a>").attr("href","faculty/").addClass("ple-book-person")
 					.append($("<span>").html("Faculty"))))
-			.append($("<li>").attr("id", "glossaryListItem")
-				.append($("<a>").attr("href","glossary/").addClass("ple-tabbed-book")
-					.append($("<span>").html("Glossaries"))))
-			.append($("<li>").attr("id", "notesListItem")
-				.append($("<a>").attr("href","notes/").addClass("ple-notepad-lines")
-					.append($("<span>").html("Notes"))))
-			.append($("<li>").attr("id", "resourcesListItem")
-				.append($("<a>").attr("href","resources").addClass("ple-book-spines")
-					.append($("<span>").html("Resources"))))
+			//.append($("<li>").attr("id", "glossaryListItem")
+			//	.append($("<a>").attr("href","glossary/").addClass("ple-tabbed-book")
+			//		.append($("<span>").html("Glossaries"))))
+			//.append($("<li>").attr("id", "notesListItem")
+			//	.append($("<a>").attr("href","notes/").addClass("ple-notepad-lines")
+			//		.append($("<span>").html("Notes"))))
+			//.append($("<li>").attr("id", "resourcesListItem")
+			//	.append($("<a>").attr("href","resources").addClass("ple-book-spines")
+			//		.append($("<span>").html("Resources"))))
 			.append($("<li>").attr("id", "syllabusListItem")
 				.append($("<a>").attr("href","syllabus/").addClass("ple-page-lines")
 					.append($("<span>").html("Syllabus")))));	
@@ -215,7 +217,7 @@ function loadHomeContent(course_id){
 		url: smallCalendarUrl,
 		type: 'GET',
 		dataType: 'json',
-		success: function(data) { console.log("got small calendar data"); writeSmallCalendar(data, "odu_smallCalendar"); },
+		success: function(data) { console.log("got small calendar data"); writeSmallCalendar("odu_smallCalendar", data); },
 		error: function() { $("#odu_smallCalendar").append("Unable to load small calendar right now."); console.log("There was an error loading the small calendar events."); },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
@@ -365,3 +367,4 @@ function getCourseAttributes(courseId){
 	//if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
 }
 
+	
