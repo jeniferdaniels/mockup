@@ -37,7 +37,7 @@ function writeAssignment(baseDiv, assignmentData){
 
 function writeAssignments(baseDiv, assignmentsData){
 
-		if (DEBUG) benchMark("start", "writeAssignments", {"baseDiv": baseDiv, "assignmentsData":assignmentsData}); 
+		//if (DEBUG) benchMark("start", "writeAssignments", {"baseDiv": baseDiv, "assignmentsData":assignmentsData}); 
 
 		//create base list
 		$(baseDiv).append($("<section>").attr("id","odu_assignmentsSection")
@@ -50,21 +50,19 @@ function writeAssignments(baseDiv, assignmentsData){
 		for (i=0; i < assignmentsData.assignments.length; i++){
 			writeAssignment("#odu_assignments", assignmentsData.assignments[i]);
 		}
+		
+		//filter here.
 	
-	if (DEBUG) benchMark("end", "writeAssignments", {"baseDiv": baseDiv, "assignmentData":assignmentsData}); 
+	
+	//if (DEBUG) benchMark("end", "writeAssignments", {"baseDiv": baseDiv, "assignmentData":assignmentsData}); 
 
 }
 
 
-function loadAssignments(baseDiv, id, listType){
-	if (DEBUG) benchMark("start", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
+function loadAssignments(baseDiv, assignmentsUrl){
+	//if (DEBUG) benchMark("start", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
 	
-	var assignmentsUrl = "sampleJson/sampleAssignmentsAll.json"; //default
-	if (listType.toLowerCase() == "single")
-		assignmentsUrl = "sampleJson/sampleAssignmentsSingle.json";
-	else if (listType.toLowerCase() == "module")
-		assignmentsUrl = "sampleJson/sampleAssignmentsModule.json";
-
+	
 	//get data
 	$.ajax({
 		url: assignmentsUrl,
@@ -76,8 +74,7 @@ function loadAssignments(baseDiv, id, listType){
 		crossDomain: true
 	});	
 	
-	if (DEBUG) benchMark("end", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
+	//if (DEBUG) benchMark("end", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
 
 }
-
 
