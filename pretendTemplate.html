@@ -17,16 +17,15 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/pleStyle.css">	
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/ple-awesome/styles.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="fonts/ple-awesome/styles.css" />
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
 	
-	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
-	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
-	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
+	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
-	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
+	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />	
 	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
 	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
 	<link rel="stylesheet" type="text/css" href="css/assignments/odu_assignments.css" />
@@ -39,6 +38,7 @@
 	<script type="text/javascript" src="scripts/js/utils.js"></script>
 	<script type="text/javascript" src="scripts/js/moment.min.js"></script>	
 	<script type="text/javascript" src="scripts/js/calendar/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="scripts/js/calendar/largeCalendar.js"></script>
 	<script type="text/javascript" src="scripts/js/calendar/odu_calendar.js"></script>
 	<script type="text/javascript" src="scripts/js/upEvents/odu_upEvents.js"></script>
 	<script type="text/javascript" src="scripts/js/pnotify.custom.js"></script>
@@ -57,16 +57,88 @@
 		$(document).ready(function(){		
 			
 			writePageHeader("#odu_top", "x");
-			loadAssignments("#odu_wrapper", "2", "all")
+			//loadAssignments("#odu_content", "2", "all")
+			writeHomeSkeleton("#odu_wrapper");
+			loadHomeContent("202020/dev101")
 		});
 	</script>
 </head>
 
 	<body>
 		<div id="errorMsg" class="errorMsg"></div>
-		<div id="odu_top" class="odu_top"></div>
-		<div id="odu_wrapper" class="odu_wrapper"></div>
-		
+	<div id="odu_top" class="odu_top"></div>
+	<div id="odu_wrapper" class="odu_wrapper">
+		<div class="odu_wrapper" id="odu_wrapper">
+			<h1 id="odu_pageTitle" class="odu_pageTitle"><!-- string::page_title --></h1>
+			<nav id="odu_toolbox" class="odu_toolbox">
+				<ul id="odu_toolboxList" class="odu_toolboxList">
+					<li id="odu_homeLi">
+						<a id="odu_homeLink" href="<!-- string::site_urlbase -->">
+							<i id="odu_homeLinkIcon" class="odu_toolboxIcon ple-house"></i>
+							<span>Home</span>
+						</a>
+					</li>
+					<li id="odu_syllabusLi">
+						<a id="odu_syllabusLink" href="<!-- string::site_urlbase -->syllabus/">
+							<i id="odu_syllabusLinkIcon" class="odu_toolboxIcon ple-page-lines"></i>
+							<span>Syllabus</span>
+						</a>
+					</li>
+					<li id="odu_modulesLi">
+						<a id="odu_modulesLink" href="<!-- string::site_urlbase -->/module_listing">
+							<i id="odu_modulesLinkIcon" class="odu_toolboxIcon ple-folder"></i>
+							<span>Modules</span>
+						</a>
+					</li>
+					<li id="odu_calendarLi">
+						<a id="odu_calendarLink" href="<!-- string::site_urlbase -->/calendar">
+							<i id="odu_calendarLinkIcon" class="odu_toolboxIcon ple-calendar"></i>
+							<span>Calendar</span>
+						</a>
+					</li>
+					<li id="odu_aaqLi">
+						<a id="odu_aaqLink" href="#">
+							<i id="odu_aqqLinkIcon" class="odu_toolboxIcon ple-person-ask"></i>
+							<span>Ask a Question</span>
+						</a>
+					</li>
+					<li id="odu_notesLi">
+						<a id="odu_notesLink" href="#">
+							<i id="odu_notesLinkIcon" class="odu_toolboxIcon ple-notepad-lines"></i>
+							<span>Notes</span>
+						</a>
+					</li>
+					<li id="odu_printLi">
+						<a id="odu_printLink" href="<!-- string::printer_href -->">
+							<i id="odu_printLinkIcon" class="odu_toolboxIcon ple-printer"></i>
+							<span>Print</span>
+						</a>
+					</li>
+					<li id="odu_editLi">
+						<a id="odu_editLink" href="<!-- string::editor_href -->">
+							<i id="odu_editLinkIcon" class="odu_toolboxIcon ple-pencil"></i>
+							<span>Edit</span>
+						</a>
+					</li>
+					<li id="odu_adminToolsLi">
+						<a id="odu_adminToolsLink" href="<!-- string::editor_options_href -->">
+							<i id="odu_adminToolsLinkIcon" class="odu_toolboxIcon ple-case"></i>
+							<span>Admin Tools</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			
+			<section id="odu_contentSection" class="odu_contentSection">
+				<div id="odu_contentWrapper" class="odu_contentWrapper">
+					<div id="odu_content" class="odu_content">
+					
+					</div>
+				</div>
+			</section>
+			
+			<div class="clearFix"></div>
+		</div>	
 		
 		<footer class="odu_footer"></footer>
 	</body>
