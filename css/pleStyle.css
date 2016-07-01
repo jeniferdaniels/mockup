@@ -197,7 +197,7 @@ b::before {
   left: 0;
   height: 75px;
   vertical-align: top;
-  z-index: 900;
+  z-index: 100;
   border-bottom: 5px solid #003767; }
   .odu_top h1 {
     display: inline-block;
@@ -221,7 +221,7 @@ b::before {
         color: #4488f6;
         text-decoration: underline; }
   .odu_topWrapper {
-    width: 1060px;
+    width: 1000px;
     padding: 0;
     margin: 0 auto 0 auto; }
 
@@ -261,8 +261,9 @@ b::before {
   width: 800px; }
 
 .odu_wrapper {
-  width: 1060px;
-  margin: 0 auto; }
+  width: 1000px;
+  margin: 0 auto;
+  padding: 5px; }
 
 .odu_toolbox {
   background: none;
@@ -304,7 +305,7 @@ b::before {
         background: white; }
 
 .odu_contentSection {
-  width: 1000px;
+  width: 940px;
   float: right;
   margin: 0;
   padding: 0;
@@ -320,12 +321,12 @@ b::before {
   background: #fafafa; }
 
 .higherBreadcrumbs {
-  width: 1060px;
+  width: 1000px;
   margin: 0 auto; }
 
 .odu_toolboxIcon {
-  font-size: 2.2rem;
-  padding: 10px; }
+  font-size: 2rem;
+  text-align: center; }
 
 .odu_iconHelp {
   height: 25px;

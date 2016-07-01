@@ -463,7 +463,7 @@ b::before{
 	height: 75px;
 	vertical-align: top;
 	//border: 1px solid black;
-	z-index: 900;
+	z-index: 100;
 	border-bottom: 5px solid $monarchBlue;
 	//border-top: 30px solid rgba(23,119,167, 1);
 	//box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
@@ -581,6 +581,7 @@ b::before{
 .odu_wrapper{
 	width: $w_oduWrapper;
 	margin: 0 auto;
+	padding: 5px;
 	//border: 1px solid red;
 }
 
@@ -686,8 +687,9 @@ b::before{
 }
 
 .odu_toolboxIcon{
-	font-size: 2.2rem;
-	padding: 10px;
+	font-size: 2rem;
+	//padding: 10px;
+	text-align: center;
 }
 
 
