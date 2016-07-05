@@ -218,7 +218,7 @@ function loadHomeContent(course_id){
 		url: smallCalendarUrl,
 		type: 'GET',
 		dataType: 'json',
-		success: function(data) { console.log("got small calendar data"); writeSmallCalendar("odu_smallCalendar", data); },
+		success: function(data) { console.log("got small calendar data"); writeCalendar("odu_smallCalendar", data, "s"); },
 		error: function() { $("#odu_smallCalendar").append("Unable to load small calendar right now."); console.log("There was an error loading the small calendar events."); },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
