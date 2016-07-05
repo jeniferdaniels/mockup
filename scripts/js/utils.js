@@ -116,3 +116,7 @@ function benchMark(place, functionName, params){
 	*/
 }
 
+
+function isEmpty(theVar){
+	return ((theVar == "") || (typeof theVar === undefined) || (theVar == null));
+}
