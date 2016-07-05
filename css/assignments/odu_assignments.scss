@@ -12,7 +12,7 @@
 	& li p{
 		margin-left: 50px;
 	}
-	
+
 	& h2{
 		
 		//border-top: 1px solid $darkGray;
@@ -34,6 +34,10 @@
 		border-bottom: 1px solid $odu_mediumBlue;
 		margin-bottom: 20px;
 		padding-bottom: 10px;
+		
+		& .cutShort{
+			max-height: 200px;
+		}
 	}
 }
 
