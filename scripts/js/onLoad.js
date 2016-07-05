@@ -59,13 +59,13 @@ function writePageHeader(topDiv, courseData){
 			//now display it
 			$(topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
 				.append($("<header>")
-						.append($("<nav>").attr("id", "nav")
-							.append($("<ul>")
-								.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
-								.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
-							)//end ul	
-						)//end nav
-						.append($("<div>").addClass("clearFix"))
+						//.append($("<nav>").attr("id", "nav")
+						//	.append($("<ul>")
+						//		.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
+						//		.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
+						//	)//end ul	
+						//)//end nav
+						//.append($("<div>").addClass("clearFix"))
 						.append($("<div>").addClass("oduOnlineLogo"))
 						.append($("<a>").attr("href", "\mockup").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
 						.append($("<h2>").attr("id", "courseInstructorTitle")
@@ -190,7 +190,8 @@ function loadHomeContent(course_id){
 	
 	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
 	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/202020/dev101"; //+ course_id; 
-	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
+	//var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
+	var smallCalendarUrl = "sampleJson/sampleSmallCalendarEvents.json";
 	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/" + course_id; 
 
 	if (DEBUG) console.log("announcementsUrl" + announcementsUrl);
