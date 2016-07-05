@@ -4,12 +4,13 @@
 	background: $liteGray;
 	height: 3px;
 }
-
+.multipleSmallEvent,
 .assignmentSmallEvent{
 	background: $odu_green;
 	height: 5px;
 }
 .moduleSmallEvent,
+.multipleSmallEvent,
 .assignmentSmallEvent{
 	border: 0;
 	border-radius: 0;
