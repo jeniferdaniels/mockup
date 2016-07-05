@@ -2,11 +2,13 @@
   background: #c8c8c8;
   height: 3px; }
 
+.multipleSmallEvent,
 .assignmentSmallEvent {
   background: #3bb60b;
   height: 5px; }
 
 .moduleSmallEvent,
+.multipleSmallEvent,
 .assignmentSmallEvent {
   border: 0;
   border-radius: 0; }
