@@ -4,20 +4,20 @@
     margin: 0; }
   #odu_assignments p li {
     margin-left: 25px; }
+  #odu_assignments li p {
+    margin-left: 50px; }
   #odu_assignments h2 {
-    color: red; }
+    color: #2b3990;
+    display: inline; }
   #odu_assignments h3 {
     font-size: 1.1rem;
-    color: green;
     font-weight: 600;
     display: inline-block;
-    margin: 0 10px 0 0; }
-  #odu_assignments h5 {
-    color: #505050;
-    font-size: 0.9rem; }
+    margin: 0 10px 0 0;
+    margin-left: 50px; }
   #odu_assignments .odu_assignmentDetails {
     list-style-type: none !important;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #2b3990;
     margin-bottom: 20px;
     padding-bottom: 10px; }
 

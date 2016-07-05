@@ -4,31 +4,34 @@
 #odu_assignments{
 	list-style-type: none !important;
 	& li{margin: 0;}
+	
 	& p li{
 		margin-left: $indent;
 	}
+	
+	& li p{
+		margin-left: 50px;
+	}
+	
 	& h2{
 		
 		//border-top: 1px solid $darkGray;
-		color: red;
+		color: $odu_mediumBlue;
+		display: inline;
 	}
 	
 	& h3 {
 		font-size: 1.1rem;
-		color: green;
+		//color: $odu_briteBlue;
 		font-weight: 600;
 		display: inline-block;
 		margin: 0 10px 0 0;
+		margin-left: 50px;
 	}
 	
-	h5{
-		color: $darkGray;
-		font-size: 0.9rem;
-	
-	}
 	& .odu_assignmentDetails{
 		list-style-type: none !important;
-		border-bottom: 1px solid red;
+		border-bottom: 1px solid $odu_mediumBlue;
 		margin-bottom: 20px;
 		padding-bottom: 10px;
 	}
