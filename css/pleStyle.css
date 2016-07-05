@@ -42,20 +42,30 @@ nav {
 p {
   margin-bottom: 10px; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 10px 0 10px 0; }
+
 h1 {
   font-size: 2.2rem;
-  font-weight: 500;
-  margin-bottom: 10px; }
+  font-weight: 600; }
 
 h2 {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin-bottom: 10px; }
+  font-size: 1.8rem; }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-top: 10px; }
+  font-size: 1.4rem; }
+
+h4 {
+  font-size: 1.2rem; }
+
+h5 {
+  font-size: 1.0rem;
+  font-weight: 600; }
+
+h6 {
+  font-size: .9rem;
+  font-weight: 600; }
 
 ul {
   list-style-type: disc; }
@@ -82,12 +92,6 @@ a {
 
 strong {
   font-weight: 600; }
-
-b {
-  font-color: #ff0080; }
-
-b::before {
-  content: "ILLEGAL HTML TAG"; }
 
 /*
 .boxWrapper{
@@ -122,6 +126,7 @@ b::before {
 .current {
   color: #4488f6; }
 
+.displayHidden,
 .hidden {
   visibility: hidden; }
 
@@ -151,6 +156,84 @@ b::before {
 
 .errorMsg {
   color: #e74c3c; }
+
+.red {
+  color: #be1e2d; }
+
+.orange {
+  color: #f58220; }
+
+.yellow {
+  color: #ffff99; }
+
+.liteGreen {
+  color: #d4fecc; }
+
+.green {
+  color: #3bb60b; }
+
+.darkGreen {
+  color: #0c6006; }
+
+.liteBlue {
+  color: #bde5f8; }
+
+.darkBlue {
+  color: #002f4e; }
+
+.mediumBlue {
+  color: #2b3990; }
+
+.briteBlue {
+  color: #4488f6; }
+
+.purple {
+  color: #662d91; }
+
+.magenta {
+  color: #e91f63; }
+
+.hotPink {
+  color: #ff0080; }
+
+.redBkg {
+  background: #be1e2d; }
+
+.orangeBkg {
+  background: #f58220; }
+
+.yellowBkg {
+  background: #ffff99; }
+
+.liteGreenBkg {
+  background: #d4fecc; }
+
+.greenBkg {
+  background: #3bb60b; }
+
+.darkGreenBkg {
+  background: #0c6006; }
+
+.liteBlueBkg {
+  background: #bde5f8; }
+
+.darkBlueBkg {
+  background: #002f4e; }
+
+.mediumBlueBkg {
+  background: #2b3990; }
+
+.briteBlueBkg {
+  background: #4488f6; }
+
+.purpleBkg {
+  background: #662d91; }
+
+.magentaBkg {
+  background: #e91f63; }
+
+.hotPinkBkg {
+  background: #ff0080; }
 
 .odu_pageTitle {
   padding: 25px 10px 25px 0;
@@ -187,7 +270,7 @@ b::before {
   width: 140px;
   display: inline-block;
   float: left;
-  margin: -10px 30px 0 0; }
+  margin: 0 30px 0 0; }
 
 .odu_top {
   position: fixed;
@@ -195,13 +278,11 @@ b::before {
   background-color: white;
   top: 0;
   left: 0;
-  height: 75px;
   vertical-align: top;
   z-index: 100;
   border-bottom: 5px solid #003767; }
   .odu_top h1 {
-    display: inline-block;
-    margin-top: -10px; }
+    display: inline-block; }
   .odu_top a {
     color: #505050; }
     .odu_top a:hover {
@@ -333,3 +414,34 @@ b::before {
   width: 25px;
   background-image: url("images/icon_help.svg");
   background-repeat: no-repeat; }
+
+.odu_checkmark {
+  font-family: ple-awesome;
+  font-size: 2.4rem;
+  content: "q";
+  color: #c8c8c8;
+  width: 50px; }
+
+center,
+b {
+  color: #be1e2d; }
+
+center::before,
+center::after,
+b::before,
+b::after {
+  color: white;
+  padding: 0 5px 0 5px;
+  background: #be1e2d; }
+
+b::before {
+  content: "ILLEGAL HTML TAG <b>"; }
+
+b::after {
+  content: "</b>"; }
+
+center::before {
+  content: "ILLEGAL HTML TAG <center>"; }
+
+center::after {
+  content: "</center>"; }

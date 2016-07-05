@@ -41,11 +41,9 @@ html{
 body{
 	font-family: $font-stack;
 	color: $almostBlack;
-	//border: 1px solid red;
 	line-height: 150%;
 	margin: 0;
 	padding: 0;
-	//background-color: $googleGray;
 	background: white;
 	height: 100%;
 	margin-top: 80px;
@@ -120,32 +118,39 @@ p{
 //5. HEADINGS
 //********************************************************************************************
 
+h1, h2, h3, h4, h5, h6{
+	font-weight: 500;
+	margin: 10px 0 10px 0;
+	//color: $odu_mediumBlue;
+}
 
-//***11-24-2015***
 h1{
 	font-size: 2.2rem;
-	font-weight: 500;
-	margin-bottom: 10px;
+	font-weight: 600;
 }
 
-//***11-9-2015***
 h2{
-	font-size: 1.6rem;
-	font-weight: 500;
-	margin-bottom: 10px;
+	font-size: 1.8rem;
 }
 
-//?
 h3{
-	font-size: 1.2rem;
-	font-weight: 500;
-	margin-top: 10px;		
+	font-size: 1.4rem;
 }
 
 //hgrroup
-//h4
-//h5
-//h6
+h4{
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-size: 1.0rem;
+	font-weight:600;
+}
+
+h6{
+	font-size: .9rem;
+	font-weight: 600;
+}
 
 //********************************************************************************************
 //6. LISTS
@@ -247,13 +252,8 @@ strong {
 	font-weight: 600;
 }
 //em
-b {
-	font-color: $hotPink;
-	
-}
-b::before{
-	content: "ILLEGAL HTML TAG";
-}
+
+
 //i
 //u
 //s
@@ -338,7 +338,7 @@ b::before{
 	color: $googleBlue;
 }
 
-//10/15/2015
+.displayHidden,
 .hidden{
 	visibility: hidden;
 }
@@ -384,6 +384,110 @@ b::before{
 .errorMsg{
 	color: $error;
 }
+
+
+
+.red{
+	color: $odu_red;
+}
+
+.orange{
+	color: $odu_orange;
+}
+
+.yellow{
+	color: $odu_yellow;
+}
+
+.liteGreen{
+	color: $odu_liteGreen;
+}
+
+.green{
+	color: $odu_green;
+}
+.darkGreen{
+	color: $odu_darkGreen;
+}
+
+.liteBlue{
+	color: $odu_liteBlue;
+}
+
+.darkBlue{
+	color: $odu_darkBlue;
+}
+
+.mediumBlue{
+	color: $odu_mediumBlue;
+}
+
+.briteBlue{
+	color: $odu_briteBlue;
+}
+
+.purple{
+	color: $odu_purple;
+}
+
+.magenta{
+	color: $odu_magenta;
+}
+.hotPink{
+	color: $odu_hotPink;
+}
+
+.redBkg{
+	background: $odu_red;
+}
+
+.orangeBkg{
+	background: $odu_orange;
+}
+
+.yellowBkg{
+	background: $odu_yellow;
+}
+
+.liteGreenBkg{
+	background: $odu_liteGreen;
+}
+
+.greenBkg{
+	background: $odu_green;
+}
+.darkGreenBkg{
+	background: $odu_darkGreen;
+}
+
+.liteBlueBkg{
+	background: $odu_liteBlue;
+}
+
+.darkBlueBkg{
+	background: $odu_darkBlue;
+}
+
+.mediumBlueBkg{
+	background: $odu_mediumBlue;
+}
+
+.briteBlueBkg{
+	background: $odu_briteBlue;
+}
+
+.purpleBkg{
+	background: $odu_purple;
+}
+
+.magentaBkg{
+	background: $odu_magenta;
+}
+
+.hotPinkBkg{
+	background: $odu_hotPink;
+}
+
 
 
 //**************************************
@@ -449,7 +553,7 @@ b::before{
 	width: 140px;
 	display:inline-block;
 	float: left;
-	margin: -10px 30px 0 0;
+	margin: 0 30px 0 0;
 	//border: 1px solid red;
 }
 
@@ -460,7 +564,7 @@ b::before{
 	background-color: white;
 	top: 0;
 	left: 0;
-	height: 75px;
+	//height: 75px;
 	vertical-align: top;
 	//border: 1px solid black;
 	z-index: 100;
@@ -471,7 +575,6 @@ b::before{
 	
 	h1{
 		display: inline-block;
-		margin-top: -10px;
 	}
 	
 	a{
@@ -699,3 +802,35 @@ b::before{
 	background-image: url("images/icon_help.svg");
 	background-repeat: no-repeat;
 }
+
+
+.odu_checkmark{
+	font-family: ple-awesome;
+	font-size: 2.4rem;
+	content:"q";
+	color: $liteGray;
+	width: 50px;
+}
+
+
+//******************************************************************************************************
+// Illegal tags
+//******************************************************************************************************
+center,
+b {
+	color: $odu_red;
+	
+}
+center::before,
+center::after,
+b::before,
+b::after{
+	color: $white;
+	padding: 0 5px 0 5px;
+	background: $odu_red;
+}
+
+b::before{	content: "ILLEGAL HTML TAG <b>"; }
+b::after{ content: "</b>"; }
+center::before{	content: "ILLEGAL HTML TAG <center>"; }
+center::after{	content: "</center>"; }
