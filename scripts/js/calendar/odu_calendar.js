@@ -1,38 +1,39 @@
 
 //*****************************************************************************************
 //Function Name: writeSmallCalendar()
-//Input: 		 smallCalDiv - where the calendar should be written, "cal" not "#cal"
+//Input: 		 calDiv - where the calendar should be written, "cal" not "#cal"
 //				 eventList - json obj of events
 //Output:		 none, fills an html dom element
 //Purpose:		 calls the fullCalendar function and populates the small calendar object
 //				 on the webpage
 //*****************************************************************************************
-function writeSmallCalendar(smallCalDiv, eventList) {
-	if (DEBUG) benchMark("start", "writeSmallCalendar", {"eventList": eventList, "smallCalDiv": smallCalDiv});
+function writeCalendar(calDiv, eventList, calSize) {
+	if (DEBUG) benchMark("start", "writeSmallCalendar", {"eventList": eventList, "calDiv": calDiv, "calSize": calSize});
 	
-	//is a value passed
-	if (!((smallCalDiv == "") || (typeof smallCalDiv === undefined) || (smallCalDiv == null))){
+	//Calendar vars	
+	calHeight = 770; //largeAsDefault
+	rightHeader = "month, basicWeek, next"; 
 
-		//is the div there?
-		if (("#" + smallCalDiv).length){	//this doesnt do what I think it does.
-			
-			$("#" + smallCalDiv).append($("<div>").attr("id", smallCalDiv + "PopUpSection")
-				.append($("<div>").attr("id", smallCalDiv + "PopUpWrapper")
-					.append($("<div>").attr("id", smallCalDiv + "PopUp"))));
+	if (calSize == "s"){
+		calHeight = 430;
+		rightHeader = "next";
+	}
+	
+	if (!isEmpty(calDiv)){
+		if ($("#" + calDiv).length){
 
-			//check to see that there was an events var passsed and that there is something in the object					
-			if (!((eventList == "") || (typeof eventList === undefined) || (eventList == null))){
-				
-				$("#" + smallCalDiv).fullCalendar({
-					events: addEventItemCss(eventList), //set short title for small calendar
-					height: 430,
+		//check to see that there was an events var passsed and that there is something in the object					
+			if (!isEmpty(eventList)){		
+				$("#" + calDiv).fullCalendar({
+					events: addEventItemCss(eventList),
+					height: calHeight,
 					fixedWeekCount: false,
-					defaultDate: new Date(), //defaultDate: moment().format('YYYY-MM-DD'),
+					defaultDate: new Date(),
 					theme: true,
 					header: {
 						left:   'prev',
 						center: 'title',
-						right:  'next'
+						right:  rightHeader
 					},
 					themeButtonIcons: {
 						prev:  'odu_left-chevron',
@@ -41,25 +42,24 @@ function writeSmallCalendar(smallCalDiv, eventList) {
 					eventRender: function (event, element) {
 						element.attr('href', 'javascript:void(0);');
 						element.click(function() {
-							populateEventPopUp(smallCalDiv + "PopUp", event);
-							$("#" + smallCalDiv + "PopUp").dialog({ modal: false, width:600, height: 500});
+							populateEventPopUp(calDiv + "PopUp", event);
+							$("#" + calDiv + "PopUp").dialog({ title: "Calendar Event", modal: false, width:600, minHeight: 300, maxHeight: 500});
 						});				
 					}				
 				});
-				
+			
+				//only write the popup if there are events
+				$("#" + calDiv).append($("<div>").attr("id", calDiv + "PopUpSection")
+					.append($("<div>").attr("id", calDiv + "PopUpWrapper")
+						.append($("<div>").attr("id", calDiv + "PopUp"))));
+
 			}
-			else { if (DEBUG) console.log("eventList passed to writeSmallCalendar is null"); }
+			else { if (DEBUG) console.log("eventList passed to writeCalendar is null"); }
 		}
-		else{ if (DEBUG) console.log("smallCalDiv '" + smallCalDiv + "' does not exist"); }
+		else{ if (DEBUG) console.log("calDiv " + calDiv + " does not exist"); }
 	}
-	else { if (DEBUG) console.log("smalLCalDiv not passed to writeSmallCalendar.");	}
-
-	//$(smallCalDiv + "PopUp").attr("class", "displayBlock");
-	if (DEBUG) benchMark("end", "writeSmallCalendar", "");
+	else { if (DEBUG) console.log("calDiv not passed to writeCalendar.");	}
 }
-
-
-
 
 function addEventItemCss(eventList){
 	
@@ -81,24 +81,28 @@ function populateEventPopUp(popUpContentDiv, eventData){
 	//make sure div is passed
 	if (!((popUpContentDiv == "") || (typeof popUpContentDiv === undefined) || (popUpContentDiv == null)))
 	{
-	//	if (("#" + popUpContentDiv.length)){	//this doesnt do what I think it does
+		if ($("#" + popUpContentDiv.length)){	//this doesnt do what I think it does
 			
 			$("#" + popUpContentDiv).empty();	//clear out residual	
 			
+			
+			//TODO: this is ugly
 			if (eventData.type == "assignment"){
 				$("#" + popUpContentDiv).append($("<ul>").attr("id", "odu_assignments"));
 				writeAssignment("odu_assignments", eventData);
 			}
 			else if (eventData.type == "multiple"){
-				writeAssignments("odu_assignments", eventData.list);
+				writeAssignments(popUpContentDiv, eventData.list);
 			}
 			else if(eventData.type == "module"){
 				$("#" + popUpContentDiv).append($("<div>").attr("id", "odu_moduleOverview"));
 				$("#odu_moduleOverview").html("module overview here");				
 			}
 			
-	//	}
-	//	else{ if (DEBUG) console.log("popUpContentDiv '" + popUpContentDiv + "' not found on page"); }
+			
+			
+		}
+		else{ if (DEBUG) console.log("popUpContentDiv " + popUpContentDiv + " not found on page"); }
 	}
 	else{ if (DEBUG) console.log("PopUpContentDiv not passed to populateEventPopUp."); }
 }
