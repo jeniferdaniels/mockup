@@ -1,39 +1,80 @@
 [
    {
-	  "type":"assignment",
-	  "title": "1.A",
-	  "longTitle":"Do This First",
-	  "due":"2016-01-17T23:59:00",
-	  "url":"urlToDirectAssignment"
-   },
+		"type": "assignment",
+		"start": "2016-07-09T12:00:00",
+		"end": "", 
+		"title": "1.A.1",
+		"longTitle": "Add Profile to Blackboard",
+		"id": "123", 
+		"url": "someUrl", 
+		"submitVia": "Blackboard",
+		"deliverable": "Profile photo",
+		"description": "lorem ipsum"  
+	},	
+	{
+		"type": "module",
+		"start": "2016-07-10T11:00:00",
+		"end": "2016-07-15T11:30:00",
+		"title": "Module 2",
+		"longTitle": "Some Module Name",
+		"id": "23456", 
+		"url": "someUrl", 
+		"description": "overview ahgfkajdhg kjhdafg kjhadfkgjha dkfg, objective ajkhfgk jahg.kj ahdfkgjhadkfghadkf, relevance akdsjfv kjahfdgv kjahfsdgh"
+	},
    {
-	  "type":"module",
-	  "title": "Module 1",
-	  "longTitle": "Kitten Acquisition",
-	  "start":"2016-01-17T23:59:00",
-	  "end": "2016-01-20T23:59:00",
-	  "url":"urlToModuleNav"
-   },
-   {
-	  "type":"assignment",
-	  "title": "1.B",
-	  "longTitle":"Required Reading",
-	  "due":"2016-01-18T23:59:00",
-	  "url":"urlToDirectAssignment"
-   },
-   {
-	  "type":"assignment",
-	  "title": "1.C and 1.D",
-	  "longTitle":"Multiple Assignments",
-	  "start":"2016-01-19T23:59:00",
-	  "url":"urlToModulesAssignmentNavPage"
-   },
-   {
-	  "type":"assignment",
-	  "title": "1.E",
-	  "longTitle":"Visit Course Homepage on CS Server",
-	  "start":"2016-01-20T23:59:00",
-	  "end":"",
-	  "url":"stuff"
-   }
+		"type": "assignment",
+		"start": "2016-07-10T12:00:00",
+		"end": "", 
+		"title": "2.A.1",
+		"longTitle": "Add More stuff to Blackboard",
+		"id": "123", 
+		"url": "someUrl", 
+		"submitVia": "Blackboard",
+		"deliverable": "Profile photo",
+		"description": "lorem ipsum"  
+	},
+	{
+		"type" : "multiple",
+		"start" : "2016-07-12T12:00:00",
+		"title" : "Multiple Events",
+		"list":
+			[
+				{
+					"type": "assignment",
+					"start": "2016-07-10T11:00:00",
+					"end": "", 
+					"title": "2.A.2",
+					"longTitle": "Some Other assignment",
+					"id": "123", 
+					"url": "someUrl", 
+					"submitVia": "",
+					"deliverable": "something",
+					"description": "lorem ipsum 123"  
+				},
+				{
+					"type": "assignment",
+					"start": "2016-07-10T11:00:00",
+					"end": "", 
+					"title": "2.A.3",
+					"longTitle": "Another Assignment",
+					"id": "123", 
+					"url": "someUrl", 
+					"submitVia": "Email",
+					"deliverable": "500 word essay",
+					"description": "lorem ipsum 1234"  
+				},
+				{
+					"type": "assignment",
+					"start": "2016-07-10T12:00:00",
+					"end": "", 
+					"title": "2.A.4",
+					"longTitle": "Other Assignment",
+					"id": "123", 
+					"url": "someUrl", 
+					"submitVia": "Blackboard",
+					"deliverable": "Photo",
+					"description": "lorem ipsum 12345"  
+				}
+			]
+	}
 ]
