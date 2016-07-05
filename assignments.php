@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
 	
 	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
-	<link rel="stylesheet" type="text/css" href="css/modal.css">
+
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
 	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
 	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
@@ -22,7 +22,6 @@
 	<script>DEBUG = true;</script>
 	<script type="text/javascript" src="scripts/js/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="scripts/js/jquery-ui.min.js"></script>
-	<!--<script type="text/javascript" src="<!-- string::webdir_assets --><!--js/_odu/courseFunctions.js"></script>	-->	
 	<script type="text/javascript" src="scripts/js/utils.js"></script>
 	<script type="text/javascript" src="scripts/js/moment.min.js"></script>	
 	<script type="text/javascript" src="scripts/js/calendar/fullcalendar.min.js"></script>
@@ -43,7 +42,8 @@
 					<ul id="odu_assignments">
 						<li id="odu_assignment_1">
 							<ul class="odu_assignmentDetails">
-								<li><h2>1.A.1 Review Required Materials</h2></li>
+								
+								<li><i class="fa fa-check fa-3x"></i><h2>1.A.1 Review Required Materials</h2></li>
 								<li><h3>Due</h3>May 31, 2001 at 11:59 PM</li>
 								<li><h3>Submit Via</h3>Blackboard</li>
 								<li><h3>Deliverable</h3>Speech outline and video link</li>
@@ -52,12 +52,12 @@
 									For each speech, you will upload your video and PowerPoint presentations and then combine them using either Zentation or Knovio. For instructions on how to do this, please visit: Combining PowerPoint with Video. (This is located in Module 1 > Topics > Course Technology > Combining PowerPoint with Video.) Videos must be accessible via a link for classmates and the professor to readily click on. Individual videos submitted in .mp4, .wmv, etc. will not be accepted unless they are placed into a zentation, knovio, or a similar third party platform for viewing with PPT.
 									</p>
 								</li>
-								<li><div id="odu_assignmentCheckmark_1" class="odu_checkmark">Mark Assignment As Complete</div></li>
-							</ul>	
+							</ul>
+
 						</li>
 						<li id="odu_assignment_2">
 							<ul class="odu_assignmentDetails">
-								<li><h2>1.A.2 Review Required Materials</h2></li>
+								<li><i class="fa fa-check fa-3x displayHidden"></i><h2>1.A.2 Review Required Materials</h2></li>
 								<li><h3>Due</h3>May 31, 2001 at 11:59 PM</li>
 								<li><h3>Submit Via</h3>Blackboard</li>
 								<li><h3>Deliverable</h3>Speech outline and video link</li>
@@ -71,8 +71,7 @@
 					</ul>
 					
 					<p class="odu_asteriskedNote">*Note: Marking assignments as complete does not submit the assignment. Marking the assignment as complete is for personal assignment tracking purposes only.</p>
-					
-				</div>
+
 			</section>
 
 	</body>
