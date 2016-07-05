@@ -100,11 +100,19 @@ function isUndefined(obj){
 
 function benchMark(place, functionName, params){
 	d = new Date; 
-	console.log("-----" + place + " of " + functionName + "-----");
-	console.log("|" + d.getTime());
-	console.log("| Has vars/params:")
-	console.log("| " + dump(params));
+	console.log("----- " + place + " of " + functionName + " ----- at " + d.getTime());
+	
+	
+	
+	/*if (params != "")
+	{
+		console.log("| VARS/PARAMS:");
+		console.log("| " + dump(params));
+	}
+	else{
+		console.log("params empty");
+	}
 	console.log("---------------------------------");
+	*/
 }
-
 
