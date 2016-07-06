@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-293 385 24 24" style="enable-background:new -293 385 24 24;" xml:space="preserve">
+<ellipse style="fill:#FFFFFF;" cx="-281" cy="396.75" rx="11.708" ry="11.25"/>
+<g id="Filled_Version" style="display:none;">
+	<path style="display:inline;" d="M-281,385c-6.617,0-12,5.383-12,12s5.383,12,12,12c6.616,0,12-5.383,12-12S-274.384,385-281,385z
+		 M-281,404c-0.553,0-1-0.447-1-1s0.447-1,1-1c0.551,0,1,0.447,1,1S-280.449,404-281,404z M-280.5,397.965v2.535
+		c0,0.275-0.225,0.5-0.5,0.5c-0.276,0-0.5-0.225-0.5-0.5v-3c0-0.276,0.224-0.5,0.5-0.5c1.378,0,2.5-1.121,2.5-2.5
+		s-1.122-2.5-2.5-2.5c-1.379,0-2.5,1.121-2.5,2.5c0,0.276-0.225,0.5-0.5,0.5c-0.276,0-0.5-0.224-0.5-0.5c0-1.93,1.569-3.5,3.5-3.5
+		c1.93,0,3.5,1.57,3.5,3.5C-277.5,396.26-278.807,397.721-280.5,397.965z"/>
+</g>
+<g id="Outine_Version">
+	<g>
+		
+			<circle style="fill:none;stroke:#FFD392;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="-281" cy="397" r="11"/>
+		<path style="fill:none;stroke:#FFD392;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="
+			M-284,394.5c0-1.656,1.343-3,3-3c1.656,0,3,1.344,3,3c0,1.658-1.344,3-3,3v3"/>
+		<path style="fill:none;stroke:#FFD392;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:10;" d="M-280.5,403
+			c0,0.275-0.224,0.5-0.5,0.5l0,0c-0.276,0-0.5-0.225-0.5-0.5l0,0c0-0.275,0.224-0.5,0.5-0.5l0,0
+			C-280.724,402.5-280.5,402.725-280.5,403L-280.5,403z"/>
+	</g>
+</g>
+</svg>
