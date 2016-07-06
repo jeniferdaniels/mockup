@@ -773,7 +773,12 @@ strong {
 
 .odu_content{
 	//border: 1px solid green;
-	
+	& p{
+	 & a{
+		text-decoration: underline;
+	 
+	 }
+	}
 }
 
 
@@ -796,14 +801,45 @@ strong {
 }
 
 
+
+
 .odu_iconHelp{
-	height:25px;
-	width:25px;
-	background-image: url("images/icon_help.svg");
+	background: $odu_orange;
+	position: fixed;
+	left: 0;
+	top: 100px;
+	height:35px;
+	width:35px;
+	z-index: 6000;
 	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	background-position: center center;	
+	background-image: url("images/helpCircle.svg");
+	
+	&:hover{
+		background-image: url("images/helpCircleHover.svg");
+	}
 }
 
+.odu_iconPrint{
+	background: $odu_mediumBlue;
+	position: fixed;
+	left: 0;
+	top: 140px;
+	height:35px;
+	width:35px;
+	z-index: 6000;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	background-position: center center;	
+	
+	background-image: url("images/printer.svg");
+	&:hover{
+		background-image: url("images/printerHover.svg");
+	}
+}
 
+//not used
 .odu_checkmark{
 	font-family: ple-awesome;
 	font-size: 2.4rem;
@@ -811,6 +847,8 @@ strong {
 	color: $liteGray;
 	width: 50px;
 }
+
+
 
 
 //******************************************************************************************************
