@@ -157,6 +157,9 @@ function writeHomeSkeleton(baseDiv){
 			//.append($("<li>").attr("id", "resourcesListItem")
 			//	.append($("<a>").attr("href","resources").addClass("ple-book-spines")
 			//		.append($("<span>").html("Resources"))))
+			.append($("<li>").attr("id", "scheduleListItem")
+				.append($("<a>").attr("href","schedule/").addClass("ple-book-person")
+					.append($("<span>").html("schedule"))))
 			.append($("<li>").attr("id", "syllabusListItem")
 				.append($("<a>").attr("href","syllabus/").addClass("ple-page-lines")
 					.append($("<span>").html("Syllabus")))));	
@@ -368,4 +371,21 @@ function getCourseAttributes(courseId){
 	//if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
 }
 
+
+function writeSideTabs(baseDiv){
+	
+	if (!isEmpty(baseDiv)){
+		
+		if ($("#" + baseDiv).length){
+			$("#" + baseDiv)
+				.append($("<div>").attr("id", "odu_sideTabs")
+					.append($("<div>").attr("id", "odu_techIssueRept").addClass("odu_sideTab odu_iconHelp"))
+					.append($("<div>").attr("id", "odu_print").addClass("odu_sideTab odu_iconPrint")));
+			
+			$("#odu_techIssueRept").click(function(){ console.log("rept clicked");})
+			$("#odu_print").click(function(){ console.log("print clicked");})
+			
+		}
+	}
+}
 	
