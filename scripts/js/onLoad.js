@@ -371,10 +371,10 @@ function getCourseAttributes(courseId){
 	//if (DEBUG) benchMark("end", "getCourseAttributes", {"courseId": courseId}); 
 }
 
-
+//temp functionality.  does not need to be in final release 
 function writeSideTabs(baseDiv){
 	
-	if (!isEmpty(baseDiv)){
+	/*if (!isEmpty(baseDiv)){
 		
 		if ($("#" + baseDiv).length){
 			$("#" + baseDiv)
@@ -386,6 +386,6 @@ function writeSideTabs(baseDiv){
 			$("#odu_print").click(function(){ console.log("print clicked");})
 			
 		}
-	}
+	}*/
 }
 	
