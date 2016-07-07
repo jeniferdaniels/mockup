@@ -80,4 +80,31 @@ function markAsRead(data){
 	});
 }
 
-
+function doStuff(){
+	
+	theData = {"announcement_id" : "7"};
+	
+	/*$.ajax({
+        url: "http://ple1.odu.edu:4243/api/announcement/log",
+        method: "POST",
+        data: theData,
+        dataType: 'json',
+        //contentType: "application/json",
+		Xhr: true,
+		Xhrfields: { withCredentials: true},
+        success: function(result, status, jqXHR){ 
+			alert("success" + result + " " + status + " " + jqXHR); 
+		},
+        error: function (jqXHR, textStatus, errorThrown){
+             //Do something
+			 alert("broken" + jqXHR + " " + textStatus + " " + errorThrown);
+         }
+    }); 
+	
+	*/
+	$.post("http://ple1.odu.edu:4243/api/announcement/log", {"announcement_id":"7"},
+		function(data, status){
+			alert("Data" + data + " status " + status);
+		});
+	
+}
