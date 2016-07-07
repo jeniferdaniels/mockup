@@ -8,7 +8,7 @@
 //*****************************************************************************************
 function writeUpEvents(eventList, eventListContainerId) {
 
-	if (typeof eventList != "undefined"){
+	if (!isEmpty(eventList)){
 		var expectedKeys = ["type", "title", "longTitle", "id", "theDate", "url", "description"];
 		
 		if (eventList.length > 0){
