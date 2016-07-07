@@ -1,11 +1,9 @@
-//functions that are run onLoad
-DEBUG=true;
+//functions that are run when the main template page is loaded
 
-
-//----------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 //Function Name:	writePageHeader
-//Parameters:		topDiv - string formatted "#stuff" with the id of the <div> that is acting as the
-//						top section of the page
+//Parameters:		topDiv - string formatted with the id of the <div> that is acting as the
+//						top section of the page, this does not contain "#" 
 //					courseData - json object with
 //						course_title 
 //						course_number
@@ -16,82 +14,68 @@ DEBUG=true;
 //							email
 //Purpose:			writes the top portion of the webpage and loads it with the course data to 
 //					customize it for each course
-//Returns:			true = no problems found.  false = problems found
-//----------------------------------------------------------------------------------------------------
+//Returns:			false = no problems found.  true = problems found
+//-------------------------------------------------------------------------------------------------
 function writePageHeader(topDiv, courseData){
 	if (DEBUG) benchMark("start", "writePageHeader", {"topDiv": topDiv, "courseData":courseData});   
-
 	hasProblem = false;
-
-	if (DEBUG) {for(key in courseData){ console.log("key " + key  + "value" + courseData[key]); }}
 			
-	//check to see that object is not empty, if it is then display minimal header
-	if (!((topDiv == "") || (typeof topDiv === undefined) || (topDiv == null)))
+	if (!isEmpty(topDiv))
 	{
-		//TODO: check to make sure div exists
-		
-		if ((courseData == "")	|| (typeof courseData === undefined) || (courseData == null)) {
-			$("#errorMsg").addClass("displayBlock").append($("<span>").html("Missing course data for header.")); 
-		}
-		else 
-		{
-		
-			//make sure the things that are needed are here, otherwise fill it in with blanks, so the show can go on
-			var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties"];
-			var groomedCourseData = [];
-			
-			//load only the keys we need and load it with "unknown" if the key dne
-			//TODO: does it matter that there are extra keys?, fix later
-			for (var i=0; i< expectedKeys.length; i++){
-				groomedCourseData[expectedKeys[i]] = (courseData.hasOwnProperty(expectedKeys[i]))? courseData[expectedKeys[i]] : "unknown";
-				if (DEBUG) console.log(courseData[expectedKeys[i]]);
-			}
-			
-			//TODO: deal with faculty display
-			
-			//have to cut the title short for the longer courses. The titles will have to be shortened in the json object
-			//if they are supposed to fit, then they need to be trimmed/abbreviated on the json side
-			//TODO:There has to be a limit in banner. What is it?
-			//56 fits in the header at 2.2rem
-			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(0, 55);
-			
-		
-			//now display it
-			$(topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
-				.append($("<header>")
-						//.append($("<nav>").attr("id", "nav")
-						//	.append($("<ul>")
-						//		.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
-						//		.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
-						//	)//end ul	
-						//)//end nav
-						//.append($("<div>").addClass("clearFix"))
-						.append($("<div>").addClass("oduOnlineLogo"))
-						.append($("<a>").attr("href", "\mockup").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
-						.append($("<h2>").attr("id", "courseInstructorTitle")
-								.append($("<span>").attr("id", "semester").html(groomedCourseData.semester_display))
-								
-								//
-						)//end h2
-					)//end header
-				);//end div
+		if ($("#" + topDiv).length){			
+			//note that the course data is empty, but the show must go on.  Display something on the top
+			if (isEmpty(courseData)) { hasProblem = true; if (DEBUG) console.log("courseData sent to writePageHeader is null"); }
 				
-				numFaculty = groomedCourseData.faculties.length;
-				$("#courseInstructorTitle").append($("<span>").attr("id", "instructorLabel").html((numFaculty > 1) ? "Instructors" : "Instructor"))
-							
-				for(i=0; i<numFaculty; i++){
-					//TODO: add internal anchors to faculty page to go straight to the clicked instructor
-					$("#instructorLabel").append($("<a>").attr("id", "courseInstructor_" + i).addClass("odu_instructorLink")
-						.attr("href", groomedCourseData.course_subject + groomedCourseData.course_number + "/faculty")
-						.html(groomedCourseData.faculties[i].preferred_name));
+				//make sure the things that are needed are here, otherwise fill it in with value "unknown", so the show can go on
+				var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties"];
+				var groomedCourseData = [];
+				
+				//load only the keys we need and load it with "unknown" if the key dne
+				for (var i=0; i< expectedKeys.length; i++){
+					groomedCourseData[expectedKeys[i]] = ((courseData.hasOwnProperty(expectedKeys[i])) && (!isEmpty(courseData[expectedKeys[i]])))
+						? courseData[expectedKeys[i]] : "unknown";
+					if (DEBUG) { 
+						console.log("raw data " + expectedKeys[i] + " is " + courseData[expectedKeys[i]]); 
+						console.log("groomed data " + expectedKeys[i] + " is " + groomedCourseData[expectedKeys[i]]); 
+					}
+					
+				//have to cut the title short for the longer courses. The titles will have to be shortened by the API if truncation is unacceble
+				//TODO:There has to be a limit in banner. What is it?
+				//56 fits in the header at 2.2rem
+				displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(0, 55);
+			
+				//now display it
+				$("#" + topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
+					.append($("<header>")
+							//.append($("<nav>").attr("id", "nav")
+							//	.append($("<ul>")
+							//		.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
+							//		.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
+							//	)//end ul	
+							//)//end nav
+							//.append($("<div>").addClass("clearFix"))
+							.append($("<div>").addClass("oduOnlineLogo"))
+							.append($("<a>").attr("href", "\").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
+							.append($("<h2>").attr("id", "courseInstructorTitle")
+									.append($("<span>").attr("id", "semester").html(groomedCourseData.semester_display))
+							)//end h2
+						)//end header
+					);//end div
+					
+					numFaculty = groomedCourseData.faculties.length;
+					$("#courseInstructorTitle").append($("<span>").attr("id", "instructorLabel").html((numFaculty > 1) ? "Instructors" : "Instructor"))
+					
+					//TODO: handle empty faculties so that it displays "instructor unknown"
+					for(i=0; i<numFaculty; i++){
+						//TODO: add internal anchors to faculty page to go straight to the clicked instructor
+						$("#instructorLabel").append($("<a>").attr("id", "courseInstructor_" + i).addClass("odu_instructorLink")
+							.attr("href", groomedCourseData.course_subject + groomedCourseData.course_number + "/faculty")
+							.html(groomedCourseData.faculties[i].preferred_name));
+					}
 				}
-		}
-		hasProblem = true;
-	} 
-	else { $("#errorMsg").html("Cannot load header, top div missing."); }
-	
-	if (DEBUG) benchMark("end", "writePageHeader", {"topDiv": topDiv, "courseData":courseData}); 
-	
+			
+		} else { hasProblem = true; if (DEBUG) console.log("topDiv " + topDiv + " not found"); }
+	} else { hasProblem = true; if (DEBUG) console.log("topDiv sent to writePageHeader is null"); }
 	return hasProblem;
 }
 
@@ -222,7 +206,7 @@ function loadHomeContent(course_id){
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) { console.log("got small calendar data"); writeCalendar("odu_smallCalendar", data, "s"); },
-		error: function() { $("#odu_smallCalendar").append("Unable to load small calendar right now."); console.log("There was an error loading the small calendar events."); },
+		error: function() { $("#odu_smallCalendar").append("Unable to load small calendar right now."); if (DEBUG) { console.log("There was an error loading the small calendar events.");} },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
 	});
@@ -233,7 +217,7 @@ function loadHomeContent(course_id){
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) { writeModuleList(data, "moduleList", "odu_moduleList"); formatList("moduleList"); }, //format list after it has loaded.
-		error: function() { $("#odu_moduleList").append("Unable to list module contents right now."); console.log("There was an error loading the module list."); },
+		error: function() { $("#odu_moduleList").append("Unable to list module contents right now."); if (DEBUG) { console.log("There was an error loading the module list."); } },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
 	});
@@ -243,7 +227,7 @@ function loadHomeContent(course_id){
 		url: upEventsUrl,
 		type: 'GET',
 		dataType: 'json',
-		success: function(data) { writeUpEvents(data, "#odu_upEventsWrapper") },
+		success: function(data) { writeUpEvents( "odu_upEventsWrapper", data) },
 		error: function() { $("#odu_upEventsWrapper").append("Unable to list upcoming events right now."); console.log("There was an error loading upcoming events."); },
 		xhrFields: { withCredentials: true	},
 		crossDomain: true
