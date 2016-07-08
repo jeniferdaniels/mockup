@@ -14,8 +14,9 @@ function writeAssignment(baseDiv, assignmentData){
 				//it only gets filled if we know its a blackboard deliverable 
 				if (!hasEmptyKeys(assignmentData, expectedKeys)){	
 				
+					//if (
 					$("#" + baseDiv)
-						.append($("<li>").attr("id","odu_assignment_" + assignmentData.id)
+						.append($("<li>").attr("id","odu_assignment_" + assignmentData.id).addClass(getAssignmentVisibilityClass(assignmentData.id, ""))
 							.append($("<ul>").attr("id","odu_assignmentDetails_" + assignmentData.id).addClass("odu_assignmentDetails")
 								.append($("<li>")
 									.append($("<i>").attr("id","odu_assignmentCheckmark_" + assignmentData.id).addClass("fa fa-check fa-3x displayHidden"))
@@ -39,7 +40,10 @@ function writeAssignment(baseDiv, assignmentData){
 									.append($("<span>").html(assignmentData.deliverable)))
 								.append($("<li>")
 									.append($("<h3>").html("Description-"))
-									.append($("<p>").html(assignmentData.description)));//end li 1
+									.append($("<p>").html(assignmentData.description)));
+									
+									
+									
 			}
 			else { if (DEBUG) console.log("one or more expected keys in assignment object missing");}
 		}
@@ -95,5 +99,19 @@ function loadAssignments(baseDiv, assignmentsUrl){
 	
 	//if (DEBUG) benchMark("end", "loadAssignments", {"baseDiv": baseDiv, "id":id, "listType": listType }); 
 
+}
+
+
+function getAssignmentVisibility(assignmentId, visibleData ){
+	visibility = ""; //default to show the assignment
+	if (DEBUG) benchMark("start", "isVisibleAssignment", {"assignmentId": assignmentId, "visibleData": visibleData});
+	
+	if (!isEmpty(assignmentId)){
+		if (!isEmpty(visibleData)){
+			visibility = ($.inArray(assignmentId, visibleData) > 0 ? "" : "displayHidden"); //returns -1 if not in visibility
+		} else { if (DEBUG) console.log("visibleData passed to isVisibleAssignment is null");}
+	} else { if (DEBUG) console.log("assignment_id passed to isVisibleAssignment is null"); }
+	
+	return visibility;
 }
 
