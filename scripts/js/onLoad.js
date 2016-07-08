@@ -241,8 +241,8 @@ function loadHomeContent(course_id){
 
 //----------------------------------------------------------------------------------------------------
 //Function Name:	writeBasicContentSkeleton
-//Parameters:		baseDiv - string formatted "#stuff" with the id of the <div> that is acting as the
-//						starting point for the skeleton
+//Parameters:		baseDiv - string formatted "stuff" with the id of the <div> that is acting as the
+//						starting point for the skeleton, does not have "#"
 //Purpose:			writes the empty tags for the content page
 //Returns:			nothing, writes to screen
 //NOTE:				not currently being used because template.html has hard coded html
@@ -250,24 +250,9 @@ function loadHomeContent(course_id){
 function writeBasicContentSkeleton(baseDiv){
 	if (DEBUG) benchMark("start", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
 
-	//page title
-	$(baseDiv)
-		.append($("<h1>").attr("id", "odu_pageTitle").addClass("odu_pageTitle").html("Page Title"));
-	
-	
-
-	//content
-	//boo. have to load this on the template.html page
-	//$(baseDiv)
-	//	.append($("<section>").attr("id","odu_contentSection").addClass("odu_contentSection")
-	//	.append($("<div>").attr("odu_contentWrapper","odu_contentWrapper").addClass("odu_contentWrapper")
-	//	.append($("<div>").attr("id","odu_content").addClass("odu_content"))));
+	//template.html has content	
 		
-	//clear fix
-	$(baseDiv)
-		.append($("<div>").addClass("clearFix"));
-		
-	if (DEBUG) benchMark("end", "writeBasicContentSkeleton", {"baseDiv": baseDiv}); 
+	if (DEBUG) benchMark("end", "writeBasicContentSkeleton", ""); 
 }
 
 //----------------------------------------------------------------------------------------------------
