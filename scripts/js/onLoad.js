@@ -20,145 +20,149 @@ function writePageHeader(topDiv, courseData){
 	if (DEBUG) benchMark("start", "writePageHeader", {"topDiv": topDiv, "courseData":courseData});   
 	hasProblem = false;
 			
-	if (!isEmpty(topDiv))
-	{
-		if ($("#" + topDiv).length){			
+	if (!isEmpty(topDiv)) {
+		if ($("#" + topDiv).length) {			
 			//note that the course data is empty, but the show must go on.  Display something on the top
 			if (isEmpty(courseData)) { hasProblem = true; if (DEBUG) console.log("courseData sent to writePageHeader is null"); }
 				
-				//make sure the things that are needed are here, otherwise fill it in with value "unknown", so the show can go on
-				var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties"];
-				var groomedCourseData = [];
-				
-				//load only the keys we need and load it with "unknown" if the key dne
-				for (var i=0; i< expectedKeys.length; i++){
-					groomedCourseData[expectedKeys[i]] = ((courseData.hasOwnProperty(expectedKeys[i])) && (!isEmpty(courseData[expectedKeys[i]])))
-						? courseData[expectedKeys[i]] : "unknown";
-					if (DEBUG) { 
-						console.log("raw data " + expectedKeys[i] + " is " + courseData[expectedKeys[i]]); 
-						console.log("groomed data " + expectedKeys[i] + " is " + groomedCourseData[expectedKeys[i]]); 
-					}
-					
-				//have to cut the title short for the longer courses. The titles will have to be shortened by the API if truncation is unacceble
-				//TODO:There has to be a limit in banner. What is it?
-				//56 fits in the header at 2.2rem
-				displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(0, 55);
+			//make sure the things that are needed are here, otherwise fill it in with value "unknown", so the show can go on
+			var expectedKeys = ["course_title", "course_number", "course_subject", "semester_display", "faculties"];
+			var groomedCourseData = [];
 			
-				//now display it
-				$("#" + topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
-					.append($("<header>")
-							//.append($("<nav>").attr("id", "nav")
-							//	.append($("<ul>")
-							//		.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
-							//		.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
-							//	)//end ul	
-							//)//end nav
-							//.append($("<div>").addClass("clearFix"))
-							.append($("<div>").addClass("oduOnlineLogo"))
-							.append($("<a>").attr("href", "\").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
-							.append($("<h2>").attr("id", "courseInstructorTitle")
-									.append($("<span>").attr("id", "semester").html(groomedCourseData.semester_display))
-							)//end h2
-						)//end header
-					);//end div
-					
-					numFaculty = groomedCourseData.faculties.length;
-					$("#courseInstructorTitle").append($("<span>").attr("id", "instructorLabel").html((numFaculty > 1) ? "Instructors" : "Instructor"))
-					
-					//TODO: handle empty faculties so that it displays "instructor unknown"
-					for(i=0; i<numFaculty; i++){
-						//TODO: add internal anchors to faculty page to go straight to the clicked instructor
-						$("#instructorLabel").append($("<a>").attr("id", "courseInstructor_" + i).addClass("odu_instructorLink")
-							.attr("href", groomedCourseData.course_subject + groomedCourseData.course_number + "/faculty")
-							.html(groomedCourseData.faculties[i].preferred_name));
-					}
+			//load only the keys we need and load it with "unknown" if the key dne
+			for (var i=0; i< expectedKeys.length; i++){
+				groomedCourseData[expectedKeys[i]] = ((courseData.hasOwnProperty(expectedKeys[i])) && (!isEmpty(courseData[expectedKeys[i]])))
+					? courseData[expectedKeys[i]] : "unknown";
+				if (DEBUG) { 
+					console.log("raw data " + expectedKeys[i] + " is " + courseData[expectedKeys[i]]); 
+					console.log("groomed data " + expectedKeys[i] + " is " + groomedCourseData[expectedKeys[i]]); 
 				}
-			
+			}	
+			//have to cut the title short for the longer courses. The titles will have to be shortened by the API if truncation is unacceble
+			//TODO:There has to be a limit in banner. What is it?
+			//56 fits in the header at 2.2rem
+			displayedCourseTitle = (groomedCourseData.course_subject + " " + groomedCourseData.course_number + " " + groomedCourseData.course_title).substr(0, 55);
+		
+			//now display it
+			$("#" + topDiv).append($("<div>").attr("id", "odu_topWrapper").addClass("odu_topWrapper")
+				.append($("<header>")
+						//.append($("<nav>").attr("id", "nav")
+						//	.append($("<ul>")
+						//		.append($("<li>").append($("<a>").attr("href", "http://google.com").attr("id", "userLink").addClass("odu_iconHelp")))
+						//		.append($("<li>").append($("<a>").attr("href", "https://placekitten.com/").attr("id", "userLink").addClass("ple-person")))
+						//	)//end ul	
+						//)//end nav
+						//.append($("<div>").addClass("clearFix"))
+						.append($("<div>").addClass("oduOnlineLogo"))
+						.append($("<a>").attr("href", "URL_HERE").append($("<h1>").attr("id", "courseTitle").html(displayedCourseTitle)))
+						.append($("<h2>").attr("id", "courseInstructorTitle")
+								.append($("<span>").attr("id", "semester").html(groomedCourseData.semester_display))
+						)//end h2
+					)//end header
+				);//end div
+				
+			numFaculty = groomedCourseData.faculties.length;
+			$("#courseInstructorTitle").append($("<span>").attr("id", "instructorLabel").html((numFaculty > 1) ? "Instructors" : "Instructor"))
+						
+			//TODO: handle empty faculties so that it displays "instructor unknown"
+			for(i=0; i<numFaculty; i++){
+				//TODO: add internal anchors to faculty page to go straight to the clicked instructor
+				$("#instructorLabel").append($("<a>").attr("id", "courseInstructor_" + i).addClass("odu_instructorLink")
+					.attr("href", groomedCourseData.course_subject + groomedCourseData.course_number + "/faculty")
+					.html(groomedCourseData.faculties[i].preferred_name));
+			}	
 		} else { hasProblem = true; if (DEBUG) console.log("topDiv " + topDiv + " not found"); }
 	} else { hasProblem = true; if (DEBUG) console.log("topDiv sent to writePageHeader is null"); }
+	
+	if (DEBUG) benchMark("end", "writePageHeader", "");
 	return hasProblem;
 }
 
-//----------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 //Function Name:	writeHomeSkeleton
-//Parameters:		baseDiv - string formatted "#stuff" with the id of the <div> that is acting as the
-//						starting point for the skeleton
+//Parameters:		baseDiv - string formatted "stuff" with the id of the <div> that is acting as the
+//						starting point for the skeleton, this does not contain "#"
 //Purpose:			writes the empty tags for the home page
 //Returns:			nothing, writes to screen
-//----------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 function writeHomeSkeleton(baseDiv){
 	if (DEBUG) benchMark("start", "writeHomeSkeleton", {"baseDiv": baseDiv});  
-
-	$(baseDiv).html(" ");//clear out 
-
-	//<main>, lhs and rhs
-	$(baseDiv)
-		.append($("<main>").attr("id", "odu_main").addClass("odu_courseHome")	//TODO: update name to odu_main and update all css
-			.append($("<div>").attr("id", "odu_courseHomeLhs").addClass("odu_courseHomeLhs"))
-			.append($("<div>").attr("id", "odu_courseHomeRhs").addClass("odu_courseHomeRhs"))
-		);
-
-	//left side
-	$("#odu_courseHomeLhs")
-		.append($("<section>").attr("id", "odu_smallCalendarSection"))
-		.append($("<section>").attr("id", "odu_upEventsSection"));
 	
-	//calendar skeleton
-	$("#odu_smallCalendarSection")
-		.append($("<h1>").addClass("odu_sectionH1 calendar").html("Calendar"))
-		.append($("<div>").attr("id", "odu_smallCalendarWrapper").addClass("wrapper")
-			.append($("<div>").attr("id", "odu_smallCalendar")));
-		
-	//upcoming events skeleton
-	$("#odu_upEventsSection")
-		.append($("<h1>").addClass("odu_sectionH1 upEvents").html("Upcoming Events"))
-		.append($("<div>").attr("id", "odu_upEventsWrapper"));
-	
-	
-	//right side
-	$("#odu_courseHomeRhs")
-		.append($("<section>").attr("id", "odu_iconListSection"))
-		.append($("<section>").attr("id", "odu_moduleListSection"));
-	
-	//icon section
-	$("#odu_iconListSection")
-		.append($("<ul>")
-			.append($("<li>").attr("id", "assignmentsListItem")
-				.append($("<a>").attr("href","assignments/").addClass("ple-clipboard-list")
-					.append($("<span>").html("Assignments"))))
-			.append($("<li>").attr("id", "announcementsListItem")
-				.append($("<a>").attr("href","announcements/").addClass("ple-bullhorn")
-					.append($("<span>").html("Announcements"))))
-			.append($("<li>").attr("id", "facultyListItem")
-				.append($("<a>").attr("href","faculty/").addClass("ple-book-person")
-					.append($("<span>").html("Faculty"))))
-			//.append($("<li>").attr("id", "glossaryListItem")
-			//	.append($("<a>").attr("href","glossary/").addClass("ple-tabbed-book")
-			//		.append($("<span>").html("Glossaries"))))
-			//.append($("<li>").attr("id", "notesListItem")
-			//	.append($("<a>").attr("href","notes/").addClass("ple-notepad-lines")
-			//		.append($("<span>").html("Notes"))))
-			//.append($("<li>").attr("id", "resourcesListItem")
-			//	.append($("<a>").attr("href","resources").addClass("ple-book-spines")
-			//		.append($("<span>").html("Resources"))))
-			.append($("<li>").attr("id", "scheduleListItem")
-				.append($("<a>").attr("href","schedule/").addClass("ple-book-person")
-					.append($("<span>").html("schedule"))))
-			.append($("<li>").attr("id", "syllabusListItem")
-				.append($("<a>").attr("href","syllabus/").addClass("ple-page-lines")
-					.append($("<span>").html("Syllabus")))));	
-
-	//module list
-	$("#odu_moduleListSection")
-		.append($("<h1>").addClass("odu_sectionH1 moduleList").html("Modules"))
-		.append($("<div>").attr("id", "odu_moduleListWrapper").addClass("wrapper")
-			.append($("<div>").attr("id","odu_moduleList")));
+	if (!isEmpty(baseDiv)){
+		if ($("#" + baseDiv).length){
 			
+			$("#" + baseDiv).html(" ");//clear out 
+
+			//<main>, lhs and rhs
+			$("#" + baseDiv)
+				.append($("<main>").attr("id", "odu_main").addClass("odu_courseHome")	
+					.append($("<div>").attr("id", "odu_courseHomeLhs").addClass("odu_courseHomeLhs"))
+					.append($("<div>").attr("id", "odu_courseHomeRhs").addClass("odu_courseHomeRhs"))
+				);
+
+			//left side
+			$("#odu_courseHomeLhs")
+				.append($("<section>").attr("id", "odu_smallCalendarSection"))
+				.append($("<section>").attr("id", "odu_upEventsSection"));
 			
-	//clear fix
-	$(baseDiv).append("<div>").addClass("clearFix");
+			//calendar skeleton
+			$("#odu_smallCalendarSection")
+				.append($("<h1>").addClass("odu_sectionH1 calendar").html("Calendar"))
+				.append($("<div>").attr("id", "odu_smallCalendarWrapper").addClass("wrapper")
+					.append($("<div>").attr("id", "odu_smallCalendar")));
+				
+			//upcoming events skeleton
+			$("#odu_upEventsSection")
+				.append($("<h1>").addClass("odu_sectionH1 upEvents").html("Upcoming Events"))
+				.append($("<div>").attr("id", "odu_upEventsWrapper"));
+			
+			//right side
+			$("#odu_courseHomeRhs")
+				.append($("<section>").attr("id", "odu_iconListSection"))
+				.append($("<section>").attr("id", "odu_moduleListSection"));
+			
+			//icon section
+			$("#odu_iconListSection")
+				.append($("<ul>")
+					.append($("<li>").attr("id", "assignmentsListItem")
+						.append($("<a>").attr("href","assignments/").addClass("ple-clipboard-list")
+							.append($("<span>").html("Assignments"))))
+					.append($("<li>").attr("id", "announcementsListItem")
+						.append($("<a>").attr("href","announcements/").addClass("ple-bullhorn")
+							.append($("<span>").html("Announcements"))))
+					.append($("<li>").attr("id", "facultyListItem")
+						.append($("<a>").attr("href","faculty/").addClass("ple-book-person")
+							.append($("<span>").html("Faculty"))))
+					//.append($("<li>").attr("id", "glossaryListItem")
+					//	.append($("<a>").attr("href","glossary/").addClass("ple-tabbed-book")
+					//		.append($("<span>").html("Glossaries"))))
+					//.append($("<li>").attr("id", "notesListItem")
+					//	.append($("<a>").attr("href","notes/").addClass("ple-notepad-lines")
+					//		.append($("<span>").html("Notes"))))
+					//.append($("<li>").attr("id", "resourcesListItem")
+					//	.append($("<a>").attr("href","resources").addClass("ple-book-spines")
+					//		.append($("<span>").html("Resources"))))
+					.append($("<li>").attr("id", "scheduleListItem")
+						.append($("<a>").attr("href","schedule/").addClass("ple-book-person")
+							.append($("<span>").html("schedule"))))
+					.append($("<li>").attr("id", "syllabusListItem")
+						.append($("<a>").attr("href","syllabus/").addClass("ple-page-lines")
+							.append($("<span>").html("Syllabus")))));	
+
+			//module list
+			$("#odu_moduleListSection")
+				.append($("<h1>").addClass("odu_sectionH1 moduleList").html("Modules"))
+				.append($("<div>").attr("id", "odu_moduleListWrapper").addClass("wrapper")
+					.append($("<div>").attr("id","odu_moduleList")));
+					
+					
+			//clear fix
+			$("#" + baseDiv).append("<div>").addClass("clearFix");
+		} else { if (DEBUG) console.log("baseDiv " + baseDiv + " not found");}
+	} else { if (DEBUG) console.log("baseDiv sent to writeHomeSkeleton null");}
 	
-	if (DEBUG) benchMark("end", "writeHomeSkeleton", {"baseDiv": baseDiv}); 
+	
+	if (DEBUG) benchMark("end", "writeHomeSkeleton", ""); 
 }
 
 
