@@ -1,0 +1,34 @@
+font,
+center,
+b {
+  color: #be1e2d; }
+
+font::before,
+font::after,
+center::before,
+center::after,
+b::before,
+b::after {
+  color: white;
+  padding: 0 5px 0 5px;
+  background: #be1e2d; }
+
+b::before {
+  content: "ILLEGAL HTML TAG <b>"; }
+
+b::after {
+  content: "</b>"; }
+
+center::before {
+  content: "ILLEGAL HTML TAG <center>"; }
+
+center::after {
+  content: "</center>"; }
+
+font::before {
+  content: "ILLEGAL HTML TAG <font>"; }
+
+font::after {
+  content: "</font>"; }
+
+/*# sourceMappingURL=illegalTags.css.map */

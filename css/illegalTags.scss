@@ -1,0 +1,27 @@
+@import "configs";
+//******************************************************************************************************
+// Illegal tags
+//******************************************************************************************************
+font,
+center,
+b {
+	color: $odu_red;
+	
+}
+font::before,
+font::after,
+center::before,
+center::after,
+b::before,
+b::after{
+	color: $white;
+	padding: 0 5px 0 5px;
+	background: $odu_red;
+}
+
+b::before{	content: "ILLEGAL HTML TAG <b>"; }
+b::after{ content: "</b>"; }
+center::before{	content: "ILLEGAL HTML TAG <center>"; }
+center::after{	content: "</center>"; }
+font::before{ content: "ILLEGAL HTML TAG <font>"};
+font::after{ content: "</font>";}
