@@ -165,7 +165,9 @@ li{
 	margin-left: 25px;	
 }
 
-//ol
+ol{
+	list-style-type: decimal;
+}
 //dl
 dt{
 	font-weight:600;
@@ -848,27 +850,11 @@ strong {
 	width: 50px;
 }
 
+//in content pages, until it can be replaced with h2, style like an h2
+.content_header{
+	font-weight: 500;
+	margin: 10px 0 10px 0;
+	font-size: 1.8rem;
+}  
 
 
-
-//******************************************************************************************************
-// Illegal tags
-//******************************************************************************************************
-center,
-b {
-	color: $odu_red;
-	
-}
-center::before,
-center::after,
-b::before,
-b::after{
-	color: $white;
-	padding: 0 5px 0 5px;
-	background: $odu_red;
-}
-
-b::before{	content: "ILLEGAL HTML TAG <b>"; }
-b::after{ content: "</b>"; }
-center::before{	content: "ILLEGAL HTML TAG <center>"; }
-center::after{	content: "</center>"; }

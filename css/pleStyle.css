@@ -73,6 +73,9 @@ ul {
 li {
   margin-left: 25px; }
 
+ol {
+  list-style-type: decimal; }
+
 dt {
   font-weight: 600;
   padding-right: 2px; }
@@ -449,26 +452,7 @@ strong {
   color: #c8c8c8;
   width: 50px; }
 
-center,
-b {
-  color: #be1e2d; }
-
-center::before,
-center::after,
-b::before,
-b::after {
-  color: white;
-  padding: 0 5px 0 5px;
-  background: #be1e2d; }
-
-b::before {
-  content: "ILLEGAL HTML TAG <b>"; }
-
-b::after {
-  content: "</b>"; }
-
-center::before {
-  content: "ILLEGAL HTML TAG <center>"; }
-
-center::after {
-  content: "</center>"; }
+.content_header {
+  font-weight: 500;
+  margin: 10px 0 10px 0;
+  font-size: 1.8rem; }
