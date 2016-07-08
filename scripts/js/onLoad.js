@@ -171,7 +171,9 @@ function writeHomeSkeleton(baseDiv){
 //----------------------------------------------------------------------------------------------------
 //Function Name:	loadHomeContent
 //Parameters:		course_id - string, should be unique course Id, for now it is uses 
-//					semesterCode + "/" + courseNumber
+//					semesterCode + "/" + subj + courseNumber
+//					NOTE: if there are 2 courses in a semester with the same subj and courseNum
+//					this will NOT bring back a unique record
 //Purpose:			loads the home page with the calendar, module, upcoming events, icons etc.
 //					not the header, and not the course content
 //Returns:			nothing, writes to screen
@@ -180,15 +182,9 @@ function loadHomeContent(course_id){
 	if (DEBUG) benchMark("start", "loadHomeContent", {"course_id": course_id}); 
 	
 	var announcementsUrl  = "http://ple1.odu.edu:4243/api/announcement;list=user";
-	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/202020/dev101"; //+ course_id; 
-	//var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
-	var smallCalendarUrl = "sampleJson/sampleSmallCalendarEvents.json";
+	var moduleListUrl      = "http://ple1.odu.edu:4243/api/modulenavigation/ + course_id; 
+	var smallCalendarUrl = "http://ple1.odu.edu:4243/api/calendar/" + course_id;
 	var upEventsUrl      = "http://ple1.odu.edu:4243/api/event/" + course_id; 
-
-	if (DEBUG) console.log("announcementsUrl" + announcementsUrl);
-	if (DEBUG) console.log("moduleListUrl" + moduleListUrl);
-	if (DEBUG) console.log("smallCalendarUrl" + smallCalendarUrl);
-	if (DEBUG) console.log("upEventsUrl" + upEventsUrl);
 	
 	//announcements
 	$.ajax({
@@ -197,7 +193,7 @@ function loadHomeContent(course_id){
 		dataType: 'json',
 		success: function(data) { processNotifications(data) },
 		error: function() { console.log("There was a problem loading the announcements."); },
-		xhrFields: { withCredentials: true	},
+		xhrFields: { withCredentials: true },
 		crossDomain: true
 	});//.done(function (data, status, jqXHR) {
 	//	console.log(data);
@@ -211,7 +207,7 @@ function loadHomeContent(course_id){
 		dataType: 'json',
 		success: function(data) { console.log("got small calendar data"); writeCalendar("odu_smallCalendar", data, "s"); },
 		error: function() { $("#odu_smallCalendar").append("Unable to load small calendar right now."); if (DEBUG) { console.log("There was an error loading the small calendar events.");} },
-		xhrFields: { withCredentials: true	},
+		xhrFields: { withCredentials: true },
 		crossDomain: true
 	});
 				
@@ -222,7 +218,7 @@ function loadHomeContent(course_id){
 		dataType: 'json',
 		success: function(data) { writeModuleList(data, "moduleList", "odu_moduleList"); formatList("moduleList"); }, //format list after it has loaded.
 		error: function() { $("#odu_moduleList").append("Unable to list module contents right now."); if (DEBUG) { console.log("There was an error loading the module list."); } },
-		xhrFields: { withCredentials: true	},
+		xhrFields: { withCredentials: true },
 		crossDomain: true
 	});
 
@@ -232,13 +228,13 @@ function loadHomeContent(course_id){
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) { writeUpEvents( "odu_upEventsWrapper", data) },
-		error: function() { $("#odu_upEventsWrapper").append("Unable to list upcoming events right now."); console.log("There was an error loading upcoming events."); },
-		xhrFields: { withCredentials: true	},
+		error: function() { $("#odu_upEventsWrapper").append("Unable to list upcoming events right now."); if (DEBUG) { console.log("There was an error loading upcoming events."); } },
+		xhrFields: { withCredentials: true },
 		crossDomain: true
 	});
 	
 
-	if (DEBUG) benchMark("end", "loadHomeContent", {"course_id": course_id}); 
+	if (DEBUG) benchMark("end", "loadHomeContent", ""); 
 }
 
 
