@@ -17,48 +17,18 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	
 	<link rel="stylesheet" type="text/css" href="css/navArrowStyle.css">
-	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
 	<link rel="stylesheet" type="text/css" href="css/calendar/fullcalendar.min.css"  />
-	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
 	<link rel="stylesheet" type="text/css" href="css/courseHome.css" />
 	<link rel="stylesheet" type="text/css" href="css/calendar/odu_calendar.css" />
 	<link rel="stylesheet" type="text/css" href="css/upEvents/odu_upEvents.css" />
 	<link rel="stylesheet" type="text/css" href="css/moduleList/moduleListStyle.css" />
 	<link rel="stylesheet" type="text/css" href="css/pnotify.custom.css" />
 	
-	<script type="text/javascript" src="scripts/js/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="scripts/js/jquery-ui.min.js"></script>
-	<!--<script type="text/javascript" src="<!-- string::webdir_assets --><!--js/_odu/courseFunctions.js"></script>	-->	
-	<script type="text/javascript" src="scripts/js/utils.js"></script>
-	<script type="text/javascript" src="scripts/js/moment.min.js"></script>	
-	<script type="text/javascript" src="scripts/js/calendar/fullcalendar.min.js"></script>
-	<script type="text/javascript" src="scripts/js/calendar/odu_calendar.js"></script>
-	<script type="text/javascript" src="scripts/js/upEvents/odu_upEvents.js"></script>
-	<script type="text/javascript" src="scripts/js/pnotify.custom.js"></script>
-	<script type="text/javascript" src="scripts/js/messages/odu_messages.js"></script>
-	<script type="text/javascript" src="scripts/js/personalization/odu_preferences.js"></script>
-	<script type="text/javascript" src="scripts/js/moduleList/odu_moduleList.js"></script>
-	<script type="text/javascript" src="scripts/js/odu_basicContent.js"></script>
 
 
-	<script type="text/javascript" src="scripts/js/onLoad.js"></script>
-	<script>
-		$(document).ready(function(){		
-			//string is formatted /courses/201502/cat101/
-			tempCoursePath = "/courses/201402/bnal206/".split("/"); //kludge to simulate special string in template.html on ple system
-			tempCourseNumber = tempCoursePath[tempCoursePath.length-2];	//-2 because its the second to last item in the array due to the / at the end
-			dummy = getCourseAttributes(tempCourseNumber);
 
-			$(document.body).promise().done(function(){	//idfk this works
-				writePageHeader("#odu_top", dummy);
 
-			})
-			.then(function(){  
-
-			});
-		});
-	</script>
 	
 	</head>
 	
@@ -79,6 +49,22 @@
 		</div>	
 	<!--add later <div id="popWindow" class="displayNone">Glossary</div>-->	
 		<div id="errorMsg" class="errorMsg"></div>
+<style>		
+	.odu_navPrev{
+		border: 1px solid red;
+		color: orange;
+		height: 50px;
+		width: 50px;
+		position: absolute;
+		top: 200px;
+		left:0px;
+		content: "j";
+	}
+	.odu_navPrev::before{
+		content: "h";
+	}
+</style>
+		<div id="odu_navPrev" class="odu_navPrev"><a href="sdf"></a></div>
 		<div id="odu_top" class="odu_top"></div>
 		<div id="odu_wrapper" class="odu_wrapper">
 			<h1 id="odu_pageTitle" class="odu_pageTitle">Page Title</h1>
